@@ -198,6 +198,23 @@
                           ${item.price ? `<span>${item.price}</span>` : ""}
                         </div>
                       ` : ""}
+                      ${item.placeBox ? `
+                        <article class="place-box">
+                          <div class="place-box-top">
+                            <h4>${item.placeBox.title}</h4>
+                            <div class="place-box-links">
+                              ${item.placeBox.wikipedia ? `<a class="wiki-icon" href="${item.placeBox.wikipedia}" target="_blank" rel="noreferrer" aria-label="Wikipedia">W</a>` : ""}
+                              ${item.placeBox.maps ? `<a class="wiki-icon" href="${item.placeBox.maps}" target="_blank" rel="noreferrer" aria-label="Google Maps">↗</a>` : ""}
+                            </div>
+                          </div>
+                          <p>${item.placeBox.text}</p>
+                          ${(item.placeBox.highlights || []).length ? `
+                            <ul class="place-box-list">
+                              ${item.placeBox.highlights.map((point) => `<li>${point}</li>`).join("")}
+                            </ul>
+                          ` : ""}
+                        </article>
+                      ` : ""}
                     </div>
                   </div>
                 `).join("")}
@@ -251,24 +268,73 @@
                 ` : ""}
               </aside>
             </div>
+            ${day.citySummaries ? day.citySummaries.map((city) => `
+              <section class="city-summary-band">
+                <div class="city-summary-top">
+                  <div>
+                    <h3 class="city-summary-title">${city.title}</h3>
+                    <p class="city-summary-sub">${city.subtitle || ""}</p>
+                  </div>
+                  <div class="city-summary-stats">
+                    ${(city.stats || []).map((stat) => `<span class="city-stat">${stat}</span>`).join("")}
+                  </div>
+                </div>
+                <div class="city-summary-grid">
+                  <div>
+                    ${(city.paragraphs || []).map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                  </div>
+                  <div>
+                    <ul class="city-highlights">
+                      ${(city.highlights || []).map((item) => `<li>${item}</li>`).join("")}
+                    </ul>
+                  </div>
+                </div>
+                <div class="city-sources">
+                  ${(city.sources || []).map((source) => `<a class="source-icon" href="${source.url}" target="_blank" rel="noreferrer" title="${source.label}">${source.icon || "↗"}</a>`).join("")}
+                </div>
+              </section>
+            `).join("") : ""}
           </article>
         </section>
       `;
     }
 
     function renderRestaurants() {
+      const intro = tripData.sectionIntros?.restaurants;
       return `
         <section class="view" data-view="restaurants">
           <h2 class="section-title">🍽 Éttermek</h2>
-          <div class="group-grid">
+          ${intro ? `
+            <section class="card section-intro">
+              <h3>${intro.title}</h3>
+              ${intro.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+              ${(intro.sections || []).map((section) => `
+                <div class="intro-subsection">
+                  <h4>${section.heading}</h4>
+                  <ul class="plain-list">
+                    ${section.items.map((item) => `<li>${item}</li>`).join("")}
+                  </ul>
+                </div>
+              `).join("")}
+              <ul class="plain-list">
+                ${intro.highlights.map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+            </section>
+          ` : ""}
+          <div class="restaurant-groups">
             ${tripData.restaurants.map((group) => `
               <section class="card">
                 <h3>${group.city}</h3>
-                <div class="group-grid">
+                <div class="restaurant-row">
                   ${group.items.map((item) => `
                     <article class="list-card">
-                      <h3><a href="${item.url}" target="_blank" rel="noreferrer">${item.name}</a></h3>
-                      <p>${item.type} · ⭐ Google ${item.googleRating} · ${item.priceLevel}</p>
+                      <div class="restaurant-head">
+                        <div class="rating-badge">⭐ ${item.googleRating}</div>
+                        <div class="restaurant-head-copy">
+                          <h3><a href="${item.url}" target="_blank" rel="noreferrer">${item.name}</a></h3>
+                          <p class="restaurant-meta-line">${item.type} · ${item.priceLevel}</p>
+                        </div>
+                      </div>
                       <div class="food-tags">${item.tags.map((tag) => `<span class="food-tag">${tag}</span>`).join("")}</div>
                       <p>${item.description}</p>
                       <div class="meta">${item.meta}</div>
@@ -283,9 +349,19 @@
     }
 
     function renderSights() {
+      const intro = tripData.sectionIntros?.sights;
       return `
         <section class="view" data-view="sights">
           <h2 class="section-title">🏛 Látnivalók</h2>
+          ${intro ? `
+            <section class="card section-intro">
+              <h3>${intro.title}</h3>
+              ${intro.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+              <ul class="plain-list">
+                ${intro.highlights.map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+            </section>
+          ` : ""}
           <div class="group-grid">
             ${tripData.sights.map((sight) => `
               <article class="list-card">
@@ -304,9 +380,19 @@
     }
 
     function renderPractical() {
+      const intro = tripData.sectionIntros?.practical;
       return `
         <section class="view" data-view="practical">
           <h2 class="section-title">🧳 Praktikus</h2>
+          ${intro ? `
+            <section class="card section-intro">
+              <h3>${intro.title}</h3>
+              ${intro.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+              <ul class="plain-list">
+                ${intro.highlights.map((item) => `<li>${item}</li>`).join("")}
+              </ul>
+            </section>
+          ` : ""}
           <div class="group-grid">
             ${tripData.practical.map((group) => `
               <article class="card">

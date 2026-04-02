@@ -55,6 +55,84 @@ const tripData = {
       "Április 10-re a direkt LIS reptéri visszaút a reális, komoly városnézés nélkül."
     ]
   },
+  sectionIntros: {
+    restaurants: {
+      title: "🇵🇹 Portugál kulinária röviden",
+      sections: [
+        {
+          heading: "Rövid ételtörténeti háttér",
+          items: [
+            "A portugál konyha a tengeri kereskedelem, a katolikus böjti hagyományok és a felfedezések korának hatásából épült fel.",
+            "A sózott tőkehal, vagyis a bacalhau kultúrája történetileg a hosszú tárolhatósághoz és az atlanti kereskedelemhez kapcsolódik.",
+            "Sok klasszikus édesség kolostori eredetű: tojássárgája, cukor és leveles tésztás hagyományok adják az alapot."
+          ]
+        },
+        {
+          heading: "A portugál konyha fő karaktere",
+          items: [
+            "Alapkarakter: halas, olívaolajos, kenyérre és rizsre épülő, mégis rusztikus és laktató.",
+            "Egyszerre tud nagyon egyszerű lenni, például grillezett hal vagy bifana, és nagyon rétegzett, például bacalhau vagy tengeri rizses fogások formájában.",
+            "Nem a túlfűszerezés a lényeg, hanem a jó alapanyag, a só, a textúra és a lassabb, hagyományos főzési logika."
+          ]
+        },
+        {
+          heading: "Régiós fókusz ezen az úton",
+          items: [
+            "Lisszabon: pastel de nata, petiscos, tőkehalas fogások, kisebb tabernák és városi klasszikusok.",
+            "Nazaré / középső partvidék: halas-tengeri karakter, egyszerűbb tengerparti fogások.",
+            "Porto: testesebb, húsosabb konyha, francesinha, bifana, gazdagabb szószos fogások.",
+            "Douro / Pinhão: borvidéki vacsorák, lassabb ritmus, borpárosítás és tájhoz kötött esti étkezés."
+          ]
+        },
+        {
+          heading: "Mit kell megkóstolni?",
+          items: [
+            "Pastel de nata vagy a klasszikus Pastéis de Belém.",
+            "Legalább egy bacalhau fogás, mert ez a portugál konyha egyik alappillére.",
+            "Portóban francesinha vagy bifana, ha belefér egy nehezebb, helyi karakterű étkezés.",
+            "Caldo verde, sardinhas assadas, arroz de marisco vagy polipétel, ha az adott hely kínálata jó.",
+            "A Douro-ban pedig legalább egy rendes boros vacsora vagy kóstolóest."
+          ]
+        }
+      ],
+      paragraphs: [
+        "A portugál konyha egyszerre atlanti, mediterrán és birodalmi örökségű: a hal, a tenger gyümölcsei, az olívaolaj, a kenyér, a rizs, a sertés és a lassan főzött, rusztikus fogások adják az alapját. A felfedezések korával együtt rengeteg fűszer, cukor és új alapanyag érkezett be, ezért a portugál étkezés egyszerre tud egyszerű és történetileg meglepően gazdag lenni.",
+        "A legismertebb történeti vonal a bacalhau, vagyis a sózott tőkehal kultúrája, amely a tengeri kereskedelemmel és a hosszú tárolhatósággal fonódott össze. Ugyanilyen fontos az édességek világa is: sok klasszikus portugál desszert kolostori eredetű, tojássárgájára és cukorra épülő receptekkel.",
+        "Amit ezen az úton régiónként érdemes kiemelni: Lisszabonban a pastel de nata, a petiscos és az egyszerűbb tabernaételek; Nazaré környékén a tengeri-halászos karakter; Portóban a testesebb, húsosabb vonal, például francesinha vagy bifana; a Douro-ban pedig a bor, a lassabb vacsora és a borvidéki fogások hangulata a legerősebb."
+      ],
+      highlights: [
+        "Jellegzetes portugál ételek: bacalhau, caldo verde, sardinhas assadas, bifana, francesinha, arroz de marisco, polvo.",
+        "Kötelezően megkóstolandó: pastel de nata, jó kenyér + olívaolaj, legalább egy tőkehalas fogás és Portóban valami testesebb húsos étel.",
+        "Desszertvonal: Pastéis de Belém, Sintrában travesseiros vagy queijadas, Portóban pedig kávé mellé klasszikus cukrászdai sütemények.",
+        "Borfronton a Douro és a portói bor a legfontosabb, de sima asztali vörös és fehér borokból is erős az ország."
+      ]
+    },
+    sights: {
+      title: "🏛 Látnivaló-logika",
+      paragraphs: [
+        "Ez az út nem mindent akar lefedni Portugáliából, hanem egy nagyon tudatos északi ívű válogatást ad: Lisszabon történelmi magja, Sintra romantikus tája, a közép-portugál tranzitállomások, Porto városi csúcspontjai és a Douro borvidéki lezárása együtt állnak össze.",
+        "A legerősebb szerkezeti váltások: császári-felfedezéskori Belém, középkorias Alfama, romantikus Sintra, középkori Óbidos, hullámos Nazaré, emlékezethely Batalha, zarándok-Fátima, majd a kereskedő-boros Porto és a lelassuló Douro."
+      ],
+      highlights: [
+        "Must-see tengely: Jerónimos, Pena, Nazaré Sítio, Batalha, São Bento, Ribeira, N222, Pinhão.",
+        "A terv úgy van összerakva, hogy a legerősebb ikonikus pontok férjenek bele, ne a legtöbb név.",
+        "A napi oldalaknál az inline boxok ott magyaráznak, ahol a helyszín először tényleg releváns."
+      ]
+    },
+    practical: {
+      title: "🧳 Praktikus keret",
+      paragraphs: [
+        "Ennél az útvonalnál a kulcs nem a túltervezés, hanem a ritmus: az elején városi napok tömegközlekedéssel, utána csak akkor autó, amikor tényleg szükséges. Ettől marad kényelmes a lisszaboni szakasz, és ettől lesz értelmes a Porto + Douro lezárás.",
+        "A legfontosabb praktikus döntések: időpontra vett jegyek a zsúfolt helyekre, Portóban egyetlen jó parkolóbázis, és a Douro-napon gyors kijutás után panorámaút. A visszaút napjára pedig semmit nem szabad már túlpakolni."
+      ],
+      highlights: [
+        "Jegyek: Jerónimos, Pena, Livraria Lello előre.",
+        "Autó: csak április 7-től, Portóban egy helyen letéve.",
+        "Douro: előbb gyors út, utána N222, este már autómentes kóstoló.",
+        "Visszaút: Pinhão → LIS direkt logikával, nem még egy kitérős nappal."
+      ]
+    }
+  },
   days: [
     {
       id: "d1",
@@ -80,6 +158,33 @@ const tripData = {
         { time: "~23:15", title: "🛬 Megérkezés Lisszabonba", detail: "Csomagfelvétel és kijutás a reptérről." },
         { time: "23:30", title: "🚕 Transzfer a szállásra", detail: "Taxi vagy Uber, rövid út a belvárosba." },
         { time: "00:00", title: "🛏 Bejelentkezés és alvás", detail: "Másnap már teljes lisszaboni nap indul." }
+      ],
+      citySummaries: [
+        {
+          title: "🏙 Lisszabon összefoglaló",
+          subtitle: "Az ország fővárosa, a Tejo és az Atlanti-óceán találkozási zónájában.",
+          stats: ["~576 ezer lakos", "Portugália fővárosa", "1147 óta portugál kézen", "1256 óta főváros"],
+          paragraphs: [
+            "Lisszabon Európa egyik legrégebbi fővárosa, története a római Olissipótól a mór korszakon át a középkori portugál királyságig húzódik. A város 1147-ben került vissza keresztény uralom alá, majd 1256-ban lett Portugália fővárosa.",
+            "A mai város karakterét egyszerre határozza meg a dombos topográfia, a Tejo-part, a felfedezések kora és az 1755-ös nagy földrengés utáni újjáépítés. Baixa rácsos szerkezete, Belém emlékei és Alfama réteges utcavilága ezért ennyire eltérő hangulatú.",
+            "A rövid utazó számára Lisszabon legerősebb tengelye általában Belém történelmi zónája, Alfama kilátói és a Baixa–Chiado városi mag. Ezek együtt adják a város történelmi, vallási és mindennapi arcát.",
+            "Gasztronómiailag Lisszabon egyszerre tradicionális és könnyen fogyasztható város: a pastel de nata, a tőkehalételek, a grillezett szardínia, a petiscos és a borbárok világa gyorsan érthető. Belémben a Pastéis de Belém a legismertebb ikon, míg Alfamában és Bairro Altóban a kisebb, hangulatos tabernák adják a karakteresebb esti élményt."
+          ],
+          highlights: [
+            "Belém: Jerónimos kolostor, Belém-torony és a Padrão dos Descobrimentos együtt mutatják meg a felfedezések korát.",
+            "Alfama: középkori utcaszövet, kilátók és a São Jorge-vár környéke adják a legkarakteresebb régi lisszaboni hangulatot.",
+            "Baixa és Chiado: a földrengés utáni újjáépített városmag, elegáns utcákkal, terekkel és erős kávéházi-kereskedelmi múlttal.",
+            "Praça do Comércio és Rua Augusta: a reprezentatív folyóparti városi tengely, első lisszaboni sétára tökéletes.",
+            "Elevador de Santa Justa és Miradouro São Pedro de Alcântara: gyorsan elérhető klasszikus panorámapontok.",
+            "LX Factory és Time Out Market: modernebb, gasztronómiai és urbánus ellenpont a történeti mag mellé.",
+            "Cabo da Roca és Cascais: opcionális nagyobb kitérők, ha a liszaboni régió atlanti arcát is látni akarjátok."
+          ],
+          sources: [
+            { label: "Wikipedia Lisbon", url: "https://en.wikipedia.org/wiki/Lisbon", icon: "W" },
+            { label: "Wikipedia Jerónimos", url: "https://hu.wikipedia.org/wiki/Jer%C3%B3nimos-kolostor", icon: "J" },
+            { label: "Wikipedia Belém Tower", url: "https://hu.wikipedia.org/wiki/Bel%C3%A9m-torony", icon: "B" }
+          ]
+        }
       ]
     },
     {
@@ -103,12 +208,42 @@ const tripData = {
         { label: "Baixa", color: "#233d7b" }
       ],
       schedule: [
-        { time: "09:00", title: "☕ Pastéis de Belém", detail: "Ikonikus pastel de nata, reggel a legrövidebb a sor." },
+        { time: "09:00", title: "☕ Pastéis de Belém", detail: "Ikonikus pastel de nata, reggel a legrövidebb a sor.", placeBox: {
+          title: "Belém negyed",
+          text: "Belém Lisszabon történelmi folyóparti zónája, amely a portugál felfedezések korának legerősebb emlékhelyeit sűríti össze. Itt koncentrálódik a Jerónimos kolostor, a Belém-torony és a Padrão dos Descobrimentos világa, ezért ez a város egyik legfontosabb történeti negyede.",
+          highlights: [
+            "monumentális folyóparti történelmi zóna",
+            "Jerónimos és Belém-torony ugyanabban a tengelyben",
+            "Pastéis de Belém miatt gasztronómiailag is ikonikus"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Bel%C3%A9m,_Lisbon",
+          maps: "https://www.google.com/maps/search/Bel%C3%A9m+Lisbon"
+        } },
         { time: "09:30", title: "🏛 Jerónimos kolostor", detail: "UNESCO látnivaló, online jegy kötelezően ajánlott.", maps: "https://www.google.com/maps/search/Jer%C3%B3nimos+Monastery+Lisbon", wikipedia: "https://hu.wikipedia.org/wiki/Jer%C3%B3nimos-kolostor", googleRating: "4.5", price: "10€/fő" },
         { time: "11:00", title: "🗼 Belém-torony", detail: "Folyóparti séta és rövid fotóblokk.", maps: "https://www.google.com/maps/search/Torre+de+Bel%C3%A9m+Lisbon", wikipedia: "https://hu.wikipedia.org/wiki/Bel%C3%A9m-torony", googleRating: "4.6", price: "8€/fő" },
         { time: "13:00", title: "🍽 Ebéd: Solar dos Presuntos", detail: "Klasszikus portugál húsos hely a belvárosban." },
-        { time: "15:00", title: "🏘 Alfama negyed", detail: "São Jorge vár környéke és kilátók." },
-        { time: "17:30", title: "🚶 Baixa–Chiado séta", detail: "Praça do Comércio és Rua Augusta." },
+        { time: "15:00", title: "🏘 Alfama negyed", detail: "São Jorge vár környéke és kilátók.", placeBox: {
+          title: "Alfama",
+          text: "Alfama Lisszabon legrégebbi és legkarakteresebb negyede, amely a mór korszakot és a középkori utcahálózatot őrzi a leglátványosabban. Szűk utcák, lépcsők, kis terek, kilátópontok és a fado hangulata miatt ez a város leginkább atmoszférikus része.",
+          highlights: [
+            "középkori, réteges utcaszövet",
+            "São Jorge-vár környéke és több miradouro",
+            "a fado és a régi lisszaboni hangulat fő terepe"
+          ],
+          wikipedia: "https://hu.wikipedia.org/wiki/Alfama",
+          maps: "https://www.google.com/maps/search/Alfama+Lisbon"
+        } },
+        { time: "17:30", title: "🚶 Baixa–Chiado séta", detail: "Praça do Comércio és Rua Augusta.", placeBox: {
+          title: "Baixa–Chiado",
+          text: "Baixa a nagy 1755-ös földrengés utáni újjáépített városmag, szabályosabb utcahálózattal, reprezentatív terekkel és kereskedelmi tengelyekkel. Chiado ehhez képest elegánsabb, kulturálisabb és kávéházasabb réteg, így a két negyed együtt mutatja meg a modern nagyvárosi Lisszabon központját.",
+          highlights: [
+            "Praça do Comércio mint folyóparti főtér",
+            "Rua Augusta és az árkádos, klasszikus belvárosi séta",
+            "Chiado: könyves, kávéházas, urbánusabb városi hangulat"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Baixa_(Lisbon)",
+          maps: "https://www.google.com/maps/search/Baixa+Chiado+Lisbon"
+        } },
         { time: "20:00", title: "🍽 Vacsora: Taberna Sal Grosso", detail: "Autentikus alfamai vacsora, foglalással." }
       ],
       daySights: [
@@ -139,8 +274,28 @@ const tripData = {
       ],
       schedule: [
         { time: "08:00", title: "🚆 Rossio → Sintra", detail: "Kb. 40 perc vonat, reggeli indulással." },
-        { time: "09:30", title: "🏰 Palácio Nacional da Pena", detail: "A nap legfontosabb pontja, online időponttal.", maps: "https://www.google.com/maps/search/Pena+Palace+Sintra", wikipedia: "https://en.wikipedia.org/wiki/Pena_Palace", googleRating: "4.4", price: "20€/fő" },
-        { time: "12:00", title: "🌳 Quinta da Regaleira", detail: "Iniciatikus kút és kert.", maps: "https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra", wikipedia: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira", googleRating: "4.8", price: "8€/fő" },
+        { time: "09:30", title: "🏰 Palácio Nacional da Pena", detail: "A nap legfontosabb pontja, online időponttal.", maps: "https://www.google.com/maps/search/Pena+Palace+Sintra", wikipedia: "https://en.wikipedia.org/wiki/Pena_Palace", googleRating: "4.4", price: "20€/fő", placeBox: {
+          title: "Pena-palota",
+          text: "A Pena Sintra legismertebb helye, színes romantikus palota és egyben erős panorámapont is. Itt a korai idősáv sokat számít, mert később gyorsan telítődik a környék és a bejutás is lassabb lesz.",
+          highlights: [
+            "a sintrai nap fő programpontja",
+            "romantikus 19. századi palota",
+            "időpontra vett jeggyel működik a legjobban"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Pena_Palace",
+          maps: "https://www.google.com/maps/search/Pena+Palace+Sintra"
+        } },
+        { time: "12:00", title: "🌳 Quinta da Regaleira", detail: "Iniciatikus kút és kert.", maps: "https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra", wikipedia: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira", googleRating: "4.8", price: "8€/fő", placeBox: {
+          title: "Quinta da Regaleira",
+          text: "A Regaleira a sintrai nap misztikusabb ellenpontja: kert, villa, föld alatti hangulat és az ikonikus iniciatikus kút együtt adják az élményt. A Penához képest kevésbé monumentális, de sokkal játékosabb és felfedezős hely.",
+          highlights: [
+            "iniciatikus kút és szimbolikus kert",
+            "erős második nagy stop a Pena után",
+            "gyalogos bolyongásra ideális"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira",
+          maps: "https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra"
+        } },
         { time: "13:30", title: "🍽 Ebéd Sintra központban", detail: "Rövid, könnyű ebéd." },
         { time: "15:00", title: "🌊 Cabo da Roca opció", detail: "Ha a tempó bírja, beleférhet." },
         { time: "17:30", title: "🚆 Vissza Lisszabonba", detail: "Este már pihenős lezárás." }
@@ -148,6 +303,31 @@ const tripData = {
       daySights: [
         { name: "Pena kastély", googleRating: "4.4", price: "20€/fő", text: "Sintra zászlóshajója, erős korai idősávval működik a legjobban.", wikipedia: "https://en.wikipedia.org/wiki/Pena_Palace", maps: "https://www.google.com/maps/search/Pena+Palace+Sintra" },
         { name: "Quinta da Regaleira", googleRating: "4.8", price: "8€/fő", text: "Titokzatos kert és iniciatikus kút, tökéletes második nagy stop a Pena után.", wikipedia: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira", maps: "https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra" }
+      ],
+      citySummaries: [
+        {
+          title: "🏰 Sintra összefoglaló",
+          subtitle: "UNESCO kulturális táj, palotákkal, hegyekkel és romantikus villákkal.",
+          stats: ["UNESCO: 1995", "Lisszabon térsége", "Sintra-hegység", "romantikus paloták"],
+          paragraphs: [
+            "Sintra a portugál romantikus tájépítészet és rezidenciakultúra egyik csúcspontja, ezért került a világörökségi listára. A városmag és a hegyvidéki környezet együtt alkotják azt a kulturális tájat, amelyben kastélyok, kertek, villák és erdős hegyoldalak fonódnak össze.",
+            "A térség már a középkorban is fontos volt, de mai hírnevét főleg a 19. századi romantikus építészeti hullámnak köszönheti. A Pena-palota ennek ikonikus szimbóluma, míg a Quinta da Regaleira a misztikus, szimbolikus kerteivel különösen erős élmény.",
+            "Sintrát nem klasszikus városként, hanem egymásra épülő helyszínek rendszerként érdemes nézni: központ, kastélyzóna, kertek és a Cabo da Roca felé nyitó atlanti perem együtt adják a karakterét.",
+            "Gasztronómiai szempontból Sintra kisebb léptékű, de erős helyi identitású megálló. A travesseiros és queijadas a legismertebb helyi édességek, ezért a kastélyok közötti napba jól illik egy rövid cukrászdás vagy kávézós pihenő a központban."
+          ],
+          highlights: [
+            "Pena-palota: a térség legikonikusabb helye, romantikus palota és erős panorámapont.",
+            "Quinta da Regaleira: kert, villa és iniciatikus kút, a sintrai nap legmisztikusabb helyszíne.",
+            "Mór vár: ha több idő lenne, ez adná a leginkább katonai-történeti ellenpontot a romantikus paloták mellé.",
+            "Sintra Nemzeti Palota: a városmag királyi rétegét mutatja meg, jellegzetes ikerkéményeivel.",
+            "Cabo da Roca: Európa kontinentális nyugati pereme, erős atlanti lezárás egy hosszabb nap végére."
+          ],
+          sources: [
+            { label: "Wikipedia Sintra", url: "https://en.wikipedia.org/wiki/Sintra", icon: "W" },
+            { label: "Wikipedia Pena", url: "https://en.wikipedia.org/wiki/Pena_Palace", icon: "P" },
+            { label: "Wikipedia Regaleira", url: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira", icon: "R" }
+          ]
+        }
       ]
     },
     {
@@ -172,8 +352,28 @@ const tripData = {
         { label: "Hotel", color: "#b8860b" }
       ],
       schedule: [
-        { time: "09:30", title: "🌿 LX Factory vagy Jardim da Estrela", detail: "Laza reggel, kávéval." },
-        { time: "11:30", title: "🚶 Bica + kilátóblokk", detail: "Miradouro São Pedro de Alcântara környéke." },
+        { time: "09:30", title: "🌿 LX Factory vagy Jardim da Estrela", detail: "Laza reggel, kávéval.", placeBox: {
+          title: "LX Factory / Jardim da Estrela",
+          text: "Ez a blokk a klasszikus történeti központ ellenpontja: vagy egy lazább, kreatív-urbánus reggel az LX Factoryban, vagy egy nyugodtabb parkos indulás a Jardim da Estrelában. Mindkettő jól működik puffernapként, amikor nem kell mindent kipipálni.",
+          highlights: [
+            "LX Factory: ipari-urbánus, kávézós hangulat",
+            "Jardim da Estrela: zöldebb, lassabb reggeli indulás",
+            "jól illik az április 6-i laza nap logikájához"
+          ],
+          maps: "https://www.google.com/maps/search/LX+Factory+Lisbon",
+          wikipedia: "https://en.wikipedia.org/wiki/LX_Factory"
+        } },
+        { time: "11:30", title: "🚶 Bica + kilátóblokk", detail: "Miradouro São Pedro de Alcântara környéke.", placeBox: {
+          title: "Bica és a kilátók",
+          text: "Bica a meredek, sárga siklóval és szűk utcákkal együtt a fotogén lisszaboni városkép egyik röviden is élvezhető része. A São Pedro de Alcântara kilátó ehhez hozzáad egy könnyen elérhető panorámát a város fölött.",
+          highlights: [
+            "klasszikus lisszaboni siklós utcakép",
+            "jó átmenet a laza nap és a városi séta között",
+            "kilátóval együtt rövid blokkban is működik"
+          ],
+          maps: "https://www.google.com/maps/search/Bica+Lisbon",
+          wikipedia: "https://en.wikipedia.org/wiki/Bica_funicular"
+        } },
         { time: "13:00", title: "🍽 Ebéd Chiado / Bairro Alto környékén", detail: "Nyugodt, nem túlvállalt ebéd." },
         { time: "15:00", title: "🛍 Szabad blokk", detail: "Time Out Market, vásárlás vagy pihenés." },
         { time: "17:30", title: "🧳 Pakolás + autós nap előkészítése", detail: "Bérlés, útvonal, parkolás, jegyek." },
@@ -204,41 +404,55 @@ const tripData = {
         { label: "Fátima", color: "#8a4f24" },
         { label: "Porto", color: "#233d7b" }
       ],
-      guides: [
-        {
-          title: "Óbidos – mit érdemes csinálni?",
-          text: "Nem kell túlgondolni: Porta da Vila, Rua Direita, egy rövid várfal-szakasz és a kastély külső része bőven elég 45–60 percben. Parkolni a falakon kívüli külső parkolókban a legegyszerűbb, onnan pár perc séta a kapu.",
-          linkLabel: "Óbidos parkolás és megközelítés",
-          url: "https://turismo.obidos.pt/how-to-get-to-obidos/"
-        },
-        {
-          title: "Nazaré – merre menjetek?",
-          text: "Itt a legerősebb rövid kör a Sítio rész: Miradouro do Suberco, Nossa Senhora da Nazaré szentély, majd Forte de São Miguel Arcanjo / világítótorony a Praia do Norte hullámaihoz. Inkább fent parkoljatok, ne lent a strandnál kezdjetek.",
-          linkLabel: "Nazaré Sítio és kilátó",
-          url: "https://www.nazareportugaltourism.com/guide/miradouro-do-suberco.html"
-        },
-        {
-          title: "Batalha és Fátima – rövid megállós logika",
-          text: "Batalhában a Mosteiro da Batalha a fő attrakció, rövid megállóra is kiváló. Fátimában a Capela das Aparições, a nagy tér és a Basilica of Our Lady of the Rosary a lényeg. Mindkét hely jól működik 45–60 perces blokkban.",
-          linkLabel: "Batalha monostor",
-          url: "https://www.museusemonumentos.pt/en/museus-e-monumentos/mosteiro-da-batalha"
-        },
-        {
-          title: "Fátima parkolás és kegyhelymag",
-          text: "A shrine körül több nagy parkolózóna van, személyautóra gyakran a P4, P5, P6, P10, P12 és P13 parkolók a praktikusak. Rövid körre a kegyhely központi része elég.",
-          linkLabel: "Fátima szentély",
-          url: "https://www.fatima.pt/en/pages/places-of-the-apparitions"
-        }
-      ],
       schedule: [
         { time: "09:00", title: "🚗 Indulás Lisszabonból", detail: "Az autót vagy előző este veszed fel, vagy közvetlenül indulás előtt." },
-        { time: "10:00", title: "🏰 Óbidos", detail: "Kb. 45–60 perc: Porta da Vila, Rua Direita, rövid fal-szakasz és a kastély külső része.", meta: "A falakon kívüli parkolók a legpraktikusabbak.", maps: "https://www.google.com/maps/search/%C3%93bidos+Portugal", wikipedia: "https://en.wikipedia.org/wiki/%C3%93bidos,_Portugal", googleRating: "4.7", price: "Ingyenes" },
+        { time: "10:00", title: "🏰 Óbidos", detail: "Kb. 45–60 perc: Porta da Vila, Rua Direita, rövid fal-szakasz és a kastély külső része.", meta: "A falakon kívüli parkolók a legpraktikusabbak.", maps: "https://www.google.com/maps/search/%C3%93bidos+Portugal", wikipedia: "https://en.wikipedia.org/wiki/%C3%93bidos,_Portugal", googleRating: "4.7", price: "Ingyenes", placeBox: {
+          title: "Óbidos – rövid megállós logika",
+          text: "Óbidosnál nem érdemes túlbonyolítani a napot: Porta da Vila, Rua Direita, egy rövid várfal-szakasz és a kastély külső része bőven elég. Parkolni a falakon kívüli külső parkolókban a legegyszerűbb, onnan pár perc séta a kapu.",
+          highlights: [
+            "45–60 percben is teljes élményt ad",
+            "a városforma fontosabb, mint a sok külön programpont",
+            "külső parkolóból érdemes indulni"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/%C3%93bidos,_Portugal",
+          maps: "https://www.google.com/maps/search/%C3%93bidos+Portugal"
+        } },
         { time: "11:00", title: "🚗 Óbidos → Nazaré", detail: "Kb. 35–60 perc." },
-        { time: "12:00", title: "🌊 Nazaré – Sítio", detail: "Kb. 1.5–2 óra: Miradouro do Suberco, Nossa Senhora da Nazaré és a Forte / világítótorony.", meta: "Érdemes rögtön fent parkolni, nem a lenti strandos résznél.", maps: "https://www.google.com/maps/search/Miradouro+do+Suberco+Nazar%C3%A9", wikipedia: "https://en.wikipedia.org/wiki/Nazar%C3%A9,_Portugal", googleRating: "4.7", price: "Ingyenes / opcionális" },
+        { time: "12:00", title: "🌊 Nazaré – Sítio", detail: "Kb. 1.5–2 óra: Miradouro do Suberco, Nossa Senhora da Nazaré és a Forte / világítótorony.", meta: "Érdemes rögtön fent parkolni, nem a lenti strandos résznél.", maps: "https://www.google.com/maps/search/Miradouro+do+Suberco+Nazar%C3%A9", wikipedia: "https://en.wikipedia.org/wiki/Nazar%C3%A9,_Portugal", googleRating: "4.7", price: "Ingyenes / opcionális", placeBox: {
+          title: "Nazaré – merre menjetek?",
+          text: "Nazaréban a legerősebb rövid kör a Sítio rész: Miradouro do Suberco, Nossa Senhora da Nazaré szentély, majd a Forte de São Miguel Arcanjo / világítótorony a Praia do Norte hullámaihoz. Inkább fent parkoljatok, ne a lenti strandnál kezdjetek.",
+          highlights: [
+            "a felső rész a rövid stop legjobb verziója",
+            "kilátó + szentély + forte együtt ad teljes kört",
+            "nem kell lemenni a klasszikus strandrészhez"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Nazar%C3%A9,_Portugal",
+          maps: "https://www.google.com/maps/search/Miradouro+do+Suberco+Nazar%C3%A9"
+        } },
         { time: "14:00", title: "🚗 Nazaré → Batalha", detail: "Kb. 32–33 perc." },
-        { time: "14:40", title: "⛪ Mosteiro da Batalha", detail: "45–60 perc, rövid megállóra is kiváló UNESCO-helyszín.", meta: "A monostor közeli parkolóiból pár perc séta a bejárat.", maps: "https://www.google.com/maps/search/Batalha+Monastery", wikipedia: "https://hu.wikipedia.org/wiki/Batalhai_kolostor", googleRating: "4.7", price: "helyszíni jegy" },
+        { time: "14:40", title: "⛪ Mosteiro da Batalha", detail: "45–60 perc, rövid megállóra is kiváló UNESCO-helyszín.", meta: "A monostor közeli parkolóiból pár perc séta a bejárat.", maps: "https://www.google.com/maps/search/Batalha+Monastery", wikipedia: "https://hu.wikipedia.org/wiki/Batalhai_kolostor", googleRating: "4.7", price: "helyszíni jegy", placeBox: {
+          title: "Batalha – rövid, de súlyos stop",
+          text: "Batalhában a Mosteiro da Batalha a fő attrakció, rövid megállóra is kiváló. A monostor miatt a hely történeti súlya sokkal nagyobb, mint amit a kisvárosi méret elsőre sugall.",
+          highlights: [
+            "UNESCO-helyszín rövid megállóra is",
+            "a fő élmény maga a monostor",
+            "közeli parkolóval egyszerűen kezelhető"
+          ],
+          wikipedia: "https://hu.wikipedia.org/wiki/Batalhai_kolostor",
+          maps: "https://www.google.com/maps/search/Batalha+Monastery"
+        } },
         { time: "15:45", title: "🚗 Batalha → Fátima", detail: "Kb. 24 perc." },
-        { time: "16:15", title: "🕊 Fátima szentély", detail: "45–60 perc: Capela das Aparições, a nagy tér és a Basilica of Our Lady of the Rosary.", meta: "A nagy külső parkolók közül a P4/P5/P6/P10/P12/P13 a legismertebb zónák.", maps: "https://www.google.com/maps/search/Sanctuary+of+F%C3%A1tima", wikipedia: "https://hu.wikipedia.org/wiki/F%C3%A1tima_(Portug%C3%A1lia)", googleRating: "4.8", price: "Ingyenes" },
+        { time: "16:15", title: "🕊 Fátima szentély", detail: "45–60 perc: Capela das Aparições, a nagy tér és a Basilica of Our Lady of the Rosary.", meta: "A nagy külső parkolók közül a P4/P5/P6/P10/P12/P13 a legismertebb zónák.", maps: "https://www.google.com/maps/search/Sanctuary+of+F%C3%A1tima", wikipedia: "https://hu.wikipedia.org/wiki/F%C3%A1tima_(Portug%C3%A1lia)", googleRating: "4.8", price: "Ingyenes", placeBox: {
+          title: "Fátima – kegyhelymag",
+          text: "Fátimában rövid körre a kegyhely központi része elég: Capela das Aparições, a nagy tér és a Basilica of Our Lady of the Rosary. A shrine körül több nagy parkolózóna van, ezért logisztikailag is jól működik egy 45–60 perces blokkban.",
+          highlights: [
+            "a központi kegytér a lényeg",
+            "rövid megállóban is erős élmény",
+            "a P4/P5/P6/P10/P12/P13 zónák a legismertebbek"
+          ],
+          wikipedia: "https://hu.wikipedia.org/wiki/F%C3%A1tima_(Portug%C3%A1lia)",
+          maps: "https://www.google.com/maps/search/Sanctuary+of+F%C3%A1tima"
+        } },
         { time: "17:15", title: "🚗 Fátima → Porto", detail: "Kb. 1 óra 53–54 perc, így a 19:00 körüli portói érkezés reális." },
         { time: "19:15", title: "🏨 Check-in Portóban", detail: "Este már csak vacsora és pihenés." }
       ],
@@ -247,6 +461,93 @@ const tripData = {
         { name: "Nazaré – Sítio + Forte", googleRating: "4.7", price: "Ingyenes / opcionális", text: "A rövid Nazaré-blokk lényege a felső rész, a kilátó és a hullámnéző pont.", wikipedia: "https://en.wikipedia.org/wiki/Nazar%C3%A9,_Portugal", maps: "https://www.google.com/maps/search/Miradouro+do+Suberco+Nazar%C3%A9" },
         { name: "Mosteiro da Batalha", googleRating: "4.7", price: "helyszíni jegy", text: "Rövid megállóra is nagy súlyú UNESCO-helyszín, jól működik ezen a tranzitnapon.", wikipedia: "https://hu.wikipedia.org/wiki/Batalhai_kolostor", maps: "https://www.google.com/maps/search/Batalha+Monastery" },
         { name: "Fátima szentély", googleRating: "4.8", price: "Ingyenes", text: "A kegyhely központi része rövid körben is erős és emlékezetes.", wikipedia: "https://hu.wikipedia.org/wiki/F%C3%A1tima_(Portug%C3%A1lia)", maps: "https://www.google.com/maps/search/Sanctuary+of+F%C3%A1tima" }
+      ],
+      citySummaries: [
+        {
+          title: "🏰 Óbidos összefoglaló",
+          subtitle: "Fallal körülvett középkori város, a portugál királynék városaként is ismert.",
+          stats: ["~11.7 ezer lakos", "Leiria körzet", "középkori falváros", "UNESCO City of Literature"],
+          paragraphs: [
+            "Óbidos neve a latin oppidum szóból ered, és a település már a római korszakban is lakott volt. A mai dombtetőre szervezett erődített városkép a mór és a középkori portugál korszak öröksége.",
+            "A várost 1148-ban foglalták vissza a móroktól, majd a portugál királynékhoz kötődő patrónusi hagyomány miatt gyakran a 'királynék városának' is nevezik. Ez a királyi kapcsolat sokáig meghatározta a település rangját és fejlődését.",
+            "Utazóként Óbidos legerősebb élménye maga a kompakt városi szövet: kapuk, falak, keskeny utcák és a vár együttese. Rövid megállóként is működik, mert maga a városforma a fő látnivaló.",
+            "Gasztronómiai szinten Óbidos legismertebb turistás jelképe a ginjinha csokipohárban, de itt inkább a gyors, hangulati megálló a lényeg. Nem étkezős főállomásként, hanem középkori ráhangolódásként működik igazán jól."
+          ],
+          highlights: [
+            "Porta da Vila és a középkori falrendszer: az érkezés utáni legerősebb első benyomás.",
+            "Rua Direita: a fő gyalogos tengely, boltokkal, kőházakkal és gyors városi orientációval.",
+            "Óbidos vára és a magaslati városkép: kívülről és belülről is jól működő rövid fotós pont.",
+            "Irodalmi és fesztiválváros jelleg: a hely nem csak díszlet, hanem aktív kulturális identitással is bír."
+          ],
+          sources: [
+            { label: "Wikipedia Óbidos", url: "https://en.wikipedia.org/wiki/%C3%93bidos,_Portugal", icon: "W" }
+          ]
+        },
+        {
+          title: "🌊 Nazaré összefoglaló",
+          subtitle: "Atlanti üdülőváros, világhírű hullámokkal és kettős településszerkezettel.",
+          stats: ["~14.9 ezer lakos", "Costa de Prata", "Praia + Sítio", "óriáshullámok"],
+          paragraphs: [
+            "Nazaré ma egyszerre hagyományos tengerparti város és globálisan ismert szörfhelyszín. A település három fő részből áll, de a látogatók számára a Praia és a magasabban fekvő Sítio a két legfontosabb zóna.",
+            "A mai hírnevét a Nazaré-kanyonhoz kötődő óriáshullámok adták, de vallási és helyi identitás szempontjából a Nossa Senhora da Nazaré kultusza és a Sítio magaslati zónája legalább ilyen fontos.",
+            "Rövid megállónál érdemes a felső részt választani: innen egyszerre látszik a part, a hullámtörési zóna és a történeti-vallási központ.",
+            "Gasztronómiában Nazaré erősen tengeri karakterű hely, klasszikus haltálakkal, grillezett halakkal és egyszerű part menti éttermekkel. Ezen az útvonalon viszont inkább kilátó- és élménystopként működik, nem fő ebédvárosként."
+          ],
+          highlights: [
+            "Sítio és Miradouro do Suberco: a legfontosabb nézőpont, ahonnan a város kettős szerkezete jól érthető.",
+            "Nossa Senhora da Nazaré szentély: a hely vallási és identitásbeli középpontja.",
+            "Praia do Norte és a nagy hullámok világa: Nazaré globális ismertségének fő oka.",
+            "Forte de São Miguel Arcanjo: rövid, erős fotós végpont a hullámnéző körhöz."
+          ],
+          sources: [
+            { label: "Wikipedia Nazaré", url: "https://en.wikipedia.org/wiki/Nazar%C3%A9,_Portugal", icon: "W" }
+          ]
+        },
+        {
+          title: "⛪ Batalha és Fátima összefoglaló",
+          subtitle: "Egy történeti emlékezethely és egy globális zarándokközpont ugyanazon napon.",
+          stats: ["Batalha: 1385 emlékezete", "UNESCO monostor", "Fátima: 1917 apparíciók", "6–8 millió zarándok/év"],
+          paragraphs: [
+            "Batalha neve szó szerint 'csatát' jelent, és a település a portugál függetlenség szimbolikus győzelméhez, az 1385-ös aljubarrotai csatához kötődik. A Santa Maria da Vitória kolostort I. János király alapította ennek emlékére, és ez lett a város identitásának magja.",
+            "Fátima egészen más korszakhoz és jelentésréteghez tartozik: a város nemzeti és nemzetközi jelentőségét az 1917-es Mária-jelenések története adta meg. A kegyhely mára a katolikus világ egyik legfontosabb zarándokhelye.",
+            "A két hely együtt különösen érdekes: Batalha a középkori állam megszilárdulásának emlékezete, Fátima pedig a 20. századi vallási tömegturizmus és zarándoklat egyik fő európai központja.",
+            "Gasztronómia szempontból egyik hely sem a trip kulináris csúcspontja, itt inkább a rövid, funkcionális megálló a jó logika. A hangsúly a történeti és spirituális súlyon van, nem a hosszú étkezésen."
+          ],
+          highlights: [
+            "Mosteiro da Batalha: a nap legerősebb középkori emléke, rövid megállóra is nagy súlyú.",
+            "UNESCO világörökségi jelentőség: Batalha országos és nem csak regionális jelentőségű hely.",
+            "Capela das Aparições és a nagy zarándoktér: Fátima lényegi magja rövid körben is jól érthető.",
+            "A bazilikák és a kegyhely központi tengelye: a vallási tér monumentalitása itt a fő élmény."
+          ],
+          sources: [
+            { label: "Wikipedia Batalha", url: "https://en.wikipedia.org/wiki/Batalha,_Portugal", icon: "W" },
+            { label: "Wikipedia Fátima", url: "https://en.wikipedia.org/wiki/F%C3%A1tima,_Portugal", icon: "F" }
+          ]
+        },
+        {
+          title: "🌉 Porto összefoglaló",
+          subtitle: "Portugália második városa, a Douro torkolatánál, történelmi világörökségi maggal.",
+          stats: ["~252 ezer lakos", "Portugália 2. legnagyobb városa", "UNESCO: 1996", "Port wine névadó város"],
+          paragraphs: [
+            "Porto Portugália második legnagyobb városa, és a Douro tölcsértorkolatánál fekvő történeti magja az ország egyik legfontosabb városi örökségterülete. A város római előzményei és a Portus Cale névkapcsolat révén a portugál államnév eredetével is összefüggésbe hozzák.",
+            "A mai Porto karakterét a meredek domboldalak, a folyóparti kereskedelmi múlt, a barokk templomok, azulejo-hagyomány és a Gaia felé nyitó boros infrastruktúra együtt határozza meg. A történeti központ, a Luís I híd és a Serra do Pilar együtt kerültek UNESCO-védelem alá.",
+            "A rövid városi látogatás legerősebb tengelye a São Bento–Sé–Clérigos–Lello–Ribeira–Gaia vonal. Ez egyszerre mutatja meg Porto történeti, vallási, kereskedelmi és vizuális identitását.",
+            "Gasztronómiában Porto sokkal robusztusabb és direktebb, mint Lisszabon: francesinha, bifana, grillezett húsok, gazdag desszertek és természetesen a portói bor a város kulcselemei. Gaia pincéi ezért nem csak turisztikai pontok, hanem a városi identitás részei is."
+          ],
+          highlights: [
+            "UNESCO történelmi központ: sűrű, emelkedőkkel és szűk utcákkal teli városi szövet.",
+            "São Bento és az azulejo kultúra: Porto egyik legerősebb rövid belépési pontja.",
+            "Sé és Clérigos: a vallási és panorámás Porto két kulcseleme.",
+            "Livraria Lello: turisztikus, de vizuálisan még mindig erős állomás.",
+            "Ribeira + Dom Luís I híd: az ikonikus képeslap-Porto magja.",
+            "Port wine és Gaia pincéi: a város gazdasági és gasztronómiai identitásának lényege."
+          ],
+          sources: [
+            { label: "Wikipedia Porto", url: "https://en.wikipedia.org/wiki/Porto", icon: "W" },
+            { label: "Wikipedia São Bento", url: "https://hu.wikipedia.org/wiki/S%C3%A3o_Bento_p%C3%A1lyaudvar_(Porto)", icon: "S" },
+            { label: "Wikipedia Luís I Bridge", url: "https://en.wikipedia.org/wiki/Dom_Lu%C3%ADs_I_Bridge", icon: "B" }
+          ]
+        }
       ]
     },
     {
@@ -272,35 +573,63 @@ const tripData = {
         { label: "Ribeira", color: "#233d7b" },
         { label: "Gaia", color: "#b8860b" }
       ],
-      guides: [
-        {
+      schedule: [
+        { time: "09:30", title: "🚗 Autó letétele", detail: "Egész napos városi séta indul innen.", meta: "Saba Cardosas / Saba Ribeira / Silo Auto.", placeBox: {
           title: "Porto parkolás – melyik garázs a jó?",
           text: "Ha a felső belvárosi blokk a fontos, a Saba Cardosas a legpraktikusabb, mert közel van São Bentóhoz, a Séhez, Clérigoshoz és a gyalogos központhoz. Ribeira-fókuszhoz a Saba Ribeira jobb, egyszerű nagy bázisnak pedig a Silo Auto működik.",
-          linkLabel: "Saba Cardosas parkoló",
-          url: "https://www.saba.pt/pt/estacionamento-porto/parque-de-estacionamento-saba-cardosas"
-        },
-        {
-          title: "Livraria Lello – miért kell előre nézni?",
-          text: "A Lello jegyes, voucher-rendszerű belépéssel működik, ezért időpont nélkül könnyen sorban állós, kellemetlen programpont lesz. A napi Porto-körben sokkal jobban működik fix idősávval.",
-          linkLabel: "Livraria Lello jegyek",
-          url: "https://www.livrarialello.pt/en/home"
-        },
-        {
-          title: "A porto-i klasszikus kör",
-          text: "A legerősebb, klasszikus városi sorrend: São Bento, Sé, Clérigos, Lello, majd Ribeira és a Dom Luís I híd, végül a túlparton Gaia és a port wine cellars.",
-          linkLabel: "Porto fő látnivalók",
-          url: "https://www.tripadvisor.com/Attractions-g189180-Activities-Porto_Porto_District_Northern_Portugal.html"
-        }
-      ],
-      schedule: [
-        { time: "09:30", title: "🚗 Autó letétele", detail: "Egész napos városi séta indul innen.", meta: "Saba Cardosas / Saba Ribeira / Silo Auto." },
-        { time: "10:00", title: "🚉 São Bento", detail: "10–15 perc, de kihagyhatatlan azulejo-fal.", maps: "https://www.google.com/maps/search/S%C3%A3o+Bento+Station+Porto", wikipedia: "https://hu.wikipedia.org/wiki/S%C3%A3o_Bento_p%C3%A1lyaudvar_(Porto)", googleRating: "4.7", price: "Ingyenes" },
+          highlights: [
+            "felső belvároshoz Cardosas",
+            "folyóparti fókuszhoz Ribeira",
+            "egyszerű bázisnak Silo Auto"
+          ],
+          maps: "https://www.google.com/maps/search/Saba+Cardosas+Porto"
+        } },
+        { time: "10:00", title: "🚉 São Bento", detail: "10–15 perc, de kihagyhatatlan azulejo-fal.", maps: "https://www.google.com/maps/search/S%C3%A3o+Bento+Station+Porto", wikipedia: "https://hu.wikipedia.org/wiki/S%C3%A3o_Bento_p%C3%A1lyaudvar_(Porto)", googleRating: "4.7", price: "Ingyenes", placeBox: {
+          title: "São Bento pályaudvar",
+          text: "A São Bento rövid idővel is erős stop, mert azulejo-falai azonnal megadják Porto vizuális karakterét. Ideális első belépési pont a városba, mert központi helyen van és gyorsan átfordul a séta a környező negyedekbe.",
+          highlights: [
+            "ikonikus azulejo-falak",
+            "nagyon rövid idővel is megéri",
+            "jó kiindulópont a belvárosi körhöz"
+          ],
+          wikipedia: "https://hu.wikipedia.org/wiki/S%C3%A3o_Bento_p%C3%A1lyaudvar_(Porto)",
+          maps: "https://www.google.com/maps/search/S%C3%A3o+Bento+Station+Porto"
+        } },
         { time: "10:30", title: "⛪ Sé do Porto + kilátás", detail: "30–45 perc a katedrális körül.", maps: "https://www.google.com/maps/search/S%C3%A9+do+Porto", wikipedia: "https://en.wikipedia.org/wiki/Porto_Cathedral", googleRating: "4.6", price: "részben ingyenes" },
         { time: "11:30", title: "🗼 Clérigos", detail: "45–60 perc a toronnyal és a környező utcákkal.", maps: "https://www.google.com/maps/search/Cl%C3%A9rigos+Tower+Porto", wikipedia: "https://en.wikipedia.org/wiki/Cl%C3%A9rigos_Church", googleRating: "4.5", price: "8€/fő" },
-        { time: "12:45", title: "📚 Livraria Lello", detail: "30–45 perc, előre vett időpontos jeggyel.", meta: "A voucher-rendszer miatt érdemes előre foglalni.", maps: "https://www.google.com/maps/search/Livraria+Lello", wikipedia: "https://en.wikipedia.org/wiki/Livraria_Lello", googleRating: "4.1", price: "jegyes belépés" },
+        { time: "12:45", title: "📚 Livraria Lello", detail: "30–45 perc, előre vett időpontos jeggyel.", meta: "A voucher-rendszer miatt érdemes előre foglalni.", maps: "https://www.google.com/maps/search/Livraria+Lello", wikipedia: "https://en.wikipedia.org/wiki/Livraria_Lello", googleRating: "4.1", price: "jegyes belépés", placeBox: {
+          title: "Livraria Lello – miért kell előre nézni?",
+          text: "A Lello jegyes, voucher-rendszerű belépéssel működik, ezért időpont nélkül könnyen sorban állós, kellemetlen programpont lesz. A napi Porto-körben sokkal jobban működik fix idősávval, különben szétesik a séta ritmusa.",
+          highlights: [
+            "időpontra foglalva működik jól",
+            "sorban állás nélkül marad kompakt a nap",
+            "vizuálisan erős, de túlturistás pont"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Livraria_Lello",
+          maps: "https://www.google.com/maps/search/Livraria+Lello"
+        } },
         { time: "14:00", title: "🍽 Ebéd a belvárosban", detail: "Rövid szünet a délelőtti blokk után." },
-        { time: "15:30", title: "🏘 Ribeira + Dom Luís I híd", detail: "A klasszikus folyóparti Porto-élmény.", maps: "https://www.google.com/maps/search/Dom+Lu%C3%ADs+I+Bridge", wikipedia: "https://en.wikipedia.org/wiki/Dom_Lu%C3%ADs_I_Bridge", googleRating: "4.8", price: "Ingyenes" },
-        { time: "17:30", title: "🍷 Gaia borospincék", detail: "Késő délutáni/esti pinceblokk a túlparton." },
+        { time: "15:30", title: "🏘 Ribeira + Dom Luís I híd", detail: "A klasszikus folyóparti Porto-élmény.", maps: "https://www.google.com/maps/search/Dom+Lu%C3%ADs+I+Bridge", wikipedia: "https://en.wikipedia.org/wiki/Dom_Lu%C3%ADs_I_Bridge", googleRating: "4.8", price: "Ingyenes", placeBox: {
+          title: "A porto-i klasszikus kör",
+          text: "A legerősebb, klasszikus városi sorrend a São Bento–Sé–Clérigos–Lello után Ribeira és a Dom Luís I híd, majd a túlparton Gaia. Ez a blokk adja meg Porto képeslap-szerű, folyóparti identitását.",
+          highlights: [
+            "Ribeira a legikonikusabb folyóparti rész",
+            "a híd a városkép kulcseleme",
+            "innen természetesen vezet át az út Gaiába"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Dom_Lu%C3%ADs_I_Bridge",
+          maps: "https://www.google.com/maps/search/Dom+Lu%C3%ADs+I+Bridge"
+        } },
+        { time: "17:30", title: "🍷 Gaia borospincék", detail: "Késő délutáni/esti pinceblokk a túlparton.", placeBox: {
+          title: "Gaia borospincék",
+          text: "Gaia nem külön mellékszereplő, hanem a portói bor identitásának tényleges túlparti bázisa. A nap végére azért jó ide tenni ezt a blokkot, mert addigra már nincs szükség komoly gyalogos tempóra, csak kilátásra, borra és lassabb lezárásra.",
+          highlights: [
+            "port wine cellar élmény",
+            "esti lezárásnak ideális",
+            "Porto látképe innen különösen erős"
+          ],
+          maps: "https://www.google.com/maps/search/Vila+Nova+de+Gaia+wine+cellars"
+        } },
         { time: "20:30", title: "🍽 Porto esti vacsora", detail: "A nap lezárása a városban vagy Gaiában." }
       ],
       daySights: [
@@ -333,46 +662,92 @@ const tripData = {
         { label: "Loivos", color: "#1f5a3e" },
         { label: "Pinhão", color: "#b8860b" }
       ],
-      guides: [
-        {
-          title: "Douro-nap logikája Porto felől",
-          text: "A gyors kijutás Porto felől az A4 → A24 útvonalon megy, Régua felé. A szép rész utána kezdődik, a Régua–Pinhão közti N222 szakaszon, amit a helyi guide-ok újra és újra kiemelnek a régió egyik legjobb panorámaútjaként.",
-          linkLabel: "Douro-völgy guide",
-          url: "https://porto-north-portugal.com/porto-guide/douro-valley-portugal.html"
-        },
-        {
-          title: "Pinhão Station és Casal de Loivos",
-          text: "A Pinhão Station rövid fotómegállónak is erős pont, a homlokzatán 25 azulejo panel van. A Casal de Loivos kilátó pedig a klasszikus képeslapnézet Pinhão fölött.",
-          linkLabel: "Pinhão Station",
-          url: "https://www.visitportugal.com/en/NR/exeres/7620ADD3-6D40-4E9F-9712-6B1DD244C2C4"
-        },
-        {
-          title: "Borászat és kóstoló – mikor, hol?",
-          text: "Útközbeni pincének a Quinta do Vallado jó opció, de ha még vezetni kell, inkább csak rövid nézelődés vagy ebéd legyen. A fő kóstolót sokkal jobb már Pinhãóban, autó nélkül letudni, például a Quinta do Bomfimnél.",
-          linkLabel: "Quinta do Vallado",
-          url: "https://www.quintadovallado.com/en/wine-tourism/visits-tastings-gastronomy/"
-        },
-        {
-          title: "Pinhão szállás – két erős irány",
-          text: "Praktikumra The Vintage House + Quinta do Bomfim jó kombináció. Ha inkább all-in-one hangulat kell, a Quinta de la Rosa szállás + borászat + vacsora együtt nagyon erős választás.",
-          linkLabel: "Quinta de la Rosa",
-          url: "https://www.quintadelarosa.com/"
-        }
-      ],
       schedule: [
-        { time: "09:00", title: "🚗 Indulás Portóból", detail: "A4 → A24 irányban gyors kijutás a völgy felé." },
+        { time: "09:00", title: "🚗 Indulás Portóból", detail: "A4 → A24 irányban gyors kijutás a völgy felé.", placeBox: {
+          title: "Douro-nap logikája Porto felől",
+          text: "A gyors kijutás Porto felől az A4 → A24 útvonalon megy Régua felé. A látványos rész utána kezdődik, a Régua–Pinhão közti N222 szakaszon, ezért az elején nem érdemes romantikusan kerülgetni.",
+          highlights: [
+            "előbb gyors kijutás, utána panoráma",
+            "Régua a belépési kapu",
+            "az N222 a nap kulcsszakasza"
+          ],
+          maps: "https://www.google.com/maps/search/Peso+da+R%C3%A9gua"
+        } },
         { time: "10:15", title: "📍 Régua", detail: "Rövid technikai vagy kávés megálló." },
-        { time: "11:00", title: "🛣 N222 panorámaút", detail: "A Douro egyik legjobb panorámaútja Régua és Pinhão között.", maps: "https://www.google.com/maps/search/N222+Douro", wikipedia: "https://en.wikipedia.org/wiki/EN222", googleRating: "4.8", price: "Ingyenes" },
-        { time: "12:00", title: "🌅 Casal de Loivos", detail: "Klasszikus képeslapnézet Pinhão fölött.", maps: "https://www.google.com/maps/search/Casal+de+Loivos+Viewpoint", wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o,_Alij%C3%B3", googleRating: "4.8", price: "Ingyenes" },
-        { time: "13:00", title: "🚉 Pinhão Station", detail: "Rövid fotómegálló az azulejo paneleknél.", maps: "https://www.google.com/maps/search/Pinh%C3%A3o+Station", wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o", googleRating: "4.4", price: "Ingyenes" },
+        { time: "11:00", title: "🛣 N222 panorámaút", detail: "A Douro egyik legjobb panorámaútja Régua és Pinhão között.", maps: "https://www.google.com/maps/search/N222+Douro", wikipedia: "https://en.wikipedia.org/wiki/EN222", googleRating: "4.8", price: "Ingyenes", placeBox: {
+          title: "N222 – maga az út is látnivaló",
+          text: "Az N222 a Douro-nap lényege, nem csak összekötő szakasz. Itt a teraszos szőlők, a folyó és az út ritmusa együtt adják azt a tájélményt, ami miatt külön napot kap a völgy.",
+          highlights: [
+            "Régua és Pinhão közti kulcsszakasz",
+            "autós panorámaélmény",
+            "nem érdemes sietve átrohanni rajta"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/EN222",
+          maps: "https://www.google.com/maps/search/N222+Douro"
+        } },
+        { time: "12:00", title: "🌅 Casal de Loivos", detail: "Klasszikus képeslapnézet Pinhão fölött.", maps: "https://www.google.com/maps/search/Casal+de+Loivos+Viewpoint", wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o,_Alij%C3%B3", googleRating: "4.8", price: "Ingyenes", placeBox: {
+          title: "Casal de Loivos kilátó",
+          text: "Ez az egyik legismertebb nézőpont Pinhão fölött, és tényleg a klasszikus képeslapnézetet adja. Rövid megállónak ideális, mert nagy vizuális hatást ad kevés időért.",
+          highlights: [
+            "rövid stopként is erős",
+            "a Douro-völgy ikonikus látképe",
+            "Pinhão előtt jó hangulati tetőpont"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o,_Alij%C3%B3",
+          maps: "https://www.google.com/maps/search/Casal+de+Loivos+Viewpoint"
+        } },
+        { time: "13:00", title: "🚉 Pinhão Station", detail: "Rövid fotómegálló az azulejo paneleknél.", maps: "https://www.google.com/maps/search/Pinh%C3%A3o+Station", wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o", googleRating: "4.4", price: "Ingyenes", placeBox: {
+          title: "Pinhão Station",
+          text: "A Pinhão Station rövid fotómegállónak is erős pont, a homlokzatán és belső világában az azulejo-panelek miatt. Jó, gyors helyi identitás-sűrítmény, mielőtt átfordul a nap a szállásra és a borkóstolóra.",
+          highlights: [
+            "25 azulejo paneles állomás",
+            "rövid fotóstopként is működik",
+            "jó átmenet a tájélményből a falusi magba"
+          ],
+          wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o",
+          maps: "https://www.google.com/maps/search/Pinh%C3%A3o+Station"
+        } },
         { time: "14:00", title: "🏨 Check-in Pinhãóban", detail: "The Vintage House, LBV House vagy Quinta de la Rosa." },
-        { time: "16:00", title: "🍷 Kóstoló Pinhãóban", detail: "A fő kóstoló már autó nélkül legyen.", meta: "Praktikus: Quinta do Bomfim. All-in-one: Quinta de la Rosa." },
+        { time: "16:00", title: "🍷 Kóstoló Pinhãóban", detail: "A fő kóstoló már autó nélkül legyen.", meta: "Praktikus: Quinta do Bomfim. All-in-one: Quinta de la Rosa.", placeBox: {
+          title: "Borászat és kóstoló – mikor, hol?",
+          text: "Útközbeni pincének a Quinta do Vallado jó opció lehet, de ha még vezetni kell, inkább csak rövid nézelődés vagy ebéd legyen. A fő kóstolót sokkal jobb már Pinhãóban, autó nélkül letudni, például a Quinta do Bomfimnél vagy egy all-in-one Quinta de la Rosa estén.",
+          highlights: [
+            "a fő kóstoló már ne vezetés előtt legyen",
+            "praktikus: Quinta do Bomfim",
+            "hangulatos all-in-one: Quinta de la Rosa"
+          ],
+          maps: "https://www.google.com/maps/search/Quinta+do+Bomfim+Pinh%C3%A3o"
+        } },
         { time: "19:30", title: "🍽 Vacsora és ott alvás", detail: "Nyugodt esti lezárás a völgyben." }
       ],
       daySights: [
         { name: "N222 panorámaút", googleRating: "4.8", price: "Ingyenes", text: "A Douro egyik legszebb autós szakasza, itt maga az út is látnivaló.", wikipedia: "https://en.wikipedia.org/wiki/EN222", maps: "https://www.google.com/maps/search/N222+Douro" },
         { name: "Casal de Loivos kilátó", googleRating: "4.8", price: "Ingyenes", text: "A klasszikus képeslapnézet Pinhão fölött, rövid stopként is megéri.", wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o,_Alij%C3%B3", maps: "https://www.google.com/maps/search/Casal+de+Loivos+Viewpoint" },
         { name: "Pinhão Station", googleRating: "4.4", price: "Ingyenes", text: "Azulejo paneles állomás, rövid fotómegállóra tökéletes.", wikipedia: "https://en.wikipedia.org/wiki/Pinh%C3%A3o", maps: "https://www.google.com/maps/search/Pinh%C3%A3o+Station" }
+      ],
+      citySummaries: [
+        {
+          title: "🍇 Régua és Pinhão összefoglaló",
+          subtitle: "A Douro borvidék központi városi kapuja és a portói borkultúra szíve.",
+          stats: ["Régua: a Douro központja", "Pinhão: 622 lakos (2021)", "portói borvidék magja", "UNESCO kultúrtáj"],
+          paragraphs: [
+            "Peso da Régua a Douro demarkált borvidék egyik adminisztratív és kereskedelmi központja lett, különösen azután, hogy a térség 18. századi szabályozása és exportlogikája megerősítette a borvidék központi szerepét. A várost gyakran a szőlő és a bor nemzetközi központjaként is emlegetik.",
+            "Pinhão ezzel szemben kisebb léptékű, de a Douro-völgy ikonikus falusi-vasúti-borászati világát testesíti meg. A település a Douro jobb partján fekszik, és a régió legismertebb quintáinak többike is innen könnyen elérhető.",
+            "A két hely együtt értelmezhető igazán: Régua a kapu és csomópont, Pinhão pedig a sűrített tájélmény. A vasútállomás azulejo-paneljei, a folyópart, a kilátók és a teraszos szőlők együtt adják a Douro leginkább 'képeslapszerű' arcát.",
+            "Gasztronómiailag ez már egyértelműen borvidéki tér: a borkóstoló, a folyóparti vacsora, a quinták és a helyi alapanyagokra épülő nyugodtabb étkezés a lényeg. Itt kevésbé a sok látnivaló, inkább a táj, a bor és az esti lelassulás a fő élmény."
+          ],
+          highlights: [
+            "Régua mint a borvidék központi városi bázisa és belépési pontja.",
+            "Pinhão mint a portói borkultúra szíve, kisebb léptékű, de ikonikus környezettel.",
+            "N222 és a panorámaút-logika: itt maga az út is a program része.",
+            "Azulejo állomás, quinták és kilátók: a Douro-völgy leginkább emlékezetes elemei egy blokkban."
+          ],
+          sources: [
+            { label: "Wikipedia Régua", url: "https://en.wikipedia.org/wiki/Peso_da_R%C3%A9gua", icon: "W" },
+            { label: "Wikipedia Pinhão (pt)", url: "https://pt.wikipedia.org/wiki/Pinh%C3%A3o_%28Alij%C3%B3%29", icon: "P" },
+            { label: "Wikipedia Pinhão Station", url: "https://en.wikipedia.org/wiki/Pinh%C3%A3o_railway_station", icon: "T" }
+          ]
+        }
       ]
     },
     {

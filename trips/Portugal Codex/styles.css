@@ -193,6 +193,31 @@ a {
   padding: 18px;
 }
 
+.section-intro {
+  margin-bottom: 16px;
+}
+
+.section-intro h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.section-intro p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.intro-subsection {
+  margin: 12px 0;
+}
+
+.intro-subsection h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
 .section-title {
   margin: 0 0 14px;
   font-size: 18px;
@@ -362,23 +387,123 @@ a {
 }
 
 .day-body {
-  padding: 12px 16px 14px;
+  padding: 6px 12px 8px;
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(250px, 0.8fr);
-  gap: 14px;
+  gap: 8px;
+}
+
+.city-summary-band {
+  margin: 0;
+  padding: 14px 16px 12px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, #f3ecdf, #ede2d2);
+}
+
+.city-summary-band + .city-summary-band {
+  border-top: 0;
+}
+
+.city-summary-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.city-summary-title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.city-summary-sub {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.city-summary-stats {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.city-stat {
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(220, 207, 188, 0.9);
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.city-summary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+  gap: 12px;
+}
+
+.city-summary-grid p {
+  margin: 0 0 8px;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.city-summary-grid p:last-child {
+  margin-bottom: 0;
+}
+
+.city-highlights {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.city-sources {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+.source-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.8);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.source-icon:hover {
+  background: white;
 }
 
 .schedule {
   display: grid;
-  gap: 4px;
+  gap: 0;
 }
 
 .schedule-row {
   display: grid;
   grid-template-columns: 76px 1fr;
-  gap: 10px;
+  gap: 8px;
   align-items: start;
-  padding: 7px 0;
+  padding: 3px 0;
   border-bottom: 1px solid rgba(220, 207, 188, 0.55);
 }
 
@@ -387,15 +512,15 @@ a {
 }
 
 .schedule-time {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   color: var(--muted);
   text-transform: uppercase;
-  padding-top: 2px;
+  padding-top: 0;
 }
 
 .schedule-title {
-  margin: 0 0 1px;
+  margin: 0;
   font-size: 13px;
 }
 
@@ -412,12 +537,12 @@ a {
 .schedule-meta {
   margin: 0;
   font-size: 11.5px;
-  line-height: 1.38;
+  line-height: 1.22;
   color: var(--muted);
 }
 
 .schedule-meta {
-  margin-top: 1px;
+  margin-top: 0;
 }
 
 .schedule-links {
@@ -425,8 +550,8 @@ a {
   gap: 8px;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 3px;
-  font-size: 10.5px;
+  margin-top: 1px;
+  font-size: 10px;
   color: var(--muted);
 }
 
@@ -452,21 +577,62 @@ a {
   font-size: 11px;
 }
 
+.place-box {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px solid rgba(220, 207, 188, 0.9);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(247, 242, 234, 0.95), rgba(241, 233, 220, 0.9));
+}
+
+.place-box-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.place-box h4 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.place-box p {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.place-box-links {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.place-box-list {
+  margin: 6px 0 0;
+  padding-left: 16px;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
 .mini-block {
   display: grid;
-  gap: 10px;
+  gap: 6px;
 }
 
 .day-map {
   background: linear-gradient(180deg, #f7f2ea, #f2ece2);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 12px;
+  padding: 7px 9px;
 }
 
 .day-map h4 {
-  margin: 0 0 8px;
-  font-size: 13px;
+  margin: 0 0 4px;
+  font-size: 12.5px;
 }
 
 .day-map svg {
@@ -477,12 +643,12 @@ a {
 
 .note-box {
   border-radius: 14px;
-  padding: 14px;
+  padding: 8px 10px;
   background: rgba(184, 134, 11, 0.1);
   border: 1px solid rgba(184, 134, 11, 0.24);
   color: #5e4922;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.3;
 }
 
 .key-list {
@@ -499,12 +665,25 @@ a {
   gap: 16px;
 }
 
+.restaurant-groups {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.restaurant-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
 .list-card {
   padding: 16px;
 }
 
 .list-card h3 {
-  margin: 0 0 10px;
+  margin: 0;
   font-size: 15px;
 }
 
@@ -515,23 +694,59 @@ a {
   line-height: 1.55;
 }
 
+.restaurant-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.rating-badge {
+  flex: 0 0 auto;
+  min-width: 80px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffd83d, #ffcb05);
+  color: #574100;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.restaurant-head-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.restaurant-meta-line {
+  margin: 3px 0 0 !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+
 .guide-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 10px 12px;
+  padding: 8px 10px;
 }
 
 .guide-card h4 {
   margin: 0 0 4px;
-  font-size: 13px;
+  font-size: 12.5px;
 }
 
 .guide-card p {
   margin: 0 0 6px;
   font-size: 11.5px;
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.25;
+}
+
+.schedule-row > div:last-child {
+  padding-bottom: 0;
 }
 
 .guide-card a {
@@ -611,7 +826,8 @@ a {
 
 @media (max-width: 960px) {
   .overview-grid,
-  .day-body {
+  .day-body,
+  .city-summary-grid {
     grid-template-columns: 1fr;
   }
 
