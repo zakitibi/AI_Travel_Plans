@@ -1,16 +1,126 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Utazások</title>
+  <meta charset="UTF-8" />
+  <title>Travel Plans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+
+    header {
+      padding: 30px;
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .container {
+      padding: 20px 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 20px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      background: #334155;
+      transform: translateY(-4px);
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .title-link {
+      text-decoration: none;
+      color: white;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .link {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Utazások</h1>
-  <ul>
-      <li><a href="trips/portugal/">Portugal</a></li>
-  </ul>
-    <ul>
-      <li><a href="trips/Kozep Azsia/">Közép Ázsia (2026.04)</a></li>
-  </ul>
+
+<header>
+  🌍 Travel Plans
+</header>
+
+<div class="container">
+  <div class="grid">
+
+    <!-- PORTUGAL -->
+    <div class="card">
+
+      <a href="./trips/portugal/" class="title-link">
+        <div class="title">🇵🇹 Portugália 2026 április 3 – 10</div>
+      </a>
+
+      <div class="desc">Alap verzió</div>
+
+      <div class="meta">
+        2026 április 3 – 10<br>
+
+        <a href="./trips/portugal/" class="link">👉 Útiterv</a><br>
+        <a href="./trips/portugal/porto.gpx" target="_blank" class="link">📍 Porto GPX útvonal</a>
+      </div>
+
+    </div>
+
+    <!-- KÖZÉP ÁZSIA -->
+    <div class="card">
+
+      <a href="./trips/Kozep%20Azsia/" class="title-link">
+        <div class="title">🌍 Közép-Ázsia</div>
+      </a>
+
+      <div class="desc">Türkmenisztán + Üzbegisztán</div>
+
+      <div class="meta">
+        2026 május • 10 nap<br>
+
+        <a href="./trips/Kozep%20Azsia/" class="link">👉 Útiterv</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
 </body>
 </html>
