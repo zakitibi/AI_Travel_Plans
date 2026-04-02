@@ -1,1612 +1,240 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🗺 🇵🇹 Portugália 2026 – Útiterv</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',sans-serif;background:#f7f4ef;color:#1a1a1a;font-size:13px}
-.hdr{background:#1a5c2a;color:#fff;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.hdr h1{font-size:19px;font-weight:700}
-.hdr p{font-size:11px;opacity:.75;margin-top:2px}
-.fps{display:flex;gap:8px;flex-wrap:wrap}
-.fp{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:6px 12px;font-size:11px;line-height:1.5}
-.fp b{display:block;font-size:12px}
-.rtbar{background:#fff;border-bottom:1px solid #e0d8cf;padding:8px 24px;display:flex;align-items:center;gap:5px;overflow-x:auto;white-space:nowrap;font-size:10px}
-.rs{border-radius:20px;padding:2px 9px;font-weight:700;font-size:10px;color:#fff}
-.rs.l{background:#1a5c2a}.rs.p{background:#1a2a6c}.rs.s{background:#6c2a1a}.rs.d{background:#c8960c}.rs.r{background:#aa0066}
-.ra{color:#ccc}.rt{color:#999;font-size:9px}
-.tabs{background:#fff;border-bottom:2px solid #e0d8cf;padding:0 20px;display:flex;overflow-x:auto;gap:0}
-.tab{padding:10px 11px;cursor:pointer;font-size:11px;font-weight:500;color:#777;border-bottom:3px solid transparent;white-space:nowrap;transition:.15s;margin-bottom:-2px;flex-shrink:0}
-.tab:hover{color:#1a5c2a}.tab.on{color:#1a5c2a;border-bottom-color:#1a5c2a;font-weight:700}
-.pg{padding:18px 22px;max-width:1300px;display:none}.pg.on{display:block}
-.ov-layout{display:grid;grid-template-columns:1fr 380px;gap:18px;align-items:start}
-.day-layout{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:start}
-.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:13px}
-.sight-grid{display:flex;flex-direction:column;gap:10px}
-.sight-grid-big{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:12px}
-.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:9px;margin-bottom:18px}
-@media(max-width:900px){.ov-layout{grid-template-columns:1fr}}
-@media(max-width:850px){.day-layout{grid-template-columns:1fr}}
-.timeline{display:flex;flex-direction:column}
-.tday{display:flex;position:relative}
-.tcol{width:46px;display:flex;flex-direction:column;align-items:center;flex-shrink:0;padding-top:2px}
-.tcirc{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;flex-shrink:0;z-index:1}
-.tcirc.l{background:#1a5c2a}.tcirc.p{background:#1a2a6c}.tcirc.s{background:#6c2a1a}.tcirc.d{background:#c8960c}.tcirc.t{background:#555}.tcirc.r{background:#aa0066}
-.tline{width:2px;flex:1;min-height:8px;margin-top:3px}
-.tln{background:#e0d8cf}
-.tltravel{background:repeating-linear-gradient(180deg,#c8960c 0,#c8960c 5px,transparent 5px,transparent 10px)}
-.tlflight{background:repeating-linear-gradient(180deg,#1a2a6c 0,#1a2a6c 4px,transparent 4px,transparent 8px)}
-.tbody{flex:1;padding:0 0 14px 12px}
-.tdate{font-size:10px;color:#999;font-weight:700;letter-spacing:.4px;margin-bottom:2px;text-transform:uppercase}
-.ttitle{font-size:13px;font-weight:700;margin-bottom:3px}
-.thotel{display:inline-flex;align-items:center;gap:4px;border-radius:4px;padding:2px 7px;font-size:10px;font-weight:600;margin-bottom:5px}
-.thotel.l{background:#e8f2ea;color:#1a5c2a}.thotel.p{background:#e8ecf5;color:#1a2a6c}.thotel.r{background:#fce8f5;color:#880055}.thotel.d{background:#fdf5e0;color:#8a6500}
-.sched{width:100%;border-collapse:collapse;margin-bottom:2px}
-.sched td{padding:3px 5px;font-size:11px;vertical-align:top;line-height:1.4;border-bottom:1px solid #f5f0e8}
-.sched tr:last-child td{border-bottom:none}.sched tr:hover td{background:#fdf9f5}
-.st{white-space:nowrap;width:50px;font-weight:700;font-size:10.5px}
-.st.fly{color:#003399}.st.tr{color:#886600}.st.eat{color:#b35500}.st.sl{color:#666}.st.gr{color:#1a5c2a}.st.car{color:#c8960c}
-.sa{color:#333}.sn{color:#888;font-size:10px;display:block;margin-top:1px}
-.tbox{background:linear-gradient(135deg,#fdf5e0,#fff8e8);border:1px solid #e8c84a;border-radius:8px;padding:8px 12px;margin:3px 0 14px 12px;font-size:11px;color:#7a5800;display:flex;align-items:center;gap:8px}
-.tbox b{color:#5a3800}
-.tbox.fly{background:linear-gradient(135deg,#e8ecf5,#f0f4ff);border-color:#6680cc;color:#1a2a6c}
-.tbox.fly b{color:#0a1a5c}
-.dcard{background:#fff;border-radius:12px;border:1px solid #e0d8cf;box-shadow:0 2px 8px rgba(0,0,0,.05);overflow:hidden;margin-bottom:12px}
-.dhdr{display:flex;align-items:center;gap:11px;padding:13px 16px;border-bottom:1px solid #f0ebe2;flex-wrap:wrap}
-.dnum{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;color:#fff;flex-shrink:0}
-.dnum.l{background:#1a5c2a}.dnum.p{background:#1a2a6c}.dnum.s{background:#6c2a1a}.dnum.d{background:#c8960c}.dnum.t{background:#555}.dnum.r{background:#aa0066}
-.dtitle{font-size:14px;font-weight:700}.dsub{font-size:10.5px;color:#888;margin-top:2px}
-.ddate{margin-left:auto;background:#f7f4ef;border:1px solid #e0d8cf;border-radius:6px;padding:3px 9px;font-size:10.5px;color:#888;white-space:nowrap}
-table.sch{width:100%;border-collapse:collapse}
-table.sch th{background:#f7f4ef;padding:7px 12px;text-align:left;font-size:9.5px;text-transform:uppercase;letter-spacing:.6px;color:#888;font-weight:600}
-table.sch td{padding:9px 12px;border-bottom:1px solid #f5f0e8;vertical-align:top;line-height:1.45;font-size:12px}
-table.sch tr:last-child td{border-bottom:none}
-table.sch tr:hover td{background:#fdf9f5}
-.tb{background:#ede8e0;color:#555;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:700;white-space:nowrap}
-.tb.fly{background:#e8ecf5;color:#003}.tb.tr{background:#fdf5e0;color:#886600}.tb.eat{background:#fff0e0;color:#b35500}.tb.sl{background:#f0f0f0;color:#666}.tb.car{background:#fdf5e0;color:#886600}
-.stag{display:inline-block;border-radius:3px;padding:1px 5px;font-size:9px;font-weight:700;margin-left:3px;vertical-align:middle}
-.tg-s{background:#e8f2ea;color:#1a5c2a}.tg-m{background:#e8ecf5;color:#1a2a6c}.tg-w{background:#fce8f0;color:#880044}.tg-n{background:#f5e8e8;color:#a01a1a}
-.note{background:#fdf5e0;border-left:3px solid #c8960c;padding:9px 13px;margin:10px 14px;border-radius:0 7px 7px 0;font-size:11.5px;color:#444;line-height:1.5}
-.note b{color:#8a6500}
-.food{display:inline-flex;align-items:center;gap:3px;border-radius:4px;padding:2px 6px;font-size:10px;font-weight:600;margin:1px}
-.food.hal{background:#ddf0ff;color:#005588}.food.csirke{background:#fff3d4;color:#7a4800}.food.sertes{background:#ffe8d4;color:#8a3000}
-.food.marha{background:#f5e8f5;color:#6a0066}.food.vegi{background:#e8f5e8;color:#1a6a1a}.food.tenger{background:#d4f0ff;color:#004466}.food.no-hal{background:#ffd4d4;color:#880000}
-.sight{background:#fff;border-radius:10px;border:1px solid #e0d8cf;overflow:hidden}
-.sight-hdr{padding:10px 13px 8px;border-bottom:1px solid #f5f0e8;display:flex;align-items:flex-start;gap:10px}
-.sight-name{font-size:13px;font-weight:700;flex:1}
-.sight-rating{background:#ffd700;color:#333;border-radius:6px;padding:3px 8px;font-weight:800;font-size:12px;white-space:nowrap;flex-shrink:0}
-.sight-body{padding:10px 13px}
-.sight-wiki{font-size:11px;color:#444;line-height:1.55;margin-bottom:8px}
-.sight-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px}
-.sight-tag{display:inline-block;background:#f0ebe2;color:#555;border-radius:4px;padding:1px 7px;font-size:10px}
-.sight-tag.unesco{background:#e8f2ea;color:#1a5c2a;font-weight:700}
-.sight-tag.unesco::before{content:'🌍 '}
-.sight-review{font-size:10.5px;color:#777;font-style:italic;border-top:1px solid #f5f0e8;padding-top:7px}
-.sight-review b{color:#555;font-style:normal}
-.sight-info{font-size:10.5px;color:#888;margin-top:5px}
-.sight-info span{margin-right:10px}
-.sight-links{display:flex;gap:7px;margin-top:7px;flex-wrap:wrap}
-.slink{display:inline-flex;align-items:center;gap:4px;border-radius:5px;padding:3px 9px;font-size:10px;font-weight:600;text-decoration:none;transition:.15s}
-.slink:hover{opacity:.8}
-.slink.wiki{background:#eaf3fb;color:#1a5f9e;border:1px solid #b8d4ee}
-.slink.gmap{background:#e8f5e8;color:#1a6e1a;border:1px solid #a8d8a8}
-.mini-map{background:#fff;border-radius:10px;border:1px solid #e0d8cf;overflow:hidden;margin-bottom:12px}
-.mini-map-title{font-size:11px;font-weight:700;padding:8px 12px;background:#f7f4ef;border-bottom:1px solid #e0d8cf}
-.rcity{font-size:13px;font-weight:700;padding:7px 11px;border-radius:7px;margin-bottom:9px}
-.rcity.l{background:#e8f2ea;color:#1a5c2a}.rcity.p{background:#e8ecf5;color:#1a2a6c}.rcity.d{background:#fdf5e0;color:#8a6500}
-.rc{background:#fff;border-radius:9px;padding:12px;border:1px solid #e0d8cf}
-.rctop{display:flex;gap:9px;align-items:flex-start;margin-bottom:5px}
-.rrat{background:#ffd700;color:#333;border-radius:6px;padding:3px 8px;font-weight:800;font-size:12px;white-space:nowrap;flex-shrink:0}
-.rname{font-size:12.5px;font-weight:700}.rtype{font-size:10px;color:#888;margin-top:2px}
-.rdesc{font-size:11px;color:#444;line-height:1.5;margin-bottom:5px}
-.rfood{margin-bottom:5px}
-.rftr{font-size:10px;color:#888;padding-top:5px;border-top:1px solid #f5f0e8}
-.card{background:#fff;border-radius:10px;padding:14px;border:1px solid #e0d8cf;box-shadow:0 1px 6px rgba(0,0,0,.05)}
-.card h3{font-size:11px;font-weight:700;margin-bottom:8px;color:#333}
-.card ul{list-style:none}
-.card li{padding:3px 0;border-bottom:1px solid #f5f0e8;color:#444;display:flex;gap:6px;line-height:1.35;font-size:11.5px}
-.card li:last-child{border-bottom:none}
-.card li::before{content:'→';color:#1a5c2a;font-weight:700;flex-shrink:0}
-.gold{background:#fdf5e0;border-color:#e8c84a}.gold h3{color:#b87c00}.gold li::before{color:#b87c00}
-.section-title{font-size:15px;font-weight:700;margin-bottom:12px;color:#1a1a1a}
-.sights-list{background:#fff;border-radius:10px;border:1px solid #e0d8cf;overflow:hidden;margin-bottom:16px}
-.sights-list-hdr{display:grid;grid-template-columns:2fr 1fr 80px 80px;gap:0;background:#f7f4ef;padding:8px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#888;border-bottom:1px solid #e0d8cf}
-.sl-row{display:grid;grid-template-columns:2fr 1fr 80px 80px;gap:0;padding:9px 14px;border-bottom:1px solid #f5f0e8;align-items:center;font-size:12px}
-.sl-row:last-child{border-bottom:none}.sl-row:hover{background:#fdf9f5}
-.sl-name{font-weight:600;color:#222}.sl-rat{font-weight:700;color:#b87c00}.sl-price{color:#666;font-size:11px}
-.sl-day-badge{display:inline-block;border-radius:12px;padding:1px 8px;font-size:10px;font-weight:700;color:#fff}
-.sl-day-badge.l{background:#1a5c2a}.sl-day-badge.p{background:#1a2a6c}.sl-day-badge.s{background:#6c2a1a}.sl-day-badge.d{background:#c8960c}
-.warn{color:#c00;font-size:10px;font-weight:700}
-.conf{color:#1a5c2a;font-size:10px;font-weight:700}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗺 🇵🇹 Portugália 2026 – Portugal Codex</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
-<!-- FEJLÉC -->
-<div class="hdr">
-  <div>
-    <h1>🗺 🇵🇹 Portugália Útiterv – 2026. április 3–10.</h1>
-    <p>8 nap · Lisszabon · Sintra · Óbidos · Nazaré · Coimbra · Pinhão · Douro · Porto · <span style="opacity:.6;font-size:10px">Frissítve: 2026.03.29</span></p>
-  </div>
-  <div class="fps">
-    <div class="fp">
-      <b>✈ Ryanair · K8UZMB</b>
-      BUD → LIS · Ápr. 3 (este)<br>
-      <a href="https://www.flightstats.com/v2/flight-tracker/FR/" target="_blank" style="color:#aaddff;font-size:10px">FlightStats</a> ·
-      <a href="https://www.trip.com/flights/" target="_blank" style="color:#ffcc99;font-size:10px">Trip.com</a>
-    </div>
-    <div class="fp">
-      <b>✈ Wizz Air W6 · YPJP7Q</b>
-      LIS → BUD · Ápr. 10, ~08:30 ind.<br>
-      <a href="https://www.flightstats.com/v2/flight-tracker/W6/" target="_blank" style="color:#aaddff;font-size:10px">FlightStats</a> ·
-      <a href="https://www.trip.com/flights/" target="_blank" style="color:#ffcc99;font-size:10px">Trip.com</a>
-    </div>
-  </div>
-</div>
-
-<!-- ÚTVONAL SÁV -->
-<div class="rtbar">
-  <span class="rs r">BUD</span>
-  <span class="ra">→✈→</span>
-  <span class="rs l">Lisszabon</span>
-  <span class="ra">→🚶→</span>
-  <span class="rs s">Sintra</span>
-  <span class="ra">→🚗→</span>
-  <span class="rs s">Óbidos</span>
-  <span class="ra">→🚗→</span>
-  <span class="rs s">Nazaré</span>
-  <span class="ra">→🚗→</span>
-  <span class="rs s">Coimbra</span>
-  <span class="ra">→🚗→</span>
-  <span class="rs d">Pinhão</span>
-  <span class="ra">→🚗→</span>
-  <span class="rs d">Douro-völgy</span>
-  <span class="ra">→🚗→</span>
-  <span class="rs p">Porto</span>
-  <span class="ra">→✈→</span>
-  <span class="rs r">BUD</span>
-</div>
-
-<!-- TABOK -->
-<div class="tabs">
-  <div class="tab on" onclick="show('ov')">📋 Áttekintés</div>
-  <div class="tab" onclick="show('d1')">Ápr. 3 · Indulás</div>
-  <div class="tab" onclick="show('d2')">Ápr. 4 · Lisszabon</div>
-  <div class="tab" onclick="show('d3')">Ápr. 5 · Sintra</div>
-  <div class="tab" onclick="show('d4')">Ápr. 6 · Óbidos–Nazaré–Coimbra</div>
-  <div class="tab" onclick="show('d5')">Ápr. 7 · Douro–Porto</div>
-  <div class="tab" onclick="show('d6')">Ápr. 8 · Porto</div>
-  <div class="tab" onclick="show('d7')">Ápr. 9 · Porto</div>
-  <div class="tab" onclick="show('d8')">Ápr. 10 · Visszaút</div>
-  <div class="tab" onclick="show('re')">🍽 Éttermek</div>
-  <div class="tab" onclick="show('la')">🏛 Látnivalók</div>
-  <div class="tab" onclick="show('pr')">🧳 Praktikus</div>
-</div>
-
-<!-- ═══ ÁTTEKINTÉS ═══ -->
-<div class="pg on" id="pg-ov">
-<div class="ov-layout">
-  <div>
-    <div class="section-title">📅 Utazás áttekintése</div>
-    <div class="timeline">
-
-      <!-- NAP 1 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc t">1</div>
-          <div class="tline tlflight"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 3, PÉNTEK</div>
-          <div class="ttitle">✈ Indulás Budapestről – Érkezés éjjel</div>
-          <div class="thotel l">🏨 Lisszabon szállás (3 éj)</div>
-          <table class="sched">
-            <tr><td class="st fly">este</td><td class="sa"><b>✈ Ryanair indul BUD → LIS</b> · K8UZMB<span class="sn">~4 óra · érkezés ~23:15 LIS</span></td></tr>
-            <tr><td class="st sl">23:15</td><td class="sa">Érkezés Lisszabonba · transzfer szállásra<span class="sn">Taxi/Uber reptérről ~20 perc · csak alvás</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- NAP 2 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc l">2</div>
-          <div class="tline tln"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 4, SZOMBAT</div>
-          <div class="ttitle">🏛 Lisszabon – Belém + Alfama + Baixa</div>
-          <div class="thotel l">🏨 Lisszabon</div>
-          <table class="sched">
-            <tr><td class="st">09:00</td><td class="sa"><b>☕ Pastéis de Belém</b><span class="sn">Ikonikus pastel de nata sütödé – kötelező!</span></td></tr>
-            <tr><td class="st gr">09:30</td><td class="sa"><b>🏛 Jerónimos kolostor</b> <span class="stag tg-s">UNESCO</span><span class="sn">10€/fő · előre vedd meg a jegyet online!</span></td></tr>
-            <tr><td class="st gr">11:00</td><td class="sa"><b>🗼 Belém-torony</b><span class="sn">8€/fő · a folyóparton séta</span></td></tr>
-            <tr><td class="st eat">13:00</td><td class="sa"><b>🍽 Ebéd: <a href="https://www.google.com/maps/search/Solar+dos+Presuntos+Lisbon" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Solar dos Presuntos</a> ⭐4.5</b><span class="sn">Klasszikus portugál húsételek, Baixa</span></td></tr>
-            <tr><td class="st gr">15:00</td><td class="sa"><b>🏘 Alfama negyed</b> – tram 28<span class="sn">São Jorge vár · Miradouro das Portas do Sol</span></td></tr>
-            <tr><td class="st gr">17:30</td><td class="sa"><b>👀 Baixa–Chiado séta</b><span class="sn">Praça do Comércio · Rua Augusta</span></td></tr>
-            <tr><td class="st eat">20:00</td><td class="sa"><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/Taberna+Sal+Grosso+Alfama+Lisbon" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Taberna Sal Grosso</a> ⭐4.5</b><span class="sn">Autentikus alfamai kocsma · előre foglalj!</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- NAP 3 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc s">3</div>
-          <div class="tline tln"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 5, VASÁRNAP</div>
-          <div class="ttitle">🏰 Sintra nap – Pena + Regaleira (+ Cabo da Roca opció)</div>
-          <div class="thotel l">🏨 Lisszabon</div>
-          <table class="sched">
-            <tr><td class="st tr">08:00</td><td class="sa"><b>🚆 Vonat LIS → Sintra</b><span class="sn">CP vonat Rossio állomásról · ~40 perc · ~3€/fő</span></td></tr>
-            <tr><td class="st gr">09:30</td><td class="sa"><b>🏰 Palácio Nacional da Pena</b> <span class="stag tg-s">UNESCO</span><span class="sn">20€/fő · KORÁN menj, zsúfolt lesz!</span></td></tr>
-            <tr><td class="st gr">12:00</td><td class="sa"><b>🌳 Quinta da Regaleira</b><span class="sn">8€/fő · titokzatos kert, iniciatikus kút</span></td></tr>
-            <tr><td class="st eat">13:30</td><td class="sa"><b>🍽 Ebéd Sintrában</b><span class="sn">Travessa do Municipio környéke · helyi éttermek</span></td></tr>
-            <tr><td class="st gr">15:00</td><td class="sa"><b>🌊 Opció: Cabo da Roca</b><span class="sn">Európa legnyugatibb pontja · busz 403 Sintrából</span></td></tr>
-            <tr><td class="st tr">17:30</td><td class="sa"><b>🚆 Vissza Lisszabonba</b></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- NAP 4 – AUTÓBÉRLÉS nap -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc d">4</div>
-          <div class="tline tltravel"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 6, HÉTFŐ</div>
-          <div class="ttitle">🚗 Autóút: Lisszabon → Óbidos → Nazaré → Coimbra → Pinhão</div>
-          <div class="thotel d">🏨 Pinhão szállás (1 éj) – Douro-völgy</div>
-          <table class="sched">
-            <tr><td class="st car">08:00</td><td class="sa"><b>🚗 Indulás Lisszabonból</b><span class="sn">Autó átvétel · A8 autópálya felé Óbidos</span></td></tr>
-            <tr><td class="st gr">09:00</td><td class="sa"><b>🏰 Óbidos</b> – 45-60 perc<span class="sn">Középkori várfal · borospince az alagsorban</span></td></tr>
-            <tr><td class="st car">10:15</td><td class="sa"><b>🚗 Óbidos → Nazaré</b> (~45 perc)</td></tr>
-            <tr><td class="st gr">11:00</td><td class="sa"><b>🌊 Nazaré</b> – 45-60 perc<span class="sn">Szirtfok kilátó (Sítio) · óriáshullámok helyszíne</span></td></tr>
-            <tr><td class="st car">12:15</td><td class="sa"><b>🚗 Nazaré → Coimbra</b> (~1.5 óra)</td></tr>
-            <tr><td class="st gr">14:00</td><td class="sa"><b>🏛 Coimbra</b> – 1.5-2 óra ebéddel<span class="sn">Universidade de Coimbra (UNESCO) · Joanina Könyvtár</span></td></tr>
-            <tr><td class="st eat">14:30</td><td class="sa"><b>🍽 Ebéd Coimbrában</b><span class="sn">Zé Manel dos Ossos ⭐4.5 – klasszikus tasca</span></td></tr>
-            <tr><td class="st car">16:30</td><td class="sa"><b>🚗 Coimbra → Pinhão</b> (~2 óra)</td></tr>
-            <tr><td class="st sl">19:00</td><td class="sa"><b>🏨 Megérkezés Pinhãóba</b><span class="sn">Douro-völgy szíve · szállás + vacsora helyben</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- Átvitel Pinhão→Porto -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tline tltravel" style="min-height:30px"></div>
-        </div>
-        <div class="tbox">
-          <span style="font-size:16px">🚗</span>
-          <div><b>Pinhão → Porto autóval</b> · Ápr. 7 este · ~2 óra · N222 + A4</div>
-        </div>
-      </div>
-
-      <!-- NAP 5 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc d">5</div>
-          <div class="tline tln"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 7, KEDD</div>
-          <div class="ttitle">🍷 Douro-völgy + N222 → Porto</div>
-          <div class="thotel p">🏨 Porto szállás (3 éj)</div>
-          <table class="sched">
-            <tr><td class="st gr">09:00</td><td class="sa"><b>🌅 Casal de Loivos kilátó</b><span class="sn">A Douro-völgy egyik legjobb panorámája</span></td></tr>
-            <tr><td class="st gr">10:30</td><td class="sa"><b>🍷 1-2 borászat látogatás</b><span class="sn">Quinta do Crasto vagy Ramos Pinto · előre foglalj!</span></td></tr>
-            <tr><td class="st car">13:30</td><td class="sa"><b>🚗 N222 – a világ legszebb útja</b><span class="sn">Lassan hajtani! Megállók a folyó mellett</span></td></tr>
-            <tr><td class="st eat">15:00</td><td class="sa"><b>🍽 Ebéd valahol az úton</b><span class="sn">Peso da Régua éttermek · folyóparti kilátással</span></td></tr>
-            <tr><td class="st car">17:00</td><td class="sa"><b>🚗 N222 → Porto</b> (~1.5 óra A4-en)</td></tr>
-            <tr><td class="st sl">18:30</td><td class="sa"><b>🏨 Bejelentkezés Portóban · auto leadás</b><span class="sn">Autó visszaadás a reptéren vagy városban</span></td></tr>
-            <tr><td class="st eat">20:00</td><td class="sa"><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/DOP+Restaurant+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">DOP</a> ⭐4.6</b><span class="sn">Palácio das Artes · Rui Paula séfje · foglalj!</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- NAP 6 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc p">6</div>
-          <div class="tline tln"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 8, SZERDA</div>
-          <div class="ttitle">🌉 Porto – Ribeira + Híd + Gaia borospincék</div>
-          <div class="thotel p">🏨 Porto</div>
-          <table class="sched">
-            <tr><td class="st gr">09:30</td><td class="sa"><b>🌅 Miradouro da Serra do Pilar</b><span class="sn">Legjobb Porto-panoráma reggel</span></td></tr>
-            <tr><td class="st gr">10:30</td><td class="sa"><b>🍷 Gaia borospincék</b><span class="sn">Taylor's vagy Ramos Pinto · Port borkóstolás ~15-20€</span></td></tr>
-            <tr><td class="st eat">12:30</td><td class="sa"><b>🍽 Ebéd: <a href="https://www.google.com/maps/search/Cafe+Santiago+Porto+Francesinha" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Café Santiago</a> ⭐4.4</b><span class="sn">Francesinha – Porto ikonikus fogása</span></td></tr>
-            <tr><td class="st gr">14:30</td><td class="sa"><b>🌉 Ribeira negyed + D. Luis I híd séta</b></td></tr>
-            <tr><td class="st gr">16:00</td><td class="sa"><b>🎨 Azulejo séta</b><span class="sn">São Bento pályaudvar · Igreja do Carmo</span></td></tr>
-            <tr><td class="st eat">19:30</td><td class="sa"><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/Lareira+Baixa+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Lareira – Baixa</a> ⭐4.5</b><span class="sn">Autentikus tasca · sertés, marhasteak, chouriço</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- NAP 7 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc p">7</div>
-          <div class="tline tln"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 9, CSÜTÖRTÖK</div>
-          <div class="ttitle">📚 Porto – Lello + Brunch + Séta (laza nap)</div>
-          <div class="thotel p">🏨 Porto</div>
-          <table class="sched">
-            <tr><td class="st gr">10:00</td><td class="sa"><b>📚 Livraria Lello</b><span class="sn">8€ jegy (beleszámít vásárlásba) · ne hagyd ki!</span></td></tr>
-            <tr><td class="st eat">11:30</td><td class="sa"><b>🍽 Brunch / Ebéd: <a href="https://www.google.com/maps/search/Conga+Casa+das+Bifanas+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Conga – Casa das Bifanas</a> ⭐4.5</b><span class="sn">Porto legismertebb bifana (sertés szendvics) helye</span></td></tr>
-            <tr><td class="st gr">13:30</td><td class="sa"><b>🏛 Clerigos torony + Bolhão piac</b><span class="sn">Clerigos: 8€/fő · panoráma a városra</span></td></tr>
-            <tr><td class="st gr">16:00</td><td class="sa"><b>☕ Majestic Café kávé</b><span class="sn">Porto legszebb art nouveau kávéháza</span></td></tr>
-            <tr><td class="st eat">19:30</td><td class="sa"><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/MUU+Steakhouse+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">MUU Steakhouse</a> ⭐4.5</b><span class="sn">Black Angus steak · búcsúvacsora · foglalj!</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- NAP 8 -->
-      <div class="tday">
-        <div class="tcol">
-          <div class="tcirc r">8</div>
-          <div class="tline tlflight"></div>
-        </div>
-        <div class="tbody">
-          <div class="tdate">ÁPRILIS 10, PÉNTEK</div>
-          <div class="ttitle">✈ Visszaút: Porto → (Coimbra opt.) → Lisszabon reptér</div>
-          <table class="sched">
-            <tr><td class="st car">08:30</td><td class="sa"><b>🚗 Indulás Portóból</b><span class="sn">A1 autópálya → Coimbra vagy közvetlen LIS reptér</span></td></tr>
-            <tr><td class="st gr">10:00</td><td class="sa"><b>🏛 Opció: Coimbra megálló</b> (~1.5-2h)<span class="sn">Ha az előző nap kimaradt · Joanina Könyvtár</span></td></tr>
-            <tr><td class="st car">13:00</td><td class="sa"><b>🚗 → Lisszabon reptér</b> (~2.5 óra Coimbrából)<span class="sn">Autó visszaadás LIS reptérnél</span></td></tr>
-            <tr><td class="st fly">~06:00</td><td class="sa"><b>✈ Wizz Air indul LIS → BUD</b> · YPJP7Q<span class="sn">08:30 körüli indulás várható · check-in 06:00-ra</span></td></tr>
-          </table>
-        </div>
-      </div>
-
-    </div><!-- /timeline -->
-  </div>
-
-  <!-- JOBB OLDAL: Áttekintő térkép -->
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">🗺 Teljes útvonal – Portugália</div>
-      <svg viewBox="0 0 380 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs>
-          <marker id="arr-gold" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
-            <path d="M1,1 L6,3.5 L1,6 Z" fill="#c8960c"/>
-          </marker>
-          <marker id="arr-pink" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
-            <path d="M1,1 L6,3.5 L1,6 Z" fill="#aa0066"/>
-          </marker>
-          <marker id="arr-blue" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
-            <path d="M1,1 L6,3.5 L1,6 Z" fill="#1a2a6c"/>
-          </marker>
-          <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#00000033"/>
-          </filter>
-        </defs>
-        <!-- Atlanti-óceán háttér -->
-        <rect width="380" height="500" fill="#b8d8ee"/>
-        <!-- Portugália körvonal (sematikus) -->
-        <path d="M85,38 L155,30 L200,42 L220,65 L235,95 L240,130 L245,170 L248,210 L245,255 L240,295 L235,330 L230,360 L220,390 L208,415 L195,430 L180,445 L165,455 L148,460 L135,455 L122,445 L110,430 L100,410 L92,385 L86,355 L82,320 L80,285 L78,250 L79,215 L80,178 L80,140 L82,100 L84,65 Z" fill="#d8e8c0" stroke="#8aaa60" stroke-width="1.5"/>
-        <!-- Spanyolország (szürke) -->
-        <path d="M200,42 L220,35 L270,38 L320,55 L350,80 L360,120 L355,165 L345,210 L340,255 L335,300 L330,340 L320,370 L308,390 L290,400 L270,405 L245,400 L230,390 L235,360 L240,330 L245,295 L248,255 L245,210 L240,170 L235,130 L220,95 L205,65 Z" fill="#ddd" stroke="#bbb" stroke-width="1" opacity="0.6"/>
-        <text x="285" y="200" font-size="9" fill="#aaa" font-style="italic" transform="rotate(10,285,200)">SPANYOLORSZÁG</text>
-        <!-- Atlanti-óceán felirat -->
-        <text x="25" y="280" font-size="8" fill="#4488aa" transform="rotate(-90,25,280)">ATLANTI-ÓCEÁN</text>
-
-        <!-- ÚTVONAL: autó (arany) -->
-        <!-- LIS → Óbidos → Nazaré → Coimbra → Pinhão -->
-        <path d="M145,355 Q130,295 128,255" fill="none" stroke="#c8960c" stroke-width="2.5" marker-end="url(#arr-gold)" opacity="0.9"/>
-        <path d="M128,255 Q130,220 133,195" fill="none" stroke="#c8960c" stroke-width="2.5" marker-end="url(#arr-gold)" opacity="0.9"/>
-        <path d="M133,195 Q145,170 160,140" fill="none" stroke="#c8960c" stroke-width="2.5" marker-end="url(#arr-gold)" opacity="0.9"/>
-        <!-- Pinhão → N222 → Porto -->
-        <path d="M160,140 Q155,115 148,95" fill="none" stroke="#c8960c" stroke-width="2.5" marker-end="url(#arr-gold)" opacity="0.9"/>
-        <!-- Porto visszaút LIS (szürke szaggatott) -->
-        <path d="M148,95 Q170,200 145,355" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5"/>
-
-        <!-- HELYSZÍNEK -->
-        <!-- Lisszabon -->
-        <g filter="url(#shadow)">
-          <circle cx="145" cy="355" r="16" fill="#1a5c2a" stroke="white" stroke-width="2.5"/>
-          <text x="145" y="360" text-anchor="middle" font-size="10" font-weight="bold" fill="white">LIS</text>
-        </g>
-        <rect x="97" y="374" width="96" height="42" rx="5" fill="white" stroke="#1a5c2a" stroke-width="1.5" filter="url(#shadow)" opacity="0.97"/>
-        <text x="145" y="386" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1a5c2a">LISSZABON</text>
-        <text x="145" y="397" text-anchor="middle" font-size="7" fill="#444">Ápr. 3–6 · 3 éjszaka</text>
-        <text x="145" y="407" text-anchor="middle" font-size="7" fill="#888">Belém · Alfama · Baixa</text>
-
-        <!-- Sintra -->
-        <circle cx="118" cy="338" r="8" fill="#6c2a1a" stroke="white" stroke-width="2"/>
-        <text x="118" y="342" text-anchor="middle" font-size="7" font-weight="bold" fill="white">S</text>
-        <text x="100" y="333" text-anchor="middle" font-size="7" fill="#6c2a1a" font-weight="600">Sintra</text>
-
-        <!-- Óbidos -->
-        <circle cx="120" cy="295" r="7" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="120" y="299" text-anchor="middle" font-size="6.5" font-weight="bold" fill="white">Ó</text>
-        <text x="100" y="292" text-anchor="middle" font-size="7" fill="#6c2a1a" font-weight="600">Óbidos</text>
-
-        <!-- Nazaré -->
-        <circle cx="115" cy="255" r="7" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="115" y="259" text-anchor="middle" font-size="6.5" font-weight="bold" fill="white">N</text>
-        <text x="95" y="252" text-anchor="middle" font-size="7" fill="#6c2a1a" font-weight="600">Nazaré</text>
-
-        <!-- Coimbra -->
-        <circle cx="135" cy="195" r="9" fill="#6c2a1a" stroke="white" stroke-width="2"/>
-        <text x="135" y="199" text-anchor="middle" font-size="7" font-weight="bold" fill="white">CO</text>
-        <text x="155" y="192" text-anchor="middle" font-size="7" fill="#6c2a1a" font-weight="600">Coimbra</text>
-
-        <!-- Pinhão / Douro -->
-        <circle cx="165" cy="135" r="9" fill="#c8960c" stroke="white" stroke-width="2"/>
-        <text x="165" y="139" text-anchor="middle" font-size="7" font-weight="bold" fill="white">🍷</text>
-        <rect x="118" y="118" width="60" height="28" rx="4" fill="white" stroke="#c8960c" stroke-width="1.5" opacity="0.97"/>
-        <text x="148" y="129" text-anchor="middle" font-size="7.5" font-weight="bold" fill="#c8960c">PINHÃO</text>
-        <text x="148" y="139" text-anchor="middle" font-size="6.5" fill="#888">Douro · Ápr. 6–7</text>
-
-        <!-- Porto -->
-        <g filter="url(#shadow)">
-          <circle cx="148" cy="90" r="14" fill="#1a2a6c" stroke="white" stroke-width="2.5"/>
-          <text x="148" y="95" text-anchor="middle" font-size="10" font-weight="bold" fill="white">PRT</text>
-        </g>
-        <rect x="105" y="108" width="86" height="40" rx="5" fill="white" stroke="#1a2a6c" stroke-width="1.5" filter="url(#shadow)" opacity="0.97"/>
-        <text x="148" y="120" text-anchor="middle" font-size="8.5" font-weight="bold" fill="#1a2a6c">PORTO</text>
-        <text x="148" y="131" text-anchor="middle" font-size="7" fill="#444">Ápr. 7–10 · 3 éjszaka</text>
-        <text x="148" y="141" text-anchor="middle" font-size="7" fill="#888">Ribeira · Gaia · Lello</text>
-
-        <!-- JELMAGYARÁZAT -->
-        <rect x="6" y="415" width="200" height="78" rx="7" fill="white" stroke="#ddd" stroke-width="1.5" opacity="0.97"/>
-        <text x="16" y="430" font-size="8.5" font-weight="bold" fill="#333">JELMAGYARÁZAT</text>
-        <line x1="16" y1="442" x2="32" y2="442" stroke="#c8960c" stroke-width="2.5"/>
-        <path d="M30,439 L34,442 L30,445 Z" fill="#c8960c"/>
-        <text x="38" y="446" font-size="7.5" fill="#444">Autóút (Ápr. 6–7)</text>
-        <line x1="16" y1="456" x2="32" y2="456" stroke="#888" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <text x="38" y="460" font-size="7.5" fill="#444">Visszaút LIS → reptér</text>
-        <circle cx="20" cy="470" r="4" fill="#1a5c2a"/>
-        <text x="30" y="473" font-size="7.5" fill="#444">Lisszabon (3 éj)</text>
-        <circle cx="20" cy="482" r="4" fill="#1a2a6c"/>
-        <text x="30" y="485" font-size="7.5" fill="#444">Porto (3 éj)</text>
-      </svg>
-    </div>
-
-    <!-- Foglalási prioritások -->
-    <div class="card gold" style="margin-bottom:10px">
-      <h3>⚠️ Foglalások – AZONNAL!</h3>
-      <ul>
-        <li>Jerónimos kolostor jegy (online előre) – zsúfolt vasárnap</li>
-        <li>Autóbérlés Ápr. 6–7 (esetleg 10-ig is)</li>
-        <li>Pinhão szállás (Douro-völgy) – limitált kapacitás</li>
-        <li>DOP étterem Porto – népszerű, foglalandó</li>
-        <li>MUU Steakhouse Porto – vacsora előre</li>
-        <li>Borászat látogatás Douro-ban (Quinta do Crasto stb.)</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3>💡 Gyors tippek</h3>
-      <ul>
-        <li>TheFork app – 30% kedvezmény sok étteremnél!</li>
-        <li>Lisszabon: 28-as villamos = zsúfolt → inkább gyalog</li>
-        <li>Sintra: indulj 08:00-ra a vonattal</li>
-        <li>N222 úton lassan hajtani, megállni a kilátóknál</li>
-        <li>Porto kártya (1-3 napos): tömegközlekedés + belépők</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- ═══ NAP 1 ═══ -->
-<div class="pg" id="pg-d1">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum t">1</div>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-top">
         <div>
-          <div class="dtitle">✈ Indulás – Budapest → Lisszabon</div>
-          <div class="dsub">Ryanair · K8UZMB · érkezés ~23:15 · csak alvás</div>
+          <h1 id="hero-title"></h1>
+          <p id="hero-subtitle"></p>
         </div>
-        <div class="ddate">2026. április 3, péntek</div>
+        <div class="flight-pills" id="flight-pills"></div>
       </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb fly">délután</span></td><td><b>✈ Ryanair BUD → LIS</b></td><td>PNR: K8UZMB · <a href="https://www.flightstats.com/v2/flight-tracker/FR/" target="_blank" style="color:#1a5f9e;font-size:10px">FlightStats</a></td></tr>
-        <tr><td><span class="tb fly">~23:15</span></td><td><b>🛬 Megérkezés Lisboa Portela (LIS)</b></td><td>Terminal check + baggage claim</td></tr>
-        <tr><td><span class="tb sl">23:30</span></td><td><b>🚕 Transzfer szállásra</b></td><td>Taxi/Uber ~€15-20 · 20 perc centrum</td></tr>
-        <tr><td><span class="tb sl">00:00</span></td><td><b>🛏 Bejelentkezés + alvás</b></td><td>Csak pihenés – holnap korai kezdés!</td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> LIS reptéren van ATM és Uber/Bolt is működik. Taxi fix díj ~20€ a centrumba. Az Uber általában olcsóbb, de éjjel mindkettő elérhető.</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">✈ Budapest → Lisszabon</div>
-      <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
-        <rect width="320" height="160" fill="#e8f0f8"/>
-        <rect width="320" height="18" fill="#555" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Repülőút – Ápr. 3</text>
-        <text x="60" y="95" text-anchor="middle" font-size="9" fill="#1a2a6c" font-weight="700">✈ BUD</text>
-        <text x="60" y="108" text-anchor="middle" font-size="7" fill="#555">Budapest</text>
-        <text x="260" y="95" text-anchor="middle" font-size="9" fill="#1a5c2a" font-weight="700">LIS ✈</text>
-        <text x="260" y="108" text-anchor="middle" font-size="7" fill="#555">Lisszabon</text>
-        <path d="M90,88 Q160,50 230,88" fill="none" stroke="#1a2a6c" stroke-width="2" stroke-dasharray="6,3"/>
-        <polygon points="228,84 234,90 224,92" fill="#1a2a6c"/>
-        <text x="160" y="68" text-anchor="middle" font-size="7.5" fill="#1a2a6c">~4 óra repülés ✈</text>
-        <text x="160" y="130" text-anchor="middle" font-size="7" fill="#888">Érkezés ~23:15 · Taxi/Uber centrum ~20 perc</text>
-      </svg>
-    </div>
-    <div class="card">
-      <h3>✈ Repülőadatok</h3>
-      <ul>
-        <li>Ryanair · Booking ref: K8UZMB</li>
-        <li>BUD → LIS · Ápr. 3</li>
-        <li>Érkezés: ~23:15 LIS</li>
-        <li>Online check-in: 24h előtt nyílik meg</li>
-        <li>Kézipoggyász: ellenőrizd a méreteket!</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
+      <div class="route" id="route"></div>
+    </header>
 
-<!-- ═══ NAP 2 ═══ -->
-<div class="pg" id="pg-d2">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum l">2</div>
-        <div>
-          <div class="dtitle">🏛 Lisszabon – Belém + Alfama + Baixa</div>
-          <div class="dsub">09:00 Pastéis de Belém · 09:30 Jerónimos · 15:00 Alfama · 20:00 vacsora</div>
-        </div>
-        <div class="ddate">2026. április 4, szombat</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb eat">09:00</span></td><td><b>☕ Pastéis de Belém</b></td><td>Ikonikus pastéis de nata – rövid sorban állás reggelre</td></tr>
-        <tr><td><span class="tb">09:30</span></td><td><b>🏛 Jerónimos kolostor</b> <span class="stag tg-s">UNESCO</span></td><td>10€/fő · <span class="warn">Jegy ONLINE előre!</span></td></tr>
-        <tr><td><span class="tb">11:00</span></td><td><b>🗼 Belém-torony (Torre de Belém)</b></td><td>8€/fő · folyóparti séta közötte</td></tr>
-        <tr><td><span class="tb eat">13:00</span></td><td><b>🍽 Ebéd: <a href="https://www.google.com/maps/search/Solar+dos+Presuntos+Lisboa" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Solar dos Presuntos</a> ⭐4.5</b></td><td><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span></td></tr>
-        <tr><td><span class="tb">14:30</span></td><td><b>🚶 Séta: Baixa → Chiado</b></td><td>Praça do Comércio · Elevador de Santa Justa</td></tr>
-        <tr><td><span class="tb">15:30</span></td><td><b>🏘 28-as villamos vagy gyalog Alfama</b></td><td>São Jorge vár · Miradouro Santa Luzia</td></tr>
-        <tr><td><span class="tb">17:00</span></td><td><b>🌅 Miradouro das Portas do Sol</b></td><td>Legjobb panoráma az Alfama felett</td></tr>
-        <tr><td><span class="tb eat">20:00</span></td><td><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/Taberna+Sal+Grosso+Alfama+Lisboa" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Taberna Sal Grosso</a> ⭐4.5</b></td><td><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food no-hal">❌ hal nincs</span></td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> A 28-as villamos rendkívül zsúfolt és célpontja a zsebtolvajoknak. Ha időd engedi, gyalogolj Alfamába a <strong>Rua de São Pedro de Alcântara</strong> irányából – szebb és nyugodtabb. A São Jorge várból is fantasztikus a kilátás.</div>
+    <nav class="tabs" id="tabs"></nav>
+
+    <main id="views"></main>
   </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">📍 Lisszabon – Belém + Alfama</div>
-      <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs>
-          <filter id="sh2" x="-30%" y="-30%" width="160%" height="160%">
-            <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#00000025"/>
-          </filter>
-          <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#ff6600"/>
-          </marker>
-        </defs>
-        <rect width="320" height="18" fill="#1a5c2a" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Lisszabon – Belém → Alfama → Baixa</text>
-        <rect y="18" width="320" height="182" fill="#f0ede6"/>
-        <line x1="0" y1="90" x2="320" y2="90" stroke="#ddd" stroke-width="1"/>
-        <line x1="0" y1="130" x2="320" y2="130" stroke="#ddd" stroke-width="1"/>
-        <line x1="80" y1="18" x2="80" y2="200" stroke="#ddd" stroke-width="1"/>
-        <line x1="160" y1="18" x2="160" y2="200" stroke="#ddd" stroke-width="1"/>
-        <line x1="240" y1="18" x2="240" y2="200" stroke="#ddd" stroke-width="1"/>
-        <!-- Tejo folyó -->
-        <path d="M0,172 Q80,168 160,173 Q240,178 320,170" fill="#b8d4e8" stroke="#88b8d4" stroke-width="1.5"/>
-        <rect x="0" y="173" width="320" height="27" fill="#b8d4e8"/>
-        <text x="160" y="185" text-anchor="middle" font-size="7.5" fill="#5588aa" font-style="italic">Tejo folyó</text>
-        <!-- Belém negyed -->
-        <rect x="5" y="25" width="72" height="45" rx="4" fill="#e8f2ea" stroke="#1a5c2a" stroke-width="1" opacity="0.7"/>
-        <text x="41" y="38" text-anchor="middle" font-size="7" font-weight="bold" fill="#1a5c2a">BELÉM</text>
-        <!-- Alfama -->
-        <rect x="245" y="25" width="70" height="55" rx="4" fill="#fdf5e0" stroke="#c8960c" stroke-width="1" opacity="0.7"/>
-        <text x="280" y="38" text-anchor="middle" font-size="7" font-weight="bold" fill="#8a6500">ALFAMA</text>
-        <!-- Chiado/Baixa -->
-        <rect x="115" y="70" width="75" height="55" rx="4" fill="#e8ecf5" stroke="#1a2a6c" stroke-width="1" opacity="0.6"/>
-        <text x="152" y="83" text-anchor="middle" font-size="7" font-weight="bold" fill="#1a2a6c">CHIADO/BAIXA</text>
-        <!-- Pastéis de Belém -->
-        <g filter="url(#sh2)"><circle cx="28" cy="55" r="9" fill="#b35500" stroke="white" stroke-width="1.5"/>
-        <text x="28" y="59" text-anchor="middle" font-size="9">☕</text></g>
-        <text x="28" y="70" text-anchor="middle" font-size="6" fill="#b35500" font-weight="600">Pastéis</text>
-        <!-- Jerónimos -->
-        <g filter="url(#sh2)"><circle cx="55" cy="45" r="9" fill="#1a5c2a" stroke="white" stroke-width="1.5"/>
-        <text x="55" y="49" text-anchor="middle" font-size="9">⛪</text></g>
-        <text x="55" y="60" text-anchor="middle" font-size="6" fill="#1a5c2a" font-weight="600">Jerónimos</text>
-        <!-- Belém torony -->
-        <g filter="url(#sh2)"><circle cx="30" cy="155" r="8" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="30" y="159" text-anchor="middle" font-size="8">🗼</text></g>
-        <text x="30" y="169" text-anchor="middle" font-size="6" fill="#6c2a1a" font-weight="600">Belém torony</text>
-        <!-- Chiado -->
-        <g filter="url(#sh2)"><circle cx="152" cy="110" r="8" fill="#1a2a6c" stroke="white" stroke-width="1.5"/>
-        <text x="152" y="114" text-anchor="middle" font-size="8">🚶</text></g>
-        <!-- São Jorge vár -->
-        <g filter="url(#sh2)"><circle cx="268" cy="45" r="9" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="268" y="49" text-anchor="middle" font-size="8">🏰</text></g>
-        <text x="268" y="60" text-anchor="middle" font-size="6" fill="#6c2a1a" font-weight="600">São Jorge vár</text>
-        <!-- Miradouro -->
-        <g filter="url(#sh2)"><circle cx="285" cy="70" r="8" fill="#c8960c" stroke="white" stroke-width="1.5"/>
-        <text x="285" y="74" text-anchor="middle" font-size="8">🌅</text></g>
-        <text x="285" y="85" text-anchor="middle" font-size="5.5" fill="#8a6500" font-weight="600">Miradouro</text>
-        <!-- Sorrend szöveg -->
-        <text x="6" y="27" font-size="6.5" fill="#555" font-weight="700">① Belém → ② Alfama → ③ Baixa/Chiado</text>
-      </svg>
-    </div>
-    <!-- Látnivaló kártyák -->
-    <div class="sight-grid">
-      <div class="sight">
-        <div class="sight-hdr">
-          <div>
-            <div class="sight-name">Jerónimos kolostor</div>
-            <div class="sight-meta"><span class="sight-tag unesco">UNESCO 1983</span><span class="sight-tag">Manuelin stílus</span></div>
+
+  <script src="./trip-data.js"></script>
+  <script>
+    const tabs = [
+      { id: "overview", label: "📋 Áttekintés" },
+      ...tripData.days.map((day) => ({ id: day.id, label: day.tabLabel })),
+      { id: "restaurants", label: "🍽 Éttermek" },
+      { id: "sights", label: "🏛 Látnivalók" },
+      { id: "practical", label: "🧳 Praktikus" }
+    ];
+
+    const heroTitle = document.getElementById("hero-title");
+    const heroSubtitle = document.getElementById("hero-subtitle");
+    const flightPills = document.getElementById("flight-pills");
+    const route = document.getElementById("route");
+    const tabsEl = document.getElementById("tabs");
+    const views = document.getElementById("views");
+
+    heroTitle.textContent = tripData.title;
+    heroSubtitle.textContent = `${tripData.subtitle} · Frissítve: ${tripData.updatedAt}`;
+
+    tripData.flights.forEach((flight) => {
+      const pill = document.createElement("div");
+      pill.className = "flight-pill";
+      pill.innerHTML = `
+        <strong>${flight.title}</strong>
+        <div>${flight.body}</div>
+        <div>${flight.links.map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join(" · ")}</div>
+      `;
+      flightPills.appendChild(pill);
+    });
+
+    tripData.route.forEach((item) => {
+      const node = document.createElement("span");
+      if (item.separator) {
+        node.className = "route-sep";
+        node.textContent = item.separator;
+      } else {
+        node.className = `route-stop ${item.cls}`;
+        node.textContent = item.label;
+      }
+      route.appendChild(node);
+    });
+
+    function renderOverview() {
+      return `
+        <section class="view is-active" data-view="overview">
+          <div class="overview-grid">
+            <div class="card">
+              <h2 class="section-title">📅 Útvonal áttekintés</h2>
+              <div class="timeline">
+                ${tripData.days.map((day) => `
+                  <article class="timeline-item">
+                    <div class="timeline-meta">
+                      <div class="timeline-day">${day.dayLabel} · ${day.dateLabel}</div>
+                      <div class="timeline-stay">${day.stay}</div>
+                    </div>
+                    <h3>${day.title}</h3>
+                    <ul class="timeline-list">
+                      ${day.bullets.map((item) => `<li>${item}</li>`).join("")}
+                    </ul>
+                  </article>
+                `).join("")}
+              </div>
+            </div>
+            <div class="stack">
+              <section class="card">
+                <h2 class="section-title">⚠️ Most fontos</h2>
+                <ul class="badge-list">
+                  ${tripData.overview.urgent.map((item) => `<li><span class="badge gold">FOGLALÁS</span><strong>${item}</strong></li>`).join("")}
+                </ul>
+              </section>
+              <section class="card">
+                <h2 class="section-title">💡 Szerkezeti megjegyzések</h2>
+                <ul class="plain-list">
+                  ${tripData.overview.notes.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              </section>
+            </div>
           </div>
-          <div class="sight-rating">⭐ 4.7</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">A 16. századi manuelin stílusú kolostor Belémben Portugália legfontosabb épített örökségének egyik ékköve. Vasco da Gama földköri útjának emlékére emelték. A cloisters (kerengő) díszítése páratlan gazdagságú, a felfedezés korának csúcsát jelképezi.</div>
-          <div class="sight-info"><span>💰 10€/fő</span><span>🕙 10:00–17:30 (télen 18:00)</span><span class="warn">Hétfőn ZÁRVA</span></div>
-          <div class="sight-links">
-            <a href="https://hu.wikipedia.org/wiki/Jer%C3%B3nimos-kolostor" target="_blank" class="slink wiki">📖 Wikipedia (HU)</a>
-            <a href="https://www.google.com/maps/search/Jeronimos+Monastery+Belem+Lisbon" target="_blank" class="slink gmap">📍 Google Maps</a>
+        </section>
+      `;
+    }
+
+    function renderDay(day) {
+      return `
+        <section class="view" data-view="${day.id}">
+          <article class="day-card">
+            <header class="day-header">
+              <div class="day-header-top">
+                <div class="day-label">${day.dayLabel}</div>
+                <div class="day-date">${day.dateLabel}</div>
+              </div>
+              <h2>${day.title}</h2>
+              <p class="day-subtitle">${day.subtitle}</p>
+            </header>
+            <div class="day-body">
+              <div class="schedule">
+                ${day.schedule.map((item) => `
+                  <div class="schedule-row">
+                    <div class="schedule-time">${item.time}</div>
+                    <div>
+                      <h3 class="schedule-title">${item.title}</h3>
+                      <p class="schedule-detail">${item.detail}</p>
+                      ${item.meta ? `<p class="schedule-meta">${item.meta}</p>` : ""}
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+              <aside class="mini-block">
+                <section class="card">
+                  <h3>${day.stay}</h3>
+                  <ul class="plain-list">
+                    ${day.bullets.map((item) => `<li>${item}</li>`).join("")}
+                  </ul>
+                </section>
+                <div class="note-box">${day.note}</div>
+              </aside>
+            </div>
+          </article>
+        </section>
+      `;
+    }
+
+    function renderRestaurants() {
+      return `
+        <section class="view" data-view="restaurants">
+          <h2 class="section-title">🍽 Éttermek</h2>
+          <div class="group-grid">
+            ${tripData.restaurants.map((group) => `
+              <section class="card">
+                <h3>${group.city}</h3>
+                <div class="group-grid">
+                  ${group.items.map((item) => `
+                    <article class="list-card">
+                      <h3><a href="${item.url}" target="_blank" rel="noreferrer">${item.name}</a></h3>
+                      <p>${item.type}</p>
+                      <div class="food-tags">${item.tags.map((tag) => `<span class="food-tag">${tag}</span>`).join("")}</div>
+                      <p>${item.description}</p>
+                      <div class="meta">${item.meta}</div>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+            `).join("")}
           </div>
-        </div>
-      </div>
-      <div class="sight">
-        <div class="sight-hdr">
-          <div>
-            <div class="sight-name">Belém-torony (Torre de Belém)</div>
-            <div class="sight-meta"><span class="sight-tag unesco">UNESCO 1983</span><span class="sight-tag">15. sz.</span></div>
+        </section>
+      `;
+    }
+
+    function renderSights() {
+      return `
+        <section class="view" data-view="sights">
+          <h2 class="section-title">🏛 Látnivalók</h2>
+          <div class="group-grid">
+            ${tripData.sights.map((sight) => `
+              <article class="list-card">
+                <h3>${sight.name}</h3>
+                <p>${sight.detail}</p>
+                <div class="meta">${sight.when} · ${sight.rating} · ${sight.price}</div>
+              </article>
+            `).join("")}
           </div>
-          <div class="sight-rating">⭐ 4.6</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">A Tejo folyó partján álló manuelin stílusú bástyaerőd Lisszabon egyik legismertebb jelképe. Eredetileg a kikötő védelmére és a hajózás irányítására épült a 16. század elején.</div>
-          <div class="sight-info"><span>💰 8€/fő</span><span>🕙 10:00–17:30</span><span class="warn">Hétfőn ZÁRVA</span></div>
-          <div class="sight-links">
-            <a href="https://hu.wikipedia.org/wiki/Bel%C3%A9m-torony" target="_blank" class="slink wiki">📖 Wikipedia (HU)</a>
-            <a href="https://www.google.com/maps/search/Torre+de+Belem+Lisbon" target="_blank" class="slink gmap">📍 Google Maps</a>
+        </section>
+      `;
+    }
+
+    function renderPractical() {
+      return `
+        <section class="view" data-view="practical">
+          <h2 class="section-title">🧳 Praktikus</h2>
+          <div class="group-grid">
+            ${tripData.practical.map((group) => `
+              <article class="card">
+                <h3>${group.title}</h3>
+                <ul class="plain-list">
+                  ${group.items.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              </article>
+            `).join("")}
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+          <p class="footer-note">A <code>Portugal Codex</code> út most már külön adatfájlból és külön stílusból épül fel, így később az itinerary-t főleg a <code>trip-data.js</code> szerkesztésével tudod módosítani.</p>
+        </section>
+      `;
+    }
 
-<!-- ═══ NAP 3 ═══ -->
-<div class="pg" id="pg-d3">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum s">3</div>
-        <div>
-          <div class="dtitle">🏰 Sintra nap – Pena + Regaleira</div>
-          <div class="dsub">08:00 vonat · 09:30 Pena kastély · 12:00 Regaleira · Cabo da Roca opció</div>
-        </div>
-        <div class="ddate">2026. április 5, vasárnap</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb tr">08:00</span></td><td><b>🚆 Vonat: Rossio → Sintra</b></td><td>CP vonat · ~40 perc · ~3€/fő · óránként indul</td></tr>
-        <tr><td><span class="tb">09:00</span></td><td><b>🚌 Busz Sintra centrumból kastélyokhoz</b></td><td>Helyi busz 434 · 3€ körforgalom</td></tr>
-        <tr><td><span class="tb">09:30</span></td><td><b>🏰 Palácio Nacional da Pena</b> <span class="stag tg-s">UNESCO</span></td><td>20€/fő · <span class="warn">Online vedd előre!</span></td></tr>
-        <tr><td><span class="tb">11:30</span></td><td><b>🌳 Quinta da Regaleira</b></td><td>8€/fő · iniciatikus kút · titokzatos kert</td></tr>
-        <tr><td><span class="tb eat">13:30</span></td><td><b>🍽 Ebéd Sintra centrumban</b></td><td>Travessa do Municipio · helyi éttermek</td></tr>
-        <tr><td><span class="tb">15:00</span></td><td><b>🌊 Opció: Cabo da Roca</b></td><td>Busz 403 Sintrából · 20 perc · Európa legny. pontja</td></tr>
-        <tr><td><span class="tb tr">17:30</span></td><td><b>🚆 Vissza: Sintra → Rossio</b></td><td>~40 perc</td></tr>
-        <tr><td><span class="tb eat">20:00</span></td><td><b>🍽 Vacsora Lisszabonban</b></td><td>Vagy Chiado / Bairro Alto étterem</td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> Sintra VASÁRNAP rendkívül zsúfolt. A Pena kastélyhoz <strong>kötelező az online jegyvásárlás</strong> előre! Az időpontjeggyel a sorban állást elkerülöd. A Regaleira-hoz is érdemes foglalni. Indulj a lehető legkorábban!</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">📍 Sintra – Kastélyok napja</div>
-      <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs><filter id="sh3"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#00000025"/></filter></defs>
-        <rect width="320" height="18" fill="#6c2a1a" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Sintra – UNESCO Kulturális Táj</text>
-        <rect y="18" width="320" height="172" fill="#e8f0e0"/>
-        <!-- Hegyek -->
-        <path d="M80,100 Q130,30 180,60 Q230,90 280,70 Q310,55 320,60 L320,172 L0,172 L0,100 Z" fill="#c8dca8" stroke="#8aaa60" stroke-width="1"/>
-        <text x="180" y="55" text-anchor="middle" font-size="8" fill="#5a7a30" font-style="italic">Sintra-hegység</text>
-        <!-- Sintra centrum -->
-        <g filter="url(#sh3)"><circle cx="160" cy="130" r="9" fill="#555" stroke="white" stroke-width="1.5"/>
-        <text x="160" y="134" text-anchor="middle" font-size="8">🚆</text></g>
-        <text x="160" y="146" text-anchor="middle" font-size="6.5" fill="#333" font-weight="600">Sintra centrum</text>
-        <!-- Pena kastély -->
-        <g filter="url(#sh3)"><circle cx="185" cy="70" r="11" fill="#6c2a1a" stroke="white" stroke-width="2"/>
-        <text x="185" y="75" text-anchor="middle" font-size="10">🏰</text></g>
-        <text x="185" y="88" text-anchor="middle" font-size="6.5" fill="#6c2a1a" font-weight="700">Pena kastély</text>
-        <!-- Regaleira -->
-        <g filter="url(#sh3)"><circle cx="135" cy="105" r="9" fill="#1a5c2a" stroke="white" stroke-width="1.5"/>
-        <text x="135" y="109" text-anchor="middle" font-size="8">🌳</text></g>
-        <text x="135" y="121" text-anchor="middle" font-size="6.5" fill="#1a5c2a" font-weight="600">Regaleira</text>
-        <!-- Cabo da Roca (távolabb bal) -->
-        <g filter="url(#sh3)"><circle cx="40" cy="140" r="8" fill="#1a2a6c" stroke="white" stroke-width="1.5"/>
-        <text x="40" y="144" text-anchor="middle" font-size="7.5">🌊</text></g>
-        <text x="40" y="156" text-anchor="middle" font-size="5.5" fill="#1a2a6c" font-weight="600">Cabo da Roca</text>
-        <text x="40" y="164" text-anchor="middle" font-size="5" fill="#888">(opció)</text>
-        <!-- Lisszabon (messzebb) -->
-        <text x="270" y="155" text-anchor="middle" font-size="7" fill="#888">← LIS (40 perc vonat)</text>
-        <!-- útvonal vonal -->
-        <path d="M160,125 Q148,115 138,112" fill="none" stroke="#ff6600" stroke-width="1.5" stroke-dasharray="4,2"/>
-        <path d="M138,109 Q158,90 180,78" fill="none" stroke="#ff6600" stroke-width="1.5" stroke-dasharray="4,2"/>
-      </svg>
-    </div>
-    <div class="sight-grid">
-      <div class="sight">
-        <div class="sight-hdr">
-          <div>
-            <div class="sight-name">Palácio Nacional da Pena</div>
-            <div class="sight-meta"><span class="sight-tag unesco">UNESCO 1995</span><span class="sight-tag">Romantikus stílus</span></div>
-          </div>
-          <div class="sight-rating">⭐ 4.7</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">Portugália leglátogatottabb látnivalója – egy mesebeli, élénk színekben pompázó kastély a Sintra-hegység csúcsán. I. Ferdinánd portugál király megrendelésére a 19. században épült, neo-manuelin és romantikus elemekkel vegyítve.</div>
-          <div class="sight-info"><span>💰 20€/fő</span><span>🕙 09:30–19:00</span><span class="warn">Online jegy kötelező!</span></div>
-          <div class="sight-links">
-            <a href="https://en.wikipedia.org/wiki/Pal%C3%A1cio_da_Pena" target="_blank" class="slink wiki">📖 Wikipedia (EN)</a>
-            <a href="https://www.google.com/maps/search/Palacio+Nacional+da+Pena+Sintra" target="_blank" class="slink gmap">📍 Google Maps</a>
-          </div>
-        </div>
-      </div>
-      <div class="sight">
-        <div class="sight-hdr">
-          <div>
-            <div class="sight-name">Quinta da Regaleira</div>
-            <div class="sight-meta"><span class="sight-tag">Misztikus kert</span><span class="sight-tag">1904</span></div>
-          </div>
-          <div class="sight-rating">⭐ 4.7</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">Titokzatos villa és park számos szimbolikus elemmel, szabadkőműves és rózsakeresztes motívumokkal. Legismertebb látványossága az "iniciatikus kút" – egy fordított torony, amely a föld mélyébe vezet spirálisan.</div>
-          <div class="sight-info"><span>💰 8€/fő</span><span>🕙 09:30–20:00</span></div>
-          <div class="sight-links">
-            <a href="https://en.wikipedia.org/wiki/Quinta_da_Regaleira" target="_blank" class="slink wiki">📖 Wikipedia (EN)</a>
-            <a href="https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra" target="_blank" class="slink gmap">📍 Google Maps</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+    views.innerHTML = [
+      renderOverview(),
+      ...tripData.days.map(renderDay),
+      renderRestaurants(),
+      renderSights(),
+      renderPractical()
+    ].join("");
 
-<!-- ═══ NAP 4 ═══ -->
-<div class="pg" id="pg-d4">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum d">4</div>
-        <div>
-          <div class="dtitle">🚗 Autóút: Óbidos → Nazaré → Coimbra → Pinhão</div>
-          <div class="dsub">08:00 indulás · ~19:00 érkezés Pinhãóba · ~680 km</div>
-        </div>
-        <div class="ddate">2026. április 6, hétfő</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb car">08:00</span></td><td><b>🚗 Autó átvétel Lisszabonban + indulás</b></td><td>A8 autópálya észak felé</td></tr>
-        <tr><td><span class="tb">09:00</span></td><td><b>🏰 Óbidos</b> – ~45-60 perc</td><td>Vár + középkori falak + ginja kóstoló</td></tr>
-        <tr><td><span class="tb car">10:15</span></td><td><b>🚗 Óbidos → Nazaré</b></td><td>~45 perc · A8 + N8</td></tr>
-        <tr><td><span class="tb">11:00</span></td><td><b>🌊 Nazaré</b> – szirtfok (Sítio)</td><td>Funicular fel · kilátó · óriáshullámok helyszíne</td></tr>
-        <tr><td><span class="tb car">12:15</span></td><td><b>🚗 Nazaré → Coimbra</b></td><td>~1.5 óra · A17 + A1</td></tr>
-        <tr><td><span class="tb">14:00</span></td><td><b>🏛 Universidade de Coimbra</b> <span class="stag tg-s">UNESCO</span></td><td>Joanina Könyvtár · 12.5€ jegy · lenyűgöző</td></tr>
-        <tr><td><span class="tb eat">14:30</span></td><td><b>🍽 Ebéd: Zé Manel dos Ossos ⭐4.5</b></td><td><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span> · kis tasca, autentikus</td></tr>
-        <tr><td><span class="tb car">16:30</span></td><td><b>🚗 Coimbra → Pinhão</b></td><td>~2 óra · A1 + A24 + N222</td></tr>
-        <tr><td><span class="tb sl">19:00</span></td><td><b>🏨 Megérkezés Pinhãóba</b></td><td>Szállás + helyi vacsora</td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> Ez egy hosszú autósnap! Az Óbidosban és Nazaréban töltött idő rövid, de megéri. Coimbrában a Joanina Könyvtárba <strong>KÖTELEZŐ az online foglalás</strong> – napi korlátozott belépő. Pinhãóba érve próbáld ki a helyi Quinta borokat vacsorával.</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">📍 Autóút: LIS → Óbidos → Nazaré → Coimbra → Pinhão</div>
-      <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs>
-          <marker id="arrc" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#c8960c"/>
-          </marker>
-        </defs>
-        <rect width="320" height="18" fill="#c8960c" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Autóút – Ápr. 6 (Hétfő)</text>
-        <rect y="18" width="320" height="172" fill="#f5f2ec"/>
-        <line x1="80" y1="18" x2="80" y2="190" stroke="#e0d8cf" stroke-width="1"/>
-        <line x1="160" y1="18" x2="160" y2="190" stroke="#e0d8cf" stroke-width="1"/>
-        <line x1="240" y1="18" x2="240" y2="190" stroke="#e0d8cf" stroke-width="1"/>
-        <!-- Útvonal vonal -->
-        <path d="M70,165 L70,135 L65,110 L75,85 L130,58 L210,38" fill="none" stroke="#c8960c" stroke-width="2.5" stroke-dasharray="5,2.5" marker-end="url(#arrc)"/>
-        <!-- Lisszabon -->
-        <circle cx="70" cy="165" r="10" fill="#1a5c2a" stroke="white" stroke-width="2"/>
-        <text x="70" y="169" text-anchor="middle" font-size="8" font-weight="bold" fill="white">LIS</text>
-        <text x="93" y="167" font-size="7" fill="#1a5c2a" font-weight="600">Lisszabon</text>
-        <!-- Óbidos -->
-        <circle cx="70" cy="132" r="7" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="70" y="136" text-anchor="middle" font-size="6.5" font-weight="bold" fill="white">Ó</text>
-        <text x="82" y="134" font-size="6.5" fill="#6c2a1a" font-weight="600">Óbidos (9:00)</text>
-        <!-- Nazaré -->
-        <circle cx="65" cy="110" r="7" fill="#1a2a6c" stroke="white" stroke-width="1.5"/>
-        <text x="65" y="114" text-anchor="middle" font-size="6.5" font-weight="bold" fill="white">N</text>
-        <text x="77" y="112" font-size="6.5" fill="#1a2a6c" font-weight="600">Nazaré (11:00)</text>
-        <!-- Coimbra -->
-        <circle cx="78" cy="82" r="9" fill="#6c2a1a" stroke="white" stroke-width="2"/>
-        <text x="78" y="86" text-anchor="middle" font-size="7.5" font-weight="bold" fill="white">CO</text>
-        <text x="92" y="83" font-size="6.5" fill="#6c2a1a" font-weight="600">Coimbra (14:00)</text>
-        <!-- Pinhão -->
-        <circle cx="210" cy="36" r="10" fill="#c8960c" stroke="white" stroke-width="2"/>
-        <text x="210" y="40" text-anchor="middle" font-size="8" font-weight="bold" fill="white">🍷</text>
-        <text x="210" y="52" text-anchor="middle" font-size="6.5" fill="#c8960c" font-weight="700">Pinhão (19:00)</text>
-        <!-- Időbecslések -->
-        <text x="5" y="149" font-size="6" fill="#999">~1h</text>
-        <text x="5" y="124" font-size="6" fill="#999">~45m</text>
-        <text x="5" y="98" font-size="6" fill="#999">~1.5h</text>
-        <text x="100" y="55" font-size="6" fill="#999">~2h</text>
-        <text x="160" y="175" text-anchor="middle" font-size="7" fill="#888">Összes távolság: ~480 km · ~6h autózás</text>
-      </svg>
-    </div>
-    <div class="sight-grid">
-      <div class="sight">
-        <div class="sight-hdr">
-          <div><div class="sight-name">Universidade de Coimbra – Joanina Könyvtár</div>
-          <div class="sight-meta"><span class="sight-tag unesco">UNESCO 2013</span></div></div>
-          <div class="sight-rating">⭐ 4.7</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">A világ egyik legszebb barokk könyvtára, az 1290-ben alapított Coimbrai Egyetem szívében. A Biblioteca Joanina aranyozott faragványaival és festett mennyezetével elképesztő látványt nyújt – és valódi denevérek védik az állományt éjszaka.</div>
-          <div class="sight-info"><span>💰 12.5€/fő</span><span>🕙 09:00–17:00</span><span class="warn">Foglalás kötelező online!</span></div>
-          <div class="sight-links">
-            <a href="https://en.wikipedia.org/wiki/Biblioteca_Joanina" target="_blank" class="slink wiki">📖 Wikipedia (EN)</a>
-            <a href="https://www.google.com/maps/search/Biblioteca+Joanina+Coimbra" target="_blank" class="slink gmap">📍 Google Maps</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+    tabsEl.innerHTML = tabs.map((tab, index) => `
+      <button class="tab-btn ${index === 0 ? "is-active" : ""}" data-tab="${tab.id}">${tab.label}</button>
+    `).join("");
 
-<!-- ═══ NAP 5 ═══ -->
-<div class="pg" id="pg-d5">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum d">5</div>
-        <div>
-          <div class="dtitle">🍷 Douro-völgy + N222 → Porto</div>
-          <div class="dsub">09:00 Casal de Loivos · 10:30 borászat · 13:30 N222 · ~18:30 Porto</div>
-        </div>
-        <div class="ddate">2026. április 7, kedd</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb">09:00</span></td><td><b>🌅 Casal de Loivos kilátó</b></td><td>A Douro-völgy egyik legjobb panorámája – reggeli fény!</td></tr>
-        <tr><td><span class="tb">10:30</span></td><td><b>🍷 Borászat #1: Quinta do Crasto</b></td><td>~20-30€/fő kóstolóval · előre FOGLALJ!</td></tr>
-        <tr><td><span class="tb">12:00</span></td><td><b>🍷 Opció borászat #2</b></td><td>Ramos Pinto, Quinta do Vallado stb.</td></tr>
-        <tr><td><span class="tb eat">13:30</span></td><td><b>🍽 Ebéd Peso da Réguában</b></td><td>Folyóparti étterem · panorámás · húsételek</td></tr>
-        <tr><td><span class="tb car">15:00</span></td><td><b>🚗 N222 indulás Porto felé</b></td><td><span class="warn">LASSAN hajtani!</span> Megállók a folyó mellett</td></tr>
-        <tr><td><span class="tb car">17:00</span></td><td><b>🚗 A4 autópálya Porto irányába</b></td><td>~1.5 óra</td></tr>
-        <tr><td><span class="tb sl">18:30</span></td><td><b>🏨 Bejelentkezés Portóban</b></td><td>Autó visszaadása</td></tr>
-        <tr><td><span class="tb eat">20:00</span></td><td><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/DOP+Restaurant+Rui+Paula+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">DOP by Rui Paula</a> ⭐4.6</b></td><td><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span> · Palácio das Artes · <span class="warn">foglalj!</span></td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> Az N222 utat sokan "a világ legszebb autóútjaként" emlegetik. Tényleg lassíts le, állj meg a Douro-völgy felett, és nézd a szőlőültetvényeket. Pinhãóban reggel is érdemes sétálni kicsit a folyóparton – csöndes és gyönyörű.</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">📍 Douro-völgy + N222 → Porto</div>
-      <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs>
-          <marker id="arrg" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#c8960c"/>
-          </marker>
-        </defs>
-        <rect width="320" height="18" fill="#c8960c" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Douro-völgy → N222 → Porto</text>
-        <rect y="18" width="320" height="172" fill="#e8f0e0"/>
-        <!-- Douro folyó -->
-        <path d="M250,80 Q210,90 160,100 Q110,110 50,115" fill="none" stroke="#88b8d4" stroke-width="4"/>
-        <text x="150" y="125" text-anchor="middle" font-size="7.5" fill="#5588aa" font-style="italic">Douro folyó</text>
-        <!-- Szőlők (sematikus) -->
-        <path d="M200,80 Q230,60 280,50 Q310,45 320,50 L320,80 Q280,75 250,80 Z" fill="#d4e8a8" stroke="#8aaa60" stroke-width="1" opacity="0.7"/>
-        <path d="M100,90 Q140,70 190,75 L190,95 Q150,95 100,110 Z" fill="#d4e8a8" stroke="#8aaa60" stroke-width="1" opacity="0.7"/>
-        <!-- Pinhão -->
-        <circle cx="255" cy="82" r="10" fill="#c8960c" stroke="white" stroke-width="2"/>
-        <text x="255" y="86" text-anchor="middle" font-size="8" font-weight="bold" fill="white">🍷</text>
-        <text x="255" y="98" text-anchor="middle" font-size="6.5" fill="#8a6500" font-weight="700">Pinhão</text>
-        <!-- Casal de Loivos -->
-        <circle cx="225" cy="60" r="8" fill="#1a2a6c" stroke="white" stroke-width="1.5"/>
-        <text x="225" y="64" text-anchor="middle" font-size="7.5">🌅</text>
-        <text x="225" y="76" text-anchor="middle" font-size="5.5" fill="#1a2a6c" font-weight="600">Casal de Loivos</text>
-        <!-- Peso da Régua -->
-        <circle cx="160" cy="102" r="8" fill="#b35500" stroke="white" stroke-width="1.5"/>
-        <text x="160" y="106" text-anchor="middle" font-size="7.5">🍽</text>
-        <text x="160" y="118" text-anchor="middle" font-size="6" fill="#b35500" font-weight="600">Peso da Régua</text>
-        <!-- N222 útvonal -->
-        <path d="M255,85 Q210,100 160,105 Q100,110 50,118" fill="none" stroke="#c8960c" stroke-width="2.5" stroke-dasharray="4,2" opacity="0.8"/>
-        <text x="150" y="140" text-anchor="middle" font-size="7" fill="#8a6500" font-weight="700">N222 – a világ legszebb útja</text>
-        <!-- Porto -->
-        <circle cx="45" cy="115" r="10" fill="#1a2a6c" stroke="white" stroke-width="2"/>
-        <text x="45" y="119" text-anchor="middle" font-size="8" font-weight="bold" fill="white">PRT</text>
-        <text x="45" y="131" text-anchor="middle" font-size="6.5" fill="#1a2a6c" font-weight="700">Porto</text>
-      </svg>
-    </div>
-    <div class="sight-grid">
-      <div class="sight">
-        <div class="sight-hdr">
-          <div><div class="sight-name">Douro-völgy szőlőültetvények</div>
-          <div class="sight-meta"><span class="sight-tag unesco">UNESCO 2001</span><span class="sight-tag">Port bor régió</span></div></div>
-          <div class="sight-rating">⭐ 4.9</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">A világ első meghatározott szőlőterülete (1756-tól), lépcsőzetes teraszain termesztik a port bor alapanyagát. A völgy meredek lejtőin, a Douro folyó kanyarulatainál elterülő szőlők látványa egyedülálló Európában.</div>
-          <div class="sight-info"><span>💰 borászat: 15-30€/fő</span><span>🕙 egész nap</span></div>
-          <div class="sight-links">
-            <a href="https://hu.wikipedia.org/wiki/Douro-v%C3%B6lgy" target="_blank" class="slink wiki">📖 Wikipedia (HU)</a>
-            <a href="https://www.google.com/maps/search/Douro+Valley+Pinhao+Portugal" target="_blank" class="slink gmap">📍 Google Maps</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+    const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
+    const viewEls = Array.from(document.querySelectorAll(".view"));
 
-<!-- ═══ NAP 6 ═══ -->
-<div class="pg" id="pg-d6">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum p">6</div>
-        <div>
-          <div class="dtitle">🌉 Porto – Ribeira + Gaia + Híd + Azulejo</div>
-          <div class="dsub">09:30 Serra do Pilar · 10:30 Gaia pincék · 14:30 Ribeira · 19:30 Lareira vacsora</div>
-        </div>
-        <div class="ddate">2026. április 8, szerda</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb">09:30</span></td><td><b>🌅 Miradouro da Serra do Pilar</b></td><td>Porto legjobb panorámapontja Gaiából</td></tr>
-        <tr><td><span class="tb">10:30</span></td><td><b>🍷 Gaia borospincék (Taylor's vagy Ramos Pinto)</b></td><td>~15-20€ kóstolóval · 1-1.5 óra</td></tr>
-        <tr><td><span class="tb">12:00</span></td><td><b>🌉 D. Luís I hídon átkelés – Ribeira</b></td><td>Felső szint gyalog – fantasztikus kilátás</td></tr>
-        <tr><td><span class="tb eat">12:30</span></td><td><b>🍽 Ebéd: <a href="https://www.google.com/maps/search/Cafe+Santiago+Francesinha+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Café Santiago</a> ⭐4.4</b></td><td><span class="food sertes">🐷 sertés</span> Francesinha – kötelező Porto-élmény</td></tr>
-        <tr><td><span class="tb">14:30</span></td><td><b>🏘 Ribeira negyed séta</b></td><td>Cais da Ribeira · hajós kirándulás opció</td></tr>
-        <tr><td><span class="tb">16:00</span></td><td><b>🎨 São Bento pályaudvar azulejo</b></td><td>Ingyenes · 20 000 csempe – lenyűgöző!</td></tr>
-        <tr><td><span class="tb">17:00</span></td><td><b>🎨 Igreja do Carmo + Clerigos negyed</b></td><td>Azulejo homlokzat · Rua das Flores séta</td></tr>
-        <tr><td><span class="tb eat">19:30</span></td><td><b>🍽 Vacsora: <a href="https://www.google.com/maps/search/Lareira+Baixa+Porto+tasca" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Lareira – Baixa</a> ⭐4.5</b></td><td><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food no-hal">❌ hal nincs</span></td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> A D. Luís I híd felső szintjén gyalogolj át (ha nem fél a magasságtól) – a kilátás Porto felett és a Douro folyóra mesés. A São Bento pályaudvar INGYENES megtekinteni – az azulejo csempék Portugália históriáját ábrázolják.</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">📍 Porto – Ribeira, Gaia, híd</div>
-      <svg viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs><filter id="sh4"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#00000025"/></filter></defs>
-        <rect width="320" height="18" fill="#1a2a6c" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Porto – Ribeira + Gaia + Azulejo</text>
-        <rect y="18" width="320" height="182" fill="#f0ede6"/>
-        <line x1="160" y1="18" x2="160" y2="200" stroke="#ddd" stroke-width="1"/>
-        <!-- Douro folyó -->
-        <path d="M0,125 Q80,120 160,125 Q240,130 320,122" fill="#b8d4e8" stroke="#88b8d4" stroke-width="1.5"/>
-        <rect x="0" y="126" width="320" height="30" fill="#b8d4e8"/>
-        <text x="160" y="143" text-anchor="middle" font-size="7.5" fill="#5588aa" font-style="italic">Douro folyó</text>
-        <!-- Porto (észak) -->
-        <rect x="5" y="25" width="310" height="95" rx="4" fill="#f5f0e8" stroke="#1a2a6c" stroke-width="1" opacity="0.4"/>
-        <text x="90" y="38" text-anchor="middle" font-size="7" fill="#1a2a6c" font-weight="bold">PORTO</text>
-        <!-- Gaia (dél) -->
-        <rect x="5" y="158" width="310" height="35" rx="4" fill="#e8f0e8" stroke="#1a5c2a" stroke-width="1" opacity="0.4"/>
-        <text x="60" y="178" text-anchor="middle" font-size="7" fill="#1a5c2a" font-weight="bold">VILA NOVA DE GAIA</text>
-        <!-- D. Luis I híd -->
-        <rect x="145" y="118" width="30" height="20" rx="2" fill="#888" stroke="#555" stroke-width="1"/>
-        <text x="160" y="130" text-anchor="middle" font-size="6" fill="white" font-weight="700">Híd</text>
-        <text x="200" y="115" font-size="6.5" fill="#555" font-style="italic">D. Luís I</text>
-        <!-- São Bento -->
-        <g filter="url(#sh4)"><circle cx="100" cy="65" r="9" fill="#1a2a6c" stroke="white" stroke-width="1.5"/>
-        <text x="100" y="69" text-anchor="middle" font-size="8">🎨</text></g>
-        <text x="100" y="81" text-anchor="middle" font-size="6.5" fill="#1a2a6c" font-weight="600">São Bento</text>
-        <!-- Ribeira -->
-        <g filter="url(#sh4)"><circle cx="160" cy="100" r="9" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="160" y="104" text-anchor="middle" font-size="8">🏘</text></g>
-        <text x="160" y="116" text-anchor="middle" font-size="6.5" fill="#6c2a1a" font-weight="600">Ribeira</text>
-        <!-- Clerigos -->
-        <g filter="url(#sh4)"><circle cx="80" cy="50" r="8" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="80" y="54" text-anchor="middle" font-size="7.5">⛪</text></g>
-        <text x="80" y="66" text-anchor="middle" font-size="6" fill="#6c2a1a" font-weight="600">Clérigos</text>
-        <!-- Gaia borospincék -->
-        <g filter="url(#sh4)"><circle cx="145" cy="170" r="9" fill="#c8960c" stroke="white" stroke-width="1.5"/>
-        <text x="145" y="174" text-anchor="middle" font-size="8">🍷</text></g>
-        <text x="145" y="186" text-anchor="middle" font-size="6.5" fill="#8a6500" font-weight="600">Borospincék</text>
-        <!-- Serra do Pilar -->
-        <g filter="url(#sh4)"><circle cx="200" cy="160" r="9" fill="#1a2a6c" stroke="white" stroke-width="1.5"/>
-        <text x="200" y="164" text-anchor="middle" font-size="8">🌅</text></g>
-        <text x="200" y="176" text-anchor="middle" font-size="6.5" fill="#1a2a6c" font-weight="600">Serra do Pilar</text>
-        <!-- Étterem -->
-        <g filter="url(#sh4)"><circle cx="125" cy="75" r="8" fill="#b35500" stroke="white" stroke-width="1.5"/>
-        <text x="125" y="79" text-anchor="middle" font-size="7.5">🍽</text></g>
-        <text x="125" y="91" text-anchor="middle" font-size="6" fill="#b35500">Café Santiago</text>
-      </svg>
-    </div>
-    <div class="sight-grid">
-      <div class="sight">
-        <div class="sight-hdr">
-          <div><div class="sight-name">São Bento pályaudvar (azulejo)</div>
-          <div class="sight-meta"><span class="sight-tag">1916 · Azulejo</span><span class="sight-tag">Ingyenes</span></div></div>
-          <div class="sight-rating">⭐ 4.8</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">Porto főpályaudvara nem csupán vasúti csomópont, hanem egy élő múzeum is: a csarnok falait 20 000 kékfehér azulejo csempe borítja, amelyek Portugália legendáit, csatáit és a 20. századi mindennapi életet ábrázolják.</div>
-          <div class="sight-info"><span>💰 Ingyenes</span><span>🕙 Pályaudvar nyitvatartás szerint</span></div>
-          <div class="sight-links">
-            <a href="https://hu.wikipedia.org/wiki/S%C3%A3o_Bento_p%C3%A1lyaudvar_(Porto)" target="_blank" class="slink wiki">📖 Wikipedia (HU)</a>
-            <a href="https://www.google.com/maps/search/Sao+Bento+Station+Porto" target="_blank" class="slink gmap">📍 Google Maps</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+    function activateTab(id) {
+      tabButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.tab === id));
+      viewEls.forEach((view) => view.classList.toggle("is-active", view.dataset.view === id));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
-<!-- ═══ NAP 7 ═══ -->
-<div class="pg" id="pg-d7">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum p">7</div>
-        <div>
-          <div class="dtitle">📚 Porto – Lello + Brunch + Lazítás</div>
-          <div class="dsub">Laza nap · Lello könyvesbolt · Bifana · Clerigos · Majestic · MUU búcsúvacsora</div>
-        </div>
-        <div class="ddate">2026. április 9, csütörtök</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb">10:00</span></td><td><b>📚 Livraria Lello</b></td><td>8€ jegy (levonják vásárlásból) · <span class="warn">Előre foglalj!</span></td></tr>
-        <tr><td><span class="tb eat">11:30</span></td><td><b>🍽 Brunch/Ebéd: <a href="https://www.google.com/maps/search/Conga+Casa+das+Bifanas+Porto" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">Conga – Casa das Bifanas</a> ⭐4.5</b></td><td><span class="food sertes">🐷 sertés</span> Porto ikonikus bifana szendvics helye</td></tr>
-        <tr><td><span class="tb">13:00</span></td><td><b>🏛 Clerigos torony</b></td><td>8€/fő · 225 lépcső · panoráma</td></tr>
-        <tr><td><span class="tb">14:30</span></td><td><b>🛒 Bolhão Piac</b></td><td>Felújított piac · sajtok, felvágottak, helyi termékek</td></tr>
-        <tr><td><span class="tb">16:00</span></td><td><b>☕ Café Majestic</b></td><td>Porto legszebb art nouveau kávéháza · kávé + pastry</td></tr>
-        <tr><td><span class="tb">17:30</span></td><td><b>🚶 Rua de Santa Catarina séta + vásárlás</b></td><td>Főbb bevásárlóutca · szuvenírek</td></tr>
-        <tr><td><span class="tb eat">19:30</span></td><td><b>🍽 Búcsúvacsora: <a href="https://www.google.com/maps/search/MUU+Steakhouse+Porto+Rua+do+Almada" target="_blank" style="color:inherit;text-decoration:underline;text-decoration-color:#b35500;text-decoration-style:dotted">MUU Steakhouse</a> ⭐4.5</b></td><td><span class="food marha">🥩 marha</span> Black Angus · <span class="warn">foglalj előre!</span></td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Tipp:</b> A Livraria Lello a világ legszebb könyvesboltjai közé tartozik – Harry Potterben is inspirációként szolgált. Az ingyenes belépés régen volt, ma 8€ a jegy (amit könyvvásárlásnál levonnak). <strong>Online időpontfoglalás ajánlott</strong> – sokan állnak sorban.</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">📍 Porto – Laza Nap</div>
-      <svg viewBox="0 0 320 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;font-family:'Segoe UI',sans-serif">
-        <defs><filter id="sh5"><feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#00000025"/></filter></defs>
-        <rect width="320" height="18" fill="#1a2a6c" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Porto – Lello · Clerigos · Majestic · MUU</text>
-        <rect y="18" width="320" height="172" fill="#f0ede6"/>
-        <line x1="80" y1="18" x2="80" y2="190" stroke="#ddd" stroke-width="1"/>
-        <line x1="160" y1="18" x2="160" y2="190" stroke="#ddd" stroke-width="1"/>
-        <line x1="240" y1="18" x2="240" y2="190" stroke="#ddd" stroke-width="1"/>
-        <!-- Douro -->
-        <path d="M0,168 Q80,164 160,168 Q240,172 320,165" fill="#b8d4e8" stroke="#88b8d4" stroke-width="1"/>
-        <rect x="0" y="169" width="320" height="21" fill="#b8d4e8"/>
-        <!-- Livraria Lello -->
-        <g filter="url(#sh5)"><circle cx="120" cy="60" r="10" fill="#1a2a6c" stroke="white" stroke-width="2"/>
-        <text x="120" y="65" text-anchor="middle" font-size="10">📚</text></g>
-        <text x="120" y="78" text-anchor="middle" font-size="6.5" fill="#1a2a6c" font-weight="700">Livraria Lello</text>
-        <!-- Conga -->
-        <g filter="url(#sh5)"><circle cx="175" cy="80" r="9" fill="#b35500" stroke="white" stroke-width="1.5"/>
-        <text x="175" y="84" text-anchor="middle" font-size="8">🍽</text></g>
-        <text x="175" y="96" text-anchor="middle" font-size="6" fill="#b35500" font-weight="600">Conga Bifana</text>
-        <!-- Clerigos -->
-        <g filter="url(#sh5)"><circle cx="130" cy="90" r="9" fill="#6c2a1a" stroke="white" stroke-width="1.5"/>
-        <text x="130" y="94" text-anchor="middle" font-size="8">⛪</text></g>
-        <text x="130" y="107" text-anchor="middle" font-size="6.5" fill="#6c2a1a" font-weight="600">Clérigos torony</text>
-        <!-- Bolhão -->
-        <g filter="url(#sh5)"><circle cx="210" cy="60" r="8" fill="#1a5c2a" stroke="white" stroke-width="1.5"/>
-        <text x="210" y="64" text-anchor="middle" font-size="7.5">🛒</text></g>
-        <text x="210" y="76" text-anchor="middle" font-size="6.5" fill="#1a5c2a" font-weight="600">Bolhão Piac</text>
-        <!-- Majestic -->
-        <g filter="url(#sh5)"><circle cx="230" cy="90" r="8" fill="#c8960c" stroke="white" stroke-width="1.5"/>
-        <text x="230" y="94" text-anchor="middle" font-size="7.5">☕</text></g>
-        <text x="230" y="106" text-anchor="middle" font-size="6.5" fill="#8a6500" font-weight="600">Majestic Café</text>
-        <!-- MUU Steakhouse -->
-        <g filter="url(#sh5)"><circle cx="155" cy="130" r="9" fill="#880000" stroke="white" stroke-width="1.5"/>
-        <text x="155" y="134" text-anchor="middle" font-size="8">🥩</text></g>
-        <text x="155" y="146" text-anchor="middle" font-size="6.5" fill="#880000" font-weight="700">MUU Steakhouse</text>
-        <!-- Rua Santa Catarina -->
-        <line x1="200" y1="55" x2="200" y2="140" stroke="#888" stroke-width="2.5" stroke-dasharray="3,2"/>
-        <text x="218" y="100" font-size="6" fill="#888" font-style="italic" transform="rotate(90,218,100)">Rua de Santa Catarina</text>
-      </svg>
-    </div>
-    <div class="sight-grid">
-      <div class="sight">
-        <div class="sight-hdr">
-          <div><div class="sight-name">Livraria Lello</div>
-          <div class="sight-meta"><span class="sight-tag">1906 · Art nouveau</span><span class="sight-tag">Top 5 világ legsebb</span></div></div>
-          <div class="sight-rating">⭐ 4.5</div>
-        </div>
-        <div class="sight-body">
-          <div class="sight-wiki">Porto ikonikus könyvesboltja 1906 óta szolgálja a könyvszeretőket. Csodálatos Art Nouveau belseje, kanyargó lépcsőfeljárója és üvegmennyezete világhírűvé tette – a Harry Potter-filmek Roxfort könyvesboltjának is inspirálója volt.</div>
-          <div class="sight-info"><span>💰 8€ (levonják vásárlásnál)</span><span>🕙 10:00–19:30</span><span class="warn">Foglalj időpontot online!</span></div>
-          <div class="sight-links">
-            <a href="https://en.wikipedia.org/wiki/Livraria_Lello" target="_blank" class="slink wiki">📖 Wikipedia (EN)</a>
-            <a href="https://www.google.com/maps/search/Livraria+Lello+Porto" target="_blank" class="slink gmap">📍 Google Maps</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- ═══ NAP 8 ═══ -->
-<div class="pg" id="pg-d8">
-<div class="day-layout">
-  <div>
-    <div class="dcard">
-      <div class="dhdr">
-        <div class="dnum r">8</div>
-        <div>
-          <div class="dtitle">✈ Visszaút: Porto → Lisszabon reptér → BUD</div>
-          <div class="dsub">08:30 indulás · Coimbra opció · LIS reptér · Wizz Air YPJP7Q</div>
-        </div>
-        <div class="ddate">2026. április 10, péntek</div>
-      </div>
-      <table class="sch">
-        <tr><th>Idő</th><th>Program</th><th>Megjegyzés</th></tr>
-        <tr><td><span class="tb car">08:30</span></td><td><b>🚗 Indulás Portóból</b></td><td>A1 autópálya dél felé · LIS reptér ~3h közvetlen</td></tr>
-        <tr><td><span class="tb">10:00</span></td><td><b>🏛 Opció: Coimbra megálló 1.5-2 óra</b></td><td>Ha Ápr. 6-án kimaradt · Joanina Könyvtár</td></tr>
-        <tr><td><span class="tb car">12:30</span></td><td><b>🚗 Coimbra → LIS reptér</b></td><td>~2.5 óra · A1 autópálya</td></tr>
-        <tr><td><span class="tb car">11:30</span></td><td><b>🚗 Közvetlen út esetén: Porto → LIS</b></td><td>~3h A1-en · autó visszaadás reptérnél</td></tr>
-        <tr><td><span class="tb fly">~06:00</span></td><td><b>☑ Check-in: Wizz Air LIS → BUD</b></td><td>YPJP7Q · Online check-in 24h előtt!</td></tr>
-        <tr><td><span class="tb fly">~08:30</span></td><td><b>✈ Wizz Air indul LIS → BUD</b></td><td>~3.5 óra · megérkezés Budapest ~12:00</td></tr>
-      </table>
-    </div>
-    <div class="note"><b>💡 Fontos:</b> A Wizz Air check-in záróideje általában 40 perccel indulás előtt. A reptérre legalább <strong>2 óra előtt</strong> érj oda. Ha visszaadsz autót a reptérnél, számíts 15-20 percre az átadásra. Coimbra opció csak akkor éri meg, ha az előző napokban nem látogattad meg.</div>
-  </div>
-  <div>
-    <div class="mini-map">
-      <div class="mini-map-title">✈ Porto → (Coimbra) → LIS → BUD</div>
-      <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
-        <defs>
-          <marker id="arrr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0,0 L6,3 L0,6 Z" fill="#aa0066"/>
-          </marker>
-        </defs>
-        <rect width="320" height="18" fill="#aa0066" opacity="0.9"/>
-        <text x="160" y="13" text-anchor="middle" font-size="8.5" font-weight="bold" fill="white">Visszaút – Ápr. 10</text>
-        <rect y="18" width="320" height="142" fill="#f5f0f5"/>
-        <!-- Porto -->
-        <circle cx="45" cy="60" r="10" fill="#1a2a6c" stroke="white" stroke-width="2"/>
-        <text x="45" y="64" text-anchor="middle" font-size="8" font-weight="bold" fill="white">PRT</text>
-        <text x="45" y="78" text-anchor="middle" font-size="7" fill="#1a2a6c" font-weight="600">Porto</text>
-        <text x="45" y="88" text-anchor="middle" font-size="6" fill="#888">08:30 indul</text>
-        <!-- Coimbra opció -->
-        <circle cx="140" cy="60" r="8" fill="#6c2a1a" stroke="white" stroke-width="1.5" stroke-dasharray="3,2" opacity="0.7"/>
-        <text x="140" y="64" text-anchor="middle" font-size="6.5" fill="#6c2a1a">CO</text>
-        <text x="140" y="77" text-anchor="middle" font-size="6.5" fill="#6c2a1a">(Coimbra opt.)</text>
-        <!-- LIS reptér -->
-        <circle cx="240" cy="60" r="10" fill="#1a5c2a" stroke="white" stroke-width="2"/>
-        <text x="240" y="64" text-anchor="middle" font-size="8" font-weight="bold" fill="white">LIS</text>
-        <text x="240" y="78" text-anchor="middle" font-size="7" fill="#1a5c2a" font-weight="600">Lisszabon rep.</text>
-        <!-- BUD -->
-        <circle cx="300" cy="60" r="8" fill="#aa0066" stroke="white" stroke-width="2"/>
-        <text x="300" y="64" text-anchor="middle" font-size="7" font-weight="bold" fill="white">BUD</text>
-        <text x="300" y="78" text-anchor="middle" font-size="6.5" fill="#aa0066">Budapest</text>
-        <!-- Vonalak -->
-        <path d="M58,60 L100,60" stroke="#c8960c" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#arrr)" opacity="0.6"/>
-        <path d="M152,60 L190,60" stroke="#c8960c" stroke-width="2" stroke-dasharray="4,2" opacity="0.6"/>
-        <path d="M250,58 Q275,40 292,56" stroke="#aa0066" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arrr)"/>
-        <text x="270" y="38" text-anchor="middle" font-size="7" fill="#aa0066">Wizz Air ✈</text>
-        <text x="270" y="46" text-anchor="middle" font-size="6.5" fill="#aa0066">YPJP7Q</text>
-        <!-- Idők -->
-        <text x="160" y="115" text-anchor="middle" font-size="7.5" fill="#555" font-weight="600">Porto → LIS reptér: ~3h autóval (A1)</text>
-        <text x="160" y="128" text-anchor="middle" font-size="7" fill="#888">Coimbra megállóval: ~4.5h</text>
-        <text x="160" y="141" text-anchor="middle" font-size="7" fill="#888">Wizz Air: ~3.5h repülés → Budapest ~12:00</text>
-      </svg>
-    </div>
-    <div class="card">
-      <h3>✈ Visszaút adatok</h3>
-      <ul>
-        <li>Wizz Air · PNR: YPJP7Q · LIS → BUD</li>
-        <li>Április 10 · ~08:30 tervezett indulás</li>
-        <li>Check-in: online 24h előtt nyílik</li>
-        <li>Reptérre érj 2 óra előtt (06:30-ra)</li>
-        <li>Autó visszaadás LIS reptérnél: +20 perc</li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-
-<!-- ═══ ÉTTERMEK ═══ -->
-<div class="pg" id="pg-re">
-<div class="section-title">🍽 Ajánlott éttermek – Portugália 2026</div>
-
-<!-- LISSZABON -->
-<div class="rcity l">🏙 LISSZABON</div>
-<div class="rgrid">
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.5</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Solar+dos+Presuntos+Lisboa" target="_blank" style="color:inherit">Solar dos Presuntos</a></div>
-        <div class="rtype">Ebéd · Baixa · 💰💰 · 12:00–22:30 · <span class="warn">Vasárnap ZÁRVA</span></div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food csirke">🍗 csirke</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Klasszikus portugál konyha a Baixa negyedben. Presunto (prosciutto-szerű sonka), sertés pörkölt, grillezett húsok – igazi portugál tasca-élmény turisták nélkül. Telt terem, barátságos kiszolgálás.</div>
-    <div class="rftr">📍 R. das Portas de Santo Antão 150, Lisszabon</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.5</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Taberna+Sal+Grosso+Alfama+Lisboa" target="_blank" style="color:inherit">Taberna Sal Grosso</a></div>
-        <div class="rtype">Vacsora · Alfama · 💰💰 · 12:30–23:00 · <span class="warn">Kedd ZÁRVA · Foglalj!</span></div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Autentikus alfamai kocsma, ahol a menü naponta változik a piaci termékek alapján. Kis helyszín, meleg hangulat, lassú főzésű sertés és marharaguk. Zsúfolt – mindenképpen foglalj előre!</div>
-    <div class="rftr">📍 Beco do Açúcar 9, Alfama, Lisszabon</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.7</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/A+Nossa+Casa+Bairro+Alto+Lisboa" target="_blank" style="color:inherit">A Nossa Casa</a></div>
-        <div class="rtype">Vacsora · Bairro Alto · 💰💰 · 19:00–23:00</div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Kedves, háziasszony-érzésű étterem a Bairro Alto-ban. Lassú főzésű disznópofa (bochechas), borjú és csirkék portugál fűszerekkel. Kiváló háziborok, barátságos kiszolgálás. Alternatíva a Taberna Sal Grossóra ha az teli.</div>
-    <div class="rftr">📍 R. Nova da Piedade 97, Lisszabon</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">☕ Ikonikus</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Pasteis+de+Belem+Lisboa" target="_blank" style="color:inherit">Pastéis de Belém</a></div>
-        <div class="rtype">Reggeli/kávé · Belém · 💰 · 08:00–23:00</div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food vegi">🥗 sütemény</span></div>
-    <div class="rdesc">Az eredeti pastel de nata (tojásos vaníliakrémes sütemény) hazája 1837 óta. A titkos recept a Jerónimos kolostor kézirataira nyúlik vissza. Sorok állnak az ajtó előtt – reggel a legrövidebb a sor.</div>
-    <div class="rftr">📍 R. de Belém 84-92, Belém, Lisszabon · <span class="warn">CSAK KÉSZPÉNZ!</span></div>
-  </div>
-
-</div>
-
-<!-- COIMBRA -->
-<div class="rcity" style="background:#f5e8e8;color:#6c2a1a;font-size:13px;font-weight:700;padding:7px 11px;border-radius:7px;margin-bottom:9px">🏛 COIMBRA</div>
-<div class="rgrid">
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.5</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Ze+Manel+dos+Ossos+Coimbra" target="_blank" style="color:inherit">Zé Manel dos Ossos</a></div>
-        <div class="rtype">Ebéd · Coimbra centrum · 💰 · 12:00–15:00 · <span class="warn">Szombat+Vasárnap ZÁRVA</span></div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span></div>
-    <div class="rdesc">Coimbrában az egyik legelismertebb autentikus hely, a falakon régi fényképekkel teli kis tasca. Napi menü 8-10€-ért, sertés- és marhafogások, homemade levesek. Helyi üzletemberek és diákok törzshelye.</div>
-    <div class="rftr">📍 Beco do Forno 12, Coimbra</div>
-  </div>
-</div>
-
-<!-- PORTO -->
-<div class="rcity p">🏙 PORTO</div>
-<div class="rgrid">
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.6</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/DOP+Restaurant+Rui+Paula+Porto+Largo+Sao+Domingos" target="_blank" style="color:inherit">DOP by Rui Paula</a></div>
-        <div class="rtype">Vacsora · Palácio das Artes · 💰💰💰 · K–Szo 12:30–15:00 / 19:00–23:00 · <span class="warn">Vasárnap ZÁRVA</span></div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food csirke">🍗 csirke</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Porto egyik legelismertebb séfjének, Rui Paulának étterme a Palácio das Artes-ban. Modern portugál konyha: kecskecomb, fekete sertés, borjú. Elegáns környezet, de nem hivalkodó. Foglalj előre!</div>
-    <div class="rftr">📍 Largo de S. Domingos 18, Porto</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.4</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Cafe+Santiago+Francesinha+Porto+Rua+Passos+Manuel" target="_blank" style="color:inherit">Café Santiago</a></div>
-        <div class="rtype">Ebéd · Aliados · 💰 · H–Szo 12:00–22:00 · <span class="warn">Vasárnap ZÁRVA</span></div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span></div>
-    <div class="rdesc">Porto legismertebb Francesinha helye. A Francesinha kenyérbe rétegezett sonkából, sertéskolbászból, steakből és olvadt sajtból áll, fokhagymás sörszószba áztatva – tükörtojással a tetején. Ez Porto ikonikus fogása.</div>
-    <div class="rftr">📍 R. de Passos Manuel 226, Porto</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.5</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Lareira+Baixa+Porto+tasca+authentic" target="_blank" style="color:inherit">Lareira – Baixa</a></div>
-        <div class="rtype">Vacsora · Baixa · 💰 · 12:00–23:00</div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food marha">🥩 marha</span><span class="food csirke">🍗 csirke</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Autentikus porto-i tasca füstölt húsokkal, chouriço kolbásszal (lángon is felszolgálják), chanfana ragúval és sertéscsülle szendvicsekkel. Borkóstolás vörösboros választékkal. Barátságos, laza hangulat.</div>
-    <div class="rftr">📍 Lgo de S. Domingos 96, Porto</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.5</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Conga+Casa+das+Bifanas+Porto+Rua+do+Bonjardim" target="_blank" style="color:inherit">Conga – Casa das Bifanas</a></div>
-        <div class="rtype">Ebéd/snack · Aliados · 💰 · 07:00–22:00 mindennap</div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food sertes">🐷 sertés</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Porto legjobb bifana (fűszeres sertés szendvics) helye. Vékonyra szelt, lassú főzésű, enyhén csípős szószban pácolt sertés, ropogós kenyérben. Olcsó, autentikus, helyi emberek kedvence – tökéletes ebédnek.</div>
-    <div class="rftr">📍 R. do Bonjardim 318, Porto</div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">⭐ 4.5</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/MUU+Steakhouse+Porto+Rua+do+Almada+149" target="_blank" style="color:inherit">MUU Steakhouse</a></div>
-        <div class="rtype">Búcsúvacsora · Aliados · 💰💰💰 · 19:00–00:00 mindennap</div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food marha">🥩 marha</span><span class="food no-hal">❌ hal nincs</span></div>
-    <div class="rdesc">Porto egyik legjobb steakháza Black Angus és hazai marhavágásokkal. Szénparázson sütött husok, bőséges adagok, házi Scotch tojás előételként. Kiváló borlap. Búcsúvacsora Porto-ból – mindenképpen foglalj!</div>
-    <div class="rftr">📍 R. do Almada 149A, Porto · <span class="warn">Foglalás KÖTELEZŐ!</span></div>
-  </div>
-
-  <div class="rc">
-    <div class="rctop">
-      <div class="rrat">☕ Ikonikus</div>
-      <div>
-        <div class="rname"><a href="https://www.google.com/maps/search/Cafe+Majestic+Porto+Rua+Santa+Catarina" target="_blank" style="color:inherit">Café Majestic</a></div>
-        <div class="rtype">Kávézó · Santa Catarina · 💰💰 · 09:00–23:30 H–Szo</div>
-      </div>
-    </div>
-    <div class="rfood"><span class="food vegi">🥗 kávé/pastry</span></div>
-    <div class="rdesc">Porto legelegánsabb kávéháza 1921 óta, gyönyörű Belle Époque belsővel. Espresso, galão, pastry és sütemények. Drágább az átlagnál, de az élmény megéri. J.K. Rowling is itt írta részben a Harry Pottert.</div>
-    <div class="rftr">📍 R. de Santa Catarina 112, Porto</div>
-  </div>
-
-</div>
-</div>
-
-<!-- ═══ LÁTNIVALÓK ═══ -->
-<div class="pg" id="pg-la">
-<div class="section-title">🏛 Látnivalók – összefoglaló</div>
-<div class="sights-list">
-  <div class="sights-list-hdr"><div>Látnivaló</div><div>Nap</div><div>Értékelés</div><div>Belépő</div></div>
-  <div class="sl-row">
-    <div class="sl-name">Pastéis de Belém<div style="font-size:10px;color:#888">Lisszabon – Belém, sütemény</div></div>
-    <div><span class="sl-day-badge l">2. nap · Ápr. 4</span></div>
-    <div class="sl-rat">⭐ Ikonikus</div>
-    <div class="sl-price">~1.5€/db</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Jerónimos kolostor <span style="background:#e8f2ea;color:#1a5c2a;border-radius:3px;padding:1px 4px;font-size:9px;font-weight:700">UNESCO</span><div style="font-size:10px;color:#888">Lisszabon – Belém, manuelin stílus</div></div>
-    <div><span class="sl-day-badge l">2. nap · Ápr. 4</span></div>
-    <div class="sl-rat">⭐ 4.7</div>
-    <div class="sl-price">10€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Torre de Belém <span style="background:#e8f2ea;color:#1a5c2a;border-radius:3px;padding:1px 4px;font-size:9px;font-weight:700">UNESCO</span><div style="font-size:10px;color:#888">Lisszabon – Belém, folyóparti erőd</div></div>
-    <div><span class="sl-day-badge l">2. nap · Ápr. 4</span></div>
-    <div class="sl-rat">⭐ 4.6</div>
-    <div class="sl-price">8€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">São Jorge vár + Alfama negyed<div style="font-size:10px;color:#888">Lisszabon – Alfama, Miradouro</div></div>
-    <div><span class="sl-day-badge l">2. nap · Ápr. 4</span></div>
-    <div class="sl-rat">⭐ 4.5</div>
-    <div class="sl-price">10€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Palácio Nacional da Pena <span style="background:#e8f2ea;color:#1a5c2a;border-radius:3px;padding:1px 4px;font-size:9px;font-weight:700">UNESCO</span><div style="font-size:10px;color:#888">Sintra – romantikus kastély</div></div>
-    <div><span class="sl-day-badge s">3. nap · Ápr. 5</span></div>
-    <div class="sl-rat">⭐ 4.7</div>
-    <div class="sl-price">20€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Quinta da Regaleira<div style="font-size:10px;color:#888">Sintra – titokzatos kert, iniciatikus kút</div></div>
-    <div><span class="sl-day-badge s">3. nap · Ápr. 5</span></div>
-    <div class="sl-rat">⭐ 4.7</div>
-    <div class="sl-price">8€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Cabo da Roca (opció)<div style="font-size:10px;color:#888">Európa legnyugatibb pontja</div></div>
-    <div><span class="sl-day-badge s">3. nap · Ápr. 5</span></div>
-    <div class="sl-rat">⭐ 4.6</div>
-    <div class="sl-price">Ingyenes</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Universidade de Coimbra – Joanina Könyvtár <span style="background:#e8f2ea;color:#1a5c2a;border-radius:3px;padding:1px 4px;font-size:9px;font-weight:700">UNESCO</span></div>
-    <div><span class="sl-day-badge" style="background:#6c2a1a">4. nap · Ápr. 6</span></div>
-    <div class="sl-rat">⭐ 4.7</div>
-    <div class="sl-price">12.5€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Douro-völgy szőlőültetvények <span style="background:#e8f2ea;color:#1a5c2a;border-radius:3px;padding:1px 4px;font-size:9px;font-weight:700">UNESCO</span><div style="font-size:10px;color:#888">Pinhão · Casal de Loivos · N222</div></div>
-    <div><span class="sl-day-badge d">5. nap · Ápr. 7</span></div>
-    <div class="sl-rat">⭐ 4.9</div>
-    <div class="sl-price">borászat ~20€</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">São Bento pályaudvar (azulejo)<div style="font-size:10px;color:#888">Porto – 20 000 kékfehér csempe</div></div>
-    <div><span class="sl-day-badge p">6. nap · Ápr. 8</span></div>
-    <div class="sl-rat">⭐ 4.8</div>
-    <div class="sl-price">Ingyenes</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">D. Luís I híd + Ribeira negyed<div style="font-size:10px;color:#888">Porto – Gaia oldal</div></div>
-    <div><span class="sl-day-badge p">6. nap · Ápr. 8</span></div>
-    <div class="sl-rat">⭐ 4.7</div>
-    <div class="sl-price">Ingyenes</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Gaia borospincék (Taylor's, Ramos Pinto)<div style="font-size:10px;color:#888">Porto – Port borkóstolás</div></div>
-    <div><span class="sl-day-badge p">6. nap · Ápr. 8</span></div>
-    <div class="sl-rat">⭐ 4.6</div>
-    <div class="sl-price">15-20€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Livraria Lello<div style="font-size:10px;color:#888">Porto – a világ egyik legszebb könyvesboltja</div></div>
-    <div><span class="sl-day-badge p">7. nap · Ápr. 9</span></div>
-    <div class="sl-rat">⭐ 4.5</div>
-    <div class="sl-price">8€/fő</div>
-  </div>
-  <div class="sl-row">
-    <div class="sl-name">Clerigos torony<div style="font-size:10px;color:#888">Porto – panoráma a városra</div></div>
-    <div><span class="sl-day-badge p">7. nap · Ápr. 9</span></div>
-    <div class="sl-rat">⭐ 4.6</div>
-    <div class="sl-price">8€/fő</div>
-  </div>
-</div>
-
-<div class="section-title" style="margin-top:20px">🌍 UNESCO helyszínek ezen az úton</div>
-<div class="g2">
-  <div class="card"><h3>🏛 Lisszabon – Belém (1983)</h3><ul><li>Jerónimos kolostor – manuelin csúcs</li><li>Torre de Belém – folyóparti erőd</li></ul></div>
-  <div class="card"><h3>🏰 Sintra Kulturális Táj (1995)</h3><ul><li>Pena kastély – romantikus palota</li><li>Monserrate, Queluz (közel)</li></ul></div>
-  <div class="card"><h3>🏛 Universidade de Coimbra (2013)</h3><ul><li>Joanina Könyvtár – barokk csoda</li><li>Régi Egyetem épületek</li></ul></div>
-  <div class="card"><h3>🍷 Douro-völgy (2001)</h3><ul><li>Világ első minősített szőlőterülete</li><li>Pinhão · N222 · lépcsőzetes szőlők</li></ul></div>
-</div>
-</div>
-
-<!-- ═══ PRAKTIKUS ═══ -->
-<div class="pg" id="pg-pr">
-<div class="g2">
-
-  <div class="card gold">
-    <h3>⚠️ SÜRGŐS foglalások!</h3>
-    <ul>
-      <li>Jerónimos kolostor – online jegy (zsúfolt szombaton)</li>
-      <li>Pena kastély Sintra – online jegy (vasárnap = zsúfolt!)</li>
-      <li>Coimbra Joanina Könyvtár – <a href="https://www.uc.pt/en/patrimonio/monumentos/joanina-library/visit/" target="_blank">uc.pt</a> online</li>
-      <li>Autóbérlés: Ápr. 6 reggel – Ápr. 7-10 közt (LIS pickup / LIS drop vagy OPO)</li>
-      <li>Pinhão szállás (Douro) – korlátozott kapacitás!</li>
-      <li>DOP étterem Porto – <a href="https://www.google.com/maps/search/DOP+Restaurant+Porto" target="_blank">foglalj online</a></li>
-      <li>MUU Steakhouse Porto – <a href="https://www.google.com/maps/search/MUU+Steakhouse+Porto" target="_blank">foglalj online</a></li>
-      <li>Quinta do Crasto borászat – email/telefon előre</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>✈ Repülők – megerősített</h3>
-    <ul>
-      <li><b>Oda:</b> Ryanair BUD→LIS · K8UZMB · Ápr. 3</li>
-      <li><b>Vissza:</b> Wizz Air LIS→BUD · YPJP7Q · Ápr. 10 ~08:30</li>
-      <li>Ryanair check-in: 24h előtt nyílik</li>
-      <li>Wizz Air: LIS reptéren 2 óra előtt legyél (06:30)</li>
-      <li>Kézitáska méretek ellenőrzése: mindkét légitársaságnál!</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>🚗 Autóbérlés tippek</h3>
-    <ul>
-      <li>Lisboa reptéren vagy centrumban vedd fel Ápr. 6 reggel</li>
-      <li>Visszaadás: LIS reptérnél Ápr. 10 reggel (van autóbeadó)</li>
-      <li>GPS/navigáció fontos az N222-n!</li>
-      <li>Portugáliában jobbra közlekednek, autópálya fizetős (Via Verde)</li>
-      <li>Lisszabonban: parkolás fizetős, de Belémnél van</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>💶 Pénz és fizetés</h3>
-    <ul>
-      <li>Fizetőeszköz: EUR · bankkártya mindenhol elfogadott</li>
-      <li>Pastéis de Belém: <span class="warn">CSAK KÉSZPÉNZ!</span></li>
-      <li>ATM: Multibanco hálózat · 0% jutalék általában</li>
-      <li>TheFork app: 30% kedvezmény sok étteremnél!</li>
-      <li>Lisszabon Kártya / Porto Kártya: tömegközl. + belépők</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>🚆 Közlekedés</h3>
-    <ul>
-      <li>Sintra vonat: Rossio – Sintra, CP, ~3€/fő, óránként</li>
-      <li>Uber/Bolt: Lisszabon és Porto reptérről elérhető</li>
-      <li>Porto Metro: reptér – centrum (Violeta vonal)</li>
-      <li>28-as villamos LIS: zsúfolt, zsebtolvajok – óvatosan!</li>
-      <li>N222: max 90 km/h · radar ellenőrzések!</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>🍽 Ételjelzők magyarázata</h3>
-    <ul>
-      <li><span class="food sertes">🐷 sertés</span> – sertés alapú fogások</li>
-      <li><span class="food marha">🥩 marha</span> – marhafogások, steak</li>
-      <li><span class="food csirke">🍗 csirke</span> – csirkefogások</li>
-      <li><span class="food hal">🐟 hal</span> – halas ételek (bacalhau stb.)</li>
-      <li><span class="food vegi">🥗 vegán/vegi</span> – növényi fogások</li>
-      <li><span class="food no-hal">❌ hal nincs</span> – nem halas étterem</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>☀️ Április Portugáliában</h3>
-    <ul>
-      <li>Átlaghőmérséklet: 15-20°C nappal, 10°C éjszaka</li>
-      <li>Esős napok lehetnek – hozz könnyű kabátot!</li>
-      <li>Sintra: párás, hűvös a hegyekben – réteges öltözet</li>
-      <li>Tengerparti szél: Cabo da Roca szeles</li>
-      <li>Nazaré: óriáshullámok tavasszal ritkábbak, de szép</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>📱 Hasznos alkalmazások</h3>
-    <ul>
-      <li>TheFork – étterem foglalás + 30% kedvezmény</li>
-      <li>Google Maps – offline letöltés ajánlott!</li>
-      <li>Bolt/Uber – taxi Lisszabon és Porto</li>
-      <li>CP (comboios.pt) – vonat menetrendek</li>
-      <li>Google Translate – portugál szavak</li>
-    </ul>
-  </div>
-
-</div>
-</div>
-
-<script>
-const pages=['ov','d1','d2','d3','d4','d5','d6','d7','d8','re','la','pr'];
-function show(id){
-  pages.forEach(p=>{const el=document.getElementById('pg-'+p);if(el)el.classList.remove('on')});
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  const pg=document.getElementById('pg-'+id);
-  if(pg)pg.classList.add('on');
-  const idx=pages.indexOf(id);
-  const tabs=document.querySelectorAll('.tab');
-  if(tabs[idx])tabs[idx].classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-</script>
+    tabsEl.addEventListener("click", (event) => {
+      const button = event.target.closest(".tab-btn");
+      if (!button) return;
+      activateTab(button.dataset.tab);
+    });
+  </script>
 </body>
 </html>
