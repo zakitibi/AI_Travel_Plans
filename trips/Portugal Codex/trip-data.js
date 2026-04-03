@@ -58,6 +58,51 @@ const tripData = {
   sectionIntros: {
     restaurants: {
       title: "🇵🇹 Portugál kulinária röviden",
+      dishBox: {
+        title: "🍽 Jellegzetes portugál fogások röviden",
+        items: [
+          {
+            name: "Bacalhau",
+            description: "Sózott tőkehalból készülő gyűjtőfogalom, rengeteg verzióval.",
+            flavor: "sósabb, karakteres, olívaolajos, gyakran hagymás-fokhagymás"
+          },
+          {
+            name: "Pastel de nata",
+            description: "Leveles tésztás, tojáskrémes kis sütemény, kívül karamellizált tetejű.",
+            flavor: "édes, krémes, vaníliás, enyhén pörkölt cukros"
+          },
+          {
+            name: "Francesinha",
+            description: "Portói, rétegzett melegszendvics sonkával, kolbásszal, hússal, sajttal és sörös-paradicsomos szósszal.",
+            flavor: "nehéz, szaftos, húsos, enyhén csípős és gazdag"
+          },
+          {
+            name: "Bifana",
+            description: "Vékony sertéshúsos szendvics, fűszeres szafttal vagy páccal.",
+            flavor: "sós, húsos, enyhén fokhagymás-fűszeres, gyors street food jelleg"
+          },
+          {
+            name: "Caldo verde",
+            description: "Krumplis-kelkáposztás leves, gyakran chouriço kolbásszal.",
+            flavor: "lágy, házias, enyhén füstös, komfortétel"
+          },
+          {
+            name: "Sardinhas assadas",
+            description: "Grillezett szardínia, főleg nyári és tengerparti vonalon erős.",
+            flavor: "intenzíven halas, füstös, sós, egyszerű és nyersanyagra épülő"
+          },
+          {
+            name: "Arroz de marisco",
+            description: "Tenger gyümölcseivel főzött szaftos rizses fogás.",
+            flavor: "mélyen tengeri, sós-umamis, sűrű és szaftos"
+          },
+          {
+            name: "Polvo",
+            description: "Polipos fogások gyűjtőneve, gyakran sütve vagy burgonyával tálalva.",
+            flavor: "tengeries, húsos textúrájú, olívaolajos és fokhagymás"
+          }
+        ]
+      },
       sections: [
         {
           heading: "Rövid ételtörténeti háttér",

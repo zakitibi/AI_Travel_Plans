@@ -319,6 +319,20 @@
               <ul class="plain-list">
                 ${intro.highlights.map((item) => `<li>${item}</li>`).join("")}
               </ul>
+              ${intro.dishBox ? `
+                <section class="dish-box">
+                  <h4>${intro.dishBox.title}</h4>
+                  <div class="dish-grid">
+                    ${intro.dishBox.items.map((dish) => `
+                      <article class="dish-card">
+                        <h5>${dish.name}</h5>
+                        <p>${dish.description}</p>
+                        <div class="dish-flavor"><strong>Ízvilág:</strong> ${dish.flavor}</div>
+                      </article>
+                    `).join("")}
+                  </div>
+                </section>
+              ` : ""}
             </section>
           ` : ""}
           <div class="restaurant-groups">
