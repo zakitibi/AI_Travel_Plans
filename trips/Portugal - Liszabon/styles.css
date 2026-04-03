@@ -954,6 +954,22 @@ a {
   flex: 1 1 auto;
 }
 
+.fado-card {
+  display: grid;
+  gap: 10px;
+}
+
+.fado-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.fado-title-row h3 {
+  margin: 0;
+}
+
 .restaurant-meta-line {
   margin: 3px 0 0 !important;
   font-size: 12px !important;

@@ -200,6 +200,31 @@ const tripData = {
     }
   },
   sectionIntros: {
+    fado: {
+      title: "🎶 Fado röviden",
+      paragraphs: [
+        "A fado Lisszabon egyik legerősebb kulturális élménye: érzelmileg sűrű, intim portugál énekzene, amelyet leginkább a saudade, vagyis a hiány, vágyódás, nosztalgia és sorsszerűség hangulata hat át. A Britannica szerint hagyományosan kocsmákhoz, kávéházakhoz és kisebb városi előadóhelyekhez kötődött, és kifejezetten melankolikus, erősen kifejező karakteréről ismert.",
+        "A Wikipédia és az UNESCO anyagai alapján a fado a 19. századi Lisszabon munkás- és kikötőnegyedeihez, főleg Alfamához és Mourariához kapcsolódik, és ma is erősen liszaboni identitásjelenség. 2011-ben felkerült az UNESCO szellemi kulturális örökségi listájára.",
+        "A klasszikus esti fadoház-logika általában nem gyors vacsora: a zene és a vacsora váltakozva épül egymásra. A jó élményhez hozzátartozik, hogy érdemes csendben maradni az előadás alatt, nem kapkodni az étkezéssel, és elfogadni, hogy itt a hangulat legalább annyira fontos, mint maga a menü.",
+        "Az Eating Europe cikke külön kiemeli, hogy a jó fadoház kiválasztásánál a negyed is számít: Alfama és Mouraria általában tradicionálisabb, Bairro Alto vegyesebb és időnként modernebb, Lapa pedig elegánsabb irány lehet. Ugyanez a forrás hangsúlyozza, hogy a műsorok gyakran csak 21:00–22:00 körül indulnak el igazán, ezért az egész estet érdemes lassabb kulturális programként kezelni."
+      ],
+      highlights: [
+        "Lisbon-style fado: intimebb, városi, érzelmileg közvetlenebb, mint a coimbrai egyetemi hagyomány.",
+        "Hangszerek: ének, portugál guitarra és hagyományos gitár a legtipikusabb felállás.",
+        "Legjobb negyedek: Alfama, Mouraria, Bairro Alto és Lapa.",
+        "Etikett: éneklés közben csend, telefon és beszélgetés visszafogva.",
+        "Asztalfoglalás erősen ajánlott, főleg péntek-szombat este.",
+        "Tipikus párosítások: bacalhau à brás, grillezett szardínia, caldo verde, petiscos, portói bor vagy Vinho Verde.",
+        "Ha intimebb, kevésbé kommersz estét keresel, Alfama és Mouraria általában jobb kiindulás, mint a legforgalmasabb turistasávok."
+      ],
+      sources: [
+        { label: "Portugal Magik – 6 Best Fado Restaurants", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Eating Europe – Fado Restaurants in Lisbon", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
+        { label: "Britannica – fado", url: "https://www.britannica.com/art/fado", icon: "B" },
+        { label: "Wikipedia – Fado", url: "https://en.wikipedia.org/wiki/Fado", icon: "W" },
+        { label: "UNESCO – Fado", url: "https://www.unesco.org/archives/multimedia/document-2192", icon: "U" }
+      ]
+    },
     restaurants: {
       title: "🇵🇹 Portugál kulinária röviden",
       dishBox: {
@@ -338,6 +363,135 @@ const tripData = {
       ]
     }
   },
+  fadoVenues: [
+    {
+      name: "Clube de Fado",
+      googleRating: "4.4",
+      ratingCount: "2.7k",
+      neighborhood: "Alfama / Sé",
+      priceLevel: "€€€€",
+      description: "A Portugal Magik listáján ez az ikonikus, elegáns fadoház a legismertebb liszaboni referencia. A Sé székesegyház közelében van, gyertyafényes, kőboltozatos térrel, és a cikk szerint a zene mellett a konyha is erős: grillezett tőkehal, polipos rizs, lassan sült bárány és komoly borlap.",
+      vibe: "A klasszikus, kifinomult nagy estét keresed, nem a legbohémabb verziót.",
+      maps: "https://www.google.com/maps/search/Clube+de+Fado+Lisbon",
+      sourceLinks: [
+        { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/772768/clube-de-fado", icon: "G" }
+      ]
+    },
+    {
+      name: "Parreirinha de Alfama",
+      googleRating: "4.5",
+      ratingCount: "1.9k",
+      neighborhood: "Alfama",
+      priceLevel: "€€€€",
+      description: "Az egyik legrégebbi és legtradicionálisabb liszaboni fadoház, 1950 óta működik. A Portugal Magik szerint ez a hely a nosztalgikus, történeti Alfama-élményt adja: fekete-fehér portrék a falon, klasszikus csempék, bacalhau à brás és pataniscas, nagyon intim hangulattal.",
+      vibe: "Ha régi liszaboni, történeti és erősen atmoszférikus estét akarsz.",
+      maps: "https://www.google.com/maps/search/Parreirinha+de+Alfama+Lisbon",
+      sourceLinks: [
+        { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1431946/parreirinha-de-alfama", icon: "G" }
+      ]
+    },
+    {
+      name: "Casa de Linhares",
+      googleRating: "4.4",
+      ratingCount: "978",
+      neighborhood: "Alfama / folyópart",
+      priceLevel: "€€€€",
+      description: "A Portugal Magik ezt az egyik leghangulatosabb helyszínként írja le: 17. századi palotabelső, boltozott kőterek, gyertyafény és komoly akusztika. A menü is erősebb, ünnepibb irány: malac, vaddisznóragu, sericaia desszert.",
+      vibe: "Ha a zene mellett a tér és a történelmi díszlet is fontos.",
+      maps: "https://www.google.com/maps/search/Casa+de+Linhares+Lisbon",
+      sourceLinks: [
+        { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420280/casa-de-linhares", icon: "G" }
+      ]
+    },
+    {
+      name: "Tasca do Chico",
+      googleRating: "4.0",
+      ratingCount: "624",
+      neighborhood: "Bairro Alto",
+      priceLevel: "€€",
+      description: "A listában ez a legbohémabb és leglazább választás. A Portugal Magik szerint itt a hangsúly a fado vadio esteken van, vagyis a spontánabb, nyersebb, kevésbé színházi fadoélményen. A kaja egyszerűbb tapas/tasca-vonal, a hangulat viszont nagyon élő és kiszámíthatatlanul jó lehet.",
+      vibe: "Ha kevésbé fine dining, inkább nyers, kicsi, zsúfolt és spontán fado estét keresel.",
+      maps: "https://www.google.com/maps/search/Tasca+do+Chico+Rua+do+Diario+de+Noticias+39+Lisbon",
+      sourceLinks: [
+        { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/484118/a-tasca-do-chico", icon: "G" }
+      ]
+    },
+    {
+      name: "Sr. Vinho",
+      googleRating: "4.3",
+      ratingCount: "808",
+      neighborhood: "Lapa",
+      priceLevel: "€€€€",
+      description: "A Portugal Magik ezt a kifinomultabb, elegánsabb vonal egyik legjobb házaként írja le. Maria da Fé alapította, és ma is erős név a fado világában. A hangsúly itt a professzionális előadáson, a jó akusztikán és a regionális portugál fogásokon van.",
+      vibe: "Ha letisztult, elegáns és zeneileg komoly estét akarsz, kevésbé turistás alfamai díszlettel.",
+      maps: "https://www.google.com/maps/search/Sr.+Vinho+Lisbon",
+      sourceLinks: [
+        { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420264/srvinho", icon: "G" }
+      ]
+    },
+    {
+      name: "Adega Machado",
+      googleRating: "4.3",
+      ratingCount: "1.8k",
+      neighborhood: "Bairro Alto",
+      priceLevel: "€€€€",
+      description: "1937 óta működő klasszikus ház, amelyet a Portugal Magik modernizált, de történeti gyökerű helyszínként emel ki. A structured-set jelleg miatt ez jó kompromisszum annak, aki vacsorázni is szeretne nyugodtan, és közben több fado blokkot hallgatna végig.",
+      vibe: "Kényelmesebb, jobban szervezett, modernebb vacsora-show jellegű fado élmény.",
+      maps: "https://www.google.com/maps/search/Adega+Machado+Lisbon",
+      sourceLinks: [
+        { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/102547/adega-machado", icon: "G" }
+      ]
+    },
+    {
+      name: "Associação do Fado Casto",
+      googleRating: "4.5",
+      ratingCount: "222",
+      neighborhood: "Alfama",
+      priceLevel: "€€€",
+      description: "Az Eating Europe ezt klasszikus alfamai választásként emeli ki, a római színház alá rejtett hangulatos helyszínnel, hosszú közös asztalokkal és erős, hagyományos fadohangulattal. A cikk szerint a snack-jellegű kísérők, a cod fritters és a sajtok is jól működnek itt a zenéhez.",
+      vibe: "Erősen tradicionális, közösségibb, kevésbé steril fadoélmény.",
+      maps: "https://www.google.com/maps/search/Associa%C3%A7%C3%A3o+do+Fado+Casto+Lisbon",
+      sourceLinks: [
+        { label: "Eating Europe", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/4333534/associa%C3%A7%C3%A3o-do-fado-casto", icon: "G" },
+        { label: "Visit Lisboa", url: "https://www.visitlisboa.com/en/places/associacao-do-fado-casto", icon: "V" }
+      ]
+    },
+    {
+      name: "Maria da Mouraria",
+      googleRating: "4.5",
+      ratingCount: "848",
+      neighborhood: "Mouraria",
+      priceLevel: "€€€",
+      description: "Az Eating Europe ezt Mouraria ikonikus házaként ajánlja, meleg, családias környezettel és fix csomagos vacsoraélménnyel. A forrás szerint itt a teljes este egységesebb csomagként működik: zene, fogások és italok összehangolva, erős helyi karakterrel.",
+      vibe: "Ha Mouraria-vonalon, családiasabb, komplett vacsora + fado estét keresel.",
+      maps: "https://www.google.com/maps/search/Maria+da+Mouraria+Casa+de+Fados+Lisbon",
+      sourceLinks: [
+        { label: "Eating Europe", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
+        { label: "Sluurpy / Google rating", url: "https://www.sluurpy.com/pt/lisboa/restaurant/2202914/maria-da-mouraria-casa-de-fados", icon: "G" }
+      ]
+    },
+    {
+      name: "O Faia",
+      googleRating: "4.6",
+      ratingCount: "923",
+      neighborhood: "Bairro Alto",
+      priceLevel: "€€€€",
+      description: "Az Eating Europe ezt a fényűzőbb, kifinomultabb fadoélmény egyik csúcspontjaként írja le. Elegánsabb vacsoracsomagokkal, borpárosításokkal és modernebb tálalással működik, miközben a zenei rész továbbra is mélyen hagyományos marad.",
+      vibe: "Ha inkább upscale, nagy esti programot keresel, mint intim kis tavernát.",
+      maps: "https://www.google.com/maps/search/O+Faia+Casa+de+Fado+Lisbon",
+      sourceLinks: [
+        { label: "Eating Europe", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
+        { label: "Sluurpy / Google rating", url: "https://www.sluurpy.com/en/lisboa/restaurant/2199606/o-faia-casa-de-fados", icon: "G" }
+      ]
+    }
+  ],
   days: [
     {
       id: "d1",
@@ -663,13 +817,13 @@ const tripData = {
     }
   ],
   sights: [
-    { name: "Jerónimos kolostor", googleRating: "4.5", when: "2. nap · Ápr. 4", price: "10€/fő", detail: "Belém, UNESCO. A lisszaboni nap legerősebb történelmi pontja.", wikipedia: "https://hu.wikipedia.org/wiki/Jer%C3%B3nimos-kolostor", maps: "https://www.google.com/maps/search/Jer%C3%B3nimos+Monastery+Lisbon" },
-    { name: "Belém-torony", googleRating: "4.6", when: "2. nap · Ápr. 4", price: "8€/fő", detail: "Folyóparti erőd, rövid sétával jól összeköthető a Jerónimosszal.", wikipedia: "https://hu.wikipedia.org/wiki/Bel%C3%A9m-torony", maps: "https://www.google.com/maps/search/Torre+de+Bel%C3%A9m+Lisbon" },
-    { name: "Castelo de São Jorge", googleRating: "4.4", when: "2. nap · Ápr. 4", price: "15€/fő", detail: "Lisszabon legmagasabb pontjának vára, erős kilátással a Tejóra és a városra.", wikipedia: "https://en.wikipedia.org/wiki/Castle_of_S%C3%A3o_Jorge", maps: "https://www.google.com/maps/search/Castelo+de+S%C3%A3o+Jorge+Lisbon" },
-    { name: "Cristo Rei", googleRating: "4.6", when: "4. nap · Ápr. 6 opció", price: "8€/fő", detail: "A túlpartról ad különösen erős panorámát a városra és a Ponte 25 de Abril hídra.", wikipedia: "https://en.wikipedia.org/wiki/Christ_the_King_(Almada)", maps: "https://www.google.com/maps/search/Christo+Rei+Almada" },
-    { name: "Santa Justa lift", googleRating: "4.0", when: "2. vagy 4. nap", price: "6€/fő", detail: "Ikonikus belvárosi vaslift Baixa és Chiado határán, rövid fotós megállónak jó.", wikipedia: "https://en.wikipedia.org/wiki/Santa_Justa_Lift", maps: "https://www.google.com/maps/search/Santa+Justa+Lift+Lisbon" },
-    { name: "Pena kastély", googleRating: "4.4", when: "3. nap · Ápr. 5", price: "20€/fő", detail: "Sintra zászlóshajója, korai idősávval a legjobb.", wikipedia: "https://en.wikipedia.org/wiki/Pena_Palace", maps: "https://www.google.com/maps/search/Pena+Palace+Sintra" },
-    { name: "Quinta da Regaleira", googleRating: "4.8", when: "3. nap · Ápr. 5", price: "8€/fő", detail: "Titokzatos kert, iniciatikus kút, rövid sintrai párosítás a Penával.", wikipedia: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira", maps: "https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra" }
+    { name: "Jerónimos kolostor", group: "Belém", googleRating: "4.5", ratingCount: "58.5K", when: "2. nap · Ápr. 4", price: "10€/fő", detail: "Belém, UNESCO. A lisszaboni nap legerősebb történelmi pontja.", wikipedia: "https://hu.wikipedia.org/wiki/Jer%C3%B3nimos-kolostor", maps: "https://www.google.com/maps/search/Jer%C3%B3nimos+Monastery+Lisbon" },
+    { name: "Belém-torony", group: "Belém", googleRating: "4.6", ratingCount: "74.9K", when: "2. nap · Ápr. 4", price: "8€/fő", detail: "Folyóparti erőd, rövid sétával jól összeköthető a Jerónimosszal.", wikipedia: "https://hu.wikipedia.org/wiki/Bel%C3%A9m-torony", maps: "https://www.google.com/maps/search/Torre+de+Bel%C3%A9m+Lisbon" },
+    { name: "Castelo de São Jorge", group: "Történelmi Lisszabon", googleRating: "4.4", ratingCount: "86.4K", when: "2. nap · Ápr. 4", price: "15€/fő", detail: "Lisszabon legmagasabb pontjának vára, erős kilátással a Tejóra és a városra.", wikipedia: "https://en.wikipedia.org/wiki/Castle_of_S%C3%A3o_Jorge", maps: "https://www.google.com/maps/search/Castelo+de+S%C3%A3o+Jorge+Lisbon" },
+    { name: "Cristo Rei", group: "Extra / Opcionális", googleRating: "4.6", ratingCount: "43.5K", when: "4. nap · Ápr. 6 opció", price: "8€/fő", detail: "A túlpartról ad különösen erős panorámát a városra és a Ponte 25 de Abril hídra.", wikipedia: "https://en.wikipedia.org/wiki/Christ_the_King_(Almada)", maps: "https://www.google.com/maps/search/Christo+Rei+Almada" },
+    { name: "Santa Justa lift", group: "Történelmi Lisszabon", googleRating: "4.0", ratingCount: "53.6K", when: "2. vagy 4. nap", price: "6€/fő", detail: "Ikonikus belvárosi vaslift Baixa és Chiado határán, rövid fotós megállónak jó.", wikipedia: "https://en.wikipedia.org/wiki/Santa_Justa_Lift", maps: "https://www.google.com/maps/search/Santa+Justa+Lift+Lisbon" },
+    { name: "Pena kastély", group: "Sintra", googleRating: "4.4", ratingCount: "101K", when: "3. nap · Ápr. 5", price: "20€/fő", detail: "Sintra zászlóshajója, korai idősávval a legjobb.", wikipedia: "https://en.wikipedia.org/wiki/Pena_Palace", maps: "https://www.google.com/maps/search/Pena+Palace+Sintra" },
+    { name: "Quinta da Regaleira", group: "Sintra", googleRating: "4.8", ratingCount: "43.7K", when: "3. nap · Ápr. 5", price: "8€/fő", detail: "Titokzatos kert, iniciatikus kút, rövid sintrai párosítás a Penával.", wikipedia: "https://en.wikipedia.org/wiki/Quinta_da_Regaleira", maps: "https://www.google.com/maps/search/Quinta+da+Regaleira+Sintra" }
   ],
   practical: [
     {

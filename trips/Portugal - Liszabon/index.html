@@ -30,6 +30,7 @@
       { id: "overview", label: "📋 Áttekintés" },
       ...tripData.days.map((day) => ({ id: day.id, label: day.tabLabel })),
       { id: "lisbon", label: "🏙 Lisszabon" },
+      { id: "fado", label: "🎶 Fado" },
       { id: "restaurants", label: "🍽 Éttermek" },
       { id: "sights", label: "🏛 Látnivalók" },
       { id: "practical", label: "🧳 Praktikus" }
@@ -434,6 +435,12 @@
 
     function renderSights() {
       const intro = tripData.sectionIntros?.sights;
+      const groupedSights = tripData.sights.reduce((acc, sight) => {
+        const key = sight.group || "Egyéb";
+        if (!acc[key]) acc[key] = [];
+        acc[key].push(sight);
+        return acc;
+      }, {});
       return `
         <section class="view" data-view="sights">
           <h2 class="section-title">🏛 Látnivalók</h2>
@@ -446,15 +453,85 @@
               </ul>
             </section>
           ` : ""}
+          <div class="stack">
+            ${Object.entries(groupedSights).map(([group, items]) => `
+              <section class="card section-intro context-shell">
+                <details class="context-accordion" open>
+                  <summary class="context-summary">
+                    <div>
+                      <h3>${group}</h3>
+                      <p class="context-subtitle">${items.length} látnivaló ebben a zónában.</p>
+                    </div>
+                  </summary>
+                  <div class="group-grid context-section-body">
+                    ${items.map((sight) => `
+                      <article class="list-card">
+                        <div class="restaurant-head">
+                          <div class="rating-badge">⭐ ${sight.googleRating}${sight.ratingCount ? ` (${sight.ratingCount})` : ""}</div>
+                          <div class="restaurant-head-copy">
+                            <h3><a href="${sight.maps}" target="_blank" rel="noreferrer">${sight.name}</a></h3>
+                            <p class="restaurant-meta-line">${sight.when} · ${sight.price}</p>
+                          </div>
+                        </div>
+                        <p>${sight.detail}</p>
+                        <div class="meta-links">
+                          ${sight.wikipedia ? `<a href="${sight.wikipedia}" target="_blank" rel="noreferrer">Wikipedia</a>` : ""}
+                          ${sight.maps ? `<a href="${sight.maps}" target="_blank" rel="noreferrer">Google Maps</a>` : ""}
+                        </div>
+                      </article>
+                    `).join("")}
+                  </div>
+                </details>
+              </section>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderFado() {
+      const intro = tripData.sectionIntros?.fado;
+      return `
+        <section class="view" data-view="fado">
+          <h2 class="section-title">🎶 Fado</h2>
+          ${intro ? `
+            <section class="card section-intro context-shell">
+              <details class="context-accordion" open>
+                <summary class="context-summary">
+                  <div>
+                    <h3>${intro.title}</h3>
+                    <p class="context-subtitle">Rövid háttér a fadóról, hangulatról és arról, mire számíts egy liszaboni fadoházban.</p>
+                  </div>
+                </summary>
+                <div class="context-section-body">
+                  ${intro.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                  <ul class="plain-list">
+                    ${intro.highlights.map((item) => `<li>${item}</li>`).join("")}
+                  </ul>
+                  <div class="city-sources">
+                    ${(intro.sources || []).map((source) => `<a class="source-icon" href="${source.url}" target="_blank" rel="noreferrer" title="${source.label}">${source.icon || "↗"}</a>`).join("")}
+                  </div>
+                </div>
+              </details>
+            </section>
+          ` : ""}
           <div class="group-grid">
-            ${tripData.sights.map((sight) => `
-              <article class="list-card">
-                <h3>${sight.name} (⭐ ${sight.googleRating})</h3>
-                <p>${sight.detail}</p>
-                <div class="meta">${sight.when} · ${sight.price}</div>
-                <div class="meta-links">
-                  ${sight.wikipedia ? `<a href="${sight.wikipedia}" target="_blank" rel="noreferrer">Wikipedia</a>` : ""}
-                  ${sight.maps ? `<a href="${sight.maps}" target="_blank" rel="noreferrer">Google Maps</a>` : ""}
+                ${tripData.fadoVenues.map((venue) => `
+              <article class="list-card fado-card">
+                <div class="restaurant-head">
+                  <div class="rating-badge">⭐ ${venue.googleRating}${venue.ratingCount ? ` (${venue.ratingCount})` : ""}</div>
+                  <div class="restaurant-head-copy">
+                    <div class="fado-title-row">
+                      <h3><a href="${venue.maps}" target="_blank" rel="noreferrer">${venue.name}</a></h3>
+                      <a class="resource-icon" href="${venue.maps}" target="_blank" rel="noreferrer" aria-label="${venue.name} Google Maps">↗</a>
+                    </div>
+                    <p class="restaurant-meta-line">${venue.neighborhood} · ${venue.priceLevel}</p>
+                  </div>
+                </div>
+                <p>${venue.description}</p>
+                <div class="meta">${venue.vibe}</div>
+                <div class="city-sources">
+                  ${(venue.sourceLinks || []).map((source) => `<a class="source-icon" href="${source.url}" target="_blank" rel="noreferrer" title="${source.label}">${source.icon || "↗"}</a>`).join("")}
                 </div>
               </article>
             `).join("")}
@@ -496,6 +573,7 @@
       renderOverview(),
       ...tripData.days.map(renderDay),
       renderLisbonGuide(),
+      renderFado(),
       renderRestaurants(),
       renderSights(),
       renderPractical()
