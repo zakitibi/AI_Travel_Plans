@@ -207,6 +207,8 @@ const tripData = {
         "A Wikipédia és az UNESCO anyagai alapján a fado a 19. századi Lisszabon munkás- és kikötőnegyedeihez, főleg Alfamához és Mourariához kapcsolódik, és ma is erősen liszaboni identitásjelenség. 2011-ben felkerült az UNESCO szellemi kulturális örökségi listájára.",
         "A klasszikus esti fadoház-logika általában nem gyors vacsora: a zene és a vacsora váltakozva épül egymásra. A jó élményhez hozzátartozik, hogy érdemes csendben maradni az előadás alatt, nem kapkodni az étkezéssel, és elfogadni, hogy itt a hangulat legalább annyira fontos, mint maga a menü.",
         "Az Eating Europe cikke külön kiemeli, hogy a jó fadoház kiválasztásánál a negyed is számít: Alfama és Mouraria általában tradicionálisabb, Bairro Alto vegyesebb és időnként modernebb, Lapa pedig elegánsabb irány lehet. Ugyanez a forrás hangsúlyozza, hogy a műsorok gyakran csak 21:00–22:00 körül indulnak el igazán, ezért az egész estet érdemes lassabb kulturális programként kezelni."
+        ,
+        "A Yelp-lista jól kiegészíti ezt azzal, hogy a nagy klasszikus házak mellett több kisebb, lazább vagy kevésbé fine dining helyet is előre tol. Ez azért hasznos, mert így nem csak a formális vacsora + műsor házak közül lehet választani, hanem rövidebb, spontaneább vagy tapas-jellegű esték közül is."
       ],
       highlights: [
         "Lisbon-style fado: intimebb, városi, érzelmileg közvetlenebb, mint a coimbrai egyetemi hagyomány.",
@@ -215,11 +217,13 @@ const tripData = {
         "Etikett: éneklés közben csend, telefon és beszélgetés visszafogva.",
         "Asztalfoglalás erősen ajánlott, főleg péntek-szombat este.",
         "Tipikus párosítások: bacalhau à brás, grillezett szardínia, caldo verde, petiscos, portói bor vagy Vinho Verde.",
-        "Ha intimebb, kevésbé kommersz estét keresel, Alfama és Mouraria általában jobb kiindulás, mint a legforgalmasabb turistasávok."
+        "Ha intimebb, kevésbé kommersz estét keresel, Alfama és Mouraria általában jobb kiindulás, mint a legforgalmasabb turistasávok.",
+        "A Yelp alapján a kisebb helyeknél gyakori minta a tapas- vagy petiscos-menü, a később induló zenei blokk és a szűk férőhely, ezért a foglalás még fontosabb."
       ],
       sources: [
         { label: "Portugal Magik – 6 Best Fado Restaurants", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
         { label: "Eating Europe – Fado Restaurants in Lisbon", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
+        { label: "Yelp – Fado Houses Lisbon", url: "https://www.yelp.com/search?cflt=fado_houses&find_loc=Lisbon", icon: "Y" },
         { label: "Britannica – fado", url: "https://www.britannica.com/art/fado", icon: "B" },
         { label: "Wikipedia – Fado", url: "https://en.wikipedia.org/wiki/Fado", icon: "W" },
         { label: "UNESCO – Fado", url: "https://www.unesco.org/archives/multimedia/document-2192", icon: "U" }
@@ -375,7 +379,8 @@ const tripData = {
       maps: "https://www.google.com/maps/search/Clube+de+Fado+Lisbon",
       sourceLinks: [
         { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
-        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/772768/clube-de-fado", icon: "G" }
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/772768/clube-de-fado", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Clube+de+Fado&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -389,7 +394,8 @@ const tripData = {
       maps: "https://www.google.com/maps/search/Parreirinha+de+Alfama+Lisbon",
       sourceLinks: [
         { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
-        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1431946/parreirinha-de-alfama", icon: "G" }
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1431946/parreirinha-de-alfama", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Parreirinha+de+Alfama&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -398,12 +404,13 @@ const tripData = {
       ratingCount: "978",
       neighborhood: "Alfama / folyópart",
       priceLevel: "€€€€",
-      description: "A Portugal Magik ezt az egyik leghangulatosabb helyszínként írja le: 17. századi palotabelső, boltozott kőterek, gyertyafény és komoly akusztika. A menü is erősebb, ünnepibb irány: malac, vaddisznóragu, sericaia desszert.",
+      description: "A Portugal Magik ezt az egyik leghangulatosabb helyszínként írja le: 17. századi palotabelső, boltozott kőterek, gyertyafény és komoly akusztika. A menü is erősebb, ünnepibb irány: malac, vaddisznóragu, sericaia desszert. A Yelp-reviewk is azt erősítik, hogy itt a történelmi tér és az esti hangulat legalább annyira fontos, mint maga a vacsora.",
       vibe: "Ha a zene mellett a tér és a történelmi díszlet is fontos.",
       maps: "https://www.google.com/maps/search/Casa+de+Linhares+Lisbon",
       sourceLinks: [
         { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
-        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420280/casa-de-linhares", icon: "G" }
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420280/casa-de-linhares", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Casa+de+Linhares&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -417,7 +424,8 @@ const tripData = {
       maps: "https://www.google.com/maps/search/Tasca+do+Chico+Rua+do+Diario+de+Noticias+39+Lisbon",
       sourceLinks: [
         { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
-        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/484118/a-tasca-do-chico", icon: "G" }
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/484118/a-tasca-do-chico", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Tasca+do+Chico&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -431,7 +439,8 @@ const tripData = {
       maps: "https://www.google.com/maps/search/Sr.+Vinho+Lisbon",
       sourceLinks: [
         { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
-        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420264/srvinho", icon: "G" }
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420264/srvinho", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Sr.+Vinho&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -440,12 +449,13 @@ const tripData = {
       ratingCount: "1.8k",
       neighborhood: "Bairro Alto",
       priceLevel: "€€€€",
-      description: "1937 óta működő klasszikus ház, amelyet a Portugal Magik modernizált, de történeti gyökerű helyszínként emel ki. A structured-set jelleg miatt ez jó kompromisszum annak, aki vacsorázni is szeretne nyugodtan, és közben több fado blokkot hallgatna végig.",
+      description: "1937 óta működő klasszikus ház, amelyet a Portugal Magik modernizált, de történeti gyökerű helyszínként emel ki. A structured-set jelleg miatt ez jó kompromisszum annak, aki vacsorázni is szeretne nyugodtan, és közben több fado blokkot hallgatna végig. A Yelp alapján ez a hely a kényelmesebb, jobban szervezett Bairro Alto-opciók közé tartozik.",
       vibe: "Kényelmesebb, jobban szervezett, modernebb vacsora-show jellegű fado élmény.",
       maps: "https://www.google.com/maps/search/Adega+Machado+Lisbon",
       sourceLinks: [
         { label: "Portugal Magik", url: "https://portugal-magik.com/6-best-fado-restaurants-to-experience-in-lisbon/", icon: "P" },
-        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/102547/adega-machado", icon: "G" }
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/102547/adega-machado", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Adega+Machado&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -460,7 +470,8 @@ const tripData = {
       sourceLinks: [
         { label: "Eating Europe", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
         { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/4333534/associa%C3%A7%C3%A3o-do-fado-casto", icon: "G" },
-        { label: "Visit Lisboa", url: "https://www.visitlisboa.com/en/places/associacao-do-fado-casto", icon: "V" }
+        { label: "Visit Lisboa", url: "https://www.visitlisboa.com/en/places/associacao-do-fado-casto", icon: "V" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Associa%C3%A7%C3%A3o+do+Fado+Casto&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -474,7 +485,8 @@ const tripData = {
       maps: "https://www.google.com/maps/search/Maria+da+Mouraria+Casa+de+Fados+Lisbon",
       sourceLinks: [
         { label: "Eating Europe", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
-        { label: "Sluurpy / Google rating", url: "https://www.sluurpy.com/pt/lisboa/restaurant/2202914/maria-da-mouraria-casa-de-fados", icon: "G" }
+        { label: "Sluurpy / Google rating", url: "https://www.sluurpy.com/pt/lisboa/restaurant/2202914/maria-da-mouraria-casa-de-fados", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Maria+da+Mouraria&find_loc=Lisbon", icon: "Y" }
       ]
     },
     {
@@ -488,7 +500,48 @@ const tripData = {
       maps: "https://www.google.com/maps/search/O+Faia+Casa+de+Fado+Lisbon",
       sourceLinks: [
         { label: "Eating Europe", url: "https://www.eatingeurope.com/blog/fado-restaurants-in-lisbon/", icon: "E" },
-        { label: "Sluurpy / Google rating", url: "https://www.sluurpy.com/en/lisboa/restaurant/2199606/o-faia-casa-de-fados", icon: "G" }
+        { label: "Sluurpy / Google rating", url: "https://www.sluurpy.com/en/lisboa/restaurant/2199606/o-faia-casa-de-fados", icon: "G" },
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=O+Faia&find_loc=Lisbon", icon: "Y" }
+      ]
+    },
+    {
+      name: "Mesa de Frades",
+      googleRating: "4.3",
+      ratingCount: "1.5k",
+      neighborhood: "Alfama / São Vicente",
+      priceLevel: "€€€",
+      description: "A Yelp top 10 listáján is szerepel, és külön kiemeli, hogy itt a zene később indul igazán, 22:30 után adja a legjobb hangulatot. Az egykori kápolnatérből kialakított belső miatt vizuálisan is különleges hely, de inkább az esti atmoszféra miatt erős, nem a legkorábbi vacsora-opció.",
+      vibe: "Későn induló, erősen hangulati, kevésbé korai vacsorás fadohely.",
+      maps: "https://www.google.com/maps/search/Mesa+de+Frades+Lisbon",
+      sourceLinks: [
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Mesa+de+Frades&find_loc=Lisbon", icon: "Y" },
+        { label: "Wanderlog / Google rating", url: "https://wanderlog.com/place/details/1420265/mesa-de-frades", icon: "G" }
+      ]
+    },
+    {
+      name: "Solidó",
+      googleRating: "4.4",
+      ratingCount: "16",
+      neighborhood: "Chiado",
+      priceLevel: "€€",
+      description: "A Yelp-listán előre sorolt, kisebb és lazább Chiado-opció. A review-részlet alapján tradicionális fado megy vacsora közben, de kevésbé formális, inkább kompakt esti programként működhet, ha nem teljes többórás fine dining élményt kerestek.",
+      vibe: "Kisebb, központi, lazább Chiado-vonal, rövidebb estére is jó lehet.",
+      maps: "https://www.google.com/maps/search/Solid%C3%B3+Lisbon",
+      sourceLinks: [
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=Solid%C3%B3&find_loc=Lisbon", icon: "Y" }
+      ]
+    },
+    {
+      name: "O Corrido - Casa de Fado",
+      googleRating: "4.8",
+      ratingCount: "21",
+      neighborhood: "São Vicente de Fora",
+      priceLevel: "€€€",
+      description: "A Yelp-lista egyik legerősebb pontszámú kisebb fadoháza. A review-szöveg szerint a portugál akusztika és a zenei fókusz a legerősebb része, így jó választás lehet annak, aki kevésbé a hírnév, inkább a koncentrált zenei élmény felől közelít.",
+      vibe: "Kisebb, erősen zeneközpontú, kevésbé turistaneves opció.",
+      maps: "https://www.google.com/maps/search/O+Corrido+Casa+de+Fado+Lisbon",
+      sourceLinks: [
+        { label: "Yelp", url: "https://www.yelp.com/search?find_desc=O+Corrido+-+Casa+de+Fado&find_loc=Lisbon", icon: "Y" }
       ]
     }
   ],
