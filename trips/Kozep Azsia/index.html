@@ -569,6 +569,153 @@ body{
 .warn{border-color:rgba(232,148,58,.18);background:rgba(232,148,58,.05)}
 .info{border-color:rgba(111,168,255,.18);background:rgba(111,168,255,.05)}
 .good{border-color:rgba(96,208,176,.18);background:rgba(96,208,176,.05)}
+.weather-hero{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
+}
+.weather-hero p{font-size:12px;color:var(--muted);line-height:1.7}
+.weather-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:16px}
+.weather-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+}
+.weather-card.tm{border-color:rgba(232,148,58,.20);background:linear-gradient(180deg,rgba(232,148,58,.07),rgba(255,255,255,.42))}
+.weather-card.uz{border-color:rgba(96,208,176,.20);background:linear-gradient(180deg,rgba(96,208,176,.07),rgba(255,255,255,.42))}
+.weather-card.th{border-color:rgba(240,192,64,.20);background:linear-gradient(180deg,rgba(240,192,64,.07),rgba(255,255,255,.42))}
+.weather-card h3{font-size:15px;margin-bottom:8px}
+.weather-card p{font-size:11.5px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.weather-facts{display:grid;gap:6px;list-style:none}
+.weather-facts li{font-size:11px;color:var(--muted);line-height:1.45}
+.weather-facts strong{color:var(--text)}
+.weather-day-list{display:grid;gap:8px}
+.weather-day{
+  display:grid;
+  grid-template-columns:92px 42px minmax(0,1fr) 92px 92px 88px;
+  gap:10px;
+  align-items:center;
+  padding:9px 10px;
+  border:1px solid var(--line-2);
+  border-radius:12px;
+  background:rgba(255,255,255,.50);
+}
+.weather-day .icon{
+  width:36px;
+  height:36px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.65);
+  border:1px solid var(--line-2);
+  font-size:20px;
+}
+.weather-day .date{font-size:10px;font-weight:800;color:var(--dim);line-height:1.35;text-transform:uppercase}
+.weather-day .forecast{font-size:11px;color:var(--muted);line-height:1.45}
+.weather-day .forecast strong{color:var(--text)}
+.weather-temp,.weather-rain{
+  border:1px solid var(--line-2);
+  border-radius:10px;
+  padding:7px 8px;
+  background:rgba(255,255,255,.46);
+}
+.weather-temp span,.weather-rain span{
+  display:block;
+  font-size:9px;
+  color:var(--dim);
+  font-weight:800;
+  text-transform:uppercase;
+  margin-bottom:2px;
+}
+.weather-temp strong,.weather-rain strong{font-size:12px;color:var(--text)}
+.weather-rain.low strong{color:#3d8b71}
+.weather-rain.mid strong{color:#9b6b18}
+.weather-rain.high strong{color:#305f9f}
+.weather-country-block{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px;
+  background:rgba(255,255,255,.36);
+}
+.weather-country-block + .weather-country-block{margin-top:12px}
+.weather-country-block h3{
+  font-size:14px;
+  margin-bottom:9px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.weather-country-block h3 span{
+  font-size:10px;
+  color:var(--dim);
+  font-weight:800;
+  text-transform:uppercase;
+}
+.weather-country-block.tm{border-color:rgba(232,148,58,.20);background:linear-gradient(180deg,rgba(232,148,58,.06),rgba(255,255,255,.34))}
+.weather-country-block.uz{border-color:rgba(96,208,176,.20);background:linear-gradient(180deg,rgba(96,208,176,.06),rgba(255,255,255,.34))}
+.weather-country-block.th{border-color:rgba(240,192,64,.22);background:linear-gradient(180deg,rgba(240,192,64,.06),rgba(255,255,255,.34))}
+.weather-source-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.reading-intro{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
+}
+.reading-intro p{font-size:12px;color:var(--muted);line-height:1.7}
+.reading-section{display:grid;gap:14px;margin-bottom:16px}
+.reading-group{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+}
+.reading-group.tm{border-color:rgba(232,148,58,.20);background:linear-gradient(180deg,rgba(232,148,58,.06),rgba(255,255,255,.42))}
+.reading-group.uz{border-color:rgba(96,208,176,.20);background:linear-gradient(180deg,rgba(96,208,176,.06),rgba(255,255,255,.42))}
+.reading-group h3{font-size:16px;margin-bottom:12px}
+.reading-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.reading-card{
+  border:1px solid var(--line-2);
+  border-radius:14px;
+  padding:14px;
+  background:rgba(255,255,255,.52);
+}
+.reading-card h4{font-size:13px;line-height:1.35;margin-bottom:6px}
+.reading-card h4 a{color:inherit;text-decoration:none}
+.reading-card h4 a:hover{text-decoration:underline}
+.reading-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:8px;
+}
+.reading-tag{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:3px 7px;
+  font-size:9px;
+  font-weight:800;
+  color:var(--muted);
+  background:rgba(255,255,255,.52);
+}
+.reading-card p{font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:8px}
+.reading-card ul{list-style:none;display:grid;gap:5px}
+.reading-card li{font-size:10.5px;color:var(--muted);line-height:1.5}
+.reading-card li strong{color:var(--text)}
+.reading-link{
+  display:inline-flex;
+  margin-top:10px;
+  color:#436ba4;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:800;
+}
+.reading-link:hover{text-decoration:underline}
 @media(max-width:960px){
   .overview-grid{grid-template-columns:1fr}
   .context-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -579,6 +726,9 @@ body{
   .act{grid-template-columns:1fr;gap:4px}
   .act-time{text-align:left}
   .context-grid{grid-template-columns:1fr}
+  .weather-day{grid-template-columns:56px 36px 1fr}
+  .weather-day .forecast{grid-column:1 / -1}
+  .weather-temp,.weather-rain{padding:6px}
 }
 </style>
 </head>
@@ -612,6 +762,11 @@ body{
           <div>USM → BKK → IST → BUD · 2026.05.13</div>
           <div>19:45 - 21:15 · 23:15 - 05:30 · 07:10 - 08:05</div>
         </div>
+        <div class="flight-pill">
+          <strong>📁 OneDrive dokumentumok</strong>
+          <div><a href="https://1drv.ms/f/c/8a25396dae6ba036/IgD8YSWeUNr9R69Q164ai8c1AWaJYXOqVF3b5W8TeHmkWGo" target="_blank" rel="noopener noreferrer">Utazási dokumentumok mappa megnyitása</a></div>
+          <div>jegyek · foglalások · igazolások</div>
+        </div>
       </div>
     </div>
     <div class="route">
@@ -640,6 +795,8 @@ body{
     <button class="tab-btn" data-tab="samui">🇹🇭 Koh Samui</button>
     <button class="tab-btn" data-tab="food">🍽 Éttermek</button>
     <button class="tab-btn" data-tab="practical">🧳 Praktikus</button>
+    <button class="tab-btn" data-tab="weather">🌦 Időjárás</button>
+    <button class="tab-btn" data-tab="readings">📖 Utazási leírások</button>
   </nav>
 
   <section class="view active" data-view="overview">
@@ -1428,6 +1585,318 @@ body{
         </ul>
       </article>
     </div>
+  </section>
+
+  <section class="view" data-view="weather">
+    <div class="section-head">
+      <h2><span>Átlagos klíma + 2026.04.20-i előrejelzési kép</span>Időjárás és öltözet</h2>
+    </div>
+    <section class="weather-hero">
+      <p><strong>Lényeg:</strong> a közép-ázsiai rész késő tavaszi, száraz-meleg irányba megy: nappal sokszor 27-33 °C, este viszont még kellhet könnyű réteg. Koh Samui teljesen más: 30-33 °C körüli, párás, záporos trópusi idő, vízálló könnyű cuccokkal. Az itt szereplő konkrét előrejelzés 2026.04.20-i lekérés alapján készült; a 10-14 napon túli részeket indulás előtt újra kell nézni.</p>
+    </section>
+
+    <div class="weather-grid">
+      <article class="weather-card tm">
+        <h3>🇹🇲 Türkmenisztán · Ashgabat környéke</h3>
+        <p>Április végén Ashgabat már tavasz végi, gyorsan melegedő város: nappal meleg, este még enyhébb, a száraz levegő miatt nagyobb a napi hőingás.</p>
+        <ul class="weather-facts">
+          <li><strong>Átlagosan:</strong> áprilisban kb. 24 °C nappal és 12 °C éjjel, 32 mm csapadék körül.</li>
+          <li><strong>Mostani jelzés:</strong> ápr. 24 - máj. 1 között főleg száraz, 27-33 °C nappali csúcsokkal.</li>
+          <li><strong>Öltözet:</strong> könnyű hosszúnadrág, póló/ing, vékony pulóver estére, napszemüveg, sapka, naptej. Sivatagos/poros programhoz zárt kényelmes cipő.</li>
+        </ul>
+      </article>
+
+      <article class="weather-card uz">
+        <h3>🇺🇿 Üzbegisztán · Khiva, Bukhara, Samarkand, Tashkent</h3>
+        <p>Május elején Üzbegisztán már kifejezetten kellemesen meleg, de városonként eltér: Bukhara melegebb és szárazabb, Samarkand hűvösebb éjszakákat adhat, Tashkent újra melegebb.</p>
+        <ul class="weather-facts">
+          <li><strong>Bukhara átlag:</strong> májusban kb. 32/22 °C, kevés eső, sok napsütés.</li>
+          <li><strong>Samarkand átlag:</strong> májusban kb. 28/16 °C, kevés eső, hűvösebb reggelek.</li>
+          <li><strong>Tashkent átlag:</strong> májusban kb. 27-32 °C nappal, 14-19 °C éjjel, 3-8 esős nap körül.</li>
+          <li><strong>Öltözet:</strong> napközben könnyű, szellős ruha; reggeli vonathoz és estére vékony dzseki/pulóver. Városnézéshez jó talpú cipő és napvédelem kötelező.</li>
+        </ul>
+      </article>
+
+      <article class="weather-card th">
+        <h3>🇹🇭 Koh Samui</h3>
+        <p>Május Samuin forró, párás és záporos. A tenger nagyon meleg, de a napi komfortot inkább a páratartalom és a rövid, intenzív esők határozzák meg.</p>
+        <ul class="weather-facts">
+          <li><strong>Átlagosan:</strong> kb. 30-33 °C nappal, 27-28 °C éjjel, májusban kb. 155-172 mm eső.</li>
+          <li><strong>Mostani jelzés:</strong> a havi előrejelzés máj. 8-13-ra 32-33/28 °C körüli trópusi meleget mutat.</li>
+          <li><strong>Öltözet:</strong> nagyon könnyű ruha, fürdőruha, szandál/papucs, gyorsan száradó póló, vékony esőkabát vagy mini ernyő, vízálló telefontok.</li>
+        </ul>
+      </article>
+    </div>
+
+    <section class="card" style="margin-bottom:16px">
+      <h2 class="section-title">📅 Napokra bontott várható kép</h2>
+      <div class="weather-country-block tm">
+        <h3>🇹🇲 Türkmenisztán <span>ápr. 24 - máj. 1</span></h3>
+        <div class="weather-day-list">
+          <div class="weather-day">
+            <div class="date">ápr. 24 · péntek</div>
+            <div class="icon">☀️</div>
+            <div class="forecast"><strong>Budapest → Ashgabat:</strong> meleg, száraz érkezés. Repülős réteg + érkezésre könnyű kabát elég.</div>
+            <div class="weather-temp"><span>reggel</span><strong>17 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>24 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>0-5%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">ápr. 25-26</div>
+            <div class="icon">☀️</div>
+            <div class="forecast"><strong>Türkmenisztán:</strong> száraz, erős napsütés, 32-33 °C körüli nappalok. Sapka, naptej, víz.</div>
+            <div class="weather-temp"><span>reggel</span><strong>21 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>25 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>0-5%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">ápr. 27-30</div>
+            <div class="icon">🌤</div>
+            <div class="forecast"><strong>Türkmenisztán:</strong> 27-29 °C körüli nappalok, ápr. 29-re minimális esőjelzés. Főleg napvédelem kell.</div>
+            <div class="weather-temp"><span>reggel</span><strong>20 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>22 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>5-15%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">máj. 1</div>
+            <div class="icon">☀️</div>
+            <div class="forecast"><strong>Türkmen szakasz zárása:</strong> kb. 31 °C-os száraz nap, enyhe este. Könnyű ruha + vékony esti réteg.</div>
+            <div class="weather-temp"><span>reggel</span><strong>21 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>24 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>0-5%</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-country-block uz">
+        <h3>🇺🇿 Üzbegisztán <span>máj. 2 - máj. 7</span></h3>
+        <div class="weather-day-list">
+          <div class="weather-day">
+            <div class="date">máj. 2</div>
+            <div class="icon">🌤</div>
+            <div class="forecast"><strong>Khiva → Bukhara:</strong> kb. 31 °C-os vonatos nap. Nyári ruha, de a vonatra legyen kéznél pulóver.</div>
+            <div class="weather-temp"><span>reggel</span><strong>21 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>23 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>5-10%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">máj. 3-4</div>
+            <div class="icon">☀️</div>
+            <div class="forecast"><strong>Bukhara:</strong> 31-32 °C, kevés eső esélyével. A hosszú séták reggel és késő délután működnek legjobban.</div>
+            <div class="weather-temp"><span>reggel</span><strong>19-20 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>24 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>5-10%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">máj. 5</div>
+            <div class="icon">🌥</div>
+            <div class="forecast"><strong>Bukhara → Samarkand:</strong> Bukhara még meleg, Samarkand hűvösebb reggelt mutat. A hajnali vonat miatt kell pulóver.</div>
+            <div class="weather-temp"><span>reggel</span><strong>9-20 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>15 °C</strong></div>
+            <div class="weather-rain mid"><span>eső</span><strong>10-20%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">máj. 6</div>
+            <div class="icon">🌥</div>
+            <div class="forecast"><strong>Samarkand → Tashkent:</strong> Samarkandnál hűvösebb reggel, Tashkent felé melegebb este. Reggel pulóver, nappal póló/ing.</div>
+            <div class="weather-temp"><span>reggel</span><strong>7 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>18-20 °C</strong></div>
+            <div class="weather-rain mid"><span>eső</span><strong>10-20%</strong></div>
+          </div>
+          <div class="weather-day">
+            <div class="date">máj. 7</div>
+            <div class="icon">☀️</div>
+            <div class="forecast"><strong>Tashkent + éjjeli repülés:</strong> kb. 31 °C nappal. Nappal nyári városi ruha, repülőre hosszú nadrág és pulóver.</div>
+            <div class="weather-temp"><span>reggel</span><strong>19 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>24 °C</strong></div>
+            <div class="weather-rain low"><span>eső</span><strong>5-10%</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="weather-country-block th">
+        <h3>🇹🇭 Koh Samui <span>máj. 8 - máj. 13</span></h3>
+        <div class="weather-day-list">
+          <div class="weather-day">
+            <div class="date">máj. 8-13</div>
+            <div class="icon">🌦</div>
+            <div class="forecast"><strong>Koh Samui:</strong> forró, párás, záporos trópusi idő. Fürdős, könnyű ruhás csomag, vízálló telefontok.</div>
+            <div class="weather-temp"><span>reggel</span><strong>28 °C</strong></div>
+            <div class="weather-temp"><span>este</span><strong>29 °C</strong></div>
+            <div class="weather-rain high"><span>eső</span><strong>zápor</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="note-grid">
+      <article class="note-card good">
+        <h3>🎒 Konkrét csomagolási javaslat</h3>
+        <ul>
+          <li><strong>Felső réteg:</strong> 1 vékony fleece/pulóver + 1 nagyon könnyű szél- vagy esőkabát.</li>
+          <li><strong>Nappali ruha:</strong> szellős pólók/ingek, könnyű hosszúnadrág, egy rövidnadrág Samuira.</li>
+          <li><strong>Cipő:</strong> zárt, kényelmes városnézős cipő + szandál/papucs Samuira.</li>
+          <li><strong>Nap:</strong> sapka, napszemüveg, erős naptej, kulacs.</li>
+          <li><strong>Eső:</strong> kicsi ernyő vagy ultrakönnyű esőkabát főleg Samui miatt.</li>
+        </ul>
+      </article>
+      <article class="note-card info">
+        <h3>🔁 Mikor kell frissíteni</h3>
+        <ul>
+          <li><strong>Ápr. 23-án:</strong> Ashgabat és türkmen napok végleges ellenőrzése.</li>
+          <li><strong>Ápr. 30-máj. 1 körül:</strong> Bukhara, Samarkand, Tashkent pontosítása.</li>
+          <li><strong>Máj. 6-7-én:</strong> Koh Samui eső, zivatar és tengeri programok ellenőrzése.</li>
+        </ul>
+      </article>
+      <article class="note-card warn">
+        <h3>⚠️ Praktikus figyelmeztetés</h3>
+        <ul>
+          <li><strong>Közép-Ázsia:</strong> a hőmérséklet nem extrém, de a nap erős és a városi séták hosszúak.</li>
+          <li><strong>Samarkand:</strong> a mostani napi lista hűvösebb reggelt mutat, mint a havi átlag, ezért ne csak nyári cucc legyen kéznél.</li>
+          <li><strong>Samui:</strong> az eső nem feltétlen egész napos, de egy rövid zápor is el tud áztatni mindent.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="weather-source-row">
+      <a class="source-chip" href="https://www.weather25.com/asia/turkmenistan/ahal/ashgabat?month=April&page=month" target="_blank" rel="noopener noreferrer">Weather25 · Ashgabat</a>
+      <a class="source-chip" href="https://www.weather-atlas.com/en/turkmenistan/ashgabat-weather-april" target="_blank" rel="noopener noreferrer">Weather Atlas · Ashgabat átlag</a>
+      <a class="source-chip" href="https://www.weather25.com/asia/uzbekistan/bukhara?month=May&page=month" target="_blank" rel="noopener noreferrer">Weather25 · Bukhara</a>
+      <a class="source-chip" href="https://www.weather25.com/asia/uzbekistan/samarqand/samarkand?month=May&page=month" target="_blank" rel="noopener noreferrer">Weather25 · Samarkand</a>
+      <a class="source-chip" href="https://www.weather25.com/asia/uzbekistan/tashkent?month=May&page=month" target="_blank" rel="noopener noreferrer">Weather25 · Tashkent</a>
+      <a class="source-chip" href="https://www.weather25.com/asia/thailand/koh-samui?month=May&page=month" target="_blank" rel="noopener noreferrer">Weather25 · Koh Samui</a>
+      <a class="source-chip" href="https://www.weather-atlas.com/en/thailand/ko-samui-weather-may" target="_blank" rel="noopener noreferrer">Weather Atlas · Samui átlag</a>
+    </div>
+  </section>
+
+  <section class="view" data-view="readings">
+    <div class="section-head">
+      <h2><span>Külső beszámolók és célzott háttérolvasmányok</span>Utazási leírások</h2>
+    </div>
+    <section class="reading-intro">
+      <p><strong>Mire jó ez az oldal:</strong> nem új programlista, hanem gyors olvasótérkép. A linkelt cikkekből azokat a részeket emeli ki, amelyek ehhez az úthoz hasznosak: Türkmenisztán zártabb, guide-os logikája; Üzbegisztán városai; Taskent, Szamarkand, Khiva és Bukhara hangulata; illetve az, mire érdemes lelkileg és praktikusan készülni.</p>
+      <p style="margin-top:8px"><strong>Megjegyzés:</strong> ezek rövid, saját szempontú összefoglalók, nem teljes cikkmásolatok. A részletekért mindig az eredeti linket érdemes megnyitni.</p>
+    </section>
+
+    <div class="reading-section">
+      <section class="reading-group tm">
+        <h3>🇹🇲 Türkmenisztán</h3>
+        <div class="reading-grid">
+          <article class="reading-card">
+            <h4><a href="https://alternativutak.hu/korutazas-turkmenisztanban/" target="_blank" rel="noopener noreferrer">Körutazás Türkmenisztánban · Alternatív Utak</a></h4>
+            <div class="reading-meta"><span class="reading-tag">körutazás</span><span class="reading-tag">Ashgabat</span><span class="reading-tag">sivatag</span></div>
+            <p>Jó belépő a türkmen út logikájához: nem klasszikus szabadon improvizálós ország, hanem szervezettebb, ritkább, erősen helyi keretek között működő élmény. A leírás a városi, történeti és sivatagi elemeket együtt kezeli, ami passzol az út guide-alapú első blokkjához.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> segít fejben elhelyezni, hogy Türkmenisztán önmagában is külön expedíciós karakterű szakasz.</li>
+              <li><strong>Fókusz:</strong> Ashgabat, történeti helyek, sivatagi tájak, szervezett körutazási ritmus.</li>
+            </ul>
+            <a class="reading-link" href="https://alternativutak.hu/korutazas-turkmenisztanban/" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://alternativutak.hu/amit-turkmenisztanba-utazas-elott-erdemes-tudni/" target="_blank" rel="noopener noreferrer">Amit Türkmenisztánba utazás előtt érdemes tudni · Alternatív Utak</a></h4>
+            <div class="reading-meta"><span class="reading-tag">praktikus</span><span class="reading-tag">belépés</span><span class="reading-tag">helyi szabályok</span></div>
+            <p>Ez a legpraktikusabb türkmen háttérolvasmány a listából. A lényege, hogy az ország utazási feltételei, adminisztrációja, mozgási szabadsága és információs környezete eltér attól, amit Üzbegisztánban vagy Thaiföldön megszoksz.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> indulás előtt ezt érdemes újraolvasni a guide, papírok, készpénz és kommunikáció miatt.</li>
+              <li><strong>Fókusz:</strong> vízum/belépés, guide-rendszer, pénz, internet, helyi viselkedési szabályok.</li>
+            </ul>
+            <a class="reading-link" href="https://alternativutak.hu/amit-turkmenisztanba-utazas-elott-erdemes-tudni/" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Türkmenisztán legfontosabb látnivalói · Alternatív Utak</a></h4>
+            <div class="reading-meta"><span class="reading-tag">látnivalók</span><span class="reading-tag">prioritások</span><span class="reading-tag">országkép</span></div>
+            <p>Rövid, célzott áttekintés arról, milyen típusú élmények adják Türkmenisztán gerincét: monumentális fővárosi kép, ókori/selyemúti rétegek és a Karakumhoz kötődő tájélmény. Jó ellenőrző lista a guide-os program mellé.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> segít látni, hogy a guide napi programja lefedi-e a legfontosabb türkmen tengelyeket.</li>
+              <li><strong>Fókusz:</strong> Ashgabat, Merv/Nisa jellegű történeti helyek, Darvaza/Karakum-vonal.</li>
+            </ul>
+            <a class="reading-link" href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="reading-group uz">
+        <h3>🇺🇿 Üzbegisztán</h3>
+        <div class="reading-grid">
+          <article class="reading-card">
+            <h4><a href="https://utazaskatalogus.hu/uzbegisztan-legszebb-helyei/" target="_blank" rel="noopener noreferrer">Üzbegisztán legszebb helyei · Utazáskatalógus</a></h4>
+            <div class="reading-meta"><span class="reading-tag">országos lista</span><span class="reading-tag">térkép</span><span class="reading-tag">városok</span></div>
+            <p>Jól használható országos áttekintés: kiemeli Taskentet, Szamarkandot, Bukharát és Khivát is, vagyis pont az út üzbég fő tengelyét. Gyorsan megmutatja, miért ez a négy város a klasszikus első üzbég útvonal magja.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> jó nagy kép, mielőtt belemész a részletes napi tervbe.</li>
+              <li><strong>Fókusz:</strong> fő városok, látványos pontok, országos prioritások.</li>
+            </ul>
+            <a class="reading-link" href="https://utazaskatalogus.hu/uzbegisztan-legszebb-helyei/" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://traveladdict.hu/uzbegisztan-latnivalok/" target="_blank" rel="noopener noreferrer">Üzbegisztán látnivalók · Traveladdict</a></h4>
+            <div class="reading-meta"><span class="reading-tag">élménybeszámoló</span><span class="reading-tag">fotós</span><span class="reading-tag">Selyemút</span></div>
+            <p>Hangulatosabb, személyesebb leírás, amely a fő üzbég látnivalókat inkább élményként keretezi. Jó arra, hogy a tervben szereplő városok ne csak checkpointok legyenek, hanem előre legyen képed a színek, terek és városi atmoszféra különbségeiről.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> különösen hasznos Khiva, Bukhara és Szamarkand vizuális ráhangolásához.</li>
+              <li><strong>Fókusz:</strong> selyemúti városok, fotós élmények, személyes utazási benyomások.</li>
+            </ul>
+            <a class="reading-link" href="https://traveladdict.hu/uzbegisztan-latnivalok/" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://utikritika.hu/uzbegisztan/taskent" target="_blank" rel="noopener noreferrer">Taskent · Utikritika</a></h4>
+            <div class="reading-meta"><span class="reading-tag">Taskent</span><span class="reading-tag">praktikus</span><span class="reading-tag">városhangulat</span></div>
+            <p>Taskent nem az út legromantikusabb része, hanem átmeneti fővárosi nap és repülős kifutó. Az Utikritika ezért hasznos: földközelibb, pro-kontra szemlélettel segít eldönteni, mennyit érdemes várni a várostól.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> jó a máj. 7-i rövid nap arányainak belövéséhez.</li>
+              <li><strong>Fókusz:</strong> közlekedés, városi benyomás, metró, bazárok, realista elvárások.</li>
+            </ul>
+            <a class="reading-link" href="https://utikritika.hu/uzbegisztan/taskent" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://utikritika.hu/uzbegisztan/szamarkand" target="_blank" rel="noopener noreferrer">Szamarkand · Utikritika</a></h4>
+            <div class="reading-meta"><span class="reading-tag">Szamarkand</span><span class="reading-tag">Registan</span><span class="reading-tag">Timurida</span></div>
+            <p>Szamarkandnál az Utikritika jól működik második véleményként: a Registan és a nagy timurida emlékek mellett a város gyakorlati és hangulati oldalát is segít helyretenni. Ez azért fontos, mert itt rövid, de intenzív a program.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> segít priorizálni, mit kell biztosan látni máj. 5-6 között.</li>
+              <li><strong>Fókusz:</strong> Registan, Gur-e-Amir, fő látnivalók, városon belüli tempó.</li>
+            </ul>
+            <a class="reading-link" href="https://utikritika.hu/uzbegisztan/szamarkand" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://utikritika.hu/uzbegisztan/khiva_avagy_xiva" target="_blank" rel="noopener noreferrer">Khiva avagy Xiva · Utikritika</a></h4>
+            <div class="reading-meta"><span class="reading-tag">Khiva</span><span class="reading-tag">Ichan-Kala</span><span class="reading-tag">rövid blokk</span></div>
+            <p>Khiva az útban rövid, mégis nagyon látványos blokk. A cikk abban segít, hogy a fallal körülvett óvárost ne csak “szép díszletként”, hanem kompakt, külön karakterű oázisvárosként nézd.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> jó ráhangolás a máj. 2-i rövid khivai búcsúkörre.</li>
+              <li><strong>Fókusz:</strong> Ichan-Kala, városfalak, minaretek, sűrű óvárosi séta.</li>
+            </ul>
+            <a class="reading-link" href="https://utikritika.hu/uzbegisztan/khiva_avagy_xiva" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+
+          <article class="reading-card">
+            <h4><a href="https://utikritika.hu/uzbegisztan/buhara" target="_blank" rel="noopener noreferrer">Buhara · Utikritika</a></h4>
+            <div class="reading-meta"><span class="reading-tag">Bukhara</span><span class="reading-tag">óváros</span><span class="reading-tag">lassabb tempó</span></div>
+            <p>Bukhara két teljes napot kap a tervben, ezért külön forrásként is megéri. A város kevésbé egyetlen monumentális pillanatra épül, inkább sok udvar, bazár, mecset, medresze és esti séta adja össze.</p>
+            <ul>
+              <li><strong>Ehhez az úthoz:</strong> segít megtartani a lassabb, bolyongós ritmust máj. 3-4-re.</li>
+              <li><strong>Fókusz:</strong> Po-i-Kalyan, Ark, Lyabi-Hauz, bazárok, óvárosi hangulat.</li>
+            </ul>
+            <a class="reading-link" href="https://utikritika.hu/uzbegisztan/buhara" target="_blank" rel="noopener noreferrer">Cikk megnyitása</a>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2 class="section-title">🧭 Mit olvass mikor?</h2>
+      <ul class="plain-list">
+        <li><strong>Indulás előtt:</strong> először az Alternatív Utak türkmen praktikus cikkét, mert az admin és helyi szabályok itt a legfontosabbak.</li>
+        <li><strong>Repülőn / átszálláskor:</strong> az Utazáskatalógus és Traveladdict üzbég országos összefoglalóit, hogy összeálljon a nagy kép.</li>
+        <li><strong>Városok előtt:</strong> az Utikritika adott városi oldalát az előző este: Khiva, Bukhara, Szamarkand, majd Taskent.</li>
+      </ul>
+    </section>
   </section>
 </div>
 
