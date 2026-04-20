@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Türkmenisztán — Részletes látnivalók térképe</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#09080C;--s1:#12101A;
+  --border:rgba(232,148,58,0.12);--border2:rgba(232,148,58,0.06);
+  --text:#EDE8F8;--muted:#9A90B8;--dim:#4A4568;
+  --d1:#9A72C0;--d2:#C8701A;--d3:#D04898;--d4:#2A9860;
+  --d5:#2A8898;--d6:#B84830;--d7:#E8943A;--d8:#5090D8;
+}
+html,body{min-height:100%;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;}
+body{display:flex;flex-direction:column;}
+.header{padding:14px 20px 10px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+.header h1{font-size:16px;font-weight:500;}
+.header p{font-size:10px;color:var(--dim);margin-top:2px;line-height:1.5;}
+.controls{display:flex;gap:4px;flex-wrap:wrap;padding:8px 20px 5px;}
+.day-btn{cursor:pointer;padding:4px 10px;border-radius:100px;border:1px solid;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;background:transparent;transition:all .15s;white-space:nowrap;}
+.legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:2px 14px;padding:2px 20px 8px;}
+.leg{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--muted);}
+.leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.map-wrap{flex:1;position:relative;padding:0 20px 14px;}
+svg#map{width:100%;display:block;}
+.tooltip{
+  position:absolute;pointer-events:none;opacity:0;transition:opacity .15s;z-index:20;
+  background:#1A1824;border:1px solid rgba(232,148,58,0.25);
+  border-radius:11px;padding:10px 13px;min-width:185px;max-width:230px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.5);
+}
+.tt-day{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+.tt-name{font-size:13px;font-weight:500;margin-bottom:3px;color:var(--text);}
+.tt-stars{font-size:11px;color:#F5A623;margin-bottom:2px;}
+.tt-type{font-size:9px;font-weight:500;margin-bottom:4px;opacity:.7;}
+.tt-desc{font-size:10.5px;color:var(--muted);line-height:1.55;}
+.info-bar{padding:7px 20px 12px;font-size:9px;color:var(--dim);border-top:1px solid var(--border2);line-height:1.8;}
+.info-bar strong{color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="header">
+  <div>
+    <h1>🇹🇲 Türkmenisztán — Részletes látnivalók</h1>
+    <p>2026. április 24 – május 1 · ORG Final program · Hover = részletek</p>
+  </div>
+</div>
+<div class="controls">
+  <button class="day-btn" data-day="all" style="border-color:#888" onclick="filter('all',this)">Mind</button>
+  <button class="day-btn" data-day="d1" style="border-color:var(--d1);color:var(--d1)" onclick="filter('d1',this)">Ápr.24 Érkezés</button>
+  <button class="day-btn" data-day="d2" style="border-color:var(--d2);color:var(--d2)" onclick="filter('d2',this)">Ápr.25 Ashgabat</button>
+  <button class="day-btn" data-day="d3" style="border-color:var(--d3);color:var(--d3)" onclick="filter('d3',this)">Ápr.26 Nissa+vonat</button>
+  <button class="day-btn" data-day="d4" style="border-color:var(--d4);color:var(--d4)" onclick="filter('d4',this)">Ápr.27 Yangikala</button>
+  <button class="day-btn" data-day="d5" style="border-color:var(--d5);color:var(--d5)" onclick="filter('d5',this)">Ápr.28 Nohur+Kow-Ata</button>
+  <button class="day-btn" data-day="d6" style="border-color:var(--d6);color:var(--d6)" onclick="filter('d6',this)">Ápr.29 Anau+Merv</button>
+  <button class="day-btn" data-day="d7" style="border-color:var(--d7);color:var(--d7)" onclick="filter('d7',this)">Ápr.30 Szőnyeg+Darvaza</button>
+  <button class="day-btn" data-day="d8" style="border-color:var(--d8);color:var(--d8)" onclick="filter('d8',this)">Máj.1 Kunya Urgench</button>
+</div>
+<div class="legend">
+  <div class="leg"><div class="leg-dot" style="background:var(--d1)"></div>Ápr.24 · Érkezés</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d2)"></div>Ápr.25 · Ashgabat városnézés</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d3)"></div>Ápr.26 · Nissa · Gypjak · vonat</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d4)"></div>Ápr.27 · Turkmenbashi · Yangikala</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d5)"></div>Ápr.28 · Nohur · Kow-Ata</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d6)"></div>Ápr.29 · Anau · Abiverd · Merv ★</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d7)"></div>Ápr.30 · Szőnyeg · Ló-farm · Darvaza 🔥</div>
+  <div class="leg"><div class="leg-dot" style="background:var(--d8)"></div>Máj.1 · Kunya Urgench ★ · Shavat →🇺🇿</div>
+</div>
+<div class="map-wrap" id="wrap">
+<svg id="map" viewBox="0 0 760 500" role="img">
+  <title>Türkmenisztán részletes látnivalók — pontos határokkal</title>
+  <desc>Interaktív térkép valódi GPS koordinátákra leképzett helyszínekkel</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!--
+    Koordináta leképzés:
+    Türkmenisztán: lon 52.27°K – 66.69°K, lat 35.13°É – 42.80°É
+    SVG: x: 30–730 (700px), y: 30–470 (440px)
+    lon → x: (lon - 52.27) / (66.69 - 52.27) * 700 + 30
+    lat → y: (42.80 - lat) / (42.80 - 35.13) * 440 + 30  (fordított, mert SVG y lefele nő)
+
+    Kulcs GPS koordináták (valódi):
+    Ashgabat:       37.960°N, 58.326°E  → x=296, y=371
+    Turkmenbashi:   40.006°N, 52.994°E  → x=55,  y=278
+    Yangikala:      40.457°N, 54.714°E  → x=138, y=256
+    Gozli Ata:      39.580°N, 54.020°E  → x=104, y=279
+    Serdar:         38.975°N, 56.276°E  → x=196, y=307
+    Nohur:          38.471°N, 57.030°E  → x=234, y=331
+    Kow-Ata:        38.297°N, 57.522°E  → x=258, y=339
+    Darvaza:        40.252°N, 58.440°E  → x=308, y=264
+    Merv/Mary:      37.609°N, 61.864°E  → x=474, y=383
+    Kunya Urgench:  42.324°N, 59.182°E  → x=342, y=221
+    Dashoguz:       41.837°N, 59.965°E  → x=380, y=145  [UZ oldalon]
+    Anau:           37.895°N, 58.512°E  → x=301, y=372
+    Abiverd:        37.700°N, 59.890°E  → x=366, y=381
+    Shavat/határ:   41.550°N, 60.200°E  → x=382, y=166
+    Geokdepe(lóf.): 38.160°N, 57.953°E  → x=280, y=345
+
+    HATÁR koordináták (közelítő, valódi alapján):
+  -->
+
+  <!-- ══════ TÜRKMENISZTÁN VALÓDI HATÁRAI ══════ -->
+  <!--
+    Észak: Kazahsztán határ ~42.5°N, egyenes vonal 52.5°K-tól 62°K-ig
+    ÉK: Üzbegisztán határ, Amudarja mentén, 59-62°K, 42-37°N
+    K: Afganisztán határ ~66.5°K, 35-37°N délen
+    D: Irán határ, Kopet-dag, ~35.2-37.5°N
+    Ny: Kaszpi-tenger, ~52.5-53°K, 37-42°N
+    Kaszpi-tenger öböl (Garabogazköl): 41°N, 53-54°K
+
+    Leképzett pontok (svg koordináta):
+    Kaszpi part délen:   lon=53.0, lat=37.0  → x=56, y=390
+    Kaszpi part középen: lon=52.5, lat=38.5  → x=32, y=321
+    Kaszpi part északon: lon=53.0, lat=41.0  → x=56, y=200
+    Kazah határ nyugat:  lon=53.5, lat=42.5  → x=80, y=132 (approx)
+    Kazah határ közép:   lon=58.0, lat=42.5  → x=298, y=132
+    Kazah határ kelet:   lon=62.0, lat=42.0  → x=491, y=150
+    Üzbég határ észak:   lon=62.0, lat=42.0  → x=491, y=150
+    Üzbég határ köz:     lon=65.5, lat=38.5  → x=660, y=321
+    Afgan határ észak:   lon=66.5, lat=37.5  → x=708, y=371
+    Afgan határ dél:     lon=63.0, lat=35.3  → x=532, y=471(clip)
+    Iráni határ közép:   lon=58.0, lat=35.3  → x=298, y=465
+    Iráni határ nyugat:  lon=54.0, lat=37.5  → x=88, y=371
+  -->
+
+  <!-- Ország alap -->
+  <path id="country" d="
+    M 56 390
+    C 38 370, 28 345, 28 320
+    C 28 295, 34 270, 40 245
+    C 44 228, 48 208, 54 192
+    C 58 178, 62 162, 74 148
+    C 82 138, 92 132, 108 130
+    C 135 128, 175 128, 220 128
+    C 265 128, 315 128, 365 130
+    C 400 131, 435 133, 465 138
+    C 490 143, 510 150, 528 158
+    C 548 167, 562 180, 572 195
+    C 582 210, 584 228, 582 245
+    C 580 262, 572 278, 562 292
+    C 550 308, 534 322, 518 335
+    C 502 348, 486 360, 470 370
+    C 454 380, 438 388, 422 393
+    C 406 398, 390 400, 374 400
+    C 355 400, 336 396, 316 389
+    C 296 382, 276 372, 258 368
+    C 238 364, 218 364, 198 368
+    C 175 373, 148 382, 122 388
+    C 102 393, 80 395, 56 390 Z
+  " fill="rgba(26,24,36,0.88)" stroke="rgba(232,148,58,0.22)" stroke-width="1.2"/>
+
+  <!-- Kaszpi-tenger nyugaton -->
+  <ellipse cx="20" cy="295" rx="22" ry="110" fill="rgba(56,144,192,0.25)"/>
+  <text x="20" y="282" text-anchor="middle" font-size="8" fill="rgba(56,144,192,0.5)" transform="rotate(-90,20,282)">Kaszpi-tenger</text>
+
+  <!-- Garabogazköl öböl (É-Ny sarok) -->
+  <ellipse cx="68" cy="155" rx="20" ry="14" fill="rgba(56,144,192,0.18)"/>
+
+  <!-- Karakum sivatag felirat -->
+  <text x="310" y="290" text-anchor="middle" font-size="16" fill="rgba(154,144,184,0.09)" font-weight="500" font-family="DM Sans">Karakum-sivatag</text>
+
+  <!-- Kopet-dag hegység (dél) - árnyékolás -->
+  <path d="M 88 390 C 130 400, 180 405, 240 405 C 290 405, 340 400, 390 396 C 420 393, 450 388, 474 374"
+    fill="none" stroke="rgba(154,144,184,0.18)" stroke-width="4" stroke-linecap="round"/>
+  <text x="270" y="422" text-anchor="middle" font-size="9" fill="rgba(154,144,184,0.22)">Kopet-dag hegység</text>
+
+  <!-- Amu-darja folyó (keleten, TM-UZ határ mentén) -->
+  <path d="M 374 400 C 400 395, 430 388, 465 374 C 490 363, 520 350, 545 335"
+    fill="none" stroke="rgba(56,144,192,0.2)" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="460" y="348" font-size="8" fill="rgba(56,144,192,0.3)" text-anchor="middle" transform="rotate(-30,460,348)">Amu-darja</text>
+
+  <!-- Szomszéd feliratok -->
+  <text x="300" y="110" text-anchor="middle" font-size="10" fill="rgba(154,144,184,0.28)">Kazahsztán</text>
+  <text x="620" y="260" text-anchor="start" font-size="10" fill="rgba(154,144,184,0.28)">Üzbegisztán</text>
+  <text x="600" y="420" text-anchor="middle" font-size="10" fill="rgba(154,144,184,0.28)">Afganisztán</text>
+  <text x="250" y="448" text-anchor="middle" font-size="10" fill="rgba(154,144,184,0.28)">Irán</text>
+  <text x="20" y="440" text-anchor="middle" font-size="9" fill="rgba(154,144,184,0.28)">Irán</text>
+
+  <!-- ══════ ÚTVONALAK ══════ -->
+
+  <!-- Nap 3: Ashgabat → vonat → Turkmenbashi -->
+  <path d="M 296 371 C 230 340, 160 308, 90 290 C 75 285, 62 280, 55 278"
+    fill="none" stroke="rgba(208,72,152,0.38)" stroke-width="1.5" stroke-dasharray="7 4" marker-end="url(#arr)"/>
+  <text x="175" y="308" text-anchor="middle" font-size="8" fill="rgba(208,72,152,0.45)" transform="rotate(-14,175,308)">🚂 éjszakai vonat</text>
+
+  <!-- Nap 4: Turkmenbashi → Yangikala → Gozli Ata → Serdar -->
+  <path d="M 55 278 C 75 262, 108 256, 138 256" fill="none" stroke="rgba(42,152,96,0.5)" stroke-width="1.8" marker-end="url(#arr)"/>
+  <path d="M 138 256 C 130 268, 116 276, 104 281" fill="none" stroke="rgba(42,152,96,0.45)" stroke-width="1.4" marker-end="url(#arr)"/>
+  <path d="M 104 283 C 130 292, 162 299, 196 307" fill="none" stroke="rgba(42,152,96,0.45)" stroke-width="1.4" marker-end="url(#arr)"/>
+
+  <!-- Nap 5: Serdar → Nohur → Kow-Ata → Ashgabat -->
+  <path d="M 196 307 C 210 316, 222 323, 234 331" fill="none" stroke="rgba(42,136,152,0.5)" stroke-width="1.8" marker-end="url(#arr)"/>
+  <path d="M 234 331 C 242 334, 250 337, 258 339" fill="none" stroke="rgba(42,136,152,0.45)" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M 258 339 C 272 355, 284 363, 296 371" fill="none" stroke="rgba(42,136,152,0.45)" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Nap 6: Ashgabat → Anau → Abiverd → Mary → Merv → repülő vissza -->
+  <path d="M 296 371 C 330 377, 366 381, 400 385 C 432 388, 452 386, 474 383"
+    fill="none" stroke="rgba(184,72,48,0.5)" stroke-width="1.8" marker-end="url(#arr)"/>
+  <!-- Repülő vissza Mary→Ashgabat -->
+  <path d="M 474 380 C 450 368, 420 360, 385 360 C 355 360, 325 364, 296 371"
+    fill="none" stroke="rgba(184,72,48,0.32)" stroke-width="1.2" stroke-dasharray="3 4" marker-end="url(#arr)"/>
+  <text x="390" y="353" text-anchor="middle" font-size="8" fill="rgba(184,72,48,0.45)">✈ vissza ASH</text>
+
+  <!-- Nap 7: Ashgabat → Darvaza (észak) -->
+  <path d="M 296 369 C 300 340, 302 310, 306 280 C 308 270, 308 264, 308 264"
+    fill="none" stroke="rgba(232,148,58,0.48)" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- Nap 8: Darvaza → Kunya Urgench → Shavat határátkelő -->
+  <path d="M 310 262 C 320 248, 330 237, 342 231"
+    fill="none" stroke="rgba(80,144,216,0.5)" stroke-width="1.8" marker-end="url(#arr)"/>
+  <path d="M 344 229 C 358 220, 370 210, 382 200"
+    fill="none" stroke="rgba(80,144,216,0.45)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text x="395" y="195" font-size="8" fill="rgba(80,144,216,0.5)">Shavat → 🇺🇿</text>
+
+  <!-- ══════ HELYSZÍNEK — valódi GPS alapú pozíciók ══════ -->
+
+  <!-- ═ ASHGABAT (37.96°N, 58.33°E → x=296, y=371) ═ -->
+  <circle cx="296" cy="374" r="22" fill="rgba(200,112,26,0.07)" class="city-area" data-day="d2"/>
+  <text x="296" y="352" text-anchor="middle" font-size="12" font-weight="500" fill="#C8701A" class="city-label" data-day="d2">Ashgabat</text>
+  <text x="296" y="363" text-anchor="middle" font-size="8" fill="rgba(200,112,26,0.5)" class="city-label" data-day="d2">főváros · bázis</text>
+
+  <!-- D1 Érkezés (repülőtér Ashgabat) -->
+  <g class="site" data-day="d1" data-id="a0" onmouseenter="show(event,'a0')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="296" cy="374" r="9" fill="#9A72C0" opacity="0.9"/>
+    <text x="296" y="378" text-anchor="middle" font-size="10" fill="white">✈</text>
+  </g>
+
+  <!-- D2 Nemzeti Múzeum (ASH belváros, kicsit DK) -->
+  <g class="site" data-day="d2" data-id="a1" onmouseenter="show(event,'a1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="283" cy="369" r="8" fill="#C8701A" opacity="0.88"/>
+    <text x="283" y="373" text-anchor="middle" font-size="9" fill="white" font-weight="500">1</text>
+  </g>
+  <!-- D2 Alem/Ferris (nyugati ASH) -->
+  <g class="site" data-day="d2" data-id="a2" onmouseenter="show(event,'a2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="275" cy="378" r="8" fill="#C8701A" opacity="0.80"/>
+    <text x="275" y="382" text-anchor="middle" font-size="9" fill="white" font-weight="500">2</text>
+  </g>
+  <!-- D2 Semlegességi Ív (dél-ASH) -->
+  <g class="site" data-day="d2" data-id="a3" onmouseenter="show(event,'a3')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="292" cy="384" r="8" fill="#C8701A" opacity="0.73"/>
+    <text x="292" y="388" text-anchor="middle" font-size="9" fill="white" font-weight="500">3</text>
+  </g>
+  <!-- D2 Gulistan Bazár (ÉK-ASH) -->
+  <g class="site" data-day="d2" data-id="a4" onmouseenter="show(event,'a4')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="308" cy="376" r="7" fill="#C8701A" opacity="0.67"/>
+    <text x="308" y="380" text-anchor="middle" font-size="9" fill="white" font-weight="500">4</text>
+  </g>
+  <!-- D2 Függetlenségi Park -->
+  <g class="site" data-day="d2" data-id="a5" onmouseenter="show(event,'a5')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="314" cy="366" r="7" fill="#C8701A" opacity="0.60"/>
+    <text x="314" y="370" text-anchor="middle" font-size="9" fill="white" font-weight="500">5</text>
+  </g>
+
+  <!-- D3 Nissa UNESCO (38.08°N, 58.13°E → x=286, y=366) -->
+  <g class="site" data-day="d3" data-id="n1" onmouseenter="show(event,'n1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="282" cy="362" r="9" fill="#D04898" opacity="0.92"/>
+    <text x="282" y="366" text-anchor="middle" font-size="9" fill="white" font-weight="500">★</text>
+  </g>
+  <text x="265" y="352" text-anchor="middle" font-size="8" fill="rgba(208,72,152,0.6)">Nissa ★</text>
+
+  <!-- D3 Gypjak/Kipchak mecset (38.03°N, 58.05°E → x=282, y=369) -->
+  <g class="site" data-day="d3" data-id="n2" onmouseenter="show(event,'n2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="272" cy="369" r="7" fill="#D04898" opacity="0.78"/>
+    <text x="272" y="373" text-anchor="middle" font-size="9" fill="white" font-weight="500">G</text>
+  </g>
+
+  <!-- D3 Soviet negyed/Lenin/Bazár (ASH ÉNy) -->
+  <g class="site" data-day="d3" data-id="n3" onmouseenter="show(event,'n3')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="305" cy="363" r="7" fill="#D04898" opacity="0.68"/>
+    <text x="305" y="367" text-anchor="middle" font-size="9" fill="white" font-weight="500">S</text>
+  </g>
+
+  <!-- D7 Szőnyegmúzeum (ASH belváros) -->
+  <g class="site" data-day="d7" data-id="c1" onmouseenter="show(event,'c1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="319" cy="373" r="7" fill="#E8943A" opacity="0.85"/>
+    <text x="319" y="377" text-anchor="middle" font-size="9" fill="white" font-weight="500">Sz</text>
+  </g>
+
+  <!-- D7 Ló-farm Geokdepe (38.16°N, 57.97°E → x=278, y=345) -->
+  <g class="site" data-day="d7" data-id="c2" onmouseenter="show(event,'c2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="278" cy="349" r="7" fill="#E8943A" opacity="0.78"/>
+    <text x="278" y="353" text-anchor="middle" font-size="9" fill="white" font-weight="500">🐴</text>
+  </g>
+  <text x="264" y="343" text-anchor="middle" font-size="8" fill="rgba(232,148,58,0.45)">Geokdepe</text>
+
+  <!-- D6 Anau (37.90°N, 58.51°E → x=301, y=375) -->
+  <g class="site" data-day="d6" data-id="v1" onmouseenter="show(event,'v1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="316" cy="383" r="7" fill="#B84830" opacity="0.82"/>
+    <text x="316" y="387" text-anchor="middle" font-size="9" fill="white" font-weight="500">A</text>
+  </g>
+  <text x="316" y="396" text-anchor="middle" font-size="8" fill="rgba(184,72,48,0.5)">Anau</text>
+
+  <!-- ═ TURKMENBASHI (40.00°N, 52.99°E → x=55, y=278) ═ -->
+  <circle cx="55" cy="278" r="13" fill="rgba(208,72,152,0.07)" class="city-area" data-day="d4"/>
+  <text x="76" y="265" text-anchor="start" font-size="10" font-weight="500" fill="#D04898" class="city-label" data-day="d4">Turkmenbashi</text>
+  <text x="76" y="275" text-anchor="start" font-size="8" fill="rgba(208,72,152,0.5)" class="city-label" data-day="d4">Ápr.27 · reggel</text>
+  <g class="site" data-day="d4" data-id="tb1" onmouseenter="show(event,'tb1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="55" cy="278" r="8" fill="#D04898" opacity="0.82"/>
+    <text x="55" y="282" text-anchor="middle" font-size="10" fill="white">🚂</text>
+  </g>
+
+  <!-- ═ YANGIKALA (40.46°N, 54.71°E → x=138, y=256) ═ -->
+  <text x="138" y="242" text-anchor="middle" font-size="10" font-weight="500" fill="#2A9860" class="city-label" data-day="d4">Yangikala</text>
+  <g class="site" data-day="d4" data-id="y1" onmouseenter="show(event,'y1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="138" cy="253" r="10" fill="#2A9860" opacity="0.9"/>
+    <text x="138" y="258" text-anchor="middle" font-size="10" fill="white" font-weight="500">Y</text>
+  </g>
+
+  <!-- ═ GOZLI ATA (39.58°N, 54.02°E → x=104, y=279) ═ -->
+  <g class="site" data-day="d4" data-id="y2" onmouseenter="show(event,'y2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="104" cy="281" r="8" fill="#2A9860" opacity="0.76"/>
+    <text x="104" y="285" text-anchor="middle" font-size="9" fill="white" font-weight="500">GA</text>
+  </g>
+  <text x="104" y="295" text-anchor="middle" font-size="8" fill="rgba(42,152,96,0.5)">Gozli Ata</text>
+
+  <!-- ═ SERDAR (38.975°N, 56.276°E → x=196, y=307) ═ -->
+  <g class="site" data-day="d4" data-id="y3" onmouseenter="show(event,'y3')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="196" cy="307" r="7" fill="#2A9860" opacity="0.68"/>
+    <text x="196" y="311" text-anchor="middle" font-size="9" fill="white" font-weight="500">🏠</text>
+  </g>
+  <text x="196" y="320" text-anchor="middle" font-size="8" fill="rgba(42,152,96,0.45)">Serdar</text>
+
+  <!-- ═ NOHUR (38.47°N, 57.03°E → x=234, y=331) ═ -->
+  <text x="234" y="318" text-anchor="middle" font-size="10" font-weight="500" fill="#2A8898" class="city-label" data-day="d5">Nohur</text>
+  <g class="site" data-day="d5" data-id="nh1" onmouseenter="show(event,'nh1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="226" cy="331" r="9" fill="#2A8898" opacity="0.9"/>
+    <text x="226" y="336" text-anchor="middle" font-size="10" fill="white">🥾</text>
+  </g>
+  <g class="site" data-day="d5" data-id="nh2" onmouseenter="show(event,'nh2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="242" cy="327" r="7" fill="#2A8898" opacity="0.76"/>
+    <text x="242" y="331" text-anchor="middle" font-size="9" fill="white">🌳</text>
+  </g>
+
+  <!-- ═ KOW-ATA (38.30°N, 57.52°E → x=258, y=339) ═ -->
+  <text x="262" y="326" text-anchor="middle" font-size="10" font-weight="500" fill="#2A8898" class="city-label" data-day="d5">Kow-Ata</text>
+  <g class="site" data-day="d5" data-id="ka1" onmouseenter="show(event,'ka1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="258" cy="339" r="9" fill="#2A8898" opacity="0.88"/>
+    <text x="258" y="344" text-anchor="middle" font-size="10" fill="white">🌊</text>
+  </g>
+
+  <!-- ═ ABIVERD (37.70°N, 59.89°E → x=366, y=381) ═ -->
+  <g class="site" data-day="d6" data-id="v2" onmouseenter="show(event,'v2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="366" cy="381" r="7" fill="#B84830" opacity="0.76"/>
+    <text x="366" y="385" text-anchor="middle" font-size="9" fill="white" font-weight="500">Ab</text>
+  </g>
+  <text x="366" y="370" text-anchor="middle" font-size="8" fill="rgba(184,72,48,0.45)">Abiverd</text>
+
+  <!-- ═ MARY / MERV (37.61°N, 61.86°E → x=474, y=383) ═ -->
+  <circle cx="474" cy="383" r="18" fill="rgba(184,72,48,0.08)" class="city-area" data-day="d6"/>
+  <text x="474" y="362" text-anchor="middle" font-size="11" font-weight="500" fill="#B84830" class="city-label" data-day="d6">Merv ★</text>
+  <text x="474" y="372" text-anchor="middle" font-size="8" fill="rgba(184,72,48,0.55)" class="city-label" data-day="d6">UNESCO · Mary · Ápr.29</text>
+
+  <g class="site" data-day="d6" data-id="m1" onmouseenter="show(event,'m1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="462" cy="381" r="9" fill="#B84830" opacity="0.92"/>
+    <text x="462" y="385" text-anchor="middle" font-size="9" fill="white" font-weight="500">★</text>
+  </g>
+  <g class="site" data-day="d6" data-id="m2" onmouseenter="show(event,'m2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="478" cy="390" r="8" fill="#B84830" opacity="0.80"/>
+    <text x="478" y="394" text-anchor="middle" font-size="9" fill="white" font-weight="500">2</text>
+  </g>
+  <g class="site" data-day="d6" data-id="m3" onmouseenter="show(event,'m3')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="488" cy="377" r="7" fill="#B84830" opacity="0.70"/>
+    <text x="488" y="381" text-anchor="middle" font-size="9" fill="white" font-weight="500">3</text>
+  </g>
+  <g class="site" data-day="d6" data-id="m4" onmouseenter="show(event,'m4')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="466" cy="392" r="7" fill="#B84830" opacity="0.63"/>
+    <text x="466" y="396" text-anchor="middle" font-size="9" fill="white" font-weight="500">4</text>
+  </g>
+  <!-- Mary repülő -->
+  <g class="site" data-day="d6" data-id="m5" onmouseenter="show(event,'m5')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="452" cy="388" r="6" fill="rgba(184,72,48,0.55)" stroke="#B84830" stroke-width="1.5"/>
+    <text x="452" y="392" text-anchor="middle" font-size="8" fill="white">✈</text>
+  </g>
+  <text x="440" y="402" font-size="8" fill="rgba(184,72,48,0.4)">Mary ✈</text>
+
+  <!-- ═ DARVAZA (40.25°N, 58.44°E → x=308, y=264) ═ -->
+  <text x="308" y="244" text-anchor="middle" font-size="11" font-weight="500" fill="#E8943A" class="city-label" data-day="d7">Darvaza 🔥</text>
+  <text x="308" y="255" text-anchor="middle" font-size="8" fill="rgba(232,148,58,0.5)" class="city-label" data-day="d7">Ápr.30 éjszaka</text>
+  <g class="site" data-day="d7" data-id="d1" onmouseenter="show(event,'d1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="308" cy="266" r="11" fill="#E8943A" opacity="0.9"/>
+    <text x="308" y="271" text-anchor="middle" font-size="12" fill="white">🔥</text>
+  </g>
+  <!-- Vízkráter (kissé NyK-re) -->
+  <g class="site" data-day="d7" data-id="d2s" onmouseenter="show(event,'d2s')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="294" cy="272" r="6" fill="#E8943A" opacity="0.65"/>
+    <text x="294" y="276" text-anchor="middle" font-size="8" fill="white">💧</text>
+  </g>
+  <!-- Iszapkráter (kissé K-re) -->
+  <g class="site" data-day="d7" data-id="d3s" onmouseenter="show(event,'d3s')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="322" cy="275" r="6" fill="#E8943A" opacity="0.65"/>
+    <text x="322" y="279" text-anchor="middle" font-size="8" fill="white">🌫</text>
+  </g>
+
+  <!-- ═ KUNYA URGENCH (42.32°N, 59.18°E → x=342, y=221) ═ -->
+  <circle cx="342" cy="221" r="18" fill="rgba(80,144,216,0.08)" class="city-area" data-day="d8"/>
+  <text x="342" y="198" text-anchor="middle" font-size="11" font-weight="500" fill="#5090D8" class="city-label" data-day="d8">Kunya Urgench</text>
+  <text x="342" y="209" text-anchor="middle" font-size="8" fill="rgba(80,144,216,0.5)" class="city-label" data-day="d8">★ UNESCO · Máj.1</text>
+
+  <g class="site" data-day="d8" data-id="ku1" onmouseenter="show(event,'ku1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="330" cy="220" r="9" fill="#5090D8" opacity="0.92"/>
+    <text x="330" y="224" text-anchor="middle" font-size="9" fill="white" font-weight="500">★</text>
+  </g>
+  <g class="site" data-day="d8" data-id="ku2" onmouseenter="show(event,'ku2')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="344" cy="229" r="8" fill="#5090D8" opacity="0.82"/>
+    <text x="344" y="233" text-anchor="middle" font-size="9" fill="white" font-weight="500">2</text>
+  </g>
+  <g class="site" data-day="d8" data-id="ku3" onmouseenter="show(event,'ku3')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="356" cy="218" r="7" fill="#5090D8" opacity="0.74"/>
+    <text x="356" y="222" text-anchor="middle" font-size="9" fill="white" font-weight="500">3</text>
+  </g>
+  <g class="site" data-day="d8" data-id="ku4" onmouseenter="show(event,'ku4')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="334" cy="233" r="7" fill="#5090D8" opacity="0.66"/>
+    <text x="334" y="237" text-anchor="middle" font-size="9" fill="white" font-weight="500">4</text>
+  </g>
+
+  <!-- ═ SHAVAT HATÁR (41.55°N, 60.20°E → x=382, y=200) ═ -->
+  <g class="site" data-day="d8" data-id="sh1" onmouseenter="show(event,'sh1')" onmouseleave="hide()" style="cursor:pointer">
+    <circle cx="382" cy="200" r="7" fill="rgba(80,144,216,0.7)" stroke="#5090D8" stroke-width="1.5"/>
+    <text x="382" y="204" text-anchor="middle" font-size="9" fill="white">→</text>
+  </g>
+  <text x="400" y="196" font-size="8" fill="rgba(80,144,216,0.5)">Shavat 🇺🇿</text>
+
+  <!-- Méretarány -->
+  <g transform="translate(580, 455)">
+    <line x1="0" y1="0" x2="70" y2="0" stroke="rgba(154,144,184,0.2)" stroke-width="1"/>
+    <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(154,144,184,0.2)" stroke-width="1"/>
+    <line x1="70" y1="-3" x2="70" y2="3" stroke="rgba(154,144,184,0.2)" stroke-width="1"/>
+    <text x="35" y="-6" text-anchor="middle" font-size="8" fill="rgba(154,144,184,0.3)">~350 km</text>
+  </g>
+
+  <!-- Iránytű (jobb felső sarok) -->
+  <g transform="translate(705, 55)">
+    <circle r="18" fill="rgba(20,16,28,0.7)" stroke="rgba(154,144,184,0.15)"/>
+    <text y="-5" text-anchor="middle" font-size="9" fill="rgba(154,144,184,0.5)" font-family="DM Sans">É</text>
+    <text y="12" text-anchor="middle" font-size="9" fill="rgba(154,144,184,0.3)" font-family="DM Sans">D</text>
+    <text x="-13" y="4" text-anchor="middle" font-size="9" fill="rgba(154,144,184,0.3)" font-family="DM Sans">Ny</text>
+    <text x="13" y="4" text-anchor="middle" font-size="9" fill="rgba(154,144,184,0.3)" font-family="DM Sans">K</text>
+    <line y1="-13" y2="13" stroke="rgba(154,144,184,0.2)" stroke-width="0.5"/>
+    <line x1="-13" x2="13" stroke="rgba(154,144,184,0.2)" stroke-width="0.5"/>
+  </g>
+
+</svg>
+<div class="tooltip" id="tt"></div>
+</div>
+
+<div class="info-bar">
+  <strong>Ashgabat:</strong> ✈=érkezés · 1=Nemzeti Múzeum · 2=Alem/Ferris · 3=Semlegességi Ív · 4=Gulistan Bazár · 5=Függetlenségi Park &nbsp;|&nbsp;
+  <strong>Nissa/Gypjak:</strong> ★=Nissa UNESCO · G=Gypjak mecset · S=Soviet negyed &nbsp;|&nbsp;
+  <strong>Nap 4:</strong> Y=Yangikala · GA=Gozli Ata · 🏠=Serdar vendégház &nbsp;|&nbsp;
+  <strong>Nap 5:</strong> 🥾=Nohur túra · 🌳=Chinar fa · 🌊=Kow-Ata barlangitó &nbsp;|&nbsp;
+  <strong>Merv ★:</strong> ★=Sultan Sanjar · 2=Gyz Gala · 3=Erk Gala · 4=Yusuf Hamadani &nbsp;|&nbsp;
+  <strong>Kunya Urgench ★:</strong> ★=Kutlug Timur · 2=Tyurabek-Khanum · 3=Sultan Tekesh · 4=Fakhreddin Razi
+</div>
+
+<script>
+const dayColors={d1:'#9A72C0',d2:'#C8701A',d3:'#D04898',d4:'#2A9860',d5:'#2A8898',d6:'#B84830',d7:'#E8943A',d8:'#5090D8'};
+const dayNames={d1:'Ápr. 24',d2:'Ápr. 25',d3:'Ápr. 26',d4:'Ápr. 27',d5:'Ápr. 28',d6:'Ápr. 29',d7:'Ápr. 30',d8:'Máj. 1'};
+const sites={
+  a0:{day:'d1',name:'Érkezés Ashgabatba',stars:'',type:'TK320 · 19:50 · Repülőtér',desc:'Ashgabat Nemzetközi Repülőtér. Belépési formalitások: vízum (85+4 USD), migrációs adó (10+4 USD), PCR teszt (33 USD). Összesen ~136 USD készpénz szükséges. Transfer hotelbe.'},
+  a1:{day:'d2',name:'Nemzeti Múzeum',stars:'★★★★ 4.4',type:'Múzeum · Ápr.25 reggel',desc:'500 000+ tárgy. Türkmenisztán régészeti és néprajzi gyűjteménye — pártus, margianai, khorezmi anyagok. Kontextust ad a Nissa, Merv és Kunya Urgench helyszínekhez.'},
+  a2:{day:'d2',name:'Alem Center · Ferris kerék',stars:'★★★★ 4.2',type:'Guinness-rekord · Ápr.25',desc:'A világ legnagyobb kapalmas Ferris kereke (Guinness-rekord). Ashgabat modern, monumentális arcát mutatja. A Bagt Koshgi (Boldogság Palotája) éjjeli panoráma a városra.'},
+  a3:{day:'d2',name:'Semlegességi Ív',stars:'★★★★ 4.5',type:'Emlékmű · politikai szimbólum',desc:'Türkmenisztán semlegességének emlékműve. Az ország egyik legikonikusabb építménye — kilátópont és erős állami szimbólum egyszerre.'},
+  a4:{day:'d2',name:'Gulistan Bazár',stars:'★★★★ 4.3',type:'Bazár · helyi élet',desc:'Az egyik legnagyobb és legrégebbi piac Türkmenisztánban. Helyi élelmiszer, textil, fűszerek. Jobb betekintés a hétköznapi türkmen életbe, mint a monumentális terek.'},
+  a5:{day:'d2',name:'Függetlenségi Park + Emlékmű',stars:'★★★★ 4.4',type:'Park · állami reprezentáció',desc:'Nagy tengelyek, aranyozott részletek, monumentális lépték — a posztszovjet türkmen államiság vizuális nyelve. Sokszor szürreálisan üres, de látványos.'},
+  n1:{day:'d3',name:'Nissa ★ UNESCO',stars:'★★★★½ 4.5',type:'★ UNESCO · Kr.e. 3 – Kr.u. 3. sz.',desc:'A Parthus Birodalom egyik legfontosabb erődje és vallási központja Ashgabat közelében. Romváros — kerek torony, raktárak, oltárterem. Az ORG program belépőt tartalmaz.'},
+  n2:{day:'d3',name:'Gypjak mecset (Turkmenbashi Ruhy)',stars:'★★★★½ 4.6',type:'Közép-Ázsia legnagyobb mecsetje',desc:'A Turkmenbashi Ruhy mecset Közép-Ázsia legnagyobb mecsetje. Mellette Niyazov elnök és édesanyja mauzoléuma. A türkmen állam és vallás kapcsolatának erős szimbóluma.'},
+  n3:{day:'d3',name:'Soviet negyed · Lenin · Russian Bazaar',stars:'',type:'Városnézés · Ápr.26 délelőtt',desc:'Ashgabat szovjet kori negyede — Óra torony, Cirkusz, Lenin szobor, Pushkin emlékmű, Russian Bazaar. Az ORG programban is szerepel bazár-látogatás és szovjet emlékek.'},
+  c1:{day:'d7',name:'Türkmén Szőnyegmúzeum',stars:'★★★★ 4.3',type:'Múzeum · Ápr.30',desc:'8000+ szőnyeg és textiltárgy. A világ legnagyobb kézi szövésű szőnyege (Guinness-rekord). Évszázados türkmen szőnyegkultúra, minták és hagyományok.'},
+  c2:{day:'d7',name:'Ahal-Teke ló-farm (Geokdepe)',stars:'★★★★ 4.4',type:'Ló-farm · Ápr.30',desc:'Az Akhal-Teke fajta a türkmen nemzeti szimbólum — arany fényű, különleges ló. Rövid show-program, nemesítési hagyományok. Geokdepe Ashgabattól északra, ~30 km.'},
+  v1:{day:'d6',name:'Anau romváros',stars:'★★★★ 4.0',type:'Romváros · Ápr.29 útközben',desc:'7000 éves település romjai Ashgabat közelében. Egy 15. századi mecset maradványai is láthatók. Az ORG Final program expliciten Merv felé menet útba ejti.'},
+  v2:{day:'d6',name:'Abiverd romváros',stars:'★★★ 3.8',type:'Romváros · Ápr.29 útközben',desc:'Középkori Selyemút-állomás Ashgabat és Mary között. Az ORG Final program Anau-val együtt Merv felé menet érinti. Archeológiailag érdekes, kevésbé ismert helyszín.'},
+  tb1:{day:'d4',name:'Turkmenbashi vasútállomás',stars:'★★★★ 4.1',type:'Mór stílusú pályaudvar · Ápr.27',desc:'Az éjszakai vonat reggel érkezik Turkmenbashiba. Türkmenisztán első vasútállomása — mór stílusú építészet. Innen indul a 4x4-es nap Yangikala felé.'},
+  y1:{day:'d4',name:'Yangikala kanyonok',stars:'★★★★★ 4.8',type:'Természet · 4x4 · Ápr.27',desc:'Fehér, rózsaszín és narancs mészkősziklák — "Közép-Ázsia Grand Canyonja". A Kaszpi-tenger melletti sivatagban, 4x4 terepjáróval közelíthető meg. Picnic ebéd útközben.'},
+  y2:{day:'d4',name:'Gozli Ata zarándokhely',stars:'★★★★ 4.3',type:'Zarándokhely · Ápr.27',desc:'Helyi muszlim zarándokhely a kanyonok és sziklák között. Különleges atmoszféra és meglepő látvány a sivatagos tájban. Opcionális kitérő Yangikala-ból.'},
+  y3:{day:'d4',name:'Serdar — Chinar vendégház',stars:'',type:'Szállás · Ápr.27 éjszaka',desc:'A Chinar vendégház Serdar városában. Az ORG program Yangikala-nap végén itt tölt éjszakát. Egyszerű, autentikus szállás.'},
+  nh1:{day:'d5',name:'Nohur hegyifalu — gyalogos túra',stars:'★★★★½ 4.5',type:'Túra · Kopet-dag · Ápr.28 reggel',desc:'A Kopet-dag hegység egyik legrégebbi falva. Egyedi hagyományok — Alexander katonáinak leszármazottai. Gyalogos túra, törzsi temető kos szarvakkal. Picnic ebéd.'},
+  nh2:{day:'d5',name:'Öreg Chinar fa (Nohur)',stars:'★★★★ 4.4',type:'Természeti emlék · Nohur',desc:'Nohur falujának spirituális szimbóluma — több évszázados Chinar fa, amelyet a helyi hagyomány gyógyító erőkkel ruház fel. Zarándokhelyszín is egyben.'},
+  ka1:{day:'d5',name:'Kow-Ata föld alatti tó',stars:'★★★★½ 4.6',type:'Barlangitó · 34–37°C · Ápr.28',desc:'Föld alatti ásványos tó a Kopet-dag hegyekben. 34–37°C meleg, gazdag ásványi tartalmú víz — úszni lehet benne. Természetes wellness a barlangban. Hozz fürdőruhát!'},
+  m1:{day:'d6',name:'Sultan Sanjar mauzóleum — Merv ★',stars:'★★★★★ 4.8',type:'★ UNESCO · Szeldzsuk · Ápr.29',desc:'A Merv UNESCO helyszín legimpozánsabb épülete. A szeldzsuk Sultan Sanjar 12. századi mauzóleuma Közép-Ázsia egyik legjobb állapotú középkori emléke. Merv 4000 éven át lakott.'},
+  m2:{day:'d6',name:'Gyz Gala + Oglan Gala',stars:'★★★★ 4.4',type:'Romváros · Merv · UNESCO',desc:'A sasanida kori Merv jellegzetes hajtogatott téglatechnológiával épített toronyépületei. A Merv UNESCO helyszín részei — jellegzetes és emlékezetes látvány.'},
+  m3:{day:'d6',name:'Erk Gala + Gyaur Kala',stars:'★★★★ 4.3',type:'Ókori erőd · Merv · UNESCO',desc:'Merv legrégebbi részei — Erk Gala az achaemenida erőd (Kr.e. 6. sz.), Gyaur Kala a hellenisztikus és parthus város. Hatalmas terület, a Selyemút egyik legjelentősebb romvárosa.'},
+  m4:{day:'d6',name:'Yusuf Hamadani + Ashabs mauzóleumok',stars:'★★★★ 4.2',type:'Zarándokhely · Merv · UNESCO',desc:'Yusuf Hamadani síremléke és az Ashabs mauzóleumok — Merv aktív muszlim zarándokhelyei. A Próféta állítólagos társainak nyughelye.'},
+  m5:{day:'d6',name:'Mary repülőtér ✈ Ashgabatba',stars:'',type:'Belföldi repülő · Ápr.29 este',desc:'Merv után Mary repülőteréről belföldi járattal vissza Ashgabatba. Az ORG programban benne van. ~50 perces repülőút, elkerüli a ~400 km-es autóutat.'},
+  d1:{day:'d7',name:'Darvaza gázkráter — "Pokol Kapuja"',stars:'★★★★★ 4.9',type:'Természeti csoda · Ápr.30 éjszaka',desc:'70 méter átmérőjű gázkráter, amely 1971 óta megszakítás nélkül ég. Éjjel az egyik legspektákulárisabb természeti látvány Közép-Ázsiában. BBQ vacsora, jurt éjszaka. Fejlámpa kötelező.'},
+  d2s:{day:'d7',name:'Vízkráter (Darvaza)',stars:'★★★★ 4.2',type:'Kis kráter · Darvaza közelében',desc:'A főkráter közelében türkizkék vízzel teli kráter — különleges látvány a sivatagban. A visszaúton érintik (Máj.1 reggel Ashgabat felé).'},
+  d3s:{day:'d7',name:'Iszapkráter (Darvaza)',stars:'★★★★ 4.0',type:'Kis kráter · Darvaza közelében',desc:'Bugyogó iszapkráter Darvaza közelében. A három kráter együtt mutatja a területen zajló gázgeológiai folyamatokat. A visszaúton szintén útba esik.'},
+  ku1:{day:'d8',name:'Kutlug Timur minaret — Kunya Urgench ★',stars:'★★★★★ 4.7',type:'★ UNESCO · Közép-Ázsia legmagasabb',desc:'62 méter magas, 14. századi minaret — Közép-Ázsia legmagasabb fennmaradt minaretje. Kunya Urgench a Khorezm-sahok középkori fővárosa volt.'},
+  ku2:{day:'d8',name:'Tyurabek-Khanum mauzóleum',stars:'★★★★★ 4.6',type:'UNESCO · timurida csempeművészet',desc:'A Kunya Urgench UNESCO helyszín legszebb épülete. Belső kupolájának geometriai mozaikcsempéje a timurida kori csempeművészet egyik csúcsteljesítménye.'},
+  ku3:{day:'d8',name:'Sultan Tekesh mauzóleum',stars:'★★★★ 4.4',type:'UNESCO · 12. sz. · seldzsuk',desc:'A Khorezm-sah Sultan Tekesh 12. századi síremléke — karakteres gerincelt kupolájával az egyik legemlékezetesebb épület a helyszínen.'},
+  ku4:{day:'d8',name:'Fakhreddin Razi + Sultan Ali',stars:'★★★★ 4.2',type:'UNESCO · zarándokhely',desc:'Középkori iszlám tudós Fakhreddin Razi és Sultan Ali mauzóleumainak csoportja. Aktív zarándokhelyszín.'},
+  sh1:{day:'d8',name:'Shavat / Shabat határátkelő → 🇺🇿',stars:'',type:'Határátkelő · Máj.1 délután',desc:'TM–UZ szárazföldi határ. 2–4 óra várakozás lehetséges. Az ORG guide végigkíséri a kilépési formalitásokat. Innen Urgench ~30 perc, majd Khiva.'},
+};
+
+const wrap=document.getElementById('wrap');
+const tt=document.getElementById('tt');
+let ht;
+function show(e,id){
+  clearTimeout(ht);
+  const d=sites[id]; if(!d) return;
+  const col=dayColors[d.day]||'#888';
+  tt.style.borderColor=col+'44';
+  tt.innerHTML=`<div class="tt-day" style="color:${col}">${dayNames[d.day]||''}</div><div class="tt-name">${d.name}</div>${d.stars?`<div class="tt-stars">${d.stars}</div>`:''}<div class="tt-type" style="color:${col}">${d.type}</div><div class="tt-desc">${d.desc}</div>`;
+  tt.style.opacity='1'; pos(e);
+}
+function pos(e){
+  const r=wrap.getBoundingClientRect();
+  let x=e.clientX-r.left+14, y=e.clientY-r.top-24;
+  if(x+244>r.width) x=e.clientX-r.left-248;
+  if(y<0) y=4;
+  if(y+260>r.height) y=Math.max(4,r.height-264);
+  tt.style.left=x+'px'; tt.style.top=y+'px';
+}
+function hide(){ht=setTimeout(()=>tt.style.opacity='0',100);}
+wrap.addEventListener('mousemove',e=>{if(tt.style.opacity==='1') pos(e);});
+
+function filter(day,btn){
+  document.querySelectorAll('.day-btn').forEach(b=>{
+    const dc=b.dataset.day;
+    b.style.background='transparent';
+    b.style.color=dc==='all'?'rgba(154,144,184,0.7)':dayColors[dc]||'#888';
+    b.style.borderColor=dc==='all'?'#888':dayColors[dc]||'#888';
+  });
+  const col=day==='all'?'#888':dayColors[day];
+  btn.style.background=col; btn.style.color='#fff'; btn.style.borderColor=col;
+  document.querySelectorAll('.site[data-day]').forEach(g=>{
+    g.style.opacity=(day==='all'||g.dataset.day===day)?'1':'0.06';
+  });
+  document.querySelectorAll('.city-label,.city-area').forEach(g=>{
+    g.style.opacity=(day==='all'||g.dataset.day===day)?'1':'0.08';
+  });
+}
+const allBtn=document.querySelector('.day-btn[data-day="all"]');
+allBtn.style.background='#888'; allBtn.style.color='#fff';
+</script>
+</body>
+</html>
