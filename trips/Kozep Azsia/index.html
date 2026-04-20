@@ -716,6 +716,94 @@ body{
   font-weight:800;
 }
 .reading-link:hover{text-decoration:underline}
+.tm-detail-hero{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
+}
+.tm-detail-hero p{font-size:12px;color:var(--muted);line-height:1.7}
+.program-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:16px}
+.program-card{
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.52);
+  padding:14px;
+}
+.program-card h3{font-size:14px;margin-bottom:8px}
+.program-card ul{list-style:none;display:grid;gap:6px}
+.program-card li{font-size:11px;color:var(--muted);line-height:1.5}
+.program-card li strong{color:var(--text)}
+.tm-detail-days{display:grid;gap:12px}
+.tm-detail-day{
+  border:1px solid rgba(232,148,58,.22);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(232,148,58,.07),rgba(255,255,255,.44));
+  overflow:hidden;
+}
+.tm-detail-day summary{
+  list-style:none;
+  cursor:pointer;
+  padding:15px 16px;
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr) auto;
+  gap:12px;
+  align-items:center;
+}
+.tm-detail-day summary::-webkit-details-marker{display:none}
+.tm-detail-num{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(232,148,58,.16);
+  color:#9c5817;
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  font-weight:700;
+}
+.tm-detail-title h3{font-size:15px;line-height:1.35;margin-bottom:3px}
+.tm-detail-title p{font-size:11px;color:var(--muted);line-height:1.45}
+.tm-detail-toggle{font-size:11px;color:var(--dim);font-weight:800}
+.tm-detail-day[open] .tm-detail-toggle{color:#9c5817}
+.tm-detail-body{padding:0 16px 16px}
+.tm-program-strip{
+  border:1px solid var(--line-2);
+  border-radius:14px;
+  background:rgba(255,255,255,.54);
+  padding:12px;
+  margin-bottom:12px;
+}
+.tm-program-strip h4{font-size:12px;margin-bottom:5px}
+.tm-program-strip p{font-size:11px;color:var(--muted);line-height:1.55}
+.sight-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.sight-card{
+  border:1px solid var(--line-2);
+  border-radius:14px;
+  background:rgba(255,255,255,.54);
+  padding:12px;
+}
+.sight-card h4{font-size:12.5px;line-height:1.35;margin-bottom:6px}
+.sight-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.sight-chip{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:3px 7px;
+  font-size:9px;
+  font-weight:800;
+  color:var(--muted);
+  background:rgba(255,255,255,.58);
+}
+.sight-card p{font-size:10.8px;color:var(--muted);line-height:1.55;margin-bottom:8px}
+.sight-card ul{list-style:none;display:grid;gap:5px}
+.sight-card li{font-size:10.5px;color:var(--muted);line-height:1.45}
+.sight-card li strong{color:var(--text)}
+.sight-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.sight-links a{color:#436ba4;text-decoration:none;font-size:10px;font-weight:800}
+.sight-links a:hover{text-decoration:underline}
 @media(max-width:960px){
   .overview-grid{grid-template-columns:1fr}
   .context-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -729,6 +817,8 @@ body{
   .weather-day{grid-template-columns:56px 36px 1fr}
   .weather-day .forecast{grid-column:1 / -1}
   .weather-temp,.weather-rain{padding:6px}
+  .tm-detail-day summary{grid-template-columns:42px 1fr}
+  .tm-detail-toggle{grid-column:1 / -1}
 }
 </style>
 </head>
@@ -791,6 +881,7 @@ body{
   <nav class="tabs" id="tabs">
     <button class="tab-btn active" data-tab="overview">📋 Áttekintés</button>
     <button class="tab-btn" data-tab="turkmen">🇹🇲 Türkmenisztán</button>
+    <button class="tab-btn" data-tab="turkmen-details">🐪 Türkmenisztán Részletek</button>
     <button class="tab-btn" data-tab="uzbek">🇺🇿 Üzbegisztán</button>
     <button class="tab-btn" data-tab="samui">🇹🇭 Koh Samui</button>
     <button class="tab-btn" data-tab="food">🍽 Éttermek</button>
@@ -1082,6 +1173,517 @@ body{
           <li><strong>15:15 - 21:22:</strong> Khiva → Bukhara vonat</li>
         </ul>
       </article>
+    </div>
+  </section>
+
+  <section class="view" data-view="turkmen-details">
+    <div class="section-head">
+      <h2><span>Arthur PDF programja alapján, forrásokkal kibontva</span>Türkmenisztán Részletek</h2>
+      <span class="country-pill tm">2026. ápr. 24 - máj. 1</span>
+    </div>
+
+    <section class="tm-detail-hero">
+      <p><strong>Forrásprogram:</strong> `program Türkmenisztán by Arthur.pdf`. A program 8 napot fed le: Ashgabat érkezés, két ashgabati városnéző blokk, Nisa, Turkmenbashi és Yangykala, Nohur és Kow Ata, Merv, Darvaza, majd Kunya-Urgench és Shavat határátkelés Üzbegisztán felé.</p>
+      <p style="margin-top:8px"><strong>Használat:</strong> felül a hivatalos program kivonata, alatta naponta kinyitható részletek. A látnivalóknál a történeti háttér, praktikus értelmezés, review-összkép és forráslinkek együtt szerepelnek. A Tripadvisor- és Google-review adatok pillanatképek; indulás előtt érdemes újranézni őket.</p>
+    </section>
+
+    <div class="program-grid">
+      <article class="program-card">
+        <h3>🧾 Hivatalos program röviden</h3>
+        <ul>
+          <li><strong>04.24:</strong> érkezés Ashgabatba TK320 járattal, 19:50.</li>
+          <li><strong>04.25:</strong> Ashgabat városnézés, múzeumok, emlékművek, piac.</li>
+          <li><strong>04.26:</strong> Nisa, Turkmenbashi mecset-mauzóleum, bazár, szovjet emlékek, éjszakai vonat.</li>
+          <li><strong>04.27:</strong> Turkmenbashi - Yangykala - Gozli Ata - Serdar.</li>
+          <li><strong>04.28:</strong> Nohur - Kow Ata - Ashgabat.</li>
+          <li><strong>04.29:</strong> Anau, Abiverd, Merv, Mary, belföldi repülő Ashgabatba.</li>
+          <li><strong>04.30:</strong> Carpet Museum, Akhal-Teke lovak, Darvaza éjszaka.</li>
+          <li><strong>05.01:</strong> Kunya-Urgench, majd Shavat határátkelés.</li>
+        </ul>
+      </article>
+      <article class="program-card">
+        <h3>🚙 Közlekedés és ritmus</h3>
+        <ul>
+          <li><strong>Ashgabat:</strong> rövid városi mozgások, guide-os városnézés.</li>
+          <li><strong>Turkmenbashi szakasz:</strong> éjszakai vonat, majd 4x4 terepes nap Yangykala felé.</li>
+          <li><strong>Nohur / Kow Ata:</strong> hosszú 4x4-es nap, falusi és természeti elemekkel.</li>
+          <li><strong>Merv:</strong> kb. 400 km-es nap, történeti helyszínekkel és belföldi repüléssel.</li>
+          <li><strong>Darvaza / Kunya:</strong> sivatagi camping, majd hosszú északi átkötés a határig.</li>
+        </ul>
+      </article>
+      <article class="program-card">
+        <h3>🏨 Szállás és étkezés</h3>
+        <ul>
+          <li><strong>Ashgabat:</strong> Ak Altyn 3* / program szerinti városi hotel.</li>
+          <li><strong>Vonat:</strong> Ashgabat - Turkmenbashi éjszakai vonat, vacsorával.</li>
+          <li><strong>Serdar:</strong> Chinar vendégház.</li>
+          <li><strong>Darvaza:</strong> camping base, BBQ vacsora.</li>
+          <li><strong>Étkezés:</strong> több napon reggeli, Yangykala és Nohur piknik ebéd, Darvaza BBQ.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="tm-detail-days">
+      <details class="tm-detail-day" open>
+        <summary>
+          <div class="tm-detail-num">1</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 24. · Érkezés Ashgabatba</h3><p>TK320 Isztambulból, transzfer a hotelbe, első türkmen este.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Érkezés Ashgabat nemzetközi repülőterére 19:50-kor, transzfer a hotelbe. Ez nem városnéző nap, hanem belépés, adminisztráció, pénz- és telefonlogika rendezése, majd pihenés.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Ashgabat első benyomás</h4>
+              <div class="sight-meta"><span class="sight-chip">főváros</span><span class="sight-chip">márványváros</span><span class="sight-chip">érkezés</span></div>
+              <p>Ashgabat Türkmenisztán erősen megkomponált fővárosi kirakata: széles sugárutak, fehér márvány, monumentális középületek, nagy terek és kevés spontán utcai káosz. A város a modern türkmen állami reprezentáció fő színpada, ezért már az esti transzfer is sokat ad az ország vizuális nyelvéből.</p>
+              <ul>
+                <li><strong>Praktikus:</strong> a repülőtéri vízum, migrációs díj, regisztráció és USD készpénz legyen fókuszban.</li>
+                <li><strong>Review-összkép:</strong> az utazói beszámolók Ashgabatot gyakran szürreálisnak, tisztának, monumentálisnak, de kevésbé organikus városnak írják le.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Ashgabat" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.britannica.com/place/Ashgabat" target="_blank" rel="noopener noreferrer">Britannica</a><a href="https://alternativutak.hu/amit-turkmenisztanba-utazas-elott-erdemes-tudni/" target="_blank" rel="noopener noreferrer">Utazás előtt</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">2</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 25. · Ashgabat nagy városnézés</h3><p>National Museum, Independence Park, Rukhnama, Neutrality Arch, emlékművek, mecset, piac.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Reggeli után egész napos ashgabati városnézés: National Museum, Independence Park, Rukhnama Book, Neutrality Arch, Earthquake Memorial, Ferris Wheel, Wedding Palace viewpoint, Constitution Monument, Ertogrul Gazi Mosque és Sunday Market.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>National Museum of Turkmenistan</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.4 · 106 review</span><span class="sight-chip">Tripadvisor 4.0 · 120 review</span><span class="sight-chip">régészet</span></div>
+              <p>A Nemzeti Múzeum jó kontextust ad a későbbi Nisa, Merv és Kunya-Urgench helyszínekhez. Türkmenisztán története itt nem egyetlen városra épül, hanem oázisokra, birodalmi rétegekre, selyemúti kapcsolatokra és nomád-pásztor kultúrára.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> pártus, margianai, khorezmi és selyemúti anyagok; ezek visszaköszönnek a következő napok terepen látott romjainál.</li>
+                <li><strong>Review-összkép:</strong> múzeumos helyeken gyakori tanulság, hogy guide nélkül kevesebbet adnak, mert az angol feliratok és magyarázatok nem mindig elég részletesek.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/National_Museum_of_Turkmenistan" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://whc.unesco.org/en/list/886/" target="_blank" rel="noopener noreferrer">Merv UNESCO</a><a href="https://whc.unesco.org/en/list/1242/" target="_blank" rel="noopener noreferrer">Nisa UNESCO</a><a href="https://wanderlog.com/place/details/312265/national-museum-of-turkmenistan" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Independence Park és Independence Monument</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.4 · 232 review</span><span class="sight-chip">Tripadvisor 4.0 körül</span><span class="sight-chip">fotópont</span></div>
+              <p>A függetlenségi park és emlékmű a posztszovjet türkmen államiság vizuális nyelve: nagy tengelyek, aranyozott részletek, monumentális lépték, kontrollált városi tér. Nem “régi” látnivaló, hanem kulcs ahhoz, hogyan mutatja be magát a modern Türkmenisztán.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> állami szimbólumok, lépték, parkhasználat, mennyire üres vagy élő a tér.</li>
+                <li><strong>Review-összkép:</strong> utazók látványosnak, de sokszor furcsán sterilnek írják; inkább országértés, mint klasszikus műemlék.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Independence_Monument,_Ashgabat" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d595813-Reviews-Turkmenistan_Independence_Monument-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/312268/independence-monument" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Rukhnama Book Monument</h4>
+              <div class="sight-meta"><span class="sight-chip">Niyazov-korszak</span><span class="sight-chip">politikai szimbólum</span><span class="sight-chip">rövid stop</span></div>
+              <p>A Rukhnama Saparmurat Niyazov első elnök kultikus könyve volt, amely a 2000-es években a türkmen állami ideológia látványos részévé vált. A monumentális könyv nem szépsége miatt fontos, hanem mert nagyon direkt ablak a függetlenség utáni személyi kultuszra.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> hogyan kapcsolódik az emlékmű a város többi politikai szimbólumához.</li>
+                <li><strong>Utazási érték:</strong> rövid, de beszédes államszocializmus utáni ideológiai helyszín.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Ruhnama" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://alternativutak.hu/amit-turkmenisztanba-utazas-elott-erdemes-tudni/" target="_blank" rel="noopener noreferrer">Háttércikk</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Monument / Arch of Neutrality</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.5 · 50 review</span><span class="sight-chip">Tripadvisor 4.0 · 93 review</span><span class="sight-chip">kilátópont</span></div>
+              <p>A Semlegesség emlékműve Ashgabat egyik legismertebb politikai szimbóluma. A Tripadvisor szerint kb. 4.0-s értékelésű, a review-k pedig gyakran egyszerre nevezik különösnek, látványosnak és nagyon ashgabati jellegűnek. Korábban központibb helyen állt, később áthelyezték.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> a semlegesség mint állami identitás; az őrségváltás és a kilátó lehetősége, ha épp nyitva van.</li>
+                <li><strong>Review-összkép:</strong> nem mindenki szereti, de a város megértéséhez erős állami szimbólum.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Monument_of_Neutrality" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d595811-Reviews-Monument_Arch_of_Neutrality-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/9041698/monument-of-neutrality" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Earthquake Memorial / Halk Hakydasy</h4>
+              <div class="sight-meta"><span class="sight-chip">1948 földrengés</span><span class="sight-chip">emlékezetpolitika</span><span class="sight-chip">Tripadvisor 4.4 körül</span></div>
+              <p>Ashgabat 1948-as földrengése a város modern történetének egyik nagy traumája. Az emlékkomplexum ezért nem egyszerű köztéri stop: a szovjet korszak, a városi újjáépítés és a nemzeti emlékezet találkozási pontja.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> mennyire ünnepélyes, állami jellegű a gyász és történelmi emlékezés tere.</li>
+                <li><strong>Review-összkép:</strong> csendesebb, komolyabb megálló a sok monumentális-fehér városi ikon között.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/1948_Ashgabat_earthquake" target="_blank" rel="noopener noreferrer">1948 földrengés</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d8490687-Reviews-Halk_Hakydasy_Memorial_Complex-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Alem Ferris Wheel és Wedding Palace viewpoint</h4>
+              <div class="sight-meta"><span class="sight-chip">Wedding Palace Google 4.4 · 117 review</span><span class="sight-chip">Tripadvisor 3.9 · 36 review</span><span class="sight-chip">városi panorama</span></div>
+              <p>Az Alem kulturális-központ / óriáskerék és a Wedding Palace kilátópontja Ashgabat modern, gyakran rekordokra és monumentális formákra épülő arcát mutatja. A Wedding Palace különösen jó városképi stop: innen látszik a fehér márványos, tengelyes várostervezés.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> városlépték, üresség, reprezentatív építészet és a fotózási szabályok.</li>
+                <li><strong>Review-összkép:</strong> a Wedding Palace-t sok utazó inkább kilátópontként, mint belső látnivalóként értékeli.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Alem_Cultural_and_Entertainment_Center" target="_blank" rel="noopener noreferrer">Alem Wikipedia</a><a href="https://en.wikipedia.org/wiki/Wedding_Palace,_Ashgabat" target="_blank" rel="noopener noreferrer">Wedding Palace</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d14171387-Reviews-Wedding_Palace-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/312269/wedding-palace" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Constitution Monument</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.4 · 22 review</span><span class="sight-chip">állami emlékmű</span><span class="sight-chip">fotópont</span></div>
+              <p>A Constitution Monument a modern államiság másik nagy Ashgabat-szimbóluma. A városnézésben nem önmagában a legmélyebb hely, hanem a függetlenségi és semlegességi emlékművekkel együtt adja ki az állami reprezentáció térképét.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> emlékmű-nyelv, lépték, anyaghasználat, mennyire hasonló a többi modern ikonhoz.</li>
+                <li><strong>Utazási érték:</strong> rövid, de jó államépítési kontextus.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Constitution_Monument,_Ashgabat" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d10336422-Reviews-Constitution_Monument-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/827282/constitution-monument" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Ertogrul Gazi Mosque</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.8 · 315 review</span><span class="sight-chip">Tripadvisor 4.3 · 52 review</span><span class="sight-chip">működő mecset</span></div>
+              <p>A mecset a török-oszmán építészeti mintát hozza Ashgabatba: kupola, minaretek, belső díszítés, isztambuli asszociációk. Tripadvisoron kb. 4.3-as értékelése van; a review-k gyakran a mennyezeti díszítést és a modern, mégis látványos belsőt emelik ki, de vannak visszafogottabb vélemények is.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> öltözet, imaidő, fotózási szabályok; péntek déltől zsúfoltabb lehet.</li>
+                <li><strong>Review-összkép:</strong> szép, de nem mindenki szerint egyedi; Ashgabat vallási-modern arcához jó stop.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Ertu%C4%9Frul_Gazi_Mosque" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d1937776-Reviews-Ertugrul_Gazi_Mosque-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/312267/ertugrul-gazi-mosque" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Sunday Market / Tolkuchka jellegű piac</h4>
+              <div class="sight-meta"><span class="sight-chip">piac</span><span class="sight-chip">helyi élet</span><span class="sight-chip">vásárlás</span></div>
+              <p>A piac jó ellenpont a steril, monumentális Ashgabat után: több hétköznapi mozgás, textil, élelmiszer, háztartási és bazárhangulat. Ha szőnyeg, textil vagy emléktárgy érdekel, itt jobban látszik, hogyan lesz a hivatalos kultúrából piaci tárgyvilág.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> fotózás előtt kérdezni kell; alkudozás és készpénz; guide tanácsa fontos.</li>
+                <li><strong>Utazási érték:</strong> a nap legkevésbé emlékmű-szerű, legélőbb városi eleme lehet.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Altyn_Asyr_Bazaar" target="_blank" rel="noopener noreferrer">Altyn Asyr Bazaar</a><a href="https://alternativutak.hu/amit-turkmenisztanba-utazas-elott-erdemes-tudni/" target="_blank" rel="noopener noreferrer">Utazási praktikum</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">3</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 26. · Nisa, Gypjak és éjszakai vonat</h3><p>UNESCO pártus erőd, Turkmenbashi Mosque-Mausoleum, Russian Bazaar, Lenin és Pushkin emlékek.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Reggeli után Nisa UNESCO-helyszín, Turkmenbashi Mosque-Mausoleum, Russian Bazaar, Lenin’s Monument, Pushkin Monument. Este transzfer a vasútállomásra, éjszakai vonat Turkmenbashi felé.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Parthian Fortresses of Nisa · UNESCO</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.3 · 136 review</span><span class="sight-chip">Tripadvisor 3.9 · 190 review</span><span class="sight-chip">UNESCO</span></div>
+              <p>Nisa az Arsakida/Pártus Birodalom egyik kulcshelye volt, Ashgabat közelében. UNESCO-helyszínként a Kr. e. 3. századtól induló pártus hatalmi világot mutatja: erődített központ, palotás és rituális terek, hellenisztikus és iráni hatások keveredése.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> romterületnél a képzelőerő és a guide sokat számít; a múzeumi kontextus után jobban működik.</li>
+                <li><strong>Review-összkép:</strong> Tripadvisoron jó, de nem kiugró értékelésű; a történelemrajongók szeretik, másoknak “csak romok” lehet.</li>
+              </ul>
+              <div class="sight-links"><a href="https://whc.unesco.org/en/list/1242/" target="_blank" rel="noopener noreferrer">UNESCO</a><a href="https://en.wikipedia.org/wiki/Nisa,_Turkmenistan" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d671657-Reviews-Parthian_Fortresses_of_Nisa-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/312264/old-nisa" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Turkmenbashi Mosque-Mausoleum / Gypjak Mosque</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.6 · 171 review</span><span class="sight-chip">Tripadvisor 4.5 · 119 review</span><span class="sight-chip">Niyazov</span></div>
+              <p>A Gypjak-mecset és mauzóleum Niyazov / Türkmenbaşy személyi kultuszának és vallási reprezentációjának egyik legerősebb helye. Nagy, fehér, monumentális épület, amely egyszerre működik vallási térként és állami-emlékezeti helyszínként.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> mecsetként tisztelettel kell kezelni; a mauzóleum politikai jelentése legalább olyan fontos, mint az építészet.</li>
+                <li><strong>Review-összkép:</strong> a látogatók gyakran a méretet, fehérséget és nyugodt atmoszférát emelik ki.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/T%C3%BCrkmenba%C5%9Fy_Ruhy_Mosque" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d595814-Reviews-Gypjak_Mosque-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://www.top-rated.online/cities/Ashgabat%2BCity/place/p/1214703/T%C3%BCrkmenba%C5%9Fy%2BRuhy%2BMosque" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Russian Bazaar</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.4 · 227 review</span><span class="sight-chip">Tripadvisor 4.0 · 13 review</span><span class="sight-chip">piac</span></div>
+              <p>A Russian Bazaar Ashgabat klasszikusabb, városias piaci oldala. A programban jó ellensúly a monumentális állami terekhez: itt jobban látszik a város hétköznapi gazdasága, az élelmiszer, tea, fűszer, édesség és kisebb vásárlások világa.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> fotózási engedély, pénzváltás/árak, helyi édességek és szárított gyümölcsök.</li>
+                <li><strong>Utazási érték:</strong> rövid, élő városi stop, különösen a steril fővárosi terek után.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Russian_Bazaar,_Ashgabat" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d595806-Reviews-Russian_Bazaar-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://wanderlog.com/place/details/312270/state-shopping-center-gulistan-russian-bazaar" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Lenin és Pushkin emlékművek</h4>
+              <div class="sight-meta"><span class="sight-chip">szovjet réteg</span><span class="sight-chip">várostörténet</span><span class="sight-chip">rövid stop</span></div>
+              <p>A Lenin- és Pushkin-emlékek nem a nap leglátványosabb pontjai, de fontosak, mert Ashgabat szovjet történeti rétegét mutatják. A modern türkmen reprezentáció mellett ezek segítenek látni, hogy a város nem csak függetlenség utáni márványprojekt.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> melyik szovjet szimbólum maradt, melyik került átértelmezésre vagy háttérbe.</li>
+                <li><strong>Review-összkép:</strong> a Lenin-szobor ritkaságként érdekes, rövid fotós/háttértörténeti megálló.</li>
+              </ul>
+              <div class="sight-links"><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d10336421-Reviews-Statue_of_Lenin-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Lenin · Tripadvisor</a><a href="https://en.wikipedia.org/wiki/Alexander_Pushkin" target="_blank" rel="noopener noreferrer">Pushkin háttér</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">4</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 27. · Turkmenbashi, Yangykala, Gozli Ata, Serdar</h3><p>Reggeli vonatérkezés, kanyonok, zarándokhely, vendégház.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Reggeli érkezés Turkmenbashi vasútállomásra, reggeli, majd 4x4-es út Yangykala kanyonjaihoz. Piknik ebéd, Gozli Ata zarándokhely, utána Serdar város, Chinar vendégház.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Turkmenbashi / Kaszpi-tengeri kapu</h4>
+              <div class="sight-meta"><span class="sight-chip">Kaszpi-tenger</span><span class="sight-chip">vasút</span><span class="sight-chip">átmeneti pont</span></div>
+              <p>Turkmenbashi a Kaszpi-tenger melletti kikötőváros, de ezen az úton inkább logisztikai kapu: az éjszakai vonat után innen indul a nagy nyugati terepes nap. A város történetileg Krasznovodszk néven is ismert volt.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> váltás Ashgabat zárt fővárosi tereiből a nyugati, szárazabb, vadabb tájba.</li>
+                <li><strong>Utazási érték:</strong> nem fő cél, hanem átmenet Yangykala felé.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/T%C3%BCrkmenba%C5%9Fy,_Turkmenistan" target="_blank" rel="noopener noreferrer">Wikipedia</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Yangykala Canyon</h4>
+              <div class="sight-meta"><span class="sight-chip">Tripadvisor 4.8 · 21 review</span><span class="sight-chip">tájélmény</span><span class="sight-chip">4x4</span></div>
+              <p>Yangykala Türkmenisztán egyik legerősebb természeti látványa: rétegzett, vöröses-fehéres kanyonfalak, sivatagi panoráma, kevés infrastruktúra. Az értékelések kiemelkedően jók, Tripadvisoron kb. 4.8-as pontszámmal; a review-k szerint érdemes időt hagyni, mert sok szögből más arcát mutatja.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> napállás, szél, por, sziklaperemek; stabil cipő és napvédelem kell.</li>
+                <li><strong>Review-összkép:</strong> hatalmas, fotogén, “worth the detour” típusú hely; a hozzá vezető út hosszú és terepes.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Yangykala_Canyon" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g2049540-d8449437-Reviews-Yangykala_Canyon-Balkanabat_Balkan_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Gozli Ata zarándokhely</h4>
+              <div class="sight-meta"><span class="sight-chip">zarándokhely</span><span class="sight-chip">sivatagi szent hely</span><span class="sight-chip">helyi kultúra</span></div>
+              <p>Gozli Ata helyi vallási-zarándokhely, amely Yangykala tájélménye után kulturális ellenpontot ad. Itt a szent helyhez, sírhoz, vendégfogadáshoz és helyi vallási gyakorlathoz kapcsolódó viselkedési szabályok fontosabbak, mint maga az építészet.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> öltözet, fotózás, csend, guide utasításai; zarándokhelyen nem turista-logika szerint kell mozogni.</li>
+                <li><strong>Utazási érték:</strong> ritka betekintés a sivatagi, népi-vallási türkmen világba.</li>
+              </ul>
+              <div class="sight-links"><a href="https://caravanistan.com/turkmenistan/west/yangykala/gozli-ata/" target="_blank" rel="noopener noreferrer">Caravanistan</a><a href="https://alternativutak.hu/korutazas-turkmenisztanban/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">5</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 28. · Nohur és Kow Ata</h3><p>Régi hegyi falu, törzsi temető, föld alatti termáltó, vissza Ashgabatba.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Kora reggeli indulás Nohur faluba, séta az egyik legrégebbi türkmen faluban, öreg fa és törzsi temető. Piknik ebéd, majd Kow Ata föld alatti tó, fürdési lehetőséggel, este Ashgabat hotel.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Nohur / Nokhur village</h4>
+              <div class="sight-meta"><span class="sight-chip">hegyi falu</span><span class="sight-chip">törzsi temető</span><span class="sight-chip">helyi élet</span></div>
+              <p>Nohur a Kopet-Dag térségéhez kötődő, régi falusi világot mutatja. A szarvakkal, törzsi jelekkel és helyi hiedelmekkel kapcsolódó temető és a falu környezete teljesen más karaktert ad, mint Ashgabat vagy a sivatagi kanyonok.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> ne kezeld skanzenként; emberek lakóhelye és temetője, ezért a fotózásnál különösen kérdezni kell.</li>
+                <li><strong>Utazási érték:</strong> ritka falusi-kulturális blokk, amely nem csak emlékművekről szól.</li>
+              </ul>
+              <div class="sight-links"><a href="https://caravanistan.com/turkmenistan/center/nohur/" target="_blank" rel="noopener noreferrer">Caravanistan</a><a href="https://alternativutak.hu/korutazas-turkmenisztanban/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Kow Ata Underground Lake</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.6 · 59 review</span><span class="sight-chip">Tripadvisor 4.0 · 23 review</span><span class="sight-chip">termálbarlang</span></div>
+              <p>Kow Ata egy mészkőbarlangban lévő meleg, kénes jellegű föld alatti tó. Tripadvisoron kb. 4.0-s értékelésű; a review-k egyszerre dicsérik az egyedi élményt, és figyelmeztetnek a meredek, csúszós lépcsőkre, párára, sötétségre és erős szagra.</p>
+              <ul>
+                <li><strong>Mit vigyél:</strong> törölköző, papucs, fejlámpa/telefonfény, vízálló tasak; ha klausztrofóbiás vagy, óvatosan.</li>
+                <li><strong>Review-összkép:</strong> emlékezetes, de nem komfortos wellness; inkább kalandos barlangfürdő.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Kow_Ata" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g27921820-d8744184-Reviews-Kow_Ata_Underground_Lake-Baherden_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a><a href="https://wanderlog.com/place/details/813770/kow-ata" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">6</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 29. · Anau, Abiverd, Merv, Mary, Ashgabat</h3><p>UNESCO Merv, oázistörténet, hosszú nap és belföldi repülő.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Reggel indulás Merv felé Anau Mosque Ruins és Abiverd maradványain át. Merv UNESCO-helyszín részletesebb bejárása, majd Mary város, ha belefér rövid city tour, utána belföldi repülő Ashgabatba.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Anau Mosque Ruins</h4>
+              <div class="sight-meta"><span class="sight-chip">rom</span><span class="sight-chip">út közbeni stop</span><span class="sight-chip">középkori réteg</span></div>
+              <p>Anau romjai jól jelzik, hogy a Merv felé vezető út nem üres átkötés: a Kopet-Dag peremvidéke és az oázisvilág tele van kisebb történeti rétegekkel. A mecsetromot a 15. századi timurida-kori építészethez szokták kötni.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> romállapot, díszítési maradványok, mennyire más léptékű, mint Merv.</li>
+                <li><strong>Utazási érték:</strong> rövid történeti ráhangolás Merv előtt.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Anau,_Turkmenistan" target="_blank" rel="noopener noreferrer">Anau</a><a href="https://caravanistan.com/turkmenistan/center/anau/" target="_blank" rel="noopener noreferrer">Caravanistan</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Abiverd town remains</h4>
+              <div class="sight-meta"><span class="sight-chip">selyemúti rom</span><span class="sight-chip">út közbeni stop</span><span class="sight-chip">oázisváros</span></div>
+              <p>Abiverd egykori középkori oázisváros és selyemúti állomás volt. A mai maradványok inkább tájban olvasható régészeti lenyomatok, ezért guide nélkül kevésbé látványosak, de történeti ívet adnak Mervhez.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> városfalak/halmok, településlogika, víz és oázis szerepe.</li>
+                <li><strong>Utazási érték:</strong> Merv előtt segít megérteni, hogy az oázisvárosok láncolata volt a régió gerince.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Abiward" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://caravanistan.com/turkmenistan/center/abiverd/" target="_blank" rel="noopener noreferrer">Caravanistan</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Ancient Merv · UNESCO</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.5 · 89 review</span><span class="sight-chip">Tripadvisor 4.3 · 107 review</span><span class="sight-chip">UNESCO</span></div>
+              <p>Merv Közép-Ázsia egyik legfontosabb történeti helye: több egymásra rakódó városmag, szászánida, arab, szeldzsuk és mongol előtti rétegek, hatalmas oázistér. UNESCO szerint a hely kiemelkedően mutatja a selyemúti városi fejlődést és a régió politikai-kulturális súlyát.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> nem egyetlen épület, hanem óriási régészeti táj; a Sultan Sanjar mauzóleum, erődök és városfalak adják a kulcspontokat.</li>
+                <li><strong>Review-összkép:</strong> Tripadvisoron jó értékelésű, de a látogatók szerint guide nélkül nehéz értelmezni a nagy, széttartó romterületet.</li>
+              </ul>
+              <div class="sight-links"><a href="https://whc.unesco.org/en/list/886/" target="_blank" rel="noopener noreferrer">UNESCO</a><a href="https://en.wikipedia.org/wiki/Merv" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g18980181-d321301-Reviews-State_Historical_and_Cultural_Park_Ancient_Merv-Merv_Mary_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a><a href="https://wanderlog.com/place/details/7671/ancient-merv-state-historical-and-cultural-park" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">7</div>
+          <div class="tm-detail-title"><h3>2026. ápr. 30. · Carpet Museum, Akhal-Teke lovak, Darvaza</h3><p>Kulturális délelőtt, majd Karakum-sivatag és éjszakai gázkráter.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Reggeli után Carpet Museum és Akhal-Teke horse stables. Ebéd után út Darvaza gázkráterhez két kisebb kráterrel: mud crater és water crater. BBQ vacsora, éjszakai kráternézés, camping base.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Turkmen Carpet Museum</h4>
+              <div class="sight-meta"><span class="sight-chip">Tripadvisor 4.4 · 98 review</span><span class="sight-chip">Google 4.6 · 78 review</span><span class="sight-chip">kultúra</span></div>
+              <p>A szőnyeg Türkmenisztán egyik legerősebb nemzeti szimbóluma. A múzeum történeti és regionális mintákat, óriási és aprólékos darabokat, valamint a türkmen törzsi-motívumvilágot mutatja. Tripadvisoron kb. 4.4, Google-aggregátorban kb. 4.6 körüli értékelése van.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> régiónként eltérő motívumok, színek, csomósűrűség, a szőnyeg mint identitásjel.</li>
+                <li><strong>Review-összkép:</strong> sokan a guide-os magyarázatot tartják kulcsnak; nélküle a feliratok szűkösek lehetnek.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Turkmen_Carpet_Museum" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g293966-d5768700-Reviews-Turkmen_Carpet_Museum-Ashgabat_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://www.top-rated.online/cities/Ashgabat%2BCity/place/p/1214696/Turkmen%2BCarpet%2BMuseum" target="_blank" rel="noopener noreferrer">Google review mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Akhal-Teke horse stables</h4>
+              <div class="sight-meta"><span class="sight-chip">nemzeti szimbólum</span><span class="sight-chip">lótenyésztés</span><span class="sight-chip">fotózás kérdéses</span></div>
+              <p>Az Akhal-Teke ló Türkmenisztán egyik legfontosabb élő nemzeti jelképe: elegáns, karcsú, állóképességéről és fémesen csillogó szőréről ismert fajta. A látogatás nem csak “lóprogram”, hanem erős kulturális identitásblokk.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> fotózási szabályok, guide instrukciói, istállóetikett.</li>
+                <li><strong>Utazási érték:</strong> jó kiegészítő a szőnyegmúzeum mellé: két ikonikus türkmen szimbólum egy napon.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Akhal-Teke" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Darvaza Gas Crater</h4>
+              <div class="sight-meta"><span class="sight-chip">Google 4.3 · 492 review</span><span class="sight-chip">Tripadvisor 4.7 · 201 review</span><span class="sight-chip">Travelers' Choice 2025</span></div>
+              <p>Darvaza, a “Door to Hell”, a Karakum-sivatag égő gázkrátere. Tripadvisoron kb. 4.7-es, nagyon erős értékelésű hely; a review-k szerint nappal is érdekes, de naplemente után adja a legerősebb élményt. Több beszámoló említi, hogy a lángok korábban nagyobbak voltak, de az éjszakai látvány továbbra is erős.</p>
+              <ul>
+                <li><strong>Mit vigyél:</strong> meleg réteg estére, fejlámpa, porálló tok, stabil cipő, víz; a kemping komfortja limitált.</li>
+                <li><strong>Review-összkép:</strong> szürreális, fotós, bakancslistás élmény; a hosszú út és egyszerű szállás a fő kompromisszum.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Darvaza_gas_crater" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g2049541-d3618466-Reviews-Darvaza_Gas_Crater-Darvaza_Ahal_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a><a href="https://alternativutak.hu/turkmenisztan-legfontosabb-latnivaloi/" target="_blank" rel="noopener noreferrer">Alternatív Utak</a><a href="https://wanderlog.com/place/details/857563/darvaza-gas-crater" target="_blank" rel="noopener noreferrer">Google reviews mirror</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Mud crater és water crater</h4>
+              <div class="sight-meta"><span class="sight-chip">út közbeni stop</span><span class="sight-chip">geológia</span><span class="sight-chip">fotópont</span></div>
+              <p>A két kisebb kráter jó rávezetés Darvazára: kevésbé ikonikusak, de segítenek megérteni, hogy nem egyetlen izolált látványosságról van szó, hanem gázos/geológiai jelenségekkel teli sivatagi térségről.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> peremstabilitás, szél, por, guide által kijelölt távolság.</li>
+                <li><strong>Utazási érték:</strong> rövid, érdekes stop, de Darvaza éjszakai fő attrakciója mellett másodlagos.</li>
+              </ul>
+              <div class="sight-links"><a href="https://caravanistan.com/turkmenistan/center/darvaza/" target="_blank" rel="noopener noreferrer">Caravanistan</a><a href="https://en.wikipedia.org/wiki/Darvaza_gas_crater" target="_blank" rel="noopener noreferrer">Darvaza háttér</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <details class="tm-detail-day">
+        <summary>
+          <div class="tm-detail-num">8</div>
+          <div class="tm-detail-title"><h3>2026. máj. 1. · Kunya-Urgench és Shavat határ</h3><p>UNESCO középkori Khorezm-emlékek, minaret, mauzóleumok, kilépés Türkmenisztánból.</p></div>
+          <div class="tm-detail-toggle">Részletek</div>
+        </summary>
+        <div class="tm-detail-body">
+          <div class="tm-program-strip">
+            <h4>Program</h4>
+            <p>Reggeli után út Kunya-Urgench UNESCO-helyszínre. Látnivalók: Tyurabek-Khanum Mausoleum, Kutlug Timur Minaret, Sultan Tekesh Mausoleum, Fakhreddin Razi Mausoleum, Sultan Ali Mausoleum. Transzfer BP Shavat határpontra, migrációs formalitások, belépés Üzbegisztánba.</p>
+          </div>
+          <div class="sight-grid">
+            <article class="sight-card">
+              <h4>Kunya-Urgench · UNESCO</h4>
+              <div class="sight-meta"><span class="sight-chip">UNESCO</span><span class="sight-chip">Tripadvisor · 59 review</span><span class="sight-chip">Khorezm</span></div>
+              <p>Kunya-Urgench az Amu-Darja bal partján fekvő régi Khorezm-város öröksége. UNESCO szerint 11-16. századi emlékei, mauzóleumai, erődítései és 60 méter körüli minaretje az iszlám építészet és kézművesség kiemelkedő regionális hatását mutatják.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> ez nem sűrű óváros, hanem szétszórt emlékcsoport; sokat számít a guide és a történeti ív.</li>
+                <li><strong>Review-összkép:</strong> a látogatók a monumentális, de csendes romterületet és a minaretet emelik ki; kevésbé “kényelmes” turistalátványosság.</li>
+              </ul>
+              <div class="sight-links"><a href="https://whc.unesco.org/en/list/1199/" target="_blank" rel="noopener noreferrer">UNESCO</a><a href="https://en.wikipedia.org/wiki/Kunya-Urgench" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://www.tripadvisor.com/Attraction_Review-g815345-d1536781-Reviews-Kunya_Urgench_UNESCO_World_Heritage_Site-Kunya_Urgench_Dasoguz_Province.html" target="_blank" rel="noopener noreferrer">Tripadvisor</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Turabek-Khanum Mausoleum</h4>
+              <div class="sight-meta"><span class="sight-chip">mauzóleum</span><span class="sight-chip">kupola</span><span class="sight-chip">fotópont</span></div>
+              <p>A Turabek-Khanum mauzóleum Kunya-Urgench egyik legszebb építészeti pontja, különösen a belső kupoladíszítés és geometrikus kompozíció miatt. A helyszín a khorezmi elitek és a középkori iszlám temetkezési építészet világához kapcsolódik.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> kupola, csempemotívumok, belső tér arányai; fotózási szabályok.</li>
+                <li><strong>Utazási érték:</strong> a Kunya-Urgench blokk egyik legjobban “látható” és értelmezhető épülete.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Turabek_Khanum_Mausoleum" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://whc.unesco.org/en/list/1199/" target="_blank" rel="noopener noreferrer">UNESCO</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Kutlug Timur Minaret</h4>
+              <div class="sight-meta"><span class="sight-chip">60 m körül</span><span class="sight-chip">minaret</span><span class="sight-chip">Kunya ikon</span></div>
+              <p>A Kutlug Timur minaret Kunya-Urgench legerősebb vertikális jele, a középkori város egyik ikonja. A magassága és karcsú téglatest-architektúrája miatt jól mutatja, milyen építészeti ambícióval működött a régi Khorezm-világ.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> téglaminta, arányok, tájban álló magányos vertikalitás.</li>
+                <li><strong>Utazási érték:</strong> a nap legfontosabb fotópontja lehet.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Kutlug_Timur_Minaret" target="_blank" rel="noopener noreferrer">Wikipedia</a><a href="https://whc.unesco.org/en/list/1199/" target="_blank" rel="noopener noreferrer">UNESCO</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Sultan Tekesh, Fakhreddin Razi és Sultan Ali mauzóleumok</h4>
+              <div class="sight-meta"><span class="sight-chip">mauzóleumok</span><span class="sight-chip">khorezmi réteg</span><span class="sight-chip">történeti ív</span></div>
+              <p>A három mauzóleum együtt adja Kunya-Urgench temetkezési-történeti rétegét. Sultan Tekesh a Khorezmshah-dinasztia fontos uralkodója volt, Fakhreddin Razi neve a tudományos-vallási hagyományhoz kapcsolódik, Sultan Ali mauzóleuma pedig a helyi emlékcsoport része.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> épülettömegek különbsége, restauráltság, tégla és csempe aránya.</li>
+                <li><strong>Utazási érték:</strong> nem külön-külön “wow”, hanem együtt mutatják a város történeti súlyát.</li>
+              </ul>
+              <div class="sight-links"><a href="https://en.wikipedia.org/wiki/Kunya-Urgench" target="_blank" rel="noopener noreferrer">Kunya-Urgench</a><a href="https://whc.unesco.org/en/list/1199/" target="_blank" rel="noopener noreferrer">UNESCO</a></div>
+            </article>
+
+            <article class="sight-card">
+              <h4>Shavat határátkelés Üzbegisztán felé</h4>
+              <div class="sight-meta"><span class="sight-chip">határ</span><span class="sight-chip">Türkmenisztán vége</span><span class="sight-chip">Khiva következik</span></div>
+              <p>A Shavat határpont után az út karaktere megváltozik: a zárt, guide-alapú türkmen szakaszból átérsz a sokkal könnyebben mozgatható üzbég részbe. Logisztikailag ez kritikus nap, mert másnap már Khiva és a Bukhara felé tartó vonat jön.</p>
+              <ul>
+                <li><strong>Mit figyelj:</strong> útlevél, migrációs papírok, csomag, fotózási tilalom a határon, türelem.</li>
+                <li><strong>Utazási érték:</strong> nem látnivaló, de az egész út egyik legfontosabb átmeneti pontja.</li>
+              </ul>
+              <div class="sight-links"><a href="https://caravanistan.com/border-crossings/turkmenistan/" target="_blank" rel="noopener noreferrer">Caravanistan határok</a><a href="https://utikritika.hu/uzbegisztan/khiva_avagy_xiva" target="_blank" rel="noopener noreferrer">Khiva ráhangolás</a></div>
+            </article>
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 
