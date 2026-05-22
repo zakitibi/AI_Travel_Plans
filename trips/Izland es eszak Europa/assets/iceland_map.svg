@@ -1,0 +1,280 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" font-family="system-ui, -apple-system, sans-serif">
+  <!-- ============================================
+       Izland 7 napos roadtrip térkép
+       2026.07.18 - 07.26
+       ============================================ -->
+
+  <rect width="900" height="660" fill="#eaf2f8"/>
+
+  <!-- Cím sáv -->
+  <rect x="0" y="0" width="900" height="50" fill="#1a3a5c"/>
+  <text x="20" y="32" fill="#fff" font-size="20" font-weight="600">Izland · 7 napos roadtrip · 2026.07.18 — 07.26</text>
+  <text x="880" y="32" fill="#c8e0f4" font-size="13" text-anchor="end">Ring Road · ~2100 km · Reykjavík → Keflavík</text>
+
+  <!-- Izland egyszerűsített kontúr -->
+  <g id="iceland-outline">
+    <!-- Fő szárazföld -->
+    <path d="
+      M 195 380
+      L 165 360 L 145 335 L 130 310 L 125 285 L 140 260 L 165 240
+      L 195 225 L 230 215 L 270 205 L 320 195 L 365 185 L 410 178
+      L 460 175 L 510 178 L 555 185 L 600 195 L 645 210 L 685 225
+      L 720 240 L 745 260 L 765 285 L 770 315 L 758 345 L 740 372
+      L 720 395 L 695 415 L 665 432 L 630 445 L 590 455 L 545 462
+      L 500 465 L 455 462 L 410 458 L 365 452 L 320 445 L 280 435
+      L 245 420 L 218 402 L 200 388
+      Z"
+      fill="#d4e4d4" stroke="#7a9c7a" stroke-width="1.5"/>
+
+    <!-- Westfjords (északnyugat) -->
+    <path d="M 195 225 L 175 195 L 145 175 L 115 165 L 90 175 L 105 200 L 95 215 L 75 220 L 85 240 L 115 245 L 140 250 L 165 240 Z"
+      fill="#d4e4d4" stroke="#7a9c7a" stroke-width="1.5" opacity="0.6"/>
+    <text x="125" y="205" font-size="9" fill="#7a9c7a" font-style="italic" text-anchor="middle">Westfjords</text>
+    <text x="125" y="217" font-size="8" fill="#a0b8a0" font-style="italic" text-anchor="middle">(nem érintve)</text>
+
+    <!-- Snæfellsnes-félsziget -->
+    <path d="M 200 320 L 165 315 L 130 318 L 105 325 L 85 335 L 75 345 L 90 350 L 120 348 L 150 345 L 180 340 L 200 335 Z"
+      fill="#d4e4d4" stroke="#7a9c7a" stroke-width="1.5"/>
+
+    <!-- Reykjanes-félsziget -->
+    <path d="M 195 405 L 165 415 L 135 422 L 110 430 L 95 440 L 110 448 L 140 445 L 170 438 L 195 425 Z"
+      fill="#d4e4d4" stroke="#7a9c7a" stroke-width="1.5"/>
+
+    <!-- Vatnajökull gleccser -->
+    <path d="M 480 340 L 520 335 L 565 340 L 600 355 L 620 380 L 605 405 L 570 415 L 530 412 L 495 400 L 475 380 L 470 360 Z"
+      fill="#f5f9fc" stroke="#a8c8d8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="540" y="378" fill="#5a7a8a" font-size="10" font-style="italic" text-anchor="middle">Vatnajökull</text>
+
+    <!-- Hofsjökull -->
+    <ellipse cx="395" cy="295" rx="32" ry="22" fill="#f5f9fc" stroke="#a8c8d8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="395" y="298" fill="#5a7a8a" font-size="9" font-style="italic" text-anchor="middle">Hofsjökull</text>
+
+    <!-- Langjökull -->
+    <ellipse cx="305" cy="340" rx="28" ry="35" fill="#f5f9fc" stroke="#a8c8d8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="305" y="342" fill="#5a7a8a" font-size="9" font-style="italic" text-anchor="middle">Langjökull</text>
+
+    <!-- Mýrdalsjökull -->
+    <ellipse cx="365" cy="410" rx="30" ry="20" fill="#f5f9fc" stroke="#a8c8d8" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="365" y="413" fill="#5a7a8a" font-size="9" font-style="italic" text-anchor="middle">Mýrdalsjökull</text>
+  </g>
+
+  <!-- ============================================
+       Útvonal vonala
+       ============================================ -->
+
+  <path d="
+    M 115 430
+    L 195 405
+    L 215 395
+    L 235 380
+    L 195 340
+    L 145 345
+    L 105 345
+    L 165 332
+    L 200 320
+    L 235 285
+    L 290 245
+    L 360 218
+    L 395 218
+    L 478 225
+    L 510 215
+    L 555 248
+    L 595 278
+    L 615 325
+    L 595 370
+    L 525 412
+    L 475 448
+    L 415 450
+    L 380 445
+    L 305 430
+    L 220 390
+    L 195 405
+    L 115 430"
+    fill="none" stroke="#444" stroke-width="2.5" stroke-dasharray="6,3" opacity="0.5"/>
+
+  <!-- ============================================
+       Helyszín pontok
+       ============================================ -->
+
+  <!-- 0-1. nap: Reykjavík -->
+  <g id="day0-1" fill="#1a5c2a">
+    <circle cx="115" cy="430" r="6"/>
+    <text x="115" y="453" font-size="10" text-anchor="middle" font-weight="600">KEF reptér</text>
+    <text x="115" y="465" font-size="8" text-anchor="middle" fill="#666">63.985°N, -22.605°E</text>
+
+    <circle cx="138" cy="426" r="5"/>
+    <text x="158" y="425" font-size="9">Kék Lagúna</text>
+
+    <circle cx="195" cy="405" r="8"/>
+    <text x="200" y="402" font-size="11" font-weight="700">★ Reykjavík</text>
+    <text x="200" y="414" font-size="8" fill="#666">64.146°N, -21.942°E</text>
+  </g>
+
+  <!-- 2. nap: Snæfellsnes (bordó) -->
+  <g id="day2" fill="#6c2a1a">
+    <circle cx="160" cy="345" r="5"/>
+    <text x="160" y="362" font-size="9" text-anchor="middle">Búðakirkja</text>
+
+    <circle cx="105" cy="343" r="5"/>
+    <text x="98" y="365" font-size="9" text-anchor="middle">Snæfellsjökull</text>
+
+    <circle cx="135" cy="338" r="6"/>
+    <text x="135" y="327" font-size="10" text-anchor="middle" font-weight="600">Kirkjufell</text>
+    <text x="78" y="332" font-size="8" fill="#666">64.94°N,</text>
+    <text x="78" y="343" font-size="8" fill="#666">-23.31°E</text>
+  </g>
+
+  <!-- 3. nap: Akureyri, Mývatn (sötétkék) -->
+  <g id="day3" fill="#1a2a6c">
+    <circle cx="395" cy="218" r="8"/>
+    <text x="395" y="208" font-size="11" text-anchor="middle" font-weight="700">★ Akureyri</text>
+    <text x="350" y="220" font-size="8" fill="#666" text-anchor="end">65.685°N,</text>
+    <text x="350" y="231" font-size="8" fill="#666" text-anchor="end">-18.087°E</text>
+
+    <circle cx="435" cy="222" r="5"/>
+    <text x="442" y="220" font-size="9">Goðafoss</text>
+
+    <circle cx="465" cy="195" r="5"/>
+    <text x="475" y="195" font-size="9">Húsavík (bálnales)</text>
+
+    <circle cx="478" cy="245" r="7"/>
+    <text x="478" y="265" font-size="10" text-anchor="middle" font-weight="600">Mývatn-tó</text>
+    <text x="478" y="277" font-size="8" text-anchor="middle" fill="#666">65.61°N, -16.99°E</text>
+  </g>
+
+  <!-- 4. nap: Dettifoss, Kelet (arany) -->
+  <g id="day4" fill="#a8780a">
+    <circle cx="520" cy="215" r="6"/>
+    <text x="520" y="207" font-size="10" text-anchor="middle" font-weight="600">Dettifoss</text>
+    <text x="555" y="220" font-size="8" fill="#666">65.81°N, -16.39°E</text>
+
+    <circle cx="555" cy="248" r="5"/>
+    <text x="562" y="248" font-size="9">Stuðlagil</text>
+
+    <circle cx="595" cy="278" r="7"/>
+    <text x="608" y="278" font-size="10" font-weight="600">Egilsstaðir</text>
+    <text x="608" y="290" font-size="8" fill="#666">65.27°N, -14.39°E</text>
+
+    <circle cx="635" cy="270" r="5"/>
+    <text x="645" y="270" font-size="9">Seyðisfjörður</text>
+  </g>
+
+  <!-- 5. nap: Vestrahorn, Jökulsárlón (pink) -->
+  <g id="day5" fill="#aa0066">
+    <circle cx="595" cy="370" r="7"/>
+    <text x="608" y="370" font-size="10" font-weight="600">Höfn / Vestrahorn</text>
+    <text x="608" y="382" font-size="8" fill="#666">64.25°N, -15.21°E</text>
+
+    <circle cx="525" cy="412" r="8"/>
+    <text x="525" y="403" font-size="10" text-anchor="middle" font-weight="700">★ Jökulsárlón</text>
+    <text x="560" y="425" font-size="8" fill="#666">64.05°N, -16.18°E</text>
+
+    <circle cx="510" cy="425" r="4"/>
+    <text x="500" y="445" font-size="9" text-anchor="middle">Diamond Beach</text>
+  </g>
+
+  <!-- 6. nap: Déli part (türkiz) -->
+  <g id="day6" fill="#2a8a8a">
+    <circle cx="455" cy="448" r="5"/>
+    <text x="455" y="468" font-size="9" text-anchor="middle">Fjaðrárgljúfur</text>
+
+    <circle cx="380" cy="455" r="7"/>
+    <text x="380" y="475" font-size="10" text-anchor="middle" font-weight="600">Vík í Mýrdal</text>
+    <text x="380" y="487" font-size="8" text-anchor="middle" fill="#666">63.42°N, -19.01°E</text>
+
+    <circle cx="365" cy="465" r="5"/>
+    <text x="345" y="500" font-size="9" text-anchor="middle">Reynisfjara</text>
+
+    <circle cx="345" cy="448" r="6"/>
+    <text x="345" y="438" font-size="9" text-anchor="middle" font-weight="600">Skógafoss</text>
+
+    <circle cx="318" cy="445" r="6"/>
+    <text x="265" y="448" font-size="9" text-anchor="middle">Seljalandsfoss</text>
+  </g>
+
+  <!-- 7. nap: Golden Circle (barna) -->
+  <g id="day7" fill="#8a5a2a">
+    <circle cx="285" cy="425" r="5"/>
+    <text x="295" y="425" font-size="9">Hella</text>
+
+    <circle cx="280" cy="395" r="5"/>
+    <text x="295" y="395" font-size="9">Friðheimar (paradicsom)</text>
+
+    <circle cx="262" cy="378" r="6"/>
+    <text x="252" y="378" font-size="9" text-anchor="end" font-weight="600">Geysir</text>
+
+    <circle cx="278" cy="365" r="6"/>
+    <text x="290" y="363" font-size="9" font-weight="600">Gullfoss</text>
+    <text x="290" y="375" font-size="8" fill="#666">64.33°N, -20.12°E</text>
+
+    <circle cx="220" cy="390" r="6"/>
+    <text x="218" y="382" font-size="9" text-anchor="end" font-weight="600">Þingvellir</text>
+  </g>
+
+  <!-- Iránynyilak (óramutató irányban) -->
+  <g fill="#444" opacity="0.7">
+    <polygon points="220,335 213,330 213,340"/>
+    <polygon points="320,225 314,220 318,232"/>
+    <polygon points="450,222 444,218 444,226"/>
+    <polygon points="580,272 575,267 577,278"/>
+    <polygon points="617,335 621,329 623,341"/>
+    <polygon points="475,448 481,444 481,452"/>
+    <polygon points="245,418 251,414 251,422"/>
+  </g>
+
+  <!-- ============================================
+       Jelmagyarázat
+       ============================================ -->
+  <g id="legend" transform="translate(15, 510)">
+    <rect x="0" y="0" width="320" height="120" fill="#fff" stroke="#888" stroke-width="1" rx="4" opacity="0.95"/>
+    <text x="10" y="18" font-size="12" font-weight="700" fill="#222">Napi etapok</text>
+
+    <circle cx="18" cy="35" r="5" fill="#1a5c2a"/>
+    <text x="30" y="38" font-size="10" fill="#222">0—1. nap · Reykjavík + Kék/Sky Lagúna</text>
+
+    <circle cx="18" cy="50" r="5" fill="#6c2a1a"/>
+    <text x="30" y="53" font-size="10" fill="#222">2. nap · Snæfellsnes-félsziget (~450 km)</text>
+
+    <circle cx="18" cy="65" r="5" fill="#1a2a6c"/>
+    <text x="30" y="68" font-size="10" fill="#222">3. nap · Akureyri, Goðafoss, Mývatn</text>
+
+    <circle cx="18" cy="80" r="5" fill="#a8780a"/>
+    <text x="30" y="83" font-size="10" fill="#222">4. nap · Dettifoss, Stuðlagil, Kelet</text>
+
+    <circle cx="18" cy="95" r="5" fill="#aa0066"/>
+    <text x="30" y="98" font-size="10" fill="#222">5. nap · Vestrahorn, Jökulsárlón</text>
+
+    <circle cx="18" cy="110" r="5" fill="#2a8a8a"/>
+    <text x="30" y="113" font-size="10" fill="#222">6. nap · Déli part (Vík, vízesések)</text>
+
+    <circle cx="210" cy="110" r="5" fill="#8a5a2a"/>
+    <text x="222" y="113" font-size="10" fill="#222">7. nap · Arany-kör</text>
+  </g>
+
+  <!-- Égtáj iránytű -->
+  <g id="compass" transform="translate(840, 505)">
+    <circle cx="0" cy="0" r="22" fill="#fff" stroke="#666" stroke-width="1"/>
+    <polygon points="0,-18 4,0 0,-3 -4,0" fill="#cc3333"/>
+    <polygon points="0,18 4,0 0,3 -4,0" fill="#666"/>
+    <text x="0" y="-25" font-size="10" text-anchor="middle" fill="#222" font-weight="700">É</text>
+    <text x="0" y="35" font-size="10" text-anchor="middle" fill="#222">D</text>
+    <text x="-30" y="3" font-size="10" text-anchor="middle" fill="#222">Ny</text>
+    <text x="30" y="3" font-size="10" text-anchor="middle" fill="#222">K</text>
+  </g>
+
+  <!-- Skála -->
+  <g id="scale" transform="translate(620, 595)">
+    <line x1="0" y1="0" x2="120" y2="0" stroke="#222" stroke-width="2"/>
+    <line x1="0" y1="-4" x2="0" y2="4" stroke="#222" stroke-width="2"/>
+    <line x1="60" y1="-3" x2="60" y2="3" stroke="#222" stroke-width="1"/>
+    <line x1="120" y1="-4" x2="120" y2="4" stroke="#222" stroke-width="2"/>
+    <text x="0" y="16" font-size="9" fill="#222">0</text>
+    <text x="60" y="16" font-size="9" text-anchor="middle" fill="#222">50 km</text>
+    <text x="120" y="16" font-size="9" text-anchor="middle" fill="#222">100 km</text>
+  </g>
+
+  <!-- Megjegyzés -->
+  <text x="450" y="650" font-size="9" text-anchor="middle" fill="#666" font-style="italic">
+    Sematikus ábrázolás · A koordináták valós GPS pozíciók · Útvonal: ~2100 km Ring Road, óramutató járásával megegyező irány
+  </text>
+</svg>

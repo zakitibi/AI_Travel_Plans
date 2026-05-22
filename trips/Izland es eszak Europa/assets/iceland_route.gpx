@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Iceland Roadtrip Plan" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>Izland 7 napos roadtrip - 2026.07.18-26</name>
+    <desc>Reykjavík → Snæfellsnes → Akureyri → Mývatn → Kelet → Höfn → Vík → Golden Circle → Keflavík, ~2100 km, óramutató járásával megegyező irány</desc>
+    <time>2026-07-18T20:00:00Z</time>
+  </metadata>
+
+  <!-- ============================================
+       WAYPOINTS - egyenkénti helyszínek
+       ============================================ -->
+
+  <!-- 0. nap -->
+  <wpt lat="63.985" lon="-22.605">
+    <name>Keflavík reptér (KEF)</name>
+    <desc>Érkezés/távozás reptere</desc>
+    <type>airport</type>
+  </wpt>
+  <wpt lat="63.880" lon="-22.450">
+    <name>Kék Lagúna (Blue Lagoon)</name>
+    <desc>Geotermikus fürdő, ikonikus</desc>
+    <type>spa</type>
+  </wpt>
+  <wpt lat="64.146" lon="-21.942">
+    <name>Reykjavík</name>
+    <desc>Főváros, 0-1. nap szállás</desc>
+    <type>city</type>
+  </wpt>
+  <wpt lat="64.142" lon="-21.927">
+    <name>Hallgrímskirkja templom</name>
+    <desc>Ikonikus templom, lift a tetejére</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.103" lon="-21.939">
+    <name>Sky Lagoon</name>
+    <desc>Modern panorámás fürdő, 7-step ritual</desc>
+    <type>spa</type>
+  </wpt>
+
+  <!-- 2. nap - Snæfellsnes -->
+  <wpt lat="64.766" lon="-21.526">
+    <name>Hvalfjörður alagút (déli bejárat)</name>
+    <desc>6 km hosszú alagút, ingyenes</desc>
+    <type>tunnel</type>
+  </wpt>
+  <wpt lat="64.520" lon="-21.920">
+    <name>Borgarnes</name>
+    <desc>Tankolás, Bónus bevásárlás</desc>
+    <type>town</type>
+  </wpt>
+  <wpt lat="64.812" lon="-23.039">
+    <name>Gerðuberg bazaltorgonák</name>
+    <desc>Fotós megálló</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.802" lon="-23.621">
+    <name>Ytri-Tunga (fókás strand)</name>
+    <desc>Fókakolónia, fekete homokos part</desc>
+    <type>beach</type>
+  </wpt>
+  <wpt lat="64.821" lon="-23.385">
+    <name>Búðakirkja (fekete fatemplom)</name>
+    <desc>Lávamezőben álló minimalista templom</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.776" lon="-23.625">
+    <name>Arnarstapi</name>
+    <desc>Bazaltsziklák, part menti séta</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.752" lon="-23.890">
+    <name>Vatnshellir lávabarlang</name>
+    <desc>1 órás vezetett túra</desc>
+    <type>cave</type>
+  </wpt>
+  <wpt lat="64.751" lon="-23.916">
+    <name>Djúpalónssandur</name>
+    <desc>Fekete kavicsos strand vashajó-roncsokkal</desc>
+    <type>beach</type>
+  </wpt>
+  <wpt lat="64.918" lon="-23.910">
+    <name>Hellissandur</name>
+    <desc>Street art falu, Gufuskálar adótorony</desc>
+    <type>town</type>
+  </wpt>
+  <wpt lat="64.942" lon="-23.306">
+    <name>Kirkjufell + Kirkjufellsfoss</name>
+    <desc>Ikonikus nyíl alakú hegy és vízesés</desc>
+    <type>landmark</type>
+  </wpt>
+
+  <!-- 3. nap - Akureyri, Mývatn -->
+  <wpt lat="65.622" lon="-19.500">
+    <name>Glaumbær skanzen</name>
+    <desc>Turf házak, fűtetős múzeum</desc>
+    <type>museum</type>
+  </wpt>
+  <wpt lat="65.685" lon="-18.087">
+    <name>Akureyri</name>
+    <desc>Észak fővárosa, ebéd</desc>
+    <type>city</type>
+  </wpt>
+  <wpt lat="65.730" lon="-17.890">
+    <name>Vaðlaheiðargöng alagút (FIZETŐS!)</name>
+    <desc>Regisztrálj a tunnel.is-en! 1500 ISK</desc>
+    <type>tunnel</type>
+  </wpt>
+  <wpt lat="65.683" lon="-17.550">
+    <name>Goðafoss vízesés</name>
+    <desc>"Istenek vízesése", 30m széles</desc>
+    <type>waterfall</type>
+  </wpt>
+  <wpt lat="66.044" lon="-17.339">
+    <name>Húsavík (bálnales)</name>
+    <desc>98% sighting humpback bálnák, opcionális kerülő</desc>
+    <type>town</type>
+  </wpt>
+  <wpt lat="65.610" lon="-16.990">
+    <name>Mývatn-tó (Skútustaðagígar)</name>
+    <desc>Pszeudo-kráterek tó partján</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="65.591" lon="-16.913">
+    <name>Dimmuborgir</name>
+    <desc>Bizarr lávaformációk, séta</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="65.631" lon="-16.847">
+    <name>Earth Lagoon (Mývatn Nature Baths)</name>
+    <desc>Geotermikus fürdő, 36-40°C</desc>
+    <type>spa</type>
+  </wpt>
+
+  <!-- 4. nap - Dettifoss, Kelet -->
+  <wpt lat="65.638" lon="-16.808">
+    <name>Námaskarð / Hverir geotermikus mező</name>
+    <desc>Sárfortyogók, kénszag, marsi táj</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="65.708" lon="-16.770">
+    <name>Krafla / Víti kráter</name>
+    <desc>Opcionális, zöld kráter-tó</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="65.815" lon="-16.385">
+    <name>Dettifoss vízesés (nyugati oldal)</name>
+    <desc>Európa legnagyobb vízhozamú vízesése</desc>
+    <type>waterfall</type>
+  </wpt>
+  <wpt lat="65.155" lon="-15.252">
+    <name>Stuðlagil kanyon</name>
+    <desc>Bazaltoszlopos kanyon türkiz folyóval</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="65.270" lon="-14.395">
+    <name>Egilsstaðir</name>
+    <desc>Kelet fővárosa</desc>
+    <type>town</type>
+  </wpt>
+  <wpt lat="65.262" lon="-14.012">
+    <name>Seyðisfjörður</name>
+    <desc>Szivárványos főutca, kék templom</desc>
+    <type>town</type>
+  </wpt>
+
+  <!-- 5. nap - Vestrahorn, Jökulsárlón -->
+  <wpt lat="64.659" lon="-14.281">
+    <name>Djúpivogur - Eggin í Gleðivík</name>
+    <desc>34 gránittojás installáció</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.250" lon="-14.992">
+    <name>Stokksnes / Vestrahorn</name>
+    <desc>Magánterület, viking falu díszlet</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.253" lon="-15.209">
+    <name>Höfn</name>
+    <desc>Homárspecialitás, Pakkhús étterem</desc>
+    <type>town</type>
+  </wpt>
+  <wpt lat="64.048" lon="-16.181">
+    <name>Jökulsárlón gleccserlagúna</name>
+    <desc>Úszó jégtömbök, csónaktúra</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.045" lon="-16.179">
+    <name>Diamond Beach</name>
+    <desc>Gleccser-gyémántok a fekete tengerparton</desc>
+    <type>beach</type>
+  </wpt>
+  <wpt lat="64.013" lon="-16.378">
+    <name>Fjallsárlón</name>
+    <desc>Kisebb, csendesebb gleccserlagúna</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.016" lon="-16.967">
+    <name>Skaftafell / Svartifoss</name>
+    <desc>Vatnajökull NP, bazaltoszlopos vízesés</desc>
+    <type>waterfall</type>
+  </wpt>
+
+  <!-- 6. nap - Déli part -->
+  <wpt lat="63.770" lon="-18.171">
+    <name>Fjaðrárgljúfur kanyon</name>
+    <desc>100m mély, 2km hosszú, Trónok Harca</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="63.491" lon="-19.366">
+    <name>Sólheimasandur DC-3 repülőroncs</name>
+    <desc>Apokaliptikus fotóhely, 4km gyaloglás</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="63.421" lon="-19.012">
+    <name>Vík í Mýrdal</name>
+    <desc>Déli part központja, ebéd</desc>
+    <type>town</type>
+  </wpt>
+  <wpt lat="63.404" lon="-19.044">
+    <name>Reynisfjara fekete strand</name>
+    <desc>FIGYELEM: lopakodó hullámok!</desc>
+    <type>beach</type>
+  </wpt>
+  <wpt lat="63.402" lon="-19.122">
+    <name>Dyrhólaey (puffinok!)</name>
+    <desc>Természetes kőhíd, puffin kolónia</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="63.532" lon="-19.512">
+    <name>Skógafoss vízesés</name>
+    <desc>60m magas, lépcső a tetejére</desc>
+    <type>waterfall</type>
+  </wpt>
+  <wpt lat="63.616" lon="-19.989">
+    <name>Seljalandsfoss + Gljúfrabúi</name>
+    <desc>Mögé sétálható vízesés + rejtett kanyon</desc>
+    <type>waterfall</type>
+  </wpt>
+  <wpt lat="63.834" lon="-20.387">
+    <name>Hella</name>
+    <desc>Köztes szállás Golden Circle előtt</desc>
+    <type>town</type>
+  </wpt>
+
+  <!-- 7. nap - Golden Circle -->
+  <wpt lat="64.041" lon="-20.886">
+    <name>Kerið kráter</name>
+    <desc>Piros vulkanikus kráter zöld tóval</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.137" lon="-20.310">
+    <name>Secret Lagoon (Gamla Laugin) / Flúðir</name>
+    <desc>Izland legrégebbi medencéje, 1891</desc>
+    <type>spa</type>
+  </wpt>
+  <wpt lat="64.143" lon="-20.232">
+    <name>Friðheimar paradicsomfarm étterem</name>
+    <desc>FOGLALÁS KÖTELEZŐ! Üvegházban ebéd</desc>
+    <type>restaurant</type>
+  </wpt>
+  <wpt lat="64.310" lon="-20.302">
+    <name>Geysir / Strokkur gejzír</name>
+    <desc>5-10 percenként kilő 20-30m-re</desc>
+    <type>landmark</type>
+  </wpt>
+  <wpt lat="64.327" lon="-20.121">
+    <name>Gullfoss vízesés</name>
+    <desc>"Arany-vízesés", dupla zuhatag, 32m</desc>
+    <type>waterfall</type>
+  </wpt>
+  <wpt lat="64.255" lon="-21.130">
+    <name>Þingvellir Nemzeti Park</name>
+    <desc>Tektonikus lemezek, UNESCO, parlament őshelye</desc>
+    <type>landmark</type>
+  </wpt>
+
+  <!-- ============================================
+       TRACK - útvonal a Ring Road-on
+       ============================================ -->
+  <trk>
+    <name>Ring Road 7 napos kör (óramutató irány)</name>
+    <desc>Reykjavík → északra Snæfellsnes-félszigetre → Akureyri/Mývatn → kelet → dél (Höfn, Vík) → Golden Circle → Reykjavík/Keflavík</desc>
+
+    <!-- 0-1. nap szegmens: érkezés -->
+    <trkseg>
+      <trkpt lat="63.985" lon="-22.605"><name>KEF reptér</name></trkpt>
+      <trkpt lat="63.880" lon="-22.450"><name>Kék Lagúna</name></trkpt>
+      <trkpt lat="64.146" lon="-21.942"><name>Reykjavík</name></trkpt>
+    </trkseg>
+
+    <!-- 2. nap: Reykjavík → Snæfellsnes → Varmahlíð/Akureyri -->
+    <trkseg>
+      <trkpt lat="64.146" lon="-21.942"><name>Reykjavík</name></trkpt>
+      <trkpt lat="64.766" lon="-21.526"><name>Hvalfjörður alagút</name></trkpt>
+      <trkpt lat="64.520" lon="-21.920"><name>Borgarnes</name></trkpt>
+      <trkpt lat="64.812" lon="-23.039"><name>Gerðuberg</name></trkpt>
+      <trkpt lat="64.821" lon="-23.385"><name>Búðakirkja</name></trkpt>
+      <trkpt lat="64.776" lon="-23.625"><name>Arnarstapi</name></trkpt>
+      <trkpt lat="64.751" lon="-23.916"><name>Djúpalónssandur</name></trkpt>
+      <trkpt lat="64.918" lon="-23.910"><name>Hellissandur</name></trkpt>
+      <trkpt lat="64.942" lon="-23.306"><name>Kirkjufell</name></trkpt>
+      <trkpt lat="65.300" lon="-21.000"><name>Holtavörðuheiði</name></trkpt>
+      <trkpt lat="65.622" lon="-19.500"><name>Glaumbær</name></trkpt>
+    </trkseg>
+
+    <!-- 3. nap: Akureyri → Mývatn -->
+    <trkseg>
+      <trkpt lat="65.622" lon="-19.500"><name>Glaumbær</name></trkpt>
+      <trkpt lat="65.685" lon="-18.087"><name>Akureyri</name></trkpt>
+      <trkpt lat="65.730" lon="-17.890"><name>Vaðlaheiðargöng</name></trkpt>
+      <trkpt lat="65.683" lon="-17.550"><name>Goðafoss</name></trkpt>
+      <trkpt lat="65.610" lon="-16.990"><name>Mývatn</name></trkpt>
+    </trkseg>
+
+    <!-- 4. nap: Mývatn → Dettifoss → Stuðlagil → Egilsstaðir -->
+    <trkseg>
+      <trkpt lat="65.610" lon="-16.990"><name>Mývatn</name></trkpt>
+      <trkpt lat="65.638" lon="-16.808"><name>Námaskarð/Hverir</name></trkpt>
+      <trkpt lat="65.815" lon="-16.385"><name>Dettifoss</name></trkpt>
+      <trkpt lat="65.155" lon="-15.252"><name>Stuðlagil</name></trkpt>
+      <trkpt lat="65.270" lon="-14.395"><name>Egilsstaðir</name></trkpt>
+      <trkpt lat="65.262" lon="-14.012"><name>Seyðisfjörður (kerülő)</name></trkpt>
+    </trkseg>
+
+    <!-- 5. nap: Egilsstaðir → Höfn → Jökulsárlón -->
+    <trkseg>
+      <trkpt lat="65.270" lon="-14.395"><name>Egilsstaðir</name></trkpt>
+      <trkpt lat="64.659" lon="-14.281"><name>Djúpivogur</name></trkpt>
+      <trkpt lat="64.250" lon="-14.992"><name>Vestrahorn/Stokksnes</name></trkpt>
+      <trkpt lat="64.253" lon="-15.209"><name>Höfn</name></trkpt>
+      <trkpt lat="64.048" lon="-16.181"><name>Jökulsárlón</name></trkpt>
+      <trkpt lat="64.045" lon="-16.179"><name>Diamond Beach</name></trkpt>
+      <trkpt lat="64.013" lon="-16.378"><name>Fjallsárlón</name></trkpt>
+      <trkpt lat="64.016" lon="-16.967"><name>Skaftafell</name></trkpt>
+    </trkseg>
+
+    <!-- 6. nap: Skaftafell → Vík → Hella -->
+    <trkseg>
+      <trkpt lat="64.016" lon="-16.967"><name>Skaftafell</name></trkpt>
+      <trkpt lat="63.770" lon="-18.171"><name>Fjaðrárgljúfur</name></trkpt>
+      <trkpt lat="63.491" lon="-19.366"><name>DC-3 roncs</name></trkpt>
+      <trkpt lat="63.421" lon="-19.012"><name>Vík</name></trkpt>
+      <trkpt lat="63.404" lon="-19.044"><name>Reynisfjara</name></trkpt>
+      <trkpt lat="63.402" lon="-19.122"><name>Dyrhólaey</name></trkpt>
+      <trkpt lat="63.532" lon="-19.512"><name>Skógafoss</name></trkpt>
+      <trkpt lat="63.616" lon="-19.989"><name>Seljalandsfoss</name></trkpt>
+      <trkpt lat="63.834" lon="-20.387"><name>Hella</name></trkpt>
+    </trkseg>
+
+    <!-- 7. nap: Hella → Golden Circle → Keflavík -->
+    <trkseg>
+      <trkpt lat="63.834" lon="-20.387"><name>Hella</name></trkpt>
+      <trkpt lat="64.041" lon="-20.886"><name>Kerið kráter</name></trkpt>
+      <trkpt lat="64.137" lon="-20.310"><name>Flúðir/Secret Lagoon</name></trkpt>
+      <trkpt lat="64.143" lon="-20.232"><name>Friðheimar</name></trkpt>
+      <trkpt lat="64.310" lon="-20.302"><name>Geysir</name></trkpt>
+      <trkpt lat="64.327" lon="-20.121"><name>Gullfoss</name></trkpt>
+      <trkpt lat="64.255" lon="-21.130"><name>Þingvellir</name></trkpt>
+      <trkpt lat="64.146" lon="-21.942"><name>Reykjavík (átutazás)</name></trkpt>
+      <trkpt lat="63.985" lon="-22.605"><name>KEF reptér (visszaadás)</name></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

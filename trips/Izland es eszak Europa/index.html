@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🧭 Izland es eszak Europa · 2026</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="hero-copy">
+          <h1 id="hero-title"></h1>
+          <p id="hero-subtitle"></p>
+        </div>
+        <div class="ticket-groups" id="ticket-groups"></div>
+      </div>
+      <div class="route" id="route"></div>
+    </header>
+
+    <nav class="tabs" id="tabs"></nav>
+    <main id="views"></main>
+  </div>
+
+  <script src="./trip-data.js"></script>
+  <script>
+    const tabs = [
+      { id: "overview", label: "Áttekintés" },
+      { id: "tibi", label: "Tibi" },
+      { id: "henni", label: "Henni" },
+      { id: "baltikum", label: "Baltikum" },
+      { id: "izland", label: "Izland" },
+      { id: "hazaut", label: "Hazaút" },
+      { id: "restaurants", label: "Éttermek" },
+      { id: "practical", label: "🧳 Praktikus" },
+      { id: "weather", label: "🌦 Időjárás" },
+      { id: "readings", label: "📖 Tervezés" },
+      { id: "info", label: "Info" }
+    ];
+
+    const heroTitle = document.getElementById("hero-title");
+    const heroSubtitle = document.getElementById("hero-subtitle");
+    const ticketGroups = document.getElementById("ticket-groups");
+    const route = document.getElementById("route");
+    const tabsEl = document.getElementById("tabs");
+    const views = document.getElementById("views");
+
+    heroTitle.textContent = tripData.title;
+    heroSubtitle.textContent = `${tripData.subtitle} · Frissítve: ${tripData.updatedAt}`;
+
+    tripData.ticketGroups.forEach((group) => {
+      const card = document.createElement("details");
+      card.className = "ticket-group";
+      card.open = true;
+      card.innerHTML = `
+        <summary class="ticket-group-summary">
+          <div class="ticket-group-head">
+            <div>
+              <h3>${group.person}</h3>
+              <p>${group.summary}</p>
+            </div>
+          </div>
+          <span class="ticket-group-icon" aria-hidden="true">▾</span>
+        </summary>
+        <div class="ticket-group-body">
+          <div class="ticket-group-grid">
+            ${group.items.map((item) => `
+              <article class="ticket-card">
+                <div class="ticket-card-top">
+                  <span class="ticket-badge">${item.mode}</span>
+                  <span class="ticket-status">${item.status}</span>
+                </div>
+                <strong>${item.operator} · ${item.code}</strong>
+                <div class="ticket-route">${item.route}</div>
+                <div class="ticket-meta">Indulás: ${item.departure} helyi idő</div>
+                <div class="ticket-meta">Érkezés: ${item.arrival} helyi idő <span class="ticket-duration">(${item.duration})</span></div>
+                ${item.links && item.links.length ? `<div class="ticket-links">${item.links.map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join(" · ")}</div>` : ""}
+              </article>
+            `).join("")}
+          </div>
+          ${group.note ? `<div class="flight-note">${group.note}</div>` : ""}
+        </div>
+      `;
+      ticketGroups.appendChild(card);
+    });
+
+    tripData.route.forEach((item) => {
+      const node = document.createElement("span");
+      if (item.separator) {
+        node.className = "route-sep";
+        node.innerHTML = item.separator
+          .replaceAll("→", '<span class="sep-arrow">→</span>')
+          .replaceAll("✈", '<span class="sep-icon">✈</span>')
+          .replaceAll("🚗", '<span class="sep-icon">🚗</span>')
+          .replaceAll("🚢", '<span class="sep-icon">🚢</span>');
+      } else {
+        node.className = `route-stop ${item.cls}`;
+        node.textContent = item.label;
+      }
+      route.appendChild(node);
+    });
+
+    function renderLinkList(links, cls = "source-chip") {
+      return (links || []).map((link) => `
+        <a class="${cls}" href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>
+      `).join("");
+    }
+
+    function renderOverviewMap() {
+      const lines = tripData.map.paths.map((path) => {
+        const from = tripData.map.nodes.find((node) => node.id === path.from);
+        const to = tripData.map.nodes.find((node) => node.id === path.to);
+        return `
+          <line
+            x1="${from.x}"
+            y1="${from.y}"
+            x2="${to.x}"
+            y2="${to.y}"
+            stroke="${path.color}"
+            stroke-width="${path.width || 4}"
+            stroke-linecap="round"
+            ${path.dashed ? 'stroke-dasharray="7 6"' : ""}
+          />
+        `;
+      }).join("");
+
+      const nodes = tripData.map.nodes.map((node) => `
+        <g class="map-node" onclick="activateTab('${node.tab}')">
+          <circle cx="${node.x}" cy="${node.y}" r="${node.major ? 9 : 7}" fill="${node.color}" />
+          <text x="${node.x + 12}" y="${node.y - 2}" class="map-label">${node.label}</text>
+          ${node.note ? `<text x="${node.x + 12}" y="${node.y + 11}" class="map-note">${node.note}</text>` : ""}
+        </g>
+      `).join("");
+
+      return `
+        <svg class="overview-map" viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Észak-Európa és Izland útvonal">
+          <rect x="0" y="0" width="360" height="300" rx="18" fill="#f8f3eb"></rect>
+          <text x="30" y="35" class="map-note">Atlanti-óceán</text>
+          <text x="208" y="42" class="map-note">Balti-tenger</text>
+          <text x="238" y="116" class="map-note">Skandinávia</text>
+          ${lines}
+          ${nodes}
+        </svg>
+      `;
+    }
+
+    function renderOverviewTimelineRow(day) {
+      return `
+        <article class="timeline-day-row ${day.accent}">
+          <div class="timeline-day-head">
+            <div class="timeline-date">${day.date}</div>
+          </div>
+          <h3>${day.title}</h3>
+          <div class="timeline-note">${day.summary}</div>
+        </article>
+      `;
+    }
+
+    function renderOverview() {
+      const tibiTimeline = tripData.overview.timeline.filter((day) => !day.phase.startsWith("Közös"));
+      const sharedTimeline = tripData.overview.timeline.filter((day) => day.phase.startsWith("Közös"));
+      return `
+        <section class="view is-active" data-view="overview">
+          <div class="overview-grid">
+            <section class="card">
+              <h2 class="section-title">📅 Napi idővonal</h2>
+              <div class="timeline-group-stack">
+                <section class="timeline-group-card">
+                  <div class="timeline-group-title">Tibi külön</div>
+                  <div class="timeline-rail">
+                    ${tibiTimeline.map(renderOverviewTimelineRow).join("")}
+                  </div>
+                </section>
+                <section class="timeline-group-card">
+                  <div class="timeline-group-title">Együtt</div>
+                  <div class="timeline-rail">
+                    ${sharedTimeline.map(renderOverviewTimelineRow).join("")}
+                  </div>
+                </section>
+              </div>
+            </section>
+            <div class="stack">
+              <section class="card">
+                <h2 class="section-title">🧭 Országonként</h2>
+                <div class="country-summary-stack">
+                  ${tripData.overview.countrySummaries.map((country) => `
+                    <article class="country-summary-box ${country.accent}">
+                      <h3>${country.title}</h3>
+                      <p>${country.text}</p>
+                      <ul>
+                        ${country.points.map((point) => `<li><strong>${point.label}:</strong> ${point.value}</li>`).join("")}
+                      </ul>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+              <section class="card">
+                <h2 class="section-title">🗺 Sematikus útvonal</h2>
+                ${renderOverviewMap()}
+              </section>
+              <section class="card">
+                <h2 class="section-title">🧭 Fő utazások</h2>
+                <div class="summary-grid">
+                  ${tripData.overview.mainTrips.map((trip) => `
+                    <article class="summary-card ${trip.accent}">
+                      <h3>${trip.title}</h3>
+                      <p>${trip.text}</p>
+                      <button class="jump-btn" type="button" onclick="activateTab('${trip.tab}')">${trip.cta}</button>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+              <section class="card">
+                <h2 class="section-title">⚠️ Fontos</h2>
+                <ul class="badge-list">
+                  ${tripData.overview.important.map((item) => `<li><span class="badge badge-gold">FONTOS</span><strong>${item}</strong></li>`).join("")}
+                </ul>
+              </section>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
+    function renderStageCard(stage) {
+      return `
+        <article class="summary-card ${stage.accent}">
+          <div class="stage-card-top">
+            <h3>${stage.title}</h3>
+            <span class="status-chip ${stage.statusClass}">${stage.status}</span>
+          </div>
+          <p>${stage.text}</p>
+          <ul class="plain-list compact">
+            ${stage.points.map((point) => `<li>${point}</li>`).join("")}
+          </ul>
+          ${stage.cta ? `<button class="jump-btn" type="button" onclick="activateTab('${stage.cta.tab}')">${stage.cta.label}</button>` : ""}
+        </article>
+      `;
+    }
+
+    function renderPersonView(personKey) {
+      const person = tripData.people[personKey];
+      const stages = person.stageKeys.map((key) => tripData.stageLibrary[key]);
+      return `
+        <section class="view" data-view="${personKey}">
+          <div class="section-head">
+            <div>
+              <h2><span>${person.kicker}</span>${person.title}</h2>
+            </div>
+          </div>
+          <div class="note-card info full-width-card">
+            <p>${person.intro}</p>
+          </div>
+          <div class="summary-grid stage-grid">
+            ${stages.map(renderStageCard).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderCountryContext(section) {
+      return section.context.map((block) => `
+        <details class="country-context ${block.accent}" ${block.open ? "open" : ""}>
+          <summary class="collapse-summary">
+            <span>${block.title}</span>
+            <span class="collapse-icon" aria-hidden="true">▾</span>
+          </summary>
+          <div class="country-context-body">
+            <div class="context-grid">
+              ${block.cards.map((card) => `
+                <article class="context-card">
+                  <h3>${card.title}</h3>
+                  ${card.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                </article>
+              `).join("")}
+            </div>
+            ${block.links && block.links.length ? `<div class="context-sources">${renderLinkList(block.links)}</div>` : ""}
+          </div>
+        </details>
+      `).join("");
+    }
+
+    function renderCollapseBox(block) {
+      if (!block) return "";
+      return `
+        <details class="country-context ${block.accent}" ${block.open ? "open" : ""}>
+          <summary class="collapse-summary">
+            <span>${block.title}</span>
+            <span class="collapse-icon" aria-hidden="true">▾</span>
+          </summary>
+          <div class="country-context-body">
+            ${block.cards && block.cards.length ? `
+              <div class="context-grid ${block.layout === "stack" ? "context-grid-stack" : ""}">
+                ${block.cards.map((card) => `
+                  <article class="context-card">
+                    <h3>${card.title}</h3>
+                    ${card.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+                  </article>
+                `).join("")}
+              </div>
+            ` : ""}
+            ${block.links && block.links.length ? `<div class="context-sources">${renderLinkList(block.links)}</div>` : ""}
+          </div>
+        </details>
+      `;
+    }
+
+    function renderDayCard(day, accentClass) {
+      return `
+        <details class="day-card ${accentClass}" ${day.open ? "open" : ""}>
+          <summary class="day-head">
+            <div class="day-num">${day.num}</div>
+            <div class="day-info">
+              <div class="day-date">${day.date}</div>
+              <div class="day-title">${day.title}</div>
+              <div class="day-sub">${day.subtitle}</div>
+              <div class="day-tags">
+                ${day.tags.map((tag) => `<span class="tag ${tag.cls}">${tag.label}</span>`).join("")}
+              </div>
+            </div>
+            <div class="chevron">▾</div>
+          </summary>
+          <div class="day-body">
+            <div class="day-layout ${day.notes && day.notes.length ? "has-focus" : ""}">
+              <div class="activities">
+                ${day.activities.map((activity) => `
+                  <div class="act">
+                    <div class="act-time">${activity.time}</div>
+                    <div class="act-icon">${activity.icon}</div>
+                    <div>
+                      <div class="act-name">${activity.name}</div>
+                      <div class="act-detail">${activity.detail}</div>
+                      ${activity.note ? `<div class="tip-box">${activity.note}</div>` : ""}
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+              ${day.notes && day.notes.length ? `
+                <aside class="tip-box day-focus-box">
+                  <strong>Napi fókusz</strong>
+                  <ul class="plain-list compact">
+                    ${day.notes.map((note) => `<li>${note}</li>`).join("")}
+                  </ul>
+                </aside>
+              ` : ""}
+            </div>
+            ${day.gpxPlaces && day.gpxPlaces.length ? `
+              <section class="day-places">
+                <h4 class="day-places-title">📍 GPX pontok, Google Maps és értékelések</h4>
+                <div class="day-places-grid">
+                  ${day.gpxPlaces.map((place) => `
+                    <article class="day-place-card">
+                      <div class="day-place-top">
+                        <div>
+                          <div class="day-place-name">${place.name}</div>
+                          ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
+                        </div>
+                        ${place.googleRating ? `<div class="day-place-rating">⭐ ${place.googleRating}</div>` : ""}
+                      </div>
+                      <p class="day-place-detail">${place.detail}</p>
+                      <div class="day-place-links">
+                        ${place.maps ? `<a href="${place.maps}" target="_blank" rel="noreferrer">Google Maps</a>` : ""}
+                        ${place.noteLink ? `<a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a>` : ""}
+                      </div>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+            ` : ""}
+            ${day.links && day.links.length ? `
+              <section class="day-links-block">
+                <h4 class="day-places-title">🔗 Napi linkek</h4>
+                <div class="context-sources">
+                  ${renderLinkList(day.links)}
+                </div>
+              </section>
+            ` : ""}
+          </div>
+        </details>
+      `;
+    }
+
+    function renderDetailedSection(sectionKey) {
+      const section = tripData.sections[sectionKey];
+      const generalInfoBox = section.generalInfoBoxKey ? tripData[section.generalInfoBoxKey] : null;
+      const topMap = section.mapAsset && section.mapAsset.image ? `
+        <section class="card section-card map-card">
+          <div class="map-card-head">
+            <div>
+              <h3 class="info-title">${section.mapAsset.title}</h3>
+              <p class="info-text">${section.mapAsset.text}</p>
+            </div>
+            <div class="context-sources">${renderLinkList(section.mapAsset.links)}</div>
+          </div>
+          <img class="section-map-image" src="${section.mapAsset.image}" alt="${section.mapAsset.title}">
+        </section>
+      ` : "";
+      const bottomMaps = section.mapAsset && section.mapAsset.bottomMaps ? `
+        <section class="card section-card map-card map-card-bottom">
+          <div class="map-card-head">
+            <div>
+              <h3 class="info-title">${section.mapAsset.bottomMaps.title}</h3>
+              <p class="info-text">${section.mapAsset.bottomMaps.text}</p>
+            </div>
+            <div class="context-sources">${renderLinkList(section.mapAsset.bottomMaps.links)}</div>
+          </div>
+          ${section.mapAsset.bottomMaps.embeds && section.mapAsset.bottomMaps.embeds.length ? `
+            <div class="embedded-map-grid">
+              ${section.mapAsset.bottomMaps.embeds.map((embed) => `
+                <div class="embedded-map-wrap">
+                  <div class="embedded-map-label">${embed.title}</div>
+                  <iframe
+                    class="embedded-map-frame"
+                    src="${embed.src}"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                    title="${embed.title}">
+                  </iframe>
+                </div>
+              `).join("")}
+            </div>
+          ` : ""}
+        </section>
+      ` : "";
+      const bottomMap = section.mapAsset && section.mapAsset.bottomAsset ? `
+        <div class="map-pair-grid map-card-bottom">
+          <section class="card section-card map-card">
+            <div class="map-card-head">
+              <div>
+                <h3 class="info-title">${section.mapAsset.bottomAsset.title}</h3>
+                <p class="info-text">${section.mapAsset.bottomAsset.text}</p>
+              </div>
+              <div class="context-sources">${renderLinkList(section.mapAsset.bottomAsset.links)}</div>
+            </div>
+            <img class="section-map-image" src="${section.mapAsset.bottomAsset.image}" alt="${section.mapAsset.bottomAsset.title}">
+          </section>
+          ${section.mapAsset.bottomAsset.companion ? `
+            <section class="card section-card map-card">
+              <div class="map-card-head">
+                <div>
+                  <h3 class="info-title">${section.mapAsset.bottomAsset.companion.title}</h3>
+                  <p class="info-text">${section.mapAsset.bottomAsset.companion.text}</p>
+                </div>
+                <div class="context-sources">${renderLinkList(section.mapAsset.bottomAsset.companion.links)}</div>
+              </div>
+              <div class="embedded-map-wrap">
+                <div class="embedded-map-label">${section.mapAsset.bottomAsset.companion.embed.title}</div>
+                <iframe
+                  class="embedded-map-frame compact-map-frame"
+                  src="${section.mapAsset.bottomAsset.companion.embed.src}"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                  title="${section.mapAsset.bottomAsset.companion.embed.title}">
+                </iframe>
+              </div>
+            </section>
+          ` : ""}
+        </div>
+      ` : "";
+      return `
+        <section class="view" data-view="${sectionKey}">
+          <div class="section-head">
+            <div>
+              <h2><span>${section.kicker}</span>${section.title}</h2>
+            </div>
+            <div class="country-pill ${section.accent}">${section.pill}</div>
+          </div>
+          ${renderCollapseBox(generalInfoBox)}
+          <section class="card section-card">
+            ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
+          </section>
+          ${topMap}
+          ${section.extraResources && section.extraResources.length ? section.extraResources.map((resource) => `
+            <details class="country-context ${resource.accent || section.accent}" ${resource.open ? "open" : ""}>
+              <summary class="collapse-summary">
+                <span>${resource.title}</span>
+                <span class="collapse-icon" aria-hidden="true">▾</span>
+              </summary>
+              <div class="country-context-body">
+                <p class="info-text">${resource.text}</p>
+                ${resource.links && resource.links.length ? `<div class="context-sources">${renderLinkList(resource.links)}</div>` : ""}
+                ${resource.items && resource.items.length ? `<ul class="plain-list compact top-gap">${resource.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+              </div>
+            </details>
+          `).join("") : ""}
+          ${renderCountryContext(section)}
+          <section class="days">
+            ${section.days.map((day) => renderDayCard(day, section.accent)).join("")}
+          </section>
+          ${bottomMaps}
+          ${bottomMap}
+        </section>
+      `;
+    }
+
+    function renderRestaurants() {
+      return `
+        <section class="view" data-view="restaurants">
+          <div class="section-head">
+            <div>
+              <h2><span>nem konkrét foglalások, hanem route-logika</span>Éttermek és gasztró fókusz</h2>
+            </div>
+          </div>
+          <section class="card section-card">
+            ${tripData.restaurants.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
+          </section>
+          <div class="restaurants-grid">
+            ${tripData.restaurants.groups.map((group) => `
+              <section class="restaurant-city">
+                <h3>${group.title}</h3>
+                ${group.text ? `<p class="restaurant-group-text">${group.text}</p>` : ""}
+                <div class="restaurant-row">
+                  ${group.items.map((item) => `
+                    <article class="restaurant-card">
+                      <div class="restaurant-top">
+                        <div class="rate-badge">${item.badge}</div>
+                        <div>
+                          <div class="restaurant-name">${item.name}</div>
+                          <div class="restaurant-meta">${item.meta}</div>
+                        </div>
+                      </div>
+                      <p>${item.description}</p>
+                      ${item.tastes && item.tastes.length ? `
+                        <ul class="restaurant-tastes">
+                          ${item.tastes.map((taste) => `<li>${taste}</li>`).join("")}
+                        </ul>
+                      ` : ""}
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderPractical() {
+      return `
+        <section class="view" data-view="practical">
+          <div class="section-head">
+            <div>
+              <h2><span>foglalás, autó, komp, ritmus</span>Praktikus</h2>
+            </div>
+          </div>
+          ${renderCollapseBox(tripData.icelandGeneralBox)}
+          <div class="summary-grid practical-grid">
+            ${tripData.practical.map((group) => `
+              <article class="summary-card ${group.accent}">
+                <h3>${group.title}</h3>
+                <p>${group.text}</p>
+                <ul>
+                  ${group.items.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              </article>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderWeather() {
+      return `
+        <section class="view" data-view="weather">
+          <div class="section-head">
+            <div>
+              <h2><span>júliusi útvonal-logika</span>Időjárás</h2>
+            </div>
+          </div>
+          <section class="weather-hero">
+            <p>${tripData.weather.intro}</p>
+          </section>
+          <div class="weather-grid">
+            ${tripData.weather.cards.map((card) => `
+              <article class="weather-card ${card.accent}">
+                <h3>${card.title}</h3>
+                <p>${card.text}</p>
+                <ul class="weather-facts">
+                  ${card.facts.map((fact) => `<li><strong>${fact.label}:</strong> ${fact.value}</li>`).join("")}
+                </ul>
+              </article>
+            `).join("")}
+          </div>
+          <div class="note-grid">
+            ${tripData.weather.notes.map((group) => `
+              <article class="note-card ${group.accent}">
+                <h3>${group.title}</h3>
+                <ul>
+                  ${group.items.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              </article>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    function renderReadings() {
+      return `
+        <section class="view" data-view="readings">
+          <div class="section-head">
+            <div>
+              <h2><span>saját tervezéshez kapcsolódó segédanyagok</span>Tervezés</h2>
+            </div>
+          </div>
+          <article class="summary-card accent-baltic planning-card">
+            <h3>${tripData.readings.title}</h3>
+            <p>${tripData.readings.text}</p>
+            <div class="planning-subgrid">
+              ${tripData.readings.items.map((group) => `
+                <article class="planning-subcard ${group.accent}">
+                  <h4>${group.title}</h4>
+                  <p>${group.text}</p>
+                  <div class="context-sources">${renderLinkList(group.links)}</div>
+                </article>
+              `).join("")}
+            </div>
+          </article>
+        </section>
+      `;
+    }
+
+    function renderInfo() {
+      return `
+        <section class="view" data-view="info">
+          <div class="section-head">
+            <div>
+              <h2><span>országonként és témánként rendezve</span>Info</h2>
+            </div>
+          </div>
+          <div class="info-grid stack-grid">
+            ${tripData.infoGroups.map((group) => `
+              <section class="card">
+                <h3 class="info-title">${group.title}</h3>
+                ${group.text ? `<p class="info-text">${group.text}</p>` : ""}
+                ${group.links && group.links.length ? `<div class="context-sources">${renderLinkList(group.links)}</div>` : ""}
+                ${group.items && group.items.length ? `<ul class="plain-list">${group.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+              </section>
+            `).join("")}
+          </div>
+        </section>
+      `;
+    }
+
+    views.innerHTML = [
+      renderOverview(),
+      renderPersonView("tibi"),
+      renderPersonView("henni"),
+      renderDetailedSection("baltikum"),
+      renderDetailedSection("izland"),
+      renderDetailedSection("hazaut"),
+      renderRestaurants(),
+      renderPractical(),
+      renderWeather(),
+      renderReadings(),
+      renderInfo()
+    ].join("");
+
+    tabsEl.innerHTML = tabs.map((tab, index) => `
+      <button class="tab-btn ${index === 0 ? "is-active" : ""}" data-tab="${tab.id}">${tab.label}</button>
+    `).join("");
+
+    const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
+    const viewEls = Array.from(document.querySelectorAll(".view"));
+
+    function activateTab(id) {
+      tabButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.tab === id));
+      viewEls.forEach((view) => view.classList.toggle("is-active", view.dataset.view === id));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    window.activateTab = activateTab;
+
+    tabsEl.addEventListener("click", (event) => {
+      const button = event.target.closest(".tab-btn");
+      if (!button) return;
+      activateTab(button.dataset.tab);
+    });
+  </script>
+</body>
+</html>
