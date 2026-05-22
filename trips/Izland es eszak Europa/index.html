@@ -318,10 +318,12 @@
               <div class="day-tags">
                 ${day.tags.map((tag) => `<span class="tag ${tag.cls}">${tag.label}</span>`).join("")}
               </div>
+              ${day.rainNote ? `<div class="day-rain-note"><span>${day.rainNote.icon}</span><span>${day.rainNote.label}</span></div>` : ""}
             </div>
             <div class="chevron">▾</div>
           </summary>
           <div class="day-body">
+            ${day.character ? `<p class="day-character">${day.character}</p>` : ""}
             <div class="day-layout ${day.notes && day.notes.length ? "has-focus" : ""}">
               <div class="activities">
                 ${day.activities.map((activity) => `

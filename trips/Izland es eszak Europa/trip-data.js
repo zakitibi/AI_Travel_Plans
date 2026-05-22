@@ -953,6 +953,43 @@ const tripData = {
           ]
         },
         {
+          title: "🔄 Napcsere-logika — ha esik Day 3-ra",
+          accent: "iceland",
+          open: true,
+          cards: [
+            {
+              title: "Mikor cserélj?",
+              paragraphs: [
+                "Ha a vedur.is szerint Day 3-ra (Snæfellsnes napjára) eső vagy köd várható, érdemes Day 2-vel felcserélni. Snæfellsnes a legesőérzékenyebb nap az egész körön: Kirkjufell, Búðakirkja, Lóndrangar ködben szürke sárfolt. Reykjavík + Sky Lagoon viszont esőben kifejezetten jó.",
+                "A döntést az indulás előtti napon érdemes meghozni vedur.is alapján — ne a repülésen, hanem egy nappal korábban."
+              ]
+            },
+            {
+              title: "Eredeti sorrend",
+              paragraphs: [
+                "Day 2 (júl 19): Reykjavík belváros + Sky Lagoon",
+                "Day 3 (júl 20): Snæfellsnes-félsziget (~450 km körút)"
+              ]
+            },
+            {
+              title: "Csere sorrend (ha Day 3 esős)",
+              paragraphs: [
+                "Day 2 (júl 19): Snæfellsnes-félsziget — frissen, kipihenten, a legjobb fizikai állapotban",
+                "Day 3 (júl 20): Reykjavík + Sky Lagoon — esőben ideális, teljesen beltér/fedett kombinált nap"
+              ]
+            },
+            {
+              title: "Megjegyzés a cseréhez",
+              paragraphs: [
+                "A csere után Day 3-on már fáradtabban indulhat a Snæfellsnes körút — ezért csak akkor csere, ha tényleg jó Day 2 és rossz Day 3 kombináció látszik. Ne csináld automatikusan, csak ha az időkülönbség valóban egyértelmű."
+              ]
+            }
+          ],
+          links: [
+            { label: "vedur.is előrejelzés", url: "https://en.vedur.is/weather/forecasts/areas/" }
+          ]
+        },
+        {
           title: "🌧 Esőtűrés napi bontásban",
           accent: "iceland",
           cards: [
@@ -1014,6 +1051,8 @@ const tripData = {
           title: "Érkezés, Reykjavík",
           subtitle: "Keflavík érkezés, autóátvétel, korai alvás",
           open: true,
+          character: "Érkezési nap, nincs túl sok program. A cél: bérautót átvenni, eljutni Reykjavíkba, megvacsorázni és lefeküdni. Júliusban este 22:30-kor még világos van, ne lepődj meg — ne is próbálj túl korán aludni, használd ki, hogy nyugodtan beérkezhetsz.",
+          rainNote: { icon: "🟢", label: "Esős? Tök mindegy — vezetés és vacsora esőben is megy." },
           tags: [
             { label: "érkezés", cls: "tag-flight" },
             { label: "Reykjavík", cls: "tag-city" }
@@ -1023,7 +1062,7 @@ const tripData = {
             { time: "este", icon: "🍽", name: "Könnyű vacsora", detail: "Svarta Kaffið, Messinn vagy egy egyszerűbb burger is elég az első estére." },
             { time: "késő este", icon: "⛽", name: "Tankolás + korai lefekvés", detail: "N1 vagy Olís még ezen az estén jó ötlet, hogy másnap ne ezzel induljon a nap." }
           ],
-          notes: ["A fő cél itt nem a városnézés, hanem a gyors átállás és a sötétíthető szállás.", "Autóátvételnél fotózzátok körbe a karcokat, üveget és lökhárítókat; Izlandon a kavics- és szélkár különösen gyakori.", "A gravel insurance itt nem finom extra, hanem alap logika.", "A kutaknál PIN-kód gyakran kell, és a Ring Roadon 90 km/h a plafon."],
+          notes: ["A fő cél itt nem a városnézés, hanem a gyors átállás és a sötétíthető szállás.", "Autóátvételnél fotózzátok körbe a karcokat, üveget és lökhárítókat; Izlandon a kavics- és szélkár különösen gyakori.", "A gravel insurance (SCDW/GP) itt nem finom extra, hanem alap logika.", "A kutaknál PIN-kód kötelező, kontaktless nem mindenhol megy.", "GPS-óra állítás: GMT (UTC+0) — Magyarországtól -2 óra.", "Tankolj még este az N1 Hafnargata 86-on (24/7) — reggel hosszú út jön Snæfellsnes felé."],
           links: [
             { label: "SCDW / GP insurance guide", url: "https://epiciceland.net/car-rental-insurance-guide-iceland/" },
             { label: "N1 Hafnargata 86", url: "https://www.google.com/maps/search/?api=1&query=63.996711,-22.549587" },
@@ -1042,6 +1081,8 @@ const tripData = {
           date: "2026. július 19., vasárnap",
           title: "Reykjavík + Sky Lagoon / Kék Lagúna",
           subtitle: "Akklimatizációs, lazább városi nap",
+          character: "Pihenős városnézős nap a hosszú Snæfellsnes előtt. Délelőtt a belváros gyalog, délután fürdő-élmény. Ne hajtsd túl magad — ez egy ráhangolódás, nem egy teljesítménynap.",
+          rainNote: { icon: "🟢", label: "Esős? Kifejezetten jó — Sky Lagoon esőben pláne hangulatos." },
           tags: [
             { label: "város", cls: "tag-city" },
             { label: "termál", cls: "tag-focus" }
@@ -1051,7 +1092,7 @@ const tripData = {
             { time: "12:30–14:00", icon: "🍽", name: "Ebéd", detail: "Kaffivagninn vagy Café Loki jó nyitóhely a helyi konyhához." },
             { time: "14:30–18:00", icon: "♨", name: "Sky Lagoon", detail: "A mostani verzióban ez az ajánlott fő fürdős blokk; modernebb és nyugodtabb, mint a Kék Lagúna." }
           ],
-          notes: ["Ha a Kék Lagúna csak a fotó miatt fontos, belefér, de júliusban sokkal zsúfoltabb.", "A nap célja a ráhangolódás, nem a túlprogramozás.", "A Sky Lagoonra mindenképp foglaljatok előre időpontot; a Pure csomag általában bőven elég.", "Reykjavíkban a belvárosi parkolás drága, ezért ha nem gyalogos bázison vagytok, a P+R jellegű megoldás jobb."],
+          notes: ["Ha a Kék Lagúna csak a fotó miatt fontos, belefér, de júliusban sokkal zsúfoltabb. Sky Lagoon: modernebb, közelebb, kevésbé tömött.", "A nap célja a ráhangolódás, nem a túlprogramozás.", "Sky Lagoon: foglalj előre időpontot — júliusban walk-in alig van. Pure csomag (ritual + zuhanyzó) bőven elég, a drágább 'Sér' nem kell.", "Reykjavíkban belvárosi parkolás drága (1000-2000 ISK/óra); P+R parkolóházon sokkal jobban jársz.", "Bankkártya mindenre megy, ISK készpénzt nem kell tartani."],
           links: [
             { label: "Hallgrímskirkja", url: "https://www.google.com/maps/place/?q=place_id:ChIJtS1DoMx01kgR76qdSMQor_c" },
             { label: "Sun Voyager", url: "https://www.google.com/maps/place/?q=place_id:ChIJz-YMCc501kgRqKacmXs6e9g" },
@@ -1078,6 +1119,8 @@ const tripData = {
           date: "2026. július 20., hétfő",
           title: "Snæfellsnes-félsziget",
           subtitle: "Hosszú, de nagyon erős nyári fotós nap",
+          character: "Az út első igazi kalandnapja. Hosszú vezetés, sok megálló. Korán indulj (7:00–7:30), sötétedés előtt érj a szálláshoz. Snæfellsnes-t »Izland kicsiben« hívják — gleccser, vulkánok, vízesések, fekete strandok mind egy félszigeten.",
+          rainNote: { icon: "🔴", label: "Esős? Legesőérzékenyebb nap — köd/eső esetén csere Day 1-gyel!" },
           tags: [
             { label: "~450 km", cls: "tag-drive" },
             { label: "Kirkjufell", cls: "tag-focus" }
@@ -1087,7 +1130,7 @@ const tripData = {
             { time: "napközben", icon: "📸", name: "Gerðuberg → Ytri Tunga → Búðakirkja → Arnarstapi", detail: "Bazaltorgonák, fókák, fekete templom és tengerparti bazaltképződmények egymás után." },
             { time: "este", icon: "🏔", name: "Kirkjufell + tovább észak felé", detail: "A nap legikonikusabb fotópontja, majd hosszabb esti átvezetés Akureyri / Varmahlíð irányába." }
           ],
-          notes: ["Ez papíron hosszú nap, de júliusban a nagyon hosszú nappal miatt jól működik.", "Az Epic Iceland alapján Selvallavatn vagy a Berserkjahraun út rövid pluszként még beleférhet, ha jó az idő és marad energia.", "A lupinusmezők különösen sokat adhatnak ehhez a szakaszhoz.", "Borgarnes az utolsó igazán kényelmes tankolós és bevásárlós pont Reykjavík után.", "Kirkjufellnél a parkolódíjat fizessétek ki, mert kamerás ellenőrzés van.", "Bárányokra ezen a napon különösen számítsatok az útszéleken."],
+          notes: ["Ez papíron hosszú nap, de júliusban a nagyon hosszú nappal miatt jól működik.", "⚠️ Ha Day 3-ra (Snæfellsnes napjára) eső/köd várható (vedur.is alapján), csere Day 2-vel! Kirkjufell ködben szürke sárfolt — nem érdemes így menni.", "Hvalfjörður alagút: ingyenes (2019 óta), tilos benne megállni, max 70 km/h.", "Borgarnes az utolsó kényelmes tankolós + Bónus bevásárlós pont Reykjavík után — a félszigeten drága, kicsi kutak vannak.", "Kirkjufellnél 1000 ISK parkolódíj: kamerás ellenőrzés van, ne hagyd ki, mert bírság ~50 USD.", "Bárányokra különösen számíts az útszéleken, főleg Snæfellsnesen."],
           links: [
             { label: "Kirkjufell", url: "https://www.google.com/maps/place/?q=place_id:ChIJhw_Xjat71UgRe9sxd6VbtAk" },
             { label: "Kirkjufellsfoss", url: "https://www.google.com/maps/place/?q=place_id:ChIJ0wB9h7J71UgR0DijKGoYYwI" },
@@ -1117,6 +1160,8 @@ const tripData = {
           date: "2026. július 21., kedd",
           title: "Akureyri, Goðafoss, Húsavík vagy Mývatn",
           subtitle: "Északi nap két jól működő opcióval",
+          character: "Vezetős reggel, attrakció-tömör délután. Akureyri Izland második legnagyobb városa, de gyors megálló. Goðafoss közvetlenül a Ring Road mellett — könnyen bezsebelhető. Mývatn-tó vidéke egy földi laboratórium: vulkáni kráterek, lávaformációk, hőforrások.",
+          rainNote: { icon: "🟡", label: "Esős? Vegyes — Hverir és Goðafoss ok, Hverfjall és bálnales nem." },
           tags: [
             { label: "Akureyri", cls: "tag-city" },
             { label: "Mývatn", cls: "tag-focus" }
@@ -1126,7 +1171,7 @@ const tripData = {
             { time: "14:00 után", icon: "🐋", name: "A opció: Húsavík bálnales", detail: "Júliusban kiemelten erős opció, de előre foglalva. Ha ez kell, akkor a délután erre megy rá." },
             { time: "14:00 után", icon: "💦", name: "B opció: Goðafoss + Mývatn + Earth Lagoon", detail: "Ha nem bálnales, akkor Goðafoss, Skútustaðagígar, Dimmuborgir és esti fürdő a legjobb ritmus." }
           ],
-          notes: ["Mývatn környékén a midges miatt archáló jól jöhet.", "A Vaðlaheiðargöng alagutat aznap kell regisztrálni a tunnel.is-en.", "Mývatn környékén több parkoló fizetős lehet, ezt időben vegyétek számításba.", "Ha esős-szeles az idő, Húsavík helyett sokkal jobb döntés a szárazföldi Mývatn-blokk."],
+          notes: ["Mývatn környékén a midges (apró rovar) miatt archáló jól jöhet.", "⚠️ Vaðlaheiðargöng alagút Akureyri-tól keletre: FIZETŐS ~1600 ISK — regisztrálj a tunnel.is-en aznap, vagy 24 órán belül utólag. Mulasztásért ~5000 ISK bírság.", "Hverir kén-szag nagyon intenzív — ha érzékeny vagy, ibuprofen + sál segít.", "Mývatn környékén Hverir, Dimmuborgir, Hverfjall parkolói kb. 700-1000 ISK-ba kerülnek.", "Ha esős-szeles az idő, Húsavík bálnales helyett sokkal jobb döntés a szárazföldi Mývatn-blokk."],
           links: [
             { label: "Akureyrarkirkja", url: "https://www.google.com/maps/place/?q=place_id:ChIJ6dYm-A6P0kgRIIlv_h0HSBk" },
             { label: "Goðafoss", url: "https://www.google.com/maps/place/?q=place_id:ChIJnzYfSGp-zUgROx0NTqrNu34" },
@@ -1156,6 +1201,8 @@ const tripData = {
           date: "2026. július 22., szerda",
           title: "Dettifoss, Stuðlagil, Kelet-Izland",
           subtitle: "Geotermikus mezők, nagy vízesés, hosszabb keleti átvezetés",
+          character: "Vezetős nap két nagy attrakcióval. Dettifoss Európa legerősebb vízesése. Stuðlagil Izland legszebb bazaltkanyonja. Egilsstaðir Kelet-Izland fővárosa. Hosszú szakaszok között feszes tempó kell.",
+          rainNote: { icon: "🟢", label: "Esős? Jó — Dettifoss esőben még impozánsabb, Stuðlagil is működik." },
           tags: [
             { label: "Dettifoss", cls: "tag-focus" },
             { label: "~400 km", cls: "tag-drive" }
@@ -1165,7 +1212,7 @@ const tripData = {
             { time: "délelőtt", icon: "💧", name: "Dettifoss", detail: "Az aszfaltozott 862-es oldalon a legegyszerűbb megközelítés." },
             { time: "délután", icon: "🪨", name: "Stuðlagil + keleti továbbhaladás", detail: "A víz júliusban kevésbé türkiz, de a bazaltoszlopos kanyon így is nagyon erős." }
           ],
-          notes: ["Seyðisfjörður csak akkor jó plusz, ha még van energia.", "Epic Iceland szerint a tengerparti Eastfjords-drive önmagában is erős élmény, viszont az Öxi road csak akkor jó ötlet, ha külön akarjátok a rough gravel kerülőt.", "Stuðlagilnál az Epic Iceland külön választja a gyorsabb nyugati és a hosszabb keleti oldalt; ha csúszik a nap, a nyugati nézőpont a biztosabb döntés.", "Ez a nap inkább táj- és útélményből, mintsem városi blokkokból épül.", "Dettifossnál a nyugati, aszfaltos oldal bőven elég a mostani autós logikához.", "Mývatnból indulás előtt tankoljatok fel, és Stuðlagilnál számoljatok fizetős parkolóval."],
+          notes: ["⚠️ Tankolj Mývatn-ban indulás előtt — Egilsstaðir-ig nagyon korlátozott a benzinkút a Ring Roadon!", "Dettifoss: a nyugati oldal (862-es aszfalt, 28 km) bőven elég, nem kell a sáros keleti oldal.", "Stuðlagil: NYUGATI oldal könnyebb (új lépcsős platform), parkoló 1500 ISK. Ha csúszik a nap, itt a legkönnyebb rövidíteni.", "Stuðlagil vízszín júliusban sokszor szürke/zöldes — türkiz vizet inkább reggel, korán remélhetsz, de ne ez legyen az elvárás.", "Selfoss (Dettifoss kis testvére) ugyanabból a parkolóból 10 perc séta — ne hagyd ki, sokszor szebb mint Dettifoss!", "Seyðisfjörður (szivárványos utca, kék templom) csak extra energiával jó ötlet."],
           links: [
             { label: "Dettifoss", url: "https://www.google.com/maps/place/?q=place_id:ChIJEYOF6YoGzUgRkGxDhsiRMqo" },
             { label: "Selfoss", url: "https://www.google.com/maps/place/?q=place_id:ChIJC-dpVVYGzUgRfNxCfjOGufw" },
@@ -1190,6 +1237,8 @@ const tripData = {
           date: "2026. július 23., csütörtök",
           title: "Vestrahorn, Jökulsárlón, Diamond Beach",
           subtitle: "A teljes izlandi rész egyik fotós csúcspontja",
+          character: "A keleti fjordok mentén vezetés — látványos szerpentinek, ködös csúcsok. Délután a legjobb gleccser-élmény: Jökulsárlón és Diamond Beach. Sok rövid megálló, kevesebb gyaloglás. Sok fotó-megálló-stop az úton, építsd be a tempóba.",
+          rainNote: { icon: "🟡", label: "Esős? Vegyes — Jökulsárlón ok, Vestrahorn és Múlagljúfur nem." },
           tags: [
             { label: "Jökulsárlón", cls: "tag-focus" },
             { label: "Diamond Beach", cls: "tag-focus" }
@@ -1199,7 +1248,7 @@ const tripData = {
             { time: "délután", icon: "🧊", name: "Jökulsárlón + Diamond Beach", detail: "A nap főpontja, de júliusban készülj rá, hogy délután már tele van; ha kell csónaktúra, előre foglaljátok." },
             { time: "kora este", icon: "🌊", name: "Fjallsárlón + nyugat felé húzás", detail: "Kevésbé zsúfolt gleccserlagúna, majd továbbhaladás a déli part következő szállása felé." }
           ],
-          notes: ["A nagyon hosszú esti fény miatt ez a nap 20:00 után is még bőven működik.", "Epic Iceland szerint Fjallsárlón nagyon hasonló élmény, mint Jökulsárlón, szóval ha fáradtak vagytok, ez az egyik legkönnyebben elengedhető plusz.", "Skaftafellben késő esti Svartifoss is beleférhet, ha marad erő.", "A keleti fjordokban a tényleges vezetési idő gyakran hosszabb a térképes becslésnél a kanyarok és a köd miatt.", "Vestrahorn csak jó látási viszonyokkal éri meg igazán; ködben hagyjátok el.", "Múlagljúfur eső után sáros tud lenni, ezért ez maradjon valódi extra és ne kötelező elem."],
+          notes: ["⚠️ Keleti fjordok = lassú vezetés! Tényleges menetidő +30-50% a Google Maps-hoz képest (kanyarok, köd). Ne tervezz Google Maps szerint.", "Vestrahorn: ha a Viking Café-nál helyszínen köd van, ne fizess be — a hegy nem látszik, belépő kárba megy.", "Jökulsárlón: júliusban délben tele van — reggel vagy estefelé (20-21h) sokkal jobb. Parkoló ingyenes.", "Diamond Beach: kora reggel vagy késő este a legjobb fotó — júliusban 22-23-ig világos!", "Múlagljúfur: eső után nagyon sáros, vízhatlan cipő kell. Parkoló 1000 ISK, séta 30-45 perc.", "Jökulsárlón csónaktúra (zodiac ~5000 ISK, amfibia ~6000 ISK): érdemes előre foglalni júliusban."],
           links: [
             { label: "Hvalnes", url: "https://www.google.com/maps/place/?q=place_id:ChIJB5-QREDizkgRk9sRDzZTAa0" },
             { label: "Vestrahorn / Stokksnes", url: "https://www.google.com/maps/place/?q=place_id:ChIJ3T8ZQouqz0gR7ONHAE2AO2o" },
@@ -1227,6 +1276,8 @@ const tripData = {
           date: "2026. július 24., péntek",
           title: "Déli part: Fjaðrárgljúfur, Reynisfjara, Skógafoss",
           subtitle: "Sűrű látnivaló nap, ahol a korai indulás kulcstényező",
+          character: "A klasszikus déli part nap. Sok stop, mindenhol turista, de minden megálló annyira ér. Reggel a kelet kanyonjai, délben Vík fekete strand, délután a két ikonikus vízesés. Tömeg-szezon. Korán kell indulni!",
+          rainNote: { icon: "🟢", label: "Esős? Jó — vízesések esőben még víztömegesebbek, Reynisfjara drámai." },
           tags: [
             { label: "korai indulás", cls: "tag-open" },
             { label: "puffinok", cls: "tag-focus" }
@@ -1236,7 +1287,7 @@ const tripData = {
             { time: "déltáj", icon: "🖤", name: "Vík + Reynisfjara", detail: "A barlang zárva van, de a bazaltoszlopok és a Reynisdrangar sziklák így is erősek; a víztől mindig tartsatok távolságot." },
             { time: "délután / este", icon: "🐧", name: "Dyrhólaey + Skógafoss + Seljalandsfoss", detail: "Puffinok, nagy vízesésblokk és estére továbbhaladás Hella / Hvolsvöllur felé." }
           ],
-          notes: ["Ez a nap csúcsszezonban attól lesz jó, hogy nem későn indultok.", "Az Epic Iceland logikája is azt erősíti, hogy Reynisfjara és a vízesések reggel vagy késő este működnek a legjobban.", "Seljalandsfoss és Gljúfrabúi náluk is erős párosként jelenik meg, ezért ezt a blokkot érdemes együtt kezelni, nem két külön gyors megállásként.", "Esőkabát Seljalandsfossnál és Gljúfrabúinál gyakorlatilag kötelező.", "Reynisfjaránál a sneaker wave szabály itt tényleg szó szerint életvédelmi kérdés.", "Vík az utolsó kényelmes nagyobb tankolós pont Selfoss felé.", "Ha esik, a vízesésekre érdemes fókuszálni, és Dyrhólaey-t nyugodtan háttérbe lehet tolni."],
+          notes: ["Indulj 7:00-7:30-kor — Skógafoss és Seljalandsfoss délután 12-15h között a legzsúfoltabb.", "⚠️ Reynisfjara sneaker wave: évente meghal itt valaki. Soha ne fordíts hátat az óceánnak, és maradj minimum 30 méterre a víztől! Ha piros zászló van, ne menj le.", "Seljalandsfoss + Gljúfrabúi: vízálló cipő és esőkabát kötelező — garantáltan megázol.", "Puffin: Dyrhólaey-n délután 16:00 után, este a legjobb (júliusi szezon vége!).", "Skógafoss reggeli fotó jobb — délután a fény szembe süt. A felső lépcső (400 lépcső) fárasztó, de megéri.", "Vík tankolás: N1 a faluban, utolsó nagy benzinkút Selfoss-ig."],
           links: [
             { label: "Fjaðrárgljúfur", url: "https://www.google.com/maps/place/?q=place_id:ChIJ3ZFCWfDl0EgRvbVlccHsIKQ" },
             { label: "Yoda Cave / Gígjagjá", url: "https://www.google.com/maps/place/?q=place_id:ChIJUVwsc1-00EgRp887BfUCdms" },
@@ -1266,6 +1317,8 @@ const tripData = {
           date: "2026. július 25., szombat",
           title: "Golden Circle + Keflavík",
           subtitle: "Zárónap fürdővel, paradicsomfarmmal és esti reptérközeli alvással",
+          character: "Az utolsó nap és az egyik legrégebbi turistaútvonal. Þingvellir → Geysir → Gullfoss = klasszikus háromszög. Plusz rejtett gyöngyök (Brúarfoss, Faxi, Kerið, Þórufoss). Estére visszaszállás KEF közelében, mert reggel hajnal repülés.",
+          rainNote: { icon: "🟢", label: "Esős? Legjobb esőtűrő nap az egész körön — Gullfoss, Geysir, Brúarfoss mind víz-fókuszú." },
           tags: [
             { label: "Golden Circle", cls: "tag-focus" },
             { label: "Keflavík", cls: "tag-city" }
@@ -1275,7 +1328,7 @@ const tripData = {
             { time: "dél", icon: "🍅", name: "Friðheimar", detail: "Foglalós ebédhely, ami önmagában is élmény; ezt tényleg érdemes előre lekötni." },
             { time: "délután / este", icon: "🌋", name: "Geysir → Gullfoss → Þingvellir → Keflavík", detail: "A nap záró íve, majd esti átvezetés a reptérközeli hotelhez és pakolás." }
           ],
-          notes: ["A Golden Circle júliusban sokkal jobb nagyon korán vagy későn.", "Epic Iceland is külön kiemeli, hogy ez a legzsúfoltabb kör, ezért a Secret Lagoon + Kerið vonal jó ellenpont a három fő helyszín mellé.", "Az alvómaszk itt különösen fontos, mert késő este is világos lesz.", "Friðheimarra előre kell foglalni, és az ebédablakot ehhez kell igazítani.", "Brúarfoss csak akkor fér be szépen, ha tudatosan időt hagytok a gyaloglására.", "Ez az egyik legjobb esőtűrő nap az egész izlandi körben."],
+          notes: ["⚠️ Friðheimar: foglalj minimum 1 héttel előre (fridheimar.is)! Nyitva 11:30–16:00, ebédre 12:30-13:30 a legjobb időablak.", "Brúarfoss: 3,5 km gyaloglás egy irányban (~45-60 perc oda). Csak akkor fér be, ha korán indulsz és tényleg tervezel rá.", "⚠️ Bérautó visszaadás: legalább 2-3 órával hajnali járat előtt érj a reptérre. Júliusban KEF security 1-2 óra sormag.", "Tankolj mielőtt visszaadod a kocsit — reptérnél drágább az utolsó pillanatos tankolás.", "A Golden Circle júliusban sokkal jobb nagyon korán (8 előtt) vagy késő este (19+) — a csúcstömeg 9:30–15:30 közt fut."],
           links: [
             { label: "Þingvellir", url: "https://www.google.com/maps/place/?q=place_id:ChIJe2kT-x-B1kgR8mKSB4tsdWs" },
             { label: "Strokkur / Geysir", url: "https://www.google.com/maps/place/?q=place_id:ChIJQx6ihstf1kgR4wuu2I9A_hM" },
