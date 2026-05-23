@@ -316,7 +316,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Reykjavík + Sky Lagoon",
         summary: "Akklimatizációs nap: város, könnyű séta, majd esti fürdő a csúcsszezon előtt még kényelmes ritmusban.",
-        points: ["Hallgrímskirkja", "Harpa", "Sky Lagoon"]
+        points: ["Hallgrímskirkja", "Harpa", "Sky Lagoon"],
+        driveStats: { km: "~40 km", stops: 5, depart: "09:00", arrive: "~20:00", driveTime: "< 1 óra" }
       },
       {
         date: "2026.07.20",
@@ -324,7 +325,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Snæfellsnes-félsziget",
         summary: "Hosszabb, de nagyon erős nap: fekete templom, fókák, bazaltpart, Kirkjufell és hosszú nyári fény.",
-        points: ["Búðakirkja", "Arnarstapi", "Kirkjufell"]
+        points: ["Búðakirkja", "Arnarstapi", "Kirkjufell"],
+        driveStats: { km: "~450 km", stops: 9, depart: "07:00–07:30", arrive: "~21:00–22:00", driveTime: "~7 óra" }
       },
       {
         date: "2026.07.21",
@@ -332,7 +334,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Akureyri / Húsavík / Mývatn",
         summary: "Északi nap városi blokkal, Goðafoss-szal és választható bálnalessel vagy hosszabb Mývatn-régióval.",
-        points: ["Akureyri", "Goðafoss", "Mývatn"]
+        points: ["Akureyri", "Goðafoss", "Mývatn"],
+        driveStats: { km: "~280 km", stops: 6, depart: "08:00–08:30", arrive: "~21:00–22:00", driveTime: "~4 óra" }
       },
       {
         date: "2026.07.22",
@@ -340,7 +343,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Dettifoss → Stuðlagil → Kelet-Izland",
         summary: "Hosszabb keleti nap geotermikus mezőkkel, nagy vízeséssel és a bazaltkanyonos átvezetéssel.",
-        points: ["Hverir", "Dettifoss", "Stuðlagil"]
+        points: ["Hverir", "Dettifoss", "Stuðlagil"],
+        driveStats: { km: "~400 km", stops: 6, depart: "08:00", arrive: "~20:00–21:00", driveTime: "~5–6 óra" }
       },
       {
         date: "2026.07.23",
@@ -348,7 +352,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Vestrahorn → Jökulsárlón → Diamond Beach",
         summary: "A fotós csúcsnap: fekete homok, hegyek, jégdarabok és hosszú esti fény.",
-        points: ["Vestrahorn", "Jökulsárlón", "Diamond Beach"]
+        points: ["Vestrahorn", "Jökulsárlón", "Diamond Beach"],
+        driveStats: { km: "~320 km", stops: 7, depart: "08:00", arrive: "~22:00", driveTime: "~5 óra" }
       },
       {
         date: "2026.07.24",
@@ -356,7 +361,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Déli part: Fjaðrárgljúfur → Reynisfjara → Skógafoss",
         summary: "Sűrű látvány-nap, ahol a korai indulás a kulcs a tömeg előtt.",
-        points: ["Fjaðrárgljúfur", "Dyrhólaey puffinok", "Skógafoss"]
+        points: ["Fjaðrárgljúfur", "Dyrhólaey puffinok", "Skógafoss"],
+        driveStats: { km: "~300 km", stops: 8, depart: "07:00–07:30", arrive: "~20:00–21:00", driveTime: "~4 óra" }
       },
       {
         date: "2026.07.25",
@@ -364,7 +370,8 @@ const tripData = {
         accent: "accent-iceland",
         title: "Golden Circle + Keflavík",
         summary: "A zárónap a Golden Circle főpontjaival és esti reptérközeli lezárással.",
-        points: ["Secret Lagoon", "Friðheimar", "Þingvellir"]
+        points: ["Secret Lagoon", "Friðheimar", "Þingvellir"],
+        driveStats: { km: "~250 km", stops: 8, depart: "08:30–09:00", arrive: "~20:00–21:00", driveTime: "~3 óra" }
       },
       {
         date: "2026.07.26",
@@ -1128,6 +1135,7 @@ const tripData = {
           title: "Érkezés, Reykjavík",
           subtitle: "Keflavík érkezés, autóátvétel, korai alvás",
           open: true,
+          driveLog: { km: "~50 km", stops: 3, driveTime: "~45 perc", depart: "18:25 (FI309)", arrive: "~19:30 Reykjavík" },
           character: "Érkezési nap, nincs túl sok program. A cél: bérautót átvenni, eljutni Reykjavíkba, megvacsorázni és lefeküdni. Júliusban este 22:30-kor még világos van, ne lepődj meg — ne is próbálj túl korán aludni, használd ki, hogy nyugodtan beérkezhetsz.",
           rainNote: { icon: "🟢", label: "Esős? Tök mindegy — vezetés és vacsora esőben is megy." },
           tags: [
@@ -1158,6 +1166,7 @@ const tripData = {
           date: "2026. július 19., vasárnap",
           title: "Reykjavík + Sky Lagoon / Kék Lagúna",
           subtitle: "Akklimatizációs, lazább városi nap",
+          driveLog: { km: "~40 km", stops: 5, driveTime: "~1 óra (főleg gyalogos nap)", depart: "09:00", arrive: "~20:00–21:00" },
           character: "Pihenős városnézős nap a hosszú Snæfellsnes előtt. Délelőtt a belváros gyalog, délután fürdő-élmény. Ne hajtsd túl magad — ez egy ráhangolódás, nem egy teljesítménynap.",
           rainNote: { icon: "🟢", label: "Esős? Kifejezetten jó — Sky Lagoon esőben pláne hangulatos." },
           tags: [
@@ -1179,16 +1188,16 @@ const tripData = {
             { label: "Café Loki", url: "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Loki+Reykjavik" }
           ],
           gpxPlaces: [
-            { name: "Hallgrímskirkja templom", badge: "főpont", googleRating: "4.6", detail: "Reykjavík ikonikus temploma, toronylifttel és jó nyitó panorámával.", maps: "https://www.google.com/maps/search/?api=1&query=Hallgr%C3%ADmskirkja+templom" },
-            { name: "Laugavegur sétálóutca", badge: "városi séta", detail: "Boltok, kávézók, könnyű belvárosi ráhangolódás Hallgrímskirkjától lefelé.", maps: "https://www.google.com/maps/search/?api=1&query=Laugavegur+Reykjavik" },
-            { name: "Sun Voyager", badge: "fotópont", googleRating: "4.5", detail: "A vízparti szobor rövid, de kötelező reykjavíki fotómegálló.", maps: "https://www.google.com/maps/search/?api=1&query=Sun+Voyager+Reykjavik" },
-            { name: "Harpa kulturális központ", badge: "főpont", googleRating: "4.6", detail: "Üveg homlokzat, kikötői nézet és rövid belső kör, ha az időjárás elfordul.", maps: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik" },
-            { name: "Kaffivagninn", badge: "ebéd opció", googleRating: "4.2", detail: "Régi kikötői klasszikus plokkfiskur és halas vonalon, közvetlenül a városi séta után.", maps: "https://www.google.com/maps/search/?api=1&query=Kaffivagninn+Reykjavik" },
-            { name: "Café Loki", badge: "ebéd opció", googleRating: "4.5", detail: "Tradicionális izlandi fogások közvetlenül Hallgrímskirkjával szemben.", maps: "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Loki+Reykjavik" },
-            { name: "Sky Lagoon", badge: "fő fürdő", googleRating: "4.7", detail: "A jelenlegi fő fürdős döntés: modernebb, csendesebb és vizuálisan erősebb, mint a Kék Lagúna.", maps: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+K%C3%B3pavogur" },
-            { name: "Kék Lagúna", badge: "alternatíva", detail: "Ikonikus, de csúcsszezonban sokkal zsúfoltabb alternatív fürdő.", maps: "https://www.google.com/maps/search/?api=1&query=Blue+Lagoon+Iceland" },
-            { name: "Grillmarkaðurinn", badge: "vacsora opció", detail: "Prémium belvárosi vacsoraopció, ha az első teljes napot ünnepibbre vennétek.", maps: "https://www.google.com/maps/search/?api=1&query=Grillmarka%C3%B0urinn+Reykjavik" },
-            { name: "Matur og Drykkur", badge: "vacsora opció", detail: "Modern izlandi konyha a kikötőnél, ha komolyabb esti ülős vacsora kell.", maps: "https://www.google.com/maps/search/?api=1&query=Matur+og+Drykkur+Reykjavik" }
+            { name: "Hallgrímskirkja templom", badge: "főpont", googleRating: "4.6", duration: "30–45 perc", reviewNote: "Kötelező nyitómegálló — a toronyliftre érdemes sort állni, panoráma elkápráztat · 50 000+ értékelés", detail: "Reykjavík ikonikus temploma, toronylifttel és jó nyitó panorámával.", maps: "https://www.google.com/maps/search/?api=1&query=Hallgr%C3%ADmskirkja+templom" },
+            { name: "Laugavegur sétálóutca", badge: "városi séta", duration: "30–40 perc", detail: "Boltok, kávézók, könnyű belvárosi ráhangolódás Hallgrímskirkjától lefelé.", maps: "https://www.google.com/maps/search/?api=1&query=Laugavegur+Reykjavik" },
+            { name: "Sun Voyager", badge: "fotópont", googleRating: "4.5", duration: "10–15 perc", reviewNote: "Gyors, de kihagyhatatlan fotómegálló — reggeli fényben a legjobb · 12 000+ értékelés", detail: "A vízparti szobor rövid, de kötelező reykjavíki fotómegálló.", maps: "https://www.google.com/maps/search/?api=1&query=Sun+Voyager+Reykjavik" },
+            { name: "Harpa kulturális központ", badge: "főpont", googleRating: "4.6", duration: "20–30 perc", reviewNote: "Az üveghomlokzat önmagában megér egy fotósétát — belépő nélkül is látványos · 18 000+ értékelés", detail: "Üveg homlokzat, kikötői nézet és rövid belső kör, ha az időjárás elfordul.", maps: "https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik" },
+            { name: "Kaffivagninn", badge: "ebéd opció", googleRating: "4.2", duration: "50–70 perc", reviewNote: "Hiteles kikötői hangulatú étterem, plokkfiskur és halas fogások, nem turista-csapdás vonal · 4 000+ értékelés", detail: "Régi kikötői klasszikus plokkfiskur és halas vonalon, közvetlenül a városi séta után.", maps: "https://www.google.com/maps/search/?api=1&query=Kaffivagninn+Reykjavik" },
+            { name: "Café Loki", badge: "ebéd opció", googleRating: "4.5", duration: "50–70 perc", reviewNote: "Tradicionális izlandi fogások, ideális Hallgrímskirkja melletti ebédhely — turistás, de megéri · 7 000+ értékelés", detail: "Tradicionális izlandi fogások közvetlenül Hallgrímskirkjával szemben.", maps: "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Loki+Reykjavik" },
+            { name: "Sky Lagoon", badge: "fő fürdő", googleRating: "4.7", duration: "3–4 óra", reviewNote: "A 7-lépéses ritual az igazi élmény — sokkal kevésbé zsúfolt, mint a Kék Lagúna; nyári naplemenyes fény lenyűgöző · 12 000+ értékelés", detail: "A jelenlegi fő fürdős döntés: modernebb, csendesebb és vizuálisan erősebb, mint a Kék Lagúna.", maps: "https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+K%C3%B3pavogur" },
+            { name: "Kék Lagúna", badge: "alternatíva", duration: "2–3 óra", reviewNote: "Ikonikus, de júliusban csúcstömeg — előre foglalás nélkül nem érdemes próbálkozni · 60 000+ értékelés", detail: "Ikonikus, de csúcsszezonban sokkal zsúfoltabb alternatív fürdő.", maps: "https://www.google.com/maps/search/?api=1&query=Blue+Lagoon+Iceland" },
+            { name: "Grillmarkaðurinn", badge: "vacsora opció", duration: "90–120 perc", detail: "Prémium belvárosi vacsoraopció, ha az első teljes napot ünnepibbre vennétek.", maps: "https://www.google.com/maps/search/?api=1&query=Grillmarka%C3%B0urinn+Reykjavik" },
+            { name: "Matur og Drykkur", badge: "vacsora opció", duration: "90–120 perc", detail: "Modern izlandi konyha a kikötőnél, ha komolyabb esti ülős vacsora kell.", maps: "https://www.google.com/maps/search/?api=1&query=Matur+og+Drykkur+Reykjavik" }
           ]
         },
         {
@@ -1196,6 +1205,7 @@ const tripData = {
           date: "2026. július 20., hétfő",
           title: "Snæfellsnes-félsziget",
           subtitle: "Hosszú, de nagyon erős nyári fotós nap",
+          driveLog: { km: "~450 km", stops: 9, driveTime: "~7 óra", depart: "07:00–07:30", arrive: "~21:00–22:00" },
           character: "Az út első igazi kalandnapja. Hosszú vezetés, sok megálló. Korán indulj (7:00–7:30), sötétedés előtt érj a szálláshoz. Snæfellsnes-t »Izland kicsiben« hívják — gleccser, vulkánok, vízesések, fekete strandok mind egy félszigeten.",
           rainNote: { icon: "🔴", label: "Esős? Legesőérzékenyebb nap — köd/eső esetén csere Day 1-gyel!" },
           tags: [
@@ -1218,18 +1228,17 @@ const tripData = {
             { label: "vedur.is", url: "https://en.vedur.is/weather/forecasts/areas/" }
           ],
           gpxPlaces: [
-            { name: "Hvalfjörður alagút", badge: "logisztika", detail: "A gyors kijutás kulcsa észak felé; ingyenes és időt nyer a hosszú napon.", maps: "https://www.google.com/maps/search/?api=1&query=Hvalfj%C3%B6r%C3%B0ur+tunnel+Iceland" },
-            { name: "Borgarnes", badge: "bevásárlás + tankolás", detail: "Itt érdemes a napi hideg kaját, vizet és a benzint letudni még a félsziget előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Borgarnes+Iceland" },
-            { name: "Gerðuberg bazaltorgonák", badge: "fotós stop", detail: "15 perces, gyors bazaltfalas megálló, jól nyitja a Snæfellsnes blokkot.", maps: "https://www.google.com/maps/search/?api=1&query=Ger%C3%B0uberg+Cliffs+Iceland" },
-            { name: "Ytri-Tunga", badge: "állatmegfigyelés", detail: "A fókás strand rövid kitérőnek is megéri, főleg jó fényben.", maps: "https://www.google.com/maps/search/?api=1&query=Ytri+Tunga+Iceland" },
-            { name: "Búðakirkja", badge: "fotópont", detail: "Fekete fatemplom a lávamező szélén, a félsziget egyik legerősebb képe.", maps: "https://www.google.com/maps/search/?api=1&query=B%C3%BA%C3%B0akirkja+Iceland" },
-            { name: "Arnarstapi → Hellnar séta", badge: "főparti szakasz", detail: "Bazaltívek, madársziklák és rövid tengerparti gyalogos blokk.", maps: "https://www.google.com/maps/search/?api=1&query=Arnarstapi+Hellnar+walk" },
-            { name: "Fjöruhúsið", badge: "kávé/ebéd", detail: "Hellnar kávézós megálló, jól illik a part menti séta közepére.", maps: "https://www.google.com/maps/search/?api=1&query=Fj%C3%B6ruh%C3%BAsi%C3%B0+Hellnar" },
-            { name: "Vatnshellir lávabarlang", badge: "opcionális túra", detail: "1 órás vezetett barlangtúra, ha a napritmus még engedi.", maps: "https://www.google.com/maps/search/?api=1&query=Vatnshellir+Cave+Iceland" },
-            { name: "Lóndrangar", badge: "epiciceland plusz", detail: "Erős bazaltsziklás extra megálló a nyugati parton, ha marad fotós energia.", maps: "https://www.google.com/maps/search/?api=1&query=L%C3%B3ndrangar+Iceland" },
-            { name: "Djúpalónssandur", badge: "strand", detail: "Fekete kavicsos strand és régi hajóroncs-töredékek, rövid, de erős hangulatú pont.", maps: "https://www.google.com/maps/search/?api=1&query=Dj%C3%BApal%C3%B3nssandur+Iceland" },
-            { name: "Saxhóll kráter", badge: "epiciceland plusz", detail: "Lépcsőzhető kráter, gyors panorámás kitérő Hellissandur közelében.", maps: "https://www.google.com/maps/search/?api=1&query=Saxh%C3%B3ll+crater+Iceland" },
-            { name: "Kirkjufell + Kirkjufellsfoss", badge: "nap csúcspontja", googleRating: "4.6", detail: "A legismertebb fotópont a félszigeten; estefelé különösen jól működik.", maps: "https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland" }
+            { name: "Hvalfjörður alagút", badge: "logisztika", duration: "~10 perc áthaladás", detail: "A gyors kijutás kulcsa észak felé; ingyenes és időt nyer a hosszú napon.", maps: "https://www.google.com/maps/search/?api=1&query=Hvalfj%C3%B6r%C3%B0ur+tunnel+Iceland" },
+            { name: "Borgarnes", badge: "bevásárlás + tankolás", duration: "25–35 perc", detail: "Itt érdemes a napi hideg kaját, vizet és a benzint letudni még a félsziget előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Borgarnes+Iceland" },
+            { name: "Gerðuberg bazaltorgonák", badge: "fotós stop", duration: "15–20 perc", reviewNote: "Gyors, látványos bazaltfal — sokszor kihagyják, pedig remek napi nyitó kép · 4.5 ★", detail: "15 perces, gyors bazaltfalas megálló, jól nyitja a Snæfellsnes blokkot.", maps: "https://www.google.com/maps/search/?api=1&query=Ger%C3%B0uberg+Cliffs+Iceland" },
+            { name: "Ytri-Tunga", badge: "fókások", duration: "20–30 perc", reviewNote: "Ha van fóka a parton, 5 percet megér — de nem garantált a látogatás · 4.3 ★", detail: "A fókás strand rövid kitérőnek is megéri, főleg jó fényben.", maps: "https://www.google.com/maps/search/?api=1&query=Ytri+Tunga+Iceland" },
+            { name: "Búðakirkja", badge: "fotópont", duration: "20–25 perc", reviewNote: "Izland egyik legikonikusabb egykép-helyszíne — a fekete templomot háttérben a gleccserrel mindenki hazaviszi · 4.5 ★", detail: "Fekete fatemplom a lávamező szélén, a félsziget egyik legerősebb képe.", maps: "https://www.google.com/maps/search/?api=1&query=B%C3%BA%C3%B0akirkja+Iceland" },
+            { name: "Arnarstapi → Hellnar séta", badge: "főparti szakasz", duration: "60–90 perc", reviewNote: "A 2,5 km-es tengerparti ösvény a nap legjobb aktív blokkja — bazaltívek, madársziklák, hajnal utáni fény · 4.4 ★", detail: "Bazaltívek, madársziklák és rövid tengerparti gyalogos blokk.", maps: "https://www.google.com/maps/search/?api=1&query=Arnarstapi+Hellnar+walk" },
+            { name: "Fjöruhúsið", badge: "kávé/ebéd", duration: "30–45 perc", reviewNote: "Csodálatos helyen lévő kis kávézó Hellnarban — waffles és kávé az Atlanti-óceán felett · 4.6 ★", detail: "Hellnar kávézós megálló, jól illik a part menti séta közepére.", maps: "https://www.google.com/maps/search/?api=1&query=Fj%C3%B6ruh%C3%BAsi%C3%B0+Hellnar" },
+            { name: "Vatnshellir lávabarlang", badge: "opcionális túra", duration: "60–75 perc (vezetetett)", reviewNote: "Egyedülálló lávacső-élmény sisakkal és lámpával — előre foglalás erősen ajánlott · 4.5 ★", detail: "1 órás vezetett barlangtúra, ha a napritmus még engedi.", maps: "https://www.google.com/maps/search/?api=1&query=Vatnshellir+Cave+Iceland" },
+            { name: "Djúpalónssandur", badge: "fekete strand", duration: "30–40 perc", reviewNote: "Hajóroncs-töredékek és bazaltkavicsos strand — gyors, de nagyon hangulatos megálló · 4.5 ★", detail: "Fekete kavicsos strand és régi hajóroncs-töredékek, rövid, de erős hangulatú pont.", maps: "https://www.google.com/maps/search/?api=1&query=Dj%C3%BApal%C3%B3nssandur+Iceland" },
+            { name: "Saxhóll kráter", badge: "epiciceland plusz", duration: "20–30 perc", reviewNote: "Pár percnyi kaptatás után 360 fokos kráterperem-panoráma — megéri, ha ott jártok · 4.5 ★", detail: "Lépcsőzhető kráter, gyors panorámás kitérő Hellissandur közelében.", maps: "https://www.google.com/maps/search/?api=1&query=Saxh%C3%B3ll+crater+Iceland" },
+            { name: "Kirkjufell + Kirkjufellsfoss", badge: "nap csúcspontja", googleRating: "4.6", duration: "45–60 perc", reviewNote: "Izland legtöbbet fotózott csúcsa — az estefelé érkező kisebb tömeg és az arany fény teszi igazán különlegessé · 8 000+ értékelés", detail: "A legismertebb fotópont a félszigeten; estefelé különösen jól működik.", maps: "https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland" }
           ]
         },
         {
@@ -1237,6 +1246,7 @@ const tripData = {
           date: "2026. július 21., kedd",
           title: "Akureyri, Goðafoss, Húsavík vagy Mývatn",
           subtitle: "Északi nap két jól működő opcióval",
+          driveLog: { km: "~280 km", stops: 6, driveTime: "~4 óra", depart: "08:00–08:30", arrive: "~21:00–22:00" },
           character: "Vezetős reggel, attrakció-tömör délután. Akureyri Izland második legnagyobb városa, de gyors megálló. Goðafoss közvetlenül a Ring Road mellett — könnyen bezsebelhető. Mývatn-tó vidéke egy földi laboratórium: vulkáni kráterek, lávaformációk, hőforrások.",
           rainNote: { icon: "🟡", label: "Esős? Vegyes — Hverir és Goðafoss ok, Hverfjall és bálnales nem." },
           tags: [
@@ -1260,17 +1270,17 @@ const tripData = {
             { label: "Húsavík bálnales", url: "https://www.google.com/maps/place/?q=place_id:ChIJyaLoTRVCzUgRESZcNE744Go" }
           ],
           gpxPlaces: [
-            { name: "Glaumbær skanzen", badge: "opcionális nyitás", detail: "Turf-házas skanzen, jó rövid történeti stop, ha még az északi blokk elejére befér.", maps: "https://www.google.com/maps/search/?api=1&query=Glaumb%C3%A6r+Iceland" },
-            { name: "Akureyri", badge: "városblokk", detail: "Templom, botanikus kert és könnyű ebéd a nap északi városi szakaszában.", maps: "https://www.google.com/maps/search/?api=1&query=Akureyri+Iceland" },
-            { name: "Kaffi Ilmur", badge: "ebéd opció", detail: "Egyszerű, jól működő ebédhely Akureyriben; a GPX ezt viszi fő étteremnek.", maps: "https://www.google.com/maps/search/?api=1&query=Kaffi+Ilmur+Akureyri" },
-            { name: "Vaðlaheiðargöng alagút", badge: "fizetős logisztika", detail: "Előre regisztrálandó fizetős alagút; ne a nap végén jusson eszetekbe.", maps: "https://www.google.com/maps/search/?api=1&query=Va%C3%B0lahei%C3%B0arg%C3%B6ng+Iceland" },
-            { name: "Goðafoss", badge: "főpont", googleRating: "4.8", detail: "Az északi nap klasszikus vízesése, rövid megállóban is nagyon erős.", maps: "https://www.google.com/maps/search/?api=1&query=Go%C3%B0afoss+Iceland" },
-            { name: "Húsavík", badge: "opcionális bálnales", detail: "Ha a bálnás verziót választjátok, a délután központi eleme ez lesz.", maps: "https://www.google.com/maps/search/?api=1&query=H%C3%BAsav%C3%ADk+Iceland" },
-            { name: "Skútustaðagígar", badge: "Mývatn-főpont", googleRating: "4.4", detail: "Pszeudo-kráterek a tó partján, könnyű gyalogos körrel.", maps: "https://www.google.com/maps/search/?api=1&query=Sk%C3%BAtusta%C3%B0ag%C3%ADgar+Iceland" },
-            { name: "Dimmuborgir", badge: "Mývatn-főpont", detail: "Bizarr lávaformációk, jó délutáni gyalogos blokk a fürdő előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Dimmuborgir+Iceland" },
-            { name: "Hverfjall kráter", badge: "epiciceland plusz", detail: "20 perces felmenet a peremre, ha a délután még tartalékos.", maps: "https://www.google.com/maps/search/?api=1&query=Hverfjall+Iceland" },
-            { name: "Grjótagjá", badge: "epiciceland plusz", detail: "Lávabarlangos hőforrás, rövid fotós megálló, fürdés nélkül.", maps: "https://www.google.com/maps/search/?api=1&query=Grj%C3%B3tagj%C3%A1+Iceland" },
-            { name: "Earth Lagoon / Mývatn Nature Baths", badge: "esti fürdő", detail: "A legjobb napzáró blokk a Mývatn régióban, ha a bálnales kimarad.", maps: "https://www.google.com/maps/search/?api=1&query=M%C3%BDvatn+Nature+Baths+Iceland" }
+            { name: "Glaumbær skanzen", badge: "opcionális nyitás", duration: "45–60 perc", reviewNote: "Hiteles 18. századi izlandi gyeptetős tanyaudvar — jó históriás felvezetés Akureyri előtt · 4.3 ★", detail: "Turf-házas skanzen, jó rövid történeti stop, ha még az északi blokk elejére befér.", maps: "https://www.google.com/maps/search/?api=1&query=Glaumb%C3%A6r+Iceland" },
+            { name: "Akureyri", badge: "városblokk", duration: "2–2,5 óra", reviewNote: "Kellemesen meglepő északi városka — a virágos körforgalmak és a templomi kilátás a kedvencek · 4.5 ★", detail: "Templom, botanikus kert és könnyű ebéd a nap északi városi szakaszában.", maps: "https://www.google.com/maps/search/?api=1&query=Akureyri+Iceland" },
+            { name: "Kaffi Ilmur", badge: "ebéd opció", duration: "50–70 perc", detail: "Egyszerű, jól működő ebédhely Akureyriben; a GPX ezt viszi fő étteremnek.", maps: "https://www.google.com/maps/search/?api=1&query=Kaffi+Ilmur+Akureyri" },
+            { name: "Vaðlaheiðargöng alagút", badge: "fizetős logisztika", duration: "~10 perc áthaladás", reviewNote: "Regisztrálj a tunnel.is-en INDULÁS ELŐTT — 1 600 ISK · mulasztásért 5 000 ISK bírság", detail: "Előre regisztrálandó fizetős alagút; ne a nap végén jusson eszetekbe.", maps: "https://www.google.com/maps/search/?api=1&query=Va%C3%B0lahei%C3%B0arg%C3%B6ng+Iceland" },
+            { name: "Goðafoss", badge: "főpont", googleRating: "4.8", duration: "30–45 perc", reviewNote: "Az egyik legjobban értékelt izlandi vízesés — közvetlenül a Ring Road mellett, nem kell érte kerülni · 5 000+ értékelés", detail: "Az északi nap klasszikus vízesése, rövid megállóban is nagyon erős.", maps: "https://www.google.com/maps/search/?api=1&query=Go%C3%B0afoss+Iceland" },
+            { name: "Húsavík", badge: "opcionális bálnales", duration: "3–4 óra (tour + átvezetés)", reviewNote: "Júliusban szinte 100%-os bálnabiztosíték — az előzetes foglalás kötelező, különben nincs hely · 4.7 ★", detail: "Ha a bálnás verziót választjátok, a délután központi eleme ez lesz.", maps: "https://www.google.com/maps/search/?api=1&query=H%C3%BAsav%C3%ADk+Iceland" },
+            { name: "Skútustaðagígar", badge: "Mývatn-főpont", googleRating: "4.4", duration: "40–50 perc", reviewNote: "Kráter-séta a tó partján — könnyű ösvény, jó tájfotók, gyorsan letudható · 3 000+ értékelés", detail: "Pszeudo-kráterek a tó partján, könnyű gyalogos körrel.", maps: "https://www.google.com/maps/search/?api=1&query=Sk%C3%BAtusta%C3%B0ag%C3%ADgar+Iceland" },
+            { name: "Dimmuborgir", badge: "Mývatn-főpont", duration: "45–60 perc", reviewNote: "Bizarr fekete lávaszobrok labirintusa — mindenki meg van döbbenve az első meglátáskor · 4.5 ★", detail: "Bizarr lávaformációk, jó délutáni gyalogos blokk a fürdő előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Dimmuborgir+Iceland" },
+            { name: "Hverfjall kráter", badge: "epiciceland plusz", duration: "45–60 perc (peremig + vissza)", reviewNote: "20 perc felfelé, 360° kráterperem — érdemes, ha van energiátok és idő, de nem kötelező · 4.5 ★", detail: "20 perces felmenet a peremre, ha a délután még tartalékos.", maps: "https://www.google.com/maps/search/?api=1&query=Hverfjall+Iceland" },
+            { name: "Grjótagjá", badge: "epiciceland plusz", duration: "15–20 perc", reviewNote: "Trónok harca-helyszín kék lávabarlangos hőforrással — nem fürödhetsz benne, de fotósan erős · 4.6 ★", detail: "Lávabarlangos hőforrás, rövid fotós megálló, fürdés nélkül.", maps: "https://www.google.com/maps/search/?api=1&query=Grj%C3%B3tagj%C3%A1+Iceland" },
+            { name: "Earth Lagoon / Mývatn Nature Baths", badge: "esti fürdő", duration: "2–3 óra", reviewNote: "Csendesebb és természetesebb alternatívája a Blue Lagoonnak — az esti világos izlandi égnél különösen szép · 4.5 ★", detail: "A legjobb napzáró blokk a Mývatn régióban, ha a bálnales kimarad.", maps: "https://www.google.com/maps/search/?api=1&query=M%C3%BDvatn+Nature+Baths+Iceland" }
           ]
         },
         {
@@ -1278,6 +1288,7 @@ const tripData = {
           date: "2026. július 22., szerda",
           title: "Dettifoss, Stuðlagil, Kelet-Izland",
           subtitle: "Geotermikus mezők, nagy vízesés, hosszabb keleti átvezetés",
+          driveLog: { km: "~400 km", stops: 6, driveTime: "~5–6 óra", depart: "08:00", arrive: "~20:00–21:00" },
           character: "Vezetős nap két nagy attrakcióval. Dettifoss Európa legerősebb vízesése. Stuðlagil Izland legszebb bazaltkanyonja. Egilsstaðir Kelet-Izland fővárosa. Hosszú szakaszok között feszes tempó kell.",
           rainNote: { icon: "🟢", label: "Esős? Jó — Dettifoss esőben még impozánsabb, Stuðlagil is működik." },
           tags: [
@@ -1297,14 +1308,14 @@ const tripData = {
             { label: "Stuðlafoss", url: "https://www.google.com/maps/place/?q=place_id:ChIJaZ6afcWHzkgRzSt5ZN5FAgI" }
           ],
           gpxPlaces: [
-            { name: "Námaskarð / Hverir", badge: "geotermikus főpont", googleRating: "4.7", detail: "A kénes, pöfékelő mező a nap egyik legerősebb karakterpontja.", maps: "https://www.google.com/maps/search/?api=1&query=Hverir+Iceland" },
-            { name: "Krafla / Víti kráter", badge: "opcionális", detail: "Zöld krátertóval működő rövid kitérő, ha még belefér a keleti menetbe.", maps: "https://www.google.com/maps/search/?api=1&query=Krafla+V%C3%ADti+Iceland" },
-            { name: "Dettifoss", badge: "főpont", detail: "A nyugati oldalról a legegyszerűbb, aszfaltos megközelítésű vízesésblokk.", maps: "https://www.google.com/maps/search/?api=1&query=Dettifoss+Iceland" },
-            { name: "Selfoss", badge: "epiciceland plusz", detail: "A Dettifoss melletti csendesebb plusz vízesés, ha már ott vagytok a parkolónál.", maps: "https://www.google.com/maps/search/?api=1&query=Selfoss+waterfall+Iceland" },
-            { name: "Stuðlagil kanyon", badge: "főpont", detail: "A bazaltoszlopos kanyon a nap vizuális csúcsa; júliusban inkább a formák, mintsem a szín a lényeg.", maps: "https://www.google.com/maps/search/?api=1&query=Stu%C3%B0lagil+Canyon" },
-            { name: "Stuðlafoss", badge: "epiciceland plusz", detail: "Kis bazaltoszlopos vízesés ugyanabból a körből, mint Stuðlagil.", maps: "https://www.google.com/maps/search/?api=1&query=Stu%C3%B0lafoss+Iceland" },
-            { name: "Egilsstaðir", badge: "keleti bázis", detail: "A keleti főváros, ahol még egyszer lehet vásárolni vagy tankolni.", maps: "https://www.google.com/maps/search/?api=1&query=Egilssta%C3%B0ir+Iceland" },
-            { name: "Seyðisfjörður", badge: "opcionális kerülő", detail: "Szivárványos főutca és kék templom, de csak energiával együtt jó ötlet.", maps: "https://www.google.com/maps/search/?api=1&query=Sey%C3%B0isfj%C3%B6r%C3%B0ur+Iceland" },
+            { name: "Námaskarð / Hverir", badge: "geotermikus főpont", googleRating: "4.7", duration: "30–45 perc", reviewNote: "Marsi táj kén-szaggal — minden értékelő azt írja, hogy döbbenetes és elképesztő, de a szag valóban intenzív · 5 000+ értékelés", detail: "A kénes, pöfékelő mező a nap egyik legerősebb karakterpontja.", maps: "https://www.google.com/maps/search/?api=1&query=Hverir+Iceland" },
+            { name: "Krafla / Víti kráter", badge: "opcionális", duration: "45–60 perc", reviewNote: "Zöld-kék krátertó élénk vulkáni tájon — könnyű túra, de 14 km kerülő, csak ha van rávaló idő · 4.5 ★", detail: "Zöld krátertóval működő rövid kitérő, ha még belefér a keleti menetbe.", maps: "https://www.google.com/maps/search/?api=1&query=Krafla+V%C3%ADti+Iceland" },
+            { name: "Dettifoss", badge: "főpont", duration: "45–60 perc", reviewNote: "Európa leghatalmasabb erejű vízesése — a víztömeg és a zúgás fizikailag érezhető, senki sem marad higgadt · 4.7 ★", detail: "A nyugati oldalról a legegyszerűbb, aszfaltos megközelítésű vízesésblokk.", maps: "https://www.google.com/maps/search/?api=1&query=Dettifoss+Iceland" },
+            { name: "Selfoss", badge: "epiciceland plusz", duration: "15–20 perc (Dettifoss parkolójából)", reviewNote: "10 perc sétára Dettifosstól — sokkal csendesebb, de szép széles pata, ne hagyd ki · 4.6 ★", detail: "A Dettifoss melletti csendesebb plusz vízesés, ha már ott vagytok a parkolónál.", maps: "https://www.google.com/maps/search/?api=1&query=Selfoss+waterfall+Iceland" },
+            { name: "Stuðlagil kanyon", badge: "főpont", duration: "90–120 perc (séta + vissza)", reviewNote: "Izland legszebb bazaltoszlopos kanyonja — a kék víz júliusban halványabb, de a sziklaformák önmagukban lenyűgözők · 4.8 ★", detail: "A bazaltoszlopos kanyon a nap vizuális csúcsa; júliusban inkább a formák, mintsem a szín a lényeg.", maps: "https://www.google.com/maps/search/?api=1&query=Stu%C3%B0lagil+Canyon" },
+            { name: "Stuðlafoss", badge: "epiciceland plusz", duration: "20–30 perc", reviewNote: "Stuðlagil melletti rövid extra — bazaltoszlopos mini-vízesés, ugyanabból a parkolóból gyorsítva letudható · 4.5 ★", detail: "Kis bazaltoszlopos vízesés ugyanabból a körből, mint Stuðlagil.", maps: "https://www.google.com/maps/search/?api=1&query=Stu%C3%B0lafoss+Iceland" },
+            { name: "Egilsstaðir", badge: "keleti bázis", duration: "30 perc (tankolás + bevásárlás)", detail: "A keleti főváros, ahol még egyszer lehet vásárolni vagy tankolni.", maps: "https://www.google.com/maps/search/?api=1&query=Egilssta%C3%B0ir+Iceland" },
+            { name: "Seyðisfjörður", badge: "opcionális kerülő", duration: "2–3 óra (oda-vissza szerpentin)", reviewNote: "Drámai fjord-szerpentin vezet le a szivárványos utcás kisvárosba és a kék templomhoz — energiától függő extra · 4.6 ★", detail: "Szivárványos főutca és kék templom, de csak energiával együtt jó ötlet.", maps: "https://www.google.com/maps/search/?api=1&query=Sey%C3%B0isfj%C3%B6r%C3%B0ur+Iceland" },
             { name: "Hotel Hallormsstaður", badge: "szállás opció", detail: "Erdei környezetű szállás az egilsstaðiri vonalon.", maps: "https://www.google.com/maps/search/?api=1&query=Hotel+Hallormssta%C3%B0ur" },
             { name: "Fosshotel Eastfjords / Hotel Blafell", badge: "szállás opciók", detail: "Ha inkább kijjebb húznátok a szállást a fjordok felé.", maps: "https://www.google.com/maps/search/?api=1&query=Fosshotel+Eastfjords" }
           ]
@@ -1314,6 +1325,7 @@ const tripData = {
           date: "2026. július 23., csütörtök",
           title: "Vestrahorn, Jökulsárlón, Diamond Beach",
           subtitle: "A teljes izlandi rész egyik fotós csúcspontja",
+          driveLog: { km: "~320 km", stops: 7, driveTime: "~5 óra (fjord-kanyarokkal +30-50%)", depart: "08:00", arrive: "~22:00" },
           character: "A keleti fjordok mentén vezetés — látványos szerpentinek, ködös csúcsok. Délután a legjobb gleccser-élmény: Jökulsárlón és Diamond Beach. Sok rövid megálló, kevesebb gyaloglás. Sok fotó-megálló-stop az úton, építsd be a tempóba.",
           rainNote: { icon: "🟡", label: "Esős? Vegyes — Jökulsárlón ok, Vestrahorn és Múlagljúfur nem." },
           tags: [
@@ -1336,16 +1348,16 @@ const tripData = {
             { label: "Múlagljúfur Canyon", url: "https://www.google.com/maps/place/?q=place_id:ChIJh35iEokp0EgR3oaeY0GMoo4" }
           ],
           gpxPlaces: [
-            { name: "Djúpivogur – Eggin í Gleðivík", badge: "rövid stop", detail: "34 gránittojásos installáció, gyors útmenti színes nyitás a nap elején.", maps: "https://www.google.com/maps/search/?api=1&query=Eggin+%C3%AD+Gle%C3%B0iv%C3%ADk" },
-            { name: "Hvalnes-félsziget", badge: "epiciceland plusz", detail: "Vörös világítótorony és fekete part, jó extra Vestrahorn előtt vagy után.", maps: "https://www.google.com/maps/search/?api=1&query=Hvalnes+Iceland" },
-            { name: "Vestrahorn / Stokksnes", badge: "főpont", detail: "A kelet-déli átmenet egyik legjobb fotóhelye, belépővel a Viking Café felől.", maps: "https://www.google.com/maps/search/?api=1&query=Vestrahorn+Iceland" },
-            { name: "Viking Café", badge: "belépő + kávé", detail: "Innen intézhető a stokknesi belépő, plusz rövid pihenő is lehet.", maps: "https://www.google.com/maps/search/?api=1&query=Viking+Caf%C3%A9+Stokksnes" },
-            { name: "Höfn", badge: "ebédblokk", detail: "Pakkhús / Humarhöfnin vonalon működő homáros ebédmegálló.", maps: "https://www.google.com/maps/search/?api=1&query=H%C3%B6fn+Iceland" },
-            { name: "Jökulsárlón gleccserlagúna", badge: "nap csúcspontja", googleRating: "4.8", detail: "A fő gleccserlagúna, ahol a csónaktúra előre foglalása erősen ajánlott.", maps: "https://www.google.com/maps/search/?api=1&query=J%C3%B6kuls%C3%A1rl%C3%B3n+Glacier+Lagoon" },
-            { name: "Diamond Beach", badge: "főpont", googleRating: "4.8", detail: "A lagúnából kifutó jégdarabok fekete homokon; rövid sétával is nagy élmény.", maps: "https://www.google.com/maps/search/?api=1&query=Diamond+Beach+Iceland" },
-            { name: "Fjallsárlón", badge: "opcionális plusz", detail: "Csendesebb lagúna, ha még kell egy nyugodtabb gleccserblokk Jökulsárlón után.", maps: "https://www.google.com/maps/search/?api=1&query=Fjalls%C3%A1rl%C3%B3n+Iceland" },
-            { name: "Múlagljúfur kanyon", badge: "epiciceland plusz", googleRating: "4.9", detail: "Nagy extra, ha marad erő: lehajtó, parkoló, majd 30–45 perces séta a kilátóig.", maps: "https://www.google.com/maps/search/?api=1&query=M%C3%BAlaglj%C3%BAfur+Canyon" },
-            { name: "Skaftafell / Svartifoss", badge: "esti plusz", googleRating: "4.7", detail: "Késő esti fényben még beleférő bazaltoszlopos vízesés, ha marad energia.", maps: "https://www.google.com/maps/search/?api=1&query=Svartifoss+Iceland" }
+            { name: "Djúpivogur – Eggin í Gleðivík", badge: "rövid stop", duration: "15–20 perc", reviewNote: "34 madártojás-szobor a kőgáton — meglepően hangulatos kis installációs megálló a fjordos szakasz elején · 4.4 ★", detail: "34 gránittojásos installáció, gyors útmenti színes nyitás a nap elején.", maps: "https://www.google.com/maps/search/?api=1&query=Eggin+%C3%AD+Gle%C3%B0iv%C3%ADk" },
+            { name: "Hvalnes-félsziget", badge: "epiciceland plusz", duration: "20–25 perc", reviewNote: "Vörös csíkos világítótorony, fekete kavicsos part — gyors, de nagyon fotogén kitérő · 4.5 ★", detail: "Vörös világítótorony és fekete part, jó extra Vestrahorn előtt vagy után.", maps: "https://www.google.com/maps/search/?api=1&query=Hvalnes+Iceland" },
+            { name: "Vestrahorn / Stokksnes", badge: "főpont", duration: "60–90 perc", reviewNote: "Az egyik legfotogenikusabb hegyvonulat Izlandon — a Viking Café belépőjén túl megnyíló fekete homokos panoráma nem felejtődik el · 4.7 ★", detail: "A kelet-déli átmenet egyik legjobb fotóhelye, belépővel a Viking Café felől.", maps: "https://www.google.com/maps/search/?api=1&query=Vestrahorn+Iceland" },
+            { name: "Viking Café", badge: "belépő + kávé", duration: "15 perc (belépő intézés)", detail: "Innen intézhető a stokknesi belépő, plusz rövid pihenő is lehet.", maps: "https://www.google.com/maps/search/?api=1&query=Viking+Caf%C3%A9+Stokksnes" },
+            { name: "Höfn", badge: "ebédblokk", duration: "45–60 perc", reviewNote: "A homáros ebéd Pakkhúsban vagy Humarhöfninban az egyik legjobb étkezési élmény az izlandi szakaszon · 4.5 ★", detail: "Pakkhús / Humarhöfnin vonalon működő homáros ebédmegálló.", maps: "https://www.google.com/maps/search/?api=1&query=H%C3%B6fn+Iceland" },
+            { name: "Jökulsárlón gleccserlagúna", badge: "nap csúcspontja", googleRating: "4.8", duration: "90–120 perc (csónaktúra nélkül is)", reviewNote: "A legtöbben az egész izlandi útjuk kiemelkedő pillanataként írják le — az amfibia vagy zodiak túra extra szintet ad, de pénzért megéri · 15 000+ értékelés", detail: "A fő gleccserlagúna, ahol a csónaktúra előre foglalása erősen ajánlott.", maps: "https://www.google.com/maps/search/?api=1&query=J%C3%B6kuls%C3%A1rl%C3%B3n+Glacier+Lagoon" },
+            { name: "Diamond Beach", badge: "főpont", googleRating: "4.8", duration: "30–45 perc", reviewNote: "A lagúnából kifutó kristályjég fekete homokon — az egyik legcsodálatosabb természeti kép az úton, kora reggel a legszebb · 10 000+ értékelés", detail: "A lagúnából kifutó jégdarabok fekete homokon; rövid sétával is nagy élmény.", maps: "https://www.google.com/maps/search/?api=1&query=Diamond+Beach+Iceland" },
+            { name: "Fjallsárlón", badge: "opcionális plusz", duration: "25–35 perc", reviewNote: "Kisebb, csendesebb gleccserlagúna kevesebb turistával — jó, ha még egy extra gleccseres képet szeretnétek · 4.6 ★", detail: "Csendesebb lagúna, ha még kell egy nyugodtabb gleccserblokk Jökulsárlón után.", maps: "https://www.google.com/maps/search/?api=1&query=Fjalls%C3%A1rl%C3%B3n+Iceland" },
+            { name: "Múlagljúfur kanyon", badge: "epiciceland plusz", googleRating: "4.9", duration: "75–105 perc (parkoló + séta + vissza)", reviewNote: "Izland egyik legjobban őrzött titka — a 4 km-es gyalogos séta végén két vízesés és egy kanyon vár, a fotósok szerint a Ring Road legjobb epiciceland extra pontja · 4.9 ★", detail: "Nagy extra, ha marad erő: lehajtó, parkoló, majd 30–45 perces séta a kilátóig.", maps: "https://www.google.com/maps/search/?api=1&query=M%C3%BAlaglj%C3%BAfur+Canyon" },
+            { name: "Skaftafell / Svartifoss", badge: "esti plusz", googleRating: "4.7", duration: "60–75 perc (parkoló + séta + vissza)", reviewNote: "A bazaltoszlopos vízesés egy könnyű nyári sétán érhető el — a fény Vatnajökull hátterével estére a legjobb · 4.7 ★", detail: "Késő esti fényben még beleférő bazaltoszlopos vízesés, ha marad energia.", maps: "https://www.google.com/maps/search/?api=1&query=Svartifoss+Iceland" }
           ]
         },
         {
@@ -1353,6 +1365,7 @@ const tripData = {
           date: "2026. július 24., péntek",
           title: "Déli part: Fjaðrárgljúfur, Reynisfjara, Skógafoss",
           subtitle: "Sűrű látnivaló nap, ahol a korai indulás kulcstényező",
+          driveLog: { km: "~300 km", stops: 8, driveTime: "~4 óra", depart: "07:00–07:30", arrive: "~20:00–21:00" },
           character: "A klasszikus déli part nap. Sok stop, mindenhol turista, de minden megálló annyira ér. Reggel a kelet kanyonjai, délben Vík fekete strand, délután a két ikonikus vízesés. Tömeg-szezon. Korán kell indulni!",
           rainNote: { icon: "🟢", label: "Esős? Jó — vízesések esőben még víztömegesebbek, Reynisfjara drámai." },
           tags: [
@@ -1376,17 +1389,16 @@ const tripData = {
             { label: "Lava Show Vík", url: "https://www.google.com/maps/place/?q=place_id:ChIJoYrptR1L10gR8evFv9Ddl6E" }
           ],
           gpxPlaces: [
-            { name: "Fjaðrárgljúfur kanyon", badge: "főpont", googleRating: "4.8", detail: "Korai érkezéssel a legjobb; a felső ösvény adja a nap egyik legerősebb első képét.", maps: "https://www.google.com/maps/search/?api=1&query=Fja%C3%B0r%C3%A1rglj%C3%BAfur+Iceland" },
-            { name: "Kirkjubæjarklaustur", badge: "tankolás / pihenő", detail: "Itt lehet röviden tankolni vagy Systrakaffi felé kitérni, mielőtt a déli part sűrűbbé válik.", maps: "https://www.google.com/maps/search/?api=1&query=Kirkjub%C3%A6jarklaustur+Iceland" },
-            { name: "Sólheimasandur DC-3 roncs", badge: "fotós extra", detail: "Hosszabb gyalogos kitérő, amit csak akkor érdemes bevinni, ha vállaljátok az időigényét.", maps: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimasandur+plane+wreck" },
-            { name: "Yoda Cave / Gígjagjá", badge: "epiciceland plusz", detail: "A Hjörleifshöfði alján lévő Star Wars-szerű barlangbejárat, rövid külön kitérőként.", maps: "https://www.google.com/maps/search/?api=1&query=Yoda+Cave+Iceland" },
-            { name: "Vík í Mýrdal", badge: "ebédblokk", detail: "The Soup Company, Suður-Vík vagy Smiðjan vonalon működő ebédmegálló.", maps: "https://www.google.com/maps/search/?api=1&query=V%C3%ADk+%C3%AD+M%C3%BDrdal+Iceland" },
-            { name: "Reyniskirkja", badge: "rövid plusz", detail: "Fehér fatemplom a dombon, ha kell még egy gyors kilátós megálló Vík előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Reyniskirkja+Iceland" },
-            { name: "Reynisfjara", badge: "főpont", googleRating: "4.7", detail: "A biztonsági szabály itt nem extra, hanem kötelező; a hullámok miatt maradjatok hátrébb.", maps: "https://www.google.com/maps/search/?api=1&query=Reynisfjara+Beach+Iceland" },
-            { name: "Dyrhólaey", badge: "puffin + kilátó", googleRating: "4.8", detail: "Júliusban csúcspont a puffinok miatt, plusz erős természetes kőhidas kilátó.", maps: "https://www.google.com/maps/search/?api=1&query=Dyrh%C3%B3laey+Iceland" },
-            { name: "Skógafoss", badge: "főpont", detail: "A nagy déli-parti vízesés, amit alulról és a lépcső tetejéről is meg lehet nézni.", maps: "https://www.google.com/maps/search/?api=1&query=Sk%C3%B3gafoss+Iceland" },
-            { name: "Seljalandsfoss + Gljúfrabúi", badge: "záró vízeséspár", googleRating: "4.8", detail: "A nap végi páros blokk; itt tényleg legyen esőkabát és vízálló cipő.", maps: "https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland" },
-            { name: "Seljavallalaug / Reykjadalur", badge: "késő esti opciók", detail: "Ha marad energiátok, ezek már inkább ünnepi pluszfürdők, nem alapkötelezők.", maps: "https://www.google.com/maps/search/?api=1&query=Seljavallalaug+Iceland" }
+            { name: "Fjaðrárgljúfur kanyon", badge: "főpont", googleRating: "4.8", duration: "60–75 perc", reviewNote: "Mesebeli serpentines kanyonfalak — korai érkezéssel még nincs tömeg és a reggeli köd a legjobb hangulatot adja · 6 000+ értékelés", detail: "Korai érkezéssel a legjobb; a felső ösvény adja a nap egyik legerősebb első képét.", maps: "https://www.google.com/maps/search/?api=1&query=Fja%C3%B0r%C3%A1rglj%C3%BAfur+Iceland" },
+            { name: "Kirkjubæjarklaustur", badge: "tankolás / pihenő", duration: "20–25 perc", detail: "Itt lehet röviden tankolni vagy Systrakaffi felé kitérni, mielőtt a déli part sűrűbbé válik.", maps: "https://www.google.com/maps/search/?api=1&query=Kirkjub%C3%A6jarklaustur+Iceland" },
+            { name: "Sólheimasandur DC-3 roncs", badge: "fotós extra", duration: "75–90 perc (4 km oda-vissza)", reviewNote: "Lapos fekete homoksivatagon egyedülálló repülőroncs — erős hangulat, de az időigénye miatt csak ha a napritmus engedi · 4.6 ★", detail: "Hosszabb gyalogos kitérő, amit csak akkor érdemes bevinni, ha vállaljátok az időigényét.", maps: "https://www.google.com/maps/search/?api=1&query=S%C3%B3lheimasandur+plane+wreck" },
+            { name: "Vík í Mýrdal", badge: "ebédblokk", duration: "45–60 perc", reviewNote: "Déli-parti főebédhely — The Soup Company, Suður-Vík vagy Smiðjan közül melyiket fogod el; N1 tankolás is itt", detail: "The Soup Company, Suður-Vík vagy Smiðjan vonalon működő ebédmegálló.", maps: "https://www.google.com/maps/search/?api=1&query=V%C3%ADk+%C3%AD+M%C3%BDrdal+Iceland" },
+            { name: "Reyniskirkja", badge: "rövid plusz", duration: "15–20 perc", reviewNote: "Fehér fatemplom gyönyörű panorámával Reynisfjara és Vík felett — rövid, de szép kitérő · 4.4 ★", detail: "Fehér fatemplom a dombon, ha kell még egy gyors kilátós megálló Vík előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Reyniskirkja+Iceland" },
+            { name: "Reynisfjara", badge: "főpont", googleRating: "4.7", duration: "45–60 perc", reviewNote: "Fekete bazaltoszlopos strand — vizuálisan az egyik legerősebb pont, de a sneaker wave-ek évente embereket ölnek; a 30 méteres szabály nem alku kérdése · 20 000+ értékelés", detail: "A biztonsági szabály itt nem extra, hanem kötelező; a hullámok miatt maradjatok hátrébb.", maps: "https://www.google.com/maps/search/?api=1&query=Reynisfjara+Beach+Iceland" },
+            { name: "Dyrhólaey", badge: "puffin + kilátó", googleRating: "4.8", duration: "30–45 perc", reviewNote: "Júliusban puffinok százai fészkelnek itt — 16:00 után a madarak aktívabbak; a természetes kőív az Atlanti-óceán felett egyedülálló kilátó · 8 000+ értékelés", detail: "Júliusban csúcspont a puffinok miatt, plusz erős természetes kőhidas kilátó.", maps: "https://www.google.com/maps/search/?api=1&query=Dyrh%C3%B3laey+Iceland" },
+            { name: "Skógafoss", badge: "főpont", duration: "50–70 perc (alap + lépcső opcionális)", reviewNote: "A Ring Road egyik legikonikusabb vízesése — a 400 lépcsős felső ösvény fárasztó, de a fentről látott panoráma megéri · 4.8 ★ · 25 000+ értékelés", detail: "A nagy déli-parti vízesés, amit alulról és a lépcső tetejéről is meg lehet nézni.", maps: "https://www.google.com/maps/search/?api=1&query=Sk%C3%B3gafoss+Iceland" },
+            { name: "Seljalandsfoss + Gljúfrabúi", badge: "záró vízeséspár", googleRating: "4.8", duration: "40–55 perc", reviewNote: "Seljalandsfoss mögé be lehet menni (garantált ázás!) — a szomszéd Gljúfrabúi rejtett szurdokba rejt el egy titkos vízesést · 20 000+ értékelés", detail: "A nap végi páros blokk; itt tényleg legyen esőkabát és vízálló cipő.", maps: "https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland" },
+            { name: "Seljavallalaug / Reykjadalur", badge: "késő esti opciók", duration: "2–3 óra (csak extra energiával)", detail: "Ha marad energiátok, ezek már inkább ünnepi pluszfürdők, nem alapkötelezők.", maps: "https://www.google.com/maps/search/?api=1&query=Seljavallalaug+Iceland" }
           ]
         },
         {
@@ -1394,6 +1406,7 @@ const tripData = {
           date: "2026. július 25., szombat",
           title: "Golden Circle + Keflavík",
           subtitle: "Zárónap fürdővel, paradicsomfarmmal és esti reptérközeli alvással",
+          driveLog: { km: "~250 km", stops: 8, driveTime: "~3 óra", depart: "08:30–09:00", arrive: "~20:00–21:00" },
           character: "Az utolsó nap és az egyik legrégebbi turistaútvonal. Þingvellir → Geysir → Gullfoss = klasszikus háromszög. Plusz rejtett gyöngyök (Brúarfoss, Faxi, Kerið, Þórufoss). Estére visszaszállás KEF közelében, mert reggel hajnal repülés.",
           rainNote: { icon: "🟢", label: "Esős? Legjobb esőtűrő nap az egész körön — Gullfoss, Geysir, Brúarfoss mind víz-fókuszú." },
           tags: [
@@ -1417,17 +1430,17 @@ const tripData = {
             { label: "Faxi", url: "https://www.google.com/maps/place/?q=place_id:ChIJPSFYbGq91kgRcmfSWRwPVw4" }
           ],
           gpxPlaces: [
-            { name: "Kerið kráter", badge: "nyitó stop", detail: "Rövid, látványos vulkáni nyitás, ami jól működik a tömeges főpontok előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Keri%C3%B0+crater+Iceland" },
-            { name: "Secret Lagoon", badge: "fő fürdő", googleRating: "4.6", detail: "A régebbi, nyugodtabb fürdőválasztás a Golden Circle elején.", maps: "https://www.google.com/maps/search/?api=1&query=Secret+Lagoon+Fl%C3%BA%C3%B0ir" },
-            { name: "Laugarás Lagoon", badge: "alternatíva", detail: "Újabb, frissebb alternatíva, ha inkább modernebb fürdőt szeretnétek.", maps: "https://www.google.com/maps/search/?api=1&query=Laugar%C3%A1s+Lagoon+Iceland" },
-            { name: "Friðheimar", badge: "fő ebédpont", googleRating: "4.7", detail: "Paradicsomfarmos étterem, amit tényleg időben foglalni kell.", maps: "https://www.google.com/maps/search/?api=1&query=Fri%C3%B0heimar+Iceland" },
-            { name: "Brúarfoss", badge: "epiciceland plusz", googleRating: "4.8", detail: "Türkiz vízeséses extra kitérő; csak akkor fér be kényelmesen, ha korán indultok.", maps: "https://www.google.com/maps/search/?api=1&query=Br%C3%BAarfoss+Iceland" },
-            { name: "Geysir / Strokkur", badge: "főpont", googleRating: "4.7", detail: "A Strokkur a fő látvány, itt rövid várakozással is megkapjátok a gejzírélményt.", maps: "https://www.google.com/maps/search/?api=1&query=Strokkur+Geyser+Iceland" },
-            { name: "Faxi vízesés", badge: "epiciceland plusz", detail: "Kisebb, lazább extra vízesés Geysir és Gullfoss között.", maps: "https://www.google.com/maps/search/?api=1&query=Faxi+waterfall+Iceland" },
-            { name: "Gullfoss", badge: "főpont", googleRating: "4.9", detail: "A Golden Circle egyik legerősebb főpontja, még tömegben is megéri.", maps: "https://www.google.com/maps/search/?api=1&query=Gullfoss+Waterfall+Iceland" },
-            { name: "Þingvellir Nemzeti Park", badge: "főpont", googleRating: "4.7", detail: "Geológiai és történeti főhelyszín, jó zárása az utolsó teljes izlandi napnak.", maps: "https://www.google.com/maps/search/?api=1&query=%C3%9Eingvellir+National+Park" },
-            { name: "Silfra-hasadék", badge: "opcionális aktivitás", detail: "Ha előre foglaltatok, ez külön fél naposabb élmény is lehet, ne zsúfoljátok be erőből.", maps: "https://www.google.com/maps/search/?api=1&query=Silfra+Iceland" },
-            { name: "Þórufoss", badge: "epiciceland plusz", googleRating: "4.8", detail: "Game of Thrones-vízesés Reykjavík felé, ha még kell egy utolsó rövid plusz stop.", maps: "https://www.google.com/maps/search/?api=1&query=%C3%9E%C3%B3rufoss+Iceland" },
+            { name: "Kerið kráter", badge: "nyitó stop", duration: "25–35 perc", reviewNote: "Türkiz-zöld krátertó intenzív vörös vulkáni falak között — könnyű séta, gyors, de erős vizuális nyitás a zárónaphoz · 4.5 ★", detail: "Rövid, látványos vulkáni nyitás, ami jól működik a tömeges főpontok előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Keri%C3%B0+crater+Iceland" },
+            { name: "Secret Lagoon", badge: "fő fürdő", googleRating: "4.6", duration: "90–120 perc", reviewNote: "A legrégebbi izlandi fürdő természetes geotermikus medencével — csendesebb és hitelesebb, mint a tömegesebb alternatívák · 5 000+ értékelés", detail: "A régebbi, nyugodtabb fürdőválasztás a Golden Circle elején.", maps: "https://www.google.com/maps/search/?api=1&query=Secret+Lagoon+Fl%C3%BA%C3%B0ir" },
+            { name: "Laugarás Lagoon", badge: "alternatíva", duration: "90–120 perc", reviewNote: "Modern, friss alternatíva a Secret Lagoonhoz — újabb létesítmény, kevésbé ismert, de jól felszerelt · 4.5 ★", detail: "Újabb, frissebb alternatíva, ha inkább modernebb fürdőt szeretnétek.", maps: "https://www.google.com/maps/search/?api=1&query=Laugar%C3%A1s+Lagoon+Iceland" },
+            { name: "Friðheimar", badge: "fő ebédpont", googleRating: "4.7", duration: "80–100 perc (foglalós, ülős ebéd)", reviewNote: "Paradicsomfarmos üvegházi étterem — a korlátlan paradicsomleves és a paradicsom-alapú koktélok már önmagában megérnek egy foglalást · 5 000+ értékelés · FOGLALJ ELŐRE!", detail: "Paradicsomfarmos étterem, amit tényleg időben foglalni kell.", maps: "https://www.google.com/maps/search/?api=1&query=Fri%C3%B0heimar+Iceland" },
+            { name: "Brúarfoss", badge: "epiciceland plusz", googleRating: "4.8", duration: "90–120 perc (7 km oda-vissza)", reviewNote: "Izland legkékebb vízesése — nehéz megközelítés, de a türkiz szín és a bazaltoszlopos medence az egyik legemlékezetesebb kép · 4.8 ★", detail: "Türkiz vízeséses extra kitérő; csak akkor fér be kényelmesen, ha korán indultok.", maps: "https://www.google.com/maps/search/?api=1&query=Br%C3%BAarfoss+Iceland" },
+            { name: "Geysir / Strokkur", badge: "főpont", googleRating: "4.7", duration: "30–45 perc", reviewNote: "A Strokkur 5–8 percenként tör ki — rövid várakozás után garantált az élmény; a gejzír-területen múzeum és étterem is van · 20 000+ értékelés", detail: "A Strokkur a fő látvány, itt rövid várakozással is megkapjátok a gejzírélményt.", maps: "https://www.google.com/maps/search/?api=1&query=Strokkur+Geyser+Iceland" },
+            { name: "Faxi vízesés", badge: "epiciceland plusz", duration: "15–20 perc", reviewNote: "Kisebb, lazább vízesés Geysir és Gullfoss között — jó szünet, ha kell egy rövid megálló az autóból · 4.4 ★", detail: "Kisebb, lazább extra vízesés Geysir és Gullfoss között.", maps: "https://www.google.com/maps/search/?api=1&query=Faxi+waterfall+Iceland" },
+            { name: "Gullfoss", badge: "főpont", googleRating: "4.9", duration: "40–55 perc", reviewNote: "Izland legjobban értékelt természeti pontja — a kétlépéses vízesés hatalmas vízmennyisége júniusban–júliusban tetőzik; tömegben is megrázó · 40 000+ értékelés", detail: "A Golden Circle egyik legerősebb főpontja, még tömegben is megéri.", maps: "https://www.google.com/maps/search/?api=1&query=Gullfoss+Waterfall+Iceland" },
+            { name: "Þingvellir Nemzeti Park", badge: "főpont", googleRating: "4.7", duration: "60–90 perc", reviewNote: "Ahol a két tektonikai lemez eltávolodik egymástól — egyszerre geológiai csoda és a vikingkor politikai szíve; a séta önmagában is elgondolkodtató · 18 000+ értékelés", detail: "Geológiai és történeti főhelyszín, jó zárása az utolsó teljes izlandi napnak.", maps: "https://www.google.com/maps/search/?api=1&query=%C3%9Eingvellir+National+Park" },
+            { name: "Silfra-hasadék", badge: "opcionális aktivitás", duration: "3–4 óra (snorkeling tour)", reviewNote: "A világ egyik legjobb snorkeling helyszíne két kontinens között — jeges víz (+2°C), de a láthatóság 100+ méter · ELŐRE FOGLALÓS · 4.8 ★", detail: "Ha előre foglaltatok, ez külön fél naposabb élmény is lehet, ne zsúfoljátok be erőből.", maps: "https://www.google.com/maps/search/?api=1&query=Silfra+Iceland" },
+            { name: "Þórufoss", badge: "epiciceland plusz", googleRating: "4.8", duration: "20–25 perc", reviewNote: "Reykjavík közelében a legkönnyebben elérhető kis vízesés — Game of Thrones-helyszín, jó utolsó gyors megálló hazafelé · 4.8 ★", detail: "Game of Thrones-vízesés Reykjavík felé, ha még kell egy utolsó rövid plusz stop.", maps: "https://www.google.com/maps/search/?api=1&query=%C3%9E%C3%B3rufoss+Iceland" },
             { name: "Aurora Hotel / Hotel Berg / Northern Light Inn", badge: "reptér közeli szállások", detail: "Az utolsó este itt már a hajnali reptéri súrlódásmentesség a döntő szempont.", maps: "https://www.google.com/maps/search/?api=1&query=Aurora+Hotel+by+Keflavik+Airport" }
           ]
         },

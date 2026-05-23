@@ -152,6 +152,14 @@
           </div>
           <h3>${day.title}</h3>
           <div class="timeline-note">${day.summary}</div>
+          ${day.driveStats ? `
+            <div class="timeline-drive-stats">
+              ${day.driveStats.km ? `<span class="ds-chip ds-km">🚗 ${day.driveStats.km}</span>` : ""}
+              ${day.driveStats.stops ? `<span class="ds-chip ds-stops">📍 ${day.driveStats.stops} megálló</span>` : ""}
+              ${day.driveStats.depart ? `<span class="ds-chip ds-time">⏱ ${day.driveStats.depart} → ${day.driveStats.arrive}</span>` : ""}
+              ${day.driveStats.driveTime ? `<span class="ds-chip ds-drive">🕐 ${day.driveStats.driveTime} vezetés</span>` : ""}
+            </div>
+          ` : ""}
         </article>
       `;
     }
@@ -318,6 +326,14 @@
                 ${day.tags.map((tag) => `<span class="tag ${tag.cls}">${tag.label}</span>`).join("")}
               </div>
               ${day.rainNote ? `<div class="day-rain-note"><span>${day.rainNote.icon}</span><span>${day.rainNote.label}</span></div>` : ""}
+              ${day.driveLog ? `
+                <div class="day-drive-log">
+                  ${day.driveLog.km ? `<span class="dl-chip dl-km">🚗 ${day.driveLog.km}</span>` : ""}
+                  ${day.driveLog.stops ? `<span class="dl-chip dl-stops">📍 ${day.driveLog.stops} megálló</span>` : ""}
+                  ${day.driveLog.driveTime ? `<span class="dl-chip dl-drive">🕐 ${day.driveLog.driveTime} vezetés</span>` : ""}
+                  ${day.driveLog.depart ? `<span class="dl-chip dl-time">⏱ ind. ${day.driveLog.depart} · erk. ${day.driveLog.arrive}</span>` : ""}
+                </div>
+              ` : ""}
             </div>
             <div class="chevron">▾</div>
           </summary>
@@ -357,9 +373,11 @@
                           <div class="day-place-name">${place.name}</div>
                           ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
                         </div>
-                        ${place.googleRating ? `<div class="day-place-rating">⭐ ${place.googleRating}</div>` : ""}
+                          ${place.googleRating ? `<div class="day-place-rating">⭐ ${place.googleRating}</div>` : ""}
                       </div>
+                      ${place.duration ? `<div class="day-place-duration">⏳ ${place.duration}</div>` : ""}
                       <p class="day-place-detail">${place.detail}</p>
+                      ${place.reviewNote ? `<p class="day-place-review">"${place.reviewNote}"</p>` : ""}
                       <div class="day-place-links">
                         ${place.maps ? `<a href="${place.maps}" target="_blank" rel="noreferrer">Google Maps</a>` : ""}
                         ${place.noteLink ? `<a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a>` : ""}

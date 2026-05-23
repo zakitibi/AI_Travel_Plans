@@ -609,6 +609,31 @@ a {
   line-height: 1.55;
 }
 
+/* ── Timeline drive stats chips ─────────────────────────── */
+.timeline-drive-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 8px;
+}
+
+.ds-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.06);
+  color: var(--muted);
+}
+
+.ds-chip.ds-km { background: rgba(31,90,62,0.10); color: var(--green); }
+.ds-chip.ds-stops { background: rgba(79,56,32,0.08); }
+.ds-chip.ds-time { background: rgba(79,56,32,0.06); }
+.ds-chip.ds-drive { background: rgba(79,56,32,0.06); }
+
 .plain-list {
   margin: 0;
   padding: 0;
@@ -1044,6 +1069,31 @@ a {
   font-weight: 600;
 }
 
+/* ── Day card drive log chips ───────────────────────────── */
+.day-drive-log {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 8px;
+}
+
+.dl-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.05);
+  color: var(--muted);
+}
+
+.dl-chip.dl-km { background: rgba(31,90,62,0.10); color: var(--green); }
+.dl-chip.dl-stops { background: rgba(79,56,32,0.08); }
+.dl-chip.dl-drive { background: rgba(79,56,32,0.06); }
+.dl-chip.dl-time { background: rgba(79,56,32,0.06); }
+
 .day-character {
   font-size: 13px;
   color: var(--muted);
@@ -1195,11 +1245,28 @@ a {
   color: #7e5b00;
 }
 
+.day-place-duration {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+  margin: 6px 0 0;
+}
+
 .day-place-detail {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   font-size: 13px;
   line-height: 1.55;
   color: var(--muted);
+}
+
+.day-place-review {
+  margin: 5px 0 0;
+  font-size: 11px;
+  color: var(--dim);
+  font-style: italic;
+  line-height: 1.4;
+  border-left: 2px solid var(--line);
+  padding-left: 7px;
 }
 
 .day-place-links {
