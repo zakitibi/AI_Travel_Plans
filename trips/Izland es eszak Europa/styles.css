@@ -98,9 +98,9 @@ a {
 
 .ticket-group-summary {
   display: grid;
-  grid-template-columns: 118px minmax(0, 1fr) 18px;
+  grid-template-columns: minmax(0, 1fr) 18px;
   column-gap: 8px;
-  align-items: start;
+  align-items: center;
   cursor: pointer;
   list-style: none;
 }
@@ -110,12 +110,15 @@ a {
 }
 
 .ticket-group-head h3 {
-  margin: 0 0 2px;
-  font-size: 19px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
-.ticket-group-head p {
-  font-size: 13px;
+.ticket-person-note {
+  font-size: 11px;
+  font-weight: 500;
+  opacity: 0.72;
 }
 
 .ticket-group-grid {
@@ -1062,9 +1065,15 @@ a {
   gap: 14px;
 }
 
-.day-layout.has-focus {
-  grid-template-columns: minmax(0, 1fr) 250px;
-  align-items: start;
+.day-focus-horizontal {
+  margin-top: 14px;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3px 20px;
+  margin-top: 6px;
 }
 
 .activities {
@@ -1443,9 +1452,9 @@ a {
   .weather-grid,
   .embedded-map-grid,
   .map-pair-grid,
-  .day-layout.has-focus,
   .note-grid,
-  .info-grid {
+  .info-grid,
+  .focus-grid {
     grid-template-columns: 1fr;
   }
 

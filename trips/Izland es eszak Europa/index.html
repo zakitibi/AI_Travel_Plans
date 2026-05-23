@@ -57,8 +57,7 @@
         <summary class="ticket-group-summary">
           <div class="ticket-group-head">
             <div>
-              <h3>${group.person}</h3>
-              <p>${group.summary}</p>
+              <h3>${group.person} <span class="ticket-person-note">(${group.summary})</span></h3>
             </div>
           </div>
           <span class="ticket-group-icon" aria-hidden="true">▾</span>
@@ -324,7 +323,7 @@
           </summary>
           <div class="day-body">
             ${day.character ? `<p class="day-character">${day.character}</p>` : ""}
-            <div class="day-layout ${day.notes && day.notes.length ? "has-focus" : ""}">
+            <div class="day-layout">
               <div class="activities">
                 ${day.activities.map((activity) => `
                   <div class="act">
@@ -338,15 +337,15 @@
                   </div>
                 `).join("")}
               </div>
-              ${day.notes && day.notes.length ? `
-                <aside class="tip-box day-focus-box">
-                  <strong>Napi fókusz</strong>
-                  <ul class="plain-list compact">
-                    ${day.notes.map((note) => `<li>${note}</li>`).join("")}
-                  </ul>
-                </aside>
-              ` : ""}
             </div>
+            ${day.notes && day.notes.length ? `
+              <aside class="tip-box day-focus-box day-focus-horizontal">
+                <strong>Napi fókusz</strong>
+                <ul class="plain-list compact focus-grid">
+                  ${day.notes.map((note) => `<li>${note}</li>`).join("")}
+                </ul>
+              </aside>
+            ` : ""}
             ${day.gpxPlaces && day.gpxPlaces.length ? `
               <section class="day-places">
                 <h4 class="day-places-title">📍 GPX pontok, Google Maps és értékelések</h4>
@@ -470,10 +469,10 @@
             </div>
             <div class="country-pill ${section.accent}">${section.pill}</div>
           </div>
-          ${renderCollapseBox(generalInfoBox)}
           <section class="card section-card">
             ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
           </section>
+          ${renderCollapseBox(generalInfoBox)}
           ${topMap}
           ${section.extraResources && section.extraResources.length ? section.extraResources.map((resource) => `
             <details class="country-context ${resource.accent || section.accent}" ${resource.open ? "open" : ""}>
