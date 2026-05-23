@@ -557,6 +557,85 @@
       `;
     }
 
+    function renderCostPlan() {
+      const cp = tripData.costPlan;
+      const s = cp.summary;
+      const accentColor = { "accent-baltic": "#8a4f24", "accent-iceland": "#1f5a3e", "accent-return": "#6a4ca3" };
+      return `
+        <details class="cost-summary-box" open>
+          <summary class="cost-summary-toggle">
+            <span>💶 Teljes útköltség — összefoglaló (repülőkön felül)</span>
+            <span class="collapse-icon" aria-hidden="true">▾</span>
+          </summary>
+          <div class="cost-summary-body">
+            <div class="cost-grand-row">
+              <div class="cost-grand-card">
+                <div class="cost-grand-label">Tibi (teljes út)</div>
+                <div class="cost-grand-value">${s.grandTotal.tibi}</div>
+              </div>
+              <div class="cost-grand-card">
+                <div class="cost-grand-label">Henni (2–3. szakasz)</div>
+                <div class="cost-grand-value">${s.grandTotal.henni}</div>
+              </div>
+              <div class="cost-grand-card cost-grand-total">
+                <div class="cost-grand-label">Összköltség</div>
+                <div class="cost-grand-value">${s.grandTotal.together}</div>
+              </div>
+            </div>
+            <table class="cost-section-table">
+              <thead><tr><th>Szakasz</th><th>Összeg</th><th>Megoszlás</th></tr></thead>
+              <tbody>
+                ${s.totals.map(t => `
+                  <tr>
+                    <td>${t.label}</td>
+                    <td class="cost-cell-val">${t.value}</td>
+                    <td class="cost-cell-note">${t.person}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+            <p class="cost-meta-note">ℹ️ ${s.note}</p>
+            <div class="cost-booked-block">
+              <strong>Már foglalt repülők (referencia — nem a fenti összegben):</strong>
+              <ul>${s.alreadyBooked.map(b => `<li>${b}</li>`).join("")}</ul>
+            </div>
+          </div>
+        </details>
+
+        <div class="cost-sections-wrap">
+          ${cp.sections.map(sec => `
+            <section class="cost-section ${sec.accent}">
+              <div class="cost-sec-head">
+                <div class="cost-sec-headinfo">
+                  <h3 class="cost-sec-title">${sec.title}</h3>
+                  <div class="cost-sec-sub">${sec.subtitle}</div>
+                  <div class="cost-sec-car">🚗 ${sec.car} &nbsp;·&nbsp; 📍 ${sec.km}</div>
+                </div>
+                <div class="cost-sec-totals">
+                  <div class="cost-total-chip">${sec.total}</div>
+                  ${sec.totalPerPerson ? `<div class="cost-per-person">${sec.totalPerPerson}</div>` : ""}
+                </div>
+              </div>
+              <div class="cost-rows">
+                ${sec.categories.map(cat => `
+                  <div class="cost-row">
+                    <span class="cost-row-icon">${cat.icon}</span>
+                    <div class="cost-row-body">
+                      <div class="cost-row-top">
+                        <span class="cost-row-label">${cat.label}</span>
+                        <span class="cost-row-value">${cat.value}</span>
+                      </div>
+                      <div class="cost-row-detail">${cat.detail}</div>
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </section>
+          `).join("")}
+        </div>
+      `;
+    }
+
     function renderPractical() {
       return `
         <section class="view" data-view="practical">
@@ -565,6 +644,7 @@
               <h2><span>foglalás, autó, komp, ritmus</span>Praktikus</h2>
             </div>
           </div>
+          ${renderCostPlan()}
           ${renderCollapseBox(tripData.icelandGeneralBox)}
           <div class="summary-grid practical-grid">
             ${tripData.practical.map((group) => `

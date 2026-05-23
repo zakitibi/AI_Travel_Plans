@@ -1745,6 +1745,195 @@ const tripData = {
       }
     ]
   },
+  costPlan: {
+    summary: {
+      note: "Becslések — a repülőjegyek már foglaltak és nem szerepelnek a főösszegben. A GLC AMG 43 fogyasztása ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami minden országban 0,20–0,40 EUR/L-rel drágább a normál 95-ös szintnél.",
+      grandTotal: {
+        tibi: "~4 480 EUR",
+        henni: "~2 800 EUR",
+        together: "~7 280 EUR"
+      },
+      alreadyBooked: [
+        "Henni: Wizz Air W62427 BUD → KEF, 2026.07.11 (Erasmus+ finanszírozott lehet)",
+        "Tibi: Icelandair FI309 ARN → KEF, 2026.07.18 — referencia ár: ~360–420 EUR",
+        "Tibi + Henni: Icelandair FI306 KEF → ARN, 2026.07.26 — referencia ár: ~400–500 EUR/fő"
+      ],
+      totals: [
+        { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 680 EUR", person: "Tibi egyedül · saját autó" },
+        { label: "2. szakasz · Izland", value: "~4 430 EUR", person: "Tibi + Henni ketten · ~2 215 EUR/fő" },
+        { label: "3. szakasz · Hazaút", value: "~1 180 EUR", person: "Tibi + Henni ketten · ~590 EUR/fő" }
+      ]
+    },
+    sections: [
+      {
+        id: "baltikum",
+        title: "1. szakasz · Baltikum + Finnország",
+        accent: "accent-baltic",
+        subtitle: "Tibi egyedül · saját autó · 2026. júl. 10–17. · 8 nap",
+        car: "Mercedes GLC AMG 43 · 100 oktán · ~10 L/100 km",
+        km: "~2 460 km",
+        total: "~1 680 EUR",
+        categories: [
+          {
+            icon: "⛽",
+            label: "Üzemanyag · 100 oktán",
+            value: "~410 EUR",
+            detail: "2 460 km × 10 L/100 km = ~246 L × avg 1,67 EUR/L · Magyarország 1,65 · Lengyelország 1,60 · Baltikum 1,75–1,80 · Finnország ~1,95 EUR/L · 100 oktán mindenhol +0,20–0,35 EUR a szimpla 95-höz képest"
+          },
+          {
+            icon: "🏨",
+            label: "Szállás · 7 éjszaka (solo)",
+            value: "~505 EUR",
+            detail: "Lengyelország 1 éj: ~55 EUR · Vilnius 2 éj: 2×75 = 150 EUR · Riga 2 éj: 2×70 = 140 EUR · Tallinn 2 éj: 2×80 = 160 EUR · egyágyas / standard szoba, 3* szint · Booking előfoglalás olcsóbb"
+          },
+          {
+            icon: "🚢",
+            label: "Kompok · Tallink + Viking Line",
+            value: "~260 EUR",
+            detail: "Tallinn → Helsinki (Tallink Megastar, napközbeni járat, autó + 1 fő seat): ~90 EUR · Turku → Stockholm (Viking Line overnight, autó + 1 fő + belső kabin): ~170 EUR · mindkettő még tervezett, nem foglalt"
+          },
+          {
+            icon: "🅿",
+            label: "Arlanda parkoló · 8 nap",
+            value: "~96 EUR",
+            detail: "Swedavia P2 Beta long-term: ~12 EUR/nap × 8 nap (júl. 18–26.) · előre online foglalva 20–30%-kal olcsóbb · P2 Beta legközelebb a terminálhoz, shuttle jár"
+          },
+          {
+            icon: "🛣",
+            label: "Útdíjak · Lengyelország",
+            value: "~25 EUR",
+            detail: "Lengyel e-TOLL autópálya: ~20–25 EUR (A1/A2/A4 szegmensek) · Litvánia, Lettország, Észtország: szinte ingyenes · Finnország, Svédország: ingyenes főút"
+          },
+          {
+            icon: "🍽",
+            label: "Étkezés · 8 nap (solo)",
+            value: "~320 EUR",
+            detail: "~40 EUR/nap átlag · autós napokon benzinkúti szendvics + egy melegen ebéd: ~25–30 EUR · városokban éttermi ebéd + vacsora: ~50–60 EUR · tápanyagra nem kell annyit költeni egyedül"
+          },
+          {
+            icon: "🎫",
+            label: "Belépők · attrakciók",
+            value: "~55 EUR",
+            detail: "Trakai Castle: ~15 EUR · Turku Castle: ~10 EUR · egyéb városi múzeumok, toronykilátók: ~30 EUR · Tallinn óváros, Vilnius óváros: ingyenes séta"
+          }
+        ]
+      },
+      {
+        id: "izland",
+        title: "2. szakasz · Izland · Ring Road",
+        accent: "accent-iceland",
+        subtitle: "Tibi + Henni · bérautó · 2026. júl. 18–26. · 8 nap · ~2 160 km",
+        car: "Bérautó 4×4 SUV (pl. Toyota RAV4 / Dacia Duster) · SCDW + GP kötelező · 95-ös benzin · ~9 L/100 km",
+        km: "~2 160 km",
+        total: "~4 430 EUR (2 főre)",
+        totalPerPerson: "~2 215 EUR/fő",
+        categories: [
+          {
+            icon: "🚗",
+            label: "Bérautó · 8 nap",
+            value: "~1 360 EUR",
+            detail: "~170 EUR/nap júliusi csúcsszezonban · 4×4 SUV kategória ajánlott, de Ring Road (1) aszfaltozott — kisebb autó is megy · Foglalj Hertz/Avis/Budget/Saga előre, mert júliusban elfogynak az autók!"
+          },
+          {
+            icon: "🛡",
+            label: "Bérautó biztosítás · SCDW + GP",
+            value: "~240 EUR",
+            detail: "Super CDW (ütközésvédelem deductible nullára): ~15 EUR/nap · GP (Gravel/kőfelverődés): ~10 EUR/nap · SAAP (homok+vulkáni hamu): ~5 EUR/nap opcionális · Izlandon NEM hagyható ki — a kavics és szél súlyos károkat okoz!"
+          },
+          {
+            icon: "⛽",
+            label: "Üzemanyag · Izland (95-ös)",
+            value: "~460 EUR",
+            detail: "~2 160 km × 9 L/100 km = ~194 L × 2,50 EUR/L (izlandi átlag, 2026 becslés) · Izlandon 100 oktán nem szükséges a bérautóhoz! · Mývatn–Egilsstaðir között nagyon ritka a kút — tankolj Mývatnnál indulás előtt"
+          },
+          {
+            icon: "🏨",
+            label: "Szállás · 8 éjszaka (2 fő)",
+            value: "~1 040 EUR",
+            detail: "Izlandi szállás drága! Átlag ~130 EUR/éj double szoba · Reykjavík 2 éj: ~160 EUR/éj · Snæfellsnes / Varmahlíð 1 éj: ~120 EUR · Mývatn 1 éj: ~125 EUR · Egilsstaðir 1 éj: ~110 EUR · Jökulsárlón körzet 1 éj: ~120 EUR · Hella 1 éj: ~115 EUR · KEF körzet 1 éj: ~135 EUR"
+          },
+          {
+            icon: "🛒",
+            label: "Étkezés · 8 nap (2 fő)",
+            value: "~800 EUR",
+            detail: "~50 EUR/fő/nap: Bónus-bevásárlós reggeli+snack (~10 EUR/fő) + 1 éttermi ebéd/vacsora (~25–35 EUR/fő) · Izland NAGYON drága — teli hassal ne menj étterembe · Bónusnál érdemes az első napon feltankolni étellel is"
+          },
+          {
+            icon: "♨",
+            label: "Fürdők · Sky Lagoon + Mývatn + Secret Lagoon",
+            value: "~310 EUR",
+            detail: "Sky Lagoon Pure (2 fő): 2 × ~8 990 ISK = ~65 EUR × 2 = 130 EUR · Mývatn Nature Baths (2 fő): 2 × ~7 500 ISK = ~55 EUR × 2 = 110 EUR · Secret Lagoon (2 fő): 2 × ~4 800 ISK = ~35 EUR × 2 = 70 EUR"
+          },
+          {
+            icon: "🚤",
+            label: "Jökulsárlón · zodiak túra (2 fő)",
+            value: "~144 EUR",
+            detail: "~9 900 ISK/fő (~72 EUR) × 2 · Amfibia verzió: ~12 000 ISK/fő (~88 EUR) × 2 = ~176 EUR · Júliusban ELŐRE KELL FOGLALNI — walkint szinte lehetetlen · glacierlagoon.is"
+          },
+          {
+            icon: "🐋",
+            label: "Húsavík bálnales (opcionális)",
+            value: "~200 EUR",
+            detail: "~13 900 ISK/fő (~100 EUR) × 2 · Csak akkor, ha a júl. 21-i északi napon Húsavík opciót választjátok a Mývatn-blokk helyett · Júliusban szinte 100%-os bálnabiztosíték · Előre foglalj: northsailing.is / gentle-giants.com"
+          },
+          {
+            icon: "🍅",
+            label: "Friðheimar ebéd (2 fő)",
+            value: "~80 EUR",
+            detail: "~5 500–6 000 ISK/fő (~40–44 EUR) · Az étkezési keretben benne van, de KÜLÖN kell foglalni: fridheimar.is · Nyitva 11:30–16:00, LEGALÁBB 1 héttel előre! Korlátlan paradicsomleves + főfogás"
+          },
+          {
+            icon: "🅿",
+            label: "Parkolók + Vaðlaheiðargöng alagút",
+            value: "~72 EUR",
+            detail: "Kirkjufell: 1 000 ISK (~7 EUR) · Stuðlagil nyugati: 1 500 ISK (~11 EUR) · Múlagljúfur: 1 000 ISK (~7 EUR) · Kerið: 800 ISK (~6 EUR) · Vaðlaheiðargöng alagút: 1 600 ISK (~12 EUR) · Egyéb NP parkolók: ~30 EUR · Alagútnál regisztrálj tunnel.is-en INDULÁS ELŐTT!"
+          }
+        ]
+      },
+      {
+        id: "hazaut",
+        title: "3. szakasz · Hazaút",
+        accent: "accent-return",
+        subtitle: "Tibi + Henni · saját autó · 2026. júl. 26–30. · 5 nap",
+        car: "Mercedes GLC AMG 43 · 100 oktán · ~10 L/100 km",
+        km: "~2 430 km",
+        total: "~1 180 EUR (2 főre)",
+        totalPerPerson: "~590 EUR/fő",
+        categories: [
+          {
+            icon: "⛽",
+            label: "Üzemanyag · 100 oktán (Svédország–Dánia–Németország–Mo.)",
+            value: "~480 EUR",
+            detail: "~2 430 km × 10 L/100 km = ~243 L · Svédország (V-Power ~21 SEK/L = 1,95 EUR) · Dánia (~2,00 EUR) · Németország (V-Power ~2,05–2,15 EUR — legdrágább!) · Ausztria/Csehország/Szlovákia (~1,85–1,95 EUR) · Magyarország (~1,65 EUR) · Átlag: ~1,97 EUR/L"
+          },
+          {
+            icon: "🏨",
+            label: "Szállás · 4 éjszaka (2 fő)",
+            value: "~440 EUR",
+            detail: "Malmö 1 éj: ~110 EUR double · Koppenhága 1 éj: ~120 EUR · Hamburg 1 éj: ~100 EUR · Frankfurt körzet 1 éj: ~110 EUR · Booking.com előfoglalás; Koppenhága a legdrágább skandináv stop"
+          },
+          {
+            icon: "🌉",
+            label: "Øresund Bridge (Malmö → Koppenhága)",
+            value: "~50 EUR",
+            detail: "Személyautó: ~505 SEK / ~295 DKK ≈ 47–50 EUR · BroBizz regisztrált kártyával olcsóbb · A híd mindkét irányban fizetős; a visszaút (Dánia → Svédország) is ugyanennyibe kerül, de ezt az irányba csak egyszer csináljátok"
+          },
+          {
+            icon: "🛣",
+            label: "Útdíjak / vignettők",
+            value: "~10–20 EUR",
+            detail: "Osztrák vignette (bécsi útvonalon): 10 nap ~10 EUR · Cseh vignette (cseh útvonalon): ~17 EUR · Szlovák vignette: ~15 EUR · Német autópálya: INGYENES · Az útvonaltól függően az egyik vagy a másik vignette kell (nem mindkettő)"
+          },
+          {
+            icon: "🍽",
+            label: "Étkezés · 5 nap (2 fő)",
+            value: "~200 EUR",
+            detail: "~40 EUR/nap 2 főre: autópályás stops, szendvicsek + egy ülős éttermi étkezés naponként · Koppenhágában inkább a városnézős rész alatt érdemes beülni valahová · Hamburgnál halételek kötelező stop"
+          }
+        ]
+      }
+    ]
+  },
   practical: [
     {
       title: "🧭 Fő logisztikai döntések",
