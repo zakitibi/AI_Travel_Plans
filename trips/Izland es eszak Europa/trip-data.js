@@ -128,7 +128,7 @@ const tripData = {
     {
       person: "Tibi",
       summary: "Teljes északi átkelés + izlandi oda-vissza repülés",
-      note: "A két komp-szegmens még tervezett, nem foglalt; a repülések foglaltak. A helsinki esti hajó a Tallink 2026-os menetrend júliusi rotációja alapján lett beállítva.",
+      note: "A kompok tervezett státuszban vannak, nem foglaltak; a repülések foglaltak. Tallinn → Helsinki: Tallink Shuttle (rövid, 2h). Helsinki → Turku: autóval ~1,5h. Turku → Stockholm: Viking Line (10,5h, éjjeli, megérkezés 06:30). A Turku–Stockholm vonal rövidebb és kényelmesebb, mint a Helsinki–Stockholm (18h lenne).",
       items: [
         {
           mode: "🚢 Komp",
@@ -146,15 +146,15 @@ const tripData = {
         {
           mode: "🚢 Komp",
           status: "Tervezett",
-          operator: "Tallink Silja Line",
-          code: "Silja Symphony",
-          route: "Helsinki Olympiaterminal → Stockholm Värtahamnen",
-          departure: "2026.07.17 · 16:45",
-          arrival: "2026.07.18 · 10:00",
-          duration: "18:15",
+          operator: "Viking Line",
+          code: "Viking Grace / Viking Glory",
+          route: "Turku (Åbo) → Mariehamn (Åland) → Stockholm Värtahamnen",
+          departure: "2026.07.17 · 20:00",
+          arrival: "2026.07.18 · 06:30",
+          duration: "10:30",
           links: [
-            { label: "Tallink route", url: "https://www.tallink.com/ee-en/travelling/cruises/stockholm-helsinki" },
-            { label: "Tallink 2026 timetable", url: "https://image.tallink.com/image/upload/cargo/terms-and-conditions/timetables-cargo-2026.pdf" }
+            { label: "Viking Line Turku–Stockholm", url: "https://www.vikingline.com/routes/turku-stockholm/" },
+            { label: "Viking Line menetrend", url: "https://www.vikingline.com/en/timetables/" }
           ]
         },
         {
@@ -193,7 +193,7 @@ const tripData = {
       { id: "vil", tab: "baltikum", label: "Vilnius", note: "07.11–12", x: 228, y: 116, color: "#8a4f24", major: true },
       { id: "rig", tab: "baltikum", label: "Riga", note: "07.13–14", x: 236, y: 94, color: "#8a4f24" },
       { id: "tal", tab: "baltikum", label: "Tallinn", note: "07.15–16", x: 243, y: 74, color: "#8a4f24" },
-      { id: "hel", tab: "baltikum", label: "Helsinki", note: "07.17", x: 224, y: 63, color: "#6a4ca3" },
+      { id: "hel", tab: "baltikum", label: "Helsinki+Turku", note: "07.17", x: 224, y: 63, color: "#6a4ca3" },
       { id: "sto", tab: "baltikum", label: "Stockholm", note: "07.18", x: 198, y: 90, color: "#6a4ca3", major: true },
       { id: "rey", tab: "izland", label: "Reykjavík", note: "07.18–19", x: 62, y: 78, color: "#1f5a3e", major: true },
       { id: "snae", tab: "izland", label: "Snæfellsnes", note: "07.20", x: 78, y: 62, color: "#1f5a3e" },
@@ -298,9 +298,9 @@ const tripData = {
         date: "2026.07.17",
         phase: "Tibi külön",
         accent: "accent-nordic",
-        title: "Tallinn → Helsinki → Stockholm",
-        summary: "Összevont kompnap: délelőtti shuttle, rövid Helsinki, esti overnight hajó.",
-        points: ["10:30 → 12:30", "16:45 → 10:00*", "dupla komp"]
+        title: "Tallinn → Helsinki + Finnország nap → Turku",
+        summary: "Délelőtti Tallink shuttle Helsinkibe, délutáni finn városi blokk, drive Turkuba, esti Viking Line overnight Stockholm felé.",
+        points: ["Helsinki (Kauppatori, katedális)", "Turku Castle", "Viking Line 20:00 → 06:30"]
       },
       {
         date: "2026.07.18",
@@ -439,7 +439,7 @@ const tripData = {
     ],
     important: [
       "A jelenlegi HTML-ben a 2026. május 20-i sheet az elsődleges dátumforrás.",
-      "2026. július 17-én a főív már egyetlen összevont kompnap: Tallinn → Helsinki, majd Helsinki → Stockholm overnight.",
+      "2026. július 17-én teljes Finnország nap kerül be: Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki gyors blokk (~2h), drive Turkuba (~1,5h), Turku Castle + Aura folyópart, majd Viking Line overnight Turkuból Stockholmba (20:00 → 06:30). A Turku–Stockholm vonal csak 10,5 óra — szemben a Helsinki–Stockholm 18 órájával.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 7–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
       "A hazaút most a július 30-i budapesti érkezésű főívet követi, a 07.31-es duplikált sheet-sort nem."
     ],
@@ -522,11 +522,11 @@ const tripData = {
       accent: "accent-baltic",
       status: "külön szakasz",
       statusClass: "status-warm",
-      text: "Tibi teljes első szakasza: autós felvezetés Budapestről Litvánián, Lettországon és Észtországon át, majd július 17-i dupla kompnap és július 18-i stockholmi repülős átadás.",
+      text: "Tibi teljes első szakasza: autós felvezetés Budapestről Litvánián, Lettországon és Észtországon át, majd július 17-én Helsinki + Turku finn nap és Viking Line overnight, július 18-án korai stockholmi érkezés és FI309 Izlandra.",
       points: [
         "A fő logika a jól vezethető expedition, nem a rohanós pipálgatás.",
         "A legjobb városi napok: Vilnius, Riga és Tallinn.",
-        "A kritikus átmeneti pont most már a 07.17-i Tallinn → Helsinki → Stockholm nap."
+        "A 07.17-i nap: Tallinn → Helsinki (Tallink Shuttle) + helsinki gyors blokk + Turku (kastély, folyópart) + Viking Line overnight → Stockholm 06:30."
       ],
       cta: { label: "Részletes Baltikum oldal", tab: "baltikum" }
     },
@@ -609,7 +609,7 @@ const tripData = {
       accent: "baltic",
       intro: [
         "Ez a rész ugyanarra a logikára épül, mint a Közép-Ázsia oldalon az Üzbegisztán blokk: van egy rövid ország- és útvonal-keret, utána pedig jön a napi részletes bontás.",
-        "A jelenlegi verzióban a 2026. május 20-i sheet az elsődleges dátumforrás. Emiatt a július 17-i nap már összevont Tallinn → Helsinki → Stockholm kompnapként, a július 18-i nap pedig FI309-es stockholmi repülésként fut."
+        "A július 17-i nap egy teljes finn nap: Tallinn → Helsinki (Tallink Shuttle) + helsinki blokk + Turku Castle + Viking Line overnight. A július 18-i nap korai stockholmi érkezéssel indul (06:30) és FI309-cel zárul (17:10 → Reykjavík)."
       ],
       context: [
         {
@@ -677,7 +677,7 @@ const tripData = {
             {
               title: "Finn átmenet",
               paragraphs: [
-                "A jelenlegi főív szerint nem külön finn éjszakás blokk van, hanem egyetlen összevont július 17-i nap: délelőtti Tallinn → Helsinki shuttle, rövid helsinki átmenet, majd esti overnight hajó Stockholm felé."
+                "Július 17-én egy teljes finn nap kerül be: Tallinn → Helsinki (Tallink Shuttle, 2h), Helsinki gyors városblokk (~2h: Kauppatori, Katedrális), autóval Helsinki → Turku (~1,5h), Turku Castle + Aura folyópart délután, majd Viking Line overnight Turkuból Stockholmba (20:00 → 06:30). Ez a Turku–Stockholm vonal (10,5h) sokkal rövidebb, mint a korábban tervezett Helsinki–Stockholm (18h), és jobb puffert ad az FI309 elé."
               ]
             },
             {
@@ -811,34 +811,69 @@ const tripData = {
         {
           num: "8",
           date: "2026. július 17., péntek",
-          title: "Tallinn → Helsinki → Stockholm",
-          subtitle: "Összevont kompnap, rövid helsinki blokkal",
+          title: "Helsinki + Turku — Finnország nap",
+          subtitle: "Tallink shuttle Helsinkibe → finn városi blokk → Turku → Viking Line overnight",
+          driveLog: { km: "~170 km (Helsinki → Turku)", stops: 5, driveTime: "~1,5 óra", depart: "10:30 (Tallink Tallinnból)", arrive: "20:00 (Viking Line boarding Turkuból)" },
           tags: [
-            { label: "Megastar", cls: "tag-ferry" },
-            { label: "overnight", cls: "tag-ferry" }
+            { label: "Helsinki", cls: "tag-city" },
+            { label: "Turku", cls: "tag-city" },
+            { label: "Viking Line", cls: "tag-ferry" }
           ],
           activities: [
-            { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki", detail: "Tallink Shuttle Megastar, 10:30 → 12:30, helyi idő szerint." },
-            { time: "délután", icon: "🏙", name: "Rövid Helsinki", detail: "Köztes városi blokk, nem teljes finn sightseeing napként." },
-            { time: "16:45", icon: "🚢", name: "Helsinki → Stockholm", detail: "Tallink Silja overnight ferry, 16:45 → másnap 10:00, jelenleg tervezett komp." }
+            { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Shuttle)", detail: "Tallink Megastar, 10:30 → 12:30. A világ egyik legnagyobb és legmodernebb komp-járata, kényelmes átkelés." },
+            { time: "12:30–14:30", icon: "🏙", name: "Helsinki gyors blokk", detail: "Market Square (Kauppatori) + Régi Csarnok, Helsinki Katedrális, partséta a kikötő mellett. 2 óra alatt az ikonikus képek megvannak." },
+            { time: "14:30–16:00", icon: "🚗", name: "Helsinki → Turku (autóval)", detail: "~170 km, E18 autópálya, 1,5 óra. Turku Finnország nyugat-déli csücskén, a Turku-Stockholm kompok kikötőjével." },
+            { time: "16:00–19:30", icon: "🏰", name: "Turku: Kastély + Aura folyópart", detail: "Turku Castle (Turun linna) 1-1,5 óra, majd Aura folyópart — hajóéttermek, Market Hall, Turku katedrális." },
+            { time: "20:00", icon: "🚢", name: "Viking Line boarding Turkuból", detail: "Viking Grace vagy Viking Glory, Turku → Mariehamn (Åland-szigetek) → Stockholm Värtahamnen. Megérkezés 06:30." }
           ],
-          notes: ["A jelenlegi HTML-ben ez a 2026. május 20-i sheet szerinti főív.", "A kompok időpontja menetrendi adat, a konkrét foglalás még nyitott."]
+          notes: [
+            "⚠️ Viking Line vs. régi terv: A Helsinki→Stockholm overnight ferry (Silja Symphony) 18 óra és 16:45-kor indul — így alig 4 óra maradt volna Helsinkiben. A Turku–Stockholm vonal (Viking Line) csak 10,5 óra, reggel 06:30-ra ér Stockholmba — sokkal jobb puffer az FI309 elé.",
+            "Helsinki gyors blokk (2h): Market Square + Katedrális a legjobb kombó. Ha kicsit több idő van: Temppeliaukio sziklakirkko (köve van a legtömörebb 30 percnek) vagy Allas Sea Pool.",
+            "Turku Castle (Turun linna): Finnország egyik legidősebb és legimpozánsabb középkori kastélya, a kikötő tövénél. Nyitva 10:00–18:00. Belépő ~€10.",
+            "Turku Katedrális: Finnország legnagyobb katedrálisa, a Turku-sétány szívén. Gyalogosan elérhető a castellótól.",
+            "Aura folyópart (Aurajoki): hajóéttermek, kávézók, a helyi diákok és turisták egyforma kedvence.",
+            "Kompok még nem foglaltak — mind a Tallink Shuttle (Tallinn–Helsinki), mind a Viking Line (Turku–Stockholm) tervezett státuszban van.",
+            "Viking Line foglalás: vikingline.com — kabinos overnight menetrend Turkuból kb. 20:00, Stockholm 06:30."
+          ],
+          gpxPlaces: [
+            { name: "Helsinki Market Square (Kauppatori)", badge: "helsinki főpont", duration: "30–40 perc", reviewNote: "A város szíve a kikötő és a piac között — a Régi Csarnokkal (Old Market Hall) együtt a leghatékonyabb helsinki megálló · 4.5 ★", detail: "A klasszikus Helsinki-kép: piac, kikötő, Katedrális a háttérben.", maps: "https://www.google.com/maps/search/?api=1&query=Kauppatori+Helsinki" },
+            { name: "Helsinki Katedrális", badge: "helsinki főpont", duration: "15–20 perc", reviewNote: "Fehér neoklasszikus kupola a Senaatintori felett — az egyik legismertebb finn épület, kötelező fotómegálló · 4.7 ★", detail: "A tér és a homlokzat már kívülről is nagyon erős kép, belépő nem kell.", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+Cathedral" },
+            { name: "Temppeliaukio Church (sziklakirkko)", badge: "helsinki opcionális", duration: "25–35 perc", reviewNote: "Sziklába vájt körtemtemplom — akusztikailag és vizuálisan egyaránt lenyűgöző, de ki kell rá menni az útból · 4.7 ★", detail: "Ha marad idő a helsinki blokkból, ez a 30 perces extra nagyon megéri.", maps: "https://www.google.com/maps/search/?api=1&query=Temppeliaukio+Church+Helsinki" },
+            { name: "Uspenski-katedrális", badge: "helsinki rövid", duration: "15 perc", reviewNote: "Vörös tégla ortodox katedrális a kikötői dombon — gyors képmegálló a piactér sétájához igazítva · 4.6 ★", detail: "Keletről nézve a Senaatintori fehér katedrálisával együtt a legjobb kettős városképi pont.", maps: "https://www.google.com/maps/search/?api=1&query=Uspenski+Cathedral+Helsinki" },
+            { name: "Turku Castle (Turun linna)", badge: "turku főpont", duration: "60–90 perc", reviewNote: "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél — komoly múzeumi tartalom, a középkori részek különösen erősek · 4.5 ★", detail: "Középkori kastély és múzeum a Turku-kikötő mellett; belépő ~€10, nyitva 10:00–18:00.", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Castle+Finland" },
+            { name: "Turku Katedrális (Turun tuomiokirkko)", badge: "turku főpont", duration: "20–30 perc", reviewNote: "Finnország legnagyobb és legfontosabb temploma — a régi főváros történelmi szívpointja, belépése ingyenes · 4.6 ★", detail: "Közvetlenül gyalogolható a kastélyból, a Turku-sétány mentén.", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Cathedral+Finland" },
+            { name: "Aura folyópart (Aurajoki)", badge: "vacsora + séta", duration: "60–90 perc (vacsora + séta)", reviewNote: "A turkuliak és a turisták közös kedvence — hajóéttermek, kávézók és a folyóparti sétány az egyik legjobb finn esti hangulat · 4.5 ★", detail: "Vacsora előtt vagy alatt a legjobb hely; a hajóéttermek közvetlenül a folyón ülnek.", maps: "https://www.google.com/maps/search/?api=1&query=Aurajoki+Turku" },
+            { name: "Viking Line terminál Turku", badge: "komp boarding", duration: "30 perc előtte", detail: "Turku (Åbo) Linnansatama kikötő — boarding jellemzően 60-90 perccel az indulás előtt nyílik. 20:00 indulásnál ~18:30-tól.", maps: "https://www.google.com/maps/search/?api=1&query=Viking+Line+Turku+terminal" },
+            { name: "Stockholm Värtahamnen kikötő", badge: "reggeli érkezés", duration: "06:30 érkezés", detail: "Innen az Arlandig ~35-40 perc az E4-esen. Bőven elég puffer az FI309 előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Värtahamnen+Stockholm" }
+          ],
+          links: [
+            { label: "Viking Line Turku–Stockholm", url: "https://www.vikingline.com/routes/turku-stockholm/" },
+            { label: "Turku Castle", url: "https://www.google.com/maps/place/?q=place_id:ChIJT7lOv8JvlEYRV7z2L8OxwZQ" },
+            { label: "Tallink Shuttle Tallinn–Helsinki", url: "https://www.tallink.com/tallinn-helsinki" }
+          ]
         },
         {
           num: "9",
           date: "2026. július 18., szombat",
           title: "Stockholm / Arlanda → Reykjavík",
-          subtitle: "Reggeli kikötőérkezés, parking, FI309",
+          subtitle: "Korai kikötőérkezés, Arlanda parking, FI309",
+          driveLog: { km: "~35 km (kikötő → Arlanda)", stops: 2, driveTime: "~35 perc", depart: "06:30 (Viking Line érkezés)", arrive: "17:10 (FI309 indulás)" },
           tags: [
             { label: "FI309", cls: "tag-flight" },
             { label: "17:10 → 18:25", cls: "tag-focus" }
           ],
           activities: [
-            { time: "10:00", icon: "⚓", name: "Stockholm kikötőérkezés", detail: "Az overnight hajó erről a napról fordít át a stockholmi repülős logikára." },
-            { time: "napközben", icon: "🚗", name: "Arlanda parking setup", detail: "P2 Beta vagy Flygets P1, ez maradt a fő döntési pont." },
-            { time: "17:10", icon: "✈", name: "Icelandair FI309", detail: "Stockholm / Arlanda → Reykjavík / Keflavík, helyi idő szerint 17:10 → 18:25." }
+            { time: "06:30", icon: "⚓", name: "Stockholm Värtahamnen — Viking Line érkezés", detail: "Korai érkezés sokkal jobb puffert ad az FI309 előtt. Värtahamnentől Arlandáig ~35 perc az E4-esen." },
+            { time: "07:00–14:00", icon: "☕", name: "Stockholm reggel + Arlanda parking", detail: "Ha energiátok van, Gamla Stan vagy a kikötő rövid séta lehetőség. P2 Beta vagy Flygets P1 parkolóba az autó." },
+            { time: "14:30–16:30", icon: "🛂", name: "Arlanda check-in és security", detail: "Júliusban a security sor akár 1-1,5 óra is lehet. FI309 gate általában a Sky City közelében." },
+            { time: "17:10", icon: "✈", name: "Icelandair FI309", detail: "Stockholm / Arlanda (ARN) → Reykjavík / Keflavík (KEF), helyi idő szerint 17:10 → 18:25 (helyi izlandi idő)." }
           ],
-          notes: ["Ezzel a nappal zárul Tibi külön balti-felvezető szakasza.", "A közös roadtrip első teljes napja másnap, július 19-én indul."]
+          notes: [
+            "Ezzel a nappal zárul Tibi külön balti-felvezető szakasza, és indul a közös izlandi rész.",
+            "A Viking Line-os 06:30-as érkezés ~10 óra puffert ad az FI309 előtt — sokkal stresszmentes, mint a korábbi 10:00-as érkezéses terv.",
+            "Arlanda parking: Szwedavia P2 Beta long-term (előre foglalva olcsóbb). Az auto a visszaút után kell.",
+            "Gamla Stan (Stockholm óváros): ha van energiátok a reggeli kompérkezés után, 2-3 óra alatt szépen körbejárható."
+          ]
         }
       ]
     },
