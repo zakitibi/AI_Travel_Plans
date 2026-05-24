@@ -422,10 +422,46 @@ const tripData = {
         date: "2026.07.30",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Hamburg → Budapest",
-        summary: "Expedition záróetap ~1250 km (via Berlin–Brno). Hosszú nap, korai indulás. Opcionálisan jul. 31-re osztható.",
-        points: ["~1250 km", "Berlin · Brno", "Budapest 🏁"],
-        driveStats: { km: "~1250 km", stops: 4, depart: "06:00", arrive: "~20:00", driveTime: "~11 óra", timelinePoints: [{time:"06:00", label:"Hamburg ind."}, {time:"10:00", label:"Berlin"}, {time:"14:00", label:"Brno"}, {time:"20:00", label:"Budapest 🏁"}] }
+        title: "Hamburg körút — Lübeck + Schwerin Castle",
+        summary: "Napkirándulás Hamburgból: Lübeck UNESCO-óváros (Holstentor, Marienkirche, Niederegger) + Schweriner Schloss a tavon.",
+        points: ["Lübeck (~1h)", "Schwerin Castle", "~230 km körút"],
+        driveStats: { km: "~230 km", stops: 2, depart: "08:30", arrive: "~18:30 Hamburg", driveTime: "~3,5 óra", timelinePoints: [{time:"08:30", label:"Hamburg ind."}, {time:"09:30", label:"Lübeck"}, {time:"13:00", label:"Schwerin"}, {time:"18:30", label:"Hamburg"}] }
+      },
+      {
+        date: "2026.07.31",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "Hamburg városnap",
+        summary: "Miniatur Wunderland, Speicherstadt+HafenCity (UNESCO), Elbphilharmonie Plaza, Landungsbrücken, St. Pauli.",
+        points: ["Miniatur Wunderland", "Speicherstadt (UNESCO)", "Elbphilharmonie"],
+        driveStats: { km: "~8 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos + U-Bahn nap", timelinePoints: [{time:"09:00", label:"Miniatur Wunderland"}, {time:"12:00", label:"Speicherstadt"}, {time:"15:00", label:"Elbphilharmonie"}, {time:"18:30", label:"Vacsora"}] }
+      },
+      {
+        date: "2026.08.01",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "Hamburg → Frankfurt",
+        summary: "~490 km (A7/A5) via Hannover. Délutáni érkezés Frankfurtba, első Römerberg-séta és Apfelwein-vacsora Sachsenhausenben.",
+        points: ["~490 km", "Hannover pihenő", "Frankfurt este"],
+        driveStats: { km: "~490 km", stops: 2, depart: "09:00", arrive: "~14:30 Frankfurt", driveTime: "~4,5 óra", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"17:00", label:"Römerberg séta"}] }
+      },
+      {
+        date: "2026.08.02",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "Frankfurt városnap",
+        summary: "Römerberg + Kaiserdom, Städel Museum, Eiserner Steg, Sachsenhausen Apfelwein negyed, MainKai skyline.",
+        points: ["Römerberg", "Städel Museum", "Apfelwein vacsora"],
+        driveStats: { km: "~6 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos városnap", timelinePoints: [{time:"09:00", label:"Römerberg"}, {time:"11:00", label:"Städel Museum"}, {time:"14:00", label:"Sachsenhausen"}, {time:"19:00", label:"Apfelwein vacsora"}] }
+      },
+      {
+        date: "2026.08.03",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "Frankfurt → Budapest 🏁",
+        summary: "Záróetap ~950 km (Nürnberg → Linz → Wien → Budapest). Korai indulás, délutáni hazaérkezés. Az Expedition vége.",
+        points: ["~950 km", "Nürnberg · Linz · Wien", "Budapest 🏁"],
+        driveStats: { km: "~950 km", stops: 3, depart: "06:00", arrive: "~15:30 Budapest", driveTime: "~9 óra", timelinePoints: [{time:"06:00", label:"Frankfurt ind."}, {time:"09:00", label:"Nürnberg"}, {time:"13:00", label:"Linz/Wien"}, {time:"15:30", label:"Budapest 🏁"}] }
       }
     ],
     mainTrips: [
@@ -1631,25 +1667,115 @@ const tripData = {
             { time: "12:00", icon: "🚗", name: "Koppenhága → Flensburg → Hamburg (~310 km)", detail: "Dán autópályán Flensburgnál belépés Németországba, majd a folytatás Hamburgig ~2,5 óra." },
             { time: "17:00", icon: "🏨", name: "Hamburg — szállás", detail: "Az utolsó igazán városias este a hazagurulás előtt." }
           ],
-          notes: ["Øresund-díj online előre is fizethető (oresundsbron.com) — gyorsabb átkelés.", "Koppenhága: Nyhavn a legjobb gyors fénykép-megálló, a belváros gyalogos.", "Másnap: Hamburg → Budapest, ~1250 km — hosszú zárónap, korai indulás javasolt."]
+          notes: ["Øresund-díj online előre is fizethető (oresundsbron.com) — gyorsabb átkelés.", "Koppenhága: Nyhavn a legjobb gyors fénykép-megálló, a belváros gyalogos.", "Másnap: Lübeck UNESCO-óváros + Schwerin Castle napkirándulás Hamburgból (körút, ~230 km)."]
         },
         {
           num: "5",
           date: "2026. július 30., csütörtök",
-          title: "Hamburg → Budapest",
-          subtitle: "Expedition záróetap — hosszú, de megcsinálható",
-          driveLog: { km: "~1250 km", stops: 4, driveTime: "~11 óra", depart: "06:00", arrive: "~20:00", timelinePoints: [{time:"06:00", label:"Hamburg ind."}, {time:"10:00", label:"Berlin"}, {time:"14:00", label:"Brno"}, {time:"20:00", label:"Budapest 🏁"}] },
+          title: "Hamburg körút — Lübeck + Schwerin Castle",
+          subtitle: "UNESCO-óváros és egy tavi kastély — a Balti-tenger kapuja",
+          driveLog: { km: "~230 km (körút)", stops: 2, driveTime: "~3,5 óra", depart: "08:30", arrive: "~18:30 Hamburg", timelinePoints: [{time:"08:30", label:"Hamburg ind."}, {time:"09:30", label:"Lübeck"}, {time:"13:00", label:"Schwerin"}, {time:"18:30", label:"Hamburg"}] },
           tags: [
-            { label: "~1250 km", cls: "tag-drive" },
-            { label: "Budapest", cls: "tag-city" }
+            { label: "UNESCO", cls: "tag-focus" },
+            { label: "kastély", cls: "tag-nature" },
+            { label: "körút", cls: "tag-drive" }
           ],
           activities: [
-            { time: "06:00", icon: "🚗", name: "Korai indulás Hamburgból", detail: "A hosszú záróetaphoz 06:00 indulás szükséges. Előző este legyen kész a pakolás." },
-            { time: "10:00", icon: "⛽", name: "Berlin-tájék — tankolás + pihenő", detail: "A10 körgyűrűnél jó benzinkutas megálló. V-Power 100 ~1,80–1,95 EUR/L." },
-            { time: "14:00", icon: "🚗", name: "Prága / Brno környéke", detail: "Cseh és szlovák autópálya (e-matrica előre kell). Brno után már az utolsó 250 km Magyarország felé." },
-            { time: "20:00", icon: "🏁", name: "Budapest — Expedition vége", detail: "A teljes észak-európai és izlandi ív itt zárul össze." }
+            { time: "08:30", icon: "🚗", name: "Indulás Hamburgból Lübeck felé (~65 km, ~55 perc)", detail: "A7-es autópályán könnyű etap, Lübeck a Balti-tenger kapuja volt a középkorban — a Hansa-szövetség vezető városa." },
+            { time: "09:30", icon: "🏛", name: "Lübeck — Holstentor", detail: "A város ikonikus két tornyos kapuja, az egyik legfotogénebb középkori épület Észak-Németországban. Belülről kisebb múzeum, de a külső látványa a lényeg. Google Reviews: ★4.6 — 'Meglepően lenyűgöző közelről.'" },
+            { time: "10:15", icon: "⛪", name: "Lübeck — Marienkirche (St. Mary's)", detail: "A világ egyik legtöbb utánzatot inspiráló gótikus téglatemploma, a 'Backsteingotik' egyik csúcspontja. A WWII-bombázás által leomlott harangok emlékhelye különleges. Google Reviews: ★4.5 — 'A harang-emlékmű megrázó.'" },
+            { time: "11:00", icon: "🍫", name: "Niederegger Marzipan — Breite Straße 89", detail: "Lübeck a marzipán világi fővárosa. A Niederegger confectionery (alapítva 1806) emeleti kávézójában marzipán-torta és kávé — kötelező megálló. Google Reviews: ★4.5 — 'A marzipán-múzeum ingyenes és szórakoztató.'" },
+            { time: "11:45", icon: "📚", name: "Buddenbrookhaus + belváros séta", detail: "Thomas Mann Nobel-díjas regényének (Buddenbrooks) szülőháza és múzeuma. A Lübeck-i belváros egésze UNESCO-világörökség (1987) — a lépcsős homlokzatú kereskedőházak, a Tüngertor és a Petrikirche mind sétálható. Google Reviews: ★4.4." },
+            { time: "13:00", icon: "🚗", name: "Lübeck → Schwerin (~65 km, ~50 perc)", detail: "Rövid autóút nyugat felé Mecklenburg síkságán. Schwerin Mecklenburg-Vorpommern tartomány fővárosa." },
+            { time: "13:50", icon: "🏰", name: "Schweriner Schloss — a 'Balti-tenger Neuschwansteinja'", detail: "Neoromantikus kastély egy tóval körülvett szigeten, UNESCO-jelölt. A kastély kívülről fantasztikus, belülről historikus termek. Belépő: ~€8/fő, nyitva 10:00–18:00. Google Reviews: ★4.6 — 'Szinte túl szép ahhoz, hogy valóságos legyen.' Legjobb szög: a tó felőli homlokzat." },
+            { time: "15:30", icon: "🚶", name: "Schwerin — Alter Garten + tópart séta", detail: "A kastéllyal szemben az Alter Garten tér és az Állami Múzeum (csak kívül), majd tóparti séta a vízi kioszkig. Kávé és fagyi a tó partján." },
+            { time: "17:00", icon: "🚗", name: "Schwerin → Hamburg (~100 km, ~1 óra)", detail: "A19/A24 autópályán visszatérés Hamburgba. Estére még van idő egy hamburgi étteremre." },
+            { time: "18:30", icon: "🍽", name: "Vacsora Hamburgban", detail: "Fischbrötchen a Landungsbrücken-nél (füstölt heringes szendvics — hamburgi street food ikonja), vagy belvárosi halétterem. Utolsó hamburgi este." }
           ],
-          notes: ["⚠️ Ez hosszú zárónap (~1250 km, ~11 óra). Alternatíva: Hamburg → Frankfurt (490 km) jul. 30-án + Frankfurt → Budapest (950 km) jul. 31-én — ha szeretnétek egy extra napot.", "Cseh e-matrica: eNanicka.cz, ~€15 éves / ~€8 hónapos — előre vedd meg!", "Szlovák e-matrica: ~€15 éves / ~€8 hónapos — szintén előre.", "V-Power 100: Csehországban általában olcsóbb mint Németországban."]
+          notes: ["Lübeck belváros: egésze UNESCO-világörökség (1987). Parkolás a Holstentor melletti parkolóban vagy a Kohlmarkt körül.", "Niederegger Marzipan: a bolti vásárlás kötelező — vigyél haza doboznyi marzipánt! A bolt és a kávézó egymás felett van.", "Schweriner Schloss: ha kicsit is tele van a parkoló, érdemes a főbejárattól kicsit arrébb parkolni és gyalog jönni — a kastély minden szögből fotózható.", "Az egész körút Hamburgból és visszaérkezéssel kerek nap, az este szabadon marad."]
+        },
+        {
+          num: "6",
+          date: "2026. július 31., péntek",
+          title: "Hamburg városnap",
+          subtitle: "Miniatur Wunderland · Speicherstadt · Elbphilharmonie · Landungsbrücken",
+          driveLog: { km: "~8 km (városon belül)", stops: 4, driveTime: "gyalogos + U-Bahn nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Miniatur Wunderland"}, {time:"12:00", label:"Speicherstadt"}, {time:"15:00", label:"Elbphilharmonie"}, {time:"18:30", label:"Vacsora"}] },
+          tags: [
+            { label: "Miniatur Wunderland", cls: "tag-focus" },
+            { label: "Speicherstadt (UNESCO)", cls: "tag-city" },
+            { label: "városnap", cls: "tag-city" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🚂", name: "Miniatur Wunderland — Kehrwieder 2", detail: "A világ legnagyobb miniatűr vasúti kiállítása (15 000+ m² pályahálózat, saját repülőtér-makett, skandináv táj, Izland). Előre jegyet venni online kötelező — hétköznapon is megtelhet. Google Reviews: ★4.8 — 'Életem legjobb múzeumi élménye.' Kb. 2,5–3 óra ajánlott. Belépő: ~€20/fő." },
+            { time: "12:00", icon: "🏭", name: "Speicherstadt — UNESCO-raktárváros", detail: "A világ legnagyobb összefüggő raktárváros-együttese, piros tégla, csatornák, kávé- és szőnyegraktárak 1888-tól. Ma design irodák, múzeumok, kávézók. A Miniatur Wunderland itt van, szóval a kettő egy sétán belül van. Google Reviews: ★4.7 — 'Este is varázslatos a kivilágítás.'" },
+            { time: "13:30", icon: "🍱", name: "Ebéd a HafenCity-ben", detail: "A Speicherstadt keleti meghosszabbítása a modern HafenCity negyed. Sok jó streetfood-opció, vietnami, és a Campus területeken teraszos helyek. A hamburger és a halételek természetesen kötelezők." },
+            { time: "15:00", icon: "🎵", name: "Elbphilharmonie Plaza — ingyenes kilátó!", detail: "A Herzog & de Meuron tervezte ikonikus hangversenyház tetején ingyenesen látogatható hullámosacél kilátóterasz (37. emelet). Előfoglalás kell: elbphilharmonie.de/plaza. Google Reviews: ★4.7 — 'A város legjobb ingyenes kilátója.'" },
+            { time: "16:30", icon: "⚓", name: "Landungsbrücken — kikötői séta", detail: "A hamburgi kikötői hajóállomás körzete: Fischbrötchen standok, Rickmer Rickmers múzeumhajó, az Elba panorámája. Innen a legjobb az öbölre és a kikötői daruerdőre látni." },
+            { time: "18:30", icon: "🎭", name: "Reeperbahn / St. Pauli negyed esti séta", detail: "Hamburg legismertebb negyede, Beatles-kapcsolatokkal (Indra Club, Kaiserkeller — itt játszottak 1960-ban). Nappal csendesebb, este karakteres. Vacsorára jó a Schiffergesellschaft (1535 óta halétterem) vagy a kikötői Fischerhaus." },
+            { time: "20:00", icon: "🍽", name: "Vacsora — utolsó hamburgi este", detail: "Alt Hamburger Aalspeicher (angolna ételek, hagyományos), Fischerhaus (halételek a kikötőnél), vagy a HafenCity bármely teraszos helye." }
+          ],
+          notes: ["Miniatur Wunderland KÖTELEZŐ előfoglalás online: miniatur-wunderland.de — hétköznapon is megtelhet, péntek különösen forgalmas.", "Elbphilharmonie Plaza: szintén ingyenes de előfoglalós — elbphilharmonie.de/plaza, akár egy héttel előre érdemes lefoglalni.", "Hamburg HVV 1 napos bérlet: ~€8.50 — U-Bahn + S-Bahn + busz, a legtöbb helyszín elérhető.", "A Fischmarkt (halak, gyümölcs, retró hangulat) csak szombaton-vasárnap 05:00–09:30 tart — pénteken ez kiesik, de a Landungsbrücken-i Fischbrötchen standok egész héten nyitva vannak."]
+        },
+        {
+          num: "7",
+          date: "2026. augusztus 1., szombat",
+          title: "Hamburg → Frankfurt",
+          subtitle: "Átmeneti etap — ~490 km, délutáni érkezés, első frankurti esti séta",
+          driveLog: { km: "~490 km", stops: 2, driveTime: "~4,5 óra", depart: "09:00", arrive: "~14:30 Frankfurt", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"17:00", label:"Römerberg séta"}] },
+          tags: [
+            { label: "~490 km", cls: "tag-drive" },
+            { label: "Frankfurt", cls: "tag-city" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🚗", name: "Indulás Hamburgból — A7 dél felé", detail: "Hamburg → Hannover ~160 km (~1,5h). Az A7 egyenes, jó autópálya, nincs útdíj — Hannoverig az első tankolást meg lehet csinálni." },
+            { time: "11:00", icon: "⛽", name: "Hannover-tájék — pihenő, tankolás", detail: "Hannover kb. félúton van. Gyors kávé + WC-megálló. Észak-Németországban általában versenyképesebb a V-Power ár mint Frankfurt körül." },
+            { time: "14:30", icon: "🏙", name: "Frankfurt — szállás + berendezkedés", detail: "Frankfurt am Main belváros közelében, vagy Sachsenhausen negyedben érdemes szállást venni. Autóparkoló, bejelentkezés." },
+            { time: "16:00", icon: "🚶", name: "Römerberg első séta + Main-part", detail: "A Römerberg Frankfurt belvárosának ikonikus középkori főtere, a Römer városháza háromcsúcsos homlokzatával. Rövid ráhangolódás a holnapi városnapra. Google Reviews: ★4.5 — 'Este is gyönyörűen kivilágított.'" },
+            { time: "18:00", icon: "🍷", name: "Vacsora Sachsenhausenben — első Apfelwein-este", detail: "Sachsenhausen a Majna jobb partján, az Apfelwein (almabor) kultúra fellegvára. Wagner, Dauth-Schneider vagy Zum Gemalten Haus — autentikus és olcsó helyi vacsora. Bembel (szürke kerámia almaboros korsó) kötelező megkóstolni." }
+          ],
+          notes: ["A7 Hamburg → Kassel → Frankfurt: egyenes, útdíjmentes útvonal, jó 2×3 sávos autópálya végig.", "Frankfurt szombat délután: a belváros forgalmas, de a szálláshoz való beérkezés megoldható.", "Sachsenhausen: az almaborozók (Apfelwein-Lokal-ok) nem finomkodós helyek, de autentikus és olcsó vacsorák. Handkäse (savanyú túró ecetes-hagymás öntettel) = helyi ikon, Goethe kedvence volt."]
+        },
+        {
+          num: "8",
+          date: "2026. augusztus 2., vasárnap",
+          title: "Frankfurt városnap",
+          subtitle: "Römerberg · Kaiserdom · Städel Museum · Sachsenhausen Apfelwein",
+          driveLog: { km: "~5 km (városon belül)", stops: 4, driveTime: "gyalogos városnap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Römerberg"}, {time:"11:00", label:"Städel Museum"}, {time:"14:00", label:"Sachsenhausen"}, {time:"19:00", label:"Apfelwein vacsora"}] },
+          tags: [
+            { label: "Städel Museum", cls: "tag-focus" },
+            { label: "Römerberg", cls: "tag-city" },
+            { label: "városnap", cls: "tag-city" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🏛", name: "Römerberg + Römer városháza", detail: "Frankfurt legfotogénebb pontja: a részben rekonstruált középkori kereskedősorok és a Römer háromcsúcsos homlokzata. Szinte minden frankurti képeslapon ott van. Google Reviews: ★4.5 — 'Reggel a turisták előtt üres és csodás.'" },
+            { time: "09:45", icon: "⛪", name: "Frankfurter Dom (Kaiserdom)", detail: "A Szentséges Római Birodalom császárkoronázásainak katedrálisa, gótikus torony (66 m) kilátóval. Google Reviews: ★4.5 — 'A torony felmászása megéri, szép kilátó.' Belépő: ~€3." },
+            { time: "11:00", icon: "🖼", name: "Städel Museum — Schaumainkai 63", detail: "Európa egyik legjobb képzőművészeti múzeuma (Botticelli, Vermeer, Rembrandt, Monet, Picasso). Vasárnap nyitva 10:00–18:00. Google Reviews: ★4.6 — 'Meglepően gazdag gyűjtemény, kötelező megállás.' Belépő: ~€16/fő. Kb. 2 óra ajánlott." },
+            { time: "13:30", icon: "🌉", name: "Eiserner Steg — sétálóhíd + Majna-part", detail: "A lakatokkal borított sétálóhíd a Majna felett, klassz városképpel mindkét irányban. A Sachsenhausen felőli part a Museumsufer (múzeumi sétány) — vasárnap is kellemes sétálni." },
+            { time: "14:30", icon: "🍺", name: "Sachsenhausen — Apfelwein negyed, ebéd", detail: "A Majna bal partján a hagyományos Apfelwein-negyedben ebéd. Handkäse mit Musik (savanyú túró hagymás-ecetes öntettel) és Grüne Soße (zöld fűszeres mártás főtt tojással és burgonyával — frankurti specialitás) kóstolása kötelező. Zum Wagner: Google ★4.3." },
+            { time: "16:30", icon: "🌆", name: "Bankenviertel skyline séta", detail: "Frankfurt az egyetlen európai nagyváros, ahol megvannak a felhőkarcolók a belváros közepén. A MainKai sétányról (Sachsenhausen oldal) a legjobb a városképet fotózni — este kivilágítva is gyönyörű." },
+            { time: "19:00", icon: "🍷", name: "Búcsúvacsora Sachsenhausenben", detail: "Az Apfelwein-Lokal-ok este is nyitva, a vacsora egyszerű, autentikus és olcsó. Dauth-Schneider: ★4.3, Zum Gemalten Haus: ★4.4 Google." }
+          ],
+          notes: ["Vasárnap: Kleinmarkthalle (fedett piac) ZÁRVA, de a Städel és az összes külső látnivaló nyitva.", "Grüne Soße (Grie Soß): tipikusan frankurti fogás, Johann Wolfgang von Goethe kedvence volt — 7 féle friss gyógynövényből. Kötelező megkóstolni!", "Sachsenhauseni Apfelwein-kultúra: a helyi almabort Bembel-ből (szürke kerámia korsó) isszák, hígítva vízzel vagy szódával (Gespritzter) — könnyedebb, mint gondolnád.", "Holnap: korai indulás (~06:00) Frankfurt → Budapest, ~950 km, kb. 9 óra."]
+        },
+        {
+          num: "9",
+          date: "2026. augusztus 3., hétfő",
+          title: "Frankfurt → Budapest 🏁",
+          subtitle: "Expedition záróetap — ~950 km, hazaérkezés",
+          driveLog: { km: "~950 km", stops: 3, driveTime: "~9 óra", depart: "06:00", arrive: "~15:30 Budapest", timelinePoints: [{time:"06:00", label:"Frankfurt ind."}, {time:"09:00", label:"Nürnberg"}, {time:"13:00", label:"Linz/Wien"}, {time:"15:30", label:"Budapest 🏁"}] },
+          tags: [
+            { label: "~950 km", cls: "tag-drive" },
+            { label: "Budapest 🏁", cls: "tag-city" }
+          ],
+          activities: [
+            { time: "06:00", icon: "🚗", name: "Korai indulás Frankfurtból — A3/E60 keletre", detail: "A3-as autópályán Frankfurt → Würzburg → Nürnberg irányba. Reggel 06:00 ideális indulási idő, a frankurti forgalom ekkor még ritka." },
+            { time: "09:00", icon: "⛽", name: "Nürnberg-tájék — tankolás + pihenő", detail: "Nürnberg kb. 240 km-re van Frankfurttól (~2,5h). Jó V-Power tankolási pont (Bajorországban általában versenyképes az ár). 20 perc pihenő, kávé." },
+            { time: "11:00", icon: "🚗", name: "Nürnberg → Linz, Ausztria — ~280 km", detail: "A3-as autópályán Passaunál belépés Ausztriába, majd az A8/A1 Linzig. ⚠️ Ausztriai autópálya-vignette: kb. €10 10 naposra — feltétlenül szükséges! Megvehető a határon vagy asfinag.at-on." },
+            { time: "13:00", icon: "⛽", name: "Linz / Wels-tájék — második pihenő", detail: "Félúton Bécs és Nürnberg között. Gyors WC + kávé. A Westautobahn (A1) Bécsen túl is folytatódik, Hegyeshalomig az M15-ös folytatja." },
+            { time: "14:30", icon: "🏙", name: "Budapest közeledik — Győr / Hegyeshalom", detail: "Magyarországi határon e-matrica ellenőrzése. Az M1-en Budapest felé az utolsó 100 km simán megy." },
+            { time: "15:30", icon: "🏁", name: "Budapest — Expedition vége! 🎉", detail: "A teljes észak-európai és izlandi ív lezárul: Baltikum → Észtország → Helsinki → Stockholm → Malmö → Hamburg → Frankfurt → Budapest. Közel 10 000 km összesen, közel 6 hét." }
+          ],
+          notes: ["⚠️ Osztrák autópálya-vignette KÖTELEZŐ az A1/A8 autópályán — megvehető az osztrák határon vagy online: asfinag.at. ~€10 10 napos.", "Magyar e-matrica: ha nincs aktív, Hegyeshalomnál kell venni. A rendszám alapján ellenőrzik.", "Az egész Expedition összesített km: kb. 9000–10 000 km, ~12 ország, ~6 hét — gratulálunk!", "🎉 Haza az egész csapat, fényképekkel, élményekkel és sok-sok emlékkel!"]
         }
       ]
     }
