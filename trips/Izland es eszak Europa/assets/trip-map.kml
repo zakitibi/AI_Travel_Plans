@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Izland és Észak-Európa 2026 · Tibi + Henni</name>
+    <description>Teljes útvonal: Baltikum → Helsinki → Stockholm → Izland → Koppenhága → Hamburg → Frankfurt → Budapest · 2026. júl. 10 – aug. 6.</description>
+
+    <!-- STÍLUSOK -->
+    <Style id="baltic">
+      <IconStyle><color>ffdd5500</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><color>ffdd5500</color></LabelStyle>
+    </Style>
+    <Style id="nordic">
+      <IconStyle><color>ff00aa55</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/grn-circle.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><color>ff00aa55</color></LabelStyle>
+    </Style>
+    <Style id="iceland">
+      <IconStyle><color>ff0055cc</color><scale>1.2</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/wht-circle.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><color>ff0055cc</color></LabelStyle>
+    </Style>
+    <Style id="return">
+      <IconStyle><color>ff0000cc</color><scale>1.1</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-circle.png</href></Icon>
+      </IconStyle>
+      <LabelStyle><color>ff0000cc</color></LabelStyle>
+    </Style>
+    <Style id="start">
+      <IconStyle><scale>1.3</scale>
+        <Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon>
+      </IconStyle>
+    </Style>
+
+    <!-- ========================== -->
+    <!-- START / CÉL -->
+    <!-- ========================== -->
+    <Folder>
+      <name>🏁 Start / Cél</name>
+      <Placemark>
+        <name>Budapest — Indulás (júl. 10.) / Érkezés (aug. 6.)</name>
+        <description>Az út kezdete és vége. Tibi júl. 10-én autóval indul, az egész csapat aug. 6-án ér haza Frankfurtból.</description>
+        <styleUrl>#start</styleUrl>
+        <Point><coordinates>19.0402,47.4979,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <!-- ========================== -->
+    <!-- BALTIKUM — Tibi autós rész -->
+    <!-- ========================== -->
+    <Folder>
+      <name>🇵🇱🇱🇹🇱🇻🇪🇪 Baltikum — Tibi autós felvezető (júl. 10–17.)</name>
+      <Placemark>
+        <name>Suwałki — tranzit alvó (júl. 10.)</name>
+        <description>Első éjszaka Lengyelországban, 30 km-re a litván határtól. Tranzitszállás, másnap Kaunas felé.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>22.9310,54.1115,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Kaunas — megálló (júl. 11.)</name>
+        <description>Laisvės aleja (★4.4), Kaunas Cathedral (★4.6). Rövid városmegálló Vilnius előtt.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>23.9036,54.8985,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Vilnius — 2 éjszaka (júl. 11–12.)</name>
+        <description>Gediminas-torony (★4.4), Katedrális tér (★4.6), Užupis negyed (★4.5). Júl. 13-án Riga felé.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>25.2797,54.6872,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Trakai — kirándulás Vilniusból</name>
+        <description>Trakai Island Castle (★4.6) — Vilniusból ~30 km. Kibinai kóstolás a kibinai házban.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>24.9341,54.6379,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Riga — 2 éjszaka (júl. 13–14.)</name>
+        <description>Black Heads House (★4.7), Art Nouveau negyed / Alberta iela (★4.6), Central Market (★4.5), Daugava-part.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>24.1052,56.9496,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Sigulda — megálló (júl. 15.)</name>
+        <description>Turaida Castle (★4.4), Gutmanis Cave (★4.3), Gauja folyóvölgy. Pärnu felé tovább.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>24.8551,57.1539,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Pärnu — megálló (júl. 15.)</name>
+        <description>Észtország nyári fővárosa, homokos strand. Rövid pihenő Tallinn előtt.</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>24.5020,58.3859,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Tallinn — 1 éjszaka (júl. 15–16.)</name>
+        <description>Toompea (★4.7), Alexander Nevsky Cathedral (★4.7), Telliskivi Creative City (★4.4), Lennusadam Museum (★4.7).</description>
+        <styleUrl>#baltic</styleUrl>
+        <Point><coordinates>24.7536,59.4370,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <!-- ========================== -->
+    <!-- FINNORSZÁG -->
+    <!-- ========================== -->
+    <Folder>
+      <name>🇫🇮 Finnország — kompnap (júl. 17.)</name>
+      <Placemark>
+        <name>Helsinki — gyors blokk (júl. 17.)</name>
+        <description>Tallink Shuttle Tallinnból 10:30→12:30. Temppeliaukio (★4.7), Senaatintori (★4.6), Market Square. Este Turku felé.</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>24.9354,60.1699,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Porvoo — megálló (júl. 17.)</name>
+        <description>Finnország második legrégebbi városa, piros faraktárházak a folyóparton (★4.6). Helsinki→Porvoo ~50 km.</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>25.6574,60.3927,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Turku — Viking Line komp (júl. 17. este)</name>
+        <description>Viking Line overnight Turkuból Stockholmba: 20:00 → 06:30. Turku Castle (★4.4), Aura folyópart séta.</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>22.2666,60.4518,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <!-- ========================== -->
+    <!-- STOCKHOLM -->
+    <!-- ========================== -->
+    <Folder>
+      <name>🇸🇪 Stockholm — 3 éjszaka (júl. 18. / júl. 26–28.)</name>
+      <Placemark>
+        <name>Stockholm — Gamla Stan</name>
+        <description>Stortorget (★4.7), Kungliga Slottet (★4.5), Riddarholmen (★4.6), Monteliusvägen (★4.7).</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>18.0686,59.3251,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Vasa Museum — Djurgården</name>
+        <description>Vasa Museum (★4.8), Skansen (★4.5), Fotografiska (★4.6), Moderna Museet (★4.5).</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>18.0914,59.3280,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Vaxholm — Archipelago (júl. 28.)</name>
+        <description>1 óra kompra Stockholmtól. Vaxholmi Erőd (★4.3), faváros, füstölt hering. Waxholmsbolaget: waxholmsbolaget.se</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>18.3264,59.4026,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Grinda sziget — Archipelago (júl. 28.)</name>
+        <description>Vaxholmtól ~1 óra. Gránitsziget, úszás, erdei ösvények, Grinda Wärdshus (★4.3). Foglalás: grindawardshus.se</description>
+        <styleUrl>#nordic</styleUrl>
+        <Point><coordinates>18.6500,59.3833,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <!-- ========================== -->
+    <!-- IZLAND -->
+    <!-- ========================== -->
+    <Folder>
+      <name>🇮🇸 Izland — közös Ring Road (júl. 18/26.)</name>
+      <Placemark>
+        <name>Reykjavík — bázis (1–2. nap)</name>
+        <description>Hallgrímskirkja (★4.7), Sky Lagoon (★4.4), Perlan (★4.5). Tibi júl. 18-án repül ide (FI309).</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-21.9277,64.1265,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Snæfellsnes-félsziget (3. nap)</name>
+        <description>Kirkjufell (★4.7), Búðakirkja (★4.7), Lóndrangar, Arnarstapi. Jules Verne "Utazás a Föld középpontjához" helyszíne.</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-23.7783,64.7832,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Akureyri / Goðafoss (4. nap)</name>
+        <description>Goðafoss vízesés (★4.7) — "Az istenek vízesése". Akureyri Észak-Izland fővárosa.</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-17.5490,65.6835,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Mývatn-tó (5. nap)</name>
+        <description>Mývatn (★4.7), Hverir szolfatara mező, Dimmuborgir lávamező, Krafla vulkán. Mývatn Nature Baths (★4.5).</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-16.9976,65.5587,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Jökulsárlón gleccserjéglagúna (6. nap)</name>
+        <description>Jökulsárlón (★4.9) + Diamond Beach (★4.8) — a Ring Road legfantasztikusabb pontja. Vatnajökull gleccser.</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-16.1791,64.0784,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Vík — fekete homokos strand (7. nap)</name>
+        <description>Reynisfjara beach (★4.7), Dyrhólaey sziklaív, Skógafoss (★4.7), Seljalandsfoss (★4.7).</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-18.9985,63.4186,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Golden Circle — Þingvellir + Geysir + Gullfoss (8. nap)</name>
+        <description>Þingvellir (★4.7), Geysir (★4.6), Gullfoss (★4.8). Az izlandi roadtrip hagyományos záróköre.</description>
+        <styleUrl>#iceland</styleUrl>
+        <Point><coordinates>-20.2985,64.2556,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <!-- ========================== -->
+    <!-- HAZAÚT -->
+    <!-- ========================== -->
+    <Folder>
+      <name>🇩🇰🇩🇪 Hazaút — Koppenhága + Hamburg + Frankfurt (júl. 29. – aug. 6.)</name>
+      <Placemark>
+        <name>Malmö — fotóstop (júl. 29.)</name>
+        <description>Turning Torso (★4.3, Santiago Calatrava, 190 m), Stortorget. Csak 45 perces fotóstop, éjszaka nincs.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>13.0038,55.6050,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Øresund Bridge — Malmö → Koppenhága</name>
+        <description>★4.5 — 8 km híd + 4 km alagút. Díj: ~400 DKK (~54 EUR). Egyik legikonikusabb európai átkelő.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>12.8900,55.6200,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Koppenhága — 3 éjszaka (júl. 29. – aug. 1.)</name>
+        <description>Nyhavn (★4.6), Rosenborg Slot (★4.6), Tivoli (★4.5), Christiansborg (★4.5), Little Mermaid (★4.0), Christiania (★4.3), Nørrebro.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>12.5683,55.6761,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Louisiana Museum of Modern Art — Humlebæk (aug. 1.)</name>
+        <description>★4.7 — Skandinávia legjobb modern múzeuma. Koppenhágától ~45 km észak. Calder, Giacometti, Warhol. Szoborkert Øresund kilátással.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>12.5440,55.9610,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Hamburg — 3 éjszaka (aug. 1–3.)</name>
+        <description>Miniatur Wunderland (★4.8), Speicherstadt (★4.7, UNESCO), Elbphilharmonie (★4.7), Landungsbrücken, St. Pauli.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>9.9937,53.5511,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Lübeck — napkirándulás Hamburgból (aug. 2.)</name>
+        <description>UNESCO-óváros. Holstentor (★4.6), Marienkirche (★4.5), Niederegger Marzipan (★4.5), Buddenbrookhaus. ~65 km Hamburgból.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>10.6866,53.8655,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Schwerin Castle — napkirándulás Hamburgból (aug. 2.)</name>
+        <description>Schweriner Schloss (★4.6) — neoromantikus kastély tóval körülvéve, UNESCO-jelölt. "A Balti-tenger Neuschwansteinja". ~100 km Hamburgból.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>11.4159,53.6255,0</coordinates></Point>
+      </Placemark>
+      <Placemark>
+        <name>Frankfurt am Main — 2 éjszaka (aug. 4–5.)</name>
+        <description>Römerberg (★4.5), Kaiserdom (★4.5), Städel Museum (★4.6), Sachsenhausen Apfelwein negyed (★4.3), MainKai skyline.</description>
+        <styleUrl>#return</styleUrl>
+        <Point><coordinates>8.6821,50.1109,0</coordinates></Point>
+      </Placemark>
+    </Folder>
+
+    <!-- ========================== -->
+    <!-- ÚTVONAL VONALAK -->
+    <!-- ========================== -->
+    <Folder>
+      <name>📍 Útvonal-vonalak</name>
+      <Placemark>
+        <name>Baltikum útvonal</name>
+        <styleUrl>#baltic</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            19.0402,47.4979,0
+            22.9310,54.1115,0
+            23.9036,54.8985,0
+            25.2797,54.6872,0
+            24.9341,54.6379,0
+            24.1052,56.9496,0
+            24.8551,57.1539,0
+            24.5020,58.3859,0
+            24.7536,59.4370,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Finnország + Stockholm útvonal</name>
+        <styleUrl>#nordic</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            24.7536,59.4370,0
+            24.9354,60.1699,0
+            25.6574,60.3927,0
+            22.2666,60.4518,0
+            18.0686,59.3251,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Hazaút útvonal</name>
+        <styleUrl>#return</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            18.0686,59.3251,0
+            13.0038,55.6050,0
+            12.5683,55.6761,0
+            12.5440,55.9610,0
+            9.9937,53.5511,0
+            10.6866,53.8655,0
+            11.4159,53.6255,0
+            8.6821,50.1109,0
+            19.0402,47.4979,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+
+  </Document>
+</kml>
