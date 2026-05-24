@@ -561,71 +561,81 @@ const tripData = {
   },
   stageLibrary: {
     tibiBaltic: {
-      title: "Budapest - Baltikum - Stockholm",
+      title: "Budapest → Baltikum → Stockholm",
       accent: "accent-baltic",
-      status: "külön szakasz",
+      status: "júl. 10–18. · külön szakasz",
       statusClass: "status-warm",
-      text: "Tibi teljes első szakasza: autós felvezetés Budapestről Litvánián, Lettországon és Észtországon át, majd július 17-én Helsinki + Turku finn nap és Viking Line overnight, július 18-án korai stockholmi érkezés és FI309 Izlandra.",
+      text: "Tibi 9 napos autós felvezetése Budapestről a Baltikumon át Stockholmig (júl. 10–18.). A logika: Varsót teljesen kikerülve, Suwałki tranzitszálláson át belép Litvániába, ahol Kaunas rövid megállójával (Laisvės aleja sétálóutca) hangol rá a balti ritmusra — majd Vilnius következik két éjszakával. A litván főváros egyszerre barokk, mediterrán és szovjet-posztszovjet: a Cathedral Square és a Gediminas-torony adja a főirányvonalat, az Užupis negyed (saját alkotmánnyal rendelkező bohém negyed!) a karaktert, Trakai Island Castle pedig a képeslapot. Lettország két napot kap: Riga óvárosa a House of the Black Heads ikonikus homlokzatával nyit, a Riga Central Market öt zeppelin-hangárban folyik, az Art Nouveau-negyed Alberta ieláján Eisenstein apja tervei állnak sorban a szecessziós homlokzatok — este a Daugava-part és lett almaboros sörkóstolás zár. Észtországba a Gauja-völgyön vezet az út: Turaida Castle a völgyperemen, Gutmanis-barlang évszázados utazói feliratokkal, este Tallinn. A tallinni nap Toompea-dombjáról indul (a legszebb várospanoráma Észtországban), az Alexander Nevsky-katedrális és az óváros sikátorai után Telliskivi Creative City adja a mai Tallinn-képet. A finn nap: Tallink Megastar shuttleval Helsinkibe, Market Square + katedrális rövid blokkra, majd autóval keletre Porvoo faházas óvárosába (a finn kisváros-esszencia), visszafelé nyugatra Turku Castle-hoz és az Aura folyópart hajóéttermeibe — Viking Line overnight komppal Stockholm Värtahamnenbe. Ott az autó az Arlanda parkolóba kerül, Tibi pedig FI309-cel száll Keflavíkba.",
       points: [
-        "A fő logika a jól vezethető expedition, nem a rohanós pipálgatás.",
-        "A legjobb városi napok: Vilnius, Riga és Tallinn.",
-        "A 07.17-i nap: Tallinn → Helsinki (Tallink Shuttle) + helsinki gyors blokk + Turku (kastély, folyópart) + Viking Line overnight → Stockholm 06:30."
+        "🇱🇹 Kaunas → Vilnius: <a href='https://www.google.com/maps/search/?api=1&query=Laisves+aleja+Kaunas' target='_blank' rel='noreferrer'>Laisvės aleja</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Cathedral+Square+Vilnius' target='_blank' rel='noreferrer'>Cathedral Square</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gediminas+Tower+Vilnius' target='_blank' rel='noreferrer'>Gediminas-torony</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Uzupis+Vilnius' target='_blank' rel='noreferrer'>Užupis negyed</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Trakai+Island+Castle' target='_blank' rel='noreferrer'>Trakai Island Castle</a> (★4.6)",
+        "🇱🇻 Hill of Crosses → Riga: <a href='https://www.google.com/maps/search/?api=1&query=Hill+of+Crosses+Siauliai' target='_blank' rel='noreferrer'>Hill of Crosses</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=House+of+the+Black+Heads+Riga' target='_blank' rel='noreferrer'>House of the Black Heads</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Riga+Central+Market' target='_blank' rel='noreferrer'>Riga Central Market</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Alberta+iela+Riga+Art+Nouveau' target='_blank' rel='noreferrer'>Alberta iela Art Nouveau</a> (★4.7)",
+        "🇱🇻→🇪🇪 Sigulda → Tallinn: <a href='https://www.google.com/maps/search/?api=1&query=Turaida+Castle+Sigulda' target='_blank' rel='noreferrer'>Turaida Castle</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Gutmanis+Cave+Sigulda' target='_blank' rel='noreferrer'>Gutmanis-barlang</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Toompea+Hill+Tallinn' target='_blank' rel='noreferrer'>Toompea kilátó</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Alexander+Nevsky+Cathedral+Tallinn' target='_blank' rel='noreferrer'>Alexander Nevsky-katedrális</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Telliskivi+Creative+City+Tallinn' target='_blank' rel='noreferrer'>Telliskivi Creative City</a> (★4.5)",
+        "🇫🇮 Helsinki → Porvoo → Turku: <a href='https://www.google.com/maps/search/?api=1&query=Kauppatori+Helsinki' target='_blank' rel='noreferrer'>Helsinki Market Square</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Helsinki+Cathedral' target='_blank' rel='noreferrer'>Helsinki Katedrális</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo' target='_blank' rel='noreferrer'>Porvoo óváros</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Turku+Castle+Finland' target='_blank' rel='noreferrer'>Turku Castle</a> (★4.5) · Viking Line → Stockholm"
       ],
       cta: { label: "Részletes Baltikum oldal", tab: "baltikum" }
     },
     sharedIceland: {
-      title: "Izland",
+      title: "Izland — Ring Road körút",
       accent: "accent-iceland",
-      status: "közös szakasz",
+      status: "júl. 18–26. · közös szakasz",
       statusClass: "status-green",
-      text: "Ez a közös út gerince. Henni már korábban kinn van, Tibi érkezése után pedig egy teljes júliusi Ring Road-ív jön Reykjavíkból Snæfellsnesen, északon, keleten és a déli parton át vissza Keflavíkig.",
+      text: "Az expedition csúcspontja: 8 nap (~1900 km) Izland teljes körbehajtásával — Henni a Erasmus+ kurzus végével csatlakozik, Tibi FI309-cel érkezik Keflavíkba júl. 18-án este. Az indulás Reykjavíkban telik: Hallgrímskirkja, Harpa koncertház, és este a Sky Lagoon tengerparti geotermikus fürdő a város peremén. A Ring Road első nagy ívét a Snæfellsnes-félsziget adja: Búðakirkja (az egyetlen fekete templomhomlokzatú izlandi egyház a lávaföldön), Arnarstapi bazaltsziklái és fókái, majd Kirkjufell — a világ legtöbbször fotografált hegye, szimmetrikus kúp egy kis vízesés előtt. Az északi blokk Akureyri városával (virágágyások az északi sarkkör közelében!), a Goðafoss 'istenek vízesésével' és a Mývatn-tóvidékkel folytatódik — forrongó krátersorok, áltufasüllyedék, csodás madárvilág. Keleten a fjordok kanyargós útjai és magányos tanyák, a félnapos Jökulsárlón gleccsertó a lebegő jégtömbökkel és a Diamond Beach vulkáni fekete homokján ragyogó jégdarabok zárják a keleti blokkot. A déli part a vízesések napja: Seljalandsfoss (mögé is lehet menni!), Skógafoss, és este a Reynisfjara fekete bazaltoszlopos tengerpart — majd Þórsmörk és Eyjafjallajökull kontúrja a láthatáron. Végül a Golden Circle zárja a kört: Þingvellir UNESCO-tektonikai hasadékvölgy, Geysir (az összes gejzír névadója), és a Gullfoss kettős vízesés, amelynek aranysárga falai viharban is lenyűgözőek.",
       points: [
-        "A főív: Reykjavík + Sky Lagoon, Snæfellsnes, Mývatn, Kelet-Izland, Jökulsárlón, déli part, Golden Circle.",
-        "A legfontosabb nyári stratégia a korai / késői helyszínlátogatás a tömeg miatt.",
-        "A Ring Roadhoz 2WD is elég, 4WD csak F-utakhoz kellene."
+        "Reykjavík: <a href='https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik' target='_blank' rel='noreferrer'>Hallgrímskirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik' target='_blank' rel='noreferrer'>Harpa</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland' target='_blank' rel='noreferrer'>Sky Lagoon</a> (★4.4)",
+        "Snæfellsnes: <a href='https://www.google.com/maps/search/?api=1&query=Budakirkja+Iceland' target='_blank' rel='noreferrer'>Búðakirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Arnarstapi+Iceland' target='_blank' rel='noreferrer'>Arnarstapi</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland' target='_blank' rel='noreferrer'>Kirkjufell</a> (★4.7)",
+        "Észak: <a href='https://www.google.com/maps/search/?api=1&query=Godafoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Goðafoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Akureyri+Iceland' target='_blank' rel='noreferrer'>Akureyri</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Lake+Myvatn+Iceland' target='_blank' rel='noreferrer'>Mývatn-tóvidék</a> (★4.7)",
+        "Kelet: <a href='https://www.google.com/maps/search/?api=1&query=Jokulsarlon+glacier+lagoon+Iceland' target='_blank' rel='noreferrer'>Jökulsárlón gleccsertó</a> (★4.9) · <a href='https://www.google.com/maps/search/?api=1&query=Diamond+Beach+Iceland' target='_blank' rel='noreferrer'>Diamond Beach</a> (★4.8)",
+        "Déli part: <a href='https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland' target='_blank' rel='noreferrer'>Seljalandsfoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Skogafoss+Iceland' target='_blank' rel='noreferrer'>Skógafoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Reynisfjara+black+sand+beach' target='_blank' rel='noreferrer'>Reynisfjara</a> (★4.7)",
+        "Golden Circle: <a href='https://www.google.com/maps/search/?api=1&query=Thingvellir+National+Park+Iceland' target='_blank' rel='noreferrer'>Þingvellir</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Geysir+Iceland' target='_blank' rel='noreferrer'>Geysir</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gullfoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Gullfoss</a> (★4.8)"
       ],
       cta: { label: "Részletes Izland oldal", tab: "izland" }
     },
     sharedReturn: {
-      title: "Svédország - Dánia - Németország - hazaút",
+      title: "Stockholm → Hamburg → Frankfurt → Budapest",
       accent: "accent-return",
-      status: "közös szakasz",
+      status: "júl. 26 – aug. 3. · közös szakasz",
       statusClass: "status-cool",
-      text: "A Reykjavíkból visszarepülő páros szakasz után indul a közös autós lezárás Malmön, Koppenhágán és Németországon át Budapest felé.",
+      text: "A közös hazaút 9 napja (júl. 26 – aug. 3.) FI306-tal kezdődik: Keflavíkból Stockholm Arlandára (07:35 → 12:45), ahol az autó parkolóban vár. Két nap Stockholm jár az utazás után: a Vasa Museum egyedülálló 17. századi hadihajó-múzeuma, a Djurgården park és a Fotografiska fotómúzeum, este Gamla Stan macskakő-sikátorai. Malmö egy gyors kitérő a Turning Torso melletti sétával, majd jön az Øresund-átkelés — az ikonikus vegyes alagút-hídkombináció Dánia felé, Koppenhága Nyhavn-kikötőjénél rövid fénykép-megálló. Hamburgban kétnapnyi program vár: az első nap körút Lübeck UNESCO-óvárosába (Holstentor, Marienkirche, Niederegger marzipán) és a Schweriner Schloss tóban úszó neoromantikus kastélyához; a második nap Hamburg maga — Miniatur Wunderland (a világ legnagyobb vasúti makettje), a Speicherstadt+HafenCity UNESCO-zóna vörös tégla csatornahálózata, az Elbphilharmonie ingyenes kilátóteterraszával. Frankfurt egy teljes városnapot kap: Römerberg középkori főtér a Römer városháza homlokzatával, a Städel Museum Vermeer-Rembrandt-Monet kollekcióval, és Sachsenhausen negyed Apfelwein-kultúrájával (almabor Bembel-korsóból, Handkäse mit Musik kötelező kísérletként). Záróetap: Frankfurt → Budapest ~950 km, Nürnberg–Linz–Wien útvonalon, aug. 3-án délutánra haza.",
       points: [
-        "Itt már az állóképesség és a jó etapméretezés a fontos, nem az új nagy sightseeingszál.",
-        "Malmö és Koppenhága kicsit fellazítja a német autópályás blokkot.",
-        "A részletes napi program itt főleg vezetési és városi stop-logika."
+        "🇸🇪 Stockholm (júl. 26–27.): <a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7)",
+        "🇸🇪→🇩🇰 Malmö + Koppenhága (júl. 28–29.): <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3) · <a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6)",
+        "🇩🇪 Hamburg körút (júl. 30.): <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Lubeck' target='_blank' rel='noreferrer'>Holstentor Lübeck</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Schweriner+Schloss' target='_blank' rel='noreferrer'>Schwerin Castle</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Niederegger+Marzipan+Lubeck' target='_blank' rel='noreferrer'>Niederegger marzipán</a> (★4.5)",
+        "🇩🇪 Hamburg városnap (júl. 31.): <a href='https://www.google.com/maps/search/?api=1&query=Miniatur+Wunderland+Hamburg' target='_blank' rel='noreferrer'>Miniatur Wunderland</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Speicherstadt+Hamburg' target='_blank' rel='noreferrer'>Speicherstadt</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Elbphilharmonie+Hamburg' target='_blank' rel='noreferrer'>Elbphilharmonie Plaza</a> (★4.7)",
+        "🇩🇪 Frankfurt (aug. 2.): <a href='https://www.google.com/maps/search/?api=1&query=Roemerberg+Frankfurt' target='_blank' rel='noreferrer'>Römerberg</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Stadel+Museum+Frankfurt' target='_blank' rel='noreferrer'>Städel Museum</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Sachsenhausen+Frankfurt+Apfelwein' target='_blank' rel='noreferrer'>Sachsenhausen Apfelwein negyed</a> (★4.3) · aug. 3. → Budapest 🏁"
       ],
       cta: { label: "Részletes hazaút oldal", tab: "hazaut" }
     },
     henniErasmus: {
-      title: "Erasmus+ · Inspiring Young Language Learners",
+      title: "Erasmus+ · Izland · Inspiring Young Language Learners",
       accent: "accent-iceland",
-      status: "2026. júl. 13–18. · Izland",
+      status: "2026. júl. 11–18. · Henni önálló szakasz",
       statusClass: "status-green",
-      text: "Henni 2026. július 11-én repül Reykjavíkba (Wizz Air W62427) egy Erasmus+ által támogatott pedagógiai kurzusra. Két nap ráhangolódás után a 'Inspiring Young Language Learners' program 2026. július 13–18. közt zajlik, a Smart Teachers Play More szervezésében Izlandon — CLIL módszertanra, STEAM-feladatokra, storytellingre és izlandi iskolalátogatásokra épülve.",
+      text: "Henni 2026. július 11-én repül Reykjavíkba (Wizz Air W62427, BUD → KEF, 15:40 → 18:20) egy Erasmus+ EU-támogatású pedagógiai kurzusra. A kurzus előtt két ráhangolódó napra van lehetőség Reykjavíkban — az izlandi fény, a gőzölgő tájak, az éjféli napsütés és az egészen másfajta városi ritmus fokozatos felfedezésére. Reykjavík nem egy rohanós nagyváros: Hallgrímskirkja toronykilátója, a Harpa koncertház tükröző üveghomlokzata és az óváros körüli kávézók adnak bőven csendes programot az első napokra. Július 13-án indul az 'Inspiring Young Language Learners' program, amelyet a Smart Teachers Play More szervez — az EU Erasmus+ által elismert, pedagógusoknak szóló módszertani kurzus. Hat napon át CLIL (Content and Language Integrated Learning) módszertan, STEAM-alapú kreatív feladatok, storytelling és mindfulness technikák, valós izlandi általános iskolai osztálylátogatások és csoportos workshopok adják a tartalmat. A kurzus olyan pedagógusoknak szól, akik fiatal nyelvtanulókat (óvoda, általános iskola, nyelvórák) tanítanak, és európai módszertani megközelítéseket visznek vissza az osztályterembe. Júl. 18-án ér véget a program — és este megérkezik Tibi a FI309-cel, innentől közösen indul a Ring Road körút.",
       points: [
-        "Kurzus: 2026. július 13–18. | Repülés: Wizz Air W62427, BUD → KEF, 2026.07.11",
-        "Szervező: Smart Teachers Play More · Izland",
-        "Tartalom: CLIL módszertan, STEAM, storytelling, mindfulness, izlandi iskolalátogatások",
-        "Célcsoport: pedagógusok — óvoda, általános iskola, nyelvtanárok, CLIL és SNI szakemberek",
-        "Erasmus+ Course ID: 4497715 · Részvételi díj: €630/fő",
-        "Dokumentáció: Europass Mobility Document, Learning Agreement, Evaluation Form",
-        "<a href='https://www.smartteachersplaymore.com/courses-iceland/inspiring-young-language-learners' target='_blank' rel='noreferrer' style='color:inherit'>→ Kurzus részletei (smartteachersplaymore.com)</a>"
+        "✈️ Repülés: Wizz Air W62427 · BUD → KEF · 2026. július 11. · 15:40 → 18:20",
+        "🏙 Ráhangolódás Reykjavíkban (júl. 11–12.): <a href='https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik' target='_blank' rel='noreferrer'>Hallgrímskirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik' target='_blank' rel='noreferrer'>Harpa</a> (★4.6) · csendes séták, kávézók, éjféli nap",
+        "🎓 Erasmus+ kurzus: 2026. július 13–18. · Smart Teachers Play More szervezésében",
+        "📚 Tartalom: CLIL módszertan · STEAM-feladatok · storytelling · mindfulness · izlandi iskolalátogatások",
+        "👥 Célcsoport: óvoda, általános iskola, nyelvtanárok, CLIL és SNI pedagógusok",
+        "📋 Course ID: 4497715 · Részvételi díj: €630/fő · Dokumentáció: Europass Mobility Document, Learning Agreement, Evaluation Form",
+        "<a href='https://www.smartteachersplaymore.com/courses-iceland/inspiring-young-language-learners' target='_blank' rel='noreferrer'>→ Kurzus részletei (smartteachersplaymore.com)</a>"
       ],
-      cta: { label: "Izlandi roadtrip — Ring Road részletek", tab: "izland" }
+      cta: { label: "Izlandi Ring Road — részletes oldal", tab: "izland" }
     },
     henniIceland: {
-      title: "Közös Ring Road körút",
+      title: "Közös izlandi Ring Road körút",
       accent: "accent-iceland",
-      status: "júl. 18–26. · 8 nap",
+      status: "júl. 18–26. · közös szakasz",
       statusClass: "status-green",
-      text: "Tibi július 18-án érkezik Keflavíkba (FI309, Stockholm → KEF, 18:25). Innentől közösen teljesítik a Ring Roadot: Reykjavík akklimatizáció, Snæfellsnes, északi Akureyri–Mývatn-blokk, keleti fjordok, Jökulsárlón, Diamond Beach, déli part és Golden Circle-zárás. Visszarepülés júl. 26-án (FI306, KEF → Stockholm).",
+      text: "A kurzus vége után az igazi izlandi kaland következik — immár Tibivel közösen. Tibi júl. 18-án érkezik Keflavíkba (Icelandair FI309, Stockholm → KEF, 18:25), és innentől 8 napon át (~1900 km) teljesítik együtt a Ring Roadot, Izland teljes körbeautózását. Az út Reykjavíkból indul: Sky Lagoon geotermikus fürdő az első esten, másnap a Snæfellsnes-félsziget Búðakirkja fekete templomával, Arnarstapi bazaltkövein lazsáló fókáival, és a Kirkjufell hegycsúcs tükörképével a vízesés előtt — talán Izland legikonikusabb képe. Az északi blokkban Akureyri meglepően mediterrán hangulatú kisváros, Goðafoss az istenek vízesése (ahol az izlandi nép a régi pogány bálványokat a vízbe dobta 1000-ben), Mývatn-tóvidék forrongó krátersorokkal és áltufa-szoborerdőkkel. Keleten a fjordok magányos útjai és a Jökulsárlón gleccsertó — ahol a jégtömbök lassan sodródnak a tengerbe, a Diamond Beach-en fekete bazalthomokos parton csillognak. Déli part: Seljalandsfoss (mögé is be lehet menni!), Skógafoss (szivárványos, erős), Reynisfjara fekete bazaltoszlopos tengerpart. A Golden Circle zárja a kört: Þingvellir UNESCO-tektonikai hasadékvölgy, a Geysir (az összes gejzír névadója, búvárkodásig felforrósodó vizekkel), és Gullfoss kettős vízesése — az expedition egyik legimpozánsabb természeti állomása.",
       points: [
-        "Júl. 18.: Tibi érkezik KEF-be — találkozás a kurzus után",
-        "Júl. 18–26.: teljes Ring Road körút közösen (8 nap, ~1900 km)",
-        "A részletes napi bontás és GPX pontok az Izland oldalon vannak."
+        "Találkozó: júl. 18. este, Keflavík — FI309 érkezés után",
+        "Reykjavík: <a href='https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik' target='_blank' rel='noreferrer'>Hallgrímskirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland' target='_blank' rel='noreferrer'>Sky Lagoon</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik' target='_blank' rel='noreferrer'>Harpa</a> (★4.6)",
+        "Snæfellsnes: <a href='https://www.google.com/maps/search/?api=1&query=Budakirkja+Iceland' target='_blank' rel='noreferrer'>Búðakirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Arnarstapi+Iceland' target='_blank' rel='noreferrer'>Arnarstapi</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland' target='_blank' rel='noreferrer'>Kirkjufell</a> (★4.7)",
+        "Észak: <a href='https://www.google.com/maps/search/?api=1&query=Godafoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Goðafoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Akureyri+Iceland' target='_blank' rel='noreferrer'>Akureyri</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Lake+Myvatn+Iceland' target='_blank' rel='noreferrer'>Mývatn-tóvidék</a> (★4.7)",
+        "Kelet: <a href='https://www.google.com/maps/search/?api=1&query=Jokulsarlon+glacier+lagoon+Iceland' target='_blank' rel='noreferrer'>Jökulsárlón</a> (★4.9) · <a href='https://www.google.com/maps/search/?api=1&query=Diamond+Beach+Iceland' target='_blank' rel='noreferrer'>Diamond Beach</a> (★4.8)",
+        "Déli part: <a href='https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland' target='_blank' rel='noreferrer'>Seljalandsfoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Skogafoss+Iceland' target='_blank' rel='noreferrer'>Skógafoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Reynisfjara+black+sand+beach' target='_blank' rel='noreferrer'>Reynisfjara</a> (★4.7)",
+        "Golden Circle: <a href='https://www.google.com/maps/search/?api=1&query=Thingvellir+National+Park+Iceland' target='_blank' rel='noreferrer'>Þingvellir</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Geysir+Iceland' target='_blank' rel='noreferrer'>Geysir</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gullfoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Gullfoss</a> (★4.8) · júl. 26. FI306 → Stockholm"
       ],
       cta: { label: "Izland részletes oldal", tab: "izland" }
     }
