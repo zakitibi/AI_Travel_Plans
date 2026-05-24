@@ -106,6 +106,21 @@
       `).join("");
     }
 
+    function renderDriveTimeline(points) {
+      if (!points || points.length < 2) return "";
+      return `
+        <div class="drive-timeline">
+          ${points.map((pt) => `
+            <div class="dtl-point">
+              <div class="dtl-dot"></div>
+              <div class="dtl-time">${pt.time}</div>
+              <div class="dtl-label">${pt.label}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
     function renderOverviewMap() {
       const lines = tripData.map.paths.map((path) => {
         const from = tripData.map.nodes.find((node) => node.id === path.from);
@@ -158,6 +173,7 @@
               ${day.driveStats.stops ? `<span class="ds-chip ds-stops">📍 ${day.driveStats.stops} megálló</span>` : ""}
               ${day.driveStats.depart ? `<span class="ds-chip ds-time">⏱ ${day.driveStats.depart} → ${day.driveStats.arrive}</span>` : ""}
               ${day.driveStats.driveTime ? `<span class="ds-chip ds-drive">🕐 ${day.driveStats.driveTime} vezetés</span>` : ""}
+              ${renderDriveTimeline(day.driveStats.timelinePoints)}
             </div>
           ` : ""}
         </article>
@@ -332,6 +348,7 @@
                   ${day.driveLog.stops ? `<span class="dl-chip dl-stops">📍 ${day.driveLog.stops} megálló</span>` : ""}
                   ${day.driveLog.driveTime ? `<span class="dl-chip dl-drive">🕐 ${day.driveLog.driveTime} vezetés</span>` : ""}
                   ${day.driveLog.depart ? `<span class="dl-chip dl-time">⏱ ind. ${day.driveLog.depart} · erk. ${day.driveLog.arrive}</span>` : ""}
+                  ${renderDriveTimeline(day.driveLog.timelinePoints)}
                 </div>
               ` : ""}
             </div>

@@ -244,7 +244,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Budapest → Lengyelország",
         summary: "Hosszú tranzitnap, a cél a Baltikum irányába való stabil ráfordulás.",
-        points: ["~900 km", "8–10 óra vezetés", "1 tranzitszállás"]
+        points: ["~900 km", "8–10 óra vezetés", "1 tranzitszállás"],
+        driveStats: { km: "~900 km", stops: 2, depart: "07:00", arrive: "~20:00", driveTime: "~10 óra", timelinePoints: [{time:"07:00", label:"BUD ind."}, {time:"13:00", label:"~félúton"}, {time:"20:00", label:"szállás"}] }
       },
       {
         date: "2026.07.11",
@@ -252,7 +253,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Lengyelország → Vilnius · Henni BUD → KEF",
         summary: "Tibi eléri Litvániát; Henni repül Reykjavíkba (Wizz Air W62427) — a kurzus júl. 13-án kezdődik, 2 nap ráhangolódás lesz.",
-        points: ["Tibi: esti Vilnius", "Henni: W62427, 15:40 → 18:20"]
+        points: ["Tibi: esti Vilnius", "Henni: W62427, 15:40 → 18:20"],
+        driveStats: { km: "~650 km", stops: 2, depart: "08:00", arrive: "~19:00", driveTime: "~8 óra", timelinePoints: [{time:"08:00", label:"ind."}, {time:"14:00", label:"Litvánia határ"}, {time:"19:00", label:"Vilnius"}] }
       },
       {
         date: "2026.07.12",
@@ -260,7 +262,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Vilnius + Trakai",
         summary: "Az első teljes balti városnap, klasszikus óváros + vár kombóval.",
-        points: ["Vilnius óváros", "Gediminas", "Trakai Castle"]
+        points: ["Vilnius óváros", "Gediminas", "Trakai Castle"],
+        driveStats: { km: "~30 km", stops: 2, depart: "09:00", arrive: "~20:00", driveTime: "~45 perc", timelinePoints: [{time:"09:00", label:"Vilnius"}, {time:"12:00", label:"Trakai"}, {time:"16:00", label:"vissza"}] }
       },
       {
         date: "2026.07.13",
@@ -268,7 +271,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Vilnius → Riga",
         summary: "Hill of Crosses megállóval érkezés Lettországba.",
-        points: ["~300 km", "Hill of Crosses", "esti Riga"]
+        points: ["~300 km", "Hill of Crosses", "esti Riga"],
+        driveStats: { km: "~300 km", stops: 3, depart: "09:00", arrive: "~18:00", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Vilnius ind."}, {time:"11:30", label:"Hill of Crosses"}, {time:"18:00", label:"Riga"}] }
       },
       {
         date: "2026.07.14",
@@ -276,7 +280,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Riga city day",
         summary: "Lazább városi nap, kevés vezetéssel és több sétával.",
-        points: ["Old Town", "Art Nouveau", "városi puffer"]
+        points: ["Old Town", "Art Nouveau", "városi puffer"],
+        driveStats: { km: "~5 km", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos nap", timelinePoints: [{time:"09:00", label:"reggeli"}, {time:"10:00", label:"Old Town"}, {time:"15:00", label:"Art Nouveau"}, {time:"19:00", label:"vacsora"}] }
       },
       {
         date: "2026.07.15",
@@ -284,7 +289,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Riga → Sigulda → Tallinn",
         summary: "Hosszabb, de erős vezetős nap a Gauja NP miatt.",
-        points: ["~350 km", "Sigulda", "Tallinn kikötő közeli zárás"]
+        points: ["~350 km", "Sigulda", "Tallinn kikötő közeli zárás"],
+        driveStats: { km: "~350 km", stops: 3, depart: "08:00", arrive: "~20:00", driveTime: "~4,5 óra", timelinePoints: [{time:"08:00", label:"Riga ind."}, {time:"10:00", label:"Sigulda"}, {time:"20:00", label:"Tallinn"}] }
       },
       {
         date: "2026.07.16",
@@ -292,7 +298,8 @@ const tripData = {
         accent: "accent-baltic",
         title: "Tallinn",
         summary: "Óváros és kikötői logika a komp előtti napra.",
-        points: ["Tallinn óváros", "kikötő környéke", "komp előtti puffer"]
+        points: ["Tallinn óváros", "kikötő környéke", "komp előtti puffer"],
+        driveStats: { km: "~5 km", stops: 3, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos nap", timelinePoints: [{time:"09:00", label:"óváros"}, {time:"14:00", label:"kikötő"}, {time:"18:00", label:"komp prep."}] }
       },
       {
         date: "2026.07.17",
@@ -300,7 +307,8 @@ const tripData = {
         accent: "accent-nordic",
         title: "Tallinn → Helsinki + Finnország nap → Turku",
         summary: "Délelőtti Tallink shuttle Helsinkibe, délutáni finn városi blokk, drive Turkuba, esti Viking Line overnight Stockholm felé.",
-        points: ["Helsinki (Kauppatori, katedális)", "Turku Castle", "Viking Line 20:00 → 06:30"]
+        points: ["Helsinki (Kauppatori, katedális)", "Turku Castle", "Viking Line 20:00 → 06:30"],
+        driveStats: { km: "~170 km (Helsinki → Turku)", stops: 5, depart: "10:30", arrive: "20:00", driveTime: "~1,5 óra", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:30", label:"→ Turku"}, {time:"20:00", label:"Viking Line"}] }
       },
       {
         date: "2026.07.18",
@@ -308,7 +316,8 @@ const tripData = {
         accent: "accent-nordic",
         title: "Stockholm / Arlanda → Reykjavík",
         summary: "Reggeli kikötőérkezés, arlandai parking, majd Tibi FI309-es járata Izlandra.",
-        points: ["FI309", "17:10 → 18:25", "Arlanda parking"]
+        points: ["FI309", "17:10 → 18:25", "Arlanda parking"],
+        driveStats: { km: "~35 km", stops: 2, depart: "06:30", arrive: "17:10", driveTime: "~35 perc", timelinePoints: [{time:"06:30", label:"Värtahamnen"}, {time:"14:30", label:"Arlanda check-in"}, {time:"17:10", label:"FI309 ✈"}] }
       },
       {
         date: "2026.07.19",
@@ -317,7 +326,7 @@ const tripData = {
         title: "Reykjavík + Sky Lagoon",
         summary: "Akklimatizációs nap: város, könnyű séta, majd esti fürdő a csúcsszezon előtt még kényelmes ritmusban.",
         points: ["Hallgrímskirkja", "Harpa", "Sky Lagoon"],
-        driveStats: { km: "~40 km", stops: 5, depart: "09:00", arrive: "~20:00", driveTime: "< 1 óra" }
+        driveStats: { km: "~40 km", stops: 5, depart: "09:00", arrive: "~20:00", driveTime: "< 1 óra", timelinePoints: [{time:"09:00", label:"Hallgrímskirkja"}, {time:"12:30", label:"ebéd"}, {time:"14:30", label:"Sky Lagoon"}, {time:"20:00", label:"vacsora"}] }
       },
       {
         date: "2026.07.20",
@@ -326,7 +335,7 @@ const tripData = {
         title: "Snæfellsnes-félsziget",
         summary: "Hosszabb, de nagyon erős nap: fekete templom, fókák, bazaltpart, Kirkjufell és hosszú nyári fény.",
         points: ["Búðakirkja", "Arnarstapi", "Kirkjufell"],
-        driveStats: { km: "~450 km", stops: 9, depart: "07:00–07:30", arrive: "~21:00–22:00", driveTime: "~7 óra" }
+        driveStats: { km: "~450 km", stops: 9, depart: "07:00", arrive: "~21:00", driveTime: "~7 óra", timelinePoints: [{time:"07:00", label:"Reykjavík"}, {time:"10:00", label:"Búðakirkja"}, {time:"13:00", label:"Arnarstapi"}, {time:"19:00", label:"Kirkjufell"}] }
       },
       {
         date: "2026.07.21",
@@ -335,7 +344,7 @@ const tripData = {
         title: "Akureyri / Húsavík / Mývatn",
         summary: "Északi nap városi blokkal, Goðafoss-szal és választható bálnalessel vagy hosszabb Mývatn-régióval.",
         points: ["Akureyri", "Goðafoss", "Mývatn"],
-        driveStats: { km: "~280 km", stops: 6, depart: "08:00–08:30", arrive: "~21:00–22:00", driveTime: "~4 óra" }
+        driveStats: { km: "~280 km", stops: 6, depart: "08:00", arrive: "~21:00", driveTime: "~4 óra", timelinePoints: [{time:"08:00", label:"ind."}, {time:"11:00", label:"Akureyri"}, {time:"14:00", label:"Goðafoss"}, {time:"17:00", label:"Mývatn"}] }
       },
       {
         date: "2026.07.22",
@@ -344,7 +353,7 @@ const tripData = {
         title: "Dettifoss → Stuðlagil → Kelet-Izland",
         summary: "Hosszabb keleti nap geotermikus mezőkkel, nagy vízeséssel és a bazaltkanyonos átvezetéssel.",
         points: ["Hverir", "Dettifoss", "Stuðlagil"],
-        driveStats: { km: "~400 km", stops: 6, depart: "08:00", arrive: "~20:00–21:00", driveTime: "~5–6 óra" }
+        driveStats: { km: "~400 km", stops: 6, depart: "08:00", arrive: "~20:00", driveTime: "~5 óra", timelinePoints: [{time:"08:00", label:"ind. (Mývatn)"}, {time:"10:00", label:"Dettifoss"}, {time:"13:00", label:"Stuðlagil"}, {time:"20:00", label:"Egilsstaðir"}] }
       },
       {
         date: "2026.07.23",
@@ -353,7 +362,7 @@ const tripData = {
         title: "Vestrahorn → Jökulsárlón → Diamond Beach",
         summary: "A fotós csúcsnap: fekete homok, hegyek, jégdarabok és hosszú esti fény.",
         points: ["Vestrahorn", "Jökulsárlón", "Diamond Beach"],
-        driveStats: { km: "~320 km", stops: 7, depart: "08:00", arrive: "~22:00", driveTime: "~5 óra" }
+        driveStats: { km: "~320 km", stops: 7, depart: "08:00", arrive: "~22:00", driveTime: "~5 óra", timelinePoints: [{time:"08:00", label:"ind."}, {time:"10:00", label:"Vestrahorn"}, {time:"13:00", label:"Höfn"}, {time:"16:00", label:"Jökulsárlón"}] }
       },
       {
         date: "2026.07.24",
@@ -362,7 +371,7 @@ const tripData = {
         title: "Déli part: Fjaðrárgljúfur → Reynisfjara → Skógafoss",
         summary: "Sűrű látvány-nap, ahol a korai indulás a kulcs a tömeg előtt.",
         points: ["Fjaðrárgljúfur", "Dyrhólaey puffinok", "Skógafoss"],
-        driveStats: { km: "~300 km", stops: 8, depart: "07:00–07:30", arrive: "~20:00–21:00", driveTime: "~4 óra" }
+        driveStats: { km: "~300 km", stops: 8, depart: "07:00", arrive: "~20:00", driveTime: "~4 óra", timelinePoints: [{time:"07:00", label:"ind."}, {time:"09:00", label:"Fjaðrárgljúfur"}, {time:"13:00", label:"Vík"}, {time:"16:00", label:"Skógafoss"}] }
       },
       {
         date: "2026.07.25",
@@ -371,7 +380,7 @@ const tripData = {
         title: "Golden Circle + Keflavík",
         summary: "A zárónap a Golden Circle főpontjaival és esti reptérközeli lezárással.",
         points: ["Secret Lagoon", "Friðheimar", "Þingvellir"],
-        driveStats: { km: "~250 km", stops: 8, depart: "08:30–09:00", arrive: "~20:00–21:00", driveTime: "~3 óra" }
+        driveStats: { km: "~250 km", stops: 8, depart: "08:30", arrive: "~20:00", driveTime: "~3 óra", timelinePoints: [{time:"08:30", label:"ind."}, {time:"11:00", label:"Secret Lagoon"}, {time:"13:00", label:"Friðheimar"}, {time:"15:00", label:"Geysir / Gullfoss"}] }
       },
       {
         date: "2026.07.26",
@@ -379,7 +388,8 @@ const tripData = {
         accent: "accent-return",
         title: "Reykjavík → Stockholm → Malmö",
         summary: "FI306 visszaút, autófelvétel, majd már ezen a napon indul a szárazföldi zárás.",
-        points: ["FI306", "07:35 → 12:45", "Malmö felé vezetés"]
+        points: ["FI306", "07:35 → 12:45", "Malmö felé vezetés"],
+        driveStats: { km: "~600 km (Arlanda → Malmö)", stops: 2, depart: "07:35 (FI306)", arrive: "~20:00 Malmö", driveTime: "~5 óra", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"14:00", label:"autó + ind."}, {time:"20:00", label:"Malmö"}] }
       },
       {
         date: "2026.07.27",
@@ -387,7 +397,8 @@ const tripData = {
         accent: "accent-return",
         title: "Malmö → Koppenhága",
         summary: "Rövid átmeneti nap az Øresund híd fókuszával.",
-        points: ["Øresund Bridge", "rövid city stop", "~50 km"]
+        points: ["Øresund Bridge", "rövid city stop", "~50 km"],
+        driveStats: { km: "~50 km", stops: 2, depart: "10:00", arrive: "~13:00", driveTime: "~40 perc", timelinePoints: [{time:"10:00", label:"Malmö"}, {time:"11:00", label:"Øresund"}, {time:"13:00", label:"Koppenhága"}] }
       },
       {
         date: "2026.07.28",
@@ -395,7 +406,8 @@ const tripData = {
         accent: "accent-return",
         title: "Koppenhága → Hamburg",
         summary: "Belépés a német szakaszba, még emberi távval.",
-        points: ["~350 km", "Hamburg", "rövidebb etap"]
+        points: ["~350 km", "Hamburg", "rövidebb etap"],
+        driveStats: { km: "~350 km", stops: 2, depart: "09:00", arrive: "~17:00", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Koppenhága"}, {time:"13:00", label:"Dán határ"}, {time:"17:00", label:"Hamburg"}] }
       },
       {
         date: "2026.07.29",
@@ -403,7 +415,8 @@ const tripData = {
         accent: "accent-return",
         title: "Hamburg → Frankfurt",
         summary: "Klasszikus német autópályás zárónap a budapesti visszagurulás előtt.",
-        points: ["~500 km", "Frankfurt", "5–6 óra"]
+        points: ["~500 km", "Frankfurt", "5–6 óra"],
+        driveStats: { km: "~500 km", stops: 2, depart: "08:00", arrive: "~17:00", driveTime: "~5 óra", timelinePoints: [{time:"08:00", label:"Hamburg"}, {time:"12:30", label:"félúton"}, {time:"17:00", label:"Frankfurt"}] }
       },
       {
         date: "2026.07.30",
@@ -411,7 +424,8 @@ const tripData = {
         accent: "accent-return",
         title: "Frankfurt → Budapest",
         summary: "Az aktuális főív szerinti lezárás, július 30-i budapesti érkezéssel.",
-        points: ["~950 km", "hazautazás", "zárónap"]
+        points: ["~950 km", "hazautazás", "zárónap"],
+        driveStats: { km: "~950 km", stops: 3, depart: "07:00", arrive: "~20:00", driveTime: "~9 óra", timelinePoints: [{time:"07:00", label:"Frankfurt ind."}, {time:"11:00", label:"Ausztria"}, {time:"15:00", label:"Bécs"}, {time:"20:00", label:"Budapest 🏁"}] }
       }
     ],
     mainTrips: [
@@ -701,6 +715,7 @@ const tripData = {
           title: "Budapest → Lengyelország",
           subtitle: "Tranzitnyitó nap",
           open: true,
+          driveLog: { km: "~900 km", stops: 2, driveTime: "~10 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"Budapest ind."}, {time:"13:00", label:"~félúton"}, {time:"20:00", label:"szállás érk."}] },
           tags: [
             { label: "tranzit", cls: "tag-drive" },
             { label: "8–10h", cls: "tag-drive" }
@@ -717,6 +732,7 @@ const tripData = {
           date: "2026. július 11., szombat",
           title: "Lengyelország → Vilnius · Henni BUD → KEF",
           subtitle: "Litvánia érkezés — Henni is ma repül Izlandra (Wizz Air W62427)",
+          driveLog: { km: "~650 km", stops: 2, driveTime: "~8 óra", depart: "08:00", arrive: "~19:00", timelinePoints: [{time:"08:00", label:"ind."}, {time:"14:00", label:"Litvánia határ"}, {time:"19:00", label:"Vilnius"}] },
           tags: [
             { label: "~650 km", cls: "tag-drive" },
             { label: "Vilnius", cls: "tag-city" }
@@ -733,6 +749,7 @@ const tripData = {
           date: "2026. július 12., vasárnap",
           title: "Vilnius + Trakai",
           subtitle: "Első teljes balti city day",
+          driveLog: { km: "~30 km (Trakai kitérő)", stops: 2, driveTime: "~45 perc", depart: "09:00", arrive: "~20:00", timelinePoints: [{time:"09:00", label:"Vilnius óváros"}, {time:"12:00", label:"Trakai (30 km)"}, {time:"16:00", label:"vissza Vilnius"}] },
           tags: [
             { label: "óváros", cls: "tag-city" },
             { label: "Trakai", cls: "tag-focus" }
@@ -749,6 +766,7 @@ const tripData = {
           date: "2026. július 13., hétfő",
           title: "Vilnius → Riga",
           subtitle: "Hill of Crosses megállóval",
+          driveLog: { km: "~300 km", stops: 3, driveTime: "~4 óra", depart: "09:00", arrive: "~18:00", timelinePoints: [{time:"09:00", label:"ind. Vilnius"}, {time:"11:30", label:"Hill of Crosses"}, {time:"18:00", label:"Riga érk."}] },
           tags: [
             { label: "~300 km", cls: "tag-drive" },
             { label: "Hill of Crosses", cls: "tag-focus" }
@@ -765,6 +783,7 @@ const tripData = {
           date: "2026. július 14., kedd",
           title: "Riga",
           subtitle: "Lazább city day",
+          driveLog: { km: "~5 km (gyalogos nap)", stops: 4, driveTime: "gyalogos nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"reggeli"}, {time:"10:00", label:"Old Town"}, {time:"15:00", label:"Art Nouveau"}, {time:"19:00", label:"vacsora"}] },
           tags: [
             { label: "Old Town", cls: "tag-city" },
             { label: "Art Nouveau", cls: "tag-city" }
@@ -781,6 +800,7 @@ const tripData = {
           date: "2026. július 15., szerda",
           title: "Riga → Sigulda → Tallinn",
           subtitle: "Gauja NP átmeneti nap",
+          driveLog: { km: "~350 km", stops: 3, driveTime: "~4,5 óra", depart: "08:00", arrive: "~20:00", timelinePoints: [{time:"08:00", label:"ind. Riga"}, {time:"10:00", label:"Sigulda / Gauja"}, {time:"20:00", label:"Tallinn érk."}] },
           tags: [
             { label: "~350 km", cls: "tag-drive" },
             { label: "Gauja NP", cls: "tag-focus" }
@@ -797,6 +817,7 @@ const tripData = {
           date: "2026. július 16., csütörtök",
           title: "Tallinn",
           subtitle: "Óváros + kikötői ráfordulás",
+          driveLog: { km: "~5 km (gyalogos nap)", stops: 3, driveTime: "gyalogos nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Tallinn óváros"}, {time:"14:00", label:"kikötő"}, {time:"18:00", label:"komp prep."}] },
           tags: [
             { label: "óváros", cls: "tag-city" },
             { label: "komp előtt", cls: "tag-focus" }
@@ -813,7 +834,7 @@ const tripData = {
           date: "2026. július 17., péntek",
           title: "Helsinki + Turku — Finnország nap",
           subtitle: "Tallink shuttle Helsinkibe → finn városi blokk → Turku → Viking Line overnight",
-          driveLog: { km: "~170 km (Helsinki → Turku)", stops: 5, driveTime: "~1,5 óra", depart: "10:30 (Tallink Tallinnból)", arrive: "20:00 (Viking Line boarding Turkuból)" },
+          driveLog: { km: "~170 km (Helsinki → Turku)", stops: 5, driveTime: "~1,5 óra", depart: "10:30", arrive: "20:00", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:30", label:"→ Turku"}, {time:"20:00", label:"Viking Line"}] },
           tags: [
             { label: "Helsinki", cls: "tag-city" },
             { label: "Turku", cls: "tag-city" },
@@ -857,7 +878,7 @@ const tripData = {
           date: "2026. július 18., szombat",
           title: "Stockholm / Arlanda → Reykjavík",
           subtitle: "Korai kikötőérkezés, Arlanda parking, FI309",
-          driveLog: { km: "~35 km (kikötő → Arlanda)", stops: 2, driveTime: "~35 perc", depart: "06:30 (Viking Line érkezés)", arrive: "17:10 (FI309 indulás)" },
+          driveLog: { km: "~35 km (kikötő → Arlanda)", stops: 2, driveTime: "~35 perc", depart: "06:30", arrive: "17:10", timelinePoints: [{time:"06:30", label:"Värtahamnen"}, {time:"07:30", label:"Stockholm blokk"}, {time:"14:30", label:"Arlanda check-in"}, {time:"17:10", label:"FI309 ✈"}] },
           tags: [
             { label: "FI309", cls: "tag-flight" },
             { label: "17:10 → 18:25", cls: "tag-focus" }
@@ -1170,7 +1191,7 @@ const tripData = {
           title: "Érkezés, Reykjavík",
           subtitle: "Keflavík érkezés, autóátvétel, korai alvás",
           open: true,
-          driveLog: { km: "~50 km", stops: 3, driveTime: "~45 perc", depart: "18:25 (FI309)", arrive: "~19:30 Reykjavík" },
+          driveLog: { km: "~50 km", stops: 3, driveTime: "~45 perc", depart: "18:25 (FI309)", arrive: "~19:30 Reykjavík", timelinePoints: [{time:"18:25", label:"KEF érk."}, {time:"19:15", label:"N1 tankolás"}, {time:"19:30", label:"Reykjavík"}] },
           character: "Érkezési nap, nincs túl sok program. A cél: bérautót átvenni, eljutni Reykjavíkba, megvacsorázni és lefeküdni. Júliusban este 22:30-kor még világos van, ne lepődj meg — ne is próbálj túl korán aludni, használd ki, hogy nyugodtan beérkezhetsz.",
           rainNote: { icon: "🟢", label: "Esős? Tök mindegy — vezetés és vacsora esőben is megy." },
           tags: [
@@ -1201,7 +1222,7 @@ const tripData = {
           date: "2026. július 19., vasárnap",
           title: "Reykjavík + Sky Lagoon / Kék Lagúna",
           subtitle: "Akklimatizációs, lazább városi nap",
-          driveLog: { km: "~40 km", stops: 5, driveTime: "~1 óra (főleg gyalogos nap)", depart: "09:00", arrive: "~20:00–21:00" },
+          driveLog: { km: "~40 km", stops: 5, driveTime: "~1 óra (főleg gyalogos nap)", depart: "09:00", arrive: "~20:00", timelinePoints: [{time:"09:00", label:"Hallgrímskirkja"}, {time:"12:30", label:"ebéd"}, {time:"14:30", label:"Sky Lagoon"}, {time:"20:00", label:"vacsora"}] },
           character: "Pihenős városnézős nap a hosszú Snæfellsnes előtt. Délelőtt a belváros gyalog, délután fürdő-élmény. Ne hajtsd túl magad — ez egy ráhangolódás, nem egy teljesítménynap.",
           rainNote: { icon: "🟢", label: "Esős? Kifejezetten jó — Sky Lagoon esőben pláne hangulatos." },
           tags: [
@@ -1240,7 +1261,7 @@ const tripData = {
           date: "2026. július 20., hétfő",
           title: "Snæfellsnes-félsziget",
           subtitle: "Hosszú, de nagyon erős nyári fotós nap",
-          driveLog: { km: "~450 km", stops: 9, driveTime: "~7 óra", depart: "07:00–07:30", arrive: "~21:00–22:00" },
+          driveLog: { km: "~450 km", stops: 9, driveTime: "~7 óra", depart: "07:00", arrive: "~21:00", timelinePoints: [{time:"07:00", label:"Reykjavík ind."}, {time:"10:00", label:"Búðakirkja"}, {time:"13:00", label:"Arnarstapi"}, {time:"19:00", label:"Kirkjufell"}] },
           character: "Az út első igazi kalandnapja. Hosszú vezetés, sok megálló. Korán indulj (7:00–7:30), sötétedés előtt érj a szálláshoz. Snæfellsnes-t »Izland kicsiben« hívják — gleccser, vulkánok, vízesések, fekete strandok mind egy félszigeten.",
           rainNote: { icon: "🔴", label: "Esős? Legesőérzékenyebb nap — köd/eső esetén csere Day 1-gyel!" },
           tags: [
@@ -1281,7 +1302,7 @@ const tripData = {
           date: "2026. július 21., kedd",
           title: "Akureyri, Goðafoss, Húsavík vagy Mývatn",
           subtitle: "Északi nap két jól működő opcióval",
-          driveLog: { km: "~280 km", stops: 6, driveTime: "~4 óra", depart: "08:00–08:30", arrive: "~21:00–22:00" },
+          driveLog: { km: "~280 km", stops: 6, driveTime: "~4 óra", depart: "08:00", arrive: "~21:00", timelinePoints: [{time:"08:00", label:"ind."}, {time:"11:00", label:"Akureyri"}, {time:"14:00", label:"Goðafoss"}, {time:"17:00", label:"Mývatn / Hverir"}] },
           character: "Vezetős reggel, attrakció-tömör délután. Akureyri Izland második legnagyobb városa, de gyors megálló. Goðafoss közvetlenül a Ring Road mellett — könnyen bezsebelhető. Mývatn-tó vidéke egy földi laboratórium: vulkáni kráterek, lávaformációk, hőforrások.",
           rainNote: { icon: "🟡", label: "Esős? Vegyes — Hverir és Goðafoss ok, Hverfjall és bálnales nem." },
           tags: [
@@ -1323,7 +1344,7 @@ const tripData = {
           date: "2026. július 22., szerda",
           title: "Dettifoss, Stuðlagil, Kelet-Izland",
           subtitle: "Geotermikus mezők, nagy vízesés, hosszabb keleti átvezetés",
-          driveLog: { km: "~400 km", stops: 6, driveTime: "~5–6 óra", depart: "08:00", arrive: "~20:00–21:00" },
+          driveLog: { km: "~400 km", stops: 6, driveTime: "~5 óra", depart: "08:00", arrive: "~20:00", timelinePoints: [{time:"08:00", label:"ind. (Mývatn)"}, {time:"10:00", label:"Dettifoss"}, {time:"13:00", label:"Stuðlagil"}, {time:"20:00", label:"Egilsstaðir"}] },
           character: "Vezetős nap két nagy attrakcióval. Dettifoss Európa legerősebb vízesése. Stuðlagil Izland legszebb bazaltkanyonja. Egilsstaðir Kelet-Izland fővárosa. Hosszú szakaszok között feszes tempó kell.",
           rainNote: { icon: "🟢", label: "Esős? Jó — Dettifoss esőben még impozánsabb, Stuðlagil is működik." },
           tags: [
@@ -1360,7 +1381,7 @@ const tripData = {
           date: "2026. július 23., csütörtök",
           title: "Vestrahorn, Jökulsárlón, Diamond Beach",
           subtitle: "A teljes izlandi rész egyik fotós csúcspontja",
-          driveLog: { km: "~320 km", stops: 7, driveTime: "~5 óra (fjord-kanyarokkal +30-50%)", depart: "08:00", arrive: "~22:00" },
+          driveLog: { km: "~320 km", stops: 7, driveTime: "~5 óra", depart: "08:00", arrive: "~22:00", timelinePoints: [{time:"08:00", label:"ind."}, {time:"10:00", label:"Vestrahorn"}, {time:"13:00", label:"Höfn (ebéd)"}, {time:"16:00", label:"Jökulsárlón"}] },
           character: "A keleti fjordok mentén vezetés — látványos szerpentinek, ködös csúcsok. Délután a legjobb gleccser-élmény: Jökulsárlón és Diamond Beach. Sok rövid megálló, kevesebb gyaloglás. Sok fotó-megálló-stop az úton, építsd be a tempóba.",
           rainNote: { icon: "🟡", label: "Esős? Vegyes — Jökulsárlón ok, Vestrahorn és Múlagljúfur nem." },
           tags: [
@@ -1400,7 +1421,7 @@ const tripData = {
           date: "2026. július 24., péntek",
           title: "Déli part: Fjaðrárgljúfur, Reynisfjara, Skógafoss",
           subtitle: "Sűrű látnivaló nap, ahol a korai indulás kulcstényező",
-          driveLog: { km: "~300 km", stops: 8, driveTime: "~4 óra", depart: "07:00–07:30", arrive: "~20:00–21:00" },
+          driveLog: { km: "~300 km", stops: 8, driveTime: "~4 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"ind."}, {time:"09:00", label:"Fjaðrárgljúfur"}, {time:"13:00", label:"Vík / Reynisfjara"}, {time:"16:00", label:"Skógafoss"}] },
           character: "A klasszikus déli part nap. Sok stop, mindenhol turista, de minden megálló annyira ér. Reggel a kelet kanyonjai, délben Vík fekete strand, délután a két ikonikus vízesés. Tömeg-szezon. Korán kell indulni!",
           rainNote: { icon: "🟢", label: "Esős? Jó — vízesések esőben még víztömegesebbek, Reynisfjara drámai." },
           tags: [
@@ -1441,7 +1462,7 @@ const tripData = {
           date: "2026. július 25., szombat",
           title: "Golden Circle + Keflavík",
           subtitle: "Zárónap fürdővel, paradicsomfarmmal és esti reptérközeli alvással",
-          driveLog: { km: "~250 km", stops: 8, driveTime: "~3 óra", depart: "08:30–09:00", arrive: "~20:00–21:00" },
+          driveLog: { km: "~250 km", stops: 8, driveTime: "~3 óra", depart: "08:30", arrive: "~20:00", timelinePoints: [{time:"08:30", label:"ind."}, {time:"11:00", label:"Secret Lagoon"}, {time:"13:00", label:"Friðheimar"}, {time:"15:00", label:"Geysir / Gullfoss"}] },
           character: "Az utolsó nap és az egyik legrégebbi turistaútvonal. Þingvellir → Geysir → Gullfoss = klasszikus háromszög. Plusz rejtett gyöngyök (Brúarfoss, Faxi, Kerið, Þórufoss). Estére visszaszállás KEF közelében, mert reggel hajnal repülés.",
           rainNote: { icon: "🟢", label: "Esős? Legjobb esőtűrő nap az egész körön — Gullfoss, Geysir, Brúarfoss mind víz-fókuszú." },
           tags: [
@@ -1545,6 +1566,7 @@ const tripData = {
           title: "Reykjavík → Stockholm → Malmö",
           subtitle: "Közös repülős visszacsatlakozás és azonnali továbbgurulás",
           open: true,
+          driveLog: { km: "~600 km (Arlanda → Malmö)", stops: 2, driveTime: "~5 óra", depart: "07:35 (FI306)", arrive: "~20:00 Malmö", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"14:00", label:"autó + ind."}, {time:"20:00", label:"Malmö"}] },
           tags: [
             { label: "FI306", cls: "tag-flight" },
             { label: "Malmö", cls: "tag-city" }
@@ -1561,6 +1583,7 @@ const tripData = {
           date: "2026. július 27., hétfő",
           title: "Malmö → Koppenhága",
           subtitle: "Øresund Bridge + rövid fellazítás",
+          driveLog: { km: "~50 km", stops: 2, driveTime: "~40 perc", depart: "10:00", arrive: "~13:00", timelinePoints: [{time:"10:00", label:"Malmö ind."}, {time:"11:00", label:"Øresund"}, {time:"13:00", label:"Koppenhága"}] },
           tags: [
             { label: "Øresund", cls: "tag-focus" },
             { label: "~50 km", cls: "tag-drive" }
@@ -1577,6 +1600,7 @@ const tripData = {
           date: "2026. július 28., kedd",
           title: "Koppenhága → Hamburg",
           subtitle: "Belépés a német szakaszba",
+          driveLog: { km: "~350 km", stops: 2, driveTime: "~4 óra", depart: "09:00", arrive: "~17:00", timelinePoints: [{time:"09:00", label:"Koppenhága ind."}, {time:"13:00", label:"Dán határ"}, {time:"17:00", label:"Hamburg"}] },
           tags: [
             { label: "~350 km", cls: "tag-drive" },
             { label: "Hamburg", cls: "tag-city" }
@@ -1592,6 +1616,7 @@ const tripData = {
           date: "2026. július 29., szerda",
           title: "Hamburg → Frankfurt",
           subtitle: "Német autópályás záróetap",
+          driveLog: { km: "~500 km", stops: 2, driveTime: "~5 óra", depart: "08:00", arrive: "~17:00", timelinePoints: [{time:"08:00", label:"Hamburg ind."}, {time:"12:30", label:"félúton"}, {time:"17:00", label:"Frankfurt"}] },
           tags: [
             { label: "~500 km", cls: "tag-drive" },
             { label: "Frankfurt", cls: "tag-city" }
@@ -1607,6 +1632,7 @@ const tripData = {
           date: "2026. július 30., csütörtök",
           title: "Frankfurt → Budapest",
           subtitle: "Expedition vége",
+          driveLog: { km: "~950 km", stops: 3, driveTime: "~9 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"Frankfurt ind."}, {time:"11:00", label:"Ausztria"}, {time:"15:00", label:"Bécs"}, {time:"20:00", label:"Budapest 🏁"}] },
           tags: [
             { label: "zárónap", cls: "tag-focus" },
             { label: "Budapest", cls: "tag-city" }
