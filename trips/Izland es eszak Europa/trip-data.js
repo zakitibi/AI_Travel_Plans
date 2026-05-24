@@ -397,19 +397,19 @@ const tripData = {
         date: "2026.07.28",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Stockholm → Malmö",
-        summary: "E4 autópálya délen ~600 km, Helsingborg-tájékán Øresund látványa, esti Malmö (Stortorget, Turning Torso).",
-        points: ["~600 km", "E4 autópálya", "Malmö"],
-        driveStats: { km: "~600 km", stops: 3, depart: "08:00", arrive: "~16:00 Malmö", driveTime: "~5,5 óra", timelinePoints: [{time:"08:00", label:"Stockholm ind."}, {time:"11:00", label:"Jönköping"}, {time:"14:00", label:"Helsingborg"}, {time:"16:00", label:"Malmö"}] }
+        title: "Stockholm Archipelago — Vaxholm + Grinda",
+        summary: "Egész napos hajókaland a stockholmi szigetvilágban — Strömkajen komptól Vaxholm erődig, majd Grinda gránitszigetéig és vissza.",
+        points: ["Vaxholm ⛵", "Grinda sziget", "Waxholmsbolaget"],
+        driveStats: { km: "~0 km (kompos nap)", stops: 3, depart: "09:00", arrive: "~20:00 Stockholm", driveTime: "kompos nap", timelinePoints: [{time:"09:00", label:"Strömkajen"}, {time:"10:15", label:"Vaxholm"}, {time:"12:00", label:"Grinda"}, {time:"16:30", label:"Visszakomp"}, {time:"19:30", label:"Stockholm"}] }
       },
       {
         date: "2026.07.29",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Malmö → Koppenhága → Hamburg",
-        summary: "Øresund Bridge reggel, rövid koppenhágai city stop, majd belépés Németországba és Hamburg.",
-        points: ["Øresund", "Koppenhága city stop", "Hamburg"],
-        driveStats: { km: "~400 km", stops: 3, depart: "09:00", arrive: "~17:00 Hamburg", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Malmö ind."}, {time:"10:00", label:"Koppenhága"}, {time:"12:30", label:"Flensburg"}, {time:"17:00", label:"Hamburg"}] }
+        title: "Stockholm → Malmö → Koppenhága → Hamburg",
+        summary: "Nagy hazaút-etap ~1000 km: korai start, Malmö fotóstop (Turning Torso), Øresund Bridge, Nyhavn Koppenhágában, este Hamburg.",
+        points: ["~1000 km", "Øresund Bridge", "Nyhavn · Hamburg"],
+        driveStats: { km: "~1000 km", stops: 4, depart: "06:30", arrive: "~18:00 Hamburg", driveTime: "~9,5 óra", timelinePoints: [{time:"06:30", label:"Stockholm ind."}, {time:"11:45", label:"Malmö"}, {time:"13:00", label:"Koppenhága"}, {time:"14:30", label:"Koppenhága ind."}, {time:"18:00", label:"Hamburg"}] }
       },
       {
         date: "2026.07.30",
@@ -1649,59 +1649,65 @@ const tripData = {
         {
           num: "2",
           date: "2026. július 27., hétfő",
-          title: "Stockholm — Vasa Museum + Djurgården + Fjäderholmarna sziget + Fotografiska",
-          subtitle: "Múzeum · szigetvilág kiszállás · kortárs fotó este — Stockholm teljesen",
-          driveLog: { km: "~15 km (hajó + városon belül)", stops: 6, driveTime: "gyalogos + hajós nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Vasa Museum"}, {time:"11:30", label:"Djurgården"}, {time:"13:00", label:"Fjäderholmarna ⛵"}, {time:"16:30", label:"vissza Sthlm"}, {time:"17:00", label:"Fotografiska"}, {time:"20:00", label:"vacsora"}] },
+          title: "Stockholm — Vasa Museum + Djurgården + Skansen + Fotografiska",
+          subtitle: "Múzeumi nap Djurgårdenon — este Fotografiska tetőteraszon",
+          driveLog: { km: "~8 km (városon belül)", stops: 4, driveTime: "gyalogos / hajós nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Vasa Museum"}, {time:"11:30", label:"Djurgården"}, {time:"13:00", label:"Skansen"}, {time:"17:00", label:"Fotografiska"}, {time:"20:00", label:"vacsora"}] },
           tags: [
             { label: "Vasa Museum", cls: "tag-focus" },
-            { label: "Fjäderholmarna 🏝", cls: "tag-ferry" },
+            { label: "Djurgården", cls: "tag-nature" },
             { label: "Fotografiska", cls: "tag-focus" }
           ],
           activities: [
             { time: "09:00–11:30", icon: "⛵", name: "<a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) — Skandinávia leglátogatottabb múzeuma", detail: "1628-ban elsüllyedt, majd 333 év múlva kiemeltek egy 69 méter hosszú, teljesen ép 17. századi hadihajó — ebből a múzeum. Az egyik legsokkolóbb muzeumlátogatás Európában: a hajó magassága lenyűgöző, a fafaragások részletei félelmetesek. ⚠️ Júliusban KÖTELEZŐ az online előfoglalás — walk-in sor akár 1-2 óra. Belépő ~190 SEK. Nyitva 10:00–17:00 (szerdán 20:00-ig)." },
-            { time: "11:30–13:00", icon: "🌲", name: "<a href='https://www.google.com/maps/search/?api=1&query=Djurgarden+Stockholm' target='_blank' rel='noreferrer'>Djurgården</a> (★4.7) — Skansen + ebéd", detail: "Djurgården Stockholm zöld szigete: a <a href='https://www.google.com/maps/search/?api=1&query=Skansen+Stockholm' target='_blank' rel='noreferrer'>Skansen</a> (★4.5) a világ első szabadtéri múzeuma (1891), 150 áttelepített svéd épülettel és nordic állatparkkal (jávorszarvas, farkas, rén). Ebéd a Djurgårdsbrunnsviken parton, vagy a Rosendals Trädgård kertészeti kávézóban (★4.5, biokert, friss péksüti). Az <a href='https://www.google.com/maps/search/?api=1&query=ABBA+The+Museum+Stockholm' target='_blank' rel='noreferrer'>ABBA The Museum</a> (★4.3) is itt van — ha érdekli a banda, kb. 1 óra." },
-            { time: "13:00", icon: "🚢", name: "⛵ Strömkajen → <a href='https://www.google.com/maps/search/?api=1&query=Fjaderholmarna+Stockholm' target='_blank' rel='noreferrer'>Fjäderholmarna</a> (★4.5) — a legközelebbi sziget", detail: "Strömkajenről (Nationalmuseum előtt) indul a komp, ~25–30 perc, ~130 SEK/fő oda-vissza. Fjäderholmarna Stockholm legelső archipélagó-szigete — csak 6 km a belvárostól. Sziklás partok, úszás a hideg svéd vízben, nyitott kávézók, helyi kézművesek stúdiói, Röda Villan étterem. Kötelező élmény: a sziklákon ülni a tengeri szél mel és érezni, hogy Stockholm teljesen eltűnt mögötted. Nyár közepén sűrű menetrend, nem kell előre foglalni." },
-            { time: "14:00–16:30", icon: "🏝", name: "Fjäderholmarna — úszás, sziklák, kávézó", detail: "A szigeten nincs autó, nincs tömeg — csak sziklák, fenyők és tenger. Kávézó és söröző a kikötőnél (Fjäderholmarnas Krog, ★4.3). Ha szép az idő: úszás a sziklák között a hideg Balti-tengerben. Ha Vaxholmra (★4.5, 1 óra komp, Waxholmsbolaget, ~175 SEK/fő) szeretnétek menni inkább, az is klassz: történelmi erőd, színes faházak, horgászfalui hangulat — de ez a Fjäderholmarna kiszállót kizárja." },
-            { time: "17:00–20:00", icon: "📸", name: "<a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) — kortárs fotóművészet + tetőterasz", detail: "Södermalm kikötői részén, egykori vámházban működő kortárs fotóművészeti múzeum — évente 20+ időszaki kiállítás, világhírű fotósok és feltörekvő tehetségek. A tetőteraszi étterem (Michelin Green Star) svéd tengeri fogásokkal és Stockholm-panorámával zárja a napot. Nyitva hétfőn 10:00–23:00-ig — este sem kell sietni. Belépő ~195 SEK." },
-            { time: "20:00", icon: "🍽", name: "Esti vacsora — Södermalm vagy Gamla Stan", detail: "Södermalm: <a href='https://www.google.com/maps/search/?api=1&query=Pelikan+Restaurant+Sodermalm+Stockholm' target='_blank' rel='noreferrer'>Pelikan</a> (★4.3, svéd brasserie), <a href='https://www.google.com/maps/search/?api=1&query=Nytorget+Urban+Deli+Stockholm' target='_blank' rel='noreferrer'>Nytorget Urban Deli</a> (★4.2, modern svéd). Gamla Stan irányba: <a href='https://www.google.com/maps/search/?api=1&query=Djuret+restaurant+Stockholm' target='_blank' rel='noreferrer'>Djuret</a> (★4.4, farm-to-table) vagy a Österlånggatan utcai kisebb helyek." }
+            { time: "11:30–14:00", icon: "🌲", name: "<a href='https://www.google.com/maps/search/?api=1&query=Djurgarden+Stockholm' target='_blank' rel='noreferrer'>Djurgården</a> (★4.7) + <a href='https://www.google.com/maps/search/?api=1&query=Skansen+Stockholm' target='_blank' rel='noreferrer'>Skansen</a> (★4.5) — ebéd a parkban", detail: "Djurgården Stockholm zöld szigete, a Vasától gyalog elérhető. Skansen a világ első szabadtéri múzeuma (1891): 150 áttelepített svéd épület, nordic állatpark (jávorszarvas, farkas, rén). Ebéd a <a href='https://www.google.com/maps/search/?api=1&query=Rosendals+Tradgard+Stockholm' target='_blank' rel='noreferrer'>Rosendals Trädgård</a> (★4.5) biokertészeti kávézóban — friss péksüti, kert, csönd. Az <a href='https://www.google.com/maps/search/?api=1&query=ABBA+The+Museum+Stockholm' target='_blank' rel='noreferrer'>ABBA The Museum</a> (★4.3) is Djurgårdenon — ha érdekli, kb. 1 óra." },
+            { time: "14:30–17:00", icon: "🎨", name: "<a href='https://www.google.com/maps/search/?api=1&query=Moderna+Museet+Stockholm' target='_blank' rel='noreferrer'>Moderna Museet</a> (★4.5) — Picasso, Dalí, Warhol", detail: "Skeppsholmen szigetén, ingyen belépős állandó kiállítással (Dalí, Picasso, Warhol, Matisse, Kandinsky) — az egyik legfontosabb modern képzőművészeti gyűjtemény Skandináviában. A sziget maga is szép sétára: <a href='https://www.google.com/maps/search/?api=1&query=Skeppsholmen+Stockholm' target='_blank' rel='noreferrer'>Skeppsholmen</a> (★4.6) vízparti panorámájával." },
+            { time: "17:00–20:00", icon: "📸", name: "<a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) — kortárs fotóművészet + tetőterasz", detail: "Södermalm kikötői részén, egykori vámházban működő kortárs fotóművészeti múzeum. Évente 20+ időszaki kiállítás. A tetőteraszi étterem (Michelin Green Star) svéd tengeri fogásokkal és Stockholm-panorámával zárja a napot. Nyitva kedd 10:00–23:00-ig. Belépő ~195 SEK." },
+            { time: "20:00", icon: "🍽", name: "Vacsora Södermalmon", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Pelikan+Restaurant+Sodermalm+Stockholm' target='_blank' rel='noreferrer'>Pelikan</a> (★4.3, klasszikus svéd brasserie), <a href='https://www.google.com/maps/search/?api=1&query=Nytorget+Urban+Deli+Stockholm' target='_blank' rel='noreferrer'>Nytorget Urban Deli</a> (★4.2), vagy <a href='https://www.google.com/maps/search/?api=1&query=Djuret+restaurant+Stockholm' target='_blank' rel='noreferrer'>Djuret</a> (★4.4, farm-to-table) a Gamla Stan irányban." }
           ],
-          notes: ["⚠️ Vasa Museum: KÖTELEZŐ online előfoglalás júliusban — vasamuseet.se, belépő ~190 SEK/fő.", "Fjäderholmarna komp: Strömma/Waxholmsbolaget járata Strömkajenről — nyáron sűrű (minden ~30-45 perc), nincs előfoglalás. ~130 SEK oda-vissza/fő.", "Vaxholm alternatíva: ha a sziget-érzés fontosabb mint a Fotografiska, válasszátok Vaxholmot (1h komp, de a történelmi erőd és a falusias hangulat erősebb). Egyszerre mindkettő nem fér bele.", "Fotografiska hétfőn is nyitva (10:00–23:00) — az esti ablak ideális.", "Másnap: korai indulás (~08:00), ~600 km Malmöba."]
+          notes: ["⚠️ Vasa Museum: KÖTELEZŐ online előfoglalás júliusban — vasamuseet.se, belépő ~190 SEK/fő.", "Moderna Museet: az állandó kiállítás ingyenes, csak az időszaki kiállítások fizetősek (~150 SEK).", "Skansen belépő: ~230 SEK/fő — ha csak a Djurgården-parkot nézitek meg, az ingyenes.", "Másnap: Archipelago nap — egész nap hajóval a szigeteken, korai indulás Strömkajenről."]
         },
         {
           num: "3",
           date: "2026. július 28., kedd",
-          title: "Stockholm → Malmö",
-          subtitle: "E4 autópálya délen, ~600 km, Øresund előszobája",
-          driveLog: { km: "~600 km", stops: 3, driveTime: "~5,5 óra", depart: "08:00", arrive: "~16:00 Malmö", timelinePoints: [{time:"08:00", label:"Stockholm ind."}, {time:"11:00", label:"Jönköping"}, {time:"14:00", label:"Helsingborg"}, {time:"16:00", label:"Malmö"}] },
+          title: "Stockholm Archipelago — Vaxholm + Grinda szigetek",
+          subtitle: "Egész napos hajókaland a stockholmi szigetvilágban — Waxholmsbolaget komp, erőd, gránit, füstölt hering",
+          driveLog: { km: "~0 km (kompos nap)", stops: 3, driveTime: "kompos nap", depart: "09:00 Strömkajen", arrive: "~20:00 Stockholm", timelinePoints: [{time:"09:00", label:"Strömkajen komp"}, {time:"10:15", label:"Vaxholm"}, {time:"11:30", label:"Grinda kompon"}, {time:"12:00", label:"Grinda (ebéd)"}, {time:"16:30", label:"Visszakomp"}, {time:"19:30", label:"Stockholm"}] },
           tags: [
-            { label: "~600 km", cls: "tag-drive" },
-            { label: "Malmö", cls: "tag-city" }
+            { label: "Archipelago", cls: "tag-nature" },
+            { label: "Vaxholm", cls: "tag-focus" },
+            { label: "Grinda", cls: "tag-nature" }
           ],
           activities: [
-            { time: "08:00", icon: "🚗", name: "Indulás Stockholmból délen (E4)", detail: "Egyenes svéd autópályás etap, 110 km/h, nincs útdíj, jó minőségű pálya." },
-            { time: "11:00", icon: "⛽", name: "Tankolás + pihenő (Jönköping / Linköping)", detail: "Félúton jó megállási pont. Jönköping a Vättern-tó déli csücskénél — érdemes kinézni a tóra." },
-            { time: "14:00", icon: "🌉", name: "Helsingborg-tájék — Øresund első látványa", detail: "A szoros és a dán part (Helsingør) már innen is látszik — hangulatos bevezető Malmö elé." },
-            { time: "16:00", icon: "🏙", name: "Malmö — Stortorget + Turning Torso", detail: "Malmö rövid városblokk: Stortorget, a Turning Torso-nál séta és vacsora. Másnap innen Øresund és Hamburg." }
+            { time: "09:00", icon: "⛵", name: "<a href='https://www.google.com/maps/search/?api=1&query=Stromkajen+Stockholm' target='_blank' rel='noreferrer'>Strömkajen komp</a> — Waxholmsbolaget menetrend", detail: "A Waxholmsbolaget ferryk Strömkajentől (a Ström-hídtól keletre) indulnak — közel a Gamla Stanhoz. Jegy: kb. 150–200 SEK/fő/irány, SL-kártyával kedvezményes. Az archipelago évi bérlet (Båtluffarkort) ~500 SEK, 5 napra korlátlan — ha tervezel még kirándulást, megéri. Online jegy: waxholmsbolaget.se." },
+            { time: "10:15", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Fortress+Stockholm' target='_blank' rel='noreferrer'>Vaxholm</a> (★4.5) — erőd, favárosi utcák, füstölt hering", detail: "Vaxholm az archipelago 'fővárosa' — kb. 1 óra hajóútra Stockholmtól. A <a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Castle+Museum' target='_blank' rel='noreferrer'>Vaxholmi Erőd</a> (★4.3) egy kis szigeten áll a kikötővel szemben — csónakkal is megközelíthető. A városka fő utcája (Hamngatan) rövid sétálóutca faházakkal, piros-fehér svéd épületekkel. ⚓ Kötelező megálló: a kikötői Waxholms Hotell előtti parton füstölt hering (rökt strömming) szendvicset venni valamelyik halasstandon — ez az archipelago-saját street foodja." },
+            { time: "11:30", icon: "⛵", name: "Vaxholm → Grinda komp (~1 óra)", detail: "A Waxholmsbolaget menetrend alapján az összekötő kompon Grindáig ~1 óra. A hajóút maga is élmény: a gránitsziklák egyre kisebbek és kopárrabbak lesznek, a fenyők meghajolnak a szél irányában, és alig van ember." },
+            { time: "12:30", icon: "🌲", name: "<a href='https://www.google.com/maps/search/?api=1&query=Grinda+island+Stockholm+archipelago' target='_blank' rel='noreferrer'>Grinda sziget</a> (★4.6) — úszás, gránit, erdei ösvények", detail: "Grinda az egyik legtermészetesebb közeli sziget — nincs autó, nincs zajos turista-infrastruktúra. A gránitsiklók közt úszás az egyik legjobb stockholmi élmény. Erdei sétaösvények (~5 km) körbevezetnek a szigeten, fenyőerdőn, vöröshagymás réteken. A <a href='https://www.google.com/maps/search/?api=1&query=Grinda+Wardshus' target='_blank' rel='noreferrer'>Grinda Wärdshus</a> (★4.3) a sziget egyetlen éttermeje és panzióvendéglője — ebéd: friss halételek, helyi sör, veranda kilátással a tengerre. Foglalás erősen ajánlott júliusban." },
+            { time: "16:30", icon: "⛵", name: "Grinda → Stockholm visszakomp (~2 óra)", detail: "A közvetlen visszakomp Grindáról Strömkajenig ~2 óra — végig a belső csatornákon keresztül, egyre sűrűsödő szigetvilágban. Az alkonyati fény és a visszaút látványa (kis szigetek, régi favároskák, jachtok) az egyik legjobb svédországi élmény." },
+            { time: "19:30", icon: "🌅", name: "Visszaérkezés Stockholmba — esti séta", detail: "Visszatérés Strömkajenhez, onnan Gamla Stan vagy Södermalm felé. Utolsó stockholmi vacsora — <a href='https://www.google.com/maps/search/?api=1&query=Pelikan+Restaurant+Stockholm' target='_blank' rel='noreferrer'>Pelikan</a> (★4.3) vagy <a href='https://www.google.com/maps/search/?api=1&query=Mosebacke+Etablissement+Stockholm' target='_blank' rel='noreferrer'>Mosebacke Etablissement</a> (★4.4) teraszán — búcsú Stockholmtól." }
           ],
-          notes: ["E4 svéd autópálya: 110 km/h plafon, nincs díj, szinte végig 2×2 sáv.", "Jönköping vagy Linköping jó tankolós pihenők félúton.", "Malmöban a Turning Torso csak kívülről látogatható (lakóépület), de vizuálisan erős pont.", "Malmö-Koppenhága közti Øresund-átkelés másnap reggel jön."]
+          notes: ["⚠️ Korai indulás másnap: a hosszú nap (Stockholm → Malmö → Koppenhága → Hamburg, ~1000 km) 06:30-as kezdettel indul — érdemes már este összepakolni.", "Grinda Wärdshus: júliusban kötelező asztalfoglalás: grindawardshus.se — nélküle nincs garantált ebéd a szigeten.", "Waxholmsbolaget menetrend: pontos indulások a waxholmsbolaget.se-n, a 'Vaxholm–Grinda' vonal naponta 5-6 járattal megy nyáron.", "Ha rossz az idő (eső, szél): Fjäderholmarna (20 perc, ★4.3) jó alternatíva — közel, fedett helyek is vannak, de jó időben a Vaxholm+Grinda kombináció összehasonlíthatatlanul erősebb."]
         },
         {
           num: "4",
           date: "2026. július 29., szerda",
-          title: "Malmö → Koppenhága → Hamburg",
-          subtitle: "Øresund Bridge + rövid dán city stop + belépés Németországba",
-          driveLog: { km: "~400 km", stops: 3, driveTime: "~4 óra", depart: "09:00", arrive: "~17:00 Hamburg", timelinePoints: [{time:"09:00", label:"Malmö ind."}, {time:"10:00", label:"Koppenhága"}, {time:"12:30", label:"Flensburg"}, {time:"17:00", label:"Hamburg"}] },
+          title: "Stockholm → Malmö → Koppenhága → Hamburg",
+          subtitle: "Nagy hazaút-etap: ~1000 km, korai start, Øresund Bridge + dán city stop + Hamburg este",
+          driveLog: { km: "~1000 km", stops: 4, driveTime: "~9,5 óra", depart: "06:30", arrive: "~18:00 Hamburg", timelinePoints: [{time:"06:30", label:"Stockholm ind."}, {time:"11:45", label:"Malmö (foto)"}, {time:"13:00", label:"Koppenhága"}, {time:"14:30", label:"Koppenhága ind."}, {time:"18:00", label:"Hamburg"}] },
           tags: [
+            { label: "~1000 km", cls: "tag-drive" },
             { label: "Øresund", cls: "tag-focus" },
             { label: "Hamburg", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:00", icon: "🌉", name: "Øresund Bridge — Malmö → Koppenhága", detail: "A világ egyik legikonikusabb hídja, 8 km alagút + híd kombináció. Díj: kb. 400 DKK (~54 EUR)." },
-            { time: "10:00–12:00", icon: "🏙", name: "Koppenhága — rövid city stop", detail: "Nyhavn, Strøget, esetleg Tivoli előtti séta. Nem teljes városnap, de érdemes egy koppenhágai képet begyűjteni." },
-            { time: "12:00", icon: "🚗", name: "Koppenhága → Flensburg → Hamburg (~310 km)", detail: "Dán autópályán Flensburgnál belépés Németországba, majd a folytatás Hamburgig ~2,5 óra." },
-            { time: "17:00", icon: "🏨", name: "Hamburg — szállás", detail: "Az utolsó igazán városias este a hazagurulás előtt." }
+            { time: "06:30", icon: "🚗", name: "Korai indulás Stockholmból — E4 dél felé", detail: "06:30-as start szükséges ahhoz, hogy a nap mindhárom szakasza (Malmö, Koppenhága, Hamburg) kellemesen kijöjjön. Stockholm → Helsingborg ~480 km, svéd autópályán 110 km/h, útdíj nincs. A reggeli svéd táj üres, a forgalom minisztériumi." },
+            { time: "09:30", icon: "⛽", name: "Jönköping-tájék — tankolás + pihenő", detail: "Jönköping kb. 330 km-re van Stockholmtól (~3h). A Vättern-tó partján jó megálló. Svéd benzin itt szinte mindig olcsóbb, mint Dániában vagy Hamburgban." },
+            { time: "11:45", icon: "🌀", name: "<a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Malmö — Turning Torso</a> (★4.3) + Stortorget · 45 perces fotóstop", detail: "Malmöba csak fotóstopra térünk be — nincs éjszaka, nincs hosszú városnézés. A <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3, Santiago Calatrava, 190 m, 54 emelet) a Västra Hamnen negyedben, 5 perces autóval az E4-tól. Lakóépület, belülről nem látogatható, de kívülről emblematikus. Mellette séta a tengerparton, majd 5 perc a <a href='https://www.google.com/maps/search/?api=1&query=Stortorget+Malmo' target='_blank' rel='noreferrer'>Stortorgetre</a> (★4.3) — és folytatás az Øresund híd felé." },
+            { time: "12:45", icon: "🌉", name: "<a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) — Malmö → Koppenhága", detail: "A világ egyik legikonikusabb hídja: 8 km híd + 4 km alagút kombináció, Malmötől Koppenhágáig. Díj: kb. 400 DKK (~54 EUR) személyautónak — bankkártyával fizethető, online is vásárolható (oresundsbron.com). Az átkelés közben a Peberholm mesterséges sziget, majd a Kastrup repülőtér előttetek." },
+            { time: "13:00–14:30", icon: "🏙", name: "<a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Koppenhága</a> — Nyhavn + Strøget · 1,5 órás city stop", detail: "Koppenhága nem teljes városnap, de érdemes begyűjteni a képet. <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6): a színes kikötői házak és az üveg csónakokkal teli csatorna — ez az egyik legikonikusabb európai kép. Gyalog 5 perc a <a href='https://www.google.com/maps/search/?api=1&query=Stroget+Copenhagen' target='_blank' rel='noreferrer'>Strøget</a>-re (★4.5), Európa egyik leghosszabb gyalogos sétálóutcájára. Gyors ebéd: Smørrebrød (nyitott dán szendvics) valamelyik deli-nél, és úton." },
+            { time: "14:30", icon: "🚗", name: "Koppenhága → Flensburg → Hamburg (~310 km, ~2,5 óra)", detail: "Dán autópályán (E20) Odense irányba, majd a Storebælt-hídon át — ⚠️ Storebælt díj is van (~240 DKK, ~32 EUR). Flensburgnál belépés Németországba, majd az A7-en le Hamburgig. Összesen ~310 km a dán–hamburgi etap." },
+            { time: "18:00", icon: "🏨", name: "Hamburg — érkezés, szállás", detail: "Hamburg az est folyamán — vacsora a Landungsbrücken-nél Fischbrötchennel, vagy pihenés a szállásban. Holnap az első igazán városnéző hamburgi nap." }
           ],
-          notes: ["Øresund-díj online előre is fizethető (oresundsbron.com) — gyorsabb átkelés.", "Koppenhága: Nyhavn a legjobb gyors fénykép-megálló, a belváros gyalogos.", "Másnap: Lübeck UNESCO-óváros + Schwerin Castle napkirándulás Hamburgból (körút, ~230 km)."]
+          notes: ["⚠️ Storebælt-híd (Koppenhága → Flensburg irány): kb. 240 DKK (~32 EUR) — online vagy helyszínen fizethető. Az Øresund-díjjal együtt a dán tranzit ~86 EUR összesen.", "Malmö: csak fotóstop, nincs éjszaka — autóval be a Turning Torso-hoz, 45 perc és tovább.", "Koppenhága parkolás: a Nyhavn körüli P-parkolók drágák (~40 DKK/30 perc) — érdemes inkább a P+R parkolókat keresni a metróállomásoknál.", "A nagy nap logikája: 06:30 start + 1000 km = megérkezés 18:00 körül Hamburgba, három stop közben (Jönköping, Malmö, Koppenhága). Fárasztó nap, de megvalósítható. Másnap pihenősebb Lübeck–Schwerin körút."]
         },
         {
           num: "5",
