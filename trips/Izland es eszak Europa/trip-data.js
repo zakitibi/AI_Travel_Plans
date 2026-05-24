@@ -94,7 +94,7 @@ const tripData = {
     {
       person: "Henni",
       summary: "Erasmus+ kurzus Izlandon, majd közös Ring Road és visszarepülés",
-      note: "Henni júl. 7–18. Erasmus+ pedagógiai kurzuson vesz részt Izlandon (Smart Teachers Play More). Júl. 18-án találkoznak Tibivel, és kezdődik a közös Ring Road körút. A FI306 már a közös hazazárás része.",
+      note: "Henni júl. 11-én érkezik Reykjavíkba, a kurzus júl. 13–18. közt zajlik (Smart Teachers Play More, Erasmus+). Júl. 18-án találkoznak Tibivel, és kezdődik a közös Ring Road körút. A FI306 már a közös hazazárás része.",
       items: [
         {
           mode: "✈ Repülő",
@@ -231,12 +231,12 @@ const tripData = {
   overview: {
     timeline: [
       {
-        date: "2026.07.07",
+        date: "2026.07.13",
         phase: "Henni külön",
         accent: "accent-iceland",
         title: "Erasmus+ kurzus kezdete · Izland",
-        summary: "Megkezdődik az Erasmus+ kurzus Izlandon (júl. 7–18.). Henni júl. 11-én csatlakozik Wizz Air W62427 járattal.",
-        points: ["Smart Teachers Play More", "CLIL módszertan", "júl. 7–18."]
+        summary: "Megkezdődik az Erasmus+ kurzus Izlandon (júl. 13–18.). Henni júl. 11-én érkezett Reykjavíkba (Wizz Air W62427), 2 nap ráhangolódás után indul a kurzus.",
+        points: ["Smart Teachers Play More", "CLIL módszertan", "júl. 13–18."]
       },
       {
         date: "2026.07.10",
@@ -251,7 +251,7 @@ const tripData = {
         phase: "Tibi külön",
         accent: "accent-baltic",
         title: "Lengyelország → Vilnius · Henni BUD → KEF",
-        summary: "Tibi eléri Litvániát; Henni repül Reykjavíkba (Wizz Air W62427) és csatlakozik az Erasmus kurzushoz.",
+        summary: "Tibi eléri Litvániát; Henni repül Reykjavíkba (Wizz Air W62427) — a kurzus júl. 13-án kezdődik, 2 nap ráhangolódás lesz.",
         points: ["Tibi: esti Vilnius", "Henni: W62427, 15:40 → 18:20"]
       },
       {
@@ -440,7 +440,7 @@ const tripData = {
     important: [
       "A jelenlegi HTML-ben a 2026. május 20-i sheet az elsődleges dátumforrás.",
       "2026. július 17-én teljes Finnország nap kerül be: Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki gyors blokk (~2h), drive Turkuba (~1,5h), Turku Castle + Aura folyópart, majd Viking Line overnight Turkuból Stockholmba (20:00 → 06:30). A Turku–Stockholm vonal csak 10,5 óra — szemben a Helsinki–Stockholm 18 órájával.",
-      "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 7–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
+      "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
       "A hazaút most a július 30-i budapesti érkezésű főívet követi, a 07.31-es duplikált sheet-sort nem."
     ],
     countrySummaries: [
@@ -559,11 +559,11 @@ const tripData = {
     henniErasmus: {
       title: "Erasmus+ · Inspiring Young Language Learners",
       accent: "accent-iceland",
-      status: "2026. júl. 7–18. · Izland",
+      status: "2026. júl. 13–18. · Izland",
       statusClass: "status-green",
-      text: "Henni 2026. július 11-én repül Reykjavíkba (Wizz Air W62427) egy Erasmus+ által támogatott pedagógiai kurzusra. A 'Inspiring Young Language Learners' program 2026. július 7–18. közt zajlik, a Smart Teachers Play More szervezésében Izlandon — CLIL módszertanra, STEAM-feladatokra, storytellingre és izlandi iskolalátogatásokra épülve.",
+      text: "Henni 2026. július 11-én repül Reykjavíkba (Wizz Air W62427) egy Erasmus+ által támogatott pedagógiai kurzusra. Két nap ráhangolódás után a 'Inspiring Young Language Learners' program 2026. július 13–18. közt zajlik, a Smart Teachers Play More szervezésében Izlandon — CLIL módszertanra, STEAM-feladatokra, storytellingre és izlandi iskolalátogatásokra épülve.",
       points: [
-        "Kurzus: 2026. július 7–18. | Repülés: Wizz Air W62427, BUD → KEF, 2026.07.11",
+        "Kurzus: 2026. július 13–18. | Repülés: Wizz Air W62427, BUD → KEF, 2026.07.11",
         "Szervező: Smart Teachers Play More · Izland",
         "Tartalom: CLIL módszertan, STEAM, storytelling, mindfulness, izlandi iskolalátogatások",
         "Célcsoport: pedagógusok — óvoda, általános iskola, nyelvtanárok, CLIL és SNI szakemberek",
@@ -597,7 +597,7 @@ const tripData = {
     henni: {
       kicker: "3 boxos nézet",
       title: "Henni",
-      intro: "Henni szála három részből áll: júl. 7–18. Erasmus+ pedagógiai kurzus Izlandon (Smart Teachers Play More), majd júl. 18-tól a közös Ring Road körút Tibivel, végül a közös skandináv–német hazaút.",
+      intro: "Henni szála három részből áll: júl. 11-én érkezik Izlandra, júl. 13–18. Erasmus+ pedagógiai kurzus (Smart Teachers Play More), majd júl. 18-tól a közös Ring Road körút Tibivel, végül a közös skandináv–német hazaút.",
       stageKeys: ["henniErasmus", "henniIceland", "sharedReturn"]
     }
   },
@@ -724,7 +724,7 @@ const tripData = {
           activities: [
             { time: "napközben", icon: "🚗", name: "Etap Litvánia felé", detail: "A második hosszabb vezetős nap végén már valódi városi célpont jön." },
             { time: "este", icon: "🌆", name: "Esti Vilnius", detail: "Első rövid séta, vacsora és ráhangolódás a Baltikum városiasabb részére." },
-            { time: "párhuzamos szál", icon: "✈️", name: "Henni: BUD → KEF, Wizz Air W62427", detail: "15:40 → 18:20 — Erasmus kurzusra indul Izlandra (Smart Teachers Play More, júl. 7–18.)." }
+            { time: "párhuzamos szál", icon: "✈️", name: "Henni: BUD → KEF, Wizz Air W62427", detail: "15:40 → 18:20 — Erasmus kurzusra indul Izlandra (Smart Teachers Play More, júl. 13–18.). 2 nap ráhangolódás, majd júl. 13-án kezdődik a kurzus." }
           ],
           notes: ["Tibiéknél itt még balti felvezetés van, Henni ma repül Izlandra az Erasmus kurzusra."]
         },
