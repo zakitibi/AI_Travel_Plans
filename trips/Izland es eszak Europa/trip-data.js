@@ -386,46 +386,46 @@ const tripData = {
         date: "2026.07.26",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Reykjavík → Stockholm → Malmö",
-        summary: "FI306 visszaút, autófelvétel, majd már ezen a napon indul a szárazföldi zárás.",
-        points: ["FI306", "07:35 → 12:45", "Malmö felé vezetés"],
-        driveStats: { km: "~600 km (Arlanda → Malmö)", stops: 2, depart: "07:35 (FI306)", arrive: "~20:00 Malmö", driveTime: "~5 óra", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"14:00", label:"autó + ind."}, {time:"20:00", label:"Malmö"}] }
+        title: "Stockholm — FI306 érkezés + első délután",
+        summary: "FI306 visszaút Arlandára (12:45), autóátvétel, majd stockholmi belváros — Gamla Stan, Södermalm. Szállás Stockholmban.",
+        points: ["FI306", "07:35 → 12:45 ARN", "Stockholm: Gamla Stan"],
+        driveStats: { km: "~40 km (Arlanda → centrum)", stops: 2, depart: "07:35 (FI306)", arrive: "~13:30 Stockholm", driveTime: "~40 perc", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"13:30", label:"Stockholm"}, {time:"20:00", label:"szállás"}] }
       },
       {
         date: "2026.07.27",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Malmö → Koppenhága",
-        summary: "Rövid átmeneti nap az Øresund híd fókuszával.",
-        points: ["Øresund Bridge", "rövid city stop", "~50 km"],
-        driveStats: { km: "~50 km", stops: 2, depart: "10:00", arrive: "~13:00", driveTime: "~40 perc", timelinePoints: [{time:"10:00", label:"Malmö"}, {time:"11:00", label:"Øresund"}, {time:"13:00", label:"Koppenhága"}] }
+        title: "Stockholm — Teljes városnap",
+        summary: "Vasa Museum, Djurgården, Fotografiska és esti Gamla Stan. Szállás Stockholmban.",
+        points: ["Vasa Museum", "Djurgården", "Fotografiska"],
+        driveStats: { km: "~10 km", stops: 5, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / hajós nap", timelinePoints: [{time:"09:00", label:"Vasa Museum"}, {time:"12:00", label:"Djurgården"}, {time:"15:00", label:"Fotografiska"}, {time:"19:00", label:"esti séta"}] }
       },
       {
         date: "2026.07.28",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Koppenhága → Hamburg",
-        summary: "Belépés a német szakaszba, még emberi távval.",
-        points: ["~350 km", "Hamburg", "rövidebb etap"],
-        driveStats: { km: "~350 km", stops: 2, depart: "09:00", arrive: "~17:00", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Koppenhága"}, {time:"13:00", label:"Dán határ"}, {time:"17:00", label:"Hamburg"}] }
+        title: "Stockholm → Malmö",
+        summary: "E4 autópálya délen ~600 km, Helsingborg-tájékán Øresund látványa, esti Malmö (Stortorget, Turning Torso).",
+        points: ["~600 km", "E4 autópálya", "Malmö"],
+        driveStats: { km: "~600 km", stops: 3, depart: "08:00", arrive: "~16:00 Malmö", driveTime: "~5,5 óra", timelinePoints: [{time:"08:00", label:"Stockholm ind."}, {time:"11:00", label:"Jönköping"}, {time:"14:00", label:"Helsingborg"}, {time:"16:00", label:"Malmö"}] }
       },
       {
         date: "2026.07.29",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Hamburg → Frankfurt",
-        summary: "Klasszikus német autópályás zárónap a budapesti visszagurulás előtt.",
-        points: ["~500 km", "Frankfurt", "5–6 óra"],
-        driveStats: { km: "~500 km", stops: 2, depart: "08:00", arrive: "~17:00", driveTime: "~5 óra", timelinePoints: [{time:"08:00", label:"Hamburg"}, {time:"12:30", label:"félúton"}, {time:"17:00", label:"Frankfurt"}] }
+        title: "Malmö → Koppenhága → Hamburg",
+        summary: "Øresund Bridge reggel, rövid koppenhágai city stop, majd belépés Németországba és Hamburg.",
+        points: ["Øresund", "Koppenhága city stop", "Hamburg"],
+        driveStats: { km: "~400 km", stops: 3, depart: "09:00", arrive: "~17:00 Hamburg", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Malmö ind."}, {time:"10:00", label:"Koppenhága"}, {time:"12:30", label:"Flensburg"}, {time:"17:00", label:"Hamburg"}] }
       },
       {
         date: "2026.07.30",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Frankfurt → Budapest",
-        summary: "Az aktuális főív szerinti lezárás, július 30-i budapesti érkezéssel.",
-        points: ["~950 km", "hazautazás", "zárónap"],
-        driveStats: { km: "~950 km", stops: 3, depart: "07:00", arrive: "~20:00", driveTime: "~9 óra", timelinePoints: [{time:"07:00", label:"Frankfurt ind."}, {time:"11:00", label:"Ausztria"}, {time:"15:00", label:"Bécs"}, {time:"20:00", label:"Budapest 🏁"}] }
+        title: "Hamburg → Budapest",
+        summary: "Expedition záróetap ~1250 km (via Berlin–Brno). Hosszú nap, korai indulás. Opcionálisan jul. 31-re osztható.",
+        points: ["~1250 km", "Berlin · Brno", "Budapest 🏁"],
+        driveStats: { km: "~1250 km", stops: 4, depart: "06:00", arrive: "~20:00", driveTime: "~11 óra", timelinePoints: [{time:"06:00", label:"Hamburg ind."}, {time:"10:00", label:"Berlin"}, {time:"14:00", label:"Brno"}, {time:"20:00", label:"Budapest 🏁"}] }
       }
     ],
     mainTrips: [
@@ -1563,85 +1563,93 @@ const tripData = {
         {
           num: "1",
           date: "2026. július 26., vasárnap",
-          title: "Reykjavík → Stockholm → Malmö",
-          subtitle: "Közös repülős visszacsatlakozás és azonnali továbbgurulás",
+          title: "Stockholm — FI306 érkezés + első délután",
+          subtitle: "Arlanda → Gamla Stan → Stortorget, szállás Stockholmban",
           open: true,
-          driveLog: { km: "~600 km (Arlanda → Malmö)", stops: 2, driveTime: "~5 óra", depart: "07:35 (FI306)", arrive: "~20:00 Malmö", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"14:00", label:"autó + ind."}, {time:"20:00", label:"Malmö"}] },
+          driveLog: { km: "~40 km (Arlanda → Stockholm centrum)", stops: 2, driveTime: "~40 perc", depart: "07:35 (FI306 KEF)", arrive: "~13:30 Stockholm", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"13:30", label:"Stockholm"}, {time:"20:00", label:"szállás"}] },
           tags: [
             { label: "FI306", cls: "tag-flight" },
-            { label: "Malmö", cls: "tag-city" }
+            { label: "Stockholm", cls: "tag-city" }
           ],
           activities: [
-            { time: "07:35", icon: "✈", name: "Icelandair FI306", detail: "Reykjavík / Keflavík → Stockholm / Arlanda, helyi idő szerint 07:35 → 12:45." },
-            { time: "délután", icon: "🚗", name: "Autó felvétele Arlandán", detail: "Itt vált vissza az expedition repülésből szárazföldi zárásba." },
-            { time: "később", icon: "🛣", name: "Levezetés Malmö felé", detail: "A sheet aktuális főíve szerint ezen a napon már Malmöig tart a hazaút első szárazföldi szakasza." }
+            { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík/Keflavík → Stockholm/Arlanda, 07:35 → 12:45. Autóátvétel, majd gyorsan a városba." },
+            { time: "13:30", icon: "🚗", name: "Arlanda → Stockholm centrum (~40 km)", detail: "E4 autópálya ~40 perc. Az autót a szállásnál vagy P+R parkolóban hagyni — a belváros gyalogos." },
+            { time: "14:00–19:00", icon: "🏛", name: "Gamla Stan + Kungliga Slottet", detail: "Stortorget, Kungliga Slottet külseje, Riddarhuset, kikötői séta. A legjobb délutáni svéd nyitóblokk." },
+            { time: "19:00–21:00", icon: "🍽", name: "Södermalm vacsora", detail: "Stockholmi fővacsora-negyed: Pelikan, Fiskebaren vagy a Mosebacke terasz vonala." }
           ],
-          notes: ["Ez kulcsváltó nap: még repülős, de már a hosszú közös visszaút része."]
+          notes: ["Autóátvétel Arlandán, de a városban ne vezess — tömegközlekedés vagy séta hatékonyabb.", "Gamla Stan délután kevésbé tömött, mint délelőtt.", "Szállás: stockholmi belváros (Gamla Stan, Norrmalm, Södermalm) — nem Arlanda-hotel."]
         },
         {
           num: "2",
           date: "2026. július 27., hétfő",
-          title: "Malmö → Koppenhága",
-          subtitle: "Øresund Bridge + rövid fellazítás",
-          driveLog: { km: "~50 km", stops: 2, driveTime: "~40 perc", depart: "10:00", arrive: "~13:00", timelinePoints: [{time:"10:00", label:"Malmö ind."}, {time:"11:00", label:"Øresund"}, {time:"13:00", label:"Koppenhága"}] },
+          title: "Stockholm — Teljes városnap",
+          subtitle: "Vasa Museum, Djurgården, Fotografiska, esti Gamla Stan",
+          driveLog: { km: "~10 km (városon belül)", stops: 5, driveTime: "gyalogos / hajós nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Vasa Museum"}, {time:"12:00", label:"Djurgården"}, {time:"15:00", label:"Fotografiska"}, {time:"19:00", label:"esti séta"}] },
           tags: [
-            { label: "Øresund", cls: "tag-focus" },
-            { label: "~50 km", cls: "tag-drive" }
+            { label: "Vasa Museum", cls: "tag-focus" },
+            { label: "Stockholm", cls: "tag-city" }
           ],
           activities: [
-            { time: "délelőtt", icon: "🌉", name: "Øresund Bridge", detail: "Ez a nap legfontosabb karaktereleme." },
-            { time: "délután", icon: "🏙", name: "Rövid Koppenhága city stop", detail: "Pont annyi, hogy a route kapjon egy emberibb törést." },
-            { time: "este", icon: "🛏", name: "Koppenhága hotel", detail: "Másnap már újra német irányú mozgás jön." }
+            { time: "09:00–11:30", icon: "⛵", name: "Vasa Museum", detail: "A legjobb stockholmi múzeum: 17. századi hadihajó épen, 30 méteres fa behemót. Érdemes korán menni, déltől tömeg van." },
+            { time: "11:30–14:00", icon: "🌲", name: "Djurgården — Skansen + ebéd", detail: "Szabadtéri skanzen és állatkertes park, közvetlenül a Vasától gyalog. Ebéd a sétány mentén." },
+            { time: "14:00–17:00", icon: "📸", name: "Fotografiska", detail: "Stockholmi kortárs fotóművészeti múzeum jó kávézóval. Södermalmon, közel a vízhez — kedd–szombat 10:00–23:00." },
+            { time: "17:00–21:00", icon: "🚢", name: "Stockholmi vízpart + esti Gamla Stan", detail: "Hajóval vagy gyalog a Strömkajen-tól, esti Gamla Stan-séta, vacsora." }
           ],
-          notes: ["Jó ellenpont az előző és a következő hosszabb vezetős blokkok között."]
+          notes: ["Vasa Museum online foglalás júliusban erősen ajánlott — walk-in sor akár 1 óra.", "Djurgården hajóval is elérhető a Slussen-től (klasszkus stockholmi élmény).", "ABBA Museum Djurgårdenon van — ha érdekli, beilleszthető a délutáni blokkba.", "Másnap: korai indulás, ~600 km Malmöba."]
         },
         {
           num: "3",
           date: "2026. július 28., kedd",
-          title: "Koppenhága → Hamburg",
-          subtitle: "Belépés a német szakaszba",
-          driveLog: { km: "~350 km", stops: 2, driveTime: "~4 óra", depart: "09:00", arrive: "~17:00", timelinePoints: [{time:"09:00", label:"Koppenhága ind."}, {time:"13:00", label:"Dán határ"}, {time:"17:00", label:"Hamburg"}] },
+          title: "Stockholm → Malmö",
+          subtitle: "E4 autópálya délen, ~600 km, Øresund előszobája",
+          driveLog: { km: "~600 km", stops: 3, driveTime: "~5,5 óra", depart: "08:00", arrive: "~16:00 Malmö", timelinePoints: [{time:"08:00", label:"Stockholm ind."}, {time:"11:00", label:"Jönköping"}, {time:"14:00", label:"Helsingborg"}, {time:"16:00", label:"Malmö"}] },
           tags: [
-            { label: "~350 km", cls: "tag-drive" },
-            { label: "Hamburg", cls: "tag-city" }
+            { label: "~600 km", cls: "tag-drive" },
+            { label: "Malmö", cls: "tag-city" }
           ],
           activities: [
-            { time: "napközben", icon: "🚗", name: "Etap Hamburg felé", detail: "Még mindig emberi méretű nap, ami jól átvezet a hosszabb záró blokkokba." },
-            { time: "este", icon: "🏨", name: "Hamburg hotel", detail: "Utolsó igazán városi este a hazagurulás előtt." }
+            { time: "08:00", icon: "🚗", name: "Indulás Stockholmból délen (E4)", detail: "Egyenes svéd autópályás etap, 110 km/h, nincs útdíj, jó minőségű pálya." },
+            { time: "11:00", icon: "⛽", name: "Tankolás + pihenő (Jönköping / Linköping)", detail: "Félúton jó megállási pont. Jönköping a Vättern-tó déli csücskénél — érdemes kinézni a tóra." },
+            { time: "14:00", icon: "🌉", name: "Helsingborg-tájék — Øresund első látványa", detail: "A szoros és a dán part (Helsingør) már innen is látszik — hangulatos bevezető Malmö elé." },
+            { time: "16:00", icon: "🏙", name: "Malmö — Stortorget + Turning Torso", detail: "Malmö rövid városblokk: Stortorget, a Turning Torso-nál séta és vacsora. Másnap innen Øresund és Hamburg." }
           ],
-          notes: ["Hamburg itt már inkább jó támaszpont, nem önálló városprojekt."]
+          notes: ["E4 svéd autópálya: 110 km/h plafon, nincs díj, szinte végig 2×2 sáv.", "Jönköping vagy Linköping jó tankolós pihenők félúton.", "Malmöban a Turning Torso csak kívülről látogatható (lakóépület), de vizuálisan erős pont.", "Malmö-Koppenhága közti Øresund-átkelés másnap reggel jön."]
         },
         {
           num: "4",
           date: "2026. július 29., szerda",
-          title: "Hamburg → Frankfurt",
-          subtitle: "Német autópályás záróetap",
-          driveLog: { km: "~500 km", stops: 2, driveTime: "~5 óra", depart: "08:00", arrive: "~17:00", timelinePoints: [{time:"08:00", label:"Hamburg ind."}, {time:"12:30", label:"félúton"}, {time:"17:00", label:"Frankfurt"}] },
+          title: "Malmö → Koppenhága → Hamburg",
+          subtitle: "Øresund Bridge + rövid dán city stop + belépés Németországba",
+          driveLog: { km: "~400 km", stops: 3, driveTime: "~4 óra", depart: "09:00", arrive: "~17:00 Hamburg", timelinePoints: [{time:"09:00", label:"Malmö ind."}, {time:"10:00", label:"Koppenhága"}, {time:"12:30", label:"Flensburg"}, {time:"17:00", label:"Hamburg"}] },
           tags: [
-            { label: "~500 km", cls: "tag-drive" },
-            { label: "Frankfurt", cls: "tag-city" }
+            { label: "Øresund", cls: "tag-focus" },
+            { label: "Hamburg", cls: "tag-city" }
           ],
           activities: [
-            { time: "egész nap", icon: "🛣", name: "Hosszabb német etap", detail: "Ez a route egyik legkevésbé romantikus, de legszükségesebb napja." },
-            { time: "este", icon: "🛏", name: "Frankfurt környéki alvás", detail: "A július 30-i budapesti zárást készíti elő." }
+            { time: "09:00", icon: "🌉", name: "Øresund Bridge — Malmö → Koppenhága", detail: "A világ egyik legikonikusabb hídja, 8 km alagút + híd kombináció. Díj: kb. 400 DKK (~54 EUR)." },
+            { time: "10:00–12:00", icon: "🏙", name: "Koppenhága — rövid city stop", detail: "Nyhavn, Strøget, esetleg Tivoli előtti séta. Nem teljes városnap, de érdemes egy koppenhágai képet begyűjteni." },
+            { time: "12:00", icon: "🚗", name: "Koppenhága → Flensburg → Hamburg (~310 km)", detail: "Dán autópályán Flensburgnál belépés Németországba, majd a folytatás Hamburgig ~2,5 óra." },
+            { time: "17:00", icon: "🏨", name: "Hamburg — szállás", detail: "Az utolsó igazán városias este a hazagurulás előtt." }
           ],
-          notes: ["Itt már nem kell többet keresni, mint jó ritmust és kényelmes zárást."]
+          notes: ["Øresund-díj online előre is fizethető (oresundsbron.com) — gyorsabb átkelés.", "Koppenhága: Nyhavn a legjobb gyors fénykép-megálló, a belváros gyalogos.", "Másnap: Hamburg → Budapest, ~1250 km — hosszú zárónap, korai indulás javasolt."]
         },
         {
           num: "5",
           date: "2026. július 30., csütörtök",
-          title: "Frankfurt → Budapest",
-          subtitle: "Expedition vége",
-          driveLog: { km: "~950 km", stops: 3, driveTime: "~9 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"Frankfurt ind."}, {time:"11:00", label:"Ausztria"}, {time:"15:00", label:"Bécs"}, {time:"20:00", label:"Budapest 🏁"}] },
+          title: "Hamburg → Budapest",
+          subtitle: "Expedition záróetap — hosszú, de megcsinálható",
+          driveLog: { km: "~1250 km", stops: 4, driveTime: "~11 óra", depart: "06:00", arrive: "~20:00", timelinePoints: [{time:"06:00", label:"Hamburg ind."}, {time:"10:00", label:"Berlin"}, {time:"14:00", label:"Brno"}, {time:"20:00", label:"Budapest 🏁"}] },
           tags: [
-            { label: "zárónap", cls: "tag-focus" },
+            { label: "~1250 km", cls: "tag-drive" },
             { label: "Budapest", cls: "tag-city" }
           ],
           activities: [
-            { time: "napközben", icon: "🚗", name: "Hazagurulás Budapestre", detail: "Az út utolsó szakasza már a lezárásról szól." },
-            { time: "este", icon: "🏁", name: "Expedition vége", detail: "Itt zárul össze a teljes külön + közös északi ív." }
+            { time: "06:00", icon: "🚗", name: "Korai indulás Hamburgból", detail: "A hosszú záróetaphoz 06:00 indulás szükséges. Előző este legyen kész a pakolás." },
+            { time: "10:00", icon: "⛽", name: "Berlin-tájék — tankolás + pihenő", detail: "A10 körgyűrűnél jó benzinkutas megálló. V-Power 100 ~1,80–1,95 EUR/L." },
+            { time: "14:00", icon: "🚗", name: "Prága / Brno környéke", detail: "Cseh és szlovák autópálya (e-matrica előre kell). Brno után már az utolsó 250 km Magyarország felé." },
+            { time: "20:00", icon: "🏁", name: "Budapest — Expedition vége", detail: "A teljes észak-európai és izlandi ív itt zárul össze." }
           ],
-          notes: ["A részletes napi program helyett itt a kulturált hazaérkezés a cél."]
+          notes: ["⚠️ Ez hosszú zárónap (~1250 km, ~11 óra). Alternatíva: Hamburg → Frankfurt (490 km) jul. 30-án + Frankfurt → Budapest (950 km) jul. 31-én — ha szeretnétek egy extra napot.", "Cseh e-matrica: eNanicka.cz, ~€15 éves / ~€8 hónapos — előre vedd meg!", "Szlovák e-matrica: ~€15 éves / ~€8 hónapos — szintén előre.", "V-Power 100: Csehországban általában olcsóbb mint Németországban."]
         }
       ]
     }
