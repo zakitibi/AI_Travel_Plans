@@ -262,6 +262,21 @@
                 ${renderOverviewMap()}
               </section>
               <section class="card">
+                <h2 class="section-title">🗺 Interaktív térkép</h2>
+                <p style="font-size:0.78rem;color:var(--muted);margin-bottom:10px;">Teljes útvonal — Baltikum · Izland · Hazaút · repülők · Ring Road. <a href="https://www.google.com/maps/d/u/0/edit?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q&usp=sharing" target="_blank" rel="noreferrer" style="color:var(--green);font-weight:600;">Megnyitás Google Maps-ben ↗</a></p>
+                <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+                  <iframe
+                    src="https://www.google.com/maps/d/embed?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q"
+                    width="100%"
+                    height="420"
+                    style="border:0;display:block;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </section>
+              <section class="card">
                 <h2 class="section-title">🧭 Fő utazások</h2>
                 <div class="summary-grid">
                   ${tripData.overview.mainTrips.map((trip) => `
