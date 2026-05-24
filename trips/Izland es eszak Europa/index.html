@@ -205,6 +205,16 @@
             </div>
             ${renderDriveTimeline(day.driveStats.timelinePoints)}
           ` : ""}
+          ${day.henniBox ? `
+            <div class="timeline-henni-box">
+              <span class="thb-icon">${day.henniBox.icon}</span>
+              <div class="thb-content">
+                <div class="thb-label">${day.henniBox.label}</div>
+                <div class="thb-title">${day.henniBox.title}</div>
+                ${day.henniBox.detail ? `<div class="thb-detail">${day.henniBox.detail}</div>` : ""}
+              </div>
+            </div>
+          ` : ""}
         </article>
       `;
     }

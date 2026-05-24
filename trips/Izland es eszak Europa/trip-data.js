@@ -231,14 +231,6 @@ const tripData = {
   overview: {
     timeline: [
       {
-        date: "2026.07.13",
-        phase: "Henni külön",
-        accent: "accent-iceland",
-        title: "Erasmus+ kurzus kezdete · Izland",
-        summary: "Megkezdődik az Erasmus+ kurzus Izlandon (júl. 13–18.). Henni júl. 11-én érkezett Reykjavíkba (Wizz Air W62427), 2 nap ráhangolódás után indul a kurzus.",
-        points: ["Smart Teachers Play More", "CLIL módszertan", "júl. 13–18."]
-      },
-      {
         date: "2026.07.10",
         phase: "Tibi külön",
         accent: "accent-baltic",
@@ -272,7 +264,8 @@ const tripData = {
         title: "Vilnius → Riga",
         summary: "Hill of Crosses megállóval érkezés Lettországba.",
         points: ["~300 km", "Hill of Crosses", "esti Riga"],
-        driveStats: { km: "~300 km", stops: 3, depart: "09:00", arrive: "~18:00", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Vilnius ind."}, {time:"11:30", label:"Hill of Crosses"}, {time:"18:00", label:"Riga"}] }
+        driveStats: { km: "~300 km", stops: 3, depart: "09:00", arrive: "~18:00", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Vilnius ind."}, {time:"11:30", label:"Hill of Crosses"}, {time:"18:00", label:"Riga"}] },
+        henniBox: { icon: "🎓", label: "Henni · Izland", title: "Erasmus+ kurzus kezdete", detail: "Smart Teachers Play More · júl. 13–18. · CLIL módszertan, storytelling, izlandi iskolalátogatások" }
       },
       {
         date: "2026.07.14",
