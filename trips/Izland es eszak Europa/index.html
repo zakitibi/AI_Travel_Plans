@@ -220,26 +220,39 @@
     }
 
     function renderOverview() {
-      const tibiTimeline = tripData.overview.timeline.filter((day) => !day.phase.startsWith("Közös"));
-      const sharedTimeline = tripData.overview.timeline.filter((day) => day.phase.startsWith("Közös"));
+      const balticTimeline  = tripData.overview.timeline.filter((d) => d.phase.startsWith("Tibi"));
+      const icelandTimeline = tripData.overview.timeline.filter((d) => d.phase === "Közös Izland");
+      const returnTimeline  = tripData.overview.timeline.filter((d) => d.phase === "Közös hazaút");
+      function phaseGroup(id, emoji, title, sub, days, open) {
+        return `
+          <details class="timeline-phase-details" ${open ? "open" : ""}>
+            <summary class="timeline-phase-summary">
+              <div class="timeline-phase-summary-left">
+                <span class="timeline-phase-emoji">${emoji}</span>
+                <div>
+                  <div class="timeline-phase-title">${title}</div>
+                  <div class="timeline-phase-sub">${sub}</div>
+                </div>
+              </div>
+              <span class="timeline-phase-count">${days.length} nap</span>
+              <span class="timeline-phase-chevron" aria-hidden="true">▾</span>
+            </summary>
+            <div class="timeline-phase-body">
+              <div class="timeline-rail">
+                ${days.map(renderOverviewTimelineRow).join("")}
+              </div>
+            </div>
+          </details>`;
+      }
       return `
         <section class="view is-active" data-view="overview">
           <div class="overview-grid">
             <section class="card">
               <h2 class="section-title">📅 Napi idővonal</h2>
               <div class="timeline-group-stack">
-                <section class="timeline-group-card">
-                  <div class="timeline-group-title">Tibi / Henni · külön szakaszok</div>
-                  <div class="timeline-rail">
-                    ${tibiTimeline.map(renderOverviewTimelineRow).join("")}
-                  </div>
-                </section>
-                <section class="timeline-group-card">
-                  <div class="timeline-group-title">Együtt</div>
-                  <div class="timeline-rail">
-                    ${sharedTimeline.map(renderOverviewTimelineRow).join("")}
-                  </div>
-                </section>
+                ${phaseGroup("baltic",  "🗺", "Baltikum",  "júl. 10–18. · Tibi autós felvezető · Lengyelország → Észtország → Helsinki → Stockholm", balticTimeline,  true)}
+                ${phaseGroup("iceland", "🇮🇸", "Izland",    "júl. 18–26. · közös Ring Road körút · Reykjavík → Snæfellsnes → Észak → Kelet → Déli part", icelandTimeline, false)}
+                ${phaseGroup("return",  "🚗", "Hazaút",    "júl. 26. – aug. 6. · Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest", returnTimeline,  false)}
               </div>
             </section>
             <div class="stack">

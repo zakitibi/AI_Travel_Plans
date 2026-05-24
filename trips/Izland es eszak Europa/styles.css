@@ -491,16 +491,89 @@ a {
 
 .timeline-group-stack {
   display: grid;
-  gap: 14px;
+  gap: 12px;
 }
 
+/* ── bezárható timeline szakasz ── */
+.timeline-phase-details {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.82);
+  overflow: hidden;
+  transition: box-shadow 180ms ease;
+}
+.timeline-phase-details[open] {
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+.timeline-phase-details > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  user-select: none;
+}
+.timeline-phase-details > summary::-webkit-details-marker { display: none; }
+.timeline-phase-details > summary::marker { display: none; }
+.timeline-phase-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.timeline-phase-emoji {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+.timeline-phase-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.timeline-phase-sub {
+  font-size: 0.66rem;
+  color: var(--muted);
+  margin-top: 2px;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.timeline-phase-count {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--bg-soft);
+  border-radius: 20px;
+  padding: 2px 8px;
+  flex-shrink: 0;
+}
+.timeline-phase-chevron {
+  font-size: 12px;
+  color: var(--dim);
+  flex-shrink: 0;
+  transition: transform 160ms ease;
+}
+.timeline-phase-details[open] .timeline-phase-chevron {
+  transform: rotate(180deg);
+}
+.timeline-phase-body {
+  padding: 0 14px 14px;
+}
+
+/* legacy — kept for compatibility */
 .timeline-group-card {
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 14px;
   background: rgba(255, 255, 255, 0.78);
 }
-
 .timeline-group-title {
   margin-bottom: 12px;
   font-size: 14px;
