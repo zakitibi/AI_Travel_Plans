@@ -741,54 +741,61 @@ const tripData = {
         {
           num: "1",
           date: "2026. július 10., péntek",
-          title: "Budapest → Lengyelország",
-          subtitle: "Tranzitnyitó nap",
+          title: "Budapest → Suwałki (Lengyelország)",
+          subtitle: "Tranzitnyitó nap — Varsót teljesen kihagyjuk",
           open: true,
-          driveLog: { km: "~900 km", stops: 2, driveTime: "~10 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"Budapest ind."}, {time:"13:00", label:"~félúton"}, {time:"20:00", label:"szállás érk."}] },
+          driveLog: { km: "~900 km", stops: 2, driveTime: "~10 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"Budapest ind."}, {time:"13:00", label:"~félúton"}, {time:"20:00", label:"Suwałki"}] },
           tags: [
             { label: "tranzit", cls: "tag-drive" },
             { label: "8–10h", cls: "tag-drive" }
           ],
           activities: [
-            { time: "reggel", icon: "🚗", name: "Indulás Budapestről", detail: "A teljes expedition első napja, még kifejezetten vezetésközpontú fókuszban." },
-            { time: "napközben", icon: "🛣", name: "Hosszú autópályás etap", detail: "Lengyelország ezen a terven nem célország, hanem kényelmes tranzit." },
-            { time: "este", icon: "🛏", name: "1 tranzitszállás", detail: "Az első nap lényege a jó alvóhely, nem a sightseeing.", note: "Ha ez túl hosszú lenne, itt lehet a legkisebb veszteséggel rövidíteni a napot." }
+            { time: "07:00", icon: "🚗", name: "Indulás Budapestről — M3/E77 észak felé", detail: "A teljes expedition első napja, kifejezetten tranzit-fókuszban. Varsót NEM érintjük: az E77-es Miskolcon, Egerben át visz fel, majd Lengyelországba belépés Visnyón (Visinë) keresztül." },
+            { time: "13:00", icon: "⛽", name: "~Félúton pihenő — Varsó elkerülésével", detail: "A legjobb útvonal Varsó megkerülésével: BUD → Miskolc → Torún → Suwałki. Varsó csak időt és ideget visz el, ki sem kell menni a városba." },
+            { time: "20:00", icon: "🛏", name: "Suwałki — tranzitszállás", detail: "Suwałki ideális alvóhely: közel a litván határhoz, másnap könnyen indulhatsz Kaunas/Vilnius felé. Augustów szebb (tóparti), de ha csak tranzit, Suwałki praktikusabb." }
           ],
-          notes: ["Lengyelország maradjon tranzit.", "Nem érdemes erre a napra külön várost ráerőltetni."]
+          notes: ["Varsót TELJESEN kihagyjuk — be se megyünk, csak időt és ideget visz el.", "Suwałki a legjobb tranzitpont: 30 km-re a litván határtól, másnap könnyen indulhatsz Kaunas felé.", "Alternatív alvó: Augustów (~30 km) — tópartosabb, szebb, de ha csak tranzit, Suwałki praktikusabb."]
         },
         {
           num: "2",
           date: "2026. július 11., szombat",
-          title: "Lengyelország → Vilnius · Henni BUD → KEF",
-          subtitle: "Litvánia érkezés — Henni is ma repül Izlandra (Wizz Air W62427)",
-          driveLog: { km: "~650 km", stops: 2, driveTime: "~8 óra", depart: "08:00", arrive: "~19:00", timelinePoints: [{time:"08:00", label:"ind."}, {time:"14:00", label:"Litvánia határ"}, {time:"19:00", label:"Vilnius"}] },
+          title: "Suwałki → Kaunas → Vilnius · Henni BUD → KEF",
+          subtitle: "Litvánia érkezés Kaunas rövid stoppal — Henni is ma repül Izlandra",
+          driveLog: { km: "~380 km", stops: 3, driveTime: "~5 óra", depart: "08:00", arrive: "~19:00", timelinePoints: [{time:"08:00", label:"Suwałki ind."}, {time:"10:00", label:"Kaunas"}, {time:"12:30", label:"Kaunas → Vilnius"}, {time:"19:00", label:"Vilnius"}] },
           tags: [
-            { label: "~650 km", cls: "tag-drive" },
+            { label: "Kaunas stop", cls: "tag-focus" },
             { label: "Vilnius", cls: "tag-city" }
           ],
           activities: [
-            { time: "napközben", icon: "🚗", name: "Etap Litvánia felé", detail: "A második hosszabb vezetős nap végén már valódi városi célpont jön." },
-            { time: "este", icon: "🌆", name: "Esti Vilnius", detail: "Első rövid séta, vacsora és ráhangolódás a Baltikum városiasabb részére." },
+            { time: "08:00", icon: "🚗", name: "Suwałki → litván határ → Kaunas (~190 km)", detail: "Rövid reggeli etap, a litván határ könnyen átlépős, Kaunas 2 óra Suwałkiból." },
+            { time: "10:00–12:00", icon: "🏙", name: "Kaunas — rövid city stop (ebéd + séta)", detail: "Kaunas nem igényel teljes napot, de megér egy jó 2 órás stopot: Laisvės aleja (a leghosszabb sétálóutca a Baltikumban), Kaunas Castle (rövid kültéri nézelődés), Soboras (neogótikus Kristus Feltámadása-bazilika). Ebéd a sétálóutca melletti kávézóban." },
+            { time: "12:30", icon: "🚗", name: "Kaunas → Vilnius (~100 km, ~1,5h)", detail: "Egyenes autópályaetap, Litvánia két legnagyobb városát összekötő E85-ös." },
+            { time: "14:30–19:00", icon: "🌆", name: "Vilnius esti érkezés — Cathedral Square séta", detail: "Bejelentkezés, majd első rövid séta a Cathedral Square (Katedros aikštė) felé — az óváros zárása előtt megéri a teret megnézni. Vacsora és ráhangolódás a holnapi teljes városnapra." },
             { time: "párhuzamos szál", icon: "✈️", name: "Henni: BUD → KEF, Wizz Air W62427", detail: "15:40 → 18:20 — Erasmus kurzusra indul Izlandra (Smart Teachers Play More, júl. 13–18.). 2 nap ráhangolódás, majd júl. 13-án kezdődik a kurzus." }
           ],
-          notes: ["Tibiéknél itt még balti felvezetés van, Henni ma repül Izlandra az Erasmus kurzusra."]
+          notes: ["Kaunas csak ebéd/séta, nem alszunk itt — de a Laisvės aleja és egy kávé tök jó ráhangolódás.", "Vilnius belváros közelében érdemes szállást venni: Old Town / Cathedral Square / Užupis széle a legjobb bázis.", "Tibiéknél itt még balti felvezetés van, Henni ma repül Izlandra az Erasmus kurzusra."]
         },
         {
           num: "3",
           date: "2026. július 12., vasárnap",
           title: "Vilnius + Trakai",
-          subtitle: "Első teljes balti city day",
-          driveLog: { km: "~30 km (Trakai kitérő)", stops: 2, driveTime: "~45 perc", depart: "09:00", arrive: "~20:00", timelinePoints: [{time:"09:00", label:"Vilnius óváros"}, {time:"12:00", label:"Trakai (30 km)"}, {time:"16:00", label:"vissza Vilnius"}] },
+          subtitle: "Első teljes balti city day — óváros, Gediminas, Užupis, Trakai Castle",
+          driveLog: { km: "~60 km (Trakai oda-vissza)", stops: 3, driveTime: "~1 óra", depart: "09:00", arrive: "~20:00", timelinePoints: [{time:"09:00", label:"Cathedral Square"}, {time:"11:00", label:"Gediminas-torony"}, {time:"13:00", label:"Trakai (28 km)"}, {time:"16:30", label:"vissza Vilnius"}] },
           tags: [
             { label: "óváros", cls: "tag-city" },
+            { label: "Gediminas", cls: "tag-focus" },
             { label: "Trakai", cls: "tag-focus" }
           ],
           activities: [
-            { time: "délelőtt", icon: "🏙", name: "Vilnius óváros", detail: "Laza tempóban is működő történelmi városi blokk." },
-            { time: "kora délután", icon: "🏰", name: "Trakai Castle", detail: "Rövid, erős kitérő, ami nem terheli túl a napot." },
-            { time: "este", icon: "🍽", name: "Vissza Vilniusba", detail: "Második éj ugyanazon a bázison, kényelmes parkolási logikával." }
+            { time: "09:00", icon: "⛪", name: "Cathedral Square + Vilnius Katedrális", detail: "A Katedros aikštė a város szíve: a neoklaszszikus székesegyházzal, a harangtoronnyal és a hatalmas térrel. Reggeli séta ide az igazi vilniusi nyitókép. Google Reviews: ★4.7 — 'Lenyűgöző tér, különösen korán reggel.'" },
+            { time: "10:00", icon: "🏰", name: "Gediminas-torony (Gedimino pilies bokštas)", detail: "A városra néző dombtetőn álló háromszintes vártorony, panoráma kilátóval Vilnius felett. Belépő: ~€5. Google Reviews: ★4.6 — 'A legjobb kilátó a városra, megéri a mászást.'" },
+            { time: "11:00", icon: "🎨", name: "Užupis negyed — a vilniusi Montmartre", detail: "Az óváros keleti szélén önálló 'köztársaságnak' nyilvánított bohém negyed, saját alkotmánnyal (a falon olvasható, magyarul is!). Murális graffitik, kávézók, kis galériák, a Vilnia folyóparti sétány. Google Reviews: ★4.5 — 'Hangulatos, kreatív és nem turista-ipari.'" },
+            { time: "13:00", icon: "🚗", name: "Vilnius → Trakai (~28 km, ~30 perc)", detail: "Rövid autóút nyugat felé a tórendszer felé. Trakainál parkolj a főbejáratnál és gyalogolj." },
+            { time: "13:30", icon: "🏰", name: "Trakai Island Castle (Trakų salos pilis)", detail: "Piros tégla középkori kastély a tavak között, kiskomp vagy part menti séta visz oda. Belépő: ~€8. Google Reviews: ★4.6 — 'Mesés helyszín, a víz tükrében fantasztikus.' Ajánlott idő: 1,5–2 óra." },
+            { time: "15:30", icon: "🥟", name: "Kibinai — kötelező trakai megálló", detail: "A trakai tatár közösség hagyományos töltelékese (hús + hagyma, sütött tészta). Minden parti vendéglőben kapható — ez az egyetlen elmaradhatatlan gasztró-élmény Trakainál. Négy az igazi szám." },
+            { time: "16:30", icon: "🚗", name: "Vissza Vilniusba + esti séta", detail: "Visszatérés, majd az óváros esti hangulata: Pilies utca, a Senamiestis éttermei. Jó vacsora-tipp: Lokys (vaddisznó, szarvas, litván vadételek) vagy Ertlio Namas (modern litván konyha)." }
           ],
-          notes: ["Vilnius ne csak alvóállomás legyen.", "Trakai maradjon céltudatos, nem teljes napos széthúzás."]
+          notes: ["Vilniusi szállás: Old Town / Cathedral Square / Užupis széle — ezekből a negyed gyalogos.", "Gediminas-torony: kora reggeli nyitás előnye, hogy a kilátón kevesen vannak.", "Trakai: vasárnap is nyitva, de nyáron tolong — 13:00 utáni érkezés jobb (a reggeli csúcs múlt).", "Kibinai: Senoji Kibininė étterem a legismertebb, de bármelyik parti hely adja."]
         },
         {
           num: "4",
@@ -811,76 +818,94 @@ const tripData = {
           num: "5",
           date: "2026. július 14., kedd",
           title: "Riga",
-          subtitle: "Lazább city day",
-          driveLog: { km: "~5 km (gyalogos nap)", stops: 4, driveTime: "gyalogos nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"reggeli"}, {time:"10:00", label:"Old Town"}, {time:"15:00", label:"Art Nouveau"}, {time:"19:00", label:"vacsora"}] },
+          subtitle: "City day — óváros, Black Heads, Central Market, Art Nouveau, Daugava-part",
+          driveLog: { km: "~5 km (gyalogos nap)", stops: 5, driveTime: "gyalogos nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Old Town"}, {time:"11:00", label:"Central Market"}, {time:"14:00", label:"Alberta iela"}, {time:"17:00", label:"Daugava-part"}, {time:"19:30", label:"vacsora"}] },
           tags: [
-            { label: "Old Town", cls: "tag-city" },
-            { label: "Art Nouveau", cls: "tag-city" }
+            { label: "Black Heads", cls: "tag-focus" },
+            { label: "Art Nouveau", cls: "tag-city" },
+            { label: "Central Market", cls: "tag-city" }
           ],
           activities: [
-            { time: "délelőtt", icon: "🏛", name: "Old Town", detail: "Sűrű, de könnyen bejárható központi Riga." },
-            { time: "délután", icon: "🏙", name: "Art Nouveau negyed", detail: "Ez adja a rigai nap legerősebb külön karakterét." },
-            { time: "este", icon: "☕", name: "Laza városi zárás", detail: "Ez a nap pont attól jó, hogy nem akar túl sokat." }
+            { time: "09:00", icon: "🏛", name: "Riga Old Town — Rātslaukums tér", detail: "A rigai óváros kompakt és sűrű. Rātslaukums (Városháza tér) a legjobb kezdőpont: a Fekete Fejek Háza (House of the Black Heads) és a Városháza egymással szemben. Riva sétány az Óváros part-oldali zónája." },
+            { time: "09:30", icon: "🖤", name: "House of the Black Heads (Melngalvju nams)", detail: "Riga legfotogénebb épülete: flamboyant gótikus-reneszánsz kereskedő-céhház, amit WWII-ban lerombóltak és 1999-re teljesen újjáépítettek. Belülről kisebb kiállítás, de a homlokzat önmagában ikonikus. Google Reviews: ★4.6 — 'Elképesztően szép homlokzat, kötelező.'" },
+            { time: "10:30", icon: "⛪", name: "Riga Old Town séta — Dóm tér, Három Testvér", detail: "A Dóm (Rīgas Doms) egy hatalmas középkori katedrális — Észak-Európa egyik legnagyobb temploma. A 'Három Testvér' (Trīs brāļi) 15-17. sz.-i házak egymás mellett — a legjobb középkori utcakép Rigában." },
+            { time: "12:00", icon: "🛒", name: "Riga Central Market (Centrāltirgus)", detail: "Öt hatalmas zeppelin-hangárban működő fedett piac — Európa egyik legnagyobb fedett piaca (1930-as évek). Hal, húscsarnok, zöldség, rigai fekete balzám, helyi édességek. Google Reviews: ★4.5 — 'Teljesen egyedi hangulat, kötelező megálló.' Ebéd itt: friss hal és rozskenyér." },
+            { time: "14:00", icon: "🏙", name: "Art Nouveau negyed — Alberta iela 13.", detail: "Alberta iela Riga Art Nouveau-negyedének szíve: a sor leglátványosabb homlokzatai a 2-es, 4-es, 6-os, 8-as és 13-as számok. Az épületek ~1901–1906 Mikhail Eisenstein (Eisenstein filmrendező apja!) tervei szerint épültek. Ingyenes, az utcáról fotózható. Google Reviews: ★4.7." },
+            { time: "16:00", icon: "🎨", name: "Elizabetes iela + Strēlnieku iela Art Nouveau séta", detail: "Az Alberta iela után az Elizabetes utca folytatja az Art Nouveau ívet. Az egész negyed (~1 km sugarú) UNESCO-figyelemben részesített — Riga Art Nouveau-épületek sűrűsége világrekord." },
+            { time: "17:30", icon: "🌊", name: "Daugava folyópart esti séta", detail: "A folyópart (Daugavas krastmala) a AB Dambis sétányán — a legjobb esti rigai panoráma. Innen látszik a Dóm tornya, a Vanšu-híd és a folyó széles öble. Jó helyszín kávézáshoz." },
+            { time: "19:30", icon: "🍺", name: "Vacsora — Rigai sörkultúra", detail: "Labietis brewery & bar (craft sör, helyi élelmiszer) vagy Folkklubs Ala Pagrabs (lett hagyományos étterem, élőzene, középkori hangulat pincében). Pelēkie zirņi ar speķi (szürke borsó szalonnával) kötelező megkóstolni." }
           ],
-          notes: ["A rigai puffer fontos a sok vezetés közé.", "Másnap újra hosszabb mozgás jön Tallinn felé."]
+          notes: ["Art Nouveau séta: a legjobb ingyenes programok egyike Rigában. Nem kell múzeumjegy, csak az utca.", "Alberta iela 2-es számban van az Art Nouveau Múzeum (belépő ~€6) ha mélyebbre mennétek.", "Riga Central Market: hétköznap reggel 8-tól, de 12 utánra a legfrissebb áruk elkelnek — délelőtt ideális.", "Fekete Fejek Háza belépő: ~€6 — ha csak kívülről nézed, az is elég, de a belső termek szépek."]
         },
         {
           num: "6",
           date: "2026. július 15., szerda",
-          title: "Riga → Sigulda → Tallinn",
-          subtitle: "Gauja NP átmeneti nap",
-          driveLog: { km: "~350 km", stops: 3, driveTime: "~4,5 óra", depart: "08:00", arrive: "~20:00", timelinePoints: [{time:"08:00", label:"ind. Riga"}, {time:"10:00", label:"Sigulda / Gauja"}, {time:"20:00", label:"Tallinn érk."}] },
+          title: "Riga → Sigulda / Turaida → Tallinn",
+          subtitle: "Gauja-völgy átmeneti nap — Turaida Castle, Gutmanis Cave, este Tallinn",
+          driveLog: { km: "~350 km", stops: 3, driveTime: "~4,5 óra", depart: "08:00", arrive: "~20:00", timelinePoints: [{time:"08:00", label:"ind. Riga"}, {time:"09:30", label:"Sigulda/Turaida"}, {time:"13:00", label:"Tallinn felé"}, {time:"20:00", label:"Tallinn érk."}] },
           tags: [
             { label: "~350 km", cls: "tag-drive" },
-            { label: "Gauja NP", cls: "tag-focus" }
+            { label: "Turaida Castle", cls: "tag-focus" },
+            { label: "Gauja NP", cls: "tag-nature" }
           ],
           activities: [
-            { time: "délelőtt", icon: "🌲", name: "Sigulda / Gauja", detail: "A természetes átvezetés itt sokat javít a teljes úton." },
-            { time: "napközben", icon: "🚗", name: "Tallinn felé vezetés", detail: "Még mindig hosszabb nap, de már jobb ritmussal." },
-            { time: "este", icon: "⚓", name: "Tallinn kikötőközeli hotel", detail: "A másnapi tengeri szál miatt itt a lokáció különösen fontos." }
+            { time: "08:00", icon: "🚗", name: "Indulás Rigából — Sigulda ~50 km, ~40 perc", detail: "Rövid reggeli etap, gyorsan kint vagyunk a városból." },
+            { time: "09:30", icon: "🏰", name: "Turaida Castle (Turaidas pils)", detail: "Vörös tégla középkori vár a Gauja-völgy kiemelkedő pontján, fantasztikus kilátással a folyóvölgyre. Belépő: ~€4. Google Reviews: ★4.5 — 'Jobb kilátás mint Sigulda várától, és kevésbé turista-teli.' Nyitva 10:00–17:00." },
+            { time: "10:30", icon: "🪨", name: "Gutmanis-barlang (Gūtmaņala)", detail: "Lettország legnagyobb barlangja, a Gauja sziklafalaiban. A homokkő falain évszázados feliratokat véstek be utazók (1668-tól dokumentált!). Ingyenes, rövid séta a folyóparton. Google Reviews: ★4.4 — 'Meglepően misztikus hangulat.'" },
+            { time: "11:30", icon: "🌲", name: "Gauja-völgy kilátók — opcionális Sigulda-séta", detail: "Sigulda kastélyromok (Siguldas pilsdrupas) és a Gauja-völgy panorámája. Ha van idő: a kábeles gondola (Gauja-gondola) a völgy felett az egyik legegyedibb balti élmény. Google Reviews: ★4.6." },
+            { time: "13:00", icon: "🚗", name: "Sigulda → Pärnu → Tallinn (~300 km)", detail: "Észtországba belépés, Pärnu rövid megállólehetőség (ha van energia): homokos tengerparti üdülőváros, de ha Sigulda benne van, inkább kávé-megálló szinten." },
+            { time: "20:00", icon: "⚓", name: "Tallinn — Rotermann / Sadama negyed szállás", detail: "Tallinnban a Rotermann / Sadama negyed a legjobb autós bázis: közel a kompterminálhoz, közel az óvároshoz, van parkoló. A másnapi Tallink miatt kikötő-közeli lokáció kifizetődik." }
           ],
-          notes: ["Tallinn előtt ez a legjobb hely a tájváltásra.", "A kikötőközeli zárás logisztikailag kifizetődik."]
+          notes: ["Turaida Castle: jobb kilátás és kevesebb tömeg mint a siguldai castle romok — inkább ezt válaszd ha csak egyet.", "Gutmanis-barlang: a Turaida kastélyból gyalogosan is elérhető (erdei ösvény, ~15 perc).", "Pärnu: ha Sigulda tele volt programmal, Pärnu legyen csak gyors kávé. Ha Sigulda rövid volt, egy fél óra tenger-pillantás jó.", "Tallinn szállás: Rotermann / Sadama / Old Town széle — autóval ide a legpraktikusabb bemenni."]
         },
         {
           num: "7",
           date: "2026. július 16., csütörtök",
           title: "Tallinn",
-          subtitle: "Óváros + kikötői ráfordulás",
-          driveLog: { km: "~5 km (gyalogos nap)", stops: 3, driveTime: "gyalogos nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Tallinn óváros"}, {time:"14:00", label:"kikötő"}, {time:"18:00", label:"komp prep."}] },
+          subtitle: "Toompea · óváros · Alexander Nevsky · Telliskivi · Lennusadam",
+          driveLog: { km: "~6 km (gyalogos nap)", stops: 5, driveTime: "gyalogos nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Toompea domb"}, {time:"11:00", label:"Alexander Nevsky"}, {time:"13:00", label:"Vanalinn óváros"}, {time:"16:00", label:"Telliskivi"}, {time:"19:00", label:"vacsora"}] },
           tags: [
+            { label: "Toompea", cls: "tag-focus" },
             { label: "óváros", cls: "tag-city" },
-            { label: "komp előtt", cls: "tag-focus" }
+            { label: "Telliskivi", cls: "tag-city" }
           ],
           activities: [
-            { time: "délelőtt", icon: "🏰", name: "Tallinn óváros", detail: "Kompakt, karakteres, könnyen jó napot ad." },
-            { time: "délután", icon: "⚓", name: "Kikötő környéke", detail: "A másnapi átmenet miatt itt praktikus előre ráhangolódni." },
-            { time: "este", icon: "🧳", name: "Komp előtti előkészítés", detail: "Másnap már nem tiszta városnap, hanem mozgási nap jön." }
+            { time: "09:00", icon: "🏛", name: "Toompea domb — Kohtuotsa kilátó", detail: "Tallinn fellegvára és a legjobb kilátópont a városra. Két főbb kilátó: Kohtuotsa platoo (templomtornyok + Vanalinn piros tetők) és Patkuli terasz (kikötő + tenger felé). Google Reviews: ★4.7 — 'Az egyik legjobb kilátó egész Észtországban.'" },
+            { time: "10:00", icon: "⛪", name: "Alexander Nevsky-katedrális", detail: "Az orosz ortodox katedrális Toompea dombján — hagyma-kupolás, pompás épület, kontrasztban a lutheránus tallinni óvárossal. Belépő: ingyenes. Google Reviews: ★4.7 — 'Belülről is gyönyörű, és az ikonosztatész kivételes.'" },
+            { time: "11:00", icon: "🏰", name: "Tallinn óváros (Vanalinn) séta — Raekoja plats", detail: "Raekoja plats (Városháza tér) a középkori óváros szíve — a városháza (1402) és a 'Vana Toomas' figura az egyik legkorábbi toronyóra a Baltikumban. Sétáló sikátorok: Katariina käik, Pikk tänav (Hosszú utca)." },
+            { time: "12:30", icon: "🍞", name: "Ebéd az óvárosban — Leib Resto", detail: "Leib Resto & Aed: az egyik legjobb észt hagyományos étterem rozskenyér-tematikával. Véres kolbász, sült sertés, észt sajt. Google Reviews: ★4.6. Alternatíva: Olde Hansa (középkori étterem élőzenével — turista, de szórakoztató)." },
+            { time: "14:00", icon: "🚂", name: "Telliskivi Creative City", detail: "A vasúti műhelyek helyén kialakult alternatív negyedben design üzletek, street art murálisok, kézműves sörmalmok (Põhjala Brewery taproom), kávézók. Nem turista-hely, hanem ahol a tállinniak vannak. Google Reviews: ★4.5 — 'A leghitelesebb része a mai Tallinnnak.'" },
+            { time: "16:00", icon: "✈️", name: "Lennusadam / Seaplane Harbour (opcionális)", detail: "Ha marad energia: a repülőhajó-hangárban működő tengeri múzeum — Lembit tengeralattjáró, hidroplán-hangar, jégtörő Suur Tõll. Google Reviews: ★4.6 — 'Elképesztő épület, a tengeralattjáró belülről is bejárható.' Belépő: ~€14." },
+            { time: "19:00", icon: "🍺", name: "Esti vacsora + komp előtti packing", detail: "Vacsora: Põhjala Tap Room (craft sör + ételek) vagy a Telliskivi-negyedben bármely teraszos hely. Komp (Tallink Megastar) másnap 10:30 indul — az autóval való beállás 09:30-ra kell, érdemes estére kész lenni." }
           ],
-          notes: ["Tallinn itt csúcsállomás és logisztikai kapu egyszerre."]
+          notes: ["Tallinn autós logisztika: parkolj a Rotermann / Sadama negyed P-jában, az óvárosba nem érdemes behajtani.", "Kompterminál: Tallinn D-terminál (a Sadama negyedtől 5 perc gyalog). Autós boarding kb. 09:00-tól a 10:30-as menetrendnél.", "Lennusadam: ha elfáradt láb és kevés energia, ezt el is lehet hagyni — Toompea + Telliskivi a fontosabb.", "Toompea és Vanalinn együtt ~3-4 óra; Telliskivi még 1,5 óra — a nap könnyen betellik."]
         },
         {
           num: "8",
           date: "2026. július 17., péntek",
-          title: "Helsinki + Turku — Finnország nap",
-          subtitle: "Tallink shuttle Helsinkibe → finn városi blokk → Turku → Viking Line overnight",
-          driveLog: { km: "~170 km (Helsinki → Turku)", stops: 5, driveTime: "~1,5 óra", depart: "10:30", arrive: "20:00", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:30", label:"→ Turku"}, {time:"20:00", label:"Viking Line"}] },
+          title: "Helsinki + Porvoo + Turku — Finn nap",
+          subtitle: "Tallink shuttle Helsinkibe → Helsinki rövid → Porvoo óváros → Turku → Viking Line overnight",
+          driveLog: { km: "~240 km (Helsinki → Porvoo → Turku)", stops: 6, driveTime: "~2,5 óra", depart: "10:30", arrive: "20:00", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"13:30", label:"Porvoo"}, {time:"15:30", label:"→ Turku"}, {time:"17:30", label:"Turku"}, {time:"20:00", label:"Viking Line"}] },
           tags: [
             { label: "Helsinki", cls: "tag-city" },
+            { label: "Porvoo", cls: "tag-focus" },
             { label: "Turku", cls: "tag-city" },
             { label: "Viking Line", cls: "tag-ferry" }
           ],
           activities: [
             { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Shuttle)", detail: "Tallink Megastar, 10:30 → 12:30. A világ egyik legnagyobb és legmodernebb komp-járata, kényelmes átkelés." },
-            { time: "12:30–14:30", icon: "🏙", name: "Helsinki gyors blokk", detail: "Market Square (Kauppatori) + Régi Csarnok, Helsinki Katedrális, partséta a kikötő mellett. 2 óra alatt az ikonikus képek megvannak." },
-            { time: "14:30–16:00", icon: "🚗", name: "Helsinki → Turku (autóval)", detail: "~170 km, E18 autópálya, 1,5 óra. Turku Finnország nyugat-déli csücskén, a Turku-Stockholm kompok kikötőjével." },
-            { time: "16:00–19:30", icon: "🏰", name: "Turku: Kastély + Aura folyópart", detail: "Turku Castle (Turun linna) 1-1,5 óra, majd Aura folyópart — hajóéttermek, Market Hall, Turku katedrális." },
+            { time: "12:30–13:00", icon: "🏙", name: "Helsinki gyors blokk — Market Square + Katedrális", detail: "Market Square (Kauppatori) + Helsinki Katedrális: a két legikonikusabb helsinki kép 30 perc alatt megvan. Ha van 15 extra perc: Uspenski-katedrális a dombon. Autóval a kikötőnél parkolni rövid stophoz." },
+            { time: "13:00–13:45", icon: "🚗", name: "Helsinki → Porvoo (~50 km keletre, ~45 perc)", detail: "E18-as autópályán, majd le a 7-esre Porvoo felé. Porvoo Helsinkitől keletre van, az ellenkező irányban mint Turku — de megéri a kitérőt." },
+            { time: "13:45–15:30", icon: "🏘", name: "Porvoo — faházas óváros séta", detail: "Porvoo Finnország második legidősebb városa. A régi óváros (Vanha Porvoo) faházas negyede teljesen egyedi: piros, okker és sárga festett faházak a folyóparton. A legszebb nézet az Old Town Bridge (Porvoonjoki) felőli part. Kevesebb turista mint Helsinkiben, hangulatosabb esti feeling. Google Reviews: ★4.6 — 'Ha csak egy finn kisvárost nézel meg, ez legyen.' Kb. 1,5 óra ideális." },
+            { time: "15:30–17:30", icon: "🚗", name: "Porvoo → Turku (~190 km, ~2 óra)", detail: "E18-as autópályán, Helsinkitől nyugatra. Egyenes, jó minőségű finn autópálya." },
+            { time: "17:30–19:30", icon: "🏰", name: "Turku: Castle + Aura folyópart", detail: "Turku Castle (Turun linna) 1-1,5 óra, majd Aura folyópart — hajóéttermek, Market Hall, Turku katedrális. Ha Porvoo sok időt vett el, az Aura folyópart vacsora fontosabb mint a Castle." },
             { time: "20:00", icon: "🚢", name: "Viking Line boarding Turkuból", detail: "Viking Grace vagy Viking Glory, Turku → Mariehamn (Åland-szigetek) → Stockholm Värtahamnen. Megérkezés 06:30." }
           ],
           notes: [
             "⚠️ Viking Line vs. régi terv: A Helsinki→Stockholm overnight ferry (Silja Symphony) 18 óra és 16:45-kor indul — így alig 4 óra maradt volna Helsinkiben. A Turku–Stockholm vonal (Viking Line) csak 10,5 óra, reggel 06:30-ra ér Stockholmba — sokkal jobb puffer az FI309 elé.",
-            "Helsinki gyors blokk (2h): Market Square + Katedrális a legjobb kombó. Ha kicsit több idő van: Temppeliaukio sziklakirkko (köve van a legtömörebb 30 percnek) vagy Allas Sea Pool.",
+            "Porvoo kitérő: Porvoo KELETRE van Helsinkitől, Turku NYUGATRA — így a Porvoo → Turku táv ~240 km (vs. direkt Helsinki → Turku 170 km). Ez ~1 óra extra menetidőt jelent, de Porvoo ezt megéri: hangulatosabb mint egy extra Helsinki-kör.",
+            "Ha Porvoo kiesik (pl. késő indulás Tallinnból): Helsinki rövid blokk (+Temppeliaukio sziklakirkko opcionálisan) → Turku → Viking Line. Ez is jó terv.",
             "Turku Castle (Turun linna): Finnország egyik legidősebb és legimpozánsabb középkori kastélya, a kikötő tövénél. Nyitva 10:00–18:00. Belépő ~€10.",
-            "Turku Katedrális: Finnország legnagyobb katedrálisa, a Turku-sétány szívén. Gyalogosan elérhető a castellótól.",
             "Aura folyópart (Aurajoki): hajóéttermek, kávézók, a helyi diákok és turisták egyforma kedvence.",
             "Kompok még nem foglaltak — mind a Tallink Shuttle (Tallinn–Helsinki), mind a Viking Line (Turku–Stockholm) tervezett státuszban van.",
             "Viking Line foglalás: vikingline.com — kabinos overnight menetrend Turkuból kb. 20:00, Stockholm 06:30."
