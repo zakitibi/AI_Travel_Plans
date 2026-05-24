@@ -108,15 +108,44 @@
 
     function renderDriveTimeline(points) {
       if (!points || points.length < 2) return "";
+
+      function pct(timeStr) {
+        const m = timeStr.match(/(\d{1,2}):(\d{2})/);
+        if (!m) return null;
+        return ((parseInt(m[1]) + parseInt(m[2]) / 60) / 24) * 100;
+      }
+
+      const ticks = [
+        { p: 25, label: "06:00" },
+        { p: 50, label: "12:00" },
+        { p: 75, label: "18:00" }
+      ];
+
+      const ticksHtml = ticks.map((t) => `
+        <div class="dtl-tick" style="left:${t.p}%"></div>
+        <div class="dtl-tick-label" style="left:${t.p}%">${t.label}</div>
+      `).join("");
+
+      const dotsHtml = points.map((pt, i) => {
+        const p = pct(pt.time);
+        const left = p !== null ? p : (i / (points.length - 1)) * 100;
+        const cls = i === 0 ? "dtl-point dtl-start" : i === points.length - 1 ? "dtl-point dtl-end" : "dtl-point";
+        const xform = left < 12 ? "translateX(0)" : left > 88 ? "translateX(-100%)" : "translateX(-50%)";
+        const align = left < 12 ? "flex-start" : left > 88 ? "flex-end" : "center";
+        return `
+          <div class="${cls}" style="left:${left.toFixed(1)}%;transform:${xform};align-items:${align}">
+            <div class="dtl-dot"></div>
+            <div class="dtl-time">${pt.time}</div>
+            <div class="dtl-label">${pt.label}</div>
+          </div>
+        `;
+      }).join("");
+
       return `
         <div class="drive-timeline">
-          ${points.map((pt) => `
-            <div class="dtl-point">
-              <div class="dtl-dot"></div>
-              <div class="dtl-time">${pt.time}</div>
-              <div class="dtl-label">${pt.label}</div>
-            </div>
-          `).join("")}
+          <div class="drive-timeline-rail"></div>
+          ${ticksHtml}
+          ${dotsHtml}
         </div>
       `;
     }
