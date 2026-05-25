@@ -2285,3 +2285,53 @@ details.coll-card[open] > summary .collapse-icon {
   gap: 10px;
   padding-bottom: 10px;
 }
+
+/* ── Hotel day-badge marker ────────────────────────────────────────────────── */
+.tm-marker-hotel-day {
+  position: relative;
+  border: 2.5px solid var(--day-color, #1f5a3e) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--day-color, #1f5a3e) 30%, transparent) !important;
+}
+.tm-day-badge {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  background: var(--day-color, #1f5a3e);
+  color: #fff;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 9px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  letter-spacing: -0.3px;
+}
+
+/* ── Day chip in popup footer ─────────────────────────────────────────────── */
+.tm-popup-day-chip {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* ── Route tooltip ────────────────────────────────────────────────────────── */
+.tm-route-tooltip {
+  background: rgba(25, 25, 35, 0.88);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+.tm-route-tooltip::before { display: none; }

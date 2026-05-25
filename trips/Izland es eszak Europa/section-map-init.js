@@ -4,18 +4,13 @@
  * Minden részletes szakasz-oldal (Baltikum, Izland, Hazaút) aljára
  * kerül egy-egy Leaflet-térkép a szakasz összes POI-jával.
  *
- * Data source: ugyanaz a statikus JSON, mint a többi térkép
- *   /data/trips/izland-es-eszak-europa/pois.json
- *   /data/trips/izland-es-eszak-europa/route.json
- *
- * Minden térkép:
+ * Funkciók:
  *   ◆ csak az adott szakasz POI-jait és útvonal-szegmenseit mutatja
- *   ◆ Típusok   — szállás · látvaló · áthajtó · komp · repülő  (csak a ténylegesen jelen lévők)
- *   ◆ Napok     — per-nap jelölők, görgethetők, fázis-színű pont
- *   ◆ lusta inicializálás: csak az első lapkattintásra töltődik be
- *
- * Container ID-k: baltikum-map  / izland-map  / hazaut-map
- * Sidebar  ID-k:  baltikum-map-filter / izland-map-filter / hazaut-map-filter
+ *   ◆ Látnivalók saját ikonnal (poi.icon emoji, ha definiált)
+ *   ◆ Napok — per-nap szín az útvonalakon és jelölőkön
+ *   ◆ Szűrők — Típusok + Napok (napszűrő az útvonalakat is toggleli)
+ *   ◆ Útvonal tooltip — távolság km-ben
+ *   ◆ Napjelvény — szállás-markereken nap-számbadge
  */
 
 import { loadTrip } from "../../engine/TripLoader.js";
@@ -37,6 +32,20 @@ const SECTION_CONF = {
   hazaut:   { dotColor: "#6a4ca3", label: "Hazaút"   },
 };
 
+// ── Nap → szín paletta ────────────────────────────────────────────────────────
+const DAY_PALETTE = [
+  "#e63946","#f4831f","#e9c46a","#2a9d8f","#1d6fa4",
+  "#7b5ea7","#c77dff","#e07a5f","#06d6a0","#118ab2",
+  "#ffd166","#ef476f","#457b9d","#a8dadc","#6a994e",
+  "#bc4749","#386641","#6c757d","#d62828","#023e8a",
+  "#f48c06","#e85d04","#9d0208","#48cae4","#023047",
+  "#8ecae6","#219ebc","#126782",
+];
+
+function dayColor(day) {
+  return day != null ? DAY_PALETTE[(day - 1) % DAY_PALETTE.length] : "#64748b";
+}
+
 // ── Type metadata ─────────────────────────────────────────────────────────────
 const ALL_TYPES = [
   { id: "hotel",  label: "Szállás",   dotColor: "#1f5a3e" },
@@ -46,7 +55,7 @@ const ALL_TYPES = [
   { id: "flight", label: "Repülő",    dotColor: "#7c3aed" },
 ];
 
-// ── Type → icon ───────────────────────────────────────────────────────────────
+// ── Type → fallback icon ──────────────────────────────────────────────────────
 const TYPE_CONF = {
   hotel:  { emoji: "🏨", cls: "tm-marker-hotel"  },
   drive:  { emoji: "🚗", cls: "tm-marker-drive"  },
@@ -59,12 +68,39 @@ function typeConf(type) {
   return TYPE_CONF[(type || "").toLowerCase()] || { emoji: "📌", cls: "tm-marker-default" };
 }
 
+/** Emoji to render: poi.icon overrides the type default for sight markers */
+function poiEmoji(poi) {
+  return poi.icon || typeConf(poi.type).emoji;
+}
+
 // ── Icon factory ──────────────────────────────────────────────────────────────
 function createIcon(L, poi) {
-  const { emoji, cls } = typeConf(poi.type);
+  const emoji = poiEmoji(poi);
+  const { cls } = typeConf(poi.type);
+  const color   = dayColor(poi.day);
+
+  // Hotel: show day-number badge and day-accent border
+  if (poi.type === "hotel" && poi.day != null) {
+    return L.divIcon({
+      className: "",
+      html: `<div class="tm-marker ${cls} tm-marker-hotel-day" style="--day-color:${color}">
+               <span class="tm-marker-inner">${emoji}</span>
+               <span class="tm-day-badge">${poi.day}</span>
+             </div>`,
+      iconSize:    [34, 34],
+      iconAnchor:  [17, 34],
+      popupAnchor: [0, -36],
+    });
+  }
+
+  // Non-hotel sight: tinted border by day
+  const borderStyle = poi.day != null
+    ? `style="border-color:${color};box-shadow:0 0 0 2px ${color}33"`
+    : "";
+
   return L.divIcon({
-    className:   "",
-    html:        `<div class="tm-marker ${cls}"><span class="tm-marker-inner">${emoji}</span></div>`,
+    className: "",
+    html: `<div class="tm-marker ${cls}" ${borderStyle}><span class="tm-marker-inner">${emoji}</span></div>`,
     iconSize:    [30, 30],
     iconAnchor:  [15, 30],
     popupAnchor: [0, -33],
@@ -73,19 +109,15 @@ function createIcon(L, poi) {
 
 // ── Popup builder ─────────────────────────────────────────────────────────────
 function buildPopupHtml(poi) {
-  const { emoji } = typeConf(poi.type);
+  const emoji    = poiEmoji(poi);
+  const dayLabel = poi.day != null ? `<span class="tm-popup-day-chip" style="background:${dayColor(poi.day)}">${poi.day}. nap</span>` : "";
   const subtitle = [
-    poi.day   ? `${poi.day}. nap` : "",
-    poi.date  ? poi.date.replace(/-/g, ".") : "",
+    poi.date    ? poi.date.replace(/-/g, ".")  : "",
     poi.country || "",
   ].filter(Boolean).join(" · ");
   const sc = SECTION_CONF[poi.stage];
-  const stageBadge = sc
-    ? `<span class="tm-popup-szakasz">${sc.label}</span>`
-    : "";
-  const noteHtml = poi.popup?.note
-    ? `<div class="tm-popup-note">${poi.popup.note}</div>`
-    : "";
+  const stageBadge = sc ? `<span class="tm-popup-szakasz">${sc.label}</span>` : "";
+  const noteHtml   = poi.popup?.note ? `<div class="tm-popup-note">${poi.popup.note}</div>` : "";
   return `
     <div class="tm-popup">
       <div class="tm-popup-head">
@@ -98,31 +130,55 @@ function buildPopupHtml(poi) {
       <div class="tm-popup-divider"></div>
       ${poi.popup?.description ? `<div class="tm-popup-desc">${poi.popup.description}</div>` : ""}
       ${noteHtml}
-      <div class="tm-popup-foot">${stageBadge}</div>
+      <div class="tm-popup-foot">${dayLabel}${stageBadge}</div>
     </div>
   `;
 }
 
-// ── Route renderer ────────────────────────────────────────────────────────────
-function renderRoutes(L, map, route, stageId) {
+// ── Route renderer — day-coloured with distance tooltip ───────────────────────
+/**
+ * @param {L}        L         Leaflet
+ * @param {object}   map       Leaflet map instance
+ * @param {object}   route     GeoJSON FeatureCollection
+ * @param {string}   stageId
+ * @param {Map}      routesByDay  day → L.Layer[]  (filled in-place)
+ */
+function renderRoutes(L, map, route, stageId, routesByDay) {
   const filtered = {
     type: "FeatureCollection",
     features: (route.features || []).filter(
       f => (f.properties?.stage || "") === stageId
     ),
   };
+
   L.geoJSON(filtered, {
     style(feature) {
       const p = feature.properties || {};
       const t = p.type || "drive";
+      // Per-day colour for detour routes (have p.day); stage colour for main routes
+      const color = p.day != null ? dayColor(p.day) : (p.color || "#64748b");
       return {
-        color:     p.color   || "#64748b",
+        color,
         weight:    p.weight  || 3,
-        opacity:   p.opacity || 0.75,
+        opacity:   p.opacity || 0.80,
         lineJoin:  "round",
         lineCap:   "round",
-        dashArray: t === "flight" ? "4 10" : t === "ferry" ? "7 9" : null,
+        dashArray: t === "flight" ? "5 12" : t === "ferry" ? "8 10" : null,
       };
+    },
+    onEachFeature(feature, layer) {
+      const p = feature.properties || {};
+      const dayPart  = p.day      != null ? `<b>${p.day}. nap</b> · ` : "";
+      const distPart = p.distance_km      ? ` · <b>${p.distance_km} km</b>` : "";
+      layer.bindTooltip(
+        `${dayPart}${p.name || ""}${distPart}`,
+        { sticky: true, className: "tm-route-tooltip" }
+      );
+      // Register into routesByDay for filter sync
+      if (p.day != null && routesByDay) {
+        if (!routesByDay.has(p.day)) routesByDay.set(p.day, []);
+        routesByDay.get(p.day).push(layer);
+      }
     },
   }).addTo(map);
 }
@@ -140,18 +196,17 @@ function buildDayItems(pois, stageId) {
     if (poi.type === "sight" && !e.sight) e.sight = poi.name;
     if (!e.any) e.any = poi.name;
   }
-  const sc = SECTION_CONF[stageId];
   return Object.values(byDay)
     .sort((a, b) => a.day - b.day)
     .map(e => ({
       id:       e.day,
       label:    `${e.day}. nap — ${e.hotel || e.sight || e.any || "–"}`,
-      dotColor: sc?.dotColor || "#64748b",
+      dotColor: dayColor(e.day),
     }));
 }
 
 // ── Filter sidebar ────────────────────────────────────────────────────────────
-function buildFilterSidebar(sidebarEl, pois, markerList, leafMap, stageId) {
+function buildFilterSidebar(sidebarEl, pois, markerList, leafMap, stageId, routesByDay) {
   const dayItems = buildDayItems(pois, stageId);
 
   // Only show types that have at least one POI in this stage
@@ -164,11 +219,22 @@ function buildFilterSidebar(sidebarEl, pois, markerList, leafMap, stageId) {
   };
 
   function applyFilter() {
+    // Markers
     for (const { marker, poi } of markerList) {
       const dayOk   = poi.day == null || state.days.has(poi.day);
       const visible = state.types.has(poi.type) && dayOk;
       if (visible) { if (!leafMap.hasLayer(marker)) leafMap.addLayer(marker); }
       else         { if (leafMap.hasLayer(marker))  leafMap.removeLayer(marker); }
+    }
+    // Route layers (only per-day detour routes)
+    if (routesByDay) {
+      for (const [day, layers] of routesByDay) {
+        const show = state.days.has(day);
+        for (const layer of layers) {
+          if (show) { if (!leafMap.hasLayer(layer)) leafMap.addLayer(layer); }
+          else      { if (leafMap.hasLayer(layer))  leafMap.removeLayer(layer); }
+        }
+      }
     }
   }
 
@@ -288,24 +354,24 @@ async function initSectionMap(stageId) {
     const { pois: allPois, route: allRoute } = await getTripData();
 
     // Filter to this stage only
-    const pois = allPois.filter(p => p.stage === stageId && p.lat != null && p.lng != null);
+    const stagePois = allPois.filter(p => p.stage === stageId && p.lat != null && p.lng != null);
 
     const map = L.map(containerId, {
       zoomControl:        true,
       attributionControl: true,
-      preferCanvas:       true,
+      preferCanvas:       false,   // vector needed for route tooltips
     }).setView([60, 15], 4);
     window._leafletMaps = window._leafletMaps || {};
     window._leafletMaps[containerId] = map;
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution:
-        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       maxZoom: 19,
     }).addTo(map);
 
-    // Routes for this stage
-    renderRoutes(L, map, allRoute, stageId);
+    // Routes — pass in routesByDay map so day-filter can toggle them
+    const routesByDay = new Map();
+    renderRoutes(L, map, allRoute, stageId, routesByDay);
 
     // Markers
     const markerList = [];
@@ -323,14 +389,22 @@ async function initSectionMap(stageId) {
       markerList.push({ marker, poi });
     }
 
-    // Filter sidebar (outside map)
+    // Filter sidebar (outside map — touch-scroll friendly)
     const sidebar = document.getElementById(`${stageId}-map-filter`);
-    if (sidebar) buildFilterSidebar(sidebar, allPois.filter(p => p.stage === stageId), markerList, map, stageId);
+    if (sidebar) {
+      buildFilterSidebar(
+        sidebar,
+        allPois.filter(p => p.stage === stageId),
+        markerList, map, stageId, routesByDay
+      );
+    }
 
     // Fit to stage bounds
-    const coords = pois.map(p => [p.lat, p.lng]);
-    if (coords.length) {
-      map.fitBounds(L.latLngBounds(coords), { padding: [40, 40] });
+    if (stagePois.length) {
+      map.fitBounds(
+        L.latLngBounds(stagePois.map(p => [p.lat, p.lng])),
+        { padding: [40, 40] }
+      );
     }
 
     if (overlay) overlay.classList.add("tm-hidden");

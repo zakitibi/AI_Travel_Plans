@@ -33,6 +33,19 @@ const TYPES = [
   { id: "flight", label: "Repülő",     dotColor: "#7c3aed" },
 ];
 
+// ── Day palette ───────────────────────────────────────────────────────────────
+const DAY_PALETTE = [
+  "#e63946","#f4831f","#e9c46a","#2a9d8f","#1d6fa4",
+  "#7b5ea7","#c77dff","#e07a5f","#06d6a0","#118ab2",
+  "#ffd166","#ef476f","#457b9d","#a8dadc","#6a994e",
+  "#bc4749","#386641","#6c757d","#d62828","#023e8a",
+  "#f48c06","#e85d04","#9d0208","#48cae4","#023047",
+  "#8ecae6","#219ebc","#126782",
+];
+function dayColor(day) {
+  return day != null ? DAY_PALETTE[(day - 1) % DAY_PALETTE.length] : "#64748b";
+}
+
 // ── Type → icon config (mirrors MarkerRenderer.js) ───────────────────────────
 const TYPE_CONF = {
   hotel:   { emoji: "🏨", cls: "tm-marker-hotel"   },
@@ -46,12 +59,36 @@ function typeConf(type) {
   return TYPE_CONF[(type || "").toLowerCase()] || { emoji: "📌", cls: "tm-marker-default" };
 }
 
+function poiEmoji(poi) {
+  return poi.icon || typeConf(poi.type).emoji;
+}
+
 // ── Icon factory ──────────────────────────────────────────────────────────────
 function createIcon(L, poi) {
-  const { emoji, cls } = typeConf(poi.type);
+  const emoji = poiEmoji(poi);
+  const { cls } = typeConf(poi.type);
+  const color   = dayColor(poi.day);
+
+  if (poi.type === "hotel" && poi.day != null) {
+    return L.divIcon({
+      className: "",
+      html: `<div class="tm-marker ${cls} tm-marker-hotel-day" style="--day-color:${color}">
+               <span class="tm-marker-inner">${emoji}</span>
+               <span class="tm-day-badge">${poi.day}</span>
+             </div>`,
+      iconSize:    [34, 34],
+      iconAnchor:  [17, 34],
+      popupAnchor: [0, -36],
+    });
+  }
+
+  const borderStyle = poi.day != null
+    ? `style="border-color:${color};box-shadow:0 0 0 2px ${color}33"`
+    : "";
+
   return L.divIcon({
     className:   "",
-    html:        `<div class="tm-marker ${cls}"><span class="tm-marker-inner">${emoji}</span></div>`,
+    html:        `<div class="tm-marker ${cls}" ${borderStyle}><span class="tm-marker-inner">${emoji}</span></div>`,
     iconSize:    [30, 30],
     iconAnchor:  [15, 30],
     popupAnchor: [0, -33],
@@ -60,9 +97,11 @@ function createIcon(L, poi) {
 
 // ── Popup builder (mirrors MarkerRenderer.js) ─────────────────────────────────
 function buildPopupHtml(poi) {
-  const { emoji } = typeConf(poi.type);
+  const emoji    = poiEmoji(poi);
+  const dayLabel = poi.day != null
+    ? `<span class="tm-popup-day-chip" style="background:${dayColor(poi.day)}">${poi.day}. nap</span>`
+    : "";
   const subtitle = [
-    poi.day   ? `${poi.day}. nap` : "",
     poi.date  ? poi.date.replace(/-/g, ".") : "",
     poi.country || "",
   ].filter(Boolean).join(" · ");
@@ -82,7 +121,7 @@ function buildPopupHtml(poi) {
       <div class="tm-popup-divider"></div>
       ${poi.popup?.description ? `<div class="tm-popup-desc">${poi.popup.description}</div>` : ""}
       ${noteHtml}
-      <div class="tm-popup-foot">${stageBadge}</div>
+      <div class="tm-popup-foot">${dayLabel}${stageBadge}</div>
     </div>
   `;
 }
@@ -93,14 +132,24 @@ function renderRoutes(L, map, route) {
     style(feature) {
       const p = feature.properties || {};
       const t = p.type || "drive";
+      const color = p.day != null ? dayColor(p.day) : (p.color || "#64748b");
       return {
-        color:     p.color   || "#64748b",
+        color,
         weight:    p.weight  || 3,
-        opacity:   p.opacity || 0.75,
+        opacity:   p.opacity || 0.80,
         lineJoin:  "round",
         lineCap:   "round",
-        dashArray: t === "flight" ? "4 10" : t === "ferry" ? "7 9" : null,
+        dashArray: t === "flight" ? "5 12" : t === "ferry" ? "8 10" : null,
       };
+    },
+    onEachFeature(feature, layer) {
+      const p = feature.properties || {};
+      const dayPart  = p.day      != null ? `<b>${p.day}. nap</b> · ` : "";
+      const distPart = p.distance_km      ? ` · <b>${p.distance_km} km</b>` : "";
+      layer.bindTooltip(
+        `${dayPart}${p.name || ""}${distPart}`,
+        { sticky: true, className: "tm-route-tooltip" }
+      );
     },
   }).addTo(map);
 }
@@ -128,15 +177,11 @@ function buildDayItems(pois) {
   }
   return Object.values(map)
     .sort((a, b) => a.day - b.day)
-    .map(e => {
-      const stageConf = STAGES.find(s => s.id === e.stage);
-      const loc = e.hotel || e.sight || e.any || "–";
-      return {
-        id:       e.day,
-        label:    `${e.day}. nap — ${loc}`,
-        dotColor: stageConf?.dotColor || "#64748b",
-      };
-    });
+    .map(e => ({
+      id:       e.day,
+      label:    `${e.day}. nap — ${e.hotel || e.sight || e.any || "–"}`,
+      dotColor: dayColor(e.day),
+    }));
 }
 
 /**
