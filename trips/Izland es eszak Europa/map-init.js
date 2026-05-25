@@ -42,6 +42,9 @@ async function initMapOnce() {
   });
 
   await travelMap.load(TRIP_ID);
+  // Store Leaflet instance so the global toggle listener can invalidateSize
+  window._leafletMaps = window._leafletMaps || {};
+  window._leafletMaps["trip-map"] = travelMap._map;
 }
 
 /**

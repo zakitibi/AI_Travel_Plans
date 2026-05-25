@@ -955,41 +955,47 @@
           </div>
 
           <!-- MAP 1 — Útvonal áttekintő -->
-          <section class="card section-card">
-            <h3 class="map-section-title">🗺 Útvonal-áttekintő</h3>
+          <details class="card section-card coll-card" open>
+            <summary class="coll-card-head">
+              <span class="map-section-title" style="margin:0;">🗺 Útvonal-áttekintő</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
             <p class="section-intro">
               Teljes útvonal szakaszonként — valódi OSRM autós nyomvonal, kompok és repülők.
               A rétegvezérlővel (<strong>jobb felső sarok</strong>) szűrhetsz szakasz szerint.
               Kattints bármelyik jelzőre a részletes adatokért.
             </p>
-          </section>
-          <div class="travel-map-wrap">
-            <div id="trip-map" style="width:100%;height:100%;"></div>
-            <div class="tm-overlay">
-              <div class="tm-spinner"></div>
-              <span>Térkép betöltése…</span>
-            </div>
-          </div>
-
-          <!-- MAP 2 — Részletes napiterv -->
-          <section class="card section-card" style="margin-top:20px;">
-            <h3 class="map-section-title">📍 Részletes napiterv-térkép</h3>
-            <p class="section-intro">
-              Minden megálló, szállás és látnivaló napra lebontva.
-              A jobb oldali szűrőpanelen szakasz, típus és nap szerint szűrhetsz
-              — egyszerre bármelyik kombinációban.
-            </p>
-          </section>
-          <div class="map-filter-wrap">
             <div class="travel-map-wrap">
-              <div id="detail-map" style="width:100%;height:100%;"></div>
+              <div id="trip-map" style="width:100%;height:100%;"></div>
               <div class="tm-overlay">
                 <div class="tm-spinner"></div>
                 <span>Térkép betöltése…</span>
               </div>
             </div>
-            <aside class="dm-filter-sidebar" id="detail-map-filter"></aside>
-          </div>
+          </details>
+
+          <!-- MAP 2 — Részletes napiterv -->
+          <details class="card section-card coll-card" style="margin-top:20px;" open>
+            <summary class="coll-card-head">
+              <span class="map-section-title" style="margin:0;">📍 Részletes napiterv-térkép</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <p class="section-intro">
+              Minden megálló, szállás és látnivaló napra lebontva.
+              A jobb oldali szűrőpanelen szakasz, típus és nap szerint szűrhetsz
+              — egyszerre bármelyik kombinációban.
+            </p>
+            <div class="map-filter-wrap">
+              <div class="travel-map-wrap">
+                <div id="detail-map" style="width:100%;height:100%;"></div>
+                <div class="tm-overlay">
+                  <div class="tm-spinner"></div>
+                  <span>Térkép betöltése…</span>
+                </div>
+              </div>
+              <aside class="dm-filter-sidebar" id="detail-map-filter"></aside>
+            </div>
+          </details>
 
         </section>
       `;
