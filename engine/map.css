@@ -291,6 +291,75 @@
   color: #374151 !important;
 }
 
+/* ── Map + sidebar filter layout ─────────────────────────────────────────── */
+/*
+ * Used by both detail-map-init.js and overview-map-init.js.
+ * The sidebar sits next to the map as a regular scrollable DOM element —
+ * no Leaflet custom control — so iOS touch-scroll works natively.
+ */
+.map-filter-wrap {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;          /* sidebar stretches to map height  */
+}
+
+.map-filter-wrap > .travel-map-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.dm-filter-sidebar {
+  width: 182px;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .10);
+  overflow-y: auto;              /* sidebar itself is the scroll container */
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* Sticky header inside sidebar */
+.dm-sidebar-header {
+  padding: 10px 12px 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #9ca3af;
+  border-bottom: 1px solid #f3f4f6;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+
+/*
+ * When inside a sidebar the Napok section no longer needs its own
+ * max-height — the sidebar container handles scrolling.
+ */
+.dm-filter-sidebar .dm-filter-scrollable {
+  max-height: none;
+  overflow-y: visible;
+}
+
+/* Mobile: sidebar goes below the map, full-width */
+@media (max-width: 640px) {
+  .map-filter-wrap {
+    flex-direction: column;
+  }
+  .dm-filter-sidebar {
+    width: 100%;
+    overflow-y: visible;
+  }
+  /* On mobile the sidebar is full-height, so restore scroll on Napok */
+  .dm-filter-sidebar .dm-filter-scrollable {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
 /* ── Detail map filter panel (detail-map-init.js) ────────────────────────── */
 .dm-filter-wrapper {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;

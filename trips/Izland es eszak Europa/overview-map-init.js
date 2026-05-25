@@ -139,8 +139,14 @@ function buildDayItems(pois) {
     });
 }
 
-// ── Filter control ────────────────────────────────────────────────────────────
-function buildFilterControl(L, leafMap, pois, markerList) {
+// ── Filter sidebar ────────────────────────────────────────────────────────────
+/**
+ * Render the filter panel into a regular DOM sidebar element.
+ * No Leaflet control — sits outside the map so iOS touch-scroll works.
+ *
+ * @returns {{ showPhase(id), showAll() }}  public API for ontoggle hook
+ */
+function buildFilterSidebar(sidebarEl, pois, markerList, leafMap) {
   const dayItems = buildDayItems(pois);
 
   const state = {
@@ -148,6 +154,9 @@ function buildFilterControl(L, leafMap, pois, markerList) {
     types:  new Set(TYPES.map(t => t.id)),
     days:   new Set(dayItems.map(d => d.id)),
   };
+
+  // Track all phase checkboxes so showPhase() can sync them
+  const phaseCbs = [];
 
   function applyFilter() {
     for (const { marker, poi } of markerList) {
@@ -208,6 +217,7 @@ function buildFilterControl(L, leafMap, pois, markerList) {
       });
 
       cbs.push({ cb, id: item.id });
+      if (stateKey === "phases") phaseCbs.push({ cb, id: item.id });
 
       const span = document.createElement("span");
       span.className = "dm-filter-label";
@@ -219,9 +229,8 @@ function buildFilterControl(L, leafMap, pois, markerList) {
         span.appendChild(dot);
       }
 
-      // For phases, show sub-label (date range) in muted text
-      const textNode = document.createTextNode(item.label);
-      span.appendChild(textNode);
+      span.appendChild(document.createTextNode(item.label));
+
       if (item.sub) {
         const sub = document.createElement("span");
         sub.className = "dm-filter-sub";
@@ -248,61 +257,39 @@ function buildFilterControl(L, leafMap, pois, markerList) {
     return sec;
   }
 
-  const FilterControl = L.Control.extend({
-    options: { position: "topright" },
+  // Sticky header
+  const header = document.createElement("div");
+  header.className = "dm-sidebar-header";
+  header.textContent = "Szűrők";
+  sidebarEl.appendChild(header);
 
-    onAdd(_map) {
-      const wrapper = L.DomUtil.create("div", "dm-filter-wrapper");
-      L.DomEvent.disableClickPropagation(wrapper);
-      L.DomEvent.disableScrollPropagation(wrapper);
+  sidebarEl.appendChild(makeSection("Fázisok", PHASES.map(p => ({ ...p })), "phases"));
 
-      const toggle = L.DomUtil.create("button", "dm-filter-toggle", wrapper);
-      toggle.type = "button";
-      toggle.innerHTML = "⚙ Szűrők";
-      toggle.title = "Szűrőpanel megnyitása / bezárása";
+  const hr1 = document.createElement("hr");
+  hr1.className = "dm-filter-divider";
+  sidebarEl.appendChild(hr1);
 
-      const panel = L.DomUtil.create("div", "dm-filter-panel", wrapper);
-      panel.style.display = "none";
+  sidebarEl.appendChild(makeSection("Típusok", TYPES.map(t => ({ ...t })), "types"));
 
-      // Fázisok section — items include sub label (date range)
-      const phaseItems = PHASES.map(p => ({ ...p }));
-      panel.appendChild(makeSection("Fázisok", phaseItems, "phases"));
+  const hr2 = document.createElement("hr");
+  hr2.className = "dm-filter-divider";
+  sidebarEl.appendChild(hr2);
 
-      const hr1 = document.createElement("hr");
-      hr1.className = "dm-filter-divider";
-      panel.appendChild(hr1);
+  sidebarEl.appendChild(makeSection("Napok", dayItems, "days"));
 
-      panel.appendChild(makeSection("Típusok", TYPES.map(t => ({ ...t })), "types"));
-
-      const hr2 = document.createElement("hr");
-      hr2.className = "dm-filter-divider";
-      panel.appendChild(hr2);
-
-      panel.appendChild(makeSection("Napok", dayItems, "days"));
-
-      toggle.addEventListener("click", () => {
-        const open = panel.style.display !== "block";
-        panel.style.display = open ? "block" : "none";
-        toggle.classList.toggle("dm-filter-toggle-active", open);
-      });
-
-      return wrapper;
-    },
-  });
-
-  new FilterControl().addTo(leafMap);
-
-  // Return public API for programmatic control
+  // Public API
   return {
     showPhase(id) {
       state.phases.clear();
       state.phases.add(id);
+      phaseCbs.forEach(({ cb, id: cbId }) => { cb.checked = (cbId === id); });
       applyFilter();
     },
     showAll() {
       PHASES.forEach(p => state.phases.add(p.id));
       TYPES.forEach(t => state.types.add(t.id));
       dayItems.forEach(d => state.days.add(d.id));
+      phaseCbs.forEach(({ cb }) => { cb.checked = true; });
       applyFilter();
     },
   };
@@ -357,7 +344,9 @@ async function initOverviewMap() {
       markerList.push({ marker, poi });
     }
 
-    _mapApi = buildFilterControl(L, map, pois, markerList);
+    // Filter sidebar (outside map — touch-scroll friendly on iOS)
+    const sidebar = document.getElementById("overview-map-filter");
+    if (sidebar) _mapApi = buildFilterSidebar(sidebar, pois, markerList, map);
 
     const coords = pois.filter(p => p.lat != null).map(p => [p.lat, p.lng]);
     if (coords.length) {

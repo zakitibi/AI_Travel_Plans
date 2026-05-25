@@ -140,24 +140,24 @@ function buildDayItems(pois) {
 }
 
 /**
- * Create a collapsible Leaflet filter control panel.
+ * Render the filter panel into a regular DOM sidebar element.
+ * No Leaflet control — the sidebar is outside the map container so
+ * iOS touch-scroll works natively on the Napok list.
  *
- * @param {object}   L        Leaflet global
- * @param {object}   leafMap  Leaflet map instance
- * @param {object[]} pois     POI array
- * @param {{ marker: L.Marker, poi: object }[]} markerList
+ * @param {HTMLElement}                          sidebarEl  Pre-existing DOM container
+ * @param {object[]}                             pois
+ * @param {{ marker: L.Marker, poi: object }[]}  markerList
+ * @param {object}                               leafMap    Leaflet map instance
  */
-function buildFilterControl(L, leafMap, pois, markerList) {
+function buildFilterSidebar(sidebarEl, pois, markerList, leafMap) {
   const dayItems = buildDayItems(pois);
 
-  // Initial filter state — everything on
   const state = {
     stages: new Set(STAGES.map(s => s.id)),
     types:  new Set(TYPES.map(t => t.id)),
     days:   new Set(dayItems.map(d => d.id)),
   };
 
-  // Apply combined filter to all markers
   function applyFilter() {
     for (const { marker, poi } of markerList) {
       const dayOk   = poi.day == null || state.days.has(poi.day);
@@ -169,12 +169,10 @@ function buildFilterControl(L, leafMap, pois, markerList) {
     }
   }
 
-  // Build one section of the filter panel
   function makeSection(title, items, stateKey) {
     const sec = document.createElement("div");
     sec.className = "dm-filter-section";
 
-    // Header row
     const head = document.createElement("div");
     head.className = "dm-filter-section-head";
 
@@ -198,12 +196,10 @@ function buildFilterControl(L, leafMap, pois, markerList) {
     head.append(titleEl, acts);
     sec.appendChild(head);
 
-    // Body — checkbox rows
     const body = document.createElement("div");
     body.className = "dm-filter-section-body";
     if (stateKey === "days") body.classList.add("dm-filter-scrollable");
 
-    /** @type {{ cb: HTMLInputElement, id: number|string }[]} */
     const cbs = [];
 
     for (const item of items) {
@@ -237,7 +233,6 @@ function buildFilterControl(L, leafMap, pois, markerList) {
       body.appendChild(lbl);
     }
 
-    // All / None button handlers
     allBtn.addEventListener("click", () => {
       items.forEach(item => state[stateKey].add(item.id));
       cbs.forEach(({ cb }) => { cb.checked = true; });
@@ -253,53 +248,25 @@ function buildFilterControl(L, leafMap, pois, markerList) {
     return sec;
   }
 
-  // Leaflet custom control
-  const FilterControl = L.Control.extend({
-    options: { position: "topright" },
+  // Sticky header
+  const header = document.createElement("div");
+  header.className = "dm-sidebar-header";
+  header.textContent = "Szűrők";
+  sidebarEl.appendChild(header);
 
-    onAdd(_map) {
-      const wrapper = L.DomUtil.create("div", "dm-filter-wrapper");
-      L.DomEvent.disableClickPropagation(wrapper);
-      L.DomEvent.disableScrollPropagation(wrapper);
+  sidebarEl.appendChild(makeSection("Szakaszok", STAGES.map(s => ({ ...s })), "stages"));
 
-      // Toggle button
-      const toggle = L.DomUtil.create("button", "dm-filter-toggle", wrapper);
-      toggle.type = "button";
-      toggle.innerHTML = "⚙ Szűrők";
-      toggle.title = "Szűrőpanel megnyitása / bezárása";
+  const hr1 = document.createElement("hr");
+  hr1.className = "dm-filter-divider";
+  sidebarEl.appendChild(hr1);
 
-      // Panel
-      const panel = L.DomUtil.create("div", "dm-filter-panel", wrapper);
-      panel.style.display = "none";
+  sidebarEl.appendChild(makeSection("Típusok", TYPES.map(t => ({ ...t })), "types"));
 
-      const stageItems = STAGES.map(s => ({ ...s }));
-      const typeItems  = TYPES.map(t => ({ ...t }));
+  const hr2 = document.createElement("hr");
+  hr2.className = "dm-filter-divider";
+  sidebarEl.appendChild(hr2);
 
-      panel.appendChild(makeSection("Szakaszok", stageItems, "stages"));
-
-      const hr1 = document.createElement("hr");
-      hr1.className = "dm-filter-divider";
-      panel.appendChild(hr1);
-
-      panel.appendChild(makeSection("Típusok", typeItems, "types"));
-
-      const hr2 = document.createElement("hr");
-      hr2.className = "dm-filter-divider";
-      panel.appendChild(hr2);
-
-      panel.appendChild(makeSection("Napok", dayItems, "days"));
-
-      toggle.addEventListener("click", () => {
-        const open = panel.style.display !== "block";
-        panel.style.display = open ? "block" : "none";
-        toggle.classList.toggle("dm-filter-toggle-active", open);
-      });
-
-      return wrapper;
-    },
-  });
-
-  new FilterControl().addTo(leafMap);
+  sidebarEl.appendChild(makeSection("Napok", dayItems, "days"));
 }
 
 // ── Main initialisation ───────────────────────────────────────────────────────
@@ -353,8 +320,9 @@ async function initDetailMapOnce() {
       markerList.push({ marker, poi });
     }
 
-    // Filter control
-    buildFilterControl(L, map, pois, markerList);
+    // Filter sidebar (outside map — touch-scroll friendly on iOS)
+    const sidebar = document.getElementById("detail-map-filter");
+    if (sidebar) buildFilterSidebar(sidebar, pois, markerList, map);
 
     // Fit to all markers
     const coords = pois.filter(p => p.lat != null).map(p => [p.lat, p.lng]);

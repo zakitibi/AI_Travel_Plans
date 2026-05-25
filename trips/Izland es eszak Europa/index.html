@@ -259,14 +259,33 @@
       return `
         <section class="view is-active" data-view="overview">
           <div class="overview-grid">
-            <section class="card">
-              <h2 class="section-title">📅 Napi idővonal</h2>
-              <div class="timeline-group-stack">
-                ${phaseGroup("baltic",  "🗺", "Baltikum",  "júl. 10–18. · Tibi autós felvezető · Lengyelország → Észtország → Helsinki → Stockholm", balticTimeline,  true)}
-                ${phaseGroup("iceland", "🇮🇸", "Izland",    "júl. 18–26. · közös Ring Road körút · Reykjavík → Snæfellsnes → Észak → Kelet → Déli part", icelandTimeline, false)}
-                ${phaseGroup("return",  "🚗", "Hazaút",    "júl. 26. – aug. 6. · Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest", returnTimeline,  false)}
+            <div class="stack">
+              <section class="card">
+                <h2 class="section-title">📅 Napi idővonal</h2>
+                <div class="timeline-group-stack">
+                  ${phaseGroup("baltic",  "🗺", "Baltikum",  "júl. 10–18. · Tibi autós felvezető · Lengyelország → Észtország → Helsinki → Stockholm", balticTimeline,  true)}
+                  ${phaseGroup("iceland", "🇮🇸", "Izland",    "júl. 18–26. · közös Ring Road körút · Reykjavík → Snæfellsnes → Észak → Kelet → Déli part", icelandTimeline, false)}
+                  ${phaseGroup("return",  "🚗", "Hazaút",    "júl. 26. – aug. 6. · Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest", returnTimeline,  false)}
+                </div>
+              </section>
+              <section class="card section-card">
+                <h3 class="map-section-title">🗺 Interaktív útvonal-térkép</h3>
+                <p class="section-intro" style="margin-bottom:10px;">
+                  Minden állomás szakasz, típus és nap szerint szűrhető.
+                  Egy fázis kinyitása a napi idővonalban automatikusan arra szűr a térképen.
+                </p>
+              </section>
+              <div class="map-filter-wrap">
+                <div class="travel-map-wrap" style="height:420px;">
+                  <div id="overview-map" style="width:100%;height:100%;"></div>
+                  <div class="tm-overlay">
+                    <div class="tm-spinner"></div>
+                    <span>Térkép betöltése…</span>
+                  </div>
+                </div>
+                <aside class="dm-filter-sidebar" id="overview-map-filter"></aside>
               </div>
-            </section>
+            </div>
             <div class="stack">
               <section class="card">
                 <h2 class="section-title">🧭 Országonként</h2>
@@ -315,23 +334,6 @@
                   ${tripData.overview.important.map((item) => `<li><span class="badge badge-gold">FONTOS</span><strong>${item}</strong></li>`).join("")}
                 </ul>
               </section>
-            </div>
-          </div>
-
-          <!-- Overview map — full-width, below the timeline grid -->
-          <section class="card section-card" style="margin-top:20px;">
-            <h3 class="map-section-title">🗺 Interaktív útvonal-térkép</h3>
-            <p class="section-intro">
-              Minden állomás interaktív térképen — szállások, átkelők, repülők, látnivalók.
-              A <strong>⚙ Szűrők</strong> gombbal (jobb felső sarok) szűrhetsz fázis, típus és nap szerint.
-              A napi idővonalban egy fázis kinyitása automatikusan azt a fázist mutatja a térképen.
-            </p>
-          </section>
-          <div class="travel-map-wrap">
-            <div id="overview-map" style="width:100%;height:100%;"></div>
-            <div class="tm-overlay">
-              <div class="tm-spinner"></div>
-              <span>Térkép betöltése…</span>
             </div>
           </div>
 
@@ -930,16 +932,19 @@
             <h3 class="map-section-title">📍 Részletes napiterv-térkép</h3>
             <p class="section-intro">
               Minden megálló, szállás és látnivaló napra lebontva.
-              A <strong>⚙ Szűrők</strong> gombbal (jobb felső sarok) szűrhetsz
-              szakasz, típus és nap szerint — egyszerre bármelyik kombinációban.
+              A jobb oldali szűrőpanelen szakasz, típus és nap szerint szűrhetsz
+              — egyszerre bármelyik kombinációban.
             </p>
           </section>
-          <div class="travel-map-wrap">
-            <div id="detail-map" style="width:100%;height:100%;"></div>
-            <div class="tm-overlay">
-              <div class="tm-spinner"></div>
-              <span>Térkép betöltése…</span>
+          <div class="map-filter-wrap">
+            <div class="travel-map-wrap">
+              <div id="detail-map" style="width:100%;height:100%;"></div>
+              <div class="tm-overlay">
+                <div class="tm-spinner"></div>
+                <span>Térkép betöltése…</span>
+              </div>
             </div>
+            <aside class="dm-filter-sidebar" id="detail-map-filter"></aside>
           </div>
 
         </section>
