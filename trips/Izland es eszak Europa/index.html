@@ -44,7 +44,8 @@
       { id: "weather", label: "🌦 Időjárás" },
       { id: "apps", label: "📱 Appok" },
       { id: "terkep", label: "🗺 Térkép" },
-      { id: "info", label: "Info" }
+      { id: "info", label: "Info" },
+      { id: "budget", label: "💶 Költségvetés" }
     ];
 
     const heroTitle = document.getElementById("hero-title");
@@ -806,6 +807,19 @@
       `;
     }
 
+    function renderBudget() {
+      return `
+        <section class="view" data-view="budget">
+          <div class="section-head">
+            <div>
+              <h2><span>becsült és foglalt tételek szakaszonként</span>Költségvetés</h2>
+            </div>
+          </div>
+          ${renderCostPlan()}
+        </section>
+      `;
+    }
+
     function renderPractical() {
       return `
         <section class="view" data-view="practical">
@@ -814,7 +828,6 @@
               <h2><span>foglalás, autó, komp, ritmus</span>Praktikus</h2>
             </div>
           </div>
-          ${renderCostPlan()}
           ${renderCollapseBox(tripData.icelandGeneralBox)}
           <div class="summary-grid practical-grid">
             ${tripData.practical.map((group) => `
@@ -985,7 +998,8 @@
       renderWeather(),
       renderApps(),
       renderMap(),
-      renderInfo()
+      renderInfo(),
+      renderBudget()
     ].join("");
 
     tabsEl.innerHTML = tabs.map((tab, index) => `
