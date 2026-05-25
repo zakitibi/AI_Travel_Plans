@@ -1,5 +1,5 @@
 const tripData = {
-  title: "🧭 Izland es eszak Europa · 2026. július 10–30.",
+  title: "🌋 Izland es eszak Europa · 2026. július 10 – augusztus 6.",
   subtitle: "Tibi balti autós felvezető útja a július 18-i stockholmi repüléssel, Henni külön izlandi belépővel, majd közös hazaúttal",
   updatedAt: "2026.05.20",
   route: [
