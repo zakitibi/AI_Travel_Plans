@@ -1136,14 +1136,16 @@ const tripData = {
                 "🧭 <strong>Wanderwell.hu</strong> — Laugavegur-trek és Golden Circle részletes bejárás; Reykjadalur geotermikus folyó (ingyenes alternatíva Sky Lagoon helyett) szintén ajánlott opció egy Reykjavík-napra.",
                 "🎒 <strong>Netkoffer.hu</strong> — praktikus megközelítés: Blue Lagoon vs. olcsóbb alternatívák, Hallgrímskirkja lift vs. séta, Skaftafell glaciális közelség. Busz Keflavíkból Reykjavíkba ~40 perc, ~22 EUR.",
                 "🚐 <strong>Vándorboy — 15 napos körút</strong> — Stuðlagil keleti oldal (közelebb, de hosszabb séta), Hengifoss (128 m, Izland harmadik legnagyobb vízesése, Eastfjords), Ásbyrgi-kanyon patkolás-alakú sziklafal. Haifoss (122 m) a Golden Circle rejtett extra-opciója.",
-                "🚐 <strong>Vándorboy — 8 napos körút</strong> — 8 napos Ring Road-tempó: ~110–134 EUR/nap/fő reális keret, Svartifoss bazalt-vízesés Skaftafellben, Reykjadalur geotermikus folyó. Főzési lehetőséggel rendelkező szállás sokat spórol."
+                "🚐 <strong>Vándorboy — 8 napos körút</strong> — 8 napos Ring Road-tempó: ~110–134 EUR/nap/fő reális keret, Svartifoss bazalt-vízesés Skaftafellben, Reykjadalur geotermikus folyó. Főzési lehetőséggel rendelkező szállás sokat spórol.",
+                "🧭 <strong>Vizzitor.hu</strong> — autós körút cikksorozat: óramutató járásával megegyező irány (észak először) ajánlott, mert a hosszabb szakaszokat pihenőbb állapotban lehet teljesíteni. Kiemelések: Dettifoss (Európa legnagyobb vízhozamú vízesése — 100 m széles, 45 m magas, szubjektíven erősebb mint Gullfoss), Fjaðrárgljúfur-kanyon (zöld szurdok, Game of Thrones díszlet), Seljavallalaug (Izland legrégebbi úszómedencéje, 1923, ingyenes, infrastruktúra nélkül). Figyelmeztetések: Vadlaheiðargöng alagút (az egyetlen fizetős: regisztrálj a tunnel.is-en előre, különben büntetés), Reynisfjara-nál 30 métert tartsd a víztől."
               ],
               links: [
                 { label: "Helloizland.hu", url: "https://helloizland.hu/" },
                 { label: "Wanderwell — Izland", url: "https://wanderwell.hu/blog/desztinaciok/izland" },
                 { label: "Netkoffer — Izland utazás", url: "https://netkoffer.hu/izland-utazas/" },
                 { label: "Vándorboy — 15 napos körút", url: "https://vandorboy.com/izland-15-nap-teljes-korutazas/" },
-                { label: "Vándorboy — 8 napos körút", url: "https://vandorboy.com/izland-8-nap-korutazas/" }
+                { label: "Vándorboy — 8 napos körút", url: "https://vandorboy.com/izland-8-nap-korutazas/" },
+                { label: "Vizzitor.hu — látványosságok autóval", url: "https://www.vizzitor.hu/izland-latnivalok-autoval/" }
               ]
             }
           ]
