@@ -2555,25 +2555,6 @@ const tripData = {
   },
   practical: [
     {
-      title: "📱 iPhone appok — régiónként ajánlva",
-      accent: "accent-nordic",
-      text: "Ezek azok az appok, amelyek ezen az úton tényleg számítanak. Nem minden kell mindenhova — régiónként van egy rövid 'kötelező' lista és egy opcionális extra.",
-      items: [
-        "🌍 MINDENÜTT kötelező: Google Maps (offline térkép letöltéssel!), Waze (traffik + sebességkamerák), Google Translate (kamera-fordítás), Revolut (valutaváltás, elfogadott Skandináviában), WhatsApp (roaming kommunikáció).",
-        "🇵🇱 Lengyelország (tranzit): Waze a legjobbaz autópálya-traffikhoz. ORLEN app opcionális — a lengyel benzinkutak egy részén diszkont, de regisztráció kell. iFood.pl éttermes app Suwałkiban szinte felesleges — Google Maps étteremkeresője teljesen elég.",
-        "🇱🇹🇱🇻🇪🇪 Baltikum (Litvánia, Lettország, Észtország): Bolt (iOS: 'Bolt: Request a Ride') — Baltikumban az Uber helyett ez az alapvető rideshare, olcsóbb és jobban lefedi a kisebb városokat is. Google Maps offline: töltsd le Litvániát, Lettországot, Észtországot ELŐRE itthon. Bolt Food: ételhozatal ha szükséges. Waze és Google Maps navigáció mindkettő jó, Waze jobban jelez előre.",
-        "🚢 Tallink / Viking Line kompok: Tallink Silja Line appban a fedélzeti rendelés és a kajütinfó elérhető — érdemes letölteni a kompra. Viking Line appban hasonló. De a jegykezelés böngészőből is megy.",
-        "🇮🇸 Izland (kötelező): '112 Iceland' (Safe Travel app, iOS: '112 Iceland') — KÖTELEZŐ letölteni. Ezt kéri az izlandi mentőszolgálat, ebből küldöd a helyzeted ha bajba kerülsz. 'Vedur' (Veðurstofa Íslands) — az izlandi meteorológiai hivatal hivatalos appja, naprakész időjárás és viharelőrejelzés, nélküle nem érdemes Snæfellsnesre menni. 'Road.is' (Vegagerðin) — élő útállapot, útlezárások, havas/jeges utak — F-utak státusza is benne van.",
-        "🇮🇸 Izland (opcionális, de jó): 'Aurora Forecast' — északi fény előrejelzés (Kp-index, felhőzet, láthatóság). Izlandon júliusban valószínűleg nincs aurora, de ha maradtok augusztus elejéig akkor releváns. 'Appy Hour' — izlandi happy hour keresési app Reykjavíkban (koktélok fele áron). 'Visit Reykjavik' — ingyenes városguide app.",
-        "🇸🇪 Svédország / Stockholm (kötelező): 'SL-appen' (Storstockholms Lokaltrafik) — Stockholm metró, busz, villamos, kompok EGYETLEN appból. Itt veszed a jegyet is, itt látod az indulásokat. Kötelező, és nagyon jól működik. 'Waxholmsbolaget' — nincs dedikált app, de a mobiloldaluk (waxholmsbolaget.se) kiválóan működik, az archipelago kompokhoz ezt használd.",
-        "🇸🇪 Svédország (opcionális): 'Donkey Republic' — közbicikli applikáció, Stockholmban és más svéd városokban elérhető. 'Parkopedia' — parkolóhely-keresés Svédországban, ha autóval mész be városba.",
-        "🇩🇰 Dánia / Koppenhága (kötelező): 'DOT Mobilbilletter' — Koppenhága metró, busz, S-tog jegyvásárlás appból. Nélküle a fizikai jegyvásárlás drágább és körülményesebb. 'Rejseplanen' — koppenhágai közlekedési útvonaltervező, pontos, megbízható.",
-        "🇩🇰 Dánia (opcionális): 'Donkey Republic' — közbicikli, Koppenhágában tényleg van értelme bringával közlekedni. 'Too Good To Go' — dán alapítású app, félárás maradék ételek étteremtől/pékségtől (este 20-21h körül aktív). 'MobilePay' — dán fizetési app, turistáknak általában nem elérhető svéd bankszámla nélkül, de sok helyen elfogadják a sima bankkártyát is.",
-        "🇩🇪 Németország / Hamburg + Frankfurt (kötelező): 'HVV switch' — Hamburg teljes közlekedési hálózata (U-Bahn, S-Bahn, busz, fähre), jegyvásárlás. 'RMV' (Rhein-Main-Verkehrsverbund) — Frankfurt és környékének közlekedési appja. 'DB Navigator' — Deutsche Bahn app, ha esetleg vonatot is terveztek valamelyik rövidebb etapra.",
-        "🇩🇪 Németország (opcionális): 'Parkopedia' vagy 'Park and Joy' — parkolóhely keresés Hamburgban és Frankfurtban hasznos (drágák és tele vannak). 'Too Good To Go' — Németországban is nagyon aktív, különösen Hamburgban."
-      ]
-    },
-    {
       title: "🧭 Fő logisztikai döntések",
       accent: "accent-baltic",
       text: "A teljes út mostani minőségét néhány szerkezeti döntés fogja eldönteni, nem száz apró részlet.",
@@ -2703,15 +2684,92 @@ const tripData = {
       }
     ]
   },
+  appsData: {
+    intro: "Régiónként szűrve — a kötelező appok itthon, utazás előtt töltendők le. Az App Store linkek iPhone-on közvetlenül megnyithatók, az app azonnal letölthető.",
+    groups: [
+      {
+        title: "🌍 Mindenütt — kötelező",
+        accent: "accent-return",
+        apps: [
+          { name: "Google Maps", note: "Offline térképletöltéssel — töltsd le az összes régiót ITTHON előre (Litvánia, Lettország, Észtország, Izland, Svédország, Dánia, Németország)", store: "https://apps.apple.com/app/google-maps/id585027354", rating: "4.8" },
+          { name: "Waze", note: "Traffik + sebességkamerák, autópályán pontosabb figyelmeztetések mint Google Maps", store: "https://apps.apple.com/app/waze-navigation-live-traffic/id323229106", rating: "4.8" },
+          { name: "Google Translate", note: "Kamera-fordítás étlaphoz, útjelzőkhöz, feliratokhoz — offline nyelvcsomagok letölthetők", store: "https://apps.apple.com/app/google-translate/id414706506", rating: "4.8" },
+          { name: "Revolut", note: "Valutaváltás helyi árfolyamon, kártyás fizetés Skandináviában, Izlandon — kötelező az izlandi és svéd kutak PIN-kérdése miatt is", store: "https://apps.apple.com/app/revolut-send-money-spend-save/id917020797", rating: "4.7" },
+          { name: "WhatsApp", note: "Roaming kommunikáció, csoport-koordináció (Tibi–Henni útközbeni egyeztetés)", store: "https://apps.apple.com/app/whatsapp-messenger/id310633997", rating: "4.7" }
+        ]
+      },
+      {
+        title: "🇱🇹🇱🇻🇪🇪 Baltikum",
+        accent: "accent-baltic",
+        apps: [
+          { name: "Bolt: Request a Ride", note: "Az Uber helyett ez az alapvető rideshare Baltikumban — olcsóbb, lefedi Vilniust, Rigát, Tallinnot és a kisebb városokat is", store: "https://apps.apple.com/app/bolt-request-a-ride/id675033630", rating: "4.6" },
+          { name: "Bolt Food", note: "Ételhozatal baltikumi városokban — ha esti bevásárlás helyett inkább rendelésre megy a sor", store: "https://apps.apple.com/app/bolt-food-deliver-order-food/id1479502381", rating: "4.5" }
+        ]
+      },
+      {
+        title: "🇮🇸 Izland — kötelező ⚠️",
+        accent: "accent-iceland",
+        apps: [
+          { name: "112 Iceland", note: "⚠️ KÖTELEZŐ — az izlandi mentőszolgálat Safe Travel appja, ebből küldöd a GPS-pozíciód ha bajba kerülsz. Töltsd le MIELŐTT Keflavíkban leszálltok.", store: "https://apps.apple.com/app/112-iceland/id578924912", rating: "4.6" },
+          { name: "Veður", note: "Az izlandi meteorológiai hivatal (Veðurstofa Íslands) hivatalos appja — naprakész időjárás, viharelőrejelzés. Snæfellsnes-nap előtt reggeli kötelező ellenőrzés.", store: "https://apps.apple.com/app/veður/id524350026", rating: "4.4" },
+          { name: "Road.is", note: "Vegagerðin élő útállapot-app — útlezárások, jeges/havas utak, F-utak státusza, Ring Road aktuális állapota", store: "https://apps.apple.com/app/road-is/id396140831", rating: "3.7" }
+        ]
+      },
+      {
+        title: "🇮🇸 Izland — opcionális",
+        accent: "accent-iceland",
+        apps: [
+          { name: "Aurora Forecast", note: "Északi fény előrejelzés: Kp-index, felhőzet, láthatóság. Júliusban általában nem látható, de augusztus elejétől már releváns lehet.", store: "https://apps.apple.com/app/aurora-forecast/id1439705523", rating: "4.7" },
+          { name: "Visit Reykjavik", note: "Ingyenes városguide app — múzeumok, éttermek, események. Nem kötelező, de Reykjavíkban hasznos kiegészítő.", store: "https://apps.apple.com/app/visit-reykjavik/id370705330", rating: "4.2" }
+        ]
+      },
+      {
+        title: "🚢 Kompok",
+        accent: "accent-nordic",
+        apps: [
+          { name: "Tallink & Silja Line", note: "Fedélzeti rendelés, kajütinfó, menetrend — a Tallinn→Helsinki és az esetleges Helsinki→Stockholm úthoz", store: "https://apps.apple.com/app/tallink-silja-line/id511267200", rating: "4.3" },
+          { name: "Viking Line", note: "Jegykezelés, fedélzeti program, kajütinfó a Turku→Stockholm overnight komphoz", store: "https://apps.apple.com/app/viking-line/id577225882", rating: "4.4" }
+        ]
+      },
+      {
+        title: "🇸🇪 Svédország — Stockholm",
+        accent: "accent-nordic",
+        apps: [
+          { name: "SL-appen", note: "Stockholm teljes közlekedési hálózata (metró, busz, villamos, Djurgården-komp) + JEGYVÁSÁRLÁS egyetlen appból. Kötelező a városi napokhoz.", store: "https://apps.apple.com/app/sl-reseplanerare-och-biljetter/id918418242", rating: "4.5" },
+          { name: "Donkey Republic", note: "Közbicikli app — Stockholmban valós alternatíva a tömegközlekedés mellett, főleg Djurgården és Gamla Stan között", store: "https://apps.apple.com/app/donkey-republic/id904500987", rating: "4.5" }
+        ]
+      },
+      {
+        title: "🇩🇰 Dánia — Koppenhága",
+        accent: "accent-nordic",
+        apps: [
+          { name: "DOT Mobilbilletter", note: "Koppenhága metró, busz, S-tog jegyvásárlás — nélküle a fizikai jegy drágább és gépnél kell sort állni", store: "https://apps.apple.com/app/mobilbilletter/id458124935", rating: "4.1" },
+          { name: "Rejseplanen", note: "Koppenhágai közlekedési útvonaltervező — pontos, megbízható, ingyenes", store: "https://apps.apple.com/app/rejseplanen/id317007942", rating: "4.5" },
+          { name: "Too Good To Go", note: "Félárás maradék ételek étteremtől és pékségtől — este 20–21h körül aktív. Dán alapítású app, Koppenhágában különösen jól működik.", store: "https://apps.apple.com/app/too-good-to-go-end-food-waste/id1060683933", rating: "4.8" },
+          { name: "Donkey Republic", note: "Közbicikli — Koppenhágában kerékpárral közlekedni tényleg van értelme, a város erre van tervezve", store: "https://apps.apple.com/app/donkey-republic/id904500987", rating: "4.5" }
+        ]
+      },
+      {
+        title: "🇩🇪 Németország — Hamburg + Frankfurt",
+        accent: "accent-return",
+        apps: [
+          { name: "HVV switch", note: "Hamburg teljes közlekedési hálózata: U-Bahn, S-Bahn, busz, Alster-fähre + jegyvásárlás egy appból", store: "https://apps.apple.com/app/hvv-switch/id1038345155", rating: "4.6" },
+          { name: "RMV", note: "Frankfurt és a Rajna–Majna régió közlekedési appja — metró, villamos, S-Bahn, busszal együtt", store: "https://apps.apple.com/app/rmv/id428817120", rating: "4.1" },
+          { name: "DB Navigator", note: "Deutsche Bahn — ha vonatot is terveztek (pl. Hamburg→Frankfurt ICE)", store: "https://apps.apple.com/app/db-navigator/id343555245", rating: "4.2" },
+          { name: "Too Good To Go", note: "Hamburgban és Frankfurtban is nagyon aktív — pékségek, éttermek esti maradékai félárban", store: "https://apps.apple.com/app/too-good-to-go-end-food-waste/id1060683933", rating: "4.8" }
+        ]
+      }
+    ]
+  },
   infoGroups: [
     {
       title: "📁 Saját anyagok",
-      text: "Ezek a mostani út saját központi tervező anyagai.",
-      links: [
-        { label: "Travel_References.md", url: "https://docs.google.com/document/d/1qsECYR3Ocr4rvHT-fZR8TjI2jy5kmNY-x5kJh-zDzQI/edit?tab=t.0" },
-        { label: "Eszak Europa AI Terv", url: "https://docs.google.com/document/d/1vfXvA_Z3OklnOJ4AKGIUHdt4VhBV8WI0wOAhOiD2s4k/edit?usp=drivesdk" },
-        { label: "Utazás Tervezés – EszakEuropa", url: "https://docs.google.com/spreadsheets/d/1a__qw0zJe4rCkMLvVhjUa7R753z68eaOQg3kaaS-qIc/edit?gid=1804377913#gid=1804377913" },
-        { label: "Drive mappa", url: "https://drive.google.com/drive/folders/1YhE05qqRx8tSU2naRhJkw3ZANEpLlA1f" }
+      text: "A 2026-os észak-európai út három tervezési dokumentuma és a közös Drive-mappájuk:",
+      items: [
+        "<a href='https://docs.google.com/document/d/1qsECYR3Ocr4rvHT-fZR8TjI2jy5kmNY-x5kJh-zDzQI/edit?tab=t.0' target='_blank' rel='noreferrer'><strong>Travel_References.md</strong></a> — link- és forrásbank: kompok, Arlanda parkoló, logisztikai hivatkozások régiónként",
+        "<a href='https://docs.google.com/document/d/1vfXvA_Z3OklnOJ4AKGIUHdt4VhBV8WI0wOAhOiD2s4k/edit?usp=drivesdk' target='_blank' rel='noreferrer'><strong>Eszak Europa AI Terv</strong></a> — az egész út narratív terve: napi bontás, Tibi/Henni/izlandi/hazaút szakaszok, útvonallogika",
+        "<a href='https://docs.google.com/spreadsheets/d/1a__qw0zJe4rCkMLvVhjUa7R753z68eaOQg3kaaS-qIc/edit?gid=1804377913#gid=1804377913' target='_blank' rel='noreferrer'><strong>Utazás Tervezés – EszakEuropa sheet</strong></a> — napi dátumok, km-ek, foglalási státuszok és nyitott pontok táblázata",
+        "<a href='https://drive.google.com/drive/folders/1YhE05qqRx8tSU2naRhJkw3ZANEpLlA1f' target='_blank' rel='noreferrer'><strong>Drive mappa</strong></a> — az összes tervdokumentum közös Google Drive mappája"
       ]
     },
     {

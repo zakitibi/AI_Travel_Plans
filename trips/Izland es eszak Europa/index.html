@@ -35,7 +35,7 @@
       { id: "restaurants", label: "Gasztronómia" },
       { id: "practical", label: "🧳 Praktikus" },
       { id: "weather", label: "🌦 Időjárás" },
-      { id: "readings", label: "📖 Tervezés" },
+      { id: "apps", label: "📱 Appok" },
       { id: "info", label: "Info" }
     ];
 
@@ -842,27 +842,36 @@
       `;
     }
 
-    function renderReadings() {
+    function renderApps() {
+      const d = tripData.appsData;
       return `
-        <section class="view" data-view="readings">
+        <section class="view" data-view="apps">
           <div class="section-head">
             <div>
-              <h2><span>saját tervezéshez kapcsolódó segédanyagok</span>Tervezés</h2>
+              <h2><span>régiónként szűrve · App Store linkekkel</span>Appok</h2>
             </div>
           </div>
-          <article class="summary-card accent-baltic planning-card">
-            <h3>${tripData.readings.title}</h3>
-            <p>${tripData.readings.text}</p>
-            <div class="planning-subgrid">
-              ${tripData.readings.items.map((group) => `
-                <article class="planning-subcard ${group.accent}">
-                  <h4>${group.title}</h4>
-                  <p>${group.text}</p>
-                  <div class="context-sources">${renderLinkList(group.links)}</div>
-                </article>
-              `).join("")}
-            </div>
-          </article>
+          <section class="card section-card">
+            <p class="section-intro">${d.intro}</p>
+          </section>
+          <div class="apps-grid">
+            ${d.groups.map((group) => `
+              <section class="apps-group">
+                <h3 class="apps-group-title ${group.accent}">${group.title}</h3>
+                <div class="apps-list">
+                  ${group.apps.map((app) => `
+                    <article class="app-card">
+                      <div class="app-card-top">
+                        <a class="app-name" href="${app.store}" target="_blank" rel="noreferrer">${app.name}</a>
+                        ${app.rating ? `<span class="app-rating">★ ${app.rating}</span>` : ""}
+                      </div>
+                      <p class="app-note">${app.note}</p>
+                    </article>
+                  `).join("")}
+                </div>
+              </section>
+            `).join("")}
+          </div>
         </section>
       `;
     }
@@ -899,7 +908,7 @@
       renderRestaurants(),
       renderPractical(),
       renderWeather(),
-      renderReadings(),
+      renderApps(),
       renderInfo()
     ].join("");
 
