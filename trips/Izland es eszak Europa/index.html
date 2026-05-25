@@ -642,6 +642,22 @@
           </section>
           ${bottomMaps}
           ${bottomMap}
+          <section class="card section-card" style="margin-top:20px;">
+            <h3 class="info-title">🗺 Szakasz-térkép</h3>
+            <p class="info-text" style="margin-bottom:10px;">
+              Az összes szállás, megálló és látnivaló az adott szakaszon. Típus és nap szerint szűrhető.
+            </p>
+          </section>
+          <div class="map-filter-wrap">
+            <div class="travel-map-wrap">
+              <div id="${sectionKey}-map" style="width:100%;height:100%;"></div>
+              <div class="tm-overlay">
+                <div class="tm-spinner"></div>
+                <span>Térkép betöltése…</span>
+              </div>
+            </div>
+            <aside class="dm-filter-sidebar" id="${sectionKey}-map-filter"></aside>
+          </div>
         </section>
       `;
     }
@@ -1026,5 +1042,6 @@
   <script type="module" src="./map-init.js"></script>
   <script type="module" src="./detail-map-init.js"></script>
   <script type="module" src="./overview-map-init.js"></script>
+  <script type="module" src="./section-map-init.js"></script>
 </body>
 </html>

@@ -15,7 +15,16 @@
     "type": "hotel", "stage": "baltikum",
     "day": 1, "date": "2026-07-10", "country": "PL",
     "priority": "high",
-    "popup": { "title": "Suwałki — 1. éjszaka", "description": "~900 km-es etap, ~10h vezetés. Tranzit Lengyelországon át, belépés az EU Baltikum-folyosón." }
+    "popup": { "title": "Suwałki — 1. éjszaka", "description": "~900 km-es tranzit etap, ~10h vezetés. Belépés az EU Baltikum-folyosón." }
+  },
+  {
+    "id": "kaunas",
+    "name": "Kaunas",
+    "lat": 54.8985, "lng": 23.9036,
+    "type": "sight", "stage": "baltikum",
+    "day": 2, "date": "2026-07-11", "country": "LT",
+    "priority": "medium",
+    "popup": { "title": "Kaunas — rövid city stop", "description": "Laisvės aleja (Baltikum leghosszabb sétálóutcája), Kaunas Castle, Soboras-bazilika. Kb. 2 óra ebéddel.", "note": "Kaunas nem igényel teljes napot, de megér egy jó stopot" }
   },
   {
     "id": "vilnius",
@@ -25,6 +34,24 @@
     "day": 2, "date": "2026-07-11", "country": "LT",
     "priority": "high",
     "popup": { "title": "Vilnius — 2–3. éjszaka", "description": "Litvánia főváros: barokk óváros, Gediminas-torony, Užupis bohém negyed. 2 éjszaka." }
+  },
+  {
+    "id": "vilnius-gediminas",
+    "name": "Gediminas-torony",
+    "lat": 54.6860, "lng": 25.2898,
+    "type": "sight", "stage": "baltikum",
+    "day": 3, "date": "2026-07-12", "country": "LT",
+    "priority": "high",
+    "popup": { "title": "Gediminas-torony (Gedimino pilies bokštas)", "description": "Háromszintes vártorony a városra néző dombtetőn, panoráma kilátóval Vilnius felett. Belépő ~€5." }
+  },
+  {
+    "id": "vilnius-uzupis",
+    "name": "Užupis negyed",
+    "lat": 54.6822, "lng": 25.2928,
+    "type": "sight", "stage": "baltikum",
+    "day": 3, "date": "2026-07-12", "country": "LT",
+    "priority": "medium",
+    "popup": { "title": "Užupis — vilniusi Montmartre", "description": "Saját alkotmányával rendelkező bohém negyed. Murális graffitik, kávézók, galériák, Vilnia folyóparti sétány.", "note": "Hangulatos, kreatív és nem turista-ipari" }
   },
   {
     "id": "trakai",
@@ -54,6 +81,15 @@
     "popup": { "title": "Riga — 4–5. éjszaka", "description": "Lettország főváros: UNESCO Old Town, Art Nouveau negyed (750+ épület), Rigai Centrális Piac. 2 éjszaka." }
   },
   {
+    "id": "riga-black-heads",
+    "name": "Fekete Fejek Háza",
+    "lat": 56.9479, "lng": 24.1067,
+    "type": "sight", "stage": "baltikum",
+    "day": 5, "date": "2026-07-14", "country": "LV",
+    "priority": "high",
+    "popup": { "title": "House of the Black Heads (Melngalvju nams)", "description": "Riga legfotogénebb épülete: flamboyant gótikus-reneszánsz kereskedő-céhház. 1999-re teljesen újjáépítve." }
+  },
+  {
     "id": "riga-oldtown",
     "name": "Riga — óváros",
     "lat": 56.9460, "lng": 24.1059,
@@ -61,6 +97,24 @@
     "day": 5, "date": "2026-07-14", "country": "LV",
     "priority": "medium",
     "popup": { "title": "Riga városnap", "description": "Dóm tér, Fekete Fejek Háza, Art Nouveau épületek (Alberta és Elizabetes utca), Centrális Piac." }
+  },
+  {
+    "id": "riga-central-market",
+    "name": "Riga Centrális Piac",
+    "lat": 56.9416, "lng": 24.1137,
+    "type": "sight", "stage": "baltikum",
+    "day": 5, "date": "2026-07-14", "country": "LV",
+    "priority": "medium",
+    "popup": { "title": "Centrāltirgus — Rigai Centrális Piac", "description": "Öt hatalmas zeppelin-hangárban működő fedett piac — Európa egyik legnagyobb fedett piaca (1930-as évek). Hal, húscsarnok, helyi ételek." }
+  },
+  {
+    "id": "riga-art-nouveau",
+    "name": "Art Nouveau negyed",
+    "lat": 56.9616, "lng": 24.1219,
+    "type": "sight", "stage": "baltikum",
+    "day": 5, "date": "2026-07-14", "country": "LV",
+    "priority": "high",
+    "popup": { "title": "Riga Art Nouveau — Alberta iela", "description": "A rigai Art Nouveau-negyed szíve: homlokzatok ~1901–1906. Eisenstein tervei szerint. Az utcáról ingyenesen fotózható.", "note": "Alberta iela 2-es, 4-es, 6-os, 8-as és 13-as számok a leglátványosabbak" }
   },
   {
     "id": "sigulda",
@@ -72,6 +126,24 @@
     "popup": { "title": "Sigulda — Gauja NP", "description": "Turaida várkastély, Sigulda-vár romjai, Gauja-kanyon kilátó. A 'Lettország Svájca'." }
   },
   {
+    "id": "turaida-castle",
+    "name": "Turaida-kastély",
+    "lat": 57.2000, "lng": 24.8444,
+    "type": "sight", "stage": "baltikum",
+    "day": 6, "date": "2026-07-15", "country": "LV",
+    "priority": "high",
+    "popup": { "title": "Turaida Castle (Turaidas pils)", "description": "Vörös tégla középkori vár a Gauja-völgy kiemelkedő pontján, fantasztikus kilátással a folyóvölgyre. Belépő ~€4.", "note": "Jobb kilátás és kevesebb tömeg, mint a siguldai romvárnál" }
+  },
+  {
+    "id": "gutmanis-cave",
+    "name": "Gūtmanis-barlang",
+    "lat": 57.1769, "lng": 24.8478,
+    "type": "sight", "stage": "baltikum",
+    "day": 6, "date": "2026-07-15", "country": "LV",
+    "priority": "medium",
+    "popup": { "title": "Gutmanis-barlang (Gūtmaņala)", "description": "Lettország legnagyobb barlangja a Gauja sziklafalaiban. A homokkő falain 1668-tól dokumentált évszázados feliratok. Ingyenes." }
+  },
+  {
     "id": "tallinn",
     "name": "Tallinn",
     "lat": 59.4370, "lng": 24.7536,
@@ -81,13 +153,31 @@
     "popup": { "title": "Tallinn — 6–7. éjszaka", "description": "Észtország főváros: a legjobban megőrzött középkori városmag a Baltikumban. 2 éjszaka." }
   },
   {
+    "id": "tallinn-toompea",
+    "name": "Toompea — Kohtuotsa kilátó",
+    "lat": 59.4374, "lng": 24.7397,
+    "type": "sight", "stage": "baltikum",
+    "day": 7, "date": "2026-07-16", "country": "EE",
+    "priority": "high",
+    "popup": { "title": "Toompea domb", "description": "Tallinn fellegvára és legjobb kilátópontja. Kohtuotsa platoo (templomtornyok + Vanalinn piros tetők), Patkuli terasz (kikötő + tenger felé)." }
+  },
+  {
     "id": "tallinn-oldtown",
     "name": "Tallinn — Vanalinn",
     "lat": 59.4370, "lng": 24.7450,
     "type": "sight", "stage": "baltikum",
     "day": 7, "date": "2026-07-16", "country": "EE",
     "priority": "medium",
-    "popup": { "title": "Tallinn városnap", "description": "Toompea (Felső város), Alexander Nevsky katedrális, Raekoja plats, kikötői negyed. Komp prep este." }
+    "popup": { "title": "Tallinn városnap", "description": "Raekoja plats, Alexander Nevsky katedrális, Katariina käik sikátor, Pikk tänav. Komp prep este." }
+  },
+  {
+    "id": "tallinn-telliskivi",
+    "name": "Telliskivi Creative City",
+    "lat": 59.4397, "lng": 24.7243,
+    "type": "sight", "stage": "baltikum",
+    "day": 7, "date": "2026-07-16", "country": "EE",
+    "priority": "medium",
+    "popup": { "title": "Telliskivi Creative City", "description": "A vasúti műhelyek helyén kialakult alternatív negyed: design üzletek, street art, kézműves sörmalmok (Põhjala), kávézók.", "note": "Nem turista-hely — itt vannak a tállinniak" }
   },
   {
     "id": "helsinki",
@@ -96,7 +186,25 @@
     "type": "ferry", "stage": "baltikum",
     "day": 8, "date": "2026-07-17", "country": "FI",
     "priority": "high",
-    "popup": { "title": "Helsinki — Tallink Shuttle", "description": "Tallink Shuttle: Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra). Majd rövid helsinki városi blokk." }
+    "popup": { "title": "Helsinki — Tallink Shuttle", "description": "Tallink Megastar: Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra). Majd rövid helsinki városi blokk." }
+  },
+  {
+    "id": "helsinki-market",
+    "name": "Helsinki Market Square",
+    "lat": 60.1671, "lng": 24.9521,
+    "type": "sight", "stage": "baltikum",
+    "day": 8, "date": "2026-07-17", "country": "FI",
+    "priority": "medium",
+    "popup": { "title": "Kauppatori + Helsinki Katedrális", "description": "A városi komp-blokk két főpontja: piac, kikötő, fehér neoklasszikus katedrális a Senaatintori felett. 30 perc alatt megvan." }
+  },
+  {
+    "id": "porvoo",
+    "name": "Porvoo",
+    "lat": 60.3924, "lng": 25.6650,
+    "type": "sight", "stage": "baltikum",
+    "day": 8, "date": "2026-07-17", "country": "FI",
+    "priority": "high",
+    "popup": { "title": "Porvoo — faházas óváros", "description": "Finnország második legidősebb városa. Vanha Porvoo: piros, okker és sárga festett faházak a Porvoonjoki folyóparton. Kb. 1,5 óra.", "note": "Ha csak egy finn kisvárost nézel meg, ez legyen" }
   },
   {
     "id": "turku",
@@ -105,7 +213,16 @@
     "type": "drive", "stage": "baltikum",
     "day": 8, "date": "2026-07-17", "country": "FI",
     "priority": "medium",
-    "popup": { "title": "Turku — Viking Line check-in", "description": "Helsinki → Turku ~1,5h autóval. Turku Castle megtekintés, majd Viking Line check-in 20:00.", "note": "Viking Line 20:00 → Stockholm Värtahamnen 06:30+1" }
+    "popup": { "title": "Turku — Viking Line check-in", "description": "Helsinki → Turku ~1,5h autóval. Turku Castle megtekintés, Aura folyópart, majd Viking Line check-in 20:00.", "note": "Viking Line 20:00 → Stockholm Värtahamnen 06:30+1" }
+  },
+  {
+    "id": "turku-castle",
+    "name": "Turku Castle",
+    "lat": 60.4381, "lng": 22.2253,
+    "type": "sight", "stage": "baltikum",
+    "day": 8, "date": "2026-07-17", "country": "FI",
+    "priority": "medium",
+    "popup": { "title": "Turku Castle (Turun linna)", "description": "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél. Múzeumi tartalom, középkori részek. Belépő ~€10, nyitva 10:00–18:00." }
   },
   {
     "id": "stockholm-ferry",
@@ -126,6 +243,15 @@
     "popup": { "title": "Arlanda — FI309 indulás", "description": "Autó Arlanda P3 hosszú távú parkolóba. FI309 Stockholm → Keflavík, indulás 17:10, érkezés 18:55 (helyi)." }
   },
   {
+    "id": "kef-arrival",
+    "name": "Keflavík reptér (KEF)",
+    "lat": 63.9850, "lng": -22.6057,
+    "type": "flight", "stage": "izland",
+    "day": 9, "date": "2026-07-18", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Keflavík — FI309 érkezés", "description": "Érkezés 18:55 helyi idő. Autóátvétel, N1 tankolás, majd ~45 perces átvezetés Reykjavíkba.", "note": "Fotózzátok körbe a karcokat az autóátvételnél!" }
+  },
+  {
     "id": "reykjavik",
     "name": "Reykjavík",
     "lat": 64.1355, "lng": -21.8954,
@@ -133,6 +259,33 @@
     "day": 10, "date": "2026-07-19", "country": "IS",
     "priority": "high",
     "popup": { "title": "Reykjavík — 10. éjszaka", "description": "Izlandi találkozó Hennivel. Hallgrímskirkja, Harpa, Laugavegur. Közös Ring Road körút kezdete." }
+  },
+  {
+    "id": "hallgrimskirkja",
+    "name": "Hallgrímskirkja",
+    "lat": 64.1418, "lng": -21.9265,
+    "type": "sight", "stage": "izland",
+    "day": 10, "date": "2026-07-19", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Hallgrímskirkja", "description": "Reykjavík ikonikus temploma. Toronyliftre érdemes sort állni, panoráma elkápráztat. 30–45 perc." }
+  },
+  {
+    "id": "sun-voyager",
+    "name": "Sun Voyager",
+    "lat": 64.1500, "lng": -21.9249,
+    "type": "sight", "stage": "izland",
+    "day": 10, "date": "2026-07-19", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Sun Voyager szobor", "description": "A vízparti Viking-csónak szobor rövid, de kötelező reykjavíki fotómegálló. Reggeli fényben a legjobb." }
+  },
+  {
+    "id": "harpa",
+    "name": "Harpa Concert Hall",
+    "lat": 64.1505, "lng": -21.9329,
+    "type": "sight", "stage": "izland",
+    "day": 10, "date": "2026-07-19", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Harpa kulturális központ", "description": "Üveg homlokzat, kikötői nézet. Belépő nélkül is látványos, 20–30 perces megálló." }
   },
   {
     "id": "sky-lagoon",
@@ -144,22 +297,76 @@
     "popup": { "title": "Sky Lagoon", "description": "Geotermikus élmény az óceánparton. 7 lépéses rituál, Skjól medence, panoráma az Atlanti-óceánra.", "note": "Előfoglalás kötelező" }
   },
   {
+    "id": "blue-lagoon",
+    "name": "Kék Lagúna",
+    "lat": 63.8803, "lng": -22.4494,
+    "type": "sight", "stage": "izland",
+    "day": 10, "date": "2026-07-19", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Blue Lagoon / Kék Lagúna", "description": "Ikonikus, de júliusban csúcstömeges alternatív fürdő. A Sky Lagoon modernebb és csendesebb.", "note": "Előfoglalás nélkül júliusban ne próbálkozz" }
+  },
+  {
+    "id": "gerduberg",
+    "name": "Gerðuberg bazaltorgonák",
+    "lat": 64.8750, "lng": -22.2753,
+    "type": "sight", "stage": "izland",
+    "day": 11, "date": "2026-07-20", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Gerðuberg", "description": "Látványos bazaltfal a Snæfellsnes bejáratánál. 15 perces gyors megálló, jól nyitja a félsziget-blokkot." }
+  },
+  {
+    "id": "budakirkja",
+    "name": "Búðakirkja",
+    "lat": 64.8192, "lng": -23.3769,
+    "type": "sight", "stage": "izland",
+    "day": 11, "date": "2026-07-20", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Búðakirkja — fekete templom", "description": "Fekete fatemplom a lávamező szélén, a félsziget egyik legerősebb képe. Búðir lávamező háttérrel.", "note": "A Snæfellsjökull gleccser a háttérben a legjobb fotófelállás" }
+  },
+  {
+    "id": "arnarstapi",
+    "name": "Arnarstapi → Hellnar",
+    "lat": 64.7572, "lng": -23.6264,
+    "type": "sight", "stage": "izland",
+    "day": 11, "date": "2026-07-20", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Arnarstapi → Hellnar parti séta", "description": "2,5 km-es tengerparti ösvény: bazaltívek, madársziklák. Fjöruhúsið kávézó Hellnarban az ösvény végén.", "note": "A nap legjobb aktív blokkja" }
+  },
+  {
+    "id": "saxholl",
+    "name": "Saxhóll kráter",
+    "lat": 64.8453, "lng": -23.7825,
+    "type": "sight", "stage": "izland",
+    "day": 11, "date": "2026-07-20", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Saxhóll kráter", "description": "Pár percnyi kaptatás után 360 fokos kráterperem-panoráma Hellissandur közelében. 20–30 perc." }
+  },
+  {
     "id": "snaefellsnes",
     "name": "Snæfellsnes",
     "lat": 64.7474, "lng": -23.5258,
     "type": "hotel", "stage": "izland",
     "day": 11, "date": "2026-07-20", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Snæfellsnes — 11. éjszaka", "description": "Jules Verne: Utazás a Föld középpontja felé helyszíne. Búðakirkja (fekete templomocska), Arnarstapi, Lóndrangar bazaltoszlopok." }
+    "popup": { "title": "Snæfellsnes — 11. éjszaka", "description": "Jules Verne: Utazás a Föld középpontja felé helyszíne. Búðakirkja, Arnarstapi, Lóndrangar bazaltoszlopok." }
   },
   {
     "id": "kirkjufell",
-    "name": "Kirkjufell",
+    "name": "Kirkjufell + Kirkjufellsfoss",
     "lat": 64.9413, "lng": -23.3075,
     "type": "sight", "stage": "izland",
     "day": 11, "date": "2026-07-20", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Kirkjufell", "description": "Izland legtöbbet fotózott hegye (Game of Thrones: Arrowhead Mountain). Kirkjufellsfoss vízesés az előtérben." }
+    "popup": { "title": "Kirkjufell", "description": "Izland legtöbbet fotózott hegye (Game of Thrones: Arrowhead Mountain). Kirkjufellsfoss vízesés az előtérben.", "note": "1000 ISK parkolódíj — kamerás ellenőrzés, ne hagyd ki!" }
+  },
+  {
+    "id": "husavik",
+    "name": "Húsavík",
+    "lat": 66.0449, "lng": -17.3390,
+    "type": "sight", "stage": "izland",
+    "day": 12, "date": "2026-07-21", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Húsavík — bálnales (opcionális)", "description": "Júliusban szinte 100%-os bálnabiztosíték. Az előzetes foglalás kötelező, különben nincs hely.", "note": "Ha bálnales: a délután erre megy rá (3–4 óra)" }
   },
   {
     "id": "akureyri",
@@ -168,7 +375,7 @@
     "type": "sight", "stage": "izland",
     "day": 12, "date": "2026-07-21", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Akureyri", "description": "'Az Észak fővárosa' — Akureyrarkirkja, botanikus kert, Eyjafjörður fjord. Opcionális bálnales Húsavíkból." }
+    "popup": { "title": "Akureyri", "description": "'Az Észak fővárosa' — Akureyrarkirkja, botanikus kert, Eyjafjörður fjord. 2–2,5 órás városblokk ebéddel." }
   },
   {
     "id": "godafoss",
@@ -177,7 +384,25 @@
     "type": "sight", "stage": "izland",
     "day": 12, "date": "2026-07-21", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Goðafoss — az istenek vízesése", "description": "1000-ben itt dobták be a pogány bálványokat az új keresztény korra való áttéréskor. 12m magas, 30m széles." }
+    "popup": { "title": "Goðafoss — az istenek vízesése", "description": "1000-ben itt dobták be a pogány bálványokat. 12m magas, 30m széles. Közvetlenül a Ring Road mellett." }
+  },
+  {
+    "id": "skutustadagigar",
+    "name": "Skútustaðagígar",
+    "lat": 65.5594, "lng": -17.0192,
+    "type": "sight", "stage": "izland",
+    "day": 12, "date": "2026-07-21", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Skútustaðagígar — pszeudokráterek", "description": "Kráter-séta a Mývatn-tó partján. Könnyű ösvény, jó tájfotók, 40–50 perces kör." }
+  },
+  {
+    "id": "dimmuborgir",
+    "name": "Dimmuborgir",
+    "lat": 65.5936, "lng": -16.9133,
+    "type": "sight", "stage": "izland",
+    "day": 12, "date": "2026-07-21", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Dimmuborgir lávamező", "description": "Bizarr fekete lávaszobrok labirintusa a Mývatn közelében. Jó délutáni gyalogos blokk a fürdő előtt." }
   },
   {
     "id": "myvatn",
@@ -189,6 +414,15 @@
     "popup": { "title": "Mývatn — 12. éjszaka", "description": "Vulkáni tájképek: Hverfjall kráter, Dimmuborgir lávamező, pszeudokráterek. Mývatn Nature Baths (kék lagúna alternatíva)." }
   },
   {
+    "id": "hverir-namaskar",
+    "name": "Námaskarð / Hverir",
+    "lat": 65.6406, "lng": -16.8197,
+    "type": "sight", "stage": "izland",
+    "day": 13, "date": "2026-07-22", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Hverir — kénes geotermikus mező", "description": "Marsi táj kén-szaggal: pöfékelő sárfortyogók, füstös kráterek. A kén-szag intenzív — sál segít.", "note": "Az egyik legsokkolóbb izlandi tájkép" }
+  },
+  {
     "id": "dettifoss",
     "name": "Dettifoss",
     "lat": 65.8147, "lng": -16.3848,
@@ -196,6 +430,24 @@
     "day": 13, "date": "2026-07-22", "country": "IS",
     "priority": "high",
     "popup": { "title": "Dettifoss", "description": "Európa legnagyobb vízesése vízhozam szerint (500 m³/s). A Prometheus (2012) egyik nyitójelenete itt játszódik.", "note": "Selfoss (feljebb, kisebb de szép) + Dettifoss kombó ajánlott" }
+  },
+  {
+    "id": "selfoss-falls",
+    "name": "Selfoss vízesés",
+    "lat": 65.8020, "lng": -16.3715,
+    "type": "sight", "stage": "izland",
+    "day": 13, "date": "2026-07-22", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Selfoss vízesés", "description": "10 perc séta Dettifosstól — sokkal csendesebb, de szép széles vízesés. Ugyanabból a parkolóból.", "note": "Ne hagyd ki, ha már ott vagytok a Dettifoss parkolónál" }
+  },
+  {
+    "id": "studlagil",
+    "name": "Stuðlagil kanyon",
+    "lat": 65.3150, "lng": -15.2018,
+    "type": "sight", "stage": "izland",
+    "day": 13, "date": "2026-07-22", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Stuðlagil — bazaltoszlopos kanyon", "description": "Izland legszebb bazaltoszlopos kanyonja. Parkoló 1500 ISK, nyugati oldal könnyebb (lépcsős platform).", "note": "A víz júliusban szürke/zöldes lehet, a formák így is lenyűgözők" }
   },
   {
     "id": "egilsstadir",
@@ -207,13 +459,22 @@
     "popup": { "title": "Egilsstaðir — 13. éjszaka", "description": "Keleti Izland kapuvárosa, Lagarfljót-tó. Kitérő: Stuðlagil bazaltkanyon (türkiz folyó + hatszögletű oszlopok)." }
   },
   {
+    "id": "hvalnes",
+    "name": "Hvalnes-félsziget",
+    "lat": 64.3986, "lng": -14.6611,
+    "type": "sight", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Hvalnes-félsziget", "description": "Vörös csíkos világítótorony, fekete kavicsos part. Gyors, de nagyon fotogén kitérő Vestrahorn előtt." }
+  },
+  {
     "id": "vestrahorn",
-    "name": "Vestrahorn",
+    "name": "Vestrahorn / Stokksnes",
     "lat": 64.2517, "lng": -14.9850,
     "type": "sight", "stage": "izland",
     "day": 14, "date": "2026-07-23", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Stokksnes / Vestrahorn", "description": "Drámai fekete homokos part + Vestrahorn hegycsúcs. Viking Village helyszín (belépőjegyes). A legfotogenikusabb pont Keleten." }
+    "popup": { "title": "Stokksnes / Vestrahorn", "description": "Drámai fekete homokos part + Vestrahorn hegycsúcs. Viking Village helyszín (belépőjegyes). A legfotogenikusabb pont Keleten.", "note": "Ha köd van a Viking Café-nál, ne fizess be — a hegy nem látszik" }
   },
   {
     "id": "hofn",
@@ -231,7 +492,34 @@
     "type": "sight", "stage": "izland",
     "day": 14, "date": "2026-07-23", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Jökulsárlón jégtó", "description": "Gleccser-jégtáblák úsznak a lagúnán, fókák a parton. Diamond Beach: fekete homok + átlátszó jégdarabok. Hajókirándulás ajánlott." }
+    "popup": { "title": "Jökulsárlón jégtó", "description": "Gleccser-jégtáblák úsznak a lagúnán, fókák a parton. Hajókirándulás ajánlott.", "note": "Júliusban délben tele van — reggel vagy estefelé (20-21h) sokkal jobb" }
+  },
+  {
+    "id": "diamond-beach",
+    "name": "Diamond Beach",
+    "lat": 64.0678, "lng": -16.2228,
+    "type": "sight", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Diamond Beach", "description": "A Jökulsárlónból kifutó kristályjég fekete homokon. Kora reggel vagy késő este a legjobb fotó — júliusban 22-23-ig világos!" }
+  },
+  {
+    "id": "fjallsarlon",
+    "name": "Fjallsárlón",
+    "lat": 64.0333, "lng": -16.4236,
+    "type": "sight", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Fjallsárlón", "description": "Kisebb, csendesebb gleccserlagúna kevesebb turistával. Jó, ha még kell egy nyugodtabb gleccseres képet." }
+  },
+  {
+    "id": "svartifoss",
+    "name": "Svartifoss",
+    "lat": 63.9960, "lng": -16.9757,
+    "type": "sight", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Svartifoss — bazaltoszlopos vízesés", "description": "Skaftafellben, könnyű nyári sétán elérhető. A fény Vatnajökull hátterével estére a legjobb. Parkoló + ~45 perces séta." }
   },
   {
     "id": "fjadrargjufur",
@@ -240,7 +528,25 @@
     "type": "sight", "stage": "izland",
     "day": 15, "date": "2026-07-24", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Fjaðrárgljúfur kanyon", "description": "2 km hosszú, 100m mély kanyon — Justin Bieber 'I'll Show You' videóklip helyszíne. Felülnézeti kilátóösvény." }
+    "popup": { "title": "Fjaðrárgljúfur kanyon", "description": "2 km hosszú, 100m mély kanyon — Justin Bieber 'I'll Show You' videóklip helyszíne. Felülnézeti kilátóösvény.", "note": "Korán érkezz — reggeli köd a legjobb hangulatot adja" }
+  },
+  {
+    "id": "reynisfjara",
+    "name": "Reynisfjara strand",
+    "lat": 63.4047, "lng": -19.0441,
+    "type": "sight", "stage": "izland",
+    "day": 15, "date": "2026-07-24", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Reynisfjara — fekete homokos strand", "description": "Bazaltoszlopok, Reynisdrangar sziklák. Vizuálisan az egyik legerősebb pont.", "note": "⚠️ Sneaker wave: soha ne fordíts hátat az óceánnak! Minimum 30 méter a víztől!" }
+  },
+  {
+    "id": "dyrholaey",
+    "name": "Dyrhólaey",
+    "lat": 63.4029, "lng": -19.1270,
+    "type": "sight", "stage": "izland",
+    "day": 15, "date": "2026-07-24", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Dyrhólaey — puffin + természetes kőív", "description": "Júliusban puffinok százai fészkelnek itt. 16:00 után a madarak aktívabbak. Egyedülálló kőhidas kilátó az Atlanti-óceán felett." }
   },
   {
     "id": "vik",
@@ -249,7 +555,7 @@
     "type": "hotel", "stage": "izland",
     "day": 15, "date": "2026-07-24", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Vík — 15. éjszaka", "description": "Izland legdélibb pontja. Reynisfjara fekete homokos strand (30m távolság kötelező a víztől!), Reynisdrangar bazaltoszlopok." }
+    "popup": { "title": "Vík — 15. éjszaka", "description": "Izland legdélibb pontja. Reynisfjara fekete homokos strand. Vík tankolás: N1 a faluban." }
   },
   {
     "id": "skogafoss",
@@ -258,7 +564,61 @@
     "type": "sight", "stage": "izland",
     "day": 15, "date": "2026-07-24", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Skógafoss", "description": "60m magas, 25m széles vízesés. Lépcső a tetejéhez (527 lépcs). Mellette: Seljavallalaug szabadtéri geotermikus medence." }
+    "popup": { "title": "Skógafoss", "description": "60m magas, 25m széles vízesés. 527 lépcső a tetejéhez. Reggeli fotó jobb — délután a fény szembe süt." }
+  },
+  {
+    "id": "seljalandsfoss",
+    "name": "Seljalandsfoss + Gljúfrabúi",
+    "lat": 63.6154, "lng": -19.9906,
+    "type": "sight", "stage": "izland",
+    "day": 15, "date": "2026-07-24", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Seljalandsfoss + Gljúfrabúi", "description": "Seljalandsfoss mögé be lehet menni (garantált ázás!). A szomszéd Gljúfrabúi egy rejtett szurdokba rejt el egy titkos vízesést.", "note": "Vízálló cipő és esőkabát kötelező!" }
+  },
+  {
+    "id": "kerid-crater",
+    "name": "Kerið kráter",
+    "lat": 64.0412, "lng": -20.8855,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "medium",
+    "popup": { "title": "Kerið krátertó", "description": "Türkiz-zöld krátertó intenzív vörös vulkáni falak között. Könnyű séta, 25–35 perc. Jó vizuális nyitás a zárónaphoz." }
+  },
+  {
+    "id": "secret-lagoon",
+    "name": "Secret Lagoon",
+    "lat": 64.0155, "lng": -20.6636,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Secret Lagoon (Gamla Laugin)", "description": "Izland legrégebbi fürdője természetes geotermikus medencével. Csendesebb és hitelesebb mint a Blue Lagoon." }
+  },
+  {
+    "id": "fridheimar",
+    "name": "Friðheimar",
+    "lat": 64.0867, "lng": -20.9177,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Friðheimar — paradicsomfarmos étterem", "description": "Üvegházi étterem korlátlan paradicsomlevessel. Nyitva 11:30–16:00.", "note": "⚠️ FOGLALJ ELŐRE: fridheimar.is — minimum 1 héttel korábban!" }
+  },
+  {
+    "id": "geysir",
+    "name": "Geysir — Strokkur",
+    "lat": 64.3104, "lng": -20.3034,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Geysir — Strokkur", "description": "A 'gejzír' szó eredeti helyszíne. Strokkur minden 5-8 percben tör ki 15-40m magasra." }
+  },
+  {
+    "id": "gullfoss",
+    "name": "Gullfoss",
+    "lat": 64.3276, "lng": -20.1210,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Gullfoss", "description": "Izland legjobban értékelt természeti pontja — kétlépéses vízesés, júliusban a legtöbb vízzel. A Golden Circle harmadik főpontja." }
   },
   {
     "id": "thingvellir",
@@ -270,22 +630,22 @@
     "popup": { "title": "Þingvellir NP", "description": "UNESCO Világörökség — ahol az Eurázsiai és Észak-Amerikai kőzetlemez szétválik. Az első izlandi parlament (Alþing) helyszíne 930 AD-tól." }
   },
   {
-    "id": "geysir",
-    "name": "Geysir",
-    "lat": 64.3104, "lng": -20.3034,
-    "type": "sight", "stage": "izland",
-    "day": 16, "date": "2026-07-25", "country": "IS",
-    "priority": "high",
-    "popup": { "title": "Geysir — Strokkur", "description": "A 'gejzír' szó eredeti helyszíne. Strokkur minden 5-8 percben tör ki 15-40m magasra." }
-  },
-  {
     "id": "selfoss",
     "name": "Selfoss",
     "lat": 63.9332, "lng": -20.9961,
     "type": "hotel", "stage": "izland",
     "day": 16, "date": "2026-07-25", "country": "IS",
     "priority": "high",
-    "popup": { "title": "Selfoss — 16. éjszaka", "description": "Az utolsó izlandi éjszaka. Gullfoss vízesés (út közben). Keflavík reggelre 45 perc, korai indulás szükséges." }
+    "popup": { "title": "Selfoss — 16. éjszaka", "description": "Az utolsó izlandi éjszaka. Keflavík reggelre 45 perc, korai indulás szükséges." }
+  },
+  {
+    "id": "kef-depart",
+    "name": "Keflavík reptér — indulás",
+    "lat": 63.9850, "lng": -22.6057,
+    "type": "flight", "stage": "hazaut",
+    "day": 17, "date": "2026-07-26", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "KEF — FI306 indulás", "description": "FI306 Keflavík → Stockholm Arlanda, 07:35 indulás. Bérautó visszaadás + utolsó tankolás (N1/Olís) a reptér mellett.", "note": "Legalább 2-3 óra puffer a hajnali indulás előtt" }
   },
   {
     "id": "arlanda-arrive",
@@ -294,7 +654,7 @@
     "type": "flight", "stage": "hazaut",
     "day": 17, "date": "2026-07-26", "country": "SE",
     "priority": "high",
-    "popup": { "title": "Arlanda — FI306 érkezés", "description": "FI306 Keflavík → Stockholm Arlanda. Autóbérlés Arlandánál, majd 3 napos stockholmi tartózkodás." }
+    "popup": { "title": "Arlanda — FI306 érkezés", "description": "FI306 Keflavík → Stockholm Arlanda. Autófelvétel Arlandánál, majd 3 napos stockholmi tartózkodás." }
   },
   {
     "id": "stockholm",
@@ -303,7 +663,61 @@
     "type": "hotel", "stage": "hazaut",
     "day": 17, "date": "2026-07-26", "country": "SE",
     "priority": "high",
-    "popup": { "title": "Stockholm — 17–19. éjszaka", "description": "3 napos tartózkodás: Gamla Stan, Vasa Museum, ABBA Museum, Djurgården, Vaxholm–Grinda szigetek." }
+    "popup": { "title": "Stockholm — 17–19. éjszaka", "description": "3 napos tartózkodás: Gamla Stan, Vasa Museum, Djurgården, Fotografiska, Archipelago." }
+  },
+  {
+    "id": "gamla-stan",
+    "name": "Gamla Stan",
+    "lat": 59.3249, "lng": 18.0716,
+    "type": "sight", "stage": "hazaut",
+    "day": 17, "date": "2026-07-26", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Gamla Stan + Stortorget", "description": "Stockholm középkori óvárosa: Stortorget ikonikus színes házsora, Storkyrkan katedrális, Nobel Prize Museum, Kungliga Slottet (királyi palota)." }
+  },
+  {
+    "id": "monteliusvagen",
+    "name": "Monteliusvägen",
+    "lat": 59.3178, "lng": 18.0570,
+    "type": "sight", "stage": "hazaut",
+    "day": 17, "date": "2026-07-26", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Monteliusvägen sétány", "description": "500 méteres ingyenes sétány a Södermalm sziklaperméin. Lenyűgöző kilátás a Riddarfjärdenre és a Gamla Stanra.", "note": "Napszállta ~22:00 körül júliusban — este 9-10-kor is érdemes felmenni" }
+  },
+  {
+    "id": "vasa-museum",
+    "name": "Vasa Museum",
+    "lat": 59.3281, "lng": 18.0917,
+    "type": "sight", "stage": "hazaut",
+    "day": 18, "date": "2026-07-27", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Vasa Museum", "description": "Skandinávia leglátogatottabb múzeuma: 1628-ban elsüllyedt, majd 333 év múlva kiemelt teljes 17. sz.-i hadihajó.", "note": "⚠️ KÖTELEZŐ online előfoglalás júliusban: vasamuseet.se" }
+  },
+  {
+    "id": "djurgarden",
+    "name": "Djurgården",
+    "lat": 59.3340, "lng": 18.1115,
+    "type": "sight", "stage": "hazaut",
+    "day": 18, "date": "2026-07-27", "country": "SE",
+    "priority": "medium",
+    "popup": { "title": "Djurgården + Skansen", "description": "Stockholm zöld szigete. Skansen: a világ első szabadtéri múzeuma (1891), nordic állatpark. ABBA The Museum szintén itt." }
+  },
+  {
+    "id": "fotografiska",
+    "name": "Fotografiska",
+    "lat": 59.3168, "lng": 18.0858,
+    "type": "sight", "stage": "hazaut",
+    "day": 18, "date": "2026-07-27", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Fotografiska", "description": "Kortárs fotóművészeti múzeum egykori vámházban. Évente 20+ időszaki kiállítás. Tetőteraszi étterem (Michelin Green Star) Stockholm-panorámával." }
+  },
+  {
+    "id": "vaxholm",
+    "name": "Vaxholm + Grinda sziget",
+    "lat": 59.4027, "lng": 18.3583,
+    "type": "sight", "stage": "hazaut",
+    "day": 19, "date": "2026-07-28", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Stockholm Archipelago — Vaxholm + Grinda", "description": "Egész napos kompos kaland. Vaxholm: erőd, faházas utcák, füstölt hering. Grinda: gránitsziget, úszás, erdei ösvények, Wärdshus étterem.", "note": "Grinda Wärdshus: foglalj előre — grindawardshus.se/boka-bord" }
   },
   {
     "id": "malmo",
@@ -312,7 +726,25 @@
     "type": "drive", "stage": "hazaut",
     "day": 20, "date": "2026-07-29", "country": "SE",
     "priority": "medium",
-    "popup": { "title": "Malmö — átkelő", "description": "Stockholm → Malmö ~620 km. Öresund hídon Koppenhágába. Rövid Malmö-megálló opcionális." }
+    "popup": { "title": "Malmö — Turning Torso fotóstop", "description": "Turning Torso (Santiago Calatrava, 190 m) a Västra Hamnen negyedben. 45 perces fotóstop, majd Øresund-hídon Koppenhágába." }
+  },
+  {
+    "id": "oresund-bridge",
+    "name": "Øresund Bridge",
+    "lat": 55.6200, "lng": 12.9100,
+    "type": "drive", "stage": "hazaut",
+    "day": 20, "date": "2026-07-29", "country": "DK",
+    "priority": "medium",
+    "popup": { "title": "Øresund Bridge", "description": "8 km híd + 4 km alagút kombináció Malmö és Koppenhága között. Díj ~400 DKK (~54 EUR)." }
+  },
+  {
+    "id": "nyhavn",
+    "name": "Nyhavn",
+    "lat": 55.6796, "lng": 12.5876,
+    "type": "sight", "stage": "hazaut",
+    "day": 20, "date": "2026-07-29", "country": "DK",
+    "priority": "high",
+    "popup": { "title": "Nyhavn — koppenhágai csatorna", "description": "Koppenhága legfotogénebb pontja: 17. századi színes kikötői házak és csónakok. Hans Christian Andersen is itt lakott (Nyhavn 20 és 67)." }
   },
   {
     "id": "copenhagen",
@@ -324,13 +756,112 @@
     "popup": { "title": "Koppenhága — 20–22. éjszaka", "description": "3 napos tartózkodás: Nyhavn, Rosenborg, Tivoli, Christiansborg, Kis Hableány, Christiania, Louisiana Museum." }
   },
   {
+    "id": "rosenborg-castle",
+    "name": "Rosenborg kastély",
+    "lat": 55.6862, "lng": 12.5778,
+    "type": "sight", "stage": "hazaut",
+    "day": 21, "date": "2026-07-30", "country": "DK",
+    "priority": "high",
+    "popup": { "title": "Rosenborg Slot", "description": "17. századi reneszánsz kastély a Kongens Have parkban. Az egyetlen helyszín ahol a dán koronázási ékszerek megtekinthetők. Belépő ~145 DKK." }
+  },
+  {
+    "id": "tivoli",
+    "name": "Tivoli Gardens",
+    "lat": 55.6738, "lng": 12.5683,
+    "type": "sight", "stage": "hazaut",
+    "day": 21, "date": "2026-07-30", "country": "DK",
+    "priority": "high",
+    "popup": { "title": "Tivoli Gardens", "description": "A világ egyik legrégebbi vidámparkja (1843). A kert hangulata (lanternák, virágok) önmagában különleges. Estére a kivilágítás mágikus.", "note": "Jegyet érdemes előre venni online: tivoli.dk" }
+  },
+  {
+    "id": "christiansborg",
+    "name": "Christiansborg Palace",
+    "lat": 55.6760, "lng": 12.5797,
+    "type": "sight", "stage": "hazaut",
+    "day": 22, "date": "2026-07-31", "country": "DK",
+    "priority": "high",
+    "popup": { "title": "Christiansborg — toronykilátó + trónterem", "description": "Dán parlament + Legfelsőbb Bíróság + királyi recepciók. A toronykilátó INGYENES, koppenhágai legjobb panoráma." }
+  },
+  {
+    "id": "den-lille-havfrue",
+    "name": "Den Lille Havfrue",
+    "lat": 55.6929, "lng": 12.5996,
+    "type": "sight", "stage": "hazaut",
+    "day": 22, "date": "2026-07-31", "country": "DK",
+    "priority": "medium",
+    "popup": { "title": "Kis Hableány szobor + Kastellet", "description": "Koppenhága legikonikusabb szobra. Mellette a Kastellet (csillag erőd) tökéletes ingyenes sétahely." }
+  },
+  {
+    "id": "christiania",
+    "name": "Freetown Christiania",
+    "lat": 55.6729, "lng": 12.5979,
+    "type": "sight", "stage": "hazaut",
+    "day": 22, "date": "2026-07-31", "country": "DK",
+    "priority": "medium",
+    "popup": { "title": "Freetown Christiania", "description": "1971 óta autonóm közösség Koppenhágán belül. Street art, élőzene, kézműves kávézók.", "note": "Pusher Street fotózása tilos és ezt komolyan veszik!" }
+  },
+  {
+    "id": "louisiana-museum",
+    "name": "Louisiana Museum of Modern Art",
+    "lat": 55.9631, "lng": 12.5423,
+    "type": "sight", "stage": "hazaut",
+    "day": 23, "date": "2026-08-01", "country": "DK",
+    "priority": "high",
+    "popup": { "title": "Louisiana Museum", "description": "Skandinávia legjobb modern múzeuma (1958). Calder, Giacometti, Warhol, Picasso. A múzeum épülete maga is remekmű: üveg folyosók, szoborkert az Øresund felett.", "note": "Belépő ~195 DKK; szombaton 11:00–18:00" }
+  },
+  {
     "id": "hamburg",
     "name": "Hamburg",
     "lat": 53.5753, "lng": 10.0153,
     "type": "hotel", "stage": "hazaut",
     "day": 23, "date": "2026-08-01", "country": "DE",
     "priority": "high",
-    "popup": { "title": "Hamburg — 23–25. éjszaka", "description": "3 napos tartózkodás: Speicherstadt, Elbphilharmonie, Lübeck és Schwerin Castle kirándulás." }
+    "popup": { "title": "Hamburg — 23–25. éjszaka", "description": "3 napos tartózkodás: Speicherstadt, Elbphilharmonie, Miniatur Wunderland, Lübeck és Schwerin Castle körút." }
+  },
+  {
+    "id": "lubeck-holstentor",
+    "name": "Lübeck — Holstentor",
+    "lat": 53.8672, "lng": 10.6789,
+    "type": "sight", "stage": "hazaut",
+    "day": 24, "date": "2026-08-02", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Lübeck — Holstentor + Marienkirche", "description": "Az ikonikus két tornyos kapuja, Marienkirche gótikus téglatemplom. Niederegger marzipán kötelező megálló.", "note": "Lübeck egésze UNESCO-világörökség (1987)" }
+  },
+  {
+    "id": "schwerin-castle",
+    "name": "Schweriner Schloss",
+    "lat": 53.6204, "lng": 11.4156,
+    "type": "sight", "stage": "hazaut",
+    "day": 24, "date": "2026-08-02", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Schweriner Schloss", "description": "Neoromantikus kastély egy tóval körülvett szigeten, UNESCO-jelölt. A 'Balti-tenger Neuschwansteinja'. Belépő ~€8.", "note": "Legjobb szög: a tó felőli homlokzat" }
+  },
+  {
+    "id": "miniatur-wunderland",
+    "name": "Miniatur Wunderland",
+    "lat": 53.5437, "lng": 9.9935,
+    "type": "sight", "stage": "hazaut",
+    "day": 25, "date": "2026-08-03", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Miniatur Wunderland", "description": "A világ legnagyobb miniatűr vasúti kiállítása. 15 000+ m² pályahálózat, saját repülőtér-makett. ~2,5–3 óra ajánlott.", "note": "⚠️ KÖTELEZŐ előfoglalás: miniatur-wunderland.de" }
+  },
+  {
+    "id": "speicherstadt",
+    "name": "Speicherstadt (UNESCO)",
+    "lat": 53.5433, "lng": 10.0019,
+    "type": "sight", "stage": "hazaut",
+    "day": 25, "date": "2026-08-03", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Speicherstadt — UNESCO raktárváros", "description": "A világ legnagyobb összefüggő raktárváros-együttese, piros tégla, csatornák. Ma design irodák, múzeumok, kávézók. A Miniatur Wunderland is itt van." }
+  },
+  {
+    "id": "elbphilharmonie",
+    "name": "Elbphilharmonie",
+    "lat": 53.5413, "lng": 9.9842,
+    "type": "sight", "stage": "hazaut",
+    "day": 25, "date": "2026-08-03", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Elbphilharmonie Plaza", "description": "Herzog & de Meuron tervezte ikonikus hangversenyház. Ingyenesen látogatható hullámosacél kilátóterasz (37. emelet).", "note": "Előfoglalás kell: elbphilharmonie.de/plaza" }
   },
   {
     "id": "frankfurt",
@@ -342,12 +873,30 @@
     "popup": { "title": "Frankfurt — 26–27. éjszaka", "description": "2 napos tartózkodás: Römerberg, Altstadt, Sachsenhausen negyed, Städel Museum." }
   },
   {
+    "id": "roemberg-frankfurt",
+    "name": "Römerberg",
+    "lat": 50.1107, "lng": 8.6838,
+    "type": "sight", "stage": "hazaut",
+    "day": 27, "date": "2026-08-05", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Römerberg + Frankfurter Dom", "description": "Frankfurt ikonikus középkori főtere a Römer városháza háromcsúcsos homlokzatával. Mellette a Kaiserdom gótikus toronnyal (66 m). Reggel üres és csodás." }
+  },
+  {
+    "id": "stadel-museum",
+    "name": "Städel Museum",
+    "lat": 50.1011, "lng": 8.6821,
+    "type": "sight", "stage": "hazaut",
+    "day": 27, "date": "2026-08-05", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Städel Museum", "description": "Európa egyik legjobb képzőművészeti múzeuma: Botticelli, Vermeer, Rembrandt, Monet, Picasso. Belépő ~€16/fő, ~2 óra ajánlott." }
+  },
+  {
     "id": "budapest-end",
     "name": "Budapest — hazaérkezés",
     "lat": 47.4979, "lng": 19.0402,
     "type": "drive", "stage": "hazaut",
     "day": 28, "date": "2026-08-06", "country": "HU",
     "priority": "high",
-    "popup": { "title": "Budapest 🏁", "description": "Hazaérkezés — 28 napos, ~8 500 km-es út vége. Frankfurt → Budapest ~1 020 km, ~10h." }
+    "popup": { "title": "Budapest 🏁", "description": "Hazaérkezés — 28 napos, ~9 500 km-es út vége. Frankfurt → Budapest ~950 km, ~9h." }
   }
 ]
