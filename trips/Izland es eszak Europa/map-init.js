@@ -9,19 +9,17 @@
 import { TravelMap } from "../../engine/TravelMap.js";
 
 /**
- * Primary source: local static JSON (instant, always works).
- * When the Google Apps Script web app is published and tested,
- * swap PRIMARY_URL ↔ API_URL to use live Sheets data instead.
+ * Google Apps Script web-app URL (published as "Anyone, even anonymous").
+ * Sheet tab name: EszakEuropa
  */
-const PRIMARY_URL = "./map-data.json";
+const API_URL =
+  "https://script.google.com/macros/s/AKfycbx9FuIYukiZr-HZaHTWZgP7JLyqd6mvJcY_44cv3VBxH1DdxFHvozyUmygOSjVsmBaA/exec?trip=EszakEuropa";
 
 /**
- * Google Apps Script web-app URL.
- * Set this as PRIMARY_URL once the script is published as
- * "Anyone can access" and verified to return correct JSON.
+ * Local JSON fallback — used automatically if the API times out or fails.
+ * Contains all 39 trip stops with coordinates.
  */
-// const API_URL =
-//   "https://script.google.com/macros/s/AKfycbx9FuIYukiZr-HZaHTWZgP7JLyqd6mvJcY_44cv3VBxH1DdxFHvozyUmygOSjVsmBaA/exec?trip=EszakEuropa";
+const FALLBACK_URL = "./map-data.json";
 
 /** @type {TravelMap|null} */
 let travelMap = null;
@@ -37,12 +35,12 @@ async function initMapOnce() {
 
   travelMap = new TravelMap("trip-map", {
     groupBy:       "szakasz",
-    fallbackUrl:   null,       // no secondary fallback needed when using local JSON
+    fallbackUrl:   FALLBACK_URL,  // instant local fallback if API is slow/down
     defaultZoom:   4,
-    defaultCenter: [60, 5],    // centred on Scandinavia + Iceland
+    defaultCenter: [60, 5],       // centred on Scandinavia + Iceland
   });
 
-  await travelMap.load(PRIMARY_URL);
+  await travelMap.load(API_URL);
 }
 
 /**
