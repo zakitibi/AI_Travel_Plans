@@ -1,25 +1,33 @@
 /**
- * TravelMap.js — Travel Map Engine
- * Core Leaflet map class for static travel sites.
+ * TravelMap.js — Travel Map Engine v2
  *
- * Features:
- *   - Auto-injects map.css via import.meta.url (zero config for consumers)
- *   - Custom div-icon markers based on Típus column
- *   - Route polylines per Szakasz with distinct colours
- *   - Rich popup from all available columns
- *   - Layer control (group by Szakasz / Típus / Nap)
- *   - Loading overlay with spinner
- *   - fitBounds after data load
- *   - Mobile-friendly (touch pan/zoom via Leaflet defaults)
+ * Orchestrator class for the static travel map.
+ * Loads pre-generated JSON from /data/trips/{tripId}/ — NO runtime API calls.
+ *
+ * Architecture:
+ *   TravelMap
+ *   ├── TripLoader      — fetches trip.json, pois.json, route.json in parallel
+ *   ├── MarkerRenderer  — div-icon markers, lazy popups, optional clustering
+ *   ├── RouteRenderer   — GeoJSON LineStrings per stage
+ *   └── LayerManager    — L.control.layers grouped by stage/type/day
+ *
+ * Performance:
+ *   - preferCanvas: true   → canvas renderer for vectors (faster than SVG)
+ *   - 3 parallel fetches   → Promise.all, no sequential waterfall
+ *   - Lazy popup HTML      → built only when a popup opens
+ *   - Optional clustering  → L.markerClusterGroup (if plugin loaded)
+ *   - Auto CSS injection   → zero config for trip pages
  *
  * Usage (from any trip's map-init.js):
  *   import { TravelMap } from "../../engine/TravelMap.js";
- *   const map = new TravelMap("map-container-id", { groupBy: "szakasz" });
- *   await map.load("https://script.google.com/.../exec?trip=MyTrip");
+ *   const map = new TravelMap("map-container-id", { cluster: true });
+ *   await map.load("izland-es-eszak-europa");
  */
 
-import { loadTripData }              from "./TripLoader.js";
-import { LayerManager, colorForSzakasz } from "./LayerManager.js";
+import { loadTrip }           from "./TripLoader.js";
+import { LayerManager }       from "./LayerManager.js";
+import { MarkerRenderer }     from "./MarkerRenderer.js";
+import { RouteRenderer }      from "./RouteRenderer.js";
 
 // ── Auto-inject map.css once ──────────────────────────────────────────────────
 (function injectMapCss() {
@@ -32,150 +40,48 @@ import { LayerManager, colorForSzakasz } from "./LayerManager.js";
   }
 })();
 
-// ── Típus → icon config ───────────────────────────────────────────────────────
-const TIPO = {
-  drive:      { emoji: "🚗", cls: "tm-marker-drive"   },
-  autó:       { emoji: "🚗", cls: "tm-marker-drive"   },
-  auto:       { emoji: "🚗", cls: "tm-marker-drive"   },
-  hotel:      { emoji: "🏨", cls: "tm-marker-hotel"   },
-  szállás:    { emoji: "🏨", cls: "tm-marker-hotel"   },
-  szallas:    { emoji: "🏨", cls: "tm-marker-hotel"   },
-  ferry:      { emoji: "🚢", cls: "tm-marker-ferry"   },
-  komp:       { emoji: "🚢", cls: "tm-marker-ferry"   },
-  flight:     { emoji: "✈",  cls: "tm-marker-flight"  },
-  repülő:     { emoji: "✈",  cls: "tm-marker-flight"  },
-  repulo:     { emoji: "✈",  cls: "tm-marker-flight"  },
-  sight:      { emoji: "📍", cls: "tm-marker-sight"   },
-  látnivaló:  { emoji: "📍", cls: "tm-marker-sight"   },
-  latnivalo:  { emoji: "📍", cls: "tm-marker-sight"   },
-};
-
-function tipoConf(tipus) {
-  const key = (tipus || "").toLowerCase().trim()
-    .normalize("NFD").replace(/[̀-ͯ]/g, "");
-  return TIPO[key] || { emoji: "📌", cls: "tm-marker-default" };
-}
-
-// ── Div-icon factory ──────────────────────────────────────────────────────────
-function createIcon(L, row) {
-  const { emoji, cls } = tipoConf(row.Típus);
-  return L.divIcon({
-    className: "",
-    html: `<div class="tm-marker ${cls}"><span class="tm-marker-inner">${emoji}</span></div>`,
-    iconSize:    [30, 30],
-    iconAnchor:  [15, 30],
-    popupAnchor: [0, -33],
-  });
-}
-
-// ── Popup HTML builder ────────────────────────────────────────────────────────
-function buildPopup(row) {
-  const { emoji } = tipoConf(row.Típus);
-  const title   = row.Cél || row.Start || row.Szállás || "—";
-  const dayStr  = row.Nap   ? `${row.Nap}. nap` : "";
-  const dateStr = row.Dátum ? row.Dátum          : "";
-  const meta    = [dayStr, dateStr].filter(Boolean).join(" · ");
-
-  function tr(label, value) {
-    if (!value || value === "—") return "";
-    return `<div class="tm-popup-row">
-      <span class="tm-popup-label">${label}</span>
-      <span class="tm-popup-value">${value}</span>
-    </div>`;
-  }
-
-  const routeParts = [
-    row.Start && row.Cél && row.Start !== row.Cél
-      ? tr("Útvonal", `${row.Start} → ${row.Cél}`)
-      : tr("Helyszín", row.Start || row.Cél),
-    tr("Ország",       row.Ország),
-    tr("Szállás",      row.Szállás
-       ? `${row.Szállás}${row["Szállás típus"] ? ` (${row["Szállás típus"]})` : ""}`
-       : ""),
-    tr("Közlekedés",   row.Közlekedés),
-    tr("Indulás / érk",
-       row.Indulás && row.Érkezés
-         ? `${row.Indulás} → ${row.Érkezés}`
-         : row.Indulás || row.Érkezés),
-    tr("Távolság",     row.Km        ? `${row.Km} km` : ""),
-    tr("Vezetési idő", row["Vezetési idő"]),
-    tr("Parkolás",     row.Parkolás),
-    tr("Státusz",      row.Státusz),
-  ].join("");
-
-  const program = row["Látnivalók / Program"]
-    ? `<div class="tm-popup-row">
-         <span class="tm-popup-label">Program</span>
-         <span class="tm-popup-value">${row["Látnivalók / Program"]}</span>
-       </div>`
-    : "";
-
-  const note = row.Megjegyzés
-    ? `<div class="tm-popup-note">${row.Megjegyzés}</div>`
-    : "";
-
-  const szakasz = row.Szakasz
-    ? `<span class="tm-popup-szakasz">${row.Szakasz}</span>`
-    : "";
-
-  const mapsHref = row["My Maps hely"] && row["My Maps hely"].startsWith("http")
-    ? `<div style="margin-top:8px">
-         <a href="${row["My Maps hely"]}" target="_blank" rel="noreferrer"
-            style="font-size:11px;color:#1f5a3e;font-weight:700;text-decoration:none">
-           Google Maps ↗
-         </a>
-       </div>`
-    : "";
-
-  return `<div class="tm-popup">
-    <div class="tm-popup-head">
-      <span class="tm-popup-icon">${emoji}</span>
-      <div>
-        <div class="tm-popup-title">${title}</div>
-        ${meta ? `<div class="tm-popup-date">${meta}</div>` : ""}
-      </div>
-    </div>
-    <div class="tm-popup-divider"></div>
-    ${routeParts}${program}${note}
-    <div style="margin-top:6px">${szakasz}${mapsHref}</div>
-  </div>`;
-}
-
 // ── TravelMap ─────────────────────────────────────────────────────────────────
 export class TravelMap {
   /**
    * @param {string} containerId  ID of the DOM element for the Leaflet map.
    * @param {object} [opts]
-   * @param {"szakasz"|"tipus"|"nap"} [opts.groupBy="szakasz"]
-   * @param {string}  [opts.fallbackUrl]      Local JSON fallback path.
-   * @param {number}  [opts.defaultZoom=5]
-   * @param {number[]} [opts.defaultCenter=[58,14]]  [lat, lng]
+   * @param {"stage"|"type"|"day"} [opts.groupBy="stage"]   Layer control grouping.
+   * @param {string}  [opts.dataRoot="/data/trips"]          Base path for JSON files.
+   * @param {number}  [opts.defaultZoom=4]
+   * @param {number[]} [opts.defaultCenter=[60, 5]]          [lat, lng]
+   * @param {boolean} [opts.cluster=false]                   Enable marker clustering.
+   * @param {number}  [opts.maxClusterRadius=60]
    */
   constructor(containerId, opts = {}) {
-    this._id = containerId;
+    this._id   = containerId;
     this._opts = {
-      groupBy:       "szakasz",
-      fallbackUrl:   null,
-      defaultZoom:   5,
-      defaultCenter: [58, 14],
+      groupBy:          "stage",
+      dataRoot:         "/data/trips",
+      defaultZoom:      4,
+      defaultCenter:    [60, 5],
+      cluster:          false,
+      maxClusterRadius: 60,
       ...opts,
     };
-    /** @type {L.Map|null} */         this._map     = null;
-    /** @type {LayerManager|null} */  this._layers  = null;
-    /** @type {Map<Object,L.Marker>} */ this._idx   = new Map();
-    /** @type {L.Polyline[]} */       this._lines   = [];
-    /** @type {HTMLElement|null} */   this._overlay = null;
+    /** @type {L.Map|null} */             this._map      = null;
+    /** @type {LayerManager|null} */      this._layers   = null;
+    /** @type {MarkerRenderer|null} */    this._markers  = null;
+    /** @type {RouteRenderer|null} */     this._routes   = null;
+    /** @type {Map<string,L.Marker>} */   this._idx      = new Map();
+    /** @type {object[]|null} */          this._pois     = null;
+    /** @type {HTMLElement|null} */       this._overlay  = null;
     /** @type {"idle"|"loading"|"ready"|"error"} */ this._state = "idle";
   }
 
   // ── Public API ───────────────────────────────────────────────────────────
 
   /**
-   * Initialise Leaflet and fetch data from the API.
-   * Idempotent — safe to call multiple times (subsequent calls are no-ops).
-   * @param {string} apiUrl
+   * Initialise Leaflet and load static JSON data.
+   * Idempotent — subsequent calls are no-ops.
+   *
+   * @param {string} tripId  e.g. "izland-es-eszak-europa"
    */
-  async load(apiUrl) {
+  async load(tripId) {
     if (this._state !== "idle") return;
     this._state = "loading";
 
@@ -183,45 +89,61 @@ export class TravelMap {
     this._setOverlay("loading");
 
     try {
-      const rows = await loadTripData(apiUrl, this._opts.fallbackUrl);
-      this._render(rows);
+      const { trip, pois, route } = await loadTrip(tripId, this._opts.dataRoot);
+      this._render(trip, pois, route);
       this._state = "ready";
       this._hideOverlay();
     } catch (err) {
       this._state = "error";
       this._setOverlay("error", err.message);
-      console.error("[TravelMap] Failed to load data:", err);
+      console.error("[TravelMap] Failed to load trip data:", err);
     }
   }
 
   /**
-   * Switch layer grouping on a loaded map.
-   * @param {"szakasz"|"tipus"|"nap"} mode
+   * Switch layer grouping on a loaded map (no reload needed).
+   * @param {"stage"|"type"|"day"} mode
    */
   setGroupBy(mode) {
-    if (this._map && this._idx.size) {
-      this._layers.build([...this._idx.keys()], this._idx, mode);
+    if (this._map && this._pois) {
+      this._layers.build(this._pois, this._idx, mode);
     }
   }
 
   /** Zoom/pan to fit all markers. */
   fitAll() {
-    if (!this._map || !this._idx.size) return;
-    this._map.fitBounds(
-      window.L.latLngBounds([...this._idx.values()].map((m) => m.getLatLng())),
-      { padding: [40, 40] }
-    );
+    if (!this._map || !this._markers) return;
+    const bounds = this._markers.getBounds();
+    if (bounds) this._map.fitBounds(bounds, { padding: [40, 40] });
   }
 
   /**
-   * Open the popup for a specific stop.
-   * @param {string|number} nap   Nap column value
-   * @param {string}        cel   Cél column value
-   * @returns {boolean} true if found
+   * Pan to and open the popup for a specific POI by id.
+   * @param {string} id  poi.id from pois.json
+   * @returns {boolean}  true if found
    */
-  focusStop(nap, cel) {
-    for (const [row, marker] of this._idx) {
-      if (String(row.Nap) === String(nap) && row.Cél === cel) {
+  focusById(id) {
+    const marker = this._idx.get(id);
+    if (!marker) return false;
+    this._map.panTo(marker.getLatLng());
+    marker.openPopup();
+    return true;
+  }
+
+  /**
+   * Pan to and open the popup for a POI by day + name match.
+   * @param {number|string} day
+   * @param {string}        name  Partial match against poi.name
+   * @returns {boolean}
+   */
+  focusByDay(day, name) {
+    for (const [id, marker] of this._idx) {
+      const poi = this._pois?.find((p) => p.id === id);
+      if (
+        poi &&
+        String(poi.day) === String(day) &&
+        poi.name.toLowerCase().includes(name.toLowerCase())
+      ) {
         this._map.panTo(marker.getLatLng());
         marker.openPopup();
         return true;
@@ -230,12 +152,14 @@ export class TravelMap {
     return false;
   }
 
-  /** Tear down the map instance and reset to idle state. */
+  /** Remove all layers and reset to idle. */
   destroy() {
-    if (this._layers) this._layers.destroy();
-    if (this._map)    { this._map.remove(); this._map = null; }
+    if (this._layers)  this._layers.destroy();
+    if (this._markers) this._markers.destroy();
+    if (this._routes)  this._routes.destroy();
+    if (this._map)     { this._map.remove(); this._map = null; }
     this._idx.clear();
-    this._lines = [];
+    this._pois  = null;
     this._state = "idle";
   }
 
@@ -248,13 +172,13 @@ export class TravelMap {
     const container = document.getElementById(this._id);
     if (!container) throw new Error(`Map container #${this._id} not found in DOM.`);
 
-    // Resolve overlay element (sibling inside the same .travel-map-wrap)
     const wrap = container.parentElement;
     this._overlay = wrap ? wrap.querySelector(".tm-overlay") : null;
 
     this._map = L.map(this._id, {
-      zoomControl: true,
+      zoomControl:       true,
       attributionControl: true,
+      preferCanvas:      true,   // canvas renderer — faster than SVG for many layers
     }).setView(this._opts.defaultCenter, this._opts.defaultZoom);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -263,52 +187,30 @@ export class TravelMap {
       maxZoom: 19,
     }).addTo(this._map);
 
-    this._layers = new LayerManager(L, this._map);
+    this._layers  = new LayerManager(L, this._map);
+    this._markers = new MarkerRenderer(L, this._map, {
+      cluster:          this._opts.cluster,
+      maxClusterRadius: this._opts.maxClusterRadius,
+    });
+    this._routes = new RouteRenderer(L, this._map);
   }
 
-  _render(rows) {
-    const L = window.L;
-    this._idx.clear();
-    for (const pl of this._lines) this._map.removeLayer(pl);
-    this._lines = [];
+  _render(trip, pois, route) {
+    this._pois = pois;
 
-    const geoRows = rows.filter((r) => r.Lat != null && r.Lng != null);
+    // 1. Route polylines (rendered first — sits behind markers)
+    this._routes.render(route);
 
-    // ── Markers ──
-    for (const row of geoRows) {
-      const marker = L.marker([row.Lat, row.Lng], { icon: createIcon(L, row) })
-        .bindPopup(buildPopup(row), { maxWidth: 320 });
-      this._idx.set(row, marker);
-    }
+    // 2. Markers with lazy popups
+    this._idx = this._markers.render(pois);
 
-    // ── Polylines per Szakasz (preserving row order) ──
-    const groups = new Map();
-    for (const row of geoRows) {
-      const key = row.Szakasz || "_all";
-      if (!groups.has(key)) groups.set(key, []);
-      groups.get(key).push([row.Lat, row.Lng]);
-    }
-    for (const [key, coords] of groups) {
-      if (coords.length < 2) continue;
-      const sample = geoRows.find((r) => (r.Szakasz || "_all") === key);
-      const pl = L.polyline(coords, {
-        color:    colorForSzakasz(sample || {}),
-        weight:   3,
-        opacity:  0.75,
-        lineJoin: "round",
-      }).addTo(this._map);
-      this._lines.push(pl);
-    }
+    // 3. Layer control
+    this._layers.build(pois, this._idx, this._opts.groupBy);
 
-    // ── Layer control ──
-    this._layers.build(geoRows, this._idx, this._opts.groupBy);
-
-    // ── fitBounds ──
-    if (this._idx.size) {
-      this._map.fitBounds(
-        L.latLngBounds([...this._idx.values()].map((m) => m.getLatLng())),
-        { padding: [40, 40] }
-      );
+    // 4. Fit map to all markers
+    const bounds = this._markers.getBounds();
+    if (bounds) {
+      this._map.fitBounds(bounds, { padding: [40, 40] });
     }
   }
 

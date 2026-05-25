@@ -1,0 +1,353 @@
+[
+  {
+    "id": "budapest-start",
+    "name": "Budapest",
+    "lat": 47.4979, "lng": 19.0402,
+    "type": "drive", "stage": "baltikum",
+    "day": 1, "date": "2026-07-10", "country": "HU",
+    "priority": "medium",
+    "popup": { "title": "Budapest — indulás", "description": "Útindulás 07:00 — cél Suwałki, ~900 km" }
+  },
+  {
+    "id": "suwalki",
+    "name": "Suwałki",
+    "lat": 54.0990, "lng": 22.9305,
+    "type": "hotel", "stage": "baltikum",
+    "day": 1, "date": "2026-07-10", "country": "PL",
+    "priority": "high",
+    "popup": { "title": "Suwałki — 1. éjszaka", "description": "~900 km-es etap, ~10h vezetés. Tranzit Lengyelországon át, belépés az EU Baltikum-folyosón." }
+  },
+  {
+    "id": "vilnius",
+    "name": "Vilnius",
+    "lat": 54.6872, "lng": 25.2797,
+    "type": "hotel", "stage": "baltikum",
+    "day": 2, "date": "2026-07-11", "country": "LT",
+    "priority": "high",
+    "popup": { "title": "Vilnius — 2–3. éjszaka", "description": "Litvánia főváros: barokk óváros, Gediminas-torony, Užupis bohém negyed. 2 éjszaka." }
+  },
+  {
+    "id": "trakai",
+    "name": "Trakai",
+    "lat": 54.6387, "lng": 24.9342,
+    "type": "sight", "stage": "baltikum",
+    "day": 3, "date": "2026-07-12", "country": "LT",
+    "priority": "high",
+    "popup": { "title": "Trakai-kastély", "description": "Középkori szigetkastély a tóban — Litvánia egyik legikonikusabb látványossága.", "note": "Kibai kebabok (karaim töltött tészta) a kastély közelében kötelező" }
+  },
+  {
+    "id": "hill-of-crosses",
+    "name": "Keresztek Hegye",
+    "lat": 56.0158, "lng": 23.4168,
+    "type": "sight", "stage": "baltikum",
+    "day": 4, "date": "2026-07-13", "country": "LT",
+    "priority": "high",
+    "popup": { "title": "Keresztek Hegye (Kryžių kalnas)", "description": "~50 000 kereszt zarándokhelye Šiauliai mellett. A szovjetek kétszer ledózerolták, de mindig visszaépítették." }
+  },
+  {
+    "id": "riga",
+    "name": "Riga",
+    "lat": 56.9496, "lng": 24.1052,
+    "type": "hotel", "stage": "baltikum",
+    "day": 4, "date": "2026-07-13", "country": "LV",
+    "priority": "high",
+    "popup": { "title": "Riga — 4–5. éjszaka", "description": "Lettország főváros: UNESCO Old Town, Art Nouveau negyed (750+ épület), Rigai Centrális Piac. 2 éjszaka." }
+  },
+  {
+    "id": "riga-oldtown",
+    "name": "Riga — óváros",
+    "lat": 56.9460, "lng": 24.1059,
+    "type": "sight", "stage": "baltikum",
+    "day": 5, "date": "2026-07-14", "country": "LV",
+    "priority": "medium",
+    "popup": { "title": "Riga városnap", "description": "Dóm tér, Fekete Fejek Háza, Art Nouveau épületek (Alberta és Elizabetes utca), Centrális Piac." }
+  },
+  {
+    "id": "sigulda",
+    "name": "Sigulda",
+    "lat": 57.1541, "lng": 24.8573,
+    "type": "sight", "stage": "baltikum",
+    "day": 6, "date": "2026-07-15", "country": "LV",
+    "priority": "high",
+    "popup": { "title": "Sigulda — Gauja NP", "description": "Turaida várkastély, Sigulda-vár romjai, Gauja-kanyon kilátó. A 'Lettország Svájca'." }
+  },
+  {
+    "id": "tallinn",
+    "name": "Tallinn",
+    "lat": 59.4370, "lng": 24.7536,
+    "type": "hotel", "stage": "baltikum",
+    "day": 6, "date": "2026-07-15", "country": "EE",
+    "priority": "high",
+    "popup": { "title": "Tallinn — 6–7. éjszaka", "description": "Észtország főváros: a legjobban megőrzött középkori városmag a Baltikumban. 2 éjszaka." }
+  },
+  {
+    "id": "tallinn-oldtown",
+    "name": "Tallinn — Vanalinn",
+    "lat": 59.4370, "lng": 24.7450,
+    "type": "sight", "stage": "baltikum",
+    "day": 7, "date": "2026-07-16", "country": "EE",
+    "priority": "medium",
+    "popup": { "title": "Tallinn városnap", "description": "Toompea (Felső város), Alexander Nevsky katedrális, Raekoja plats, kikötői negyed. Komp prep este." }
+  },
+  {
+    "id": "helsinki",
+    "name": "Helsinki",
+    "lat": 60.1699, "lng": 24.9384,
+    "type": "ferry", "stage": "baltikum",
+    "day": 8, "date": "2026-07-17", "country": "FI",
+    "priority": "high",
+    "popup": { "title": "Helsinki — Tallink Shuttle", "description": "Tallink Shuttle: Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra). Majd rövid helsinki városi blokk." }
+  },
+  {
+    "id": "turku",
+    "name": "Turku",
+    "lat": 60.4518, "lng": 22.2666,
+    "type": "drive", "stage": "baltikum",
+    "day": 8, "date": "2026-07-17", "country": "FI",
+    "priority": "medium",
+    "popup": { "title": "Turku — Viking Line check-in", "description": "Helsinki → Turku ~1,5h autóval. Turku Castle megtekintés, majd Viking Line check-in 20:00.", "note": "Viking Line 20:00 → Stockholm Värtahamnen 06:30+1" }
+  },
+  {
+    "id": "stockholm-ferry",
+    "name": "Stockholm — Värtahamnen",
+    "lat": 59.3665, "lng": 18.1156,
+    "type": "ferry", "stage": "baltikum",
+    "day": 9, "date": "2026-07-18", "country": "SE",
+    "priority": "medium",
+    "popup": { "title": "Stockholm — Viking Line érkezés", "description": "Viking Line: Turku → Mariehamn (Åland) → Stockholm Värtahamnen. Érkezés 06:30." }
+  },
+  {
+    "id": "arlanda-depart",
+    "name": "Stockholm / Arlanda",
+    "lat": 59.6498, "lng": 17.9238,
+    "type": "flight", "stage": "baltikum",
+    "day": 9, "date": "2026-07-18", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Arlanda — FI309 indulás", "description": "Autó Arlanda P3 hosszú távú parkolóba. FI309 Stockholm → Keflavík, indulás 17:10, érkezés 18:55 (helyi)." }
+  },
+  {
+    "id": "reykjavik",
+    "name": "Reykjavík",
+    "lat": 64.1355, "lng": -21.8954,
+    "type": "hotel", "stage": "izland",
+    "day": 10, "date": "2026-07-19", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Reykjavík — 10. éjszaka", "description": "Izlandi találkozó Hennivel. Hallgrímskirkja, Harpa, Laugavegur. Közös Ring Road körút kezdete." }
+  },
+  {
+    "id": "sky-lagoon",
+    "name": "Sky Lagoon",
+    "lat": 63.9992, "lng": -22.0100,
+    "type": "sight", "stage": "izland",
+    "day": 10, "date": "2026-07-19", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Sky Lagoon", "description": "Geotermikus élmény az óceánparton. 7 lépéses rituál, Skjól medence, panoráma az Atlanti-óceánra.", "note": "Előfoglalás kötelező" }
+  },
+  {
+    "id": "snaefellsnes",
+    "name": "Snæfellsnes",
+    "lat": 64.7474, "lng": -23.5258,
+    "type": "hotel", "stage": "izland",
+    "day": 11, "date": "2026-07-20", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Snæfellsnes — 11. éjszaka", "description": "Jules Verne: Utazás a Föld középpontja felé helyszíne. Búðakirkja (fekete templomocska), Arnarstapi, Lóndrangar bazaltoszlopok." }
+  },
+  {
+    "id": "kirkjufell",
+    "name": "Kirkjufell",
+    "lat": 64.9413, "lng": -23.3075,
+    "type": "sight", "stage": "izland",
+    "day": 11, "date": "2026-07-20", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Kirkjufell", "description": "Izland legtöbbet fotózott hegye (Game of Thrones: Arrowhead Mountain). Kirkjufellsfoss vízesés az előtérben." }
+  },
+  {
+    "id": "akureyri",
+    "name": "Akureyri",
+    "lat": 65.6835, "lng": -18.1262,
+    "type": "sight", "stage": "izland",
+    "day": 12, "date": "2026-07-21", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Akureyri", "description": "'Az Észak fővárosa' — Akureyrarkirkja, botanikus kert, Eyjafjörður fjord. Opcionális bálnales Húsavíkból." }
+  },
+  {
+    "id": "godafoss",
+    "name": "Goðafoss",
+    "lat": 65.6826, "lng": -17.5501,
+    "type": "sight", "stage": "izland",
+    "day": 12, "date": "2026-07-21", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Goðafoss — az istenek vízesése", "description": "1000-ben itt dobták be a pogány bálványokat az új keresztény korra való áttéréskor. 12m magas, 30m széles." }
+  },
+  {
+    "id": "myvatn",
+    "name": "Mývatn",
+    "lat": 65.6007, "lng": -16.9985,
+    "type": "hotel", "stage": "izland",
+    "day": 12, "date": "2026-07-21", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Mývatn — 12. éjszaka", "description": "Vulkáni tájképek: Hverfjall kráter, Dimmuborgir lávamező, pszeudokráterek. Mývatn Nature Baths (kék lagúna alternatíva)." }
+  },
+  {
+    "id": "dettifoss",
+    "name": "Dettifoss",
+    "lat": 65.8147, "lng": -16.3848,
+    "type": "sight", "stage": "izland",
+    "day": 13, "date": "2026-07-22", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Dettifoss", "description": "Európa legnagyobb vízesése vízhozam szerint (500 m³/s). A Prometheus (2012) egyik nyitójelenete itt játszódik.", "note": "Selfoss (feljebb, kisebb de szép) + Dettifoss kombó ajánlott" }
+  },
+  {
+    "id": "egilsstadir",
+    "name": "Egilsstaðir",
+    "lat": 65.2692, "lng": -14.3942,
+    "type": "hotel", "stage": "izland",
+    "day": 13, "date": "2026-07-22", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Egilsstaðir — 13. éjszaka", "description": "Keleti Izland kapuvárosa, Lagarfljót-tó. Kitérő: Stuðlagil bazaltkanyon (türkiz folyó + hatszögletű oszlopok)." }
+  },
+  {
+    "id": "vestrahorn",
+    "name": "Vestrahorn",
+    "lat": 64.2517, "lng": -14.9850,
+    "type": "sight", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Stokksnes / Vestrahorn", "description": "Drámai fekete homokos part + Vestrahorn hegycsúcs. Viking Village helyszín (belépőjegyes). A legfotogenikusabb pont Keleten." }
+  },
+  {
+    "id": "hofn",
+    "name": "Höfn",
+    "lat": 64.2536, "lng": -15.2085,
+    "type": "hotel", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Höfn — 14. éjszaka", "description": "Izland garnélarák-fővárosa, Vatnajökull gleccser panoráma. Humarsúpa (garnélalevés) ajánlott vacsora." }
+  },
+  {
+    "id": "jokulsarlon",
+    "name": "Jökulsárlón",
+    "lat": 64.0784, "lng": -16.2306,
+    "type": "sight", "stage": "izland",
+    "day": 14, "date": "2026-07-23", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Jökulsárlón jégtó", "description": "Gleccser-jégtáblák úsznak a lagúnán, fókák a parton. Diamond Beach: fekete homok + átlátszó jégdarabok. Hajókirándulás ajánlott." }
+  },
+  {
+    "id": "fjadrargjufur",
+    "name": "Fjaðrárgljúfur",
+    "lat": 63.7739, "lng": -18.1726,
+    "type": "sight", "stage": "izland",
+    "day": 15, "date": "2026-07-24", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Fjaðrárgljúfur kanyon", "description": "2 km hosszú, 100m mély kanyon — Justin Bieber 'I'll Show You' videóklip helyszíne. Felülnézeti kilátóösvény." }
+  },
+  {
+    "id": "vik",
+    "name": "Vík",
+    "lat": 63.4183, "lng": -19.0065,
+    "type": "hotel", "stage": "izland",
+    "day": 15, "date": "2026-07-24", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Vík — 15. éjszaka", "description": "Izland legdélibb pontja. Reynisfjara fekete homokos strand (30m távolság kötelező a víztől!), Reynisdrangar bazaltoszlopok." }
+  },
+  {
+    "id": "skogafoss",
+    "name": "Skógafoss",
+    "lat": 63.5320, "lng": -19.5157,
+    "type": "sight", "stage": "izland",
+    "day": 15, "date": "2026-07-24", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Skógafoss", "description": "60m magas, 25m széles vízesés. Lépcső a tetejéhez (527 lépcs). Mellette: Seljavallalaug szabadtéri geotermikus medence." }
+  },
+  {
+    "id": "thingvellir",
+    "name": "Þingvellir",
+    "lat": 64.2552, "lng": -21.1295,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Þingvellir NP", "description": "UNESCO Világörökség — ahol az Eurázsiai és Észak-Amerikai kőzetlemez szétválik. Az első izlandi parlament (Alþing) helyszíne 930 AD-tól." }
+  },
+  {
+    "id": "geysir",
+    "name": "Geysir",
+    "lat": 64.3104, "lng": -20.3034,
+    "type": "sight", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Geysir — Strokkur", "description": "A 'gejzír' szó eredeti helyszíne. Strokkur minden 5-8 percben tör ki 15-40m magasra." }
+  },
+  {
+    "id": "selfoss",
+    "name": "Selfoss",
+    "lat": 63.9332, "lng": -20.9961,
+    "type": "hotel", "stage": "izland",
+    "day": 16, "date": "2026-07-25", "country": "IS",
+    "priority": "high",
+    "popup": { "title": "Selfoss — 16. éjszaka", "description": "Az utolsó izlandi éjszaka. Gullfoss vízesés (út közben). Keflavík reggelre 45 perc, korai indulás szükséges." }
+  },
+  {
+    "id": "arlanda-arrive",
+    "name": "Stockholm / Arlanda",
+    "lat": 59.6498, "lng": 17.9238,
+    "type": "flight", "stage": "hazaut",
+    "day": 17, "date": "2026-07-26", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Arlanda — FI306 érkezés", "description": "FI306 Keflavík → Stockholm Arlanda. Autóbérlés Arlandánál, majd 3 napos stockholmi tartózkodás." }
+  },
+  {
+    "id": "stockholm",
+    "name": "Stockholm",
+    "lat": 59.3293, "lng": 18.0686,
+    "type": "hotel", "stage": "hazaut",
+    "day": 17, "date": "2026-07-26", "country": "SE",
+    "priority": "high",
+    "popup": { "title": "Stockholm — 17–19. éjszaka", "description": "3 napos tartózkodás: Gamla Stan, Vasa Museum, ABBA Museum, Djurgården, Vaxholm–Grinda szigetek." }
+  },
+  {
+    "id": "malmo",
+    "name": "Malmö",
+    "lat": 55.6050, "lng": 13.0038,
+    "type": "drive", "stage": "hazaut",
+    "day": 20, "date": "2026-07-29", "country": "SE",
+    "priority": "medium",
+    "popup": { "title": "Malmö — átkelő", "description": "Stockholm → Malmö ~620 km. Öresund hídon Koppenhágába. Rövid Malmö-megálló opcionális." }
+  },
+  {
+    "id": "copenhagen",
+    "name": "Koppenhága",
+    "lat": 55.6761, "lng": 12.5683,
+    "type": "hotel", "stage": "hazaut",
+    "day": 20, "date": "2026-07-29", "country": "DK",
+    "priority": "high",
+    "popup": { "title": "Koppenhága — 20–22. éjszaka", "description": "3 napos tartózkodás: Nyhavn, Rosenborg, Tivoli, Christiansborg, Kis Hableány, Christiania, Louisiana Museum." }
+  },
+  {
+    "id": "hamburg",
+    "name": "Hamburg",
+    "lat": 53.5753, "lng": 10.0153,
+    "type": "hotel", "stage": "hazaut",
+    "day": 23, "date": "2026-08-01", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Hamburg — 23–25. éjszaka", "description": "3 napos tartózkodás: Speicherstadt, Elbphilharmonie, Lübeck és Schwerin Castle kirándulás." }
+  },
+  {
+    "id": "frankfurt",
+    "name": "Frankfurt",
+    "lat": 50.1109, "lng": 8.6821,
+    "type": "hotel", "stage": "hazaut",
+    "day": 26, "date": "2026-08-04", "country": "DE",
+    "priority": "high",
+    "popup": { "title": "Frankfurt — 26–27. éjszaka", "description": "2 napos tartózkodás: Römerberg, Altstadt, Sachsenhausen negyed, Städel Museum." }
+  },
+  {
+    "id": "budapest-end",
+    "name": "Budapest — hazaérkezés",
+    "lat": 47.4979, "lng": 19.0402,
+    "type": "drive", "stage": "hazaut",
+    "day": 28, "date": "2026-08-06", "country": "HU",
+    "priority": "high",
+    "popup": { "title": "Budapest 🏁", "description": "Hazaérkezés — 28 napos, ~8 500 km-es út vége. Frankfurt → Budapest ~1 020 km, ~10h." }
+  }
+]

@@ -1,105 +1,40 @@
 /**
- * TripLoader.js — Travel Map Engine
- * Fetches trip rows from a Google Apps Script JSON API.
+ * TripLoader.js — Travel Map Engine v2
  *
- * Expected Google Sheet column headers (Hungarian):
- *   Nap, Dátum, Ország, Start, Cél, Szállás, Szállás típus, Közlekedés,
- *   Indulás, Érkezés, Megjegyzés, Lat, Lng, Típus, Km, Vezetési idő,
- *   Látnivalók / Program, Parkolás, Státusz, My Maps hely, Szakasz
+ * Loads static JSON data files served directly from GitHub Pages CDN.
+ * The browser NEVER calls Google Apps Script at runtime — all data is
+ * pre-generated and committed to /data/trips/{tripId}/.
  *
- * API response can be any of:
- *   { rows: [{...}, ...] }          ← preferred
- *   [{...}, ...]                    ← plain array
- *   { values: [[header,...],[...]]  ← Sheets v4 rawValues matrix
+ * File layout per trip:
+ *   /data/trips/{tripId}/trip.json   — metadata, stages, days
+ *   /data/trips/{tripId}/pois.json   — optimised marker data (lat/lng, type, popup)
+ *   /data/trips/{tripId}/route.json  — GeoJSON FeatureCollection (one LineString per stage)
+ *
+ * All three files are fetched in parallel (Promise.all).
  */
 
-/** Normalise a raw row: trim keys, coerce Lat/Lng/Km to numbers. */
-function normaliseRow(raw) {
-  const row = {};
-  for (const [k, v] of Object.entries(raw)) {
-    const key = k.trim();
-    if (key === "Lat" || key === "Lng" || key === "Km") {
-      const n = parseFloat(String(v ?? "").replace(",", "."));
-      row[key] = isNaN(n) ? null : n;
-    } else {
-      row[key] = v == null ? "" : String(v).trim();
-    }
-  }
-  return row;
-}
+const DEFAULT_DATA_ROOT = "/data/trips";
 
-/** Convert a values matrix (first row = headers) into row objects. */
-function matrixToRows(values) {
-  if (!values || values.length < 2) return [];
-  const headers = values[0].map((h) => String(h).trim());
-  return values.slice(1).map((cells) => {
-    const obj = {};
-    headers.forEach((h, i) => { obj[h] = cells[i] ?? ""; });
-    return obj;
-  });
+/** Fetch a JSON file; throws a descriptive error on non-2xx. */
+async function fetchJson(url) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} — ${url}`);
+  return res.json();
 }
 
 /**
- * Fetch with an AbortController timeout.
- * @param {string} url
- * @param {object} [opts]  fetch options
- * @param {number} [timeoutMs=8000]
- */
-async function fetchWithTimeout(url, opts = {}, timeoutMs = 8000) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetch(url, { ...opts, signal: controller.signal });
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
-/**
- * Load trip rows from the API, with optional local fallback.
+ * Load all static data for a trip.
  *
- * @param {string} apiUrl       Full URL incl. ?trip=XXX query param.
- * @param {string} [fallbackUrl] Path to a local JSON file for offline dev.
- * @param {number} [timeoutMs=8000]  API request timeout in milliseconds.
- * @returns {Promise<Object[]>} Normalised row array (Lat/Lng as numbers).
+ * @param {string} tripId      e.g. "izland-es-eszak-europa"
+ * @param {string} [dataRoot]  URL prefix, defaults to "/data/trips"
+ * @returns {Promise<{ trip: object, pois: object[], route: object }>}
  */
-export async function loadTripData(apiUrl, fallbackUrl = null, timeoutMs = 8000) {
-  let raw;
-
-  try {
-    const res = await fetchWithTimeout(apiUrl, { cache: "no-store" }, timeoutMs);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    raw = await res.json();
-  } catch (primaryErr) {
-    if (fallbackUrl) {
-      try {
-        const res2 = await fetch(fallbackUrl);
-        if (!res2.ok) throw new Error(`Fallback HTTP ${res2.status}`);
-        raw = await res2.json();
-        console.info("[TripLoader] Using fallback data from", fallbackUrl);
-      } catch (fbErr) {
-        throw new Error(
-          `Primary (${primaryErr.message}) and fallback (${fbErr.message}) both failed`
-        );
-      }
-    } else {
-      throw primaryErr;
-    }
-  }
-
-  // Normalise response shape
-  let rows;
-  if (Array.isArray(raw)) {
-    rows = raw;
-  } else if (raw && Array.isArray(raw.rows)) {
-    rows = raw.rows;
-  } else if (raw && Array.isArray(raw.values)) {
-    rows = matrixToRows(raw.values);
-  } else {
-    throw new Error("Unexpected API response shape — expected array, {rows:[...]}, or {values:[...]}");
-  }
-
-  return rows
-    .map(normaliseRow)
-    .filter((r) => r.Nap || r.Start || r.Cél || r.Lat != null || r.Lng != null);
+export async function loadTrip(tripId, dataRoot = DEFAULT_DATA_ROOT) {
+  const base = `${dataRoot}/${tripId}`;
+  const [trip, pois, route] = await Promise.all([
+    fetchJson(`${base}/trip.json`),
+    fetchJson(`${base}/pois.json`),
+    fetchJson(`${base}/route.json`),
+  ]);
+  return { trip, pois, route };
 }

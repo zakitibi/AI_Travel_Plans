@@ -222,6 +222,47 @@
   letter-spacing: .5px;
 }
 
+/* ── Popup foot ──────────────────────────────────────────────────────────── */
+.tm-popup-foot {
+  padding: 6px 16px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tm-popup-desc {
+  padding: 6px 16px 2px;
+  font-size: 12.5px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* ── Marker cluster overrides (Leaflet.markercluster) ────────────────────── */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-clip: padding-box;
+}
+
+.marker-cluster-small  { background-color: rgba(31, 90, 62,  .3); }
+.marker-cluster-medium { background-color: rgba(138, 79, 36, .3); }
+.marker-cluster-large  { background-color: rgba(106, 76, 163,.3); }
+
+.marker-cluster-small div  { background-color: rgba(31, 90, 62,  .7); }
+.marker-cluster-medium div { background-color: rgba(138, 79, 36, .7); }
+.marker-cluster-large div  { background-color: rgba(106, 76, 163,.7); }
+
+.marker-cluster div {
+  width: 30px; height: 30px;
+  margin: 5px;
+  border-radius: 50%;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
 /* ── Leaflet control overrides ───────────────────────────────────────────── */
 .leaflet-control-layers {
   border-radius: 10px !important;

@@ -1,0 +1,239 @@
+{
+  "tripId": "izland-es-eszak-europa",
+  "title": "Izland és Észak-Európa · 2026",
+  "subtitle": "Tibi balti autós felvezető + közös Ring Road körút + hazaút",
+  "startDate": "2026-07-10",
+  "endDate": "2026-08-06",
+  "totalDays": 28,
+  "persons": ["Tibi", "Henni"],
+  "stages": [
+    {
+      "id": "baltikum",
+      "name": "Baltikum",
+      "color": "#8a4f24",
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-18",
+      "persons": ["Tibi"],
+      "countries": ["HU", "PL", "LT", "LV", "EE", "FI", "SE"],
+      "summary": "9 napos autós felvezető Budapestről Stockholmig — Litvánia, Lettország, Észtország, Helsinki, Turku, Viking Line overnight komp"
+    },
+    {
+      "id": "izland",
+      "name": "Izland",
+      "color": "#1f5a3e",
+      "startDate": "2026-07-18",
+      "endDate": "2026-07-26",
+      "persons": ["Tibi", "Henni"],
+      "countries": ["IS"],
+      "summary": "8 napos Ring Road körút — Snæfellsnes, Akureyri, Mývatn, Keleti fjordok, Höfn, Déli part, Golden Circle"
+    },
+    {
+      "id": "hazaut",
+      "name": "Hazaút",
+      "color": "#6a4ca3",
+      "startDate": "2026-07-26",
+      "endDate": "2026-08-06",
+      "persons": ["Tibi", "Henni"],
+      "countries": ["SE", "DK", "DE", "HU"],
+      "summary": "12 napos hazaút — 3 nap Stockholm, 3 nap Koppenhága, 3 nap Hamburg, 2 nap Frankfurt, Budapest"
+    }
+  ],
+  "days": [
+    {
+      "day": 1, "date": "2026-07-10", "stage": "baltikum",
+      "country": "HU → PL", "start": "Budapest", "end": "Suwałki",
+      "distanceKm": 900, "drivingTime": "10h",
+      "hotel": "Suwałki szállás",
+      "summary": "Hosszú etap Lengyelországba — Suwałki átkelő"
+    },
+    {
+      "day": 2, "date": "2026-07-11", "stage": "baltikum",
+      "country": "PL → LT", "start": "Suwałki", "end": "Vilnius",
+      "distanceKm": 650, "drivingTime": "8h",
+      "hotel": "Vilnius hotel",
+      "summary": "Belépés Litvániába, esti érkezés Vilniusba"
+    },
+    {
+      "day": 3, "date": "2026-07-12", "stage": "baltikum",
+      "country": "LT", "start": "Vilnius", "end": "Vilnius",
+      "distanceKm": 60, "drivingTime": "1.5h",
+      "hotel": "Vilnius hotel",
+      "summary": "Vilnius óváros + Trakai-kastély kirándulás"
+    },
+    {
+      "day": 4, "date": "2026-07-13", "stage": "baltikum",
+      "country": "LT → LV", "start": "Vilnius", "end": "Riga",
+      "distanceKm": 300, "drivingTime": "4h",
+      "hotel": "Riga hotel",
+      "summary": "Vilnius → Keresztek Hegye → Riga"
+    },
+    {
+      "day": 5, "date": "2026-07-14", "stage": "baltikum",
+      "country": "LV", "start": "Riga", "end": "Riga",
+      "distanceKm": 5, "drivingTime": "gyalogos nap",
+      "hotel": "Riga hotel",
+      "summary": "Riga városnap — Old Town, Art Nouveau, Piac"
+    },
+    {
+      "day": 6, "date": "2026-07-15", "stage": "baltikum",
+      "country": "LV → EE", "start": "Riga", "end": "Tallinn",
+      "distanceKm": 350, "drivingTime": "4.5h",
+      "hotel": "Tallinn hotel",
+      "summary": "Riga → Sigulda (Gauja NP) → Tallinn"
+    },
+    {
+      "day": 7, "date": "2026-07-16", "stage": "baltikum",
+      "country": "EE", "start": "Tallinn", "end": "Tallinn",
+      "distanceKm": 5, "drivingTime": "gyalogos nap",
+      "hotel": "Tallinn hotel",
+      "summary": "Tallinn óváros — Toompea, Raekoja plats, kikötő"
+    },
+    {
+      "day": 8, "date": "2026-07-17", "stage": "baltikum",
+      "country": "EE → FI → FI", "start": "Tallinn", "end": "Turku",
+      "distanceKm": 255, "drivingTime": "3.5h + 2h komp",
+      "hotel": "Viking Line fedélzet",
+      "summary": "Tallink shuttle Helsinkibe → Turku Castle → Viking Line overnight Stockholm felé"
+    },
+    {
+      "day": 9, "date": "2026-07-18", "stage": "baltikum",
+      "country": "SE", "start": "Stockholm Värtahamnen", "end": "Stockholm / Arlanda",
+      "distanceKm": 35, "drivingTime": "35 perc",
+      "hotel": "—",
+      "summary": "Viking Line érkezés 06:30 → Arlanda parkoló → FI309 Stockholm → Keflavík 17:10"
+    },
+    {
+      "day": 10, "date": "2026-07-19", "stage": "izland",
+      "country": "IS", "start": "Keflavík", "end": "Reykjavík",
+      "distanceKm": 50, "drivingTime": "45 perc",
+      "hotel": "Reykjavík hotel",
+      "summary": "Érkezés Izlandra, Tibi–Henni találkozó, Reykjavík + Sky Lagoon"
+    },
+    {
+      "day": 11, "date": "2026-07-20", "stage": "izland",
+      "country": "IS", "start": "Reykjavík", "end": "Snæfellsnes",
+      "distanceKm": 450, "drivingTime": "7h",
+      "hotel": "Snæfellsnes vendégház",
+      "summary": "Snæfellsnes-félsziget — Búðakirkja, Arnarstapi, Lóndrangar, Kirkjufell"
+    },
+    {
+      "day": 12, "date": "2026-07-21", "stage": "izland",
+      "country": "IS", "start": "Snæfellsnes", "end": "Mývatn",
+      "distanceKm": 450, "drivingTime": "5h",
+      "hotel": "Mývatn hotel",
+      "summary": "Snæfellsnes → Akureyri → Goðafoss → Mývatn"
+    },
+    {
+      "day": 13, "date": "2026-07-22", "stage": "izland",
+      "country": "IS", "start": "Mývatn", "end": "Egilsstaðir",
+      "distanceKm": 285, "drivingTime": "5h",
+      "hotel": "Egilsstaðir hotel",
+      "summary": "Mývatn → Dettifoss → Stuðlagil → Egilsstaðir"
+    },
+    {
+      "day": 14, "date": "2026-07-23", "stage": "izland",
+      "country": "IS", "start": "Egilsstaðir", "end": "Höfn",
+      "distanceKm": 320, "drivingTime": "5h",
+      "hotel": "Höfn hotel",
+      "summary": "Egilsstaðir → Vestrahorn → Höfn → Jökulsárlón"
+    },
+    {
+      "day": 15, "date": "2026-07-24", "stage": "izland",
+      "country": "IS", "start": "Höfn", "end": "Vík",
+      "distanceKm": 300, "drivingTime": "4h",
+      "hotel": "Vík hotel",
+      "summary": "Höfn → Fjaðrárgljúfur → Vík → Skógafoss"
+    },
+    {
+      "day": 16, "date": "2026-07-25", "stage": "izland",
+      "country": "IS", "start": "Vík", "end": "Selfoss",
+      "distanceKm": 230, "drivingTime": "4h",
+      "hotel": "Selfoss hotel",
+      "summary": "Golden Circle — Þingvellir, Geysir (Strokkur), Gullfoss → Selfoss"
+    },
+    {
+      "day": 17, "date": "2026-07-26", "stage": "hazaut",
+      "country": "IS → SE", "start": "Keflavík", "end": "Stockholm",
+      "distanceKm": 0, "drivingTime": "—",
+      "hotel": "Stockholm hotel",
+      "summary": "FI306 Keflavík → Stockholm Arlanda, autóbérlés, érkezés városba"
+    },
+    {
+      "day": 18, "date": "2026-07-27", "stage": "hazaut",
+      "country": "SE", "start": "Stockholm", "end": "Stockholm",
+      "distanceKm": 5, "drivingTime": "gyalogos nap",
+      "hotel": "Stockholm hotel",
+      "summary": "Stockholm városnap — Gamla Stan, Vasa Museum, Djurgården"
+    },
+    {
+      "day": 19, "date": "2026-07-28", "stage": "hazaut",
+      "country": "SE", "start": "Stockholm", "end": "Stockholm",
+      "distanceKm": 80, "drivingTime": "2h hajó",
+      "hotel": "Stockholm hotel",
+      "summary": "Stockholmi Skärgård — Vaxholm + Grinda szigetek"
+    },
+    {
+      "day": 20, "date": "2026-07-29", "stage": "hazaut",
+      "country": "SE → DK", "start": "Stockholm", "end": "Koppenhága",
+      "distanceKm": 640, "drivingTime": "7h",
+      "hotel": "Koppenhága hotel",
+      "summary": "Stockholm → Malmö → Öresund híd → Koppenhága"
+    },
+    {
+      "day": 21, "date": "2026-07-30", "stage": "hazaut",
+      "country": "DK", "start": "Koppenhága", "end": "Koppenhága",
+      "distanceKm": 5, "drivingTime": "gyalogos nap",
+      "hotel": "Koppenhága hotel",
+      "summary": "Koppenhága 1. nap — Nyhavn, Rosenborg, Tivoli"
+    },
+    {
+      "day": 22, "date": "2026-07-31", "stage": "hazaut",
+      "country": "DK", "start": "Koppenhága", "end": "Koppenhága",
+      "distanceKm": 5, "drivingTime": "gyalogos nap",
+      "hotel": "Koppenhága hotel",
+      "summary": "Koppenhága 2. nap — Christiansborg, Kis Hableány, Christiania"
+    },
+    {
+      "day": 23, "date": "2026-08-01", "stage": "hazaut",
+      "country": "DK → DE", "start": "Koppenhága", "end": "Hamburg",
+      "distanceKm": 310, "drivingTime": "4h",
+      "hotel": "Hamburg hotel",
+      "summary": "Koppenhága → Louisiana Museum → Hamburg"
+    },
+    {
+      "day": 24, "date": "2026-08-02", "stage": "hazaut",
+      "country": "DE", "start": "Hamburg", "end": "Hamburg",
+      "distanceKm": 180, "drivingTime": "3h kirándulás",
+      "hotel": "Hamburg hotel",
+      "summary": "Hamburg körút — Lübeck + Schwerin Castle"
+    },
+    {
+      "day": 25, "date": "2026-08-03", "stage": "hazaut",
+      "country": "DE", "start": "Hamburg", "end": "Hamburg",
+      "distanceKm": 10, "drivingTime": "gyalogos nap",
+      "hotel": "Hamburg hotel",
+      "summary": "Hamburg városnap — Speicherstadt, Elbphilharmonie, Reeperbahn"
+    },
+    {
+      "day": 26, "date": "2026-08-04", "stage": "hazaut",
+      "country": "DE", "start": "Hamburg", "end": "Frankfurt",
+      "distanceKm": 490, "drivingTime": "5h",
+      "hotel": "Frankfurt hotel",
+      "summary": "Hamburg → Frankfurt"
+    },
+    {
+      "day": 27, "date": "2026-08-05", "stage": "hazaut",
+      "country": "DE", "start": "Frankfurt", "end": "Frankfurt",
+      "distanceKm": 10, "drivingTime": "gyalogos nap",
+      "hotel": "Frankfurt hotel",
+      "summary": "Frankfurt városnap — Römerberg, Sachsenhausen, Altstadt"
+    },
+    {
+      "day": 28, "date": "2026-08-06", "stage": "hazaut",
+      "country": "DE → HU", "start": "Frankfurt", "end": "Budapest",
+      "distanceKm": 1020, "drivingTime": "10h",
+      "hotel": "—",
+      "summary": "Hazaérkezés 🏁 — 28 napos út vége"
+    }
+  ]
+}

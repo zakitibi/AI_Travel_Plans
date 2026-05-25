@@ -1,84 +1,68 @@
 /**
  * map-init.js — Izland és Észak-Európa
- * Wires up the TravelMap engine for this trip.
  *
- * Lazy-initialised: map only loads when the "terkep" tab is first activated,
- * so Leaflet never tries to render into a hidden container.
+ * Lazy-initialises the Leaflet map on first "🗺 Térkép" tab activation.
+ * Data is loaded exclusively from static JSON files:
+ *   /data/trips/izland-es-eszak-europa/trip.json
+ *   /data/trips/izland-es-eszak-europa/pois.json
+ *   /data/trips/izland-es-eszak-europa/route.json
+ *
+ * NO runtime calls to Google Apps Script.
+ * To update map data: regenerate JSON files and commit → push → CDN serves them.
  */
 
 import { TravelMap } from "../../engine/TravelMap.js";
 
-/**
- * Google Apps Script web-app URL (published as "Anyone, even anonymous").
- * Sheet tab name: EszakEuropa
- */
-const API_URL =
-  "https://script.google.com/macros/s/AKfycbx9FuIYukiZr-HZaHTWZgP7JLyqd6mvJcY_44cv3VBxH1DdxFHvozyUmygOSjVsmBaA/exec?trip=EszakEuropa";
-
-/**
- * Local JSON fallback — used automatically if the API times out or fails.
- * Contains all 39 trip stops with coordinates.
- */
-const FALLBACK_URL = "./map-data.json";
+const TRIP_ID   = "izland-es-eszak-europa";
+const DATA_ROOT = "/data/trips";
 
 /** @type {TravelMap|null} */
-let travelMap = null;
+let travelMap   = null;
 let initialized = false;
 
 /**
- * Create a TravelMap instance and load data.
- * Safe to call multiple times — only runs on the first call.
+ * Create and load the TravelMap (runs only once).
  */
 async function initMapOnce() {
   if (initialized) return;
   initialized = true;
 
   travelMap = new TravelMap("trip-map", {
-    groupBy:       "szakasz",
-    fallbackUrl:   FALLBACK_URL,  // instant local fallback if API is slow/down
-    defaultZoom:   4,
-    defaultCenter: [60, 5],       // centred on Scandinavia + Iceland
+    groupBy:          "stage",
+    dataRoot:         DATA_ROOT,
+    defaultZoom:      4,
+    defaultCenter:    [60, 5],    // centred on Scandinavia + Iceland
+    cluster:          false,      // set true for trips with 100+ POIs
+    maxClusterRadius: 60,
   });
 
-  await travelMap.load(API_URL);
+  await travelMap.load(TRIP_ID);
 }
 
 /**
- * Hook the global tab-switcher so initMapOnce() runs on first "terkep" click.
- * The main index.html exposes `window.activateTab(id)` before this module runs
- * (non-module scripts execute first), so the hook is always available.
+ * Intercept window.activateTab so we can init the map on first
+ * "terkep" tab click. The main index.html exposes this function
+ * synchronously (non-module script), so it's always available here.
  */
 function hookTabSystem() {
-  const originalActivate = window.activateTab;
+  const original = window.activateTab;
 
   window.activateTab = function (tabId) {
-    // Call the real tab switcher first so the map container becomes visible.
-    if (typeof originalActivate === "function") {
-      originalActivate.call(this, tabId);
-    }
+    if (typeof original === "function") original.call(this, tabId);
 
     if (tabId === "terkep") {
-      // Small rAF delay so the container is rendered and has non-zero size.
+      // rAF ensures the container has non-zero dimensions before Leaflet init
       requestAnimationFrame(() => initMapOnce());
     }
   };
 }
 
-// Expose a minimal public API on window for optional use from the page.
+// Minimal public API for optional programmatic control from the page
 window.travelMapAPI = {
-  /** @returns {TravelMap|null} */
   getInstance: () => travelMap,
-
-  /**
-   * Pan to and open the popup for a specific stop.
-   * @param {string|number} nap
-   * @param {string} cel
-   */
-  focus: (nap, cel) => travelMap && travelMap.focusStop(nap, cel),
-
-  /** Zoom to fit all markers. */
-  fitAll: () => travelMap && travelMap.fitAll(),
+  focusById:  (id)        => travelMap?.focusById(id),
+  focusByDay: (day, name) => travelMap?.focusByDay(day, name),
+  fitAll:     ()          => travelMap?.fitAll(),
 };
 
-// Initialise the hook immediately (this module is deferred via type="module").
 hookTabSystem();

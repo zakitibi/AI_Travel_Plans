@@ -1,0 +1,85 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "stage": "baltikum",
+        "name": "Baltikum",
+        "color": "#8a4f24",
+        "description": "Budapest → Litvánia → Lettország → Észtország → Helsinki → Turku → Stockholm"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [19.0402, 47.4979],
+          [22.9305, 54.0990],
+          [25.2797, 54.6872],
+          [24.9342, 54.6387],
+          [23.4168, 56.0158],
+          [24.1052, 56.9496],
+          [24.8573, 57.1541],
+          [24.7536, 59.4370],
+          [24.9384, 60.1699],
+          [22.2666, 60.4518],
+          [18.1156, 59.3665]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stage": "izland",
+        "name": "Izland",
+        "color": "#1f5a3e",
+        "description": "Reykjavík → Snæfellsnes → Akureyri → Mývatn → Keleti fjordok → Höfn → Déli part → Golden Circle → Keflavík"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-22.6056, 63.9850],
+          [-21.8954, 64.1355],
+          [-22.0100, 63.9992],
+          [-23.5258, 64.7474],
+          [-23.3075, 64.9413],
+          [-18.1262, 65.6835],
+          [-17.5501, 65.6826],
+          [-16.9985, 65.6007],
+          [-16.3848, 65.8147],
+          [-14.3942, 65.2692],
+          [-14.9850, 64.2517],
+          [-15.2085, 64.2536],
+          [-16.2306, 64.0784],
+          [-18.1726, 63.7739],
+          [-19.0065, 63.4183],
+          [-19.5157, 63.5320],
+          [-21.1295, 64.2552],
+          [-20.3034, 64.3104],
+          [-20.9961, 63.9332],
+          [-22.6056, 63.9850]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "stage": "hazaut",
+        "name": "Hazaút",
+        "color": "#6a4ca3",
+        "description": "Stockholm → Malmö → Koppenhága → Hamburg → Frankfurt → Budapest"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [17.9238, 59.6498],
+          [18.0686, 59.3293],
+          [13.0038, 55.6050],
+          [12.5683, 55.6761],
+          [10.0153, 53.5753],
+          [8.6821,  50.1109],
+          [19.0402, 47.4979]
+        ]
+      }
+    }
+  ]
+}
