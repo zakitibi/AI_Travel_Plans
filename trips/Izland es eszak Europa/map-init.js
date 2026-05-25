@@ -13,8 +13,13 @@
 
 import { TravelMap } from "../../engine/TravelMap.js";
 
-const TRIP_ID   = "izland-es-eszak-europa";
-const DATA_ROOT = "/data/trips";
+const TRIP_ID = "izland-es-eszak-europa";
+
+// Resolve data root relative to THIS module file so the path is correct
+// on any host — localhost, GitHub Pages (/AI_Travel_Plans/), Netlify, etc.
+// import.meta.url = ".../trips/Izland es eszak Europa/map-init.js"
+// ../../data/trips  → ".../data/trips"  ✓
+const DATA_ROOT = new URL("../../data/trips", import.meta.url).href;
 
 /** @type {TravelMap|null} */
 let travelMap   = null;

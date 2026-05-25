@@ -46,7 +46,7 @@ export class TravelMap {
    * @param {string} containerId  ID of the DOM element for the Leaflet map.
    * @param {object} [opts]
    * @param {"stage"|"type"|"day"} [opts.groupBy="stage"]   Layer control grouping.
-   * @param {string}  [opts.dataRoot="/data/trips"]          Base path for JSON files.
+   * @param {string}  [opts.dataRoot]  Base URL for JSON files — pass from map-init.js via import.meta.url.
    * @param {number}  [opts.defaultZoom=4]
    * @param {number[]} [opts.defaultCenter=[60, 5]]          [lat, lng]
    * @param {boolean} [opts.cluster=false]                   Enable marker clustering.
@@ -56,7 +56,7 @@ export class TravelMap {
     this._id   = containerId;
     this._opts = {
       groupBy:          "stage",
-      dataRoot:         "/data/trips",
+      dataRoot:         null,   // must be supplied by map-init.js via import.meta.url
       defaultZoom:      4,
       defaultCenter:    [60, 5],
       cluster:          false,
@@ -89,6 +89,9 @@ export class TravelMap {
     this._setOverlay("loading");
 
     try {
+      if (!this._opts.dataRoot) {
+        throw new Error("dataRoot not set — pass it from map-init.js via import.meta.url");
+      }
       const { trip, pois, route } = await loadTrip(tripId, this._opts.dataRoot);
       this._render(trip, pois, route);
       this._state = "ready";
