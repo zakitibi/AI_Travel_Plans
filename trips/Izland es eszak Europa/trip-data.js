@@ -1077,23 +1077,15 @@ const tripData = {
           ]
         },
         bottomAsset: {
-          title: "Sematikus térkép és GPX",
-          text: "A saját júliusi sematikus ábra legalul marad, mellé téve a hivatalos Vegagerðin útállapot-térképet.",
-          image: "./assets/iceland_map.svg",
+          title: "🚦 Umferðin — élő izlandi forgalmi térkép",
+          text: "Az izlandi Közlekedési Hatóság élő forgalmi és útállapot-térképe: útlezárások, torlódások, forgalomkamerák, havas/jeges útszakaszok állapotjelzői. Minden nap indulás előtt kötelező ellenőrzés — különösen Snæfellsnes és az északi blokk napjain.",
           links: [
-            { label: "SVG térkép", url: "./assets/iceland_map.svg" },
-            { label: "GPX útvonal", url: "./assets/iceland_route.gpx" }
+            { label: "umferdin.is megnyitása ↗", url: "https://umferdin.is/en" },
+            { label: "Vegagerðin útállapot", url: "https://vegasja.vegagerdin.is/eng/" }
           ],
-          companion: {
-            title: "Vegagerðin térkép",
-            text: "Hivatalos izlandi útállapot- és útinformációs térkép, különösen hasznos indulás előtti ellenőrzésre.",
-            embed: {
-              title: "Vegagerðin road map",
-              src: "https://vegasja.vegagerdin.is/eng/"
-            },
-            links: [
-              { label: "Vegagerðin map", url: "https://vegasja.vegagerdin.is/eng/" }
-            ]
+          embed: {
+            title: "Umferðin — Iceland Traffic",
+            src: "https://umferdin.is/en"
           }
         }
       },
@@ -1133,7 +1125,7 @@ const tripData = {
               text: "Öt magyar útleírás a Ring Roadról — hasonló körúton járt utazók konkrét tapasztalatai, napi ritmusok, rejtett helyszínek és időzítési tanácsok.",
               items: [
                 "🌋 <strong>Helloizland.hu</strong> — hazai izland-specialista: részletes útmutatók régiónként, Kerið krátertó és geotermikus kenyérsütő tanya (Laugarvatn Fontana) a Golden Circle mellé javasolt pluszként. Korai foglalás a déli parton júliusban kritikus.",
-                "🧭 <strong>Wanderwell.hu</strong> — Laugavegur-trek és Golden Circle részletes bejárás; Reykjadalur geotermikus folyó (ingyenes alternatíva Sky Lagoon helyett) szintén ajánlott opció egy Reykjavík-napra.",
+                "🧭 <strong>Wanderwell.hu</strong> — magyar izland-specialista utazási iroda blogja, több cikkes sorozattal: <a href='https://wanderwell.hu/blog/arany-korut-izland-latnivaloi-egy-nap-alatt' target='_blank' rel='noreferrer'>Arany Körút egy nap alatt</a>, <a href='https://wanderwell.hu/blog/a-legjobb-izlandi-termalfurdok' target='_blank' rel='noreferrer'>legjobb termálfürdők</a>, <a href='https://wanderwell.hu/blog/izlandi_utazas_olcson' target='_blank' rel='noreferrer'>budget izland tippek</a>, <a href='https://wanderwell.hu/blog/sarki-feny-a-jegbarlangban-reykjavik-legfontosabb-latnivaloi' target='_blank' rel='noreferrer'>Reykjavík látványosságai</a>.",
                 "🎒 <strong>Netkoffer.hu</strong> — praktikus megközelítés: Blue Lagoon vs. olcsóbb alternatívák, Hallgrímskirkja lift vs. séta, Skaftafell glaciális közelség. Busz Keflavíkból Reykjavíkba ~40 perc, ~22 EUR.",
                 "🚐 <strong>Vándorboy — 15 napos körút</strong> — Stuðlagil keleti oldal (közelebb, de hosszabb séta), Hengifoss (128 m, Izland harmadik legnagyobb vízesése, Eastfjords), Ásbyrgi-kanyon patkolás-alakú sziklafal. Haifoss (122 m) a Golden Circle rejtett extra-opciója.",
                 "🚐 <strong>Vándorboy — 8 napos körút</strong> — 8 napos Ring Road-tempó: ~110–134 EUR/nap/fő reális keret, Svartifoss bazalt-vízesés Skaftafellben, Reykjadalur geotermikus folyó. Főzési lehetőséggel rendelkező szállás sokat spórol.",

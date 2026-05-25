@@ -523,42 +523,35 @@
           ` : ""}
         </section>
       ` : "";
-      const bottomMap = section.mapAsset && section.mapAsset.bottomAsset ? `
-        <div class="map-pair-grid map-card-bottom">
-          <section class="card section-card map-card">
+      const bottomMap = section.mapAsset && section.mapAsset.bottomAsset ? (() => {
+        const ba = section.mapAsset.bottomAsset;
+        return `
+          <section class="card section-card map-card map-card-bottom">
             <div class="map-card-head">
               <div>
-                <h3 class="info-title">${section.mapAsset.bottomAsset.title}</h3>
-                <p class="info-text">${section.mapAsset.bottomAsset.text}</p>
+                <h3 class="info-title">${ba.title}</h3>
+                <p class="info-text">${ba.text}</p>
               </div>
-              <div class="context-sources">${renderLinkList(section.mapAsset.bottomAsset.links)}</div>
+              <div class="context-sources">${renderLinkList(ba.links)}</div>
             </div>
-            <img class="section-map-image" src="${section.mapAsset.bottomAsset.image}" alt="${section.mapAsset.bottomAsset.title}">
-          </section>
-          ${section.mapAsset.bottomAsset.companion ? `
-            <section class="card section-card map-card">
-              <div class="map-card-head">
-                <div>
-                  <h3 class="info-title">${section.mapAsset.bottomAsset.companion.title}</h3>
-                  <p class="info-text">${section.mapAsset.bottomAsset.companion.text}</p>
-                </div>
-                <div class="context-sources">${renderLinkList(section.mapAsset.bottomAsset.companion.links)}</div>
-              </div>
-              <div class="embedded-map-wrap">
-                <div class="embedded-map-label">${section.mapAsset.bottomAsset.companion.embed.title}</div>
+            ${ba.image ? `<img class="section-map-image" src="${ba.image}" alt="${ba.title}">` : ""}
+            ${ba.embed ? `
+              <div class="embedded-map-wrap" style="margin-top:12px;">
                 <iframe
-                  class="embedded-map-frame compact-map-frame"
-                  src="${section.mapAsset.bottomAsset.companion.embed.src}"
+                  class="embedded-map-frame"
+                  src="${ba.embed.src}"
+                  width="100%" height="500"
+                  style="border:0;display:block;"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
                   allowfullscreen
-                  title="${section.mapAsset.bottomAsset.companion.embed.title}">
+                  title="${ba.embed.title}">
                 </iframe>
               </div>
-            </section>
-          ` : ""}
-        </div>
-      ` : "";
+            ` : ""}
+          </section>
+        `;
+      })() : "";
       return `
         <section class="view" data-view="${sectionKey}">
           <div class="section-head">
