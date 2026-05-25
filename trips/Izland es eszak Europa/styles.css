@@ -422,6 +422,13 @@ a {
   font-size: 18px;
 }
 
+.map-section-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
 .section-head {
   display: flex;
   justify-content: space-between;

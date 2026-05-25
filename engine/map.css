@@ -290,3 +290,135 @@
   height: 28px !important;
   color: #374151 !important;
 }
+
+/* ── Detail map filter panel (detail-map-init.js) ────────────────────────── */
+.dm-filter-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+/* Toggle button */
+.dm-filter-toggle {
+  display: block;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .16);
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+  transition: background .14s, color .14s;
+}
+.dm-filter-toggle:hover        { background: #f3f4f6; }
+.dm-filter-toggle-active       { background: #e0f2fe; color: #0369a1; }
+
+/* Panel */
+.dm-filter-panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .18);
+  margin-top: 6px;
+  padding: 4px 0 6px;
+  min-width: 210px;
+  max-width: 250px;
+}
+
+/* Section */
+.dm-filter-section {
+  padding: 6px 0 2px;
+}
+
+.dm-filter-divider {
+  border: none;
+  border-top: 1px solid #f3f4f6;
+  margin: 2px 0;
+}
+
+/* Section header */
+.dm-filter-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 12px 5px;
+}
+
+.dm-filter-section-head strong {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: #9ca3af;
+}
+
+.dm-filter-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.dm-btn-all,
+.dm-btn-none {
+  padding: 1px 6px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 5px;
+  font-size: 10px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: background .1s, color .1s;
+}
+.dm-btn-all:hover,
+.dm-btn-none:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* Checkbox rows */
+.dm-filter-section-body {
+  padding: 0 10px 0;
+}
+
+.dm-filter-scrollable {
+  max-height: 172px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.dm-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 2px;
+  cursor: pointer;
+  color: #374151;
+  user-select: none;
+}
+
+.dm-filter-row input[type="checkbox"] {
+  accent-color: #1f5a3e;
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Label with optional colour dot */
+.dm-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.dm-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
