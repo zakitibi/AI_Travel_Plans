@@ -633,65 +633,69 @@
           </section>
           <div class="restaurants-grid">
             ${tripData.restaurants.groups.map((group) => `
-              <section class="restaurant-city">
-                <h3>${group.title}</h3>
-                ${group.text ? `<p class="restaurant-group-text">${group.text}</p>` : ""}
+              <details class="restaurant-city" open>
+                <summary class="restaurant-city-summary">
+                  <span class="restaurant-city-title">${group.title}</span>
+                  <span class="collapse-icon" aria-hidden="true">▾</span>
+                </summary>
+                <div class="restaurant-city-body">
+                  ${group.text ? `<p class="restaurant-group-text">${group.text}</p>` : ""}
 
-                ${group.history ? `
-                  <details class="gastro-history-block">
-                    <summary class="gastro-history-summary">
-                      <span>📖 Gasztronómiáról röviden</span>
-                      <span class="collapse-icon" aria-hidden="true">▾</span>
-                    </summary>
-                    <p class="gastro-history-text">${group.history}</p>
-                  </details>
-                ` : ""}
+                  ${group.history ? `
+                    <details class="gastro-history-block">
+                      <summary class="gastro-history-summary">
+                        <span>📖 Gasztronómiáról röviden</span>
+                        <span class="collapse-icon" aria-hidden="true">▾</span>
+                      </summary>
+                      <p class="gastro-history-text">${group.history}</p>
+                    </details>
+                  ` : ""}
 
-                <div class="restaurant-row">
-                  ${group.items.map((item) => `
-                    <article class="restaurant-card">
-                      <div class="restaurant-top">
-                        <div class="rate-badge">${item.badge}</div>
-                        <div>
-                          <div class="restaurant-name">${item.name}</div>
-                          <div class="restaurant-meta">${item.meta}</div>
+                  <div class="restaurant-row">
+                    ${group.items.map((item) => `
+                      <article class="restaurant-card">
+                        <div class="restaurant-top">
+                          <div class="rate-badge">${item.badge}</div>
+                          <div>
+                            <div class="restaurant-name">${item.name}</div>
+                            <div class="restaurant-meta">${item.meta}</div>
+                          </div>
                         </div>
-                      </div>
-                      <p>${item.description}</p>
-                      ${item.tastes && item.tastes.length ? `
-                        <ul class="restaurant-tastes">
-                          ${item.tastes.map((taste) => `<li>${taste}</li>`).join("")}
-                        </ul>
-                      ` : ""}
-                    </article>
-                  `).join("")}
-                </div>
-
-                ${group.drinks && group.drinks.length ? `
-                  <div class="gastro-drinks-block">
-                    <div class="gastro-drinks-title">🥂 Helyi italok</div>
-                    <ul class="gastro-drinks-list">
-                      ${group.drinks.map((d) => `<li>${d}</li>`).join("")}
-                    </ul>
+                        <p>${item.description}</p>
+                        ${item.tastes && item.tastes.length ? `
+                          <ul class="restaurant-tastes">
+                            ${item.tastes.map((taste) => `<li>${taste}</li>`).join("")}
+                          </ul>
+                        ` : ""}
+                      </article>
+                    `).join("")}
                   </div>
-                ` : ""}
 
-                ${group.iconicRestaurants && group.iconicRestaurants.length ? `
-                  <div class="gastro-reco-block">
-                    <div class="gastro-reco-title">🍽 Ajánlott éttermek az útvonalon</div>
-                    <div class="gastro-reco-grid">
-                      ${group.iconicRestaurants.map((r) => `
-                        <div class="gastro-reco-card">
-                          <div class="gastro-reco-name">${r.maps ? `<a href="${r.maps}" target="_blank" rel="noreferrer">${r.name}</a>` : r.name}${r.stars ? ` <span class="gastro-reco-stars">${r.stars}</span>` : ""}</div>
-                          <div class="gastro-reco-city">${r.city}</div>
-                          <div class="gastro-reco-note">${r.note}</div>
-                        </div>
-                      `).join("")}
+                  ${group.drinks && group.drinks.length ? `
+                    <div class="gastro-drinks-block">
+                      <div class="gastro-drinks-title">🥂 Helyi italok</div>
+                      <ul class="gastro-drinks-list">
+                        ${group.drinks.map((d) => `<li>${d}</li>`).join("")}
+                      </ul>
                     </div>
-                  </div>
-                ` : ""}
+                  ` : ""}
 
-              </section>
+                  ${group.iconicRestaurants && group.iconicRestaurants.length ? `
+                    <div class="gastro-reco-block">
+                      <div class="gastro-reco-title">🍽 Ajánlott éttermek az útvonalon</div>
+                      <div class="gastro-reco-grid">
+                        ${group.iconicRestaurants.map((r) => `
+                          <div class="gastro-reco-card">
+                            <div class="gastro-reco-name">${r.maps ? `<a href="${r.maps}" target="_blank" rel="noreferrer">${r.name}</a>` : r.name}${r.stars ? ` <span class="gastro-reco-stars">${r.stars}</span>` : ""}</div>
+                            <div class="gastro-reco-city">${r.city}</div>
+                            <div class="gastro-reco-note">${r.note}</div>
+                          </div>
+                        `).join("")}
+                      </div>
+                    </div>
+                  ` : ""}
+                </div>
+              </details>
             `).join("")}
           </div>
         </section>

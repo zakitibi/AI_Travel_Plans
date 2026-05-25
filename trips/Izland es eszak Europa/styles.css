@@ -855,7 +855,6 @@ a {
 
 .summary-card h3,
 .note-card h3,
-.restaurant-city h3,
 .weather-card h3,
 .info-title {
   margin: 0 0 8px;
@@ -1528,7 +1527,38 @@ a {
 }
 
 .restaurant-city {
-  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.7);
+  overflow: hidden;
+}
+
+.restaurant-city-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.restaurant-city-summary::-webkit-details-marker {
+  display: none;
+}
+
+.restaurant-city-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.restaurant-city[open] > .restaurant-city-summary .collapse-icon {
+  transform: rotate(180deg);
+}
+
+.restaurant-city-body {
+  padding: 0 16px 16px;
 }
 
 .restaurant-group-text {
