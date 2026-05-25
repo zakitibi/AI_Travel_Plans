@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🌋 Izland es eszak Europa · 2026</title>
   <link rel="stylesheet" href="./styles.css">
+  <!-- Leaflet 1.9.4 -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLs=" crossorigin=""></script>
 </head>
 <body>
   <div class="page-shell">
@@ -36,6 +41,7 @@
       { id: "practical", label: "🧳 Praktikus" },
       { id: "weather", label: "🌦 Időjárás" },
       { id: "apps", label: "📱 Appok" },
+      { id: "terkep", label: "🗺 Térkép" },
       { id: "info", label: "Info" }
     ];
 
@@ -869,6 +875,32 @@
       `;
     }
 
+    function renderMap() {
+      return `
+        <section class="view" data-view="terkep">
+          <div class="section-head">
+            <div>
+              <h2><span>élő adatok · Google Sheets alapú</span>Térkép</h2>
+            </div>
+          </div>
+          <section class="card section-card">
+            <p class="section-intro">
+              Az útvonal összes állomása interaktív térképen — szállások, átkelők, repülők, látnivalók.
+              A rétegvezérlővel (<strong>jobb felső sarok</strong>) szűrhetsz szakasz szerint.
+              Kattints bármelyik jelzőre a részletes adatokért.
+            </p>
+          </section>
+          <div class="travel-map-wrap">
+            <div id="trip-map" style="width:100%;height:100%;"></div>
+            <div class="tm-overlay">
+              <div class="tm-spinner"></div>
+              <span>Térkép betöltése…</span>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
     function renderInfo() {
       return `
         <section class="view" data-view="info">
@@ -902,6 +934,7 @@
       renderPractical(),
       renderWeather(),
       renderApps(),
+      renderMap(),
       renderInfo()
     ].join("");
 
@@ -926,5 +959,6 @@
       activateTab(button.dataset.tab);
     });
   </script>
+  <script type="module" src="./map-init.js"></script>
 </body>
 </html>
