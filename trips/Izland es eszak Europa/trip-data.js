@@ -1909,124 +1909,389 @@ const tripData = {
   },
   restaurants: {
     intro: [
-      "Ez a rész nem csak étteremlista, hanem gasztró-útmutató: országonként mit érdemes keresni, melyik étel micsoda, és nagyjából mihez hasonlít ízben vagy állagban.",
-      "A jó stratégia ezen az úton az, hogy minden országból meglegyen 2-3 karakteres fogás, és a foglalós helyeket csak ott erőltessétek, ahol valóban élményértékük van."
+      "Nem étteremlista, hanem gasztró-kalauz: országonként mi az ikonikus, mi a helyi kedvenc, mi az amit érdemes egyszer megkóstolni — és hol érdemes leülni. A fogások magyarázata mindig valami ismerős ízhez vagy állaghoz köti az újat.",
+      "Az út hat gasztro-kultúrán vezet át (balti, izlandi, svéd, dán, hamburgi/észak-német, frankfurti). Mindegyik más logikájú — a baltikumi mélyen közép-európai gyökerű, az izlandi nyersanyag-centrikus, a skandináv letisztult, a dán fine dining forradalmat hozott, a hamburgi kikötős-halas, a frankfurti hesseni borvidéki."
     ],
     groups: [
       {
-        title: "Baltikum",
-        text: "A balti konyha földközeli, laktató és sokszor ismerősen közép-európai, csak sötétebb rozskenyérrel, több céklával, kaporral, tejföllel, füstöléssel és savanykás elemmel. Itt nem a fine dining a lényeg, hanem az, hogy az óvárosi napokhoz jól illő, tartalmas helyi fogásokat találjatok.",
+        title: "🇱🇹🇱🇻🇪🇪 Baltikum",
+        text: "A balti konyha földközeli, laktató és sokszor ismerősen közép-európai — sötét rozskenyérrel, céklával, kaporral, tejföllel, füstöléssel és savanykás elemekkel. Nem a fine dining a lényeg, hanem a helyi karakteres fogások megtalálása az óvárosi napokon.",
+        history: "A balti konyha évszázadokon át a paraszti és halász hagyományokra épült: a rövid vegetációs időszak miatt tartósítás (füstölés, pácolás, savanyítás) volt az alap. A szovjet korszak erős tipizálást és uniformizálást hozott — a helyi különlegességek csak háztartási szinten éltek tovább. A függetlenség (1990-91) után lassan indult újra a helyi gasztro-identitás keresése. Az elmúlt 15 évben főleg Tallinnban és Vilniusban robbant be az 'újbalti konyha' — helyi alapanyagok, skandináv hatás, farm-to-table szemlélet. Ma Tallinn gasztronómiája a három főváros közül a legelőrehaladottabb: az F-Hoone, a NOA és a Leib Resto olyan szintű éttermi kultúrát képvisel, ami 10 évvel ezelőtt elképzelhetetlen lett volna. Vilnius szintén gyorsan fejlődik (Džiaugsmas, Amandus), Riga valamivel konzervatívabb — de a Lido hálózat a szovjet menza-étkezés helyi újraértelmezéseként mégis kultikus lett.",
+        drinks: [
+          "Švyturys Ekstra (LT) — Litvánia legnépszerűbb söre, könnyed lager; a Baltika és a Dreher közé esik ízben.",
+          "Utenos (LT) — másik litván standard, kicsit gazdagabb ízvilágú.",
+          "Aldaris (LV) — lett sörvezető, Riga sajátja; enyhén malátás, könnyű.",
+          "Riga Black Balsam (LV) — 45 fokos gyógynövényes bitters, 24 összetevővel; az Unicum rusztikusabb, erősebb, fenyőgyantás rokona. Fekete kávéval vagy tejjel isszák.",
+          "Vana Tallinn (EE) — észt rum-alapú likőr, vaníliás-fahéjas, enyhén édes; nagyon ajándéktárgy-szagú, de egyszer érdemes.",
+          "Kali / Kvass — erjesztett rozskenyér-ital, alkoholtartalom szinte nulla; sötét, malátás, ismerős a magyarnak."
+        ],
         items: [
           {
             badge: "LT",
             name: "Vilnius · litván comfort food",
             meta: "Litvánia · city center vacsora",
-            description: "Litvániában a burgonyás, tejfölös, húsos vonal a legerősebb. Ez jól áll az első estéknek, mert egyszerre helyi és ismerős.",
+            description: "Litvániában a burgonyás, tejfölös, húsos vonal a legerősebb. Ezek jól állnak az első estéknek, mert egyszerre helyi és ismerős.",
             tastes: [
-              "Cepelinai: hatalmas krumpligombóc darált hússal; nagyjából a knédli és a töltött szilvásgombóc sós, nehezebb rokona.",
-              "Šaltibarščiai: hideg céklaleves kefirrel; olyan, mint egy sós, savanykás rózsaszín nyári hidegleves.",
-              "Kepta duona: sült fekete kenyér fokhagymával; sörkorcsolyának olyan, mint egy sokkal jobb fokhagymás pirítós."
+              "Cepelinai (cepelinas): hatalmas burgonyagombóc darált hússal töltve, tejföllel és pörccel tálalva — nagyjából a knédli és a töltött szilvásgombóc sós, nehezebb rokona. Egy adag valószínűleg elég.",
+              "Šaltibarščiai: hideg céklaleves kefirrel, főtt tojással, uborkával — sós, savanykás, élénk rózsaszín hidegleves; nyáron kötelező.",
+              "Kibinai: karéliai (karaim) félhold alakú tészta hússal, Trakaiban a legautentikusabb — olyan, mint egy tömörebb, ropogósabb húsos derelye.",
+              "Kepta duona: sült fekete kenyér fokhagymával — sörkorcsolyának olyan, mint egy sokkal jobb fokhagymás pirítós."
             ]
           },
           {
             badge: "LV",
             name: "Riga · lett sörkorcsolya és halas vonal",
             meta: "Lettország · city day mellé",
-            description: "Rigában a rozskenyér, a füstölt hal és a sör mellé illő egyszerűbb, sósabb fogások a legjobbak. A városi ritmushoz ez jobban passzol, mint egy túlgondolt vacsora.",
+            description: "Rigában a rozskenyér, a füstölt hal és a sör mellé illő sósabb fogások a legjobbak. A Lido önkiszolgáló hálózat gagyinak tűnik, de valójában autentikus és megbízható.",
             tastes: [
-              "Pelēkie zirņi ar speķi: szürke borsó szalonnával; olyan, mint egy rusztikus babfőzelék és pörcös köret keresztezése.",
-              "Rupjmaize: sötét, malátás rozskenyér; a magyar barna kenyérnél tömörebb és enyhén édeskés.",
-              "Füstölt hal: főleg sprat vagy lazacfélék; hasonló érzés, mint egy jobb balatoni füstölt hal, csak északiasabban tiszta ízzel."
+              "Pelēkie zirņi ar speķi: szürke borsó sült szalonnával — rusztikus babfőzelék és pörcös köret keresztezése, sörrel az igazi.",
+              "Rupjmaize: sötét, malátás rozskenyér; a magyar barna kenyérnél tömörebb, enyhén édeskés. Minden étkezés alapja.",
+              "Skābeņu zupa: sóska-krémleves főtt tojással — savanykás, tavaszi, könnyű.",
+              "Füstölt hal (kūpināta zivs): főleg sprat (briling) vagy lazacfélék — hasonló érzés, mint egy jobb balatoni füstölt hal, csak északiasabban tiszta ízzel. A Rigai Központi Piacon vedd."
             ]
           },
           {
             badge: "EE",
-            name: "Tallinn · észt egyszerűség komp előtt",
+            name: "Tallinn · észt újhullám és komp előtti vacsora",
             meta: "Észtország · logisztikai este",
-            description: "Tallinnban a jó döntés a komp előtti könnyebb, de karakteres vacsora. Az észt konyha letisztultabb, kevésbé nehéz, és sok benne a rozs, a hal és a savanyított kiegészítő.",
+            description: "Tallinn ma a három balti főváros legjobb gasztro-helyszíne. A komp előtti este megér egy jobb helyet — az észt konyha letisztultabb, kevésbé nehéz, sok benne a rozs, a hal és a savanyított kiegészítő.",
             tastes: [
-              "Kiluvõileib: sprattos nyitott szendvics tojással; olyan, mint egy elegáns heringes katonakenyér.",
-              "Mulgikapsad: árpás-savanyúkáposztás húsos egytál; a székelykáposzta távoli északias unokatestvére.",
-              "Kama: pörkölt gabonaporból készült desszert krémben; állagra valahol a zabkása és a pohárkrém között van."
+              "Kiluvõileib: sprattos nyitott szendvics tojással és hagymával — elegáns heringes katonakenyér.",
+              "Mulgikapsad: árpás-savanyúkáposztás húsos egytál — a székelykáposzta északi unokatestvére.",
+              "Verivorst mustapekonikastmega: véres hurka mustárral és sült szalonnával — karácsony ikonja, de nyáron is megjelenik menükben.",
+              "Kama: pörkölt gabonaporból készült desszert joghurtban vagy kefirben — állagra a zabkása és a pohárkrém között, diós-malátás ízzel."
             ]
+          }
+        ],
+        iconicRestaurants: [
+          {
+            name: "Lokys",
+            maps: "https://www.google.com/maps/search/?api=1&query=Lokys+restaurant+Vilnius",
+            stars: "★4.3",
+            city: "Vilnius · LT",
+            note: "Hagyományos litván vadászos étterem kőpincében — medvehús, vaddisznó, szarvas. Turisztikus, de autentikus. A Gediminas-torony közelében."
+          },
+          {
+            name: "Etno Dvaras",
+            maps: "https://www.google.com/maps/search/?api=1&query=Etno+Dvaras+Vilnius",
+            stars: "★4.4",
+            city: "Vilnius · LT",
+            note: "A legjobb hely cepelinaire és šaltibarščiaira a belvárosban — fa-enteriőr, népi hangulat, megbízható adagok."
+          },
+          {
+            name: "Lido (hálózat)",
+            maps: "https://www.google.com/maps/search/?api=1&query=Lido+restaurant+Riga",
+            stars: "★4.2",
+            city: "Riga · LV",
+            note: "Lett önkiszolgáló lánc — kultikus helyi intézmény. Tele van helyi kaján: borsóleves, savanyú hús, rozskenyér, tejfölös saláták. Nem romantikus, de autentikus és olcsó."
+          },
+          {
+            name: "3 Pavāru restorāns",
+            maps: "https://www.google.com/maps/search/?api=1&query=3+Pavaru+restaurant+Riga",
+            stars: "★4.5",
+            city: "Riga · LV",
+            note: "Modern lett konyha — szezonális alapanyagok, letisztult tálalás. Ha egy jobb vacsorát akartok Rigában, ez az egyik legjobb választás."
+          },
+          {
+            name: "Leib Resto ja Aed",
+            maps: "https://www.google.com/maps/search/?api=1&query=Leib+Resto+ja+Aed+Tallinn",
+            stars: "★4.6",
+            city: "Tallinn · EE",
+            note: "Az újbalti konyha egyik prémium helyszíne Tallinnban — rozskenyér házilag sütve, helyi hal, észt sajt, kert. Foglalás erősen ajánlott."
+          },
+          {
+            name: "F-Hoone",
+            maps: "https://www.google.com/maps/search/?api=1&query=F-Hoone+Tallinn+Telliskivi",
+            stars: "★4.4",
+            city: "Tallinn · EE · Telliskivi",
+            note: "Ipari-kreatív negyed (Telliskivi) ikonikus helye — vegyes menü, jó hamburgerek, helyi sörök, fiatalos légkör. Nem hagyományos észt, de a tallinni városi életbe ez vezet be."
           }
         ]
       },
       {
-        title: "Izland",
-        text: "Az izlandi gasztronómia egyszerre nyersanyag-központú és meglepően praktikus: hal, bárány, tejtermék, rozskenyér, levesek és jó minőségű egyszerű alapanyagok. Ennél az útnál az működik, ha a látványos, foglalós helyeket keveritek roadtrip-kompatibilis leveses, halas, farmos megállókkal.",
+        title: "🇮🇸 Izland",
+        text: "Az izlandi gasztronómia nyersanyag-centrikus és erősen helyhez kötött: bárány, atlanticai hal, tengeri gyümölcsök, tejtermékek, geotermálisan sütött kenyér. A roadtrip logikájához az illik, ha a nagy foglalós helyeket (Friðheimar, Matur og Drykkur) előre kezeled, a napi megállókat pedig a menetrendhez igazítod.",
+        history: "Az izlandi gasztronómia hagyományosan a túlélés konyhaművészete volt: a rövid nyár, a nehéz telek és az izolált lét kikényszerítette a tartósítás minden formáját — sózás, füstölés, savanyítás, szárítás, fermentáció. A hákarl (fermentált grönlandi cápa) és a sviðasulta (préselve savanyított birkafej) ma inkább kulturális kuriózum, mint mindennapos étel. A 20. század közepétől a halászat és az exportgazdaság hozta a stabilitást és a modernitást. Az igazi fordulat a 2000-es évek közepén jött: a New Nordic Cuisine mozgalom hatására Reykjavíkban megjelent a minőségi helyi alapanyagokra épülő fine dining. A Dill Restaurant (2009, Gunnar Karl Gíslason) volt az első izlandi Michelin-csillagos hely, és a helyi termelők, halászok, farmerek felértékelődése azóta folyamatos. Ma Reykjavík gasztro-színtere meglepően erős egy ilyen kis ország fővárosához képest — a Fishmarket, a Grillmarket, a Matur og Drykkur, a Slippurinn a világszintű konyhákat idézik, miközben az izlandi identitást erősítik.",
+        drinks: [
+          "Brennivín — 'Fekete Halál': 40 fokos köményes izlandi schnapps, hagyományosan hákarl mellé isszák. Köményesen keserű, aquavit-szerű.",
+          "Egils Appelsin — izlandi narancsszörp; az utazók kedvence, de a helyiek is kedvelik; nonalkoholos klasszikus.",
+          "Viking lager — az izlandi sör alapja; 1989-ig tiltva volt az alkohol Izlandon, azóta fejlődik a helyi sörfőzés.",
+          "Borg Brewery Úrvalsbjór — helyi kézműves sör, Reykjavíkból; ha sörtengert keresel, ez a legjobb helyi opció.",
+          "Skyr (ital verzió) — iható formában gyümölcsízesítéssel; élőflórás, könnyű, roadtrip-re ideális.",
+          "Geotermális kávé — több geotermális forrás mellett apró kávézók főznek forrásvízzel; különleges ásványos ízprofil."
+        ],
         items: [
           {
             badge: "IS",
-            name: "Reykjavík és az első napok · belépő az izlandi ízvilágba",
-            meta: "Izland · nyitó szakasz",
-            description: "Az első 1-2 napban érdemes végigmenni az alap izlandi komfortételeken, mert ezek később a kisebb falvakban is visszaköszönnek.",
+            name: "Reykjavík · belépő az izlandi ízvilágba",
+            meta: "Izland · 1–2. nap",
+            description: "Az első napokban érdemes végigmenni az alap izlandi komfortételeken — ezek később a kisebb falvakban is visszaköszönnek. Reykjavík meglepően jó éttermi szcénával rendelkezik.",
             tastes: [
-              "Kjötsúpa: bárányleves zöldségekkel; olyan, mint egy tiszta, tartalmas húsleves, csak karakteresebb juhízzel.",
-              "Plokkfiskur: krémes-halas krumplis fogás; a rakott krumpli és egy sűrű halragu közti komfortétel.",
-              "Skyr: sűrű tejdesszert; valahol a görög joghurt és a túrókrém között van."
+              "Kjötsúpa: bárányleves zöldségekkel és árpával — tiszta, tartalmas húsleves karakteresebb juhízzel; a magyarhoz képest kevésbé paprikás, inkább gyengéd.",
+              "Plokkfiskur: krémes-halas krumplisfogás sütőben sütve — a rakott krumpli és egy sűrű tőkehalalapú halragu közti komfortétel.",
+              "Skyr: sűrű, fehérjedús tejdesszert — valahol a görög joghurt és a túrókrém között; natúran enyhén savanykás, gyümölcsösen édes.",
+              "Pylsa (N1 hot dog): izlandi hot dog mustárral, remulád szósszal, ropogós és nyers hagymával — Bill Clinton kedvence. Csúcsminőségű street food, az N1 kutakon mindenhol elérhető."
             ]
           },
           {
             badge: "IS",
-            name: "Észak és Mývatn · farmkonyha és egyszerű meleg fogások",
-            meta: "Izland · roadtrip-kompatibilis",
-            description: "Északon a farmos, lazább helyek működnek a legjobban. Nem kell minden nap ünnepi vacsora; sokszor a jó leves, füstölt bárány vagy egy meleg halfogás a helyes döntés.",
+            name: "Snæfellsnes és Észak · farmkonyha, roadtrip-megállók",
+            meta: "Izland · 3–5. nap",
+            description: "Snæfellsnesen és északon a farmos, egyszerű helyek működnek a legjobban. Nem kell minden nap ünnepi vacsora — a jó leves, füstölt bárány vagy meleg halfogás a helyes döntés.",
             tastes: [
-              "Füstölt bárány: vékony szeletekben vagy meleg fogásként; a füstölt sonka és a sült bárány között van.",
-              "Rúgbrauð: sötét, enyhén édeskés rozskenyér; olyan, mint egy nedvesebb malátás barna kenyér.",
-              "Pylsa: izlandi hot dog; alapvetően virsli, de a ropogós hagyma, remulád és édes mustár miatt sokkal jobb, mint aminek hangzik."
+              "Hangikjöt (füstölt bárány): vékony szeletekben, forrón vagy hidegen tálalva — a füstölt sonka és a sült bárány között; birkaíze van, de a füst megszelídíti.",
+              "Rúgbrauð (geotermális rozskenyér): Mývatn és Laugarvatn térségében a kenyeret a földbe ásott edényben sütik a geotermális hővel — sötét, nedves, enyhén édeskés, teljesen egyedi.",
+              "Harðfiskur (szárított hal): szárított tőkehal vajas kenyérrel — a rágós, sós, tengeres snack meglepően jó. Benzinkutakon, boltokban mindenhol kapható.",
+              "Hákarl (fermentált cápa): opcionális kaland — az izlandi gastro-extrém. Ammóniás-sajtos szag, gumiszerű állag. A Brennivín elmossa az utóízt. Egyszer megéri megkóstolni."
             ]
           },
           {
             badge: "IS",
-            name: "Déli part, Höfn és Golden Circle · élményhelyek",
-            meta: "Izland · foglalós csúcspontok",
-            description: "Itt vannak a leginkább emlékezetes étkezések: Höfn homárvonala, Vík leveses megállói és a Friðheimar. Ezeknél már tényleg megéri előre készülni.",
+            name: "Kelet · Höfn, déli part, Golden Circle · foglalós csúcspontok",
+            meta: "Izland · 6–8. nap",
+            description: "A legemlékezetesebb étkezések: Höfn homárvonala, a Friðheimar üvegházi paradicsomlevese és a Golden Circle-i farmhelyei. Ezeknél előre kell készülni.",
             tastes: [
-              "Langusztin / homárleves Höfnben: a halászléhez képest krémesebb, vajasabban tengeri bisque-jellegű leves.",
-              "Friðheimar paradicsomlevese: selymes, édes-savanyú paradicsomkrémleves friss kenyérrel; olyan, mint egy luxus menzás paradicsomleves, csak valódi paradicsomízzel.",
-              "Soup Company vulkánlevese Víkben: sűrű, fűszeres marhahúsleves cipóban; a gulyás és a chili közti komfortzóna."
+              "Humarsúpa (homárleves Höfnben): krémesen vajasabb, mint a halászlé — atlantiai langusztin bisque-jellegű leves; Höfn a 'langusztin fővárosa', itt kell enni.",
+              "Friðheimar paradicsomlevese: az üvegházi paradicsomból főzött selymes paradicsomleves friss kenyérrel — olyan, mint egy igazán jó paradicsomleves, de a frissessége kategória más. Foglalás kötelező: fridheimar.is.",
+              "Lamb soup / báránysült a déli parton: a legtöbb kis bistró és benzinkút-melletti kávézó kínál meleg báránysültet — megbízható, jó, és helyi.",
+              "Skyr cake: skyrrel készített sajttorta-szerű desszert — krémes, enyhén savanykás, jobb mint amilyennek hangzik."
             ]
+          }
+        ],
+        iconicRestaurants: [
+          {
+            name: "Friðheimar",
+            maps: "https://www.google.com/maps/search/?api=1&query=Fridheimar+restaurant+Iceland",
+            stars: "★4.6",
+            city: "Reykholt (Golden Circle) · IS",
+            note: "Üvegházi paradicsomos étterem geotermális melegítéssel — a paradicsomokat a vendégek szeme előtt termesztik. Paradicsommártás, -leves, -sör. Kötelező foglalás: fridheimar.is"
+          },
+          {
+            name: "Matur og Drykkur",
+            maps: "https://www.google.com/maps/search/?api=1&query=Matur+og+Drykkur+Reykjavik",
+            stars: "★4.6",
+            city: "Reykjavík · IS",
+            note: "Hagyományos izlandi receptek modern értelmezésben — rúgbrauð, harðfiskur, hangikjöt elegáns tálalásban. Ha egy igazán jó izlandi vacsorát akartok Reykjavíkban, ez az."
+          },
+          {
+            name: "Fishmarket (Fiskimarkaðurinn)",
+            maps: "https://www.google.com/maps/search/?api=1&query=Fishmarket+restaurant+Reykjavik",
+            stars: "★4.5",
+            city: "Reykjavík · IS",
+            note: "Friss izlandi halfogások sushi-s és ázsiai beütéssel — az egyik legnépszerűbb fine dining hely Reykjavíkban. Sashimi izlandi lazacból és tőkehalbó egyszerre."
+          },
+          {
+            name: "Soup Company",
+            maps: "https://www.google.com/maps/search/?api=1&query=Soup+Company+Vik+Iceland",
+            stars: "★4.4",
+            city: "Vík · IS",
+            note: "A déli part legismertebb kis leveses helye — gulyásleves kenyérben, bárányleves, paradicsomleves. Kötelező megálló Reynisfjara előtt vagy után."
+          },
+          {
+            name: "Pakkhús",
+            maps: "https://www.google.com/maps/search/?api=1&query=Pakkhus+restaurant+Hofn+Iceland",
+            stars: "★4.5",
+            city: "Höfn · IS",
+            note: "Höfn legjobb langusztin-étterme — homárleves, sült langusztin, friss halételek. Höfnben KÖTELEZŐ megálló a gleccserjéglagúna után."
           }
         ]
       },
       {
-        title: "Hazaút",
-        text: "A hazaút gasztrója már kevésbé expedíciós, inkább kényelmes autós ritmus. Itt az a jó, ha országonként elkapjátok a legismertebb, könnyen teljesíthető klasszikust, de nem húzzátok szét a napot egy túl komoly vacsora miatt.",
+        title: "🇸🇪 Svédország · Stockholm",
+        text: "A svéd konyha a husmanskost (paraszti házi ételek) és az újhullám között egyensúlyoz. Stockholm éttermi kultúrája az elmúlt 20 évben a világ élmezőnyébe emelkedett — de a legizgalmasabb tapasztalat sokszor nem a fine dining, hanem a fika kultúra és a jó köttbullar.",
+        history: "A svéd konyha alapja évszázadokon át a husmanskost volt — egyszerű, laktató, szezonális paraszti ételek: köttbullar (húsgolyók), inlagd sill (pácolt hering), kroppkakor (krumpligombóc), raggmunk (burgonyapalacsinta). A 20. század közepén a svéd jóléti állam a konyhaipari egyformaságot hozta. Az igazi fordulat a 2000-es évek végén jött: a New Nordic Cuisine skandináv hulláma (amelynek dánok, de svédek is motorjai voltak) Stockholmban is gyümölcsöt hozott. A Mathias Dahlgren, az Oaxen Krog, a Frantzen étteremek a 3 Michelin-csillagig jutottak. Emellett nagyon erős a fika kultúra — a napi kávészünet péksüteménnyel (kanelbulle, kardemummabulle, prinsesstårta) a svéd identitás szerves része. A surströmming (savanyított hering, kb. a világ egyik legbüdösebb étele) inkább folklór, mint mindennapos étel — de a neve mindenhol felbukkan.",
+        drinks: [
+          "Aquavit (Akvavit) — boróka vagy kapormag-ízesítésű gabonaszesz; a svéd ünnepek alapitala. Hering mellé kötelező.",
+          "Absolut Vodka — Åhus-ból, svéd búzából; ha vodkát rendeltek Stockholmban, ez az alapvonal.",
+          "Rekorderlig cider — svéd kézműves gyümölcssör; nagyon népszerű, friss és könnyű.",
+          "Spendrups / Falcon — nagy svéd sörmárkák; megbízható lager, mindenütt elérhető.",
+          "Saft (gyümölcsszirup vízzel) — a svéd háztartások nonalkoholos alapja; hűvösen kellemesebb mint hangzik.",
+          "Kaffe (fika-kávé) — a svéd filterkávé kultúra erős; Stockholmban rengeteg minőségi specialty kávézó van."
+        ],
         items: [
           {
             badge: "SE",
-            name: "Svédország · tiszta, egyszerű, jól szervezett ízek",
-            meta: "svéd autós etap",
-            description: "Svédországban a klasszikus fogások tiszták, kevésbé túlfűszerezettek, jól illenek egy hosszú utáni nyugodt vacsorához.",
+            name: "Stockholm · klasszikus svéd ízek és fika",
+            meta: "Svédország · 3 éjszaka",
+            description: "Stockholmban van idő és hely a jobb étkezésekre. A klasszikus fogások mellé a fika-kultúra (kávé + péksütemény, általában délelőtt 10 és délután 3 körül) is teljes értékű élmény.",
             tastes: [
-              "Köttbullar: húsgolyók barna szósszal, burgonyapürével, vörösáfonyával; a fasírt és a pörköltszaftos húsgombóc között.",
-              "Gravlax: pácolt lazac; olyan, mint egy nagyon kifinomult füstölt lazac, csak füst nélkül.",
-              "Kanelbulle: fahéjas csiga; nagyjából az északi kakaós csiga fahéjas unokatestvére."
+              "Köttbullar med gräddsås: húsgolyók tejszínes barna szósszal, burgonyapürével és vörösáfonyás lekvárral — az IKEA-verzió csak halvány árnyéka az igazinak.",
+              "Gravlax: nyers lazac sóval, cukorral, kaporral pácolva — füstölés nélkül, frissebb, tisztább ízű mint a füstölt változat.",
+              "Inlagd sill: pácolt hering mustáros, kapros vagy hagymás lében — minden svéd ünnep és hétköznapi büfé alapja.",
+              "Kanelbulle / Kardemummabulle: fahéjas (vagy kardamommagos) svéd péksütemény — édesebb és puhábbnak tűnik, mint a magyar sütemények, de a kardamom meglep.",
+              "Smörgåstårta: szendvicstorta — sós, egyrétegű 'torta' lazaccal, tojással, garnélával; különleges svéd ünnepi fogás."
             ]
+          }
+        ],
+        iconicRestaurants: [
+          {
+            name: "Pelikan",
+            maps: "https://www.google.com/maps/search/?api=1&query=Pelikan+Restaurant+Stockholm",
+            stars: "★4.3",
+            city: "Stockholm · Södermalm",
+            note: "1904 óta nyitva lévő klasszikus svéd brasserie — köttbullar, sill, husmanskost, fából faragott bútorok. Az autentikus stockholmi vacsora-élmény, turisták és helyiek vegyesen."
           },
           {
+            name: "Fotografiska Restaurant",
+            maps: "https://www.google.com/maps/search/?api=1&query=Fotografiska+restaurant+Stockholm",
+            stars: "★4.4",
+            city: "Stockholm · Södermalm",
+            note: "Michelin Green Star — fenntartható svéd fine dining a Fotografiska fényképészeti múzeum tetején, panorámás kilátással. Vacsora és tetőterasz egyszerre."
+          },
+          {
+            name: "Rosendals Trädgård",
+            maps: "https://www.google.com/maps/search/?api=1&query=Rosendals+Tradgard+Stockholm",
+            stars: "★4.5",
+            city: "Stockholm · Djurgården",
+            note: "Biokertészeti kávézó és pékség a Djurgården parkban — friss péksütemény, saláták, levesek, kert. Ideális Vasa Museum utáni ebédre."
+          },
+          {
+            name: "Grinda Wärdshus",
+            maps: "https://www.google.com/maps/search/?api=1&query=Grinda+Wardshus",
+            stars: "★4.3",
+            city: "Grinda sziget · Archipelago",
+            note: "A Grinda-sziget egyetlen étterme — friss halételek, helyi sör, veranda kilátással a tengerre. Kötelező foglalás: grindawardshus.se/boka-bord"
+          }
+        ]
+      },
+      {
+        title: "🇩🇰 Dánia · Koppenhága",
+        text: "Koppenhága az elmúlt 20 évben a világ gasztronómiai fővárosává vált — a Noma forradalma nyomán az egész dán konyha megújult. A három nap erre bőven elég, hogy belekóstolj a smørrebrødon és a Torvehallernén át a modern dán fine dining világába is.",
+        history: "A hagyományos dán konyha a paraszti és tengerészi hagyományokra épül: smørrebrød (nyitott rozskenyeres szendvics), frikadeller (lapos húsgombóc), flæskesteg (ropogósra sült sertéskaraj), rødgrød med fløde (piros bogyós gyümölcskocsonya tejföllel). A dánok generációkon át a leghitványabb skandináv konyhának számítottak — egészen 2003-ig, amikor René Redzepi és Claus Meyer megnyitotta a Nomát Koppenhágában. A 'New Nordic Cuisine' manifesztuma (2004) forradalmasította nemcsak a dán, hanem az egész skandináv és európai fine dining gondolkodást: helyi és szezonális alapanyagok, fermentáció, vadgyűjtés, minimalista tálalás. A Noma 2010-ben, 2011-ben, 2012-ben és 2014-ben a világ legjobb étterme lett (San Pellegrino lista). Az örökség ma is él: Geranium (3 Michelin-csillag, jelenleg Európa egyik csúcsétterme), Alchemist, AOC, Jordnær — Koppenhága éttermi sűrűsége Párizséhoz és Tokióéhoz mérhető.",
+        drinks: [
+          "Carlsberg Pilsner — a világ egyik legismertebb söre; a koppenhágai Carlsberg Városból ered (1847), de a prémium Jacobsen kézművessor sokkal jobb.",
+          "Tuborg Grøn — a másik dán klasszikus; könnyű, semleges, everywhere.",
+          "Gammel Dansk Bitter Dram — 38 fokos gyógynövényes reggeli bitters; hagyományosan reggeli schnappsként isszák reggelire (igen, tényleg). Fűszeres, keserű, aquavit-közeli.",
+          "Aquavit (Aalborg) — dán köményes szesz, heringhez és smørrebrødhez; 'skål'-lal köszöntik.",
+          "Mikkeller sörök — koppenhágai kézműves sörfőzde, világhíres; a Bar 3 Flasks vagy a Mikkeller Bar a városban mindig frissen csapolt tételt kínál.",
+          "Rødgrød med fløde — gyümölcskocsonya tejföllel; nemcsak desszert, hanem a legnehezebben kiejthető dán szó is egyben."
+        ],
+        items: [
+          {
             badge: "DK",
-            name: "Dánia · városi ebédre tökéletes",
-            meta: "Dánia · fellazító nap",
-            description: "Koppenhága elbír egy jobb ebédet vagy korai vacsorát, mert itt a nap városiasabb és kevésbé tranzitjellegű.",
+            name: "Koppenhága · smørrebrød, street food és fine dining",
+            meta: "Dánia · 3 éjszaka",
+            description: "Koppenhágában minden szinten el lehet érni a jó étkezést — a Torvehallerne standoktól a Michelin-csillagos asztalokon át a Papirøen street foodig. Három nap bőven elég rá.",
             tastes: [
-              "Smørrebrød: nyitott szendvics; olyan, mint egy dán tapas-rendszer rozskenyéren.",
-              "Frikadeller: lapos húsgombóc; a fasírt és a sült húspogácsa közti klasszikus.",
-              "Dán hot dog: virsli ropogós hagymával, uborkával, szósszal; street foodban a legbiztosabb választás."
+              "Smørrebrød: nyitott rozskenyeres szendvics héringgel, lazaccal, tojással, garnélával vagy roastbeeffel — egy tányéron akár 3-4 variáció; a dán tapas-rendszer.",
+              "Frikadeller: lapos, sült húsgombóc burgonyasalátával vagy párolt zöldséggel — a fasírt és a sült húspogácsa közti klasszikus.",
+              "Flæskesteg: ropogós sertéskaraj piroslökkel és burgonyával — a dán karácsonyi étel, de egész évben kapható.",
+              "Leverpostej: dán májas pástétom pirítóson uborkával — a dán irodai ebéd alapja; gazdagabb és zsírosabb mint a magyaros változat.",
+              "Dán hot dog (ristet hotdog): ropogós hagymával, uborkával, mustárral és ketchuppal töltött virsli; az utca étele, standokon mindenhol megtalálható."
+            ]
+          }
+        ],
+        iconicRestaurants: [
+          {
+            name: "Torvehallerne",
+            maps: "https://www.google.com/maps/search/?api=1&query=Torvehallerne+Copenhagen",
+            stars: "★4.5",
+            city: "Koppenhága · Nørreport",
+            note: "Fedett piaccsarnok friss smørrebrøddel, dán sajtokkal, heringgel, kézműves sörrrel. A legjobb koppenhágai ebédhely-koncentrátum. Reggeli is kiváló."
+          },
+          {
+            name: "Schønnemann",
+            maps: "https://www.google.com/maps/search/?api=1&query=Restaurant+Schonnemann+Copenhagen",
+            stars: "★4.4",
+            city: "Koppenhága · Indre By",
+            note: "1877 óta nyitva — a hagyományos smørrebrød és aquavit szentélye. Ebéd-only hely (11-17h), foglalás szükséges. A koppenhágai smørrebrød-élmény csúcsa."
+          },
+          {
+            name: "Reffen Street Food",
+            maps: "https://www.google.com/maps/search/?api=1&query=Reffen+Street+Food+Copenhagen",
+            stars: "★4.3",
+            city: "Koppenhága · Refshaleøen",
+            note: "Koppenhága legnagyobb outdoor street food markete ipari helyszínen — 60+ stand, természetes borok, hamburgerek, ázsiai fogások, dán specialitások. Hajóval 10 perc a belvárostól."
+          },
+          {
+            name: "Noma",
+            maps: "https://www.google.com/maps/search/?api=1&query=Noma+restaurant+Copenhagen",
+            stars: "★4.5",
+            city: "Koppenhága · Christianshavn",
+            note: "4× a világ legjobb étterme — 2025-ben visszanyitott. René Redzepi New Nordic cuisine forradalma. Árak: ~400–600 EUR/fő. Ha belefértek a büdzsébe és 3+ hónappal előre foglaltok: noma.dk. Egyébként a hatást az összes többi koppenhágai hely hordozza."
+          },
+          {
+            name: "Geranium",
+            maps: "https://www.google.com/maps/search/?api=1&query=Geranium+restaurant+Copenhagen",
+            stars: "★4.7 · ✦✦✦ Michelin",
+            city: "Koppenhága · Parken",
+            note: "3 Michelin-csillag, jelenleg Európa legjobb étterme (50 Best lista 2023 #1). Rasmus Kofoed konyhája. Ha életetek egyetlen igazi gasztronómiai élményét keressétek Koppenhágában: geranium.dk"
+          }
+        ]
+      },
+      {
+        title: "🇩🇪 Hamburgi és Frankfurt",
+        text: "A két nagy német állomás két teljesen különböző gasztro-karaktert képvisel: Hamburg a kikötő, a hal, a füstölt hús és a Hanzeáta-büszkeség; Frankfurt a rajnai-hesseni belváros, az almabor kultúra, a Grüne Soße és a Römerberg körüli tradicionális fogadók.",
+        history: "A hamburgi konyha a Hanza-szövetség és a kikötőváros örökségéből nőtt ki — a tengerről érkező áruk (fűszerek, halak, kávé, csokoládé, rum) mind formálták a helyi gasztronómiát. A Fischbrötchen (halszendvics) és a Labskaus (matrózok egytálétele) a kikötős lét ikonjai. A 19. századi ipari fejlődés hozta a Speicherstadt kávé- és fűszerraktárait. A hamburgi fine dining a 2000-es évektől erősödött (Haerlin, Jacobs, La Mer — mind Michelin-csillaggal), de az identitás alapja ma is a halpiaci kultúra és a halételek. Frankfurt konyháját a Hesseni tartomány paraszti és borvidéki hagyományai alakítják. Az Apfelwein (almabor, 'Stöffche' helyi nevén) a legkarakteresebb helyi ital — Sachsenhausen negyedében a Bembel-ből (szürke kerámia korsó) isszák. A Grüne Soße (Grie Soß) hét friss gyógynövényből készül és Goethe kedvenc étele volt. A Frankfurter Würstchen (a valódi frankfurti virsli) kizárólag Frankfurt és közvetlen környékéről kapja a megjelölést — ez az első védett eredetmegjelölésű hentesáru Europában.",
+        drinks: [
+          "Apfelwein (Frankfurt) — helyi almabor, 5-7 fokos, kissé savanykás; hígítva vízzel 'Gespritzter', szódával 'Saurer Gespritzter'. Bembel-ből (szürke korsó) isszák Sachsenhausenben.",
+          "Paulaner Weissbier — bajor búzasör; a legjobb általános sörmegoldás a frankfurti estékre.",
+          "Ratsherrn Pale Ale (Hamburg) — hamburgi kézműves sör, az egyik legjobb helyi opció a kikötőnegyed bárjaiban.",
+          "Astra Rotlicht (Hamburg) — ikonikus hamburgi munkásosztálybeli sörmárka; St. Pauli negyedben mindenhol van.",
+          "Lübecker Rum — lübecki matróz-rum hagyomány; 1878 óta a Lübecker Rum Geschichte a várostörténet része.",
+          "Schwarzwälder Kirschwasser — feketefenyő-vidéki cseresznyepálinka; Frankfurt-vidéken is kapható, az út végének itala."
+        ],
+        items: [
+          {
+            badge: "DE",
+            name: "Hamburg · halételek, kikötős street food, Speicherstadt-kávé",
+            meta: "Németország · Hamburg",
+            description: "Hamburgban a legjobb étkezések a vízhez kapcsolódnak — a Landungsbrücken-nél, a HafenCity teraszain és a Fischmarkt körzetében. A Fischbrötchen nem opcionális.",
+            tastes: [
+              "Fischbrötchen: füstölt hering (Bismarck-hering, matjes) vagy garnéla szendvics friss zsemlében hagymával és remulád szósszal — a hamburgi street food ikonja, a Landungsbrücken körül és a Fischmarkton kapható.",
+              "Labskaus: tengerész-egytál sózott marhahúsból, céklaecetes burgonyából és heringből, tükörtojással és savanyúsággal — nem fotogén, de autentikusan hamburgi.",
+              "Aalsuppe: édesgyökeres-gyümölcsös angolnaleves — a tradicionális hamburgi leves, amit ma már csak néhány régi étteremben kínálnak.",
+              "Franzbrötchen: ropogós, lapos, fahéjas dán-szerű péksütemény — hamburgi reggeli alapja; közelebb áll egy ropogósabb croissanthoz mint a bécsihez."
             ]
           },
           {
             badge: "DE",
-            name: "Németország · stabil autópályás zárás",
-            meta: "autópálya-napok",
-            description: "A német szakaszban nem kell túlromantizálni a gasztrót, de egy jó klasszikust még simán érdemes elkapni este vagy egy hosszabb pihenőnél.",
+            name: "Frankfurt · Apfelwein, Grüne Soße, Handkäse",
+            meta: "Németország · Frankfurt",
+            description: "Frankfurtban a gasztronómia Sachsenhausenben él — az almaboros fogadók, a hesseni paraszti konyha és az egyszerű, olcsó, autentikus vacsorák. Nem elegáns, de emlékezetes.",
             tastes: [
-              "Schnitzel: ismerős panírozott hús, itt általában vékonyabb és ropogósabb, mint a hazai átlag.",
-              "Currywurst: felvágott sült kolbász currys paradicsomszósszal; olyan, mint a street foodos sült virsli felturbózva.",
-              "Käsespätzle vagy Flammkuchen: az egyik sajtos nokedliféle, a másik vékony, ropogós tejfölös lepény; mindkettő autós nap végére jó komfortétel."
+              "Grüne Soße (Grie Soß): 7 friss gyógynövényből (borsmenta, medvehagyma, metélőhagyma, petrezselyem, borágó, turbolya, vízitorma) készített hideg mártás főtt tojással és burgonyával — Goethe kedvence, frankurti specialitás.",
+              "Handkäse mit Musik: savanyú túrósajt hagymás-ecetes-olajbogyós 'zenekarral' rozskenyéren — erős szagú, savanykás, az Apfelwein tökéletes kísérője.",
+              "Frankfurter Würstchen: a valódi frankfurti virsli — vékony, füstölt, mustárral és sós perecczel; az első európai védett eredetmegjelölésű hentesáru.",
+              "Bethmännchen: mandulás marcipán-golyó — frankfurti karácsonyi édesség, de év közben is kapható a belvárosban."
             ]
+          }
+        ],
+        iconicRestaurants: [
+          {
+            name: "Fischerhaus",
+            maps: "https://www.google.com/maps/search/?api=1&query=Fischerhaus+restaurant+Hamburg",
+            stars: "★4.3",
+            city: "Hamburg · Landungsbrücken",
+            note: "Hamburgi kikötői halétterem — matjes, angolna, garnéla, Labskaus. Az Elba-panoráma és a halételek kombinációja. Klasszikus hamburgi vacsora."
+          },
+          {
+            name: "Schiffergesellschaft",
+            maps: "https://www.google.com/maps/search/?api=1&query=Schiffergesellschaft+restaurant+Lübeck",
+            stars: "★4.3",
+            city: "Lübeck · DE",
+            note: "1535 óta nyitva — tengerész-céh egykori fogadója. Lübeck legikonikusabb étterme: gerendás mennyezet, hajómodellek, halételek és Lübecker Rum."
+          },
+          {
+            name: "Zum Wagner",
+            maps: "https://www.google.com/maps/search/?api=1&query=Zum+Wagner+Frankfurt+Sachsenhausen",
+            stars: "★4.3",
+            city: "Frankfurt · Sachsenhausen",
+            note: "A leghíresebb frankfurti Apfelwein-fogadó — Bembel-ből töltik az almabort, Grüne Soße és Handkäse az alap. Zajos, sűrű, autentikus. Foglalás erősen ajánlott estére."
+          },
+          {
+            name: "Dauth-Schneider",
+            maps: "https://www.google.com/maps/search/?api=1&query=Dauth-Schneider+Frankfurt",
+            stars: "★4.3",
+            city: "Frankfurt · Sachsenhausen",
+            note: "Másik klasszikus frankfurti almaboros fogadó — Wagner riválisa. Kicsit csendesebb, hasonló ételek, szintén jó Grüne Soße."
+          },
+          {
+            name: "Miniatur Wunderland Café",
+            maps: "https://www.google.com/maps/search/?api=1&query=Miniatur+Wunderland+Hamburg+cafe",
+            stars: null,
+            city: "Hamburg · Speicherstadt",
+            note: "A Miniatur Wunderland épületében lévő kávézó — nem csúcsgasztronómia, de a Speicherstadt-körút logisztikájához beépítve praktikus ebédhely."
           }
         ]
       }

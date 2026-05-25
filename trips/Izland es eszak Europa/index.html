@@ -32,7 +32,7 @@
       { id: "baltikum", label: "Baltikum" },
       { id: "izland", label: "Izland" },
       { id: "hazaut", label: "Hazaút" },
-      { id: "restaurants", label: "Éttermek" },
+      { id: "restaurants", label: "Gasztronómia" },
       { id: "practical", label: "🧳 Praktikus" },
       { id: "weather", label: "🌦 Időjárás" },
       { id: "readings", label: "📖 Tervezés" },
@@ -600,7 +600,7 @@
         <section class="view" data-view="restaurants">
           <div class="section-head">
             <div>
-              <h2><span>nem konkrét foglalások, hanem route-logika</span>Éttermek és gasztró fókusz</h2>
+              <h2><span>ikonikus fogások · helyi italok · ajánlott éttermek</span>Gasztronómia</h2>
             </div>
           </div>
           <section class="card section-card">
@@ -611,6 +611,17 @@
               <section class="restaurant-city">
                 <h3>${group.title}</h3>
                 ${group.text ? `<p class="restaurant-group-text">${group.text}</p>` : ""}
+
+                ${group.history ? `
+                  <details class="gastro-history-block">
+                    <summary class="gastro-history-summary">
+                      <span>📖 Gasztronómiáról röviden</span>
+                      <span class="collapse-icon" aria-hidden="true">▾</span>
+                    </summary>
+                    <p class="gastro-history-text">${group.history}</p>
+                  </details>
+                ` : ""}
+
                 <div class="restaurant-row">
                   ${group.items.map((item) => `
                     <article class="restaurant-card">
@@ -630,6 +641,31 @@
                     </article>
                   `).join("")}
                 </div>
+
+                ${group.drinks && group.drinks.length ? `
+                  <div class="gastro-drinks-block">
+                    <div class="gastro-drinks-title">🥂 Helyi italok</div>
+                    <ul class="gastro-drinks-list">
+                      ${group.drinks.map((d) => `<li>${d}</li>`).join("")}
+                    </ul>
+                  </div>
+                ` : ""}
+
+                ${group.iconicRestaurants && group.iconicRestaurants.length ? `
+                  <div class="gastro-reco-block">
+                    <div class="gastro-reco-title">🍽 Ajánlott éttermek az útvonalon</div>
+                    <div class="gastro-reco-grid">
+                      ${group.iconicRestaurants.map((r) => `
+                        <div class="gastro-reco-card">
+                          <div class="gastro-reco-name">${r.maps ? `<a href="${r.maps}" target="_blank" rel="noreferrer">${r.name}</a>` : r.name}${r.stars ? ` <span class="gastro-reco-stars">${r.stars}</span>` : ""}</div>
+                          <div class="gastro-reco-city">${r.city}</div>
+                          <div class="gastro-reco-note">${r.note}</div>
+                        </div>
+                      `).join("")}
+                    </div>
+                  </div>
+                ` : ""}
+
               </section>
             `).join("")}
           </div>
