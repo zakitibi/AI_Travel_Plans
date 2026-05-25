@@ -1082,11 +1082,7 @@ const tripData = {
           links: [
             { label: "umferdin.is megnyitása ↗", url: "https://umferdin.is/en" },
             { label: "Vegagerðin útállapot", url: "https://vegasja.vegagerdin.is/eng/" }
-          ],
-          embed: {
-            title: "Umferðin — Iceland Traffic",
-            src: "https://umferdin.is/en"
-          }
+          ]
         }
       },
       extraResources: [
