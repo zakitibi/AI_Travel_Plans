@@ -320,6 +320,8 @@ async function initOverviewMap() {
       attributionControl: true,
       preferCanvas:       true,
     }).setView([60, 5], 4);
+    window._leafletMaps = window._leafletMaps || {};
+    window._leafletMaps["overview-map"] = map;
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:

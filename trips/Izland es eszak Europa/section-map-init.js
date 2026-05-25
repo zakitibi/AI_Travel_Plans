@@ -295,6 +295,8 @@ async function initSectionMap(stageId) {
       attributionControl: true,
       preferCanvas:       true,
     }).setView([60, 15], 4);
+    window._leafletMaps = window._leafletMaps || {};
+    window._leafletMaps[containerId] = map;
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:

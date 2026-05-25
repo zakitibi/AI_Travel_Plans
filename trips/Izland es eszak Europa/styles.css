@@ -2254,3 +2254,34 @@ a {
     text-align: left;
   }
 }
+
+/* ── Collapsible card (coll-card) ─────────────────────────────────────────── */
+/*
+ * Converts any .card into a collapsible <details> block.
+ * Usage: <details class="card … coll-card" open>
+ *          <summary class="coll-card-head | map-card-head">…<span class="collapse-icon">▾</span></summary>
+ *          …body…
+ *        </details>
+ */
+
+details.coll-card > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+details.coll-card > summary::-webkit-details-marker { display: none; }
+details.coll-card > summary::marker               { display: none; }
+
+details.coll-card[open] > summary .collapse-icon {
+  transform: rotate(180deg);
+}
+
+/* Simple flex header for overview & section maps */
+.coll-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 10px;
+}

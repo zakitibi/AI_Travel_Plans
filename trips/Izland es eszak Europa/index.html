@@ -61,7 +61,7 @@
     tripData.ticketGroups.forEach((group) => {
       const card = document.createElement("details");
       card.className = "ticket-group";
-      card.open = true;
+      card.open = false;
       card.innerHTML = `
         <summary class="ticket-group-summary">
           <div class="ticket-group-head">
@@ -269,23 +269,26 @@
                   ${phaseGroup("return",  "🚗", "Hazaút",    "júl. 26. – aug. 6. · Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest", returnTimeline,  false)}
                 </div>
               </section>
-              <section class="card section-card">
-                <h3 class="map-section-title">🗺 Interaktív útvonal-térkép</h3>
+              <details class="card section-card coll-card" open>
+                <summary class="coll-card-head">
+                  <span class="map-section-title" style="margin:0;">🗺 Interaktív útvonal-térkép</span>
+                  <span class="collapse-icon" aria-hidden="true">▾</span>
+                </summary>
                 <p class="section-intro" style="margin-bottom:10px;">
                   Minden állomás szakasz, típus és nap szerint szűrhető.
                   Egy fázis kinyitása a napi idővonalban automatikusan arra szűr a térképen.
                 </p>
-              </section>
-              <div class="map-filter-wrap">
-                <div class="travel-map-wrap" style="height:420px;">
-                  <div id="overview-map" style="width:100%;height:100%;"></div>
-                  <div class="tm-overlay">
-                    <div class="tm-spinner"></div>
-                    <span>Térkép betöltése…</span>
+                <div class="map-filter-wrap">
+                  <div class="travel-map-wrap" style="height:420px;">
+                    <div id="overview-map" style="width:100%;height:100%;"></div>
+                    <div class="tm-overlay">
+                      <div class="tm-spinner"></div>
+                      <span>Térkép betöltése…</span>
+                    </div>
                   </div>
+                  <aside class="dm-filter-sidebar" id="overview-map-filter"></aside>
                 </div>
-                <aside class="dm-filter-sidebar" id="overview-map-filter"></aside>
-              </div>
+              </details>
             </div>
             <div class="stack">
               <section class="card">
@@ -302,8 +305,11 @@
                   `).join("")}
                 </div>
               </section>
-              <section class="card">
-                <h2 class="section-title">🗺 Interaktív térkép</h2>
+              <details class="card coll-card" open>
+                <summary class="coll-card-head">
+                  <h2 class="section-title" style="margin:0;">🗺 Interaktív térkép</h2>
+                  <span class="collapse-icon" aria-hidden="true">▾</span>
+                </summary>
                 <p style="font-size:0.78rem;color:var(--muted);margin-bottom:10px;">Teljes útvonal — Baltikum · Izland · Hazaút · repülők · Ring Road. <a href="https://www.google.com/maps/d/u/0/edit?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q&usp=sharing" target="_blank" rel="noreferrer" style="color:var(--green);font-weight:600;">Megnyitás Google Maps-ben ↗</a></p>
                 <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
                   <iframe
@@ -316,7 +322,7 @@
                     referrerpolicy="no-referrer-when-downgrade">
                   </iframe>
                 </div>
-              </section>
+              </details>
               <section class="card">
                 <h2 class="section-title">🧭 Fő utazások</h2>
                 <div class="summary-grid">
@@ -529,14 +535,17 @@
         </section>
       ` : "";
       const bottomMaps = section.mapAsset && section.mapAsset.bottomMaps ? `
-        <section class="card section-card map-card map-card-bottom">
-          <div class="map-card-head">
+        <details class="card section-card map-card map-card-bottom coll-card" open>
+          <summary class="map-card-head">
             <div>
               <h3 class="info-title">${section.mapAsset.bottomMaps.title}</h3>
               <p class="info-text">${section.mapAsset.bottomMaps.text}</p>
             </div>
-            <div class="context-sources">${renderLinkList(section.mapAsset.bottomMaps.links)}</div>
-          </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div class="context-sources">${renderLinkList(section.mapAsset.bottomMaps.links)}</div>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </div>
+          </summary>
           ${section.mapAsset.bottomMaps.embeds && section.mapAsset.bottomMaps.embeds.length ? `
             <div class="embedded-map-grid">
               ${section.mapAsset.bottomMaps.embeds.map((embed) => `
@@ -554,19 +563,22 @@
               `).join("")}
             </div>
           ` : ""}
-        </section>
+        </details>
       ` : "";
       const bottomMap = section.mapAsset && section.mapAsset.bottomAsset ? (() => {
         const ba = section.mapAsset.bottomAsset;
         return `
-          <section class="card section-card map-card map-card-bottom">
-            <div class="map-card-head">
+          <details class="card section-card map-card map-card-bottom coll-card" open>
+            <summary class="map-card-head">
               <div>
                 <h3 class="info-title">${ba.title}</h3>
                 <p class="info-text">${ba.text}</p>
               </div>
-              <div class="context-sources">${renderLinkList(ba.links)}</div>
-            </div>
+              <div style="display:flex;align-items:flex-start;gap:10px;">
+                <div class="context-sources">${renderLinkList(ba.links)}</div>
+                <span class="collapse-icon" aria-hidden="true">▾</span>
+              </div>
+            </summary>
             ${ba.image ? `<img class="section-map-image" src="${ba.image}" alt="${ba.title}">` : ""}
             ${ba.embed ? `
               <div class="embedded-map-wrap" style="margin-top:12px;">
@@ -582,7 +594,7 @@
                 </iframe>
               </div>
             ` : ""}
-          </section>
+          </details>
         `;
       })() : "";
       return `
@@ -642,22 +654,25 @@
           </section>
           ${bottomMaps}
           ${bottomMap}
-          <section class="card section-card" style="margin-top:20px;">
-            <h3 class="info-title">🗺 Szakasz-térkép</h3>
+          <details class="card section-card coll-card" style="margin-top:20px;" open>
+            <summary class="coll-card-head">
+              <h3 class="info-title" style="margin:0;">🗺 Szakasz-térkép</h3>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
             <p class="info-text" style="margin-bottom:10px;">
               Az összes szállás, megálló és látnivaló az adott szakaszon. Típus és nap szerint szűrhető.
             </p>
-          </section>
-          <div class="map-filter-wrap">
-            <div class="travel-map-wrap">
-              <div id="${sectionKey}-map" style="width:100%;height:100%;"></div>
-              <div class="tm-overlay">
-                <div class="tm-spinner"></div>
-                <span>Térkép betöltése…</span>
+            <div class="map-filter-wrap">
+              <div class="travel-map-wrap">
+                <div id="${sectionKey}-map" style="width:100%;height:100%;"></div>
+                <div class="tm-overlay">
+                  <div class="tm-spinner"></div>
+                  <span>Térkép betöltése…</span>
+                </div>
               </div>
+              <aside class="dm-filter-sidebar" id="${sectionKey}-map-filter"></aside>
             </div>
-            <aside class="dm-filter-sidebar" id="${sectionKey}-map-filter"></aside>
-          </div>
+          </details>
         </section>
       `;
     }
@@ -1038,6 +1053,16 @@
       if (!button) return;
       activateTab(button.dataset.tab);
     });
+
+    // Leaflet invalidateSize when a collapsible map card is re-opened
+    document.addEventListener("toggle", (e) => {
+      if (!e.target.open || !window._leafletMaps) return;
+      requestAnimationFrame(() => {
+        for (const m of Object.values(window._leafletMaps)) {
+          try { m.invalidateSize(); } catch(_) {}
+        }
+      });
+    }, true);
   </script>
   <script type="module" src="./map-init.js"></script>
   <script type="module" src="./detail-map-init.js"></script>
