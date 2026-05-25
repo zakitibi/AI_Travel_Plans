@@ -8,12 +8,20 @@
 
 import { TravelMap } from "../../engine/TravelMap.js";
 
-/** Google Apps Script web-app URL (published as "Anyone, even anonymous"). */
-const API_URL =
-  "https://script.google.com/macros/s/AKfycbx9FuIYukiZr-HZaHTWZgP7JLyqd6mvJcY_44cv3VBxH1DdxFHvozyUmygOSjVsmBaA/exec?trip=EszakEuropa";
+/**
+ * Primary source: local static JSON (instant, always works).
+ * When the Google Apps Script web app is published and tested,
+ * swap PRIMARY_URL ↔ API_URL to use live Sheets data instead.
+ */
+const PRIMARY_URL = "./map-data.json";
 
-/** Local JSON fallback for offline / CORS-blocked development. */
-const FALLBACK_URL = "./map-data.json";
+/**
+ * Google Apps Script web-app URL.
+ * Set this as PRIMARY_URL once the script is published as
+ * "Anyone can access" and verified to return correct JSON.
+ */
+// const API_URL =
+//   "https://script.google.com/macros/s/AKfycbx9FuIYukiZr-HZaHTWZgP7JLyqd6mvJcY_44cv3VBxH1DdxFHvozyUmygOSjVsmBaA/exec?trip=EszakEuropa";
 
 /** @type {TravelMap|null} */
 let travelMap = null;
@@ -29,12 +37,12 @@ async function initMapOnce() {
 
   travelMap = new TravelMap("trip-map", {
     groupBy:       "szakasz",
-    fallbackUrl:   FALLBACK_URL,
-    defaultZoom:   5,
-    defaultCenter: [62, 18],   // centred on Scandinavia / Iceland region
+    fallbackUrl:   null,       // no secondary fallback needed when using local JSON
+    defaultZoom:   4,
+    defaultCenter: [60, 5],    // centred on Scandinavia + Iceland
   });
 
-  await travelMap.load(API_URL);
+  await travelMap.load(PRIMARY_URL);
 }
 
 /**

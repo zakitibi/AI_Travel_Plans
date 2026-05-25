@@ -40,17 +40,34 @@ function matrixToRows(values) {
 }
 
 /**
+ * Fetch with an AbortController timeout.
+ * @param {string} url
+ * @param {object} [opts]  fetch options
+ * @param {number} [timeoutMs=8000]
+ */
+async function fetchWithTimeout(url, opts = {}, timeoutMs = 8000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...opts, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/**
  * Load trip rows from the API, with optional local fallback.
  *
  * @param {string} apiUrl       Full URL incl. ?trip=XXX query param.
  * @param {string} [fallbackUrl] Path to a local JSON file for offline dev.
+ * @param {number} [timeoutMs=8000]  API request timeout in milliseconds.
  * @returns {Promise<Object[]>} Normalised row array (Lat/Lng as numbers).
  */
-export async function loadTripData(apiUrl, fallbackUrl = null) {
+export async function loadTripData(apiUrl, fallbackUrl = null, timeoutMs = 8000) {
   let raw;
 
   try {
-    const res = await fetch(apiUrl, { cache: "no-store" });
+    const res = await fetchWithTimeout(apiUrl, { cache: "no-store" }, timeoutMs);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     raw = await res.json();
   } catch (primaryErr) {

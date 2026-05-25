@@ -1,0 +1,332 @@
+[
+  {
+    "Nap": "1",  "Dátum": "2026.07.10", "Szakasz": "Baltikum",
+    "Ország": "Magyarország", "Start": "Budapest", "Cél": "Budapest",
+    "Típus": "drive", "Km": "0",
+    "Megjegyzés": "Indulás reggel 07:00 — cél ~Suwałki, Lengyelország",
+    "Lat": "47.4979", "Lng": "19.0402"
+  },
+  {
+    "Nap": "1",  "Dátum": "2026.07.10", "Szakasz": "Baltikum",
+    "Ország": "Lengyelország", "Start": "Budapest", "Cél": "Suwałki",
+    "Szállás": "Suwałki szállás", "Típus": "hotel", "Km": "900",
+    "Közlekedés": "autó", "Indulás": "07:00", "Érkezés": "20:00",
+    "Megjegyzés": "~900 km-es etap, ~10h vezetés; tranzit Lengyelországon át",
+    "Lat": "54.0990", "Lng": "22.9305"
+  },
+  {
+    "Nap": "2",  "Dátum": "2026.07.11", "Szakasz": "Baltikum",
+    "Ország": "Litvánia", "Start": "Suwałki", "Cél": "Vilnius",
+    "Szállás": "Vilnius hotel", "Típus": "hotel", "Km": "650",
+    "Közlekedés": "autó", "Indulás": "08:00", "Érkezés": "19:00",
+    "Megjegyzés": "Belépés Litvániába; esti érkezés Vilniusba",
+    "Lat": "54.6872", "Lng": "25.2797"
+  },
+  {
+    "Nap": "3",  "Dátum": "2026.07.12", "Szakasz": "Baltikum",
+    "Ország": "Litvánia", "Start": "Vilnius", "Cél": "Trakai",
+    "Típus": "sight", "Km": "28",
+    "Közlekedés": "autó", "Indulás": "12:00", "Érkezés": "13:00",
+    "Megjegyzés": "Trakai-kastély tóban — Litvánia egyik legfotogenikusabb pontja",
+    "Látnivalók / Program": "Trakai Island Castle, góndola a tóhoz, kibai kebabok",
+    "Lat": "54.6387", "Lng": "24.9342"
+  },
+  {
+    "Nap": "4",  "Dátum": "2026.07.13", "Szakasz": "Baltikum",
+    "Ország": "Litvánia", "Start": "Vilnius", "Cél": "Keresztek Hegye",
+    "Típus": "sight", "Km": "215",
+    "Közlekedés": "autó", "Indulás": "09:00", "Érkezés": "11:30",
+    "Megjegyzés": "Hill of Crosses — zarándokhely Šiauliai mellett, ~50 000 kereszt",
+    "Látnivalók / Program": "Keresztek Hegye (Kryžių kalnas)",
+    "Lat": "56.0158", "Lng": "23.4168"
+  },
+  {
+    "Nap": "4",  "Dátum": "2026.07.13", "Szakasz": "Baltikum",
+    "Ország": "Lettország", "Start": "Keresztek Hegye", "Cél": "Riga",
+    "Szállás": "Riga hotel", "Típus": "hotel", "Km": "300",
+    "Közlekedés": "autó", "Indulás": "09:00", "Érkezés": "18:00",
+    "Megjegyzés": "Esti megérkezés — Old Town és a folyópart első benyomás",
+    "Lat": "56.9496", "Lng": "24.1052"
+  },
+  {
+    "Nap": "5",  "Dátum": "2026.07.14", "Szakasz": "Baltikum",
+    "Ország": "Lettország", "Start": "Riga", "Cél": "Riga",
+    "Típus": "sight",
+    "Megjegyzés": "Gyalogos nap — Old Town, Art Nouveau negyed, Központi Piac",
+    "Látnivalók / Program": "Dóm tér, Fekete Fejek Háza, Art Nouveau épületek, Rigai Piac",
+    "Lat": "56.9460", "Lng": "24.1059"
+  },
+  {
+    "Nap": "6",  "Dátum": "2026.07.15", "Szakasz": "Baltikum",
+    "Ország": "Lettország", "Start": "Riga", "Cél": "Sigulda",
+    "Típus": "sight", "Km": "52",
+    "Közlekedés": "autó", "Indulás": "08:00", "Érkezés": "10:00",
+    "Megjegyzés": "Gauja Nemzeti Park — középkori várak és Sigulda-kastély",
+    "Látnivalók / Program": "Turaida várkastély, Sigulda vár, Gauja kanyon kilátó",
+    "Lat": "57.1541", "Lng": "24.8573"
+  },
+  {
+    "Nap": "6",  "Dátum": "2026.07.15", "Szakasz": "Baltikum",
+    "Ország": "Észtország", "Start": "Sigulda", "Cél": "Tallinn",
+    "Szállás": "Tallinn hotel", "Típus": "hotel", "Km": "350",
+    "Közlekedés": "autó", "Indulás": "08:00", "Érkezés": "20:00",
+    "Megjegyzés": "Hosszú etap, de Sigulda megéri a kitérőt",
+    "Lat": "59.4370", "Lng": "24.7536"
+  },
+  {
+    "Nap": "7",  "Dátum": "2026.07.16", "Szakasz": "Baltikum",
+    "Ország": "Észtország", "Start": "Tallinn", "Cél": "Tallinn",
+    "Típus": "sight",
+    "Megjegyzés": "Tallinn óváros — a legjobb megőrzött középkori városmag a Baltikumban",
+    "Látnivalók / Program": "Toompea, Alexander Nevsky katedrális, Raekoja plats, Vanalinn",
+    "Lat": "59.4370", "Lng": "24.7450"
+  },
+  {
+    "Nap": "8",  "Dátum": "2026.07.17", "Szakasz": "Baltikum",
+    "Ország": "Finnország", "Start": "Tallinn", "Cél": "Helsinki",
+    "Típus": "ferry", "Km": "85",
+    "Közlekedés": "Tallink Shuttle", "Indulás": "10:30", "Érkezés": "12:30",
+    "Megjegyzés": "Tallink Shuttle Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra)",
+    "Lat": "60.1699", "Lng": "24.9384"
+  },
+  {
+    "Nap": "8",  "Dátum": "2026.07.17", "Szakasz": "Baltikum",
+    "Ország": "Finnország", "Start": "Helsinki", "Cél": "Turku",
+    "Típus": "drive", "Km": "170",
+    "Közlekedés": "autó", "Indulás": "14:30", "Érkezés": "16:30",
+    "Megjegyzés": "Turku Castle megtekintés, majd Viking Line check-in 20:00",
+    "Látnivalók / Program": "Turku Castle (Turun linna)",
+    "Lat": "60.4518", "Lng": "22.2666"
+  },
+  {
+    "Nap": "9",  "Dátum": "2026.07.18", "Szakasz": "Baltikum",
+    "Ország": "Svédország", "Start": "Turku", "Cél": "Stockholm Värtahamnen",
+    "Típus": "ferry",
+    "Közlekedés": "Viking Line", "Indulás": "20:00", "Érkezés": "06:30+1",
+    "Megjegyzés": "Viking Line overnight: Turku → Mariehamn (Åland) → Stockholm (10,5h)",
+    "Lat": "59.3665", "Lng": "18.1156"
+  },
+  {
+    "Nap": "9",  "Dátum": "2026.07.18", "Szakasz": "Baltikum",
+    "Ország": "Svédország", "Start": "Stockholm", "Cél": "Stockholm / Arlanda",
+    "Típus": "flight",
+    "Közlekedés": "Finnair FI309", "Indulás": "17:10", "Érkezés": "18:55",
+    "Megjegyzés": "Arlanda hosszú távú parkolóból FI309 Stockholm → Keflavík (1h 45min)",
+    "Lat": "59.6498", "Lng": "17.9238"
+  },
+  {
+    "Nap": "10", "Dátum": "2026.07.19", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Keflavík", "Cél": "Reykjavík",
+    "Szállás": "Reykjavík hotel", "Típus": "hotel", "Km": "50",
+    "Közlekedés": "autó", "Indulás": "19:00", "Érkezés": "20:00",
+    "Megjegyzés": "Izlandi találkozó Hennivel — közös Ring Road körút kezdete",
+    "Lat": "64.1355", "Lng": "-21.8954"
+  },
+  {
+    "Nap": "10", "Dátum": "2026.07.19", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Reykjavík", "Cél": "Sky Lagoon",
+    "Típus": "sight", "Km": "6",
+    "Megjegyzés": "Sky Lagoon: geotermikus élmény az óceánparton Reykjavík közelében",
+    "Látnivalók / Program": "Sky Lagoon — 7 lépéses rituál, Skjól medence",
+    "Lat": "63.9992", "Lng": "-22.0100"
+  },
+  {
+    "Nap": "11", "Dátum": "2026.07.20", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Reykjavík", "Cél": "Snæfellsnes",
+    "Szállás": "Snæfellsnes vendégház", "Típus": "hotel", "Km": "200",
+    "Közlekedés": "autó", "Indulás": "07:00", "Érkezés": "21:00",
+    "Megjegyzés": "Snæfellsnes félsziget — Jules Verne Utazás a Föld középpontja felé helyszíne",
+    "Látnivalók / Program": "Búðakirkja (fekete templomocska), Arnarstapi, Lóndrangar, Kirkjufell",
+    "Lat": "64.7474", "Lng": "-23.5258"
+  },
+  {
+    "Nap": "11", "Dátum": "2026.07.20", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Snæfellsnes", "Cél": "Kirkjufell",
+    "Típus": "sight",
+    "Megjegyzés": "Kirkjufell — Izland legtöbbet fotózott hegye, vízesés előtérrel",
+    "Látnivalók / Program": "Kirkjufell + Kirkjufellsfoss vízesés",
+    "Lat": "64.9413", "Lng": "-23.3075"
+  },
+  {
+    "Nap": "12", "Dátum": "2026.07.21", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Snæfellsnes", "Cél": "Akureyri",
+    "Típus": "sight", "Km": "320",
+    "Közlekedés": "autó",
+    "Látnivalók / Program": "Akureyri – 'az Észak fővárosa', botanikus kert, Akureyrarkirkja",
+    "Lat": "65.6835", "Lng": "-18.1262"
+  },
+  {
+    "Nap": "12", "Dátum": "2026.07.21", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Akureyri", "Cél": "Goðafoss",
+    "Típus": "sight", "Km": "50",
+    "Megjegyzés": "Goðafoss — az istenek vízesése, ahol 1000-ben belehajigálták a pogány bálványokat",
+    "Látnivalók / Program": "Goðafoss vízesés — két ív, két oldal, 30m széles",
+    "Lat": "65.6826", "Lng": "-17.5501"
+  },
+  {
+    "Nap": "12", "Dátum": "2026.07.21", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Goðafoss", "Cél": "Mývatn",
+    "Szállás": "Mývatn hotel", "Típus": "hotel", "Km": "100",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Mývatn-tó térség — vulkáni táj, pszeudokráterek, Mývatn Nature Baths",
+    "Látnivalók / Program": "Hverfjall kráter, Dimmuborgir lávamező, Mývatn Nature Baths",
+    "Lat": "65.6007", "Lng": "-16.9985"
+  },
+  {
+    "Nap": "13", "Dátum": "2026.07.22", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Mývatn", "Cél": "Dettifoss",
+    "Típus": "sight", "Km": "85",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Dettifoss — Európa legnagyobb vízesése vízhozam szerint (500 m³/s)",
+    "Látnivalók / Program": "Dettifoss + Selfoss vízesés (feljebb, szelídebb, de szép)",
+    "Lat": "65.8147", "Lng": "-16.3848"
+  },
+  {
+    "Nap": "13", "Dátum": "2026.07.22", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Dettifoss", "Cél": "Egilsstaðir",
+    "Szállás": "Egilsstaðir hotel", "Típus": "hotel", "Km": "200",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Keleti Izland kapuvárosa — nyírfaerdők, hatalmas Lagarfljót-tó",
+    "Látnivalók / Program": "Stuðlagil bazaltkanyon (kitérő), Lagarfljót-tó",
+    "Lat": "65.2692", "Lng": "-14.3942"
+  },
+  {
+    "Nap": "14", "Dátum": "2026.07.23", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Egilsstaðir", "Cél": "Vestrahorn",
+    "Típus": "sight", "Km": "250",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Vestrahorn — drámai fekete homok + hegycsúcs háttér, Viking Village helyszín",
+    "Látnivalók / Program": "Stokksnes-félsziget, Viking Village (belépőjegyes)",
+    "Lat": "64.2517", "Lng": "-14.9850"
+  },
+  {
+    "Nap": "14", "Dátum": "2026.07.23", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Vestrahorn", "Cél": "Höfn",
+    "Szállás": "Höfn hotel", "Típus": "hotel", "Km": "30",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Höfn — Izland garnélarák-fővárosa, Vatnajökull gleccser panoráma",
+    "Lat": "64.2536", "Lng": "-15.2085"
+  },
+  {
+    "Nap": "14", "Dátum": "2026.07.23", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Höfn", "Cél": "Jökulsárlón",
+    "Típus": "sight", "Km": "80",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Jökulsárlón jégtó + Diamond Beach — gleccserek, jégtömbök, fókák",
+    "Látnivalók / Program": "Jökulsárlón hajókirándulás, Diamond Beach fekete homok + jégdarabok",
+    "Lat": "64.0784", "Lng": "-16.2306"
+  },
+  {
+    "Nap": "15", "Dátum": "2026.07.24", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Höfn", "Cél": "Fjaðrárgljúfur",
+    "Típus": "sight", "Km": "230",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Fjaðrárgljúfur kanyon — Justin Bieber 'I'll Show You' videóklip helyszíne",
+    "Látnivalók / Program": "Fjaðrárgljúfur kanyon, Kirkjubæjarklaustur",
+    "Lat": "63.7739", "Lng": "-18.1726"
+  },
+  {
+    "Nap": "15", "Dátum": "2026.07.24", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Fjaðrárgljúfur", "Cél": "Vík",
+    "Szállás": "Vík hotel", "Típus": "hotel", "Km": "75",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Vík — Izland legdélibb pontja, fekete bazalt Reynisfjara strand",
+    "Látnivalók / Program": "Reynisfjara (30m távolság a víztől!), Reynisdrangar bazalt oszlopok",
+    "Lat": "63.4183", "Lng": "-19.0065"
+  },
+  {
+    "Nap": "15", "Dátum": "2026.07.24", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Vík", "Cél": "Skógafoss",
+    "Típus": "sight", "Km": "32",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Skógafoss — 60m magas, 25m széles vízesés; lépcső a tetejéhez",
+    "Látnivalók / Program": "Skógafoss + Seljavallalaug szabadtéri medence (mellé kitérő)",
+    "Lat": "63.5320", "Lng": "-19.5157"
+  },
+  {
+    "Nap": "16", "Dátum": "2026.07.25", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Vík", "Cél": "Þingvellir",
+    "Típus": "sight", "Km": "230",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Þingvellir — ahol az Eurázsiai és Észak-Amerikai lemez szétválik; UNESCO",
+    "Látnivalók / Program": "Þingvellir NP, Almannagjá szurdok, Öxará folyó",
+    "Lat": "64.2552", "Lng": "-21.1295"
+  },
+  {
+    "Nap": "16", "Dátum": "2026.07.25", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Þingvellir", "Cél": "Geysir",
+    "Típus": "sight", "Km": "65",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Geysir — a 'gejzír' szó eredete; Strokkur minden 5-8 percben tör ki",
+    "Látnivalók / Program": "Strokkur gejzír, Geysir geotermikus terület",
+    "Lat": "64.3104", "Lng": "-20.3034"
+  },
+  {
+    "Nap": "16", "Dátum": "2026.07.25", "Szakasz": "Izland",
+    "Ország": "Izland", "Start": "Geysir", "Cél": "Selfoss",
+    "Szállás": "Selfoss hotel", "Típus": "hotel", "Km": "60",
+    "Közlekedés": "autó",
+    "Megjegyzés": "Selfoss — az utolsó izlandi éjszaka; Keflavík reggelre 45 perc",
+    "Látnivalók / Program": "Gullfoss vízesés (út közben)",
+    "Lat": "63.9332", "Lng": "-20.9961"
+  },
+  {
+    "Nap": "17", "Dátum": "2026.07.26", "Szakasz": "Hazaút",
+    "Ország": "Svédország", "Start": "Keflavík", "Cél": "Stockholm / Arlanda",
+    "Típus": "flight",
+    "Közlekedés": "Finnair FI306", "Indulás": "08:00", "Érkezés": "12:00",
+    "Megjegyzés": "FI306 Keflavík → Stockholm Arlanda; autóbérlés Arlandánál",
+    "Lat": "59.6498", "Lng": "17.9238"
+  },
+  {
+    "Nap": "17", "Dátum": "2026.07.26", "Szakasz": "Hazaút",
+    "Ország": "Svédország", "Start": "Stockholm", "Cél": "Stockholm",
+    "Szállás": "Stockholm hotel", "Típus": "hotel",
+    "Megjegyzés": "3 napos stockholmi tartózkodás — Gamla Stan, Djurgården, Vaxholm sziget",
+    "Látnivalók / Program": "Gamla Stan, ABBA Museum, Vasa Museum, Djurgården",
+    "Lat": "59.3293", "Lng": "18.0686"
+  },
+  {
+    "Nap": "20", "Dátum": "2026.07.29", "Szakasz": "Hazaút",
+    "Ország": "Svédország/Dánia", "Start": "Stockholm", "Cél": "Malmö",
+    "Típus": "drive", "Km": "620",
+    "Közlekedés": "autó", "Indulás": "08:00",
+    "Megjegyzés": "Stockholm → Malmö, majd Öresund hídon Koppenhágába (~620 km)",
+    "Lat": "55.6050", "Lng": "13.0038"
+  },
+  {
+    "Nap": "20", "Dátum": "2026.07.29", "Szakasz": "Hazaút",
+    "Ország": "Dánia", "Start": "Malmö", "Cél": "Koppenhága",
+    "Szállás": "Koppenhága hotel", "Típus": "hotel", "Km": "20",
+    "Közlekedés": "autó/metró",
+    "Megjegyzés": "3 napos koppenhágai tartózkodás — Nyhavn, Rosenborg, Tivoli",
+    "Látnivalók / Program": "Nyhavn, Rosenborg Slot, Christiansborg, Kis Hableány, Tivoli, Louisiana",
+    "Lat": "55.6761", "Lng": "12.5683"
+  },
+  {
+    "Nap": "23", "Dátum": "2026.08.01", "Szakasz": "Hazaút",
+    "Ország": "Németország", "Start": "Koppenhága", "Cél": "Hamburg",
+    "Szállás": "Hamburg hotel", "Típus": "hotel", "Km": "310",
+    "Közlekedés": "autó", "Indulás": "12:00", "Érkezés": "16:00",
+    "Megjegyzés": "Louisiana Modern Art Museum megállóval, majd Hamburg — Speicherstadt, Reeperbahn",
+    "Látnivalók / Program": "Louisiana Museet (Humlebæk), Hamburg Speicherstadt, Elbphilharmonie",
+    "Lat": "53.5753", "Lng": "10.0153"
+  },
+  {
+    "Nap": "26", "Dátum": "2026.08.04", "Szakasz": "Hazaút",
+    "Ország": "Németország", "Start": "Hamburg", "Cél": "Frankfurt",
+    "Szállás": "Frankfurt hotel", "Típus": "hotel", "Km": "490",
+    "Közlekedés": "autó", "Indulás": "09:00", "Érkezés": "15:00",
+    "Megjegyzés": "Hamburg → Frankfurt ~490 km, utolsó előtti etap",
+    "Látnivalók / Program": "Frankfurt Altstadt, Römerberg, Sachsenhausen negyed",
+    "Lat": "50.1109", "Lng": "8.6821"
+  },
+  {
+    "Nap": "28", "Dátum": "2026.08.06", "Szakasz": "Hazaút",
+    "Ország": "Magyarország", "Start": "Frankfurt", "Cél": "Budapest",
+    "Típus": "drive", "Km": "1020",
+    "Közlekedés": "autó", "Indulás": "07:00", "Érkezés": "19:00",
+    "Megjegyzés": "Hazaérkezés 🏁 — 28 napos út vége",
+    "Lat": "47.4979", "Lng": "19.0402"
+  }
+]
