@@ -567,9 +567,21 @@
             </div>
             <div class="country-pill ${section.accent}">${section.pill}</div>
           </div>
+          ${section.introCollapsible ? `
+          <details class="country-context ${section.accent}" open>
+            <summary class="collapse-summary">
+              <span>📋 Szakasz összefoglalója</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <div class="country-context-body">
+              ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
+            </div>
+          </details>
+          ` : `
           <section class="card section-card">
             ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
           </section>
+          `}
           ${renderCollapseBox(generalInfoBox)}
           ${topMap}
           ${section.extraResources && section.extraResources.length ? section.extraResources.map((resource) => `
@@ -579,9 +591,22 @@
                 <span class="collapse-icon" aria-hidden="true">▾</span>
               </summary>
               <div class="country-context-body">
-                <p class="info-text">${resource.text}</p>
+                ${resource.text ? `<p class="info-text">${resource.text}</p>` : ""}
                 ${resource.links && resource.links.length ? `<div class="context-sources">${renderLinkList(resource.links)}</div>` : ""}
                 ${resource.items && resource.items.length ? `<ul class="plain-list compact top-gap">${resource.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+                ${resource.subBoxes && resource.subBoxes.length ? resource.subBoxes.map((sub) => `
+                  <details class="country-context-inner ${sub.accent || resource.accent || section.accent}" ${sub.open ? "open" : ""}>
+                    <summary class="collapse-summary">
+                      <span>${sub.title}</span>
+                      <span class="collapse-icon" aria-hidden="true">▾</span>
+                    </summary>
+                    <div class="country-context-body">
+                      ${sub.text ? `<p class="info-text">${sub.text}</p>` : ""}
+                      ${sub.links && sub.links.length ? `<div class="context-sources">${renderLinkList(sub.links)}</div>` : ""}
+                      ${sub.items && sub.items.length ? `<ul class="plain-list compact top-gap">${sub.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+                    </div>
+                  </details>
+                `).join("") : ""}
               </div>
             </details>
           `).join("") : ""}

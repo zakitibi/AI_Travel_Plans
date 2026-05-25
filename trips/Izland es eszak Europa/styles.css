@@ -983,6 +983,34 @@ a {
   padding: 0 16px 16px;
 }
 
+.country-context-inner {
+  margin: 10px 0 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.55);
+  overflow: hidden;
+}
+
+.country-context-inner summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.country-context-inner summary::-webkit-details-marker {
+  display: none;
+}
+
+.country-context-inner[open] .collapse-icon {
+  transform: rotate(180deg);
+}
+
+.country-context-inner .country-context-body {
+  padding: 0 14px 14px;
+}
+
 .context-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

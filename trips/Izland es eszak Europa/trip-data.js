@@ -28,7 +28,7 @@ const tripData = {
     { label: "BUD", cls: "flight" }
   ],
   icelandGeneralBox: {
-    title: "🧭 Izland · általános napi útmutató",
+    title: "🧭 Általános napi útmutató",
     accent: "iceland",
     open: false,
     layout: "stack",
@@ -79,6 +79,24 @@ const tripData = {
         title: "🔁 Snæfellsnes cserehorog",
         paragraphs: [
           "Ha Day 3-ra köd vagy eső jön, akkor a jó swap a Day 2 és Day 3 felcserélése: előre Snæfellsnes, hátra Reykjavík + Sky Lagoon. Ezt a <a href='https://en.vedur.is/weather/forecasts/areas/' target='_blank' rel='noreferrer'>vedur.is</a> alapján érdemes meghúzni, csak akkor, ha tényleg jó Day 2 és rossz Day 3 kombináció látszik."
+        ]
+      },
+      {
+        title: "🛻 Autó és biztosítás (extra)",
+        paragraphs: [
+          "2WD teljesen elég a Ring Roadhoz — 4WD csak F-utas kitérőknél kötelező (Landmannalaugar, Askja). Átvételkor fényképezd körbe az autót: ablakok, lökhárítók, kisebb karcok. Gravel insurance (SCDW) ajánlott, mert kavicsfelverődés és szélkár a leggyakoribb káresemény."
+        ]
+      },
+      {
+        title: "🏠 Szállás logika",
+        paragraphs: [
+          "3 csillagos hotel vagy vendégház jól működik: az élmény nem a szálláson, hanem a tájon van. A déli part (Vík, Höfn, Kirkjubæjarklaustur) júliusban különösen gyorsan telik — ezeket kötelező előre lefoglalni. Ha van főzési lehetőség a szálláson, naponta 30–50 EUR-t spórolhatsz étkezésenként."
+        ]
+      },
+      {
+        title: "⏰ Tömegstratégia",
+        paragraphs: [
+          "A buszos tömegek jellemzően 9:30–15:30 között esnek be a főhelyszínekre. Reggel 7:30 előtt vagy este 20:00 után a legtöbb helyszín szinte üres — és az aranyóra fénye is a legjobb. Jökulsárlón, Diamond Beach, Seljalandsfoss és Reynisfjara különösen hálás az esti látogatásnak."
         ]
       }
     ],
@@ -592,7 +610,7 @@ const tripData = {
       accent: "accent-baltic",
       status: "júl. 10–18. · külön szakasz",
       statusClass: "status-warm",
-      text: "Tibi 9 napos autós felvezetése Budapestről a Baltikumon át Stockholmig (júl. 10–18.). A logika: Varsót teljesen kikerülve, Suwałki tranzitszálláson át belép Litvániába, ahol Kaunas rövid megállójával (Laisvės aleja sétálóutca) hangol rá a balti ritmusra — majd Vilnius következik két éjszakával. A litván főváros egyszerre barokk, mediterrán és szovjet-posztszovjet: a Cathedral Square és a Gediminas-torony adja a főirányvonalat, az Užupis negyed (saját alkotmánnyal rendelkező bohém negyed!) a karaktert, Trakai Island Castle pedig a képeslapot. Lettország két napot kap: Riga óvárosa a House of the Black Heads ikonikus homlokzatával nyit, a Riga Central Market öt zeppelin-hangárban folyik, az Art Nouveau-negyed Alberta ieláján Eisenstein apja tervei állnak sorban a szecessziós homlokzatok — este a Daugava-part és lett almaboros sörkóstolás zár. Észtországba a Gauja-völgyön vezet az út: Turaida Castle a völgyperemen, Gutmanis-barlang évszázados utazói feliratokkal, este Tallinn. A tallinni nap Toompea-dombjáról indul (a legszebb várospanoráma Észtországban), az Alexander Nevsky-katedrális és az óváros sikátorai után Telliskivi Creative City adja a mai Tallinn-képet. A finn nap: Tallink Megastar shuttleval Helsinkibe, Market Square + katedrális rövid blokkra, majd autóval keletre Porvoo faházas óvárosába (a finn kisváros-esszencia), visszafelé nyugatra Turku Castle-hoz és az Aura folyópart hajóéttermeibe — Viking Line overnight komppal Stockholm Värtahamnenbe. Ott az autó az Arlanda parkolóba kerül, Tibi pedig FI309-cel száll Keflavíkba.",
+      text: "Tibi 9 napos autós útja Budapestről Baltikumon át Stockholmig (júl. 10–18.): Varsót teljesen kihagyva, Suwałki tranzitállomáson át belép Litvániába. Kaunas rövid kávészünettel (Laisvės aleja sétálóutca), majd két éjszaka Vilniusban — a barokk főváros, ahol a Cathedral Square, a Gediminas-torony és az Užupis bohém negyed (saját alkotmánnyal!) adja a ritmust, Trakai Island Castle a képeslapot. Lettország a Hill of Crosses zarándokhelyétől Riga Art Nouveau-negyedéig és Gauja-völgyi kastélyrombokig tart; Észtországba Turaida Castle-lal és az évszázados utazói feliratokkal teli Gutmanis-barlanggal érünk be — Tallinn Toompea-panorámájával és Telliskivi Creative City-vel zár. A finn zárónapon Tallink Shuttleval Helsinki, majd Turku Castle és Viking Line overnight komp visz Stockholmba. Júl. 18. reggel Värtahamnenben kötünk ki — az autó Arlandára kerül, 17:10-kor FI309 repít Keflavíkba.",
       points: [
         "🇱🇹 Kaunas → Vilnius: <a href='https://www.google.com/maps/search/?api=1&query=Laisves+aleja+Kaunas' target='_blank' rel='noreferrer'>Laisvės aleja</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Cathedral+Square+Vilnius' target='_blank' rel='noreferrer'>Cathedral Square</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gediminas+Tower+Vilnius' target='_blank' rel='noreferrer'>Gediminas-torony</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Uzupis+Vilnius' target='_blank' rel='noreferrer'>Užupis negyed</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Trakai+Island+Castle' target='_blank' rel='noreferrer'>Trakai Island Castle</a> (★4.6)",
         "🇱🇻 Hill of Crosses → Riga: <a href='https://www.google.com/maps/search/?api=1&query=Hill+of+Crosses+Siauliai' target='_blank' rel='noreferrer'>Hill of Crosses</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=House+of+the+Black+Heads+Riga' target='_blank' rel='noreferrer'>House of the Black Heads</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Riga+Central+Market' target='_blank' rel='noreferrer'>Riga Central Market</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Alberta+iela+Riga+Art+Nouveau' target='_blank' rel='noreferrer'>Alberta iela Art Nouveau</a> (★4.7)",
@@ -687,11 +705,55 @@ const tripData = {
       title: "Baltikum",
       pill: "Budapest → Baltikum → Stockholm",
       accent: "baltic",
+      introCollapsible: true,
       intro: [
-        "Ez a rész ugyanarra a logikára épül, mint a Közép-Ázsia oldalon az Üzbegisztán blokk: van egy rövid ország- és útvonal-keret, utána pedig jön a napi részletes bontás.",
-        "A július 17-i nap egy teljes finn nap: Tallinn → Helsinki (Tallink Shuttle) + helsinki blokk + Turku Castle + Viking Line overnight. A július 18-i nap korai stockholmi érkezéssel indul (06:30) és FI309-cel zárul (17:10 → Reykjavík)."
+        "A baltikumi szakasz Tibi 9 napos autós felfedezőútja Budapestről Litvánián, Lettországon és Észtországon át Stockholmig — három kis észak-európai ország jellegzetes városait, középkori erődjeit és természeti tájait fűzi egyetlen összefüggő útvonallá.",
+        "Vilnius a barokk főváros az Užupis bohém negyedével és a tóba nyúló Trakai-kastéllyal; Riga az Art Nouveau-homlokzatok, a Riga Central Market zeppelin-hangárjai és a Gauja-völgy természetes kombinációja; Tallinn Toompea-dombjáról mutatja a legszebben megőrzött északi középkori óvárost.",
+        "A finn zárónapot (júl. 17.) Helsinki-átkelés, Turku Castle-látogatás és Viking Line overnight komp tölti ki Stockholmba — ez a 10,5 órás tengeri átmenet a baltikumi és izlandi szakasz szimbolikus kapuja.",
+        "Júl. 18-án a Viking Line Värtahamnenben köt ki: az autó Arlanda hosszú távú parkolóba kerül, Tibi FI309-cel repül Keflavíkba 17:10-kor — a baltikumi felvezető ezzel adja át a stafétát a közös izlandi körútnak."
       ],
       context: [
+        {
+          title: "🗺 Baltikum — történelem, geológia, jelenkori helyzet",
+          accent: "baltic",
+          open: false,
+          cards: [
+            {
+              title: "Földrajz és méret",
+              paragraphs: [
+                "A három balti állam — Litvánia (65 300 km², ~2,8 millió fő), Lettország (64 589 km², ~1,8 millió fő) és Észtország (45 228 km², ~1,4 millió fő) — összesen alig nagyobb Magyarországnál, mégis teljesen eltérő karaktert képvisel mindhárom. Litvánia a legdélibb és legnépesebb, Észtország a digitálisan legfejlettebb, Lettország a legvárosiasabb hangulatú fővárosával.",
+                "A Balti-tenger partján alacsony fekvésű síkságok, mocsaras tőzeglápok és homokos parti dűnék uralják a tájat. A Kurai-spit (Curonian Spit) UNESCO-helyszín — egy 98 km hosszú homokdűne-félsziget Litvánia–Oroszország határán, ahol egyes dűnék a 60 métert is elérik."
+              ]
+            },
+            {
+              title: "Geológia — a jégkorszak formálta táj",
+              paragraphs: [
+                "A Baltikum tájképét az utolsó jégkorszak (kb. 12 000 évvel ezelőtt visszahúzódó jégtakaró) formálta: lapos morénasíkságok, glaciális tavak, homokos partszakaszok. A régió legmagasabb pontja az észt Suur Munamägi, csupán 318 méter — ehhez képest Magyarország Kékese óriás.",
+                "A Borostyánpart különlegesség: Lettország és Litvánia tengerpartján 40–50 millió éves fenyőgyanta-maradványok (borostyán) mosódnak partra a Balti-tenger által. Ez az ókori Borostyánút — a Mediterráneumtól a Balti-tengerig tartó kereskedelmi útvonal — alapja is volt."
+              ]
+            },
+            {
+              title: "Történelem — a Keresztesektől a szovjet foglalásig",
+              paragraphs: [
+                "A balti törzseket (lívek, latok, kurok, poroszok, litvánok) a 13. századi német Kardtestvérek Rendje és a Teutón Lovagrend hódította meg, megalapítva a Livóniai Konfederációt. Litvánia kivétel: a Litván Nagyfejedelemség a 14–16. században Európa egyik legnagyobb állama volt, a Fekete-tengertől a Balti-tengerig nyúlva.",
+                "A 17–18. századi svéd, majd orosz dominancia után mindhárom ország 1918-ban függetlenné vált — csak az 1940-es szovjet megszállás (a Molotov–Ribbentrop-paktum titkos protokollja alapján) vetett ennek véget. 1991-ben a Szovjetunió felbomlásával az elsők között nyerték vissza szabadságukat — Litvánia 1990. március 11-én elsőként kiáltotta ki az újrafüggetlenséget."
+              ]
+            },
+            {
+              title: "Jelenkori helyzet — az EU és NATO keleti flankja",
+              paragraphs: [
+                "2004-ben mindhárom ország egyszerre csatlakozott az EU-hoz és a NATO-hoz — az egyik legsimább integrációs folyamat Kelet-Közép-Európában. Észtország globális digitális mintaállam lett: e-rezidencia, e-szavazás, teljes online közigazgatás. Tallinn startupkultúrája is kiemelkedő (Skype, TransferWise/Wise innen indult).",
+                "A 2022-es orosz–ukrán háború élesítette a biztonságpolitikai helyzetet: mindhárom ország érintkezik Oroszországgal (Észtország közvetlen orosz határral bír, Lettország és Litvánia a Kalinyingrádi exklávéval is határos). A NATO megerősített jelenléte (eForward Presence battlegroups) ellenére a városok teljesen béke- és turistabarát — a helyzetnek semmi hatása a napi utazási élményre."
+              ]
+            }
+          ],
+          links: [
+            { label: "Wikipedia — Baltikum", url: "https://hu.wikipedia.org/wiki/Baltikum" },
+            { label: "UNESCO Curonian Spit", url: "https://whc.unesco.org/en/list/994/" },
+            { label: "Estonia e-residency", url: "https://e-resident.gov.ee/" },
+            { label: "NATO eFP Baltics", url: "https://www.nato.int/cps/en/natohq/topics_136388.htm" }
+          ]
+        },
         {
           title: "🇱🇹 Litvánia · Vilnius és Trakai",
           accent: "baltic",
@@ -1037,26 +1099,53 @@ const tripData = {
       },
       extraResources: [
         {
-          title: "Epic Iceland · mi fedi az útvonalat?",
+          title: "📖 Útleírások — blogok és útikönyvek",
           accent: "iceland",
           open: false,
-          text: "Az Epic Iceland szinte az egész szigetet bejárta. A mostani júliusi Ring Road tervetekkel ezek a részek fednek közvetlenül, és ezekből jönnek azok a plusz ötletek, amik még reálisan beleférhetnek a mostani tempóba is.",
-          items: [
-            "Snæfellsnes: náluk is működik az egynapos kör, és a mostani útba rövid pluszként leginkább Selvallavatn vagy a Berserkjahraun-féle scenic detour férhet még bele, ha jó az idő.",
-            "Stuðlagil: külön kiemelik, hogy a nyugati oldal gyorsabb és könnyebb nézőpont, a keleti oldal viszont hosszabb sétával közelebb visz a kanyonhoz. Ez jól passzol a mostani rugalmas napotokhoz.",
-            "Délkelet / Eastfjords: a Route 1 parti vezetése önmagában is erős élmény, az Öxi road viszont inkább csak weather-dependent gravel kerülőként vállalható be.",
-            "Jökulsárlón és Fjallsárlón: náluk is együtt szerepel a két lagúna, de kifejezetten leírják, hogy időszűkében pont ez az a duó, ahol Fjallsárlón elengedhető.",
-            "Déli part: Seljalandsfoss mellé náluk is egyértelmű plusz Gljúfrabúi, ezért jó, hogy együtt szerepelnek a tervetekben.",
-            "Golden Circle és Reynisfjara: az előbbinél a korai indulást, az utóbbinál a hullámveszélyt emelik ki, ami teljesen egybevág a mostani júliusi stratégiátokkal."
-          ],
-          links: [
-            { label: "Epic Iceland főoldal", url: "https://epiciceland.net/" },
-            { label: "Snæfellsnes guide", url: "https://epiciceland.net/best-things-to-do-in-snaefellsnes/" },
-            { label: "South-East Ring Road day", url: "https://epiciceland.net/day-5-journey-south-east-iceland/" },
-            { label: "Golden Circle / Reykjavik day trips", url: "https://epiciceland.net/best-day-trips-from-reykjavik/" },
-            { label: "Reynisfjara + Stuðlagil landscapes", url: "https://epiciceland.net/best-icelandic-landscapes/" },
-            { label: "Stuðlagil canyon notes", url: "https://epiciceland.net/tag/studlagil-canyon/" },
-            { label: "Seljalandsfoss notes", url: "https://epiciceland.net/tag/seljalandsfoss/" }
+          text: "Magyar és külföldi útleírók tapasztalatai az izlandi Ring Road körútról. A leghasznosabb ötleteket az általános útmutatóba és a napi context-boxokba integráltuk — az alábbi forrásokból a részletesebb olvasáshoz.",
+          subBoxes: [
+            {
+              title: "Epic Iceland — mi fedi az útvonalat?",
+              accent: "iceland",
+              open: false,
+              text: "Az Epic Iceland szinte az egész szigetet bejárta. A mostani júliusi Ring Road tervvel ezek a részek fednek közvetlenül, és ezekből jönnek azok a plusz ötletek, amik még reálisan beleférhetnek a tempóba.",
+              items: [
+                "Snæfellsnes: náluk is működik az egynapos kör — rövid pluszként leginkább Selvallavatn vagy a Berserkjahraun-féle scenic detour fér még bele, ha jó az idő.",
+                "Stuðlagil-kanyon: a nyugati oldal gyorsabb és könnyebb nézőpont, a keleti oldal hosszabb sétával, de közelebbi rálátással jár. Ha van idő, a keleti oldalt javasolják.",
+                "Délkelet / Eastfjords: a Route 1 parti vezetése önmagában is erős élmény — az Öxi road csak weather-dependent gravel kerülőként vállalható be.",
+                "Jökulsárlón és Fjallsárlón: időszűkében Fjallsárlón elengedhető, de a kettő együtt erős.",
+                "Déli part: Seljalandsfoss mellé egyértelmű plusz a Gljúfrabúi szurdok (rejtett vízesés mögötte járható).",
+                "Golden Circle és Reynisfjara: korai indulás mindkettőhöz — Reynisfjara-nál hullámveszélyre külön felhívnak."
+              ],
+              links: [
+                { label: "Epic Iceland főoldal", url: "https://epiciceland.net/" },
+                { label: "Snæfellsnes guide", url: "https://epiciceland.net/best-things-to-do-in-snaefellsnes/" },
+                { label: "South-East Ring Road day", url: "https://epiciceland.net/day-5-journey-south-east-iceland/" },
+                { label: "Golden Circle / Reykjavik day trips", url: "https://epiciceland.net/best-day-trips-from-reykjavik/" },
+                { label: "Stuðlagil canyon notes", url: "https://epiciceland.net/tag/studlagil-canyon/" },
+                { label: "Seljalandsfoss notes", url: "https://epiciceland.net/tag/seljalandsfoss/" }
+              ]
+            },
+            {
+              title: "Magyar útleírások — blogajánló",
+              accent: "iceland",
+              open: false,
+              text: "Öt magyar útleírás a Ring Roadról — hasonló körúton járt utazók konkrét tapasztalatai, napi ritmusok, rejtett helyszínek és időzítési tanácsok.",
+              items: [
+                "🌋 <strong>Helloizland.hu</strong> — hazai izland-specialista: részletes útmutatók régiónként, Kerið krátertó és geotermikus kenyérsütő tanya (Laugarvatn Fontana) a Golden Circle mellé javasolt pluszként. Korai foglalás a déli parton júliusban kritikus.",
+                "🧭 <strong>Wanderwell.hu</strong> — Laugavegur-trek és Golden Circle részletes bejárás; Reykjadalur geotermikus folyó (ingyenes alternatíva Sky Lagoon helyett) szintén ajánlott opció egy Reykjavík-napra.",
+                "🎒 <strong>Netkoffer.hu</strong> — praktikus megközelítés: Blue Lagoon vs. olcsóbb alternatívák, Hallgrímskirkja lift vs. séta, Skaftafell glaciális közelség. Busz Keflavíkból Reykjavíkba ~40 perc, ~22 EUR.",
+                "🚐 <strong>Vándorboy — 15 napos körút</strong> — Stuðlagil keleti oldal (közelebb, de hosszabb séta), Hengifoss (128 m, Izland harmadik legnagyobb vízesése, Eastfjords), Ásbyrgi-kanyon patkolás-alakú sziklafal. Haifoss (122 m) a Golden Circle rejtett extra-opciója.",
+                "🚐 <strong>Vándorboy — 8 napos körút</strong> — 8 napos Ring Road-tempó: ~110–134 EUR/nap/fő reális keret, Svartifoss bazalt-vízesés Skaftafellben, Reykjadalur geotermikus folyó. Főzési lehetőséggel rendelkező szállás sokat spórol."
+              ],
+              links: [
+                { label: "Helloizland.hu", url: "https://helloizland.hu/" },
+                { label: "Wanderwell — Izland", url: "https://wanderwell.hu/blog/desztinaciok/izland" },
+                { label: "Netkoffer — Izland utazás", url: "https://netkoffer.hu/izland-utazas/" },
+                { label: "Vándorboy — 15 napos körút", url: "https://vandorboy.com/izland-15-nap-teljes-korutazas/" },
+                { label: "Vándorboy — 8 napos körút", url: "https://vandorboy.com/izland-8-nap-korutazas/" }
+              ]
+            }
           ]
         },
         {
@@ -1155,30 +1244,6 @@ const tripData = {
               title: "Roadtrip-fókusz",
               paragraphs: [
                 "Ez a verzió tudatosan a Ring Roadra épül. 2WD is elég hozzá, a hangsúly a természeten, a fotózáson, a helyi konyhán és a hosszú nyári esti fényen van, nem az F-utakon."
-              ]
-            }
-          ]
-        },
-        {
-          title: "🛻 Izlandi működési keret",
-          accent: "iceland",
-          cards: [
-            {
-              title: "Autó",
-              paragraphs: [
-                "A mostani tervhez a Ring Roadon egy stabil 2WD is elég. 4WD csak akkor kellene, ha be akarnátok húzni Landmannalaugar vagy más F-utas kitérőt."
-              ]
-            },
-            {
-              title: "Szállás",
-              paragraphs: [
-                "A 3 csillagos hotel / vendégház logika jó, mert ennél az útnál a hely és a ritmus fontosabb, mint a luxus. Júliusra viszont különösen korán kell foglalni a déli parton."
-              ]
-            },
-            {
-              title: "Tömegstratégia",
-              paragraphs: [
-                "A jó izlandi napok júliusban attól erősek, hogy a fő helyekre nem a csúcsidőben estek be. A reggel 8 előtti vagy este 8 utáni időablak sokkal jobb fotós és élmény-szempontból is."
               ]
             }
           ]
