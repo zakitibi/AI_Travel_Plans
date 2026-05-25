@@ -2776,13 +2776,16 @@ const tripData = {
     },
     {
       title: "🅿 Stockholm / Arlanda",
-      text: "A parkolási döntéshez ezek a közvetlenül releváns források vannak most feljegyezve.",
+      text: "Hosszú távú parkolás Arlandánál — júl. 18. (indulás KEF felé) → júl. 26. (visszaérkezés), 8 nap. Két fő lehetőség: a hivatalos Swedavia saját parkolói és a Flygets külső szolgáltató.",
       links: [
-        { label: "Swedavia Arlanda parking", url: "https://www.swedavia.se/en/arlanda/parking/" }
+        { label: "Swedavia — hivatalos Arlanda parkolók", url: "https://www.swedavia.se/en/arlanda/parking/" },
+        { label: "Swedavia — közvetlen foglalás (júl. 18–26.)", url: "https://www.swedavia.com/arlanda/parking/#/offers?arrivalDateTime=2026-07-18T14:00&returnDateTime=2026-07-26T14:00&terminal=-1&parkingid=1" },
+        { label: "Flygets P1 — külső parkoló (júl. 18–26.)", url: "https://www.flygets.se/parkifly/flygets/booking;parking_start=2026-07-18%2014:10;parking_end=2026-07-26%2013:45;discount_code=NONE" }
       ],
       items: [
-        "Jelenlegi kézi note a reference-ben: P2 Beta Long-term.",
-        "Jelenlegi kézi note a reference-ben: Flygets P1."
+        "<strong>Flygets P1</strong> — külső szolgáltató, shuttle-busz a terminálhoz; általában olcsóbb mint a Swedavia saját parkolói. A fenti link előre kitöltött dátumokkal nyílik meg.",
+        "<strong>Swedavia P2 Beta Long-term</strong> — hivatalos reptéri hosszú távú parkoló; drágább de közelebb, nincs shuttle-várakozás.",
+        "Mindkét helyen érdemes előre foglalni — júliusban gyorsan telnek, és online olcsóbb az ár."
       ]
     },
     {
