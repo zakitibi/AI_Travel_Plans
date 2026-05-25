@@ -231,9 +231,13 @@
       const balticTimeline  = tripData.overview.timeline.filter((d) => d.phase.startsWith("Tibi"));
       const icelandTimeline = tripData.overview.timeline.filter((d) => d.phase === "Közös Izland");
       const returnTimeline  = tripData.overview.timeline.filter((d) => d.phase === "Közös hazaút");
+      // Stage id used by overviewMapAPI.focusPhase()
+      const PHASE_STAGE = { baltic: "baltikum", iceland: "izland", return: "hazaut" };
+
       function phaseGroup(id, emoji, title, sub, days, open) {
         return `
-          <details class="timeline-phase-details" ${open ? "open" : ""}>
+          <details class="timeline-phase-details" ${open ? "open" : ""}
+            ontoggle="if(this.open && window.overviewMapAPI) window.overviewMapAPI.focusPhase('${PHASE_STAGE[id]}')">
             <summary class="timeline-phase-summary">
               <div class="timeline-phase-summary-left">
                 <span class="timeline-phase-emoji">${emoji}</span>
@@ -313,6 +317,24 @@
               </section>
             </div>
           </div>
+
+          <!-- Overview map — full-width, below the timeline grid -->
+          <section class="card section-card" style="margin-top:20px;">
+            <h3 class="map-section-title">🗺 Interaktív útvonal-térkép</h3>
+            <p class="section-intro">
+              Minden állomás interaktív térképen — szállások, átkelők, repülők, látnivalók.
+              A <strong>⚙ Szűrők</strong> gombbal (jobb felső sarok) szűrhetsz fázis, típus és nap szerint.
+              A napi idővonalban egy fázis kinyitása automatikusan azt a fázist mutatja a térképen.
+            </p>
+          </section>
+          <div class="travel-map-wrap">
+            <div id="overview-map" style="width:100%;height:100%;"></div>
+            <div class="tm-overlay">
+              <div class="tm-spinner"></div>
+              <span>Térkép betöltése…</span>
+            </div>
+          </div>
+
         </section>
       `;
     }
@@ -984,5 +1006,6 @@
   </script>
   <script type="module" src="./map-init.js"></script>
   <script type="module" src="./detail-map-init.js"></script>
+  <script type="module" src="./overview-map-init.js"></script>
 </body>
 </html>
