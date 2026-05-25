@@ -40,13 +40,20 @@ export class RouteRenderer {
     this._destroy();
 
     this._layer = this._L.geoJSON(geojson, {
-      style: (feature) => ({
-        color:    feature.properties?.color   || DEFAULT_COLOR,
-        weight:   feature.properties?.weight  || DEFAULT_WEIGHT,
-        opacity:  feature.properties?.opacity || DEFAULT_OPACITY,
-        lineJoin: "round",
-        lineCap:  "round",
-      }),
+      style: (feature) => {
+        const p = feature.properties || {};
+        const type = p.type || "drive";
+        return {
+          color:     p.color   || DEFAULT_COLOR,
+          weight:    p.weight  || DEFAULT_WEIGHT,
+          opacity:   p.opacity || DEFAULT_OPACITY,
+          lineJoin:  "round",
+          lineCap:   "round",
+          dashArray: type === "flight" ? "4 10"
+                   : type === "ferry"  ? "7 9"
+                   : null,
+        };
+      },
     }).addTo(this._map);
 
     return this._layer;
