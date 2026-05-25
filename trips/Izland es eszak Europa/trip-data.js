@@ -2783,8 +2783,8 @@ const tripData = {
         { label: "Flygets P1 — külső parkoló (júl. 18–26.)", url: "https://www.flygets.se/parkifly/flygets/booking;parking_start=2026-07-18%2014:10;parking_end=2026-07-26%2013:45;discount_code=NONE" }
       ],
       items: [
-        "<strong>Flygets P1</strong> — külső szolgáltató, shuttle-busz a terminálhoz; általában olcsóbb mint a Swedavia saját parkolói. A fenti link előre kitöltött dátumokkal nyílik meg.",
-        "<strong>Swedavia P2 Beta Long-term</strong> — hivatalos reptéri hosszú távú parkoló; drágább de közelebb, nincs shuttle-várakozás.",
+        "<a href='https://www.flygets.se/parkifly/flygets/booking;parking_start=2026-07-18%2014:10;parking_end=2026-07-26%2013:45;discount_code=NONE' target='_blank' rel='noreferrer'><strong>Flygets P1</strong></a> — külső szolgáltató, shuttle-busz a terminálhoz; általában olcsóbb mint a Swedavia saját parkolói. Előre kitöltött dátumokkal nyílik meg.",
+        "<a href='https://www.swedavia.com/arlanda/parking/#/offers?arrivalDateTime=2026-07-18T14:00&returnDateTime=2026-07-26T14:00&terminal=-1&parkingid=1' target='_blank' rel='noreferrer'><strong>Swedavia P2 Beta Long-term</strong></a> — hivatalos reptéri hosszú távú parkoló; drágább de közelebb, nincs shuttle-várakozás.",
         "Mindkét helyen érdemes előre foglalni — júliusban gyorsan telnek, és online olcsóbb az ár."
       ]
     },
