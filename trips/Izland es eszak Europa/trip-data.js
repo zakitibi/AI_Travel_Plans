@@ -153,15 +153,19 @@ const tripData = {
         },
         {
           mode: "✈ Repülő",
-          status: "Közös szakasz",
+          status: "Foglalva",
           operator: "Icelandair",
           code: "FI306",
           route: "Reykjavík / Keflavík (KEF) → Stockholm / Arlanda (ARN)",
           departure: "2026.07.26 · 07:35",
           arrival: "2026.07.26 · 12:45",
           duration: "3:10",
+          bookingRef: "ASDBGX",
+          bookingCom: "40-962579774 · PIN: 5627",
+          baggage: "Kis táska + kézipoggyász (20×40×55 cm, max. 10 kg) · Nincs feladott poggyász",
           links: [
-            { label: "Icelandair", url: "https://www.icelandair.com/" }
+            { label: "Icelandair", url: "https://www.icelandair.com/" },
+            { label: "Icelandair check-in", url: "https://www.icelandair.com/travel-info/check-in/" }
           ]
         }
       ]
@@ -207,9 +211,13 @@ const tripData = {
           departure: "2026.07.18 · 17:10",
           arrival: "2026.07.18 · 18:25",
           duration: "3:15",
+          bookingRef: "AS4YE9",
+          bookingCom: "40-962206664 · PIN: 5695",
+          baggage: "Kis táska + kézipoggyász (20×40×55 cm, max. 10 kg) · Nincs feladott poggyász",
           links: [
             { label: "Icelandair", url: "https://www.icelandair.com/" },
-            { label: "Swedavia parking", url: "https://www.swedavia.se/en/arlanda/parking/" }
+            { label: "Swedavia parking", url: "https://www.swedavia.se/en/arlanda/parking/" },
+            { label: "Icelandair check-in", url: "https://www.icelandair.com/travel-info/check-in/" }
           ]
         },
         {
@@ -221,8 +229,12 @@ const tripData = {
           departure: "2026.07.26 · 07:35",
           arrival: "2026.07.26 · 12:45",
           duration: "3:10",
+          bookingRef: "AS4YE9",
+          bookingCom: "40-962206664 · PIN: 5695",
+          baggage: "Kis táska + kézipoggyász (20×40×55 cm, max. 10 kg) · Nincs feladott poggyász",
           links: [
-            { label: "Icelandair", url: "https://www.icelandair.com/" }
+            { label: "Icelandair", url: "https://www.icelandair.com/" },
+            { label: "Icelandair check-in", url: "https://www.icelandair.com/travel-info/check-in/" }
           ]
         }
       ]

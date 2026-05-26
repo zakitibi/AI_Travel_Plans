@@ -219,6 +219,31 @@ a {
   line-height: 1.45;
 }
 
+/* ── Booking reference (PNR) chip ─────────────────────────────────────────── */
+.ticket-pnr {
+  margin: 4px 0 3px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.pnr-code {
+  font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+  font-weight: 800;
+  font-size: 13.5px;
+  letter-spacing: 1.5px;
+  color: #7dd3b5;
+  background: rgba(125, 211, 181, 0.12);
+  padding: 1px 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(125, 211, 181, 0.28);
+}
+
+/* Small meta lines (Booking.com ref, baggage) */
+.ticket-meta-sm {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
 .route {
   display: flex;
   gap: 4px;

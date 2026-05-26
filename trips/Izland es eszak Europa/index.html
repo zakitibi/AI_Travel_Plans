@@ -82,9 +82,12 @@
                   <span class="ticket-status">${item.status}</span>
                 </div>
                 <strong>${item.operator} · ${item.code}</strong>
+                ${item.bookingRef ? `<div class="ticket-pnr">Foglalási kód: <span class="pnr-code">${item.bookingRef}</span></div>` : ""}
                 <div class="ticket-route">${item.route}</div>
                 <div class="ticket-meta">Indulás: ${item.departure} helyi idő</div>
                 <div class="ticket-meta">Érkezés: ${item.arrival} helyi idő <span class="ticket-duration">(${item.duration})</span></div>
+                ${item.bookingCom ? `<div class="ticket-meta ticket-meta-sm">Booking.com: ${item.bookingCom}</div>` : ""}
+                ${item.baggage ? `<div class="ticket-meta ticket-meta-sm">🧳 ${item.baggage}</div>` : ""}
                 ${item.links && item.links.length ? `<div class="ticket-links">${item.links.map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join(" · ")}</div>` : ""}
               </article>
             `).join("")}
