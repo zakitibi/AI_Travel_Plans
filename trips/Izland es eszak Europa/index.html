@@ -42,9 +42,9 @@
       { id: "restaurants", label: "Gasztronómia" },
       { id: "practical", label: "🧳 Praktikus" },
       { id: "weather", label: "🌦 Időjárás" },
-      { id: "apps", label: "📱 Appok" },
       { id: "terkep", label: "🗺 Térkép" },
       { id: "info", label: "Info" },
+      { id: "apps", label: "📱 App" },
       { id: "budget", label: "💶 Költségvetés" }
     ];
 
@@ -305,24 +305,6 @@
                   `).join("")}
                 </div>
               </section>
-              <details class="card coll-card" open>
-                <summary class="coll-card-head">
-                  <h2 class="section-title" style="margin:0;">🗺 Interaktív térkép</h2>
-                  <span class="collapse-icon" aria-hidden="true">▾</span>
-                </summary>
-                <p style="font-size:0.78rem;color:var(--muted);margin-bottom:10px;">Teljes útvonal — Baltikum · Izland · Hazaút · repülők · Ring Road. <a href="https://www.google.com/maps/d/u/0/edit?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q&usp=sharing" target="_blank" rel="noreferrer" style="color:var(--green);font-weight:600;">Megnyitás Google Maps-ben ↗</a></p>
-                <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-                  <iframe
-                    src="https://www.google.com/maps/d/embed?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q"
-                    width="100%"
-                    height="420"
-                    style="border:0;display:block;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                  </iframe>
-                </div>
-              </details>
               <section class="card">
                 <h2 class="section-title">🧭 Fő utazások</h2>
                 <div class="summary-grid">
@@ -917,7 +899,7 @@
         <section class="view" data-view="apps">
           <div class="section-head">
             <div>
-              <h2><span>régiónként szűrve · App Store linkekkel</span>Appok</h2>
+              <h2><span>régiónként szűrve · App Store és weboldalak</span>App</h2>
             </div>
           </div>
           <section class="card section-card">
@@ -931,10 +913,14 @@
                   ${group.apps.map((app) => `
                     <article class="app-card">
                       <div class="app-card-top">
-                        <a class="app-name" href="${app.store}" target="_blank" rel="noreferrer">${app.name}</a>
+                        <span class="app-name">${app.name}</span>
                         ${app.rating ? `<span class="app-rating">★ ${app.rating}</span>` : ""}
                       </div>
                       <p class="app-note">${app.note}</p>
+                      <div class="app-link-row">
+                        <a class="app-link" href="${app.store}" target="_blank" rel="noreferrer">App Store</a>
+                        ${app.home ? `<a class="app-link app-link-home" href="${app.home}" target="_blank" rel="noreferrer">Weboldal</a>` : ""}
+                      </div>
                     </article>
                   `).join("")}
                 </div>
@@ -965,12 +951,15 @@
               A rétegvezérlővel (<strong>jobb felső sarok</strong>) szűrhetsz szakasz szerint.
               Kattints bármelyik jelzőre a részletes adatokért.
             </p>
-            <div class="travel-map-wrap">
-              <div id="trip-map" style="width:100%;height:100%;"></div>
-              <div class="tm-overlay">
-                <div class="tm-spinner"></div>
-                <span>Térkép betöltése…</span>
+            <div class="map-filter-wrap">
+              <div class="travel-map-wrap">
+                <div id="trip-map" style="width:100%;height:100%;"></div>
+                <div class="tm-overlay">
+                  <div class="tm-spinner"></div>
+                  <span>Térkép betöltése…</span>
+                </div>
               </div>
+              <aside class="dm-filter-sidebar" id="trip-map-filter"></aside>
             </div>
           </details>
 
@@ -994,6 +983,66 @@
                 </div>
               </div>
               <aside class="dm-filter-sidebar" id="detail-map-filter"></aside>
+            </div>
+          </details>
+
+          <!-- Google My Maps — áttekintő -->
+          <details class="card section-card coll-card" style="margin-top:20px;">
+            <summary class="coll-card-head">
+              <span class="map-section-title" style="margin:0;">🗺 Google My Maps — teljes áttekintő</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <p class="section-intro" style="margin-bottom:10px;">
+              Teljes útvonal Google My Maps-ben — Baltikum · Izland · Hazaút · repülők.
+              <a href="https://www.google.com/maps/d/u/0/edit?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q&usp=sharing" target="_blank" rel="noreferrer" style="color:var(--green);font-weight:600;">Megnyitás Google Maps-ben ↗</a>
+            </p>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+              <iframe
+                src="https://www.google.com/maps/d/embed?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q"
+                width="100%"
+                height="420"
+                style="border:0;display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </details>
+
+          <!-- Google My Maps — Izland részletes -->
+          <details class="card section-card coll-card" style="margin-top:20px;">
+            <summary class="coll-card-head">
+              <span class="map-section-title" style="margin:0;">🗺 Google My Maps — Izland</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <p class="section-intro" style="margin-bottom:10px;">Izlandi útvonal részletes Google My Maps nézetei.</p>
+            <div class="context-sources" style="margin-bottom:12px;">
+              <a class="source-chip" href="https://www.google.com/maps/d/u/0/edit?mid=1Ku6Ri53fzgTAychn2Voyy7XiHWsWvMw&usp=sharing" target="_blank" rel="noreferrer">My Maps · fő útvonal ↗</a>
+              <a class="source-chip" href="https://www.google.com/maps/d/u/0/edit?mid=1sp1poHOrpYtHyiyVZRVtgfgYTxDzlpw&ll=64.72213117462351%2C-18.97711350000002&z=7" target="_blank" rel="noreferrer">My Maps · részletesebb ↗</a>
+            </div>
+            <div class="embedded-map-grid">
+              <div class="embedded-map-wrap">
+                <div class="embedded-map-label">Google My Maps · fő útvonal</div>
+                <iframe
+                  class="embedded-map-frame"
+                  src="https://www.google.com/maps/d/u/0/embed?mid=1Ku6Ri53fzgTAychn2Voyy7XiHWsWvMw&ehbc=2E312F"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                  title="Google My Maps · fő útvonal">
+                </iframe>
+              </div>
+              <div class="embedded-map-wrap">
+                <div class="embedded-map-label">Google My Maps · részletesebb változat</div>
+                <iframe
+                  class="embedded-map-frame"
+                  src="https://www.google.com/maps/d/u/0/embed?mid=1sp1poHOrpYtHyiyVZRVtgfgYTxDzlpw&ehbc=2E312F"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                  title="Google My Maps · részletesebb változat">
+                </iframe>
+              </div>
             </div>
           </details>
 
@@ -1033,9 +1082,9 @@
       renderRestaurants(),
       renderPractical(),
       renderWeather(),
-      renderApps(),
       renderMap(),
       renderInfo(),
+      renderApps(),
       renderBudget()
     ].join("");
 

@@ -538,6 +538,24 @@
     }
   },
   {
+    "id": "henni-flight-bud-kef",
+    "name": "Henni: BUD → KEF (W62427)",
+    "lat": 63.985,
+    "lng": -22.607,
+    "type": "flight",
+    "stage": "izland",
+    "day": 2,
+    "date": "2026-07-11",
+    "country": "IS",
+    "priority": "high",
+    "icon": "✈",
+    "popup": {
+      "title": "W62427 Budapest → Keflavík",
+      "description": "Henni érkezése KEF-re 18:20 helyi idő. Erasmus+ kurzus kezdete júl. 13-tól (Smart Teachers Play More, Ísafjörður).",
+      "note": "Tibi és Henni találkozása júl. 18-án, Reykjavíkban."
+    }
+  },
+  {
     "id": "kef-arrival",
     "name": "Keflavík reptér (KEF)",
     "lat": 63.985,

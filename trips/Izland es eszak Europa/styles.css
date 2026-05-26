@@ -1835,14 +1835,35 @@ a {
   font-size: 0.88rem;
   font-weight: 700;
   color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--green);
   line-height: 1.4;
 }
 
-.app-name:hover {
-  color: var(--green);
+.app-link-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+  flex-wrap: wrap;
 }
+
+.app-link {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 5px;
+  background: #f1f5f9;
+  color: #374151;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+  transition: background .12s, color .12s;
+}
+.app-link:hover { background: #e5e7eb; color: #111; }
+
+.app-link-home {
+  background: #e0f2fe;
+  color: #0369a1;
+  border-color: #bae6fd;
+}
+.app-link-home:hover { background: #bae6fd; }
 
 .app-rating {
   flex: 0 0 auto;
