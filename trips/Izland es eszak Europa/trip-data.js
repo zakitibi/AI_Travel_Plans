@@ -98,6 +98,27 @@ const tripData = {
         paragraphs: [
           "A buszos tömegek jellemzően 9:30–15:30 között esnek be a főhelyszínekre. Reggel 7:30 előtt vagy este 20:00 után a legtöbb helyszín szinte üres — és az aranyóra fénye is a legjobb. Jökulsárlón, Diamond Beach, Seljalandsfoss és Reynisfjara különösen hálás az esti látogatásnak."
         ]
+      },
+      {
+        title: "♨️ Fürdők és helyi szokások",
+        paragraphs: [
+          "A nyilvános fürdőkbe (úszómedence, geotermikus strandfürdő) belépés előtt meztelen zuhanyzás kötelező az öltözőben — Izlandon ez nem opcionális szokás, hanem szigorúan ellenőrzött helyi szabály. A fürdős személyzet ellenőriz.",
+          "Ezüst ékszert vedd le a geotermikus vizekbe lépés előtt — a kéntartalmú víz elsötétíti az ezüstöt. Csapvíz mindenhol kiváló minőségű és iható, ásványvizet venni fölösleges. Orr-fújás mások előtt illetlennek számít — diszkréten kezeld. Csúcsszezonban (júliusban) Gullfossnál és Geysirnél figyelj a zsebedre — ezek a legtömöttebb helyek."
+        ]
+      },
+      {
+        title: "🐦 Lundák (puffinok)",
+        paragraphs: [
+          "Június–augusztus a legjobb lunda-hónap Izlandon — a júliusi Ring Road körút a tökéletes időablak. A madarak napközben a tengeren vadásznak, 16:00 után a legaktívabbak a sziklapartokon. Közel lehet hozzájuk menni, de ne zavarj fészkelő madarat.",
+          "A ti útvonalatokon puffinokat a következő helyeken láthattok: <strong>Lóndrangar</strong> (Day 2 · Snæfellsnes — bazalt tengeri kürtők sziklafalain), <strong>Arnarstapi–Hellnar</strong> (Day 2 · Snæfellsnes — tengerparti sziklák), <strong>Dyrhólaey</strong> (Day 6 · déli part — százával fészkelnek, ez a legjobb pont), és <strong>Ingólfshöfði</strong> (Day 5 · Höfn előtt ~40 km — traktoros túrával hozzáférhető, puffinok és nagy kérész)."
+        ]
+      },
+      {
+        title: "🛻 F-utak és highland — jövőre?",
+        paragraphs: [
+          "A mostani Ring Road tervhez 2WD teljesen elég — F-utak nem kellenek és nem is javasottak. F-roadhoz 4×4 törvény szerint kötelező, és a nehezebb utaknál (Landmannalaugar, Askja, Kjölur) a folyóátkelések a fő kockázat.",
+          "Ha egyszer bővítitek a tervet a belső-felfölddel, az <a href='https://epiciceland.net/list-f-roads-iceland/#F-road_Map' target='_blank' rel='noreferrer'>Epic Iceland F-road térképe</a> a legjobb kiindulás. Indulás előtt mindig ellenőrizd az útállapotot az <a href='https://umferdin.is/en' target='_blank' rel='noreferrer'>umferdin.is</a>-en és az <a href='https://vegasja.vegagerdin.is/eng/' target='_blank' rel='noreferrer'>vegasja.vegagerdin.is</a>-en."
+        ]
       }
     ],
     links: [
@@ -106,7 +127,8 @@ const tripData = {
       { label: "umferdin.is", url: "https://umferdin.is/en" },
       { label: "vegasja.vegagerdin.is", url: "https://vegasja.vegagerdin.is/eng/" },
       { label: "Friðheimar", url: "https://www.fridheimar.is/en" },
-      { label: "SCDW / GP guide", url: "https://epiciceland.net/car-rental-insurance-guide-iceland/" }
+      { label: "SCDW / GP guide", url: "https://epiciceland.net/car-rental-insurance-guide-iceland/" },
+      { label: "Epic Iceland · F-road térkép", url: "https://epiciceland.net/list-f-roads-iceland/#F-road_Map" }
     ]
   },
   ticketGroups: [
@@ -1092,12 +1114,12 @@ const tripData = {
               open: false,
               text: "Öt magyar útleírás a Ring Roadról — hasonló körúton járt utazók konkrét tapasztalatai, napi ritmusok, rejtett helyszínek és időzítési tanácsok.",
               items: [
-                "🌋 <strong>Helloizland.hu</strong> — hazai izland-specialista: részletes útmutatók régiónként, Kerið krátertó és geotermikus kenyérsütő tanya (Laugarvatn Fontana) a Golden Circle mellé javasolt pluszként. Korai foglalás a déli parton júliusban kritikus.",
-                "🧭 <strong>Wanderwell.hu</strong> — magyar izland-specialista utazási iroda blogja, több cikkes sorozattal: <a href='https://wanderwell.hu/blog/arany-korut-izland-latnivaloi-egy-nap-alatt' target='_blank' rel='noreferrer'>Arany Körút egy nap alatt</a>, <a href='https://wanderwell.hu/blog/a-legjobb-izlandi-termalfurdok' target='_blank' rel='noreferrer'>legjobb termálfürdők</a>, <a href='https://wanderwell.hu/blog/izlandi_utazas_olcson' target='_blank' rel='noreferrer'>budget izland tippek</a>, <a href='https://wanderwell.hu/blog/sarki-feny-a-jegbarlangban-reykjavik-legfontosabb-latnivaloi' target='_blank' rel='noreferrer'>Reykjavík látványosságai</a>.",
-                "🎒 <strong>Netkoffer.hu</strong> — praktikus megközelítés: Blue Lagoon vs. olcsóbb alternatívák, Hallgrímskirkja lift vs. séta, Skaftafell glaciális közelség. Busz Keflavíkból Reykjavíkba ~40 perc, ~22 EUR.",
-                "🚐 <strong>Vándorboy — 15 napos körút</strong> — Stuðlagil keleti oldal (közelebb, de hosszabb séta), Hengifoss (128 m, Izland harmadik legnagyobb vízesése, Eastfjords), Ásbyrgi-kanyon patkolás-alakú sziklafal. Haifoss (122 m) a Golden Circle rejtett extra-opciója.",
-                "🚐 <strong>Vándorboy — 8 napos körút</strong> — 8 napos Ring Road-tempó: ~110–134 EUR/nap/fő reális keret, Svartifoss bazalt-vízesés Skaftafellben, Reykjadalur geotermikus folyó. Főzési lehetőséggel rendelkező szállás sokat spórol.",
-                "🧭 <strong>Vizzitor.hu</strong> — autós körút cikksorozat: óramutató járásával megegyező irány (észak először) ajánlott, mert a hosszabb szakaszokat pihenőbb állapotban lehet teljesíteni. Kiemelések: Dettifoss (Európa legnagyobb vízhozamú vízesése — 100 m széles, 45 m magas, szubjektíven erősebb mint Gullfoss), Fjaðrárgljúfur-kanyon (zöld szurdok, Game of Thrones díszlet), Seljavallalaug (Izland legrégebbi úszómedencéje, 1923, ingyenes, infrastruktúra nélkül). Figyelmeztetések: Vadlaheiðargöng alagút (az egyetlen fizetős: regisztrálj a tunnel.is-en előre, különben büntetés), Reynisfjara-nál 30 métert tartsd a víztől."
+                "🌋 <strong><a href='https://helloizland.hu/' target='_blank' rel='noreferrer'>Helloizland.hu</a></strong> — hazai izland-specialista: részletes útmutatók régiónként, Kerið krátertó és geotermikus kenyérsütő tanya (Laugarvatn Fontana) a Golden Circle mellé javasolt pluszként. Korai foglalás a déli parton júliusban kritikus.",
+                "🧭 <strong><a href='https://wanderwell.hu/blog/desztinaciok/izland' target='_blank' rel='noreferrer'>Wanderwell.hu</a></strong> — magyar izland-specialista utazási iroda blogja, több cikkes sorozattal: <a href='https://wanderwell.hu/blog/arany-korut-izland-latnivaloi-egy-nap-alatt' target='_blank' rel='noreferrer'>Arany Körút egy nap alatt</a>, <a href='https://wanderwell.hu/blog/a-legjobb-izlandi-termalfurdok' target='_blank' rel='noreferrer'>legjobb termálfürdők</a>, <a href='https://wanderwell.hu/blog/izlandi_utazas_olcson' target='_blank' rel='noreferrer'>budget izland tippek</a>, <a href='https://wanderwell.hu/blog/sarki-feny-a-jegbarlangban-reykjavik-legfontosabb-latnivaloi' target='_blank' rel='noreferrer'>Reykjavík látványosságai</a>.",
+                "🎒 <strong><a href='https://netkoffer.hu/izland-utazas/' target='_blank' rel='noreferrer'>Netkoffer.hu</a></strong> — praktikus megközelítés: Blue Lagoon vs. olcsóbb alternatívák, Hallgrímskirkja lift vs. séta, Skaftafell glaciális közelség. Busz Keflavíkból Reykjavíkba ~40 perc, ~22 EUR.",
+                "🚐 <strong><a href='https://vandorboy.com/izland-15-nap-teljes-korutazas/' target='_blank' rel='noreferrer'>Vándorboy — 15 napos körút</a></strong> — Stuðlagil keleti oldal (közelebb, de hosszabb séta), Hengifoss (128 m, Izland harmadik legnagyobb vízesése, Eastfjords), Ásbyrgi-kanyon patkolás-alakú sziklafal. Haifoss (122 m) a Golden Circle rejtett extra-opciója.",
+                "🚐 <strong><a href='https://vandorboy.com/izland-8-nap-korutazas/' target='_blank' rel='noreferrer'>Vándorboy — 8 napos körút</a></strong> — 8 napos Ring Road-tempó: ~110–134 EUR/nap/fő reális keret, Svartifoss bazalt-vízesés Skaftafellben, Reykjadalur geotermikus folyó. Főzési lehetőséggel rendelkező szállás sokat spórol.",
+                "🧭 <strong><a href='https://www.vizzitor.hu/izland-latnivalok-autoval/' target='_blank' rel='noreferrer'>Vizzitor.hu</a></strong> — autós körút cikksorozat: óramutató járásával megegyező irány (észak először) ajánlott, mert a hosszabb szakaszokat pihenőbb állapotban lehet teljesíteni. Kiemelések: Dettifoss (Európa legnagyobb vízhozamú vízesése — 100 m széles, 45 m magas, szubjektíven erősebb mint Gullfoss), Fjaðrárgljúfur-kanyon (zöld szurdok, Game of Thrones díszlet), Seljavallalaug (Izland legrégebbi úszómedencéje, 1923, ingyenes, infrastruktúra nélkül). Figyelmeztetések: Vadlaheiðargöng alagút (az egyetlen fizetős: regisztrálj a tunnel.is-en előre, különben büntetés), Reynisfjara-nál 30 métert tartsd a víztől."
               ],
               links: [
                 { label: "Helloizland.hu", url: "https://helloizland.hu/" },
@@ -1110,23 +1132,6 @@ const tripData = {
             }
           ]
         },
-        {
-          title: "F-road map és highland források",
-          accent: "iceland",
-          open: false,
-          text: "Az Epic Iceland F-road térképét és kapcsolódó highland forrásait külön integráltam ide, mert ha később a Ring Road verziót bővítitek Landmannalaugar, Askja vagy más belső-felföldi kitérővel, ez lesz a legjobb kiindulás.",
-          items: [
-            "A mostani júliusi Ring Road tervhez nem kell F-road, 2WD is elég.",
-            "F-roadhoz 4×4 kötelező, és a nehezebb utaknál a folyóátkelések a fő kockázat.",
-            "Indulás előtt mindig a hivatalos útállapotot és az időjárást nézd, ne csak egy blogtérképet."
-          ],
-          links: [
-            { label: "Epic Iceland · F-road Map", url: "https://epiciceland.net/list-f-roads-iceland/#F-road_Map" },
-            { label: "road.is", url: "https://www.road.is/" },
-            { label: "vedur.is", url: "https://en.vedur.is/" },
-            { label: "Vegagerðin map", url: "https://vegasja.vegagerdin.is/eng/" }
-          ]
-        }
       ],
       intro: [
         "Ez a rész a megadott júliusi Ring Road tervre épül: július 18-i (szombat) esti KEF-érkezés, Reykjavíkkal induló akklimatizációs nap, majd Snæfellsnes-félsziget, északi Akureyri–Mývatn-blokk, keleti fjordok, Jökulsárlón és Diamond Beach, klasszikus déli part és Golden Circle-zárás — 8 teljes nap, 07.26-i vasárnap reggeli visszarepüléssel.",
@@ -1309,27 +1314,36 @@ const tripData = {
           title: "Érkezés, Reykjavík",
           subtitle: "Keflavík érkezés, autóátvétel, korai alvás",
           open: true,
-          driveLog: { km: "~50 km", stops: 3, driveTime: "~45 perc", depart: "18:25 (FI309)", arrive: "~19:30 Reykjavík", timelinePoints: [{time:"18:25", label:"KEF érk."}, {time:"19:15", label:"N1 tankolás"}, {time:"19:30", label:"Reykjavík"}] },
-          character: "Érkezési nap, nincs túl sok program. A cél: bérautót átvenni, eljutni Reykjavíkba, megvacsorázni és lefeküdni. Júliusban este 22:30-kor még világos van, ne lepődj meg — ne is próbálj túl korán aludni, használd ki, hogy nyugodtan beérkezhetsz.",
+          driveLog: { km: "~70 km", stops: 5, driveTime: "~1 óra", depart: "18:25 (FI309)", arrive: "~21:30 Reykjavík", timelinePoints: [{time:"18:25", label:"KEF érk."}, {time:"19:15", label:"Gunnuhver"}, {time:"20:00", label:"Brimketill / Bridge"}, {time:"21:30", label:"Reykjavík"}] },
+          character: "Érkezési nap, de a Reykjanes-félsziget aprósága nem kifelejthető: az autókölcsönzés után 5 percre van a Gunnuhver geotermikus mező, és 10 percre a Brimketill lávamedence és a két kontinens közötti híd. 18:25-kor érkezel, autót átveszed ~19:10-re, Izlandon este 22:30-kor még teljes napfény van — bőven van idő a három pontot megjárni és Reykjavíkba érni vacsorára. Ha nagyon fáradt vagy, kihagyható, de majd megbánod.",
           rainNote: { icon: "🟢", label: "Esős? Tök mindegy — vezetés és vacsora esőben is megy." },
           tags: [
             { label: "érkezés", cls: "tag-flight" },
+            { label: "Reykjanes", cls: "tag-focus" },
             { label: "Reykjavík", cls: "tag-city" }
           ],
           activities: [
-            { time: "18:25", icon: "✈", name: "FI309 érkezés Keflavíkba", detail: "A stockholmi járat után autóátvétel és kb. 45 perces átvezetés jön Reykjavík irányába." },
-            { time: "este", icon: "🍽", name: "Könnyű vacsora", detail: "Svarta Kaffið, Messinn vagy egy egyszerűbb burger is elég az első estére." },
-            { time: "késő este", icon: "⛽", name: "Tankolás + korai lefekvés", detail: "N1 vagy Olís még ezen az estén jó ötlet, hogy másnap ne ezzel induljon a nap." }
+            { time: "18:25", icon: "✈", name: "FI309 érkezés Keflavíkba", detail: "A stockholmi járat után autóátvétel — kb. 45 perc az egész folyamat, ~19:10-re kész." },
+            { time: "~19:15", icon: "🌋", name: "Gunnuhver geotermikus mező (opcionális)", detail: "5 percre a reptértől: fortyogó sárforrások, gőzoszlopok, intenzív kénszag. 20 perc bőven elég. Ha fáradt vagy, kihagyható — de ez a legkönnyebben megfogható izlandi geotermikus élmény az úton." },
+            { time: "~19:45", icon: "🌊", name: "Brimketill lávamedence + Bridge Between Continents (opcionális)", detail: "Brimketill: természetes köralakú lávamedence, ahol az óceán hullámzik — 10 perc gyalogos. Bridge Between Continents: rövid híd az Eurázsiai és Észak-Amerikai tektonikai lemez közötti hasadékon át — 10 perc. Mindkettő 10 percre egymástól." },
+            { time: "~21:00", icon: "🍽", name: "Reykjavík — vacsora + szállás", detail: "Svarta Kaffið, Messinn vagy egy egyszerűbb burger is elég az első estére. Júliusban este 22:30-kor még teljes napfény van." },
+            { time: "késő este", icon: "⛽", name: "Tankolás + lefekvés", detail: "N1 vagy Olís még ezen az estén jó ötlet, hogy másnap ne ezzel induljon a Snæfellsnes-nap." }
           ],
-          notes: ["A fő cél itt nem a városnézés, hanem a gyors átállás és a sötétíthető szállás.", "Autóátvételnél fotózzátok körbe a karcokat, üveget és lökhárítókat; Izlandon a kavics- és szélkár különösen gyakori.", "A gravel insurance (SCDW/GP) itt nem finom extra, hanem alap logika.", "A kutaknál PIN-kód kötelező, kontaktless nem mindenhol megy.", "GPS-óra állítás: GMT (UTC+0) — Magyarországtól -2 óra.", "Tankolj még este az N1 Hafnargata 86-on (24/7) — reggel hosszú út jön Snæfellsnes felé."],
+          notes: ["A Reykjanes-pontok mind a KEF → Reykjavík útvonalon vannak, nem kerülő — csak 20-30 percet adnak az estéhez.", "Autóátvételnél fotózzátok körbe a karcokat, üveget és lökhárítókat; Izlandon a kavics- és szélkár különösen gyakori.", "A gravel insurance (SCDW/GP) itt nem finom extra, hanem alap logika.", "A kutaknál PIN-kód kötelező, kontaktless nem mindenhol megy.", "GPS-óra állítás: GMT (UTC+0) — Magyarországtól -2 óra.", "Tankolj még este az N1 Hafnargata 86-on (24/7) — reggel hosszú út jön Snæfellsnes felé.", "Ha nagyon fáradt a csapat, a Reykjanes-pontok kihagyhatók és visszafelé (Day 8 után) is megcsinálhatók."],
           links: [
             { label: "SCDW / GP insurance guide", url: "https://epiciceland.net/car-rental-insurance-guide-iceland/" },
             { label: "N1 Hafnargata 86", url: "https://www.google.com/maps/search/?api=1&query=63.996711,-22.549587" },
-            { label: "Svarta Kaffið", url: "https://www.google.com/maps/place/?q=place_id:ChIJgYjsaOJ11kgRJBwQqYbRz_Y" }
+            { label: "Svarta Kaffið", url: "https://www.google.com/maps/place/?q=place_id:ChIJgYjsaOJ11kgRJBwQqYbRz_Y" },
+            { label: "Gunnuhver", url: "https://www.google.com/maps/search/?api=1&query=Gunnuhver+Iceland" },
+            { label: "Brimketill", url: "https://www.google.com/maps/search/?api=1&query=Brimketill+Iceland" },
+            { label: "Bridge Between Continents", url: "https://www.google.com/maps/search/?api=1&query=Bridge+Between+Continents+Iceland" }
           ],
           gpxPlaces: [
-            { name: "Keflavík reptér (KEF)", badge: "érkezés", detail: "Érkezés este, itt jön az autóátvétel és az első rövid izlandi logisztikai váltás.", maps: "https://www.google.com/maps/search/?api=1&query=Keflav%C3%ADk+rept%C3%A9r+%28KEF%29" },
-            { name: "N1 Self-service Keflavík (Hafnargata)", badge: "tankolás", detail: "24/7 benzinkút a reptérkörnyezetben, praktikus még az első este letudni.", maps: "https://www.google.com/maps/search/?api=1&query=N1+Self-service+Keflav%C3%ADk+%28Hafnargata%29" },
+            { name: "Keflavík reptér (KEF)", badge: "érkezés", detail: "Érkezés este, itt jön az autóátvétel és az első izlandi logisztikai váltás.", maps: "https://www.google.com/maps/search/?api=1&query=Keflav%C3%ADk+rept%C3%A9r+%28KEF%29" },
+            { name: "Gunnuhver geotermikus mező", badge: "opcionális este", googleRating: "4.5", duration: "20 perc", reviewNote: "Izland legnagyobb forróiszap-forrása — gőzoszlopok, kénszag, teljesen ingyenes · 5 percre KEF-től", detail: "Fortyogó sárforrások és gőzoszlopok. Az autókölcsönzés után azonnal elérhető, 5 percre a reptértől.", maps: "https://www.google.com/maps/search/?api=1&query=Gunnuhver+Iceland" },
+            { name: "Brimketill lávamedence", badge: "opcionális este", googleRating: "4.6", duration: "15–20 perc", reviewNote: "Természetes köralakú lávamedence az Atlanti hullámzásában — egyedülálló, különösen viharos fényben · 4.6 ★", detail: "Természetes kőlavór-alakú lávamedence, ahol az óceán hullámzik be. Erős fotóhely.", maps: "https://www.google.com/maps/search/?api=1&query=Brimketill+Iceland" },
+            { name: "Bridge Between Continents", badge: "opcionális este", googleRating: "4.0", duration: "10–15 perc", reviewNote: "Rövid gyalogóhíd az eurázsiai és észak-amerikai tektonikai lemez hasadékán át — szimbolikus, gyors megálló", detail: "Kis gyalogóhíd a két kontinens közötti hasadékon — gyors és szimbolikus megálló Brimketill közelében.", maps: "https://www.google.com/maps/search/?api=1&query=Bridge+Between+Continents+Iceland" },
+            { name: "N1 Self-service Keflavík (Hafnargata)", badge: "tankolás", detail: "24/7 benzinkút, praktikus még az első este letudni.", maps: "https://www.google.com/maps/search/?api=1&query=N1+Self-service+Keflav%C3%ADk+%28Hafnargata%29" },
             { name: "Reykjavík szállás", badge: "szállás", detail: "Center Hotels Plaza / Hótel Heiðmörk / Reykjavík Lights Hotel vonal; itt a sötétíthetőség fontosabb, mint a látvány.", maps: "https://www.google.com/maps/search/?api=1&query=Reykjav%C3%ADk+sz%C3%A1ll%C3%A1s" },
             { name: "Svarta Kaffið", badge: "vacsora opció", detail: "Bárányleves cipóban, gyors és klasszikus első esti választás a Laugaveguron.", maps: "https://www.google.com/maps/search/?api=1&query=Svarta+Kaffi%C3%B0+Reykjavik" },
             { name: "Messinn", badge: "vacsora opció", detail: "Halas-húsos, erősebb vacsoraopció a belvárosban, ha még van energiátok beülni.", maps: "https://www.google.com/maps/search/?api=1&query=Messinn+Reykjavik" }
@@ -1384,14 +1398,15 @@ const tripData = {
           rainNote: { icon: "🔴", label: "Esős? Legesőérzékenyebb nap — köd/eső esetén csere Day 1-gyel!" },
           tags: [
             { label: "~450 km", cls: "tag-drive" },
-            { label: "Kirkjufell", cls: "tag-focus" }
+            { label: "Kirkjufell", cls: "tag-focus" },
+            { label: "puffinok", cls: "tag-focus" }
           ],
           activities: [
             { time: "reggel", icon: "🚗", name: "Korai indulás Reykjavíkból", detail: "Borgarnesnél tankolás és Bónus-beszerzés után jön a teljes Snæfellsnes-ív." },
             { time: "napközben", icon: "📸", name: "Gerðuberg → Ytri Tunga → Búðakirkja → Arnarstapi", detail: "Bazaltorgonák, fókák, fekete templom és tengerparti bazaltképződmények egymás után." },
             { time: "este", icon: "🏔", name: "Kirkjufell + tovább észak felé", detail: "A nap legikonikusabb fotópontja, majd hosszabb esti átvezetés Akureyri / Varmahlíð irányába." }
           ],
-          notes: ["Ez papíron hosszú nap, de júliusban a nagyon hosszú nappal miatt jól működik.", "⚠️ Ha Day 3-ra (Snæfellsnes napjára) eső/köd várható (vedur.is alapján), csere Day 2-vel! Kirkjufell ködben szürke sárfolt — nem érdemes így menni.", "Hvalfjörður alagút: ingyenes (2019 óta), tilos benne megállni, max 70 km/h.", "Borgarnes az utolsó kényelmes tankolós + Bónus bevásárlós pont Reykjavík után — a félszigeten drága, kicsi kutak vannak.", "Kirkjufellnél 1000 ISK parkolódíj: kamerás ellenőrzés van, ne hagyd ki, mert bírság ~50 USD.", "Bárányokra különösen számíts az útszéleken, főleg Snæfellsnesen."],
+          notes: ["Ez papíron hosszú nap, de júliusban a nagyon hosszú nappal miatt jól működik.", "⚠️ Ha Day 3-ra (Snæfellsnes napjára) eső/köd várható (vedur.is alapján), csere Day 2-vel! Kirkjufell ködben szürke sárfolt — nem érdemes így menni.", "Hvalfjörður alagút: ingyenes (2019 óta), tilos benne megállni, max 70 km/h.", "Borgarnes az utolsó kényelmes tankolós + Bónus bevásárlós pont Reykjavík után — a félszigeten drága, kicsi kutak vannak.", "Kirkjufellnél 1000 ISK parkolódíj: kamerás ellenőrzés van, ne hagyd ki, mert bírság ~50 USD.", "Bárányokra különösen számíts az útszéleken, főleg Snæfellsnesen.", "🐦 Puffinok (lundák): Lóndrangar sziklafalakon és az Arnarstapi–Hellnar tengerparti sziklákon júliusban rendszeresen láthatók. 16:00 után a legaktívabbak — ha lehetséges, a délutáni megállókat időzítsd erre."],
           links: [
             { label: "Kirkjufell", url: "https://www.google.com/maps/place/?q=place_id:ChIJhw_Xjat71UgRe9sxd6VbtAk" },
             { label: "Kirkjufellsfoss", url: "https://www.google.com/maps/place/?q=place_id:ChIJ0wB9h7J71UgR0DijKGoYYwI" },
@@ -1407,8 +1422,9 @@ const tripData = {
             { name: "Gerðuberg bazaltorgonák", badge: "fotós stop", duration: "15–20 perc", reviewNote: "Gyors, látványos bazaltfal — sokszor kihagyják, pedig remek napi nyitó kép · 4.5 ★", detail: "15 perces, gyors bazaltfalas megálló, jól nyitja a Snæfellsnes blokkot.", maps: "https://www.google.com/maps/search/?api=1&query=Ger%C3%B0uberg+Cliffs+Iceland" },
             { name: "Ytri-Tunga", badge: "fókások", duration: "20–30 perc", reviewNote: "Ha van fóka a parton, 5 percet megér — de nem garantált a látogatás · 4.3 ★", detail: "A fókás strand rövid kitérőnek is megéri, főleg jó fényben.", maps: "https://www.google.com/maps/search/?api=1&query=Ytri+Tunga+Iceland" },
             { name: "Búðakirkja", badge: "fotópont", duration: "20–25 perc", reviewNote: "Izland egyik legikonikusabb egykép-helyszíne — a fekete templomot háttérben a gleccserrel mindenki hazaviszi · 4.5 ★", detail: "Fekete fatemplom a lávamező szélén, a félsziget egyik legerősebb képe.", maps: "https://www.google.com/maps/search/?api=1&query=B%C3%BA%C3%B0akirkja+Iceland" },
-            { name: "Arnarstapi → Hellnar séta", badge: "főparti szakasz", duration: "60–90 perc", reviewNote: "A 2,5 km-es tengerparti ösvény a nap legjobb aktív blokkja — bazaltívek, madársziklák, hajnal utáni fény · 4.4 ★", detail: "Bazaltívek, madársziklák és rövid tengerparti gyalogos blokk.", maps: "https://www.google.com/maps/search/?api=1&query=Arnarstapi+Hellnar+walk" },
+            { name: "Arnarstapi → Hellnar séta", badge: "főparti szakasz", duration: "60–90 perc", reviewNote: "A 2,5 km-es tengerparti ösvény a nap legjobb aktív blokkja — bazaltívek, madársziklák, puffinok a sziklákon · 4.4 ★", detail: "Bazaltívek, madársziklák és rövid tengerparti gyalogos blokk. Júliusban puffinok (lundák) a sziklaperemeken.", maps: "https://www.google.com/maps/search/?api=1&query=Arnarstapi+Hellnar+walk" },
             { name: "Fjöruhúsið", badge: "kávé/ebéd", duration: "30–45 perc", reviewNote: "Csodálatos helyen lévő kis kávézó Hellnarban — waffles és kávé az Atlanti-óceán felett · 4.6 ★", detail: "Hellnar kávézós megálló, jól illik a part menti séta közepére.", maps: "https://www.google.com/maps/search/?api=1&query=Fj%C3%B6ruh%C3%BAsi%C3%B0+Hellnar" },
+            { name: "Lóndrangar bazaltkürtők", badge: "puffin + fotós", duration: "20–30 perc", reviewNote: "Két magas bazalt tengeri kürtő az óceánból — sziklafalain júliusban puffinok fészkelnek · 4.5 ★", detail: "Látványos bazalt-sziklaoszlopok, a sziklaperemen puffinok (lundák) keresendők 16:00 után. Rövid gyalogos megálló.", maps: "https://www.google.com/maps/search/?api=1&query=L%C3%B3ndrangar+Iceland" },
             { name: "Vatnshellir lávabarlang", badge: "opcionális túra", duration: "60–75 perc (vezetetett)", reviewNote: "Egyedülálló lávacső-élmény sisakkal és lámpával — előre foglalás erősen ajánlott · 4.5 ★", detail: "1 órás vezetett barlangtúra, ha a napritmus még engedi.", maps: "https://www.google.com/maps/search/?api=1&query=Vatnshellir+Cave+Iceland" },
             { name: "Djúpalónssandur", badge: "fekete strand", duration: "30–40 perc", reviewNote: "Hajóroncs-töredékek és bazaltkavicsos strand — gyors, de nagyon hangulatos megálló · 4.5 ★", detail: "Fekete kavicsos strand és régi hajóroncs-töredékek, rövid, de erős hangulatú pont.", maps: "https://www.google.com/maps/search/?api=1&query=Dj%C3%BApal%C3%B3nssandur+Iceland" },
             { name: "Saxhóll kráter", badge: "epiciceland plusz", duration: "20–30 perc", reviewNote: "Pár percnyi kaptatás után 360 fokos kráterperem-panoráma — megéri, ha ott jártok · 4.5 ★", detail: "Lépcsőzhető kráter, gyors panorámás kitérő Hellissandur közelében.", maps: "https://www.google.com/maps/search/?api=1&query=Saxh%C3%B3ll+crater+Iceland" },

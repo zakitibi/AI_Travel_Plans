@@ -2066,6 +2066,60 @@
     "icon": "🏛️"
   },
   {
+    "id": "gunnuhver",
+    "name": "Gunnuhver geotermikus mező",
+    "lat": 63.8267,
+    "lng": -22.6844,
+    "type": "sight",
+    "stage": "izland",
+    "day": 9,
+    "date": "2026-07-18",
+    "country": "IS",
+    "priority": "medium",
+    "icon": "♨️",
+    "popup": {
+      "title": "Gunnuhver — geotermikus mező",
+      "description": "Izland legnagyobb forróiszap-forrása a Reykjanes-félszigeten. Fortyogó sárforrások, gőzoszlopok, kénszag. 5 percre a KEF reptértől — az érkezési este könnyű opcionális megállója.",
+      "note": "Ingyenes, körülkerített sétaösvényekkel. 20 perc bőven elég."
+    }
+  },
+  {
+    "id": "brimketill",
+    "name": "Brimketill lávamedence",
+    "lat": 63.8199,
+    "lng": -22.5574,
+    "type": "sight",
+    "stage": "izland",
+    "day": 9,
+    "date": "2026-07-18",
+    "country": "IS",
+    "priority": "medium",
+    "icon": "🌊",
+    "popup": {
+      "title": "Brimketill — lávamedence",
+      "description": "Természetes köralakú lávamedence, ahol az Atlanti-óceán hullámzik be a sziklaüstbe. Különösen látványos viharos időben. Rövid gyalogos ösvény a parkolótól.",
+      "note": "10–15 perces megálló; Gunnuhevertől ~10 percre autóval."
+    }
+  },
+  {
+    "id": "bridge-between-continents",
+    "name": "Bridge Between Continents",
+    "lat": 63.8678,
+    "lng": -22.6725,
+    "type": "sight",
+    "stage": "izland",
+    "day": 9,
+    "date": "2026-07-18",
+    "country": "IS",
+    "priority": "medium",
+    "icon": "🌉",
+    "popup": {
+      "title": "Bridge Between Continents",
+      "description": "Gyalogóhíd az Eurázsiai és az Észak-Amerikai tektonikai lemez közötti hasadékon (Miðlínan). A Reykjanes-hátság felszíni megnyilvánulása — szimbolikus, gyors megálló.",
+      "note": "Brimketill közelében; 10 perc séta a hídra és vissza."
+    }
+  },
+  {
     "id": "budapest-end",
     "name": "Budapest — hazaérkezés",
     "lat": 47.4979,
