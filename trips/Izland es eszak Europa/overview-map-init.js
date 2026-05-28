@@ -1,8 +1,9 @@
 /**
  * overview-map-init.js — Áttekintés oldal interaktív térképe
  *
- * Third Leaflet map: placed on the default "Áttekintés" tab,
- * directly below the 📅 Napi idővonal section.
+ * Shared overview-style Leaflet map:
+ *   - overview tab: default "Áttekintés" map
+ *   - dedicated "Térkép" tab: same renderer, same filters, same data logic
  *
  * Data source: same pre-generated static JSON files as the other maps
  *   /data/trips/izland-es-eszak-europa/pois.json   — 39 POI
@@ -54,6 +55,17 @@ function typeConf(type) {
   return TYPE_CONF[(type || "").toLowerCase()] || { emoji: "📌", cls: "tm-marker-default" };
 }
 
+function formatMmDd(dateStr) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr || "");
+  return match ? `${match[2]}.${match[3]}` : "";
+}
+
+function displayDayLabel({ day, date }) {
+  const mmdd = formatMmDd(date);
+  if (mmdd) return mmdd;
+  return day != null ? `${day}. nap` : "";
+}
+
 function createIcon(L, poi) {
   const { emoji, cls } = typeConf(poi.type);
   return L.divIcon({
@@ -68,7 +80,6 @@ function createIcon(L, poi) {
 function buildPopupHtml(poi) {
   const { emoji } = typeConf(poi.type);
   const subtitle = [
-    poi.day   ? `${poi.day}. nap` : "",
     poi.date  ? poi.date.replace(/-/g, ".") : "",
     poi.country || "",
   ].filter(Boolean).join(" · ");
@@ -123,6 +134,7 @@ function buildDayItems(pois) {
       map[poi.day] = { day: poi.day, stage: poi.stage, hotel: null, sight: null, any: null };
     }
     const e = map[poi.day];
+    if (!e.date && poi.date) e.date = poi.date;
     if (poi.type === "hotel" && !e.hotel) e.hotel = poi.name;
     if (poi.type === "sight" && !e.sight) e.sight = poi.name;
     if (!e.any) e.any = poi.name;
@@ -133,7 +145,7 @@ function buildDayItems(pois) {
       const phase = PHASES.find(p => p.id === e.stage);
       return {
         id:       e.day,
-        label:    `${e.day}. nap — ${e.hotel || e.sight || e.any || "–"}`,
+        label:    `${displayDayLabel(e)} — ${e.hotel || e.sight || e.any || "–"}`,
         dotColor: phase?.dotColor || "#64748b",
       };
     });
@@ -296,17 +308,34 @@ function buildFilterSidebar(sidebarEl, pois, markerList, leafMap) {
 }
 
 // ── Main init ─────────────────────────────────────────────────────────────────
-let initialized = false;
-let _mapApi = null;
+const MAP_TARGETS = [
+  {
+    key: "overview-map",
+    containerId: "overview-map",
+    sidebarId: "overview-map-filter",
+    autoInit: true,
+    tabId: "overview",
+  },
+  {
+    key: "trip-map",
+    containerId: "trip-map",
+    sidebarId: "trip-map-filter",
+    autoInit: false,
+    tabId: "terkep",
+  },
+];
 
-async function initOverviewMap() {
-  if (initialized) return;
-  initialized = true;
+const initialized = {};
+const mapApis = {};
+
+async function initOverviewStyleMap(target) {
+  if (initialized[target.key]) return;
+  initialized[target.key] = true;
 
   const L = window.L;
   if (!L) { console.error("[OverviewMap] Leaflet not found"); return; }
 
-  const container = document.getElementById("overview-map");
+  const container = document.getElementById(target.containerId);
   if (!container) return;
 
   const overlay = container.closest(".travel-map-wrap")?.querySelector(".tm-overlay");
@@ -315,13 +344,13 @@ async function initOverviewMap() {
   try {
     const { pois, route } = await loadTrip(TRIP_ID, DATA_ROOT);
 
-    const map = L.map("overview-map", {
+    const map = L.map(target.containerId, {
       zoomControl:        true,
       attributionControl: true,
       preferCanvas:       true,
     }).setView([60, 5], 4);
     window._leafletMaps = window._leafletMaps || {};
-    window._leafletMaps["overview-map"] = map;
+    window._leafletMaps[target.key] = map;
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
@@ -347,8 +376,8 @@ async function initOverviewMap() {
     }
 
     // Filter sidebar (outside map — touch-scroll friendly on iOS)
-    const sidebar = document.getElementById("overview-map-filter");
-    if (sidebar) _mapApi = buildFilterSidebar(sidebar, pois, markerList, map);
+    const sidebar = document.getElementById(target.sidebarId);
+    if (sidebar) mapApis[target.key] = buildFilterSidebar(sidebar, pois, markerList, map);
 
     const coords = pois.filter(p => p.lat != null).map(p => [p.lat, p.lng]);
     if (coords.length) {
@@ -357,7 +386,7 @@ async function initOverviewMap() {
 
     if (overlay) overlay.classList.add("tm-hidden");
   } catch (err) {
-    console.error("[OverviewMap] Failed:", err);
+    console.error(`[OverviewMap:${target.key}] Failed:`, err);
     if (overlay) {
       overlay.innerHTML = `<div class="tm-error-msg">Nem sikerült betölteni az adatokat.<br><small>${err.message}</small></div>`;
       overlay.classList.remove("tm-hidden");
@@ -367,11 +396,25 @@ async function initOverviewMap() {
 
 // ── Public API ────────────────────────────────────────────────────────────────
 window.overviewMapAPI = {
-  focusPhase: (id) => _mapApi?.showPhase(id),
-  showAll:    ()   => _mapApi?.showAll(),
+  focusPhase: (id) => mapApis["overview-map"]?.showPhase(id),
+  showAll:    ()   => mapApis["overview-map"]?.showAll(),
 };
 
-// ── Bootstrap: fire on first rAF after module load ────────────────────────────
-// Overview is the default tab → always visible on load.
-// rAF ensures the container has a layout before Leaflet initialises.
-requestAnimationFrame(() => initOverviewMap());
+function hookTabSystem() {
+  const original = window.activateTab;
+  window.activateTab = function (tabId) {
+    if (typeof original === "function") original.call(this, tabId);
+    const target = MAP_TARGETS.find((item) => item.tabId === tabId && !item.autoInit);
+    if (target) {
+      requestAnimationFrame(() => initOverviewStyleMap(target));
+    }
+  };
+}
+
+hookTabSystem();
+
+for (const target of MAP_TARGETS) {
+  if (target.autoInit || document.querySelector(`.view.is-active[data-view="${target.tabId}"]`)) {
+    requestAnimationFrame(() => initOverviewStyleMap(target));
+  }
+}

@@ -46,6 +46,17 @@ function dayColor(day) {
   return day != null ? DAY_PALETTE[(day - 1) % DAY_PALETTE.length] : "#64748b";
 }
 
+function formatMmDd(dateStr) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr || "");
+  return match ? `${match[2]}.${match[3]}` : "";
+}
+
+function displayDayLabel({ day, date, stage }) {
+  const mmdd = formatMmDd(date);
+  if (mmdd) return mmdd;
+  return day != null ? `${day}. nap` : "";
+}
+
 // ── Type metadata ─────────────────────────────────────────────────────────────
 const ALL_TYPES = [
   { id: "hotel",  label: "Szállás",   dotColor: "#1f5a3e" },
@@ -81,11 +92,12 @@ function createIcon(L, poi) {
 
   // Hotel: show day-number badge and day-accent border
   if (poi.type === "hotel" && poi.day != null) {
+    const badgeLabel = displayDayLabel(poi);
     return L.divIcon({
       className: "",
       html: `<div class="tm-marker ${cls} tm-marker-hotel-day" style="--day-color:${color}">
                <span class="tm-marker-inner">${emoji}</span>
-               <span class="tm-day-badge">${poi.day}</span>
+               <span class="tm-day-badge">${badgeLabel}</span>
              </div>`,
       iconSize:    [34, 34],
       iconAnchor:  [17, 34],
@@ -110,7 +122,8 @@ function createIcon(L, poi) {
 // ── Popup builder ─────────────────────────────────────────────────────────────
 function buildPopupHtml(poi) {
   const emoji    = poiEmoji(poi);
-  const dayLabel = poi.day != null ? `<span class="tm-popup-day-chip" style="background:${dayColor(poi.day)}">${poi.day}. nap</span>` : "";
+  const dayText  = displayDayLabel(poi);
+  const dayLabel = dayText ? `<span class="tm-popup-day-chip" style="background:${dayColor(poi.day)}">${dayText}</span>` : "";
   const subtitle = [
     poi.date    ? poi.date.replace(/-/g, ".")  : "",
     poi.country || "",
@@ -143,7 +156,7 @@ function buildPopupHtml(poi) {
  * @param {string}   stageId
  * @param {Map}      routesByDay  day → L.Layer[]  (filled in-place)
  */
-function renderRoutes(L, map, route, stageId, routesByDay) {
+function renderRoutes(L, map, route, stageId, routesByDay, dayDateMap) {
   const filtered = {
     type: "FeatureCollection",
     features: (route.features || []).filter(
@@ -168,7 +181,10 @@ function renderRoutes(L, map, route, stageId, routesByDay) {
     },
     onEachFeature(feature, layer) {
       const p = feature.properties || {};
-      const dayPart  = p.day      != null ? `<b>${p.day}. nap</b> · ` : "";
+      const routeDayLabel = p.day != null
+        ? displayDayLabel({ day: p.day, date: dayDateMap?.get(p.day), stage: stageId })
+        : "";
+      const dayPart  = routeDayLabel ? `<b>${routeDayLabel}</b> · ` : "";
       const distPart = p.distance_km      ? ` · <b>${p.distance_km} km</b>` : "";
       layer.bindTooltip(
         `${dayPart}${p.name || ""}${distPart}`,
@@ -189,9 +205,10 @@ function buildDayItems(pois, stageId) {
   for (const poi of pois) {
     if (poi.day == null) continue;
     if (!byDay[poi.day]) {
-      byDay[poi.day] = { day: poi.day, hotel: null, sight: null, any: null };
+      byDay[poi.day] = { day: poi.day, date: poi.date || "", hotel: null, sight: null, any: null };
     }
     const e = byDay[poi.day];
+    if (!e.date && poi.date) e.date = poi.date;
     if (poi.type === "hotel" && !e.hotel) e.hotel = poi.name;
     if (poi.type === "sight" && !e.sight) e.sight = poi.name;
     if (!e.any) e.any = poi.name;
@@ -200,7 +217,7 @@ function buildDayItems(pois, stageId) {
     .sort((a, b) => a.day - b.day)
     .map(e => ({
       id:       e.day,
-      label:    `${e.day}. nap — ${e.hotel || e.sight || e.any || "–"}`,
+      label:    `${displayDayLabel({ day: e.day, date: e.date, stage: stageId })} — ${e.hotel || e.sight || e.any || "–"}`,
       dotColor: dayColor(e.day),
     }));
 }
@@ -355,6 +372,12 @@ async function initSectionMap(stageId) {
 
     // Filter to this stage only
     const stagePois = allPois.filter(p => p.stage === stageId && p.lat != null && p.lng != null);
+    const dayDateMap = new Map();
+    for (const poi of stagePois) {
+      if (poi.day != null && poi.date && !dayDateMap.has(poi.day)) {
+        dayDateMap.set(poi.day, poi.date);
+      }
+    }
 
     const map = L.map(containerId, {
       zoomControl:        true,
@@ -371,7 +394,7 @@ async function initSectionMap(stageId) {
 
     // Routes — pass in routesByDay map so day-filter can toggle them
     const routesByDay = new Map();
-    renderRoutes(L, map, allRoute, stageId, routesByDay);
+    renderRoutes(L, map, allRoute, stageId, routesByDay, dayDateMap);
 
     // Markers
     const markerList = [];
@@ -427,3 +450,8 @@ async function initSectionMap(stageId) {
     }
   };
 })();
+
+const activeSectionView = document.querySelector('.view.is-active[data-view="baltikum"], .view.is-active[data-view="izland"], .view.is-active[data-view="hazaut"]');
+if (activeSectionView?.dataset?.view) {
+  requestAnimationFrame(() => initSectionMap(activeSectionView.dataset.view));
+}

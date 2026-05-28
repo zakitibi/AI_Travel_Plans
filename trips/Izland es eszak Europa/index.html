@@ -120,6 +120,10 @@
       `).join("");
     }
 
+    function detailsOpenAttr(isOpen, forceClosed = false) {
+      return !forceClosed && isOpen ? "open" : "";
+    }
+
     function renderDriveTimeline(points) {
       if (!points || points.length < 2) return "";
 
@@ -371,9 +375,9 @@
       `;
     }
 
-    function renderCountryContext(section) {
+    function renderCountryContext(section, forceClosed = false) {
       return section.context.map((block) => `
-        <details class="country-context ${block.accent}" ${block.open ? "open" : ""}>
+        <details class="country-context ${block.accent}" ${detailsOpenAttr(block.open, forceClosed)}>
           <summary class="collapse-summary">
             <span>${block.title}</span>
             <span class="collapse-icon" aria-hidden="true">▾</span>
@@ -393,10 +397,10 @@
       `).join("");
     }
 
-    function renderCollapseBox(block) {
+    function renderCollapseBox(block, forceClosed = false) {
       if (!block) return "";
       return `
-        <details class="country-context ${block.accent}" ${block.open ? "open" : ""}>
+        <details class="country-context ${block.accent}" ${detailsOpenAttr(block.open, forceClosed)}>
           <summary class="collapse-summary">
             <span>${block.title}</span>
             <span class="collapse-icon" aria-hidden="true">▾</span>
@@ -418,9 +422,9 @@
       `;
     }
 
-    function renderDayCard(day, accentClass) {
+    function renderDayCard(day, accentClass, forceClosed = false) {
       return `
-        <details class="day-card ${accentClass}" ${day.open ? "open" : ""}>
+        <details class="day-card ${accentClass}" ${detailsOpenAttr(day.open, forceClosed)}>
           <summary class="day-head">
             <div class="day-num">${day.num}</div>
             <div class="day-info">
@@ -508,8 +512,23 @@
 
     function renderDetailedSection(sectionKey) {
       const section = tripData.sections[sectionKey];
+      const forceClosed = sectionKey === "izland";
       const generalInfoBox = section.generalInfoBoxKey ? tripData[section.generalInfoBoxKey] : null;
-      const topMap = section.mapAsset && section.mapAsset.image ? `
+      const topMap = section.mapAsset && section.mapAsset.image ? (forceClosed ? `
+        <details class="card section-card map-card coll-card">
+          <summary class="map-card-head">
+            <div>
+              <h3 class="info-title">${section.mapAsset.title}</h3>
+              <p class="info-text">${section.mapAsset.text}</p>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:10px;">
+              <div class="context-sources">${renderLinkList(section.mapAsset.links)}</div>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </div>
+          </summary>
+          <img class="section-map-image" src="${section.mapAsset.image}" alt="${section.mapAsset.title}">
+        </details>
+      ` : `
         <section class="card section-card map-card">
           <div class="map-card-head">
             <div>
@@ -520,9 +539,9 @@
           </div>
           <img class="section-map-image" src="${section.mapAsset.image}" alt="${section.mapAsset.title}">
         </section>
-      ` : "";
+      `) : "";
       const bottomMaps = section.mapAsset && section.mapAsset.bottomMaps ? `
-        <details class="card section-card map-card map-card-bottom coll-card" open>
+        <details class="card section-card map-card map-card-bottom coll-card" ${detailsOpenAttr(true, forceClosed)}>
           <summary class="map-card-head">
             <div>
               <h3 class="info-title">${section.mapAsset.bottomMaps.title}</h3>
@@ -555,7 +574,7 @@
       const bottomMap = section.mapAsset && section.mapAsset.bottomAsset ? (() => {
         const ba = section.mapAsset.bottomAsset;
         return `
-          <details class="card section-card map-card map-card-bottom coll-card" open>
+          <details class="card section-card map-card map-card-bottom coll-card" ${detailsOpenAttr(true, forceClosed)}>
             <summary class="map-card-head">
               <div>
                 <h3 class="info-title">${ba.title}</h3>
@@ -593,7 +612,7 @@
             <div class="country-pill ${section.accent}">${section.pill}</div>
           </div>
           ${section.introCollapsible ? `
-          <details class="country-context ${section.accent}" open>
+          <details class="country-context ${section.accent}" ${detailsOpenAttr(true, forceClosed)}>
             <summary class="collapse-summary">
               <span>📋 Szakasz összefoglalója</span>
               <span class="collapse-icon" aria-hidden="true">▾</span>
@@ -607,10 +626,10 @@
             ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
           </section>
           `}
-          ${renderCollapseBox(generalInfoBox)}
+          ${renderCollapseBox(generalInfoBox, forceClosed)}
           ${topMap}
           ${section.extraResources && section.extraResources.length ? section.extraResources.map((resource) => `
-            <details class="country-context ${resource.accent || section.accent}" ${resource.open ? "open" : ""}>
+            <details class="country-context ${resource.accent || section.accent}" ${detailsOpenAttr(resource.open, forceClosed)}>
               <summary class="collapse-summary">
                 <span>${resource.title}</span>
                 <span class="collapse-icon" aria-hidden="true">▾</span>
@@ -620,7 +639,7 @@
                 ${resource.links && resource.links.length ? `<div class="context-sources">${renderLinkList(resource.links)}</div>` : ""}
                 ${resource.items && resource.items.length ? `<ul class="plain-list compact top-gap">${resource.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
                 ${resource.subBoxes && resource.subBoxes.length ? resource.subBoxes.map((sub) => `
-                  <details class="country-context-inner ${sub.accent || resource.accent || section.accent}" ${sub.open ? "open" : ""}>
+                  <details class="country-context-inner ${sub.accent || resource.accent || section.accent}" ${detailsOpenAttr(sub.open, forceClosed)}>
                     <summary class="collapse-summary">
                       <span>${sub.title}</span>
                       <span class="collapse-icon" aria-hidden="true">▾</span>
@@ -635,13 +654,13 @@
               </div>
             </details>
           `).join("") : ""}
-          ${renderCountryContext(section)}
+          ${renderCountryContext(section, forceClosed)}
           <section class="days">
-            ${section.days.map((day) => renderDayCard(day, section.accent)).join("")}
+            ${section.days.map((day) => renderDayCard(day, section.accent, forceClosed)).join("")}
           </section>
           ${bottomMaps}
           ${bottomMap}
-          <details class="card section-card coll-card" style="margin-top:20px;" open>
+          <details class="card section-card coll-card" style="margin-top:20px;" ${detailsOpenAttr(true, forceClosed)}>
             <summary class="coll-card-head">
               <h3 class="info-title" style="margin:0;">🗺 Szakasz-térkép</h3>
               <span class="collapse-icon" aria-hidden="true">▾</span>
@@ -945,16 +964,15 @@
             </div>
           </div>
 
-          <!-- MAP 1 — Útvonal áttekintő -->
           <details class="card section-card coll-card" open>
             <summary class="coll-card-head">
               <span class="map-section-title" style="margin:0;">🗺 Útvonal-áttekintő</span>
               <span class="collapse-icon" aria-hidden="true">▾</span>
             </summary>
             <p class="section-intro">
-              Teljes útvonal szakaszonként — valódi OSRM autós nyomvonal, kompok és repülők.
-              A rétegvezérlővel (<strong>jobb felső sarok</strong>) szűrhetsz szakasz szerint.
-              Kattints bármelyik jelzőre a részletes adatokért.
+              Ugyanaz az interaktív útvonal-térkép, mint az Áttekintés oldalon:
+              teljes útvonal szakaszokkal, valós OSRM autós nyomvonallal, kompokkal és repülőkkel.
+              A jobb oldali szűrőben fázis, típus és dátum szerint szűrhetsz.
             </p>
             <div class="map-filter-wrap">
               <div class="travel-map-wrap">
@@ -965,29 +983,6 @@
                 </div>
               </div>
               <aside class="dm-filter-sidebar" id="trip-map-filter"></aside>
-            </div>
-          </details>
-
-          <!-- MAP 2 — Részletes napiterv -->
-          <details class="card section-card coll-card" style="margin-top:20px;" open>
-            <summary class="coll-card-head">
-              <span class="map-section-title" style="margin:0;">📍 Részletes napiterv-térkép</span>
-              <span class="collapse-icon" aria-hidden="true">▾</span>
-            </summary>
-            <p class="section-intro">
-              Minden megálló, szállás és látnivaló napra lebontva.
-              A jobb oldali szűrőpanelen szakasz, típus és nap szerint szűrhetsz
-              — egyszerre bármelyik kombinációban.
-            </p>
-            <div class="map-filter-wrap">
-              <div class="travel-map-wrap">
-                <div id="detail-map" style="width:100%;height:100%;"></div>
-                <div class="tm-overlay">
-                  <div class="tm-spinner"></div>
-                  <span>Térkép betöltése…</span>
-                </div>
-              </div>
-              <aside class="dm-filter-sidebar" id="detail-map-filter"></aside>
             </div>
           </details>
 
@@ -1077,7 +1072,8 @@
       `;
     }
 
-    views.innerHTML = [
+    const PAGE_STATE_KEY = "izland-es-eszak-europa:view-state";
+    const tabsMarkup = [
       renderOverview(),
       renderPersonView("tibi"),
       renderPersonView("henni"),
@@ -1093,26 +1089,76 @@
       renderBudget()
     ].join("");
 
+    function readPageState() {
+      try {
+        return JSON.parse(sessionStorage.getItem(PAGE_STATE_KEY) || "{}");
+      } catch (_) {
+        return {};
+      }
+    }
+
+    function writePageState(nextState) {
+      try {
+        const prev = readPageState();
+        sessionStorage.setItem(PAGE_STATE_KEY, JSON.stringify({ ...prev, ...nextState }));
+      } catch (_) {}
+    }
+
+    function getInitialTabId() {
+      const hashTab = (window.location.hash || "").replace(/^#/, "");
+      if (tabs.some((tab) => tab.id === hashTab)) return hashTab;
+      const savedTab = readPageState().activeTab;
+      if (tabs.some((tab) => tab.id === savedTab)) return savedTab;
+      return tabs[0].id;
+    }
+
+    views.innerHTML = tabsMarkup;
+
+    const initialTabId = getInitialTabId();
     tabsEl.innerHTML = tabs.map((tab, index) => `
-      <button class="tab-btn ${index === 0 ? "is-active" : ""}" data-tab="${tab.id}">${tab.label}</button>
+      <button class="tab-btn ${tab.id === initialTabId ? "is-active" : ""}" data-tab="${tab.id}">${tab.label}</button>
     `).join("");
 
     const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
     const viewEls = Array.from(document.querySelectorAll(".view"));
+    let activeTabId = initialTabId;
 
     function activateTab(id) {
+      activeTabId = id;
       tabButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.tab === id));
       viewEls.forEach((view) => view.classList.toggle("is-active", view.dataset.view === id));
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      writePageState({ activeTab: id });
+      const nextHash = `#${id}`;
+      if (window.location.hash !== nextHash) {
+        history.replaceState(null, "", nextHash);
+      }
     }
 
     window.activateTab = activateTab;
+    activateTab(initialTabId);
 
     tabsEl.addEventListener("click", (event) => {
       const button = event.target.closest(".tab-btn");
       if (!button) return;
       activateTab(button.dataset.tab);
     });
+
+    function saveScrollState() {
+      writePageState({ activeTab: activeTabId, scrollY: window.scrollY });
+    }
+
+    window.addEventListener("scroll", saveScrollState, { passive: true });
+    window.addEventListener("pagehide", saveScrollState);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") saveScrollState();
+    });
+
+    const savedScrollY = Number(readPageState().scrollY);
+    if (Number.isFinite(savedScrollY) && savedScrollY > 0) {
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: savedScrollY, left: 0, behavior: "auto" });
+      });
+    }
 
     // Leaflet invalidateSize when a collapsible map card is re-opened
     document.addEventListener("toggle", (e) => {
@@ -1124,8 +1170,6 @@
       });
     }, true);
   </script>
-  <script type="module" src="./map-init.js"></script>
-  <script type="module" src="./detail-map-init.js"></script>
   <script type="module" src="./overview-map-init.js"></script>
   <script type="module" src="./section-map-init.js"></script>
 </body>

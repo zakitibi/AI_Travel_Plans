@@ -43,6 +43,19 @@ function dayColor(day) {
   return day != null ? DAY_PALETTE[(day - 1) % DAY_PALETTE.length] : "#64748b";
 }
 
+function formatMmDd(dateStr) {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(dateStr || "");
+  return match ? `${match[2]}.${match[3]}` : "";
+}
+
+function displayDayLabel({ day, date, stage }) {
+  if (stage === "izland" && date) {
+    const mmdd = formatMmDd(date);
+    if (mmdd) return mmdd;
+  }
+  return day != null ? `${day}. nap` : "";
+}
+
 // ── Type → icon config ────────────────────────────────────────────────────────
 const TYPE_CONF = {
   hotel:   { emoji: "🏨", cls: "tm-marker-hotel"   },
@@ -65,11 +78,12 @@ function createIcon(L, poi) {
   const color   = dayColor(poi.day);
 
   if (poi.type === "hotel" && poi.day != null) {
+    const badgeLabel = displayDayLabel(poi);
     return L.divIcon({
       className: "",
       html: `<div class="tm-marker ${cls} tm-marker-hotel-day" style="--day-color:${color}">
                <span class="tm-marker-inner">${emoji}</span>
-               <span class="tm-day-badge">${poi.day}</span>
+               <span class="tm-day-badge">${badgeLabel}</span>
              </div>`,
       iconSize:    [34, 34],
       iconAnchor:  [17, 34],
@@ -93,8 +107,9 @@ function createIcon(L, poi) {
 // ── Popup builder ─────────────────────────────────────────────────────────────
 function buildPopupHtml(poi) {
   const emoji    = poiEmoji(poi);
-  const dayLabel = poi.day != null
-    ? `<span class="tm-popup-day-chip" style="background:${dayColor(poi.day)}">${poi.day}. nap</span>`
+  const dayText = displayDayLabel(poi);
+  const dayLabel = dayText
+    ? `<span class="tm-popup-day-chip" style="background:${dayColor(poi.day)}">${dayText}</span>`
     : "";
   const subtitle = [
     poi.date  ? poi.date.replace(/-/g, ".") : "",
@@ -122,7 +137,7 @@ function buildPopupHtml(poi) {
 }
 
 // ── Route renderer ────────────────────────────────────────────────────────────
-function renderRoutes(L, map, route) {
+function renderRoutes(L, map, route, dayDateByStage) {
   L.geoJSON(route, {
     style(feature) {
       const p = feature.properties || {};
@@ -139,7 +154,11 @@ function renderRoutes(L, map, route) {
     },
     onEachFeature(feature, layer) {
       const p = feature.properties || {};
-      const dayPart  = p.day      != null ? `<b>${p.day}. nap</b> · ` : "";
+      const routeDate = p.day != null ? dayDateByStage?.get(`${p.stage || ""}:${p.day}`) : "";
+      const routeDayLabel = p.day != null
+        ? displayDayLabel({ day: p.day, date: routeDate, stage: p.stage })
+        : "";
+      const dayPart  = routeDayLabel ? `<b>${routeDayLabel}</b> · ` : "";
       const distPart = p.distance_km      ? ` · <b>${p.distance_km} km</b>` : "";
       layer.bindTooltip(
         `${dayPart}${p.name || ""}${distPart}`,
@@ -155,9 +174,10 @@ function buildDayItems(pois) {
   for (const poi of pois) {
     if (poi.day == null) continue;
     if (!map[poi.day]) {
-      map[poi.day] = { day: poi.day, hotel: null, sight: null, any: null };
+      map[poi.day] = { day: poi.day, stage: poi.stage, date: poi.date || "", hotel: null, sight: null, any: null };
     }
     const e = map[poi.day];
+    if (!e.date && poi.date) e.date = poi.date;
     if (poi.type === "hotel" && !e.hotel) e.hotel = poi.name;
     if (poi.type === "sight" && !e.sight) e.sight = poi.name;
     if (!e.any) e.any = poi.name;
@@ -166,7 +186,7 @@ function buildDayItems(pois) {
     .sort((a, b) => a.day - b.day)
     .map(e => ({
       id:       e.day,
-      label:    `${e.day}. nap — ${e.hotel || e.sight || e.any || "–"}`,
+      label:    `${displayDayLabel({ day: e.day, date: e.date, stage: e.stage })} — ${e.hotel || e.sight || e.any || "–"}`,
       dotColor: dayColor(e.day),
     }));
 }
@@ -326,7 +346,15 @@ async function initMapOnce() {
     }).addTo(map);
 
     // Routes first (rendered behind markers)
-    renderRoutes(L, map, route);
+    const dayDateByStage = new Map();
+    for (const poi of pois) {
+      if (poi.day != null && poi.date) {
+        const key = `${poi.stage || ""}:${poi.day}`;
+        if (!dayDateByStage.has(key)) dayDateByStage.set(key, poi.date);
+      }
+    }
+
+    renderRoutes(L, map, route, dayDateByStage);
 
     // Markers
     const markerList = [];
@@ -385,3 +413,7 @@ window.travelMapAPI = {
 };
 
 hookTabSystem();
+
+if (document.querySelector('.view.is-active[data-view="terkep"]')) {
+  requestAnimationFrame(() => initMapOnce());
+}
