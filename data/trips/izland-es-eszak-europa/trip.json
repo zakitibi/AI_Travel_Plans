@@ -176,6 +176,7 @@
     {
       "day": 10,
       "date": "2026-07-19",
+      "name": "Reykjavík + Sky Lagoon",
       "stage": "izland",
       "country": "IS",
       "start": "Keflavík",
@@ -188,6 +189,7 @@
     {
       "day": 11,
       "date": "2026-07-20",
+      "name": "Golden Circle",
       "stage": "izland",
       "country": "IS",
       "start": "Reykjavík",
@@ -200,6 +202,7 @@
     {
       "day": 12,
       "date": "2026-07-21",
+      "name": "Déli part + Jökulsárlón",
       "stage": "izland",
       "country": "IS",
       "start": "Hella / Hvolsvöllur",
@@ -212,6 +215,7 @@
     {
       "day": 13,
       "date": "2026-07-22",
+      "name": "Höfn + Eastfjords",
       "stage": "izland",
       "country": "IS",
       "start": "Höfn / Skaftafell",
@@ -224,6 +228,7 @@
     {
       "day": 14,
       "date": "2026-07-23",
+      "name": "Stuðlagil + Dettifoss + Mývatn",
       "stage": "izland",
       "country": "IS",
       "start": "Egilsstaðir",
@@ -236,6 +241,7 @@
     {
       "day": 15,
       "date": "2026-07-24",
+      "name": "Akureyri + Goðafoss",
       "stage": "izland",
       "country": "IS",
       "start": "Mývatn",
@@ -248,6 +254,7 @@
     {
       "day": 16,
       "date": "2026-07-25",
+      "name": "Snæfellsnes finálé",
       "stage": "izland",
       "country": "IS",
       "start": "Varmahlíð / Hvammstangi",

@@ -200,7 +200,7 @@ function renderRoutes(L, map, route, stageId, routesByDay, dayDateMap) {
 }
 
 // ── Day items ─────────────────────────────────────────────────────────────────
-function buildDayItems(pois, stageId) {
+function buildDayItems(pois, stageId, dayNames) {
   const byDay = {};
   for (const poi of pois) {
     if (poi.day == null) continue;
@@ -217,14 +217,14 @@ function buildDayItems(pois, stageId) {
     .sort((a, b) => a.day - b.day)
     .map(e => ({
       id:       e.day,
-      label:    `${displayDayLabel({ day: e.day, date: e.date, stage: stageId })} — ${e.hotel || e.sight || e.any || "–"}`,
+      label:    `${displayDayLabel({ day: e.day, date: e.date, stage: stageId })} — ${dayNames?.get(e.day) || e.hotel || e.sight || e.any || "–"}`,
       dotColor: dayColor(e.day),
     }));
 }
 
 // ── Filter sidebar ────────────────────────────────────────────────────────────
-function buildFilterSidebar(sidebarEl, pois, markerList, leafMap, stageId, routesByDay) {
-  const dayItems = buildDayItems(pois, stageId);
+function buildFilterSidebar(sidebarEl, pois, markerList, leafMap, stageId, routesByDay, dayNames) {
+  const dayItems = buildDayItems(pois, stageId, dayNames);
 
   // Only show types that have at least one POI in this stage
   const presentTypes = new Set(pois.map(p => p.type));
@@ -368,7 +368,13 @@ async function initSectionMap(stageId) {
   if (overlay) overlay.classList.remove("tm-hidden");
 
   try {
-    const { pois: allPois, route: allRoute } = await getTripData();
+    const { trip, pois: allPois, route: allRoute } = await getTripData();
+
+    // Day display names from trip.json (only days belonging to this stage)
+    const dayNames = new Map();
+    for (const d of trip?.days || []) {
+      if (d.stage === stageId && d.name) dayNames.set(d.day, d.name);
+    }
 
     // Filter to this stage only
     const stagePois = allPois.filter(p => p.stage === stageId && p.lat != null && p.lng != null);
@@ -418,7 +424,7 @@ async function initSectionMap(stageId) {
       buildFilterSidebar(
         sidebar,
         allPois.filter(p => p.stage === stageId),
-        markerList, map, stageId, routesByDay
+        markerList, map, stageId, routesByDay, dayNames
       );
     }
 

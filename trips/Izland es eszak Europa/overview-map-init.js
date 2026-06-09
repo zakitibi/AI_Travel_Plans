@@ -126,7 +126,7 @@ function renderRoutes(L, map, route) {
 }
 
 // ── Day items ─────────────────────────────────────────────────────────────────
-function buildDayItems(pois) {
+function buildDayItems(pois, dayNames) {
   const map = {};
   for (const poi of pois) {
     if (poi.day == null) continue;
@@ -145,7 +145,7 @@ function buildDayItems(pois) {
       const phase = PHASES.find(p => p.id === e.stage);
       return {
         id:       e.day,
-        label:    `${displayDayLabel(e)} — ${e.hotel || e.sight || e.any || "–"}`,
+        label:    `${displayDayLabel(e)} — ${dayNames?.get(e.day) || e.hotel || e.sight || e.any || "–"}`,
         dotColor: phase?.dotColor || "#64748b",
       };
     });
@@ -158,8 +158,8 @@ function buildDayItems(pois) {
  *
  * @returns {{ showPhase(id), showAll() }}  public API for ontoggle hook
  */
-function buildFilterSidebar(sidebarEl, pois, markerList, leafMap) {
-  const dayItems = buildDayItems(pois);
+function buildFilterSidebar(sidebarEl, pois, markerList, leafMap, dayNames) {
+  const dayItems = buildDayItems(pois, dayNames);
 
   const state = {
     phases: new Set(PHASES.map(p => p.id)),
@@ -342,7 +342,13 @@ async function initOverviewStyleMap(target) {
   if (overlay) overlay.classList.remove("tm-hidden");
 
   try {
-    const { pois, route } = await loadTrip(TRIP_ID, DATA_ROOT);
+    const { trip, pois, route } = await loadTrip(TRIP_ID, DATA_ROOT);
+
+    // Day display names from trip.json (day numbers are unique across the trip)
+    const dayNames = new Map();
+    for (const d of trip?.days || []) {
+      if (d.name) dayNames.set(d.day, d.name);
+    }
 
     const map = L.map(target.containerId, {
       zoomControl:        true,
@@ -377,7 +383,7 @@ async function initOverviewStyleMap(target) {
 
     // Filter sidebar (outside map — touch-scroll friendly on iOS)
     const sidebar = document.getElementById(target.sidebarId);
-    if (sidebar) mapApis[target.key] = buildFilterSidebar(sidebar, pois, markerList, map);
+    if (sidebar) mapApis[target.key] = buildFilterSidebar(sidebar, pois, markerList, map, dayNames);
 
     const coords = pois.filter(p => p.lat != null).map(p => [p.lat, p.lng]);
     if (coords.length) {
