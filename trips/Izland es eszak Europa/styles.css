@@ -435,6 +435,12 @@ a {
   line-height: 1.45;
   margin-top: 4px;
 }
+.sched-maplink {
+  font-size: 11px;
+  padding: 0 5px;
+  margin-left: 1px;
+  vertical-align: 1px;
+}
 .day-places-collapse { margin-top: 14px; }
 
 /* GPX-kártya: név + értékelés mint Google Maps-link */

@@ -454,7 +454,7 @@
     }
 
     function renderDayCard(day, accentClass, forceClosed = false) {
-      const timed = (day.gpxPlaces || []).filter((p) => p.time).slice().sort((a, b) => a.time.localeCompare(b.time));
+      const timed = (day.gpxPlaces || []).map((p, idx) => ({ ...p, _idx: idx })).filter((p) => p.time).sort((a, b) => a.time.localeCompare(b.time));
       const hasSchedule = timed.length > 0;
       const PERIODS = [
         { label: "Reggel", icon: "🌅", test: (t) => t < "12:00" },
@@ -474,7 +474,7 @@
                   <div class="sched-row">
                     <div class="sched-time">${p.time}</div>
                     <div class="sched-content">
-                      <div class="sched-name">${p.maps ? `<a class="day-place-name-link" href="${p.maps}" target="_blank" rel="noreferrer">${p.name}</a>` : p.name}${p.googleRating ? ` <a class="sched-rate" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐${p.googleRating}</a>` : ""}${p.duration ? ` <span class="sched-dur">⏳ ${p.duration}</span>` : ""}</div>
+                      <div class="sched-name">${p.maps ? `<a class="day-place-name-link" href="${p.maps}" target="_blank" rel="noreferrer">${p.name}</a>` : p.name}${p.googleRating ? ` <a class="sched-rate" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐${p.googleRating}</a>` : ""}${p.lat != null ? ` <button type="button" class="day-place-maplink sched-maplink" data-iz2-key="${day.num}-${p._idx}" title="Ugrás a saját térképre">🗺</button>` : ""}${p.duration ? ` <span class="sched-dur">⏳ ${p.duration}</span>` : ""}</div>
                       ${p.detail ? `<div class="sched-detail">${p.detail}</div>` : ""}
                       ${p.reviewNote ? `<div class="sched-review">„${p.reviewNote}”</div>` : ""}
                     </div>
