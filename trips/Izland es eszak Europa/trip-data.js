@@ -937,8 +937,7 @@ const tripData = {
           open: true,
           driveLog: { km: "~900 km", stops: 2, driveTime: "~10 óra", depart: "07:00", arrive: "~20:00", timelinePoints: [{time:"07:00", label:"Budapest ind."}, {time:"13:00", label:"~félúton"}, {time:"20:00", label:"Suwałki"}] },
           tags: [
-            { label: "tranzit", cls: "tag-drive" },
-            { label: "8–10h", cls: "tag-drive" }
+            { label: "tranzit", cls: "tag-drive" }
           ],
           activities: [
             { time: "07:00", icon: "🚗", name: "Indulás Budapestről — M3/E77 észak felé", detail: "A teljes expedition első napja, kifejezetten tranzit-fókuszban. Varsót NEM érintjük: az E77-es Miskolcon, Egerben át visz fel, majd Lengyelországba belépés Visnyón (Visinë) keresztül." },
@@ -995,7 +994,6 @@ const tripData = {
           subtitle: "Hill of Crosses + Rundāle-palota megállóval",
           driveLog: { km: "~330 km", stops: 4, driveTime: "~4,5 óra", depart: "09:00", arrive: "~18:30", timelinePoints: [{time:"09:00", label:"ind. Vilnius"}, {time:"11:30", label:"Hill of Crosses"}, {time:"13:30", label:"Rundāle"}, {time:"18:30", label:"Riga érk."}] },
           tags: [
-            { label: "~330 km", cls: "tag-drive" },
             { label: "Hill of Crosses", cls: "tag-focus" },
             { label: "Rundāle", cls: "tag-focus" }
           ],
@@ -1037,7 +1035,6 @@ const tripData = {
           subtitle: "Gauja-völgy átmeneti nap — Turaida Castle, Gutmanis Cave, este Tallinn",
           driveLog: { km: "~350 km", stops: 3, driveTime: "~4,5 óra", depart: "08:00", arrive: "~20:00", timelinePoints: [{time:"08:00", label:"ind. Riga"}, {time:"09:30", label:"Sigulda/Turaida"}, {time:"13:00", label:"Tallinn felé"}, {time:"20:00", label:"Tallinn érk."}] },
           tags: [
-            { label: "~350 km", cls: "tag-drive" },
             { label: "Turaida Castle", cls: "tag-focus" },
             { label: "Gauja NP", cls: "tag-nature" }
           ],
