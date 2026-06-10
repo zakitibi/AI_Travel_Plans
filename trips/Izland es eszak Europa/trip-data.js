@@ -251,13 +251,13 @@ const tripData = {
       { id: "tal", tab: "baltikum", label: "Tallinn", note: "07.15–16", x: 243, y: 74, color: "#8a4f24" },
       { id: "hel", tab: "baltikum", label: "Helsinki+Turku", note: "07.17", x: 224, y: 63, color: "#6a4ca3" },
       { id: "sto", tab: "baltikum", label: "Stockholm", note: "07.18", x: 198, y: 90, color: "#6a4ca3", major: true },
-      { id: "rey", tab: "izland", label: "Reykjavík", note: "07.18–19", x: 62, y: 78, color: "#1f5a3e", major: true },
-      { id: "snae", tab: "izland", label: "Snæfellsnes", note: "07.25", x: 78, y: 62, color: "#1f5a3e" },
-      { id: "myv", tab: "izland", label: "Mývatn", note: "07.24", x: 122, y: 62, color: "#1f5a3e" },
-      { id: "egl", tab: "izland", label: "Egilsstaðir", note: "07.23", x: 171, y: 78, color: "#1f5a3e" },
-      { id: "hof", tab: "izland", label: "Höfn", note: "07.22", x: 156, y: 109, color: "#1f5a3e" },
-      { id: "vik", tab: "izland", label: "Vík", note: "07.21", x: 111, y: 92, color: "#1f5a3e" },
-      { id: "sel", tab: "izland", label: "Golden Circle", note: "07.20", x: 85, y: 88, color: "#1f5a3e" },
+      { id: "rey", tab: "izland2", label: "Reykjavík", note: "07.18–19", x: 62, y: 78, color: "#1f5a3e", major: true },
+      { id: "snae", tab: "izland2", label: "Snæfellsnes", note: "07.25", x: 78, y: 62, color: "#1f5a3e" },
+      { id: "myv", tab: "izland2", label: "Mývatn", note: "07.24", x: 122, y: 62, color: "#1f5a3e" },
+      { id: "egl", tab: "izland2", label: "Egilsstaðir", note: "07.23", x: 171, y: 78, color: "#1f5a3e" },
+      { id: "hof", tab: "izland2", label: "Höfn", note: "07.22", x: 156, y: 109, color: "#1f5a3e" },
+      { id: "vik", tab: "izland2", label: "Vík", note: "07.21", x: 111, y: 92, color: "#1f5a3e" },
+      { id: "sel", tab: "izland2", label: "Golden Circle", note: "07.20", x: 85, y: 88, color: "#1f5a3e" },
       { id: "mal", tab: "hazaut", label: "Malmö", note: "07.26", x: 207, y: 124, color: "#b8860b", major: true },
       { id: "cop", tab: "hazaut", label: "Koppenhága", note: "07.27", x: 214, y: 137, color: "#b8860b" },
       { id: "ham", tab: "hazaut", label: "Hamburg", note: "07.28", x: 225, y: 162, color: "#b8860b" },
@@ -552,7 +552,7 @@ const tripData = {
         title: "Izland",
         text: "A közös főélmény most már fordított irányú Ring Road-ív: Golden Circle és déli part után kelet, észak, végül nyugati Snæfellsnes-zárás.",
         cta: "Ugrás az Izland részhez",
-        tab: "izland",
+        tab: "izland2",
         accent: "accent-iceland"
       },
       {
@@ -669,7 +669,7 @@ const tripData = {
         "Észak: <a href='https://www.google.com/maps/search/?api=1&query=Studlagil+Canyon+Iceland' target='_blank' rel='noreferrer'>Stuðlagil</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Dettifoss+Iceland' target='_blank' rel='noreferrer'>Dettifoss</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Lake+Myvatn+Iceland' target='_blank' rel='noreferrer'>Mývatn-tóvidék</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Akureyri+Iceland' target='_blank' rel='noreferrer'>Akureyri</a> (★4.6)",
         "Nyugati finálé: <a href='https://www.google.com/maps/search/?api=1&query=Budakirkja+Iceland' target='_blank' rel='noreferrer'>Búðakirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Arnarstapi+Iceland' target='_blank' rel='noreferrer'>Arnarstapi</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland' target='_blank' rel='noreferrer'>Kirkjufell</a> (★4.7)"
       ],
-      cta: { label: "Részletes Izland oldal", tab: "izland" }
+      cta: { label: "Részletes Izland oldal", tab: "izland2" }
     },
     sharedReturn: {
       title: "Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest",
@@ -702,7 +702,7 @@ const tripData = {
         "📋 Course ID: 4497715 · Részvételi díj: €630/fő · Dokumentáció: Europass Mobility Document, Learning Agreement, Evaluation Form",
         "<a href='https://www.smartteachersplaymore.com/courses-iceland/inspiring-young-language-learners' target='_blank' rel='noreferrer'>→ Kurzus részletei (smartteachersplaymore.com)</a> · <a href='https://www.smartteachersplaymore.com/faq-iceland' target='_blank' rel='noreferrer'>FAQ Iceland</a>"
       ],
-      cta: { label: "Izlandi Ring Road — részletes oldal", tab: "izland" }
+      cta: { label: "Izlandi Ring Road — részletes oldal", tab: "izland2" }
     },
     henniIceland: {
       title: "Közös izlandi Ring Road körút",
@@ -717,7 +717,7 @@ const tripData = {
         "Kelet + észak: <a href='https://www.google.com/maps/search/?api=1&query=Jokulsarlon+glacier+lagoon+Iceland' target='_blank' rel='noreferrer'>Jökulsárlón</a> (★4.9) · <a href='https://www.google.com/maps/search/?api=1&query=Studlagil+Canyon+Iceland' target='_blank' rel='noreferrer'>Stuðlagil</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Godafoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Goðafoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Lake+Myvatn+Iceland' target='_blank' rel='noreferrer'>Mývatn</a> (★4.7)",
         "Nyugati zárás: <a href='https://www.google.com/maps/search/?api=1&query=Budakirkja+Iceland' target='_blank' rel='noreferrer'>Búðakirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Arnarstapi+Iceland' target='_blank' rel='noreferrer'>Arnarstapi</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland' target='_blank' rel='noreferrer'>Kirkjufell</a> (★4.7) · júl. 26. FI306 → Stockholm"
       ],
-      cta: { label: "Izland részletes oldal", tab: "izland" }
+      cta: { label: "Izland részletes oldal", tab: "izland2" }
     }
   },
   people: {
@@ -1720,13 +1720,13 @@ const tripData = {
       ]
     },
     izland2: {
-      kicker: "Alternatív verzió · fordított Ring Road",
-      title: "Izland 2",
-      pill: "Óramutatóval ellentétes · pihenőnap nélkül",
+      kicker: "Közös részletes roadtrip",
+      title: "Izland",
+      pill: "Fordított Ring Road · 8 nap",
       accent: "iceland",
       intro: [
-        "Ez az izlandi program alternatív, »pihenőnap nélküli« verziója: a fordított (óramutatóval ellentétes) Ring Road, ahol már az érkezés utáni első napon a Golden Circle jön, és így minden napra jut egy laza kör. 8 éjszaka, ~1950 km (a kitérőkkel), 7 szállás-zóna, 46 megálló.",
-        "A térkép valódi úthálózaton (OSRM) rajzolja ki a teljes kört; a megállók napszínnel és látnivaló-ikonnal jelölve, a szállások a hely nevével és 🏨 ikonnal. Alatta a napi bontás ugyanúgy működik, mint a fő Izland oldalon: minden nap kinyitható a teljes részletért."
+        "A közös izlandi Ring Road körút: fordított (óramutatóval ellentétes) irányban, ahol már az érkezés utáni első napon a Golden Circle jön, és így minden napra jut egy laza kör, pihenőnap nélkül. 8 éjszaka, ~1950 km (a kitérőkkel), 7 szállás-zóna, 46 megálló.",
+        "A térkép valódi úthálózaton (OSRM) rajzolja ki a teljes kört; a megállók napszínnel és látnivaló-ikonnal jelölve, a szállások a hely nevével és 🏨 ikonnal. Lejjebb a napi bontásban minden nap kinyitható a teljes részletért."
       ],
       mapNote: "Óramutatóval ellentétes irány (déli part először). A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (💧 vízesés, 🧊 gleccser, 🏖️ strand, ♨️ geotermikus, 📸 fotópont…), a 🏨 az éjszakai szállás. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
       days: [
@@ -1947,7 +1947,7 @@ const tripData = {
         }
       ],
       practicalBox: {
-        title: "🧭 Gyakorlati tudnivalók (alternatív verzió)",
+        title: "🧭 Gyakorlati tudnivalók",
         accent: "iceland",
         open: false,
         cards: [
