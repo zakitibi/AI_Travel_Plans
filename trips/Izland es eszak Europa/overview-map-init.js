@@ -412,7 +412,7 @@ function hookTabSystem() {
     if (typeof original === "function") original.call(this, tabId);
     const target = MAP_TARGETS.find((item) => item.tabId === tabId && !item.autoInit);
     if (target) {
-      requestAnimationFrame(() => initOverviewStyleMap(target));
+      setTimeout(() => initOverviewStyleMap(target), 30);
     }
   };
 }
@@ -421,6 +421,6 @@ hookTabSystem();
 
 for (const target of MAP_TARGETS) {
   if (target.autoInit || document.querySelector(`.view.is-active[data-view="${target.tabId}"]`)) {
-    requestAnimationFrame(() => initOverviewStyleMap(target));
+    setTimeout(() => initOverviewStyleMap(target), 30);
   }
 }

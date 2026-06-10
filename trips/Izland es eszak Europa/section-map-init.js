@@ -452,12 +452,12 @@ async function initSectionMap(stageId) {
   window.activateTab = function (tabId) {
     if (typeof original === "function") original.call(this, tabId);
     if (tabId === "baltikum" || tabId === "izland" || tabId === "hazaut") {
-      requestAnimationFrame(() => initSectionMap(tabId));
+      setTimeout(() => initSectionMap(tabId), 30);
     }
   };
 })();
 
 const activeSectionView = document.querySelector('.view.is-active[data-view="baltikum"], .view.is-active[data-view="izland"], .view.is-active[data-view="hazaut"]');
 if (activeSectionView?.dataset?.view) {
-  requestAnimationFrame(() => initSectionMap(activeSectionView.dataset.view));
+  setTimeout(() => initSectionMap(activeSectionView.dataset.view), 30);
 }
