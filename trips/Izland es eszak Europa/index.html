@@ -454,6 +454,55 @@
     }
 
     function renderDayCard(day, accentClass, forceClosed = false) {
+      const timed = (day.gpxPlaces || []).filter((p) => p.time).slice().sort((a, b) => a.time.localeCompare(b.time));
+      const hasSchedule = timed.length > 0;
+      const PERIODS = [
+        { label: "Reggel", icon: "🌅", test: (t) => t < "12:00" },
+        { label: "Délután", icon: "☀️", test: (t) => t >= "12:00" && t < "18:00" },
+        { label: "Este", icon: "🌆", test: (t) => t >= "18:00" }
+      ];
+      const scheduleHtml = hasSchedule ? `
+        <section class="day-schedule">
+          <h4 class="day-places-title">🕐 Napi menetrend — órás bontás</h4>
+          ${PERIODS.map((per) => {
+            const items = timed.filter((p) => per.test(p.time));
+            if (!items.length) return "";
+            return `
+              <div class="sched-period">
+                <div class="sched-period-label">${per.icon} ${per.label}</div>
+                ${items.map((p) => `
+                  <div class="sched-row">
+                    <div class="sched-time">${p.time}</div>
+                    <div class="sched-content">
+                      <div class="sched-name">${p.maps ? `<a class="day-place-name-link" href="${p.maps}" target="_blank" rel="noreferrer">${p.name}</a>` : p.name}${p.googleRating ? ` <a class="sched-rate" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐${p.googleRating}</a>` : ""}${p.duration ? ` <span class="sched-dur">⏳ ${p.duration}</span>` : ""}</div>
+                      ${p.detail ? `<div class="sched-detail">${p.detail}</div>` : ""}
+                      ${p.reviewNote ? `<div class="sched-review">„${p.reviewNote}”</div>` : ""}
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            `;
+          }).join("")}
+        </section>
+      ` : "";
+      const cardsHtml = (day.gpxPlaces || []).map((place, placeIdx) => `
+        <article class="day-place-card${place.lat != null ? " day-place-mapped" : ""}"${place.lat != null ? ` data-iz2-key="${day.num}-${placeIdx}"` : ""}>
+          <div class="day-place-top">
+            <div>
+              <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name}</a>` : place.name}</div>
+              ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
+            </div>
+            <div class="day-place-actions">
+              ${place.lat != null ? `<button type="button" class="day-place-maplink" title="Ugrás a térképre">🗺 térkép</button>` : ""}
+              ${place.googleRating ? (place.maps ? `<a class="day-place-rating day-place-rating-link" href="${place.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐ ${place.googleRating}</a>` : `<div class="day-place-rating">⭐ ${place.googleRating}</div>`) : ""}
+            </div>
+          </div>
+          ${place.duration ? `<div class="day-place-duration">⏳ ${place.duration}</div>` : ""}
+          <p class="day-place-detail">${place.detail}</p>
+          ${place.reviewNote ? `<p class="day-place-review">"${place.reviewNote}"</p>` : ""}
+          ${place.noteLink ? `<div class="day-place-links"><a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a></div>` : ""}
+        </article>
+      `).join("");
       return `
         <details class="day-card ${accentClass}" ${detailsOpenAttr(day.open, forceClosed)}>
           <summary class="day-head">
@@ -480,9 +529,10 @@
           </summary>
           <div class="day-body">
             ${day.character ? `<p class="day-character">${day.character}</p>` : ""}
+            ${hasSchedule ? scheduleHtml : `
             <div class="day-layout">
               <div class="activities">
-                ${day.activities.map((activity) => `
+                ${(day.activities || []).map((activity) => `
                   <div class="act">
                     <div class="act-time">${activity.time}</div>
                     <div class="act-icon">${activity.icon}</div>
@@ -494,7 +544,7 @@
                   </div>
                 `).join("")}
               </div>
-            </div>
+            </div>`}
             ${day.notes && day.notes.length ? `
               <aside class="tip-box day-focus-box day-focus-horizontal">
                 <strong>Napi fókusz</strong>
@@ -503,31 +553,22 @@
                 </ul>
               </aside>
             ` : ""}
-            ${day.gpxPlaces && day.gpxPlaces.length ? `
+            ${day.gpxPlaces && day.gpxPlaces.length ? (hasSchedule ? `
+              <details class="country-context ${accentClass} day-places-collapse">
+                <summary class="collapse-summary">
+                  <span>📍 Látnivalók részletei — térkép, értékelés, review (${day.gpxPlaces.length})</span>
+                  <span class="collapse-icon" aria-hidden="true">▾</span>
+                </summary>
+                <div class="country-context-body">
+                  <div class="day-places-grid">${cardsHtml}</div>
+                </div>
+              </details>
+            ` : `
               <section class="day-places">
                 <h4 class="day-places-title">📍 GPX pontok, Google Maps és értékelések</h4>
-                <div class="day-places-grid">
-                  ${day.gpxPlaces.map((place, placeIdx) => `
-                    <article class="day-place-card${place.lat != null ? " day-place-mapped" : ""}"${place.lat != null ? ` data-iz2-key="${day.num}-${placeIdx}"` : ""}>
-                      <div class="day-place-top">
-                        <div>
-                          <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name}</a>` : place.name}</div>
-                          ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
-                        </div>
-                        <div class="day-place-actions">
-                          ${place.lat != null ? `<button type="button" class="day-place-maplink" title="Ugrás a térképre">🗺 térkép</button>` : ""}
-                          ${place.googleRating ? (place.maps ? `<a class="day-place-rating day-place-rating-link" href="${place.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐ ${place.googleRating}</a>` : `<div class="day-place-rating">⭐ ${place.googleRating}</div>`) : ""}
-                        </div>
-                      </div>
-                      ${place.duration ? `<div class="day-place-duration">⏳ ${place.duration}</div>` : ""}
-                      <p class="day-place-detail">${place.detail}</p>
-                      ${place.reviewNote ? `<p class="day-place-review">"${place.reviewNote}"</p>` : ""}
-                      ${place.noteLink ? `<div class="day-place-links"><a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a></div>` : ""}
-                    </article>
-                  `).join("")}
-                </div>
+                <div class="day-places-grid">${cardsHtml}</div>
               </section>
-            ` : ""}
+            `) : ""}
             ${day.links && day.links.length ? `
               <section class="day-links-block">
                 <h4 class="day-places-title">🔗 Napi linkek</h4>
