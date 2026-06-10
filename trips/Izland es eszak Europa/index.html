@@ -485,6 +485,7 @@
       const scheduleHtml = hasSchedule ? `
         <section class="day-schedule">
           <h4 class="day-places-title">🕐 Napi menetrend — órás bontás</h4>
+          ${day.scheduleNote ? `<div class="tip-box sched-note">${day.scheduleNote}</div>` : ""}
           ${PERIODS.map((per) => {
             const items = timed.filter((p) => per.test(p.time));
             if (!items.length) return "";
@@ -492,10 +493,11 @@
               <div class="sched-period">
                 <div class="sched-period-label">${per.icon} ${per.label}</div>
                 ${items.map((p) => `
-                  ${p._gi > 0 ? legRow(timed[p._gi - 1], p) : ""}
-                  <div class="sched-row">
+                  ${p._gi > 0 && !p.branch && !timed[p._gi - 1].branch ? legRow(timed[p._gi - 1], p) : ""}
+                  <div class="sched-row${p.branch ? " sched-row-branch sched-branch-" + p.branch.toLowerCase() : ""}">
                     <div class="sched-time">${p.time}</div>
                     <div class="sched-content">
+                      ${p.branch ? `<div class="sched-branch-tag">${p.branch === "A" ? "🅰" : "🅱"} ${p.branchLabel || "alternatíva"} · vagy</div>` : ""}
                       <div class="sched-name">${p.maps ? `<a class="day-place-name-link" href="${p.maps}" target="_blank" rel="noreferrer">${p.name}</a>` : p.name}${p.googleRating ? ` <a class="sched-rate" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐${p.googleRating}</a>` : ""}${p.lat != null ? ` <button type="button" class="day-place-maplink sched-maplink" data-iz2-key="${day.num}-${p._idx}" title="Ugrás a saját térképre">🗺</button>` : ""}${p.duration ? ` <span class="sched-dur">⏳ ${p.duration}</span>` : ""}</div>
                       ${p.detail ? `<div class="sched-detail">${p.detail}</div>` : ""}
                       ${p.reviewNote ? `<div class="sched-review">„${p.reviewNote}”</div>` : ""}

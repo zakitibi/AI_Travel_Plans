@@ -461,6 +461,24 @@ a {
 .sched-leg { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; opacity: 0.92; }
 .sched-leg-ico { font-size: 12px; opacity: 0.8; }
 .sched-leg .dl-chip { font-size: 10.5px; padding: 1px 7px; }
+/* Izland menetrend — vagy-vagy ágak (pl. 4. nap: gleccser vs. puffin) */
+.sched-note { margin-top: 2px; margin-bottom: 8px; }
+.sched-row-branch { position: relative; padding-left: 10px; border-radius: 0 8px 8px 0; }
+.sched-row-branch::before { content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 3px; border-radius: 3px; }
+.sched-branch-a { background: rgba(31,90,62,0.05); }
+.sched-branch-a::before { background: var(--green); }
+.sched-branch-b { background: rgba(37,99,235,0.05); }
+.sched-branch-b::before { background: #2563eb; }
+.sched-branch-tag {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+  color: var(--green);
+}
+.sched-branch-b .sched-branch-tag { color: #2563eb; }
 .day-places-collapse { margin-top: 14px; }
 
 /* GPX-kártya: név + értékelés mint Google Maps-link */
