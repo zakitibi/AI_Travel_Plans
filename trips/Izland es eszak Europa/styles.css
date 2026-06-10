@@ -297,6 +297,22 @@ a {
   flex: none;
 }
 
+/* Szállás-pont állandó névcímkéje a térképen */
+.iz2-stay-label.leaflet-tooltip {
+  background: rgba(255, 253, 250, 0.95);
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+  padding: 1px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+  box-shadow: 0 1px 5px rgba(36, 29, 24, 0.3);
+  white-space: nowrap;
+}
+.iz2-stay-label.leaflet-tooltip::before {
+  display: none;
+}
+
 .iz2-routestat {
   font-size: 0.82rem;
   color: var(--muted);

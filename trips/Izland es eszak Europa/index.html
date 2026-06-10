@@ -1233,6 +1233,15 @@
       };
       const kindOf = (k) => KIND[k] || { emoji: "📍", label: "Egyéb" };
 
+      // "2026. július 18., szombat" → "7.18"
+      const HU_MONTH = { január: 1, február: 2, március: 3, április: 4, május: 5, június: 6, július: 7, augusztus: 8, szeptember: 9, október: 10, november: 11, december: 12 };
+      function shortDate(dstr) {
+        const m = /([A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)\s+(\d{1,2})\./.exec(dstr || "");
+        if (!m) return "";
+        const mon = HU_MONTH[m[1].toLowerCase()];
+        return mon ? `${mon}.${m[2]}` : "";
+      }
+
       function init() {
         if (inited) return;
         const L = window.L;
@@ -1271,6 +1280,15 @@
             });
             const m = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).addTo(map);
             m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${d.num}. nap · ${d.date.replace("2026. ", "")} · ${kc.emoji} ${kc.label}</div><div class="iz2-pp-n">${s.detail || ""}</div></div>`);
+            // Szállás-pontoknál a hely neve állandó címkeként a térképen
+            if (ov) {
+              m.bindTooltip(s.name.split(" / ")[0], {
+                permanent: true,
+                direction: "top",
+                offset: [0, -(size / 2)],
+                className: "iz2-stay-label"
+              });
+            }
             markers[`${d.num}-${si}`] = m;
             markerList.push({ marker: m, dayNum: d.num, kind: s.kind || "other" });
           });
@@ -1394,7 +1412,7 @@
 
           sidebar.appendChild(makeSection(
             "Napok",
-            sec.days.map((d) => ({ id: d.num, label: `${d.num}. ${d.title}`, dotColor: d.mapColor })),
+            sec.days.map((d) => ({ id: d.num, label: `${shortDate(d.date)} · ${d.title}`, dotColor: d.mapColor })),
             "days", true
           ));
           const hr = document.createElement("hr");
@@ -1412,7 +1430,7 @@
         if (leg && !leg.childElementCount) {
           sec.days.forEach((d) => {
             const sp = document.createElement("span");
-            sp.innerHTML = `<span class="iz2-dot" style="background:${d.mapColor}"></span>${d.num}. ${d.title}`;
+            sp.innerHTML = `<span class="iz2-dot" style="background:${d.mapColor}"></span>${shortDate(d.date)} · ${d.title}`;
             leg.appendChild(sp);
           });
           const ov = document.createElement("span");

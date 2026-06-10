@@ -1726,7 +1726,7 @@ const tripData = {
       accent: "iceland",
       intro: [
         "Ez az izlandi program alternatív, »pihenőnap nélküli« verziója: a fordított (óramutatóval ellentétes) Ring Road, ahol már az érkezés utáni első napon a Golden Circle jön, és így minden napra jut egy laza kör. 8 éjszaka, ~1750 km, 7 szállás-zóna.",
-        "A térkép valódi úthálózaton (OSRM) rajzolja ki a teljes kört, a megállók napszínekkel és sorszámmal jelölve. Alatta a napi bontás ugyanúgy működik, mint a fő Izland oldalon: minden nap kinyitható a teljes részletért."
+        "A térkép valódi úthálózaton (OSRM) rajzolja ki a teljes kört; a megállók napszínnel és látnivaló-ikonnal jelölve, a szállások a hely nevével és 🏨 ikonnal. Alatta a napi bontás ugyanúgy működik, mint a fő Izland oldalon: minden nap kinyitható a teljes részletért."
       ],
       mapNote: "Óramutatóval ellentétes irány (déli part először). A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (💧 vízesés, 🧊 gleccser, 🏖️ strand, ♨️ geotermikus, 📸 fotópont…), a 🏨 az éjszakai szállás. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
       days: [
