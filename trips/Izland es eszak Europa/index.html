@@ -778,6 +778,72 @@
       `;
     }
 
+    function renderBaltikum2() {
+      const section = tripData.sections.baltikum;
+      const bgPanels = [
+        ...(section.context || []).map((c) => renderCollapseBox(c, true)),
+        renderExtraResourceBox((section.extraResources || [])[0], "baltic", true)
+      ].join("");
+      const introHtml = section.introCollapsible
+        ? `
+          <details class="country-context ${section.accent}" open>
+            <summary class="collapse-summary">
+              <span>📋 Szakasz összefoglalója</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <div class="country-context-body">
+              ${section.intro.map((p) => `<p class="section-intro">${p}</p>`).join("")}
+            </div>
+          </details>`
+        : `<section class="card section-card">${section.intro.map((p) => `<p class="section-intro">${p}</p>`).join("")}</section>`;
+      return `
+        <section class="view" data-view="baltikum">
+          <div class="section-head">
+            <div>
+              <h2><span>${section.kicker}</span>${section.title}</h2>
+            </div>
+            <div class="country-pill ${section.accent}">${section.pill}</div>
+          </div>
+          ${introHtml}
+
+          <details class="country-context ${section.accent} iz2-bg-panel">
+            <summary class="collapse-summary">
+              <span>📚 Általános bemutató — Baltikum-háttér</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <div class="country-context-body iz2-bg-body">
+              <p class="info-text" style="margin:0 0 10px;">Háttéranyagok a Baltikumhoz: nyisd ki, ami érdekel — minden al-panel külön nyitható.</p>
+              ${bgPanels}
+            </div>
+          </details>
+
+          <details class="card section-card coll-card iz2-map-panel" open>
+            <summary class="coll-card-head">
+              <h3 class="info-title" style="margin:0;">🗺 Interaktív Baltikum-térkép</h3>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <p class="info-text" style="margin:8px 0 14px;">${section.mapNote || ""}</p>
+            <div class="map-filter-wrap">
+              <div class="travel-map-wrap">
+                <div id="baltikum2-map" style="width:100%;height:100%;"></div>
+                <div class="tm-overlay">
+                  <div class="tm-spinner"></div>
+                  <span>Térkép betöltése…</span>
+                </div>
+              </div>
+              <aside class="dm-filter-sidebar" id="baltikum2-map-filter"></aside>
+            </div>
+            <div class="iz2-routestat" id="baltikum2-routestat">Útvonal betöltése…</div>
+            <div class="iz2-legend" id="baltikum2-legend"></div>
+          </details>
+
+          <section class="days">
+            ${section.days.map((day) => renderDayCard(day, section.accent, true)).join("")}
+          </section>
+        </section>
+      `;
+    }
+
     function renderRestaurants() {
       return `
         <section class="view" data-view="restaurants">
@@ -1172,7 +1238,7 @@
       renderOverview(),
       renderPersonView("tibi"),
       renderPersonView("henni"),
-      renderDetailedSection("baltikum"),
+      renderBaltikum2(),
       renderIzland2(),
       renderDetailedSection("hazaut"),
       renderRestaurants(),
@@ -1565,6 +1631,164 @@
         if (id === "izland2") setTimeout(init, 0);
       };
       if (document.querySelector('.view.is-active[data-view="izland2"]')) {
+        setTimeout(init, 0);
+      }
+    })();
+  </script>
+
+  <!-- Baltikum — interaktív térkép (típus-ikonok + route.json autóút/kompok + szűrő + reset) -->
+  <script>
+    (function () {
+      const sec = (typeof tripData !== "undefined" ? tripData : null)?.sections?.baltikum;
+      if (!sec || !sec.mapStops) return;
+      let inited = false;
+
+      const KIND = {
+        city:      { emoji: "🏙️", label: "Város" },
+        oldtown:   { emoji: "🏛️", label: "Óváros / negyed" },
+        castle:    { emoji: "🏰", label: "Vár / kastély" },
+        church:    { emoji: "⛪", label: "Templom" },
+        museum:    { emoji: "🖼️", label: "Múzeum" },
+        nature:    { emoji: "🌳", label: "Természet" },
+        viewpoint: { emoji: "📸", label: "Kilátó / fotó" },
+        market:    { emoji: "🛍️", label: "Piac" },
+        ferry:     { emoji: "⛴️", label: "Komp" },
+        flight:    { emoji: "✈️", label: "Repülő" },
+        stay:      { emoji: "🏨", label: "Szállás (éjszaka)" }
+      };
+      const kindOf = (k) => KIND[k] || { emoji: "📍", label: "Egyéb" };
+
+      const DAY_PALETTE = ["#e63946","#f4831f","#2a9d8f","#1d6fa4","#7b5ea7","#c77dff","#06d6a0","#118ab2","#ef476f"];
+      const dayColor = (day) => DAY_PALETTE[(day - 1) % DAY_PALETTE.length] || "#8a4f24";
+      const ROUTE_URL = "../../data/trips/izland-es-eszak-europa/route.json";
+
+      const dayTitle = {};
+      (sec.days || []).forEach((d) => { dayTitle[Number(d.num)] = d.title; });
+
+      function init() {
+        if (inited) return;
+        const L = window.L;
+        const el = document.getElementById("baltikum2-map");
+        if (!L || !el) return;
+        inited = true;
+        const wrap = el.closest(".travel-map-wrap");
+        const overlay = wrap && wrap.querySelector(".tm-overlay");
+
+        const map = L.map("baltikum2-map", { scrollWheelZoom: false }).setView([57, 23], 5);
+        window._leafletMaps = window._leafletMaps || {};
+        window._leafletMaps["baltikum2-map"] = map;
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19
+        }).addTo(map);
+
+        const markerList = [], bounds = [];
+        const presentDays = [...new Set(sec.mapStops.map((s) => s.day))].sort((a, b) => a - b);
+        sec.mapStops.forEach((s) => {
+          if (s.lat == null || s.lng == null) return;
+          bounds.push([s.lat, s.lng]);
+          const ov = s.kind === "stay";
+          const kc = kindOf(s.kind);
+          const size = ov ? 32 : 28;
+          const color = dayColor(s.day);
+          const icon = L.divIcon({
+            className: "",
+            html: `<div class="iz2-pin${ov ? " iz2-pin-ov" : ""}" style="--c:${color};width:${size}px;height:${size}px"><span>${ov ? "🏨" : kc.emoji}</span></div>`,
+            iconSize: [size, size], iconAnchor: [size / 2, size / 2], popupAnchor: [0, -size / 2]
+          });
+          const m = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).addTo(map);
+          const dt = (s.date || "").replace(/^2026-/, "").replace("-", ".");
+          m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${s.day}. nap · ${dt} · ${kc.emoji} ${kc.label}</div><div class="iz2-pp-n">${s.detail || ""}${s.reviewNote ? `<br><em>${s.reviewNote}</em>` : ""}</div></div>`);
+          if (ov) m.bindTooltip(s.name.split(" / ")[0], { permanent: true, direction: "top", offset: [0, -(size / 2)], className: "iz2-stay-label" });
+          markerList.push({ marker: m, day: s.day, kind: s.kind });
+        });
+        const initialBounds = bounds.length ? L.latLngBounds(bounds) : null;
+        if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
+
+        // Útvonal a route.json baltikum feature-jeiből (autóút + komp)
+        fetch(ROUTE_URL).then((r) => r.json()).then((geo) => {
+          (geo.features || []).filter((f) => f.properties && f.properties.stage === "baltikum").forEach((f) => {
+            const isFerry = f.properties.type === "ferry";
+            L.geoJSON(f, { style: { color: isFerry ? "#1d4ed8" : "#8a4f24", weight: isFerry ? 2.5 : 3, opacity: 0.8, dashArray: isFerry ? "6 8" : null } }).addTo(map);
+          });
+          const rs = document.getElementById("baltikum2-routestat");
+          if (rs) rs.textContent = "Útvonal: autós szakaszok (folytonos) + kompok (szaggatott: Tallinn–Helsinki, Turku–Stockholm), valós úthálózaton.";
+        }).catch(() => {
+          const rs = document.getElementById("baltikum2-routestat");
+          if (rs) rs.textContent = "Az útvonal most nem érhető el.";
+        });
+
+        // Reset gomb
+        const ResetCtl = L.Control.extend({
+          options: { position: "topright" },
+          onAdd() {
+            const b = L.DomUtil.create("button", "iz2-reset-btn");
+            b.type = "button"; b.title = "Vissza a teljes nézetre"; b.setAttribute("aria-label", "Vissza a teljes nézetre"); b.innerHTML = "⤢";
+            L.DomEvent.disableClickPropagation(b);
+            L.DomEvent.on(b, "click", (e) => { L.DomEvent.stop(e); if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] }); });
+            return b;
+          }
+        });
+        map.addControl(new ResetCtl());
+
+        // Szűrő-sidebar (Napok + Típus)
+        const sidebar = document.getElementById("baltikum2-map-filter");
+        if (sidebar && !sidebar.childElementCount) {
+          const presentKinds = Object.keys(KIND).filter((k) => markerList.some((m) => m.kind === k));
+          const state = { days: new Set(presentDays), kinds: new Set(presentKinds) };
+          function applyFilter() {
+            for (const item of markerList) {
+              const vis = state.days.has(item.day) && state.kinds.has(item.kind);
+              if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
+              else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
+            }
+          }
+          function makeSection(title, items, stateKey, scrollable) {
+            const sec2 = document.createElement("div"); sec2.className = "dm-filter-section";
+            const head = document.createElement("div"); head.className = "dm-filter-section-head";
+            const ttl = document.createElement("strong"); ttl.textContent = title;
+            const acts = document.createElement("span"); acts.className = "dm-filter-actions";
+            const allB = document.createElement("button"); allB.className = "dm-btn-all"; allB.type = "button"; allB.textContent = "Mind";
+            const noneB = document.createElement("button"); noneB.className = "dm-btn-none"; noneB.type = "button"; noneB.textContent = "Egyik sem";
+            acts.append(allB, noneB); head.append(ttl, acts); sec2.appendChild(head);
+            const body = document.createElement("div"); body.className = "dm-filter-section-body" + (scrollable ? " dm-filter-scrollable" : "");
+            const cbs = [];
+            for (const item of items) {
+              const lbl = document.createElement("label"); lbl.className = "dm-filter-row";
+              const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = state[stateKey].has(item.id);
+              cb.addEventListener("change", () => { if (cb.checked) state[stateKey].add(item.id); else state[stateKey].delete(item.id); applyFilter(); });
+              cbs.push(cb);
+              const span = document.createElement("span"); span.className = "dm-filter-label";
+              if (item.dotColor) { const dot = document.createElement("span"); dot.className = "dm-dot"; dot.style.background = item.dotColor; span.appendChild(dot); }
+              span.appendChild(document.createTextNode(item.label));
+              lbl.append(cb, span); body.appendChild(lbl);
+            }
+            allB.addEventListener("click", () => { items.forEach((i) => state[stateKey].add(i.id)); cbs.forEach((c) => c.checked = true); applyFilter(); });
+            noneB.addEventListener("click", () => { state[stateKey].clear(); cbs.forEach((c) => c.checked = false); applyFilter(); });
+            sec2.appendChild(body); return sec2;
+          }
+          const header = document.createElement("div"); header.className = "dm-sidebar-header"; header.textContent = "Szűrők"; sidebar.appendChild(header);
+          sidebar.appendChild(makeSection("Napok", presentDays.map((d) => ({ id: d, label: `${d}. ${dayTitle[d] || "nap"}`, dotColor: dayColor(d) })), "days", true));
+          const hr = document.createElement("hr"); hr.className = "dm-filter-divider"; sidebar.appendChild(hr);
+          sidebar.appendChild(makeSection("Típus", presentKinds.map((k) => ({ id: k, label: `${kindOf(k).emoji} ${kindOf(k).label}` })), "kinds", false));
+        }
+
+        // Jelmagyarázat
+        const leg = document.getElementById("baltikum2-legend");
+        if (leg && !leg.childElementCount) {
+          presentDays.forEach((d) => { const sp = document.createElement("span"); sp.innerHTML = `<span class="iz2-dot" style="background:${dayColor(d)}"></span>${d}. ${dayTitle[d] || "nap"}`; leg.appendChild(sp); });
+          const ov = document.createElement("span"); ov.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`; leg.appendChild(ov);
+        }
+
+        if (overlay) overlay.classList.add("tm-hidden");
+        setTimeout(() => { try { map.invalidateSize(); } catch (_) {} }, 60);
+      }
+
+      const original = window.activateTab;
+      window.activateTab = function (id) {
+        if (typeof original === "function") original.apply(this, arguments);
+        if (id === "baltikum") setTimeout(init, 0);
+      };
+      if (document.querySelector('.view.is-active[data-view="baltikum"]')) {
         setTimeout(init, 0);
       }
     })();

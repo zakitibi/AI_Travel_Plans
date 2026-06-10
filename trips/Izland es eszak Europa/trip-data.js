@@ -668,6 +668,45 @@ const tripData = {
       title: "Baltikum",
       pill: "Budapest → Baltikum → Stockholm",
       accent: "baltic",
+      mapNote: "Budapest → Vilnius → Riga → Tallinn → Helsinki/Turku → Stockholm. A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (🏰 vár, ⛪ templom, 🏛️ óváros, 🛍️ piac, 🌳 természet…), a 🏨 az éjszakai szállás. A tengeri átkelések (Tallinn–Helsinki, Turku–Stockholm) szaggatott komp-vonalak.",
+      mapStops: [
+        { name: "Budapest", kind: "city", lat: 47.4979, lng: 19.0402, day: 1, date: "2026-07-10", detail: "Útindulás 07:00 — cél Suwałki, ~900 km" },
+        { name: "Suwałki", kind: "stay", lat: 54.099, lng: 22.9305, day: 1, date: "2026-07-10", detail: "~900 km-es tranzit etap, ~10h vezetés. Belépés az EU Baltikum-folyosón." },
+        { name: "Kaunas", kind: "city", lat: 54.8985, lng: 23.9036, day: 2, date: "2026-07-11", detail: "Laisvės aleja (Baltikum leghosszabb sétálóutcája), Kaunas Castle, Soboras-bazilika. Kb. 2 óra ebéddel." },
+        { name: "Vilnius", kind: "stay", lat: 54.6872, lng: 25.2797, day: 2, date: "2026-07-11", detail: "Litvánia főváros: barokk óváros, Gediminas-torony, Užupis bohém negyed. 2 éjszaka." },
+        { name: "Gediminas-torony", kind: "viewpoint", lat: 54.686, lng: 25.2898, day: 3, date: "2026-07-12", detail: "Háromszintes vártorony a városra néző dombtetőn, panoráma kilátóval Vilnius felett. Belépő ~€5." },
+        { name: "Trakai", kind: "castle", lat: 54.6387, lng: 24.9342, day: 3, date: "2026-07-12", detail: "Középkori szigetkastély a tóban — Litvánia egyik legikonikusabb látványossága.", reviewNote: "A tó közepén álló téglavár (Trakai-szigetvár) a fő látvány; hajóval/gyalog közelíthető. Próbáld a kibinai-t (litván húsos batyu)." },
+        { name: "Užupis negyed", kind: "oldtown", lat: 54.6822, lng: 25.2928, day: 3, date: "2026-07-12", detail: "Saját alkotmányával rendelkező bohém negyed. Murális graffitik, kávézók, galériák, Vilnia folyóparti sétány." },
+        { name: "Keresztek Hegye", kind: "church", lat: 56.0158, lng: 23.4168, day: 4, date: "2026-07-13", detail: "Több százezer kereszttel borított zarándokdomb Šiauliai mellett — Litvánia egyik legmegrendítőbb helye.", reviewNote: "Ingyenes, kis parkoló a 12-es út mellett, 5 perc séta. Útba esik Vilnius és Riga között." },
+        { name: "Rundāle-palota", kind: "castle", lat: 56.4144, lng: 24.0258, day: 4, date: "2026-07-13", detail: "Lettország barokk »Versailles«-a — Rastrelli tervezte palota pompás termekkel és francia kerttel.", reviewNote: "~40 perc kitérő Bauska felé, Hill of Crosses és Riga között. Belépő ~16 €; a kert önmagában is megér egy sétát." },
+        { name: "Riga", kind: "stay", lat: 56.9496, lng: 24.1052, day: 4, date: "2026-07-13", detail: "Lettország főváros: UNESCO Old Town, Art Nouveau negyed (750+ épület), Rigai Centrális Piac. 2 éjszaka." },
+        { name: "Art Nouveau negyed", kind: "oldtown", lat: 56.9616, lng: 24.1219, day: 5, date: "2026-07-14", detail: "A rigai Art Nouveau-negyed szíve: homlokzatok ~1901–1906. Eisenstein tervei szerint. Az utcáról ingyenesen fotózható." },
+        { name: "Fekete Fejek Háza", kind: "oldtown", lat: 56.9479, lng: 24.1067, day: 5, date: "2026-07-14", detail: "Riga legfotogénebb épülete: flamboyant gótikus-reneszánsz kereskedő-céhház. 1999-re teljesen újjáépítve.", reviewNote: "A rigai óváros ikonikus, gazdagon díszített céhháza a Rátéren — kívülről a fő fotó, belül kis múzeum." },
+        { name: "Riga Centrális Piac", kind: "market", lat: 56.9416, lng: 24.1137, day: 5, date: "2026-07-14", detail: "Öt hatalmas zeppelin-hangárban működő fedett piac — Európa egyik legnagyobb fedett piaca (1930-as évek). Hal, húscsarnok, helyi ételek." },
+        { name: "Riga — óváros", kind: "oldtown", lat: 56.946, lng: 24.1059, day: 5, date: "2026-07-14", detail: "Dóm tér, Fekete Fejek Háza, Art Nouveau épületek (Alberta és Elizabetes utca), Centrális Piac." },
+        { name: "Gūtmanis-barlang", kind: "nature", lat: 57.1769, lng: 24.8478, day: 6, date: "2026-07-15", detail: "Lettország legnagyobb barlangja a Gauja sziklafalaiban. A homokkő falain 1668-tól dokumentált évszázados feliratok. Ingyenes." },
+        { name: "Sigulda", kind: "city", lat: 57.1541, lng: 24.8573, day: 6, date: "2026-07-15", detail: "Turaida várkastély, Sigulda-vár romjai, Gauja-kanyon kilátó. A 'Lettország Svájca'." },
+        { name: "Tallinn", kind: "stay", lat: 59.437, lng: 24.7536, day: 6, date: "2026-07-15", detail: "Észtország főváros: a legjobban megőrzött középkori városmag a Baltikumban. 2 éjszaka." },
+        { name: "Turaida-kastély", kind: "castle", lat: 57.2, lng: 24.8444, day: 6, date: "2026-07-15", detail: "Vörös tégla középkori vár a Gauja-völgy kiemelkedő pontján, fantasztikus kilátással a folyóvölgyre. Belépő ~€4.", reviewNote: "Vörös téglás középkori vár a Gauja-völgy felett, toronnyal és parkkal — a Sigulda–Turaida–Gūtmanis hármas együtt egy fél nap." },
+        { name: "Cēsis", kind: "castle", lat: 57.3119, lng: 25.2747, day: 6, date: "2026-07-15", detail: "Középkori városka a Gauja Nemzeti Parkban: lovagvár-rom és hangulatos óváros.", reviewNote: "Sigulda mellé szép kiegészítés, ha van idő — a várromban lámpással vezetett túra is van." },
+        { name: "Pärnu", kind: "city", lat: 58.3859, lng: 24.4971, day: 6, date: "2026-07-15", detail: "Észtország nyári fővárosa: homokos strand, fapados villák, sétány a Via Baltica mentén Tallinn felé.", reviewNote: "Jó ebéd- és lábkinyújtó-megálló Riga és Tallinn között (kb. félúton). Nyáron élénk a sétány." },
+        { name: "Alexander Nevsky katedrális", kind: "church", lat: 59.4377, lng: 24.7393, day: 7, date: "2026-07-16", detail: "Orosz ortodox katedrális a Toompea dombon (1900). Jellegzetes hagymakupolás homlokzat, a Toompea egyik főlátványossága." },
+        { name: "Lennusadam Tengerészeti Múzeum", kind: "museum", lat: 59.4551, lng: 24.7645, day: 7, date: "2026-07-16", detail: "Három art deco betonkupola 1916-ból, ahol a világ egyik legrégebbi tengeralattjárója is megtekinthető. A kikötő közelében, ~2 km-re az óvárostól." },
+        { name: "Tallinn — Vanalinn", kind: "oldtown", lat: 59.437, lng: 24.745, day: 7, date: "2026-07-16", detail: "Raekoja plats, Alexander Nevsky katedrális, Katariina käik sikátor, Pikk tänav. Komp prep este." },
+        { name: "Telliskivi Creative City", kind: "oldtown", lat: 59.4397, lng: 24.7243, day: 7, date: "2026-07-16", detail: "A vasúti műhelyek helyén kialakult alternatív negyed: design üzletek, street art, kézműves sörmalmok (Põhjala), kávézók." },
+        { name: "Toompea — Kohtuotsa kilátó", kind: "viewpoint", lat: 59.4374, lng: 24.7397, day: 7, date: "2026-07-16", detail: "Tallinn fellegvára és legjobb kilátópontja. Kohtuotsa platoo (templomtornyok + Vanalinn piros tetők), Patkuli terasz (kikötő + tenger felé)." },
+        { name: "Kadriorg-palota és park", kind: "castle", lat: 59.4382, lng: 24.7906, day: 7, date: "2026-07-16", detail: "Nagy Péter cár barokk palotája és parkja Tallinnban, a KUMU művészeti múzeummal.", reviewNote: "Nyugodt délutáni séta a Vanalinn után; a park ingyenes, a palota/KUMU belépős." },
+        { name: "Aura folyópart", kind: "nature", lat: 60.4481, lng: 22.2745, day: 8, date: "2026-07-17", detail: "Turku ikonikus folyópartja: bárcsónakok, teraszos éttermek, hajómuseum. Kellemesen besétálható a katedrális és a kastély között." },
+        { name: "Helsinki", kind: "city", lat: 60.1699, lng: 24.9384, day: 8, date: "2026-07-17", detail: "Tallink Megastar: Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra). Majd rövid helsinki városi blokk." },
+        { name: "Helsinki Market Square", kind: "market", lat: 60.1671, lng: 24.9521, day: 8, date: "2026-07-17", detail: "A városi komp-blokk két főpontja: piac, kikötő, fehér neoklasszikus katedrális a Senaatintori felett. 30 perc alatt megvan." },
+        { name: "Porvoo", kind: "oldtown", lat: 60.3924, lng: 25.665, day: 8, date: "2026-07-17", detail: "Finnország második legidősebb városa. Vanha Porvoo: piros, okker és sárga festett faházak a Porvoonjoki folyóparton. Kb. 1,5 óra.", reviewNote: "Festői piros fapados óváros a folyóparton — Helsinkitől ~50 perc. Tökéletes délelőtti séta + kávé." },
+        { name: "Temppeliaukio (Sziklatemplom)", kind: "church", lat: 60.1668, lng: 24.9252, day: 8, date: "2026-07-17", detail: "1969-ben gránitsziklába vájt lutheránus templom, rézkupola tetővel. Természetes fény, csodálatos akusztika. Helsinki különleges építészeti remeke.", reviewNote: "Sziklába vájt templom Helsinkiben — belépő ~8 €, néha sor van; reggel kevésbé zsúfolt." },
+        { name: "Turku", kind: "city", lat: 60.4518, lng: 22.2666, day: 8, date: "2026-07-17", detail: "Helsinki → Turku ~1,5h autóval. Turku Castle megtekintés, Aura folyópart, majd Viking Line check-in 20:00." },
+        { name: "Turku Castle", kind: "castle", lat: 60.4381, lng: 22.2253, day: 8, date: "2026-07-17", detail: "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél. Múzeumi tartalom, középkori részek. Belépő ~€10, nyitva 10:00–18:00." },
+        { name: "Turku Cathedral", kind: "church", lat: 60.4512, lng: 22.2673, day: 8, date: "2026-07-17", detail: "Finnország nemzeti katedrálisa (13. sz.), a régi óváros szívében. A Turku városi blokk fő pontja a várral együtt." },
+        { name: "Stockholm / Arlanda", kind: "flight", lat: 59.6498, lng: 17.9238, day: 9, date: "2026-07-18", detail: "Autó Arlanda P3 hosszú távú parkolóba. FI309 Stockholm → Keflavík, indulás 17:10, érkezés 18:55 (helyi)." },
+        { name: "Stockholm — Värtahamnen", kind: "ferry", lat: 59.3665, lng: 18.1156, day: 9, date: "2026-07-18", detail: "Viking Line: Turku → Mariehamn (Åland) → Stockholm Värtahamnen. Érkezés 06:30." }
+      ],
       introCollapsible: true,
       intro: [
         "A baltikumi szakasz Tibi 9 napos autós felfedezőútja Budapestről Litvánián, Lettországon és Észtországon át Stockholmig — három kis észak-európai ország jellegzetes városait, középkori erődjeit és természeti tájait fűzi egyetlen összefüggő útvonallá.",
@@ -953,18 +992,20 @@ const tripData = {
           num: "4",
           date: "2026. július 13., hétfő",
           title: "Vilnius → Riga",
-          subtitle: "Hill of Crosses megállóval",
-          driveLog: { km: "~300 km", stops: 3, driveTime: "~4 óra", depart: "09:00", arrive: "~18:00", timelinePoints: [{time:"09:00", label:"ind. Vilnius"}, {time:"11:30", label:"Hill of Crosses"}, {time:"18:00", label:"Riga érk."}] },
+          subtitle: "Hill of Crosses + Rundāle-palota megállóval",
+          driveLog: { km: "~330 km", stops: 4, driveTime: "~4,5 óra", depart: "09:00", arrive: "~18:30", timelinePoints: [{time:"09:00", label:"ind. Vilnius"}, {time:"11:30", label:"Hill of Crosses"}, {time:"13:30", label:"Rundāle"}, {time:"18:30", label:"Riga érk."}] },
           tags: [
-            { label: "~300 km", cls: "tag-drive" },
-            { label: "Hill of Crosses", cls: "tag-focus" }
+            { label: "~330 km", cls: "tag-drive" },
+            { label: "Hill of Crosses", cls: "tag-focus" },
+            { label: "Rundāle", cls: "tag-focus" }
           ],
           activities: [
             { time: "reggel", icon: "🚗", name: "Indulás Riga felé", detail: "Rövidebb etap, mint az előző tranzitnapok." },
             { time: "napközben", icon: "⛪", name: "Hill of Crosses", detail: "Jó út menti törés, ami karaktert ad a Riga-napnak." },
+            { time: "kora délután", icon: "🏰", name: "Rundāle-palota (opcionális)", detail: "Lettország barokk »Versailles«-a — Rastrelli tervezte palota és francia kert. ~40 perc kitérő Bauska felé, útba esik Riga előtt." },
             { time: "este", icon: "🌆", name: "Esti Riga", detail: "Már csak rövid városi séta kell, a teljes Riga-nap másnap jön." }
           ],
-          notes: ["Ez jó köztes nap: nem üres vezetés, de nem is túl hosszú."]
+          notes: ["Ez jó köztes nap: nem üres vezetés, de nem is túl hosszú.", "🏰 Rundāle-palota: belépő ~16 €, a kert önmagában is megér egy sétát. Ha szűk az idő, csak a Hill of Crosses marad, Rundāle elhagyható."]
         },
         {
           num: "5",
@@ -1008,7 +1049,7 @@ const tripData = {
             { time: "13:00", icon: "🚗", name: "Sigulda → Pärnu → Tallinn (~300 km)", detail: "Észtországba belépés, Pärnu rövid megállólehetőség (ha van energia): homokos tengerparti üdülőváros, de ha Sigulda benne van, inkább kávé-megálló szinten." },
             { time: "20:00", icon: "⚓", name: "Tallinn — Rotermann / Sadama negyed szállás", detail: "Tallinnban a Rotermann / Sadama negyed a legjobb autós bázis: közel a kompterminálhoz, közel az óvároshoz, van parkoló. A másnapi Tallink miatt kikötő-közeli lokáció kifizetődik." }
           ],
-          notes: ["Turaida Castle: jobb kilátás és kevesebb tömeg mint a siguldai castle romok — inkább ezt válaszd ha csak egyet.", "Gutmanis-barlang: a Turaida kastélyból gyalogosan is elérhető (erdei ösvény, ~15 perc).", "Pärnu: ha Sigulda tele volt programmal, Pärnu legyen csak gyors kávé. Ha Sigulda rövid volt, egy fél óra tenger-pillantás jó.", "Tallinn szállás: Rotermann / Sadama / Old Town széle — autóval ide a legpraktikusabb bemenni."]
+          notes: ["Turaida Castle: jobb kilátás és kevesebb tömeg mint a siguldai castle romok — inkább ezt válaszd ha csak egyet.", "Gutmanis-barlang: a Turaida kastélyból gyalogosan is elérhető (erdei ösvény, ~15 perc).", "🏰 Cēsis: ha bőven van idő, ~30 km-re Sigulda mögött egy hangulatos középkori városka lovagvár-rommal (lámpással vezetett túra) — szép kiegészítés a Gauja-naphoz.", "Pärnu: ha Sigulda tele volt programmal, Pärnu legyen csak gyors kávé. Ha Sigulda rövid volt, egy fél óra tenger-pillantás jó.", "Tallinn szállás: Rotermann / Sadama / Old Town széle — autóval ide a legpraktikusabb bemenni."]
         },
         {
           num: "7",
@@ -1030,7 +1071,7 @@ const tripData = {
             { time: "16:00", icon: "✈️", name: "Lennusadam / Seaplane Harbour (opcionális)", detail: "Ha marad energia: a repülőhajó-hangárban működő tengeri múzeum — Lembit tengeralattjáró, hidroplán-hangar, jégtörő Suur Tõll. Google Reviews: ★4.6 — 'Elképesztő épület, a tengeralattjáró belülről is bejárható.' Belépő: ~€14." },
             { time: "19:00", icon: "🍺", name: "Esti vacsora + komp előtti packing", detail: "Vacsora: Põhjala Tap Room (craft sör + ételek) vagy a Telliskivi-negyedben bármely teraszos hely. Komp (Tallink Megastar) másnap 10:30 indul — az autóval való beállás 09:30-ra kell, érdemes estére kész lenni." }
           ],
-          notes: ["Tallinn autós logisztika: parkolj a Rotermann / Sadama negyed P-jában, az óvárosba nem érdemes behajtani.", "Kompterminál: Tallinn D-terminál (a Sadama negyedtől 5 perc gyalog). Autós boarding kb. 09:00-tól a 10:30-as menetrendnél.", "Lennusadam: ha elfáradt láb és kevés energia, ezt el is lehet hagyni — Toompea + Telliskivi a fontosabb.", "Toompea és Vanalinn együtt ~3-4 óra; Telliskivi még 1,5 óra — a nap könnyen betellik."]
+          notes: ["Tallinn autós logisztika: parkolj a Rotermann / Sadama negyed P-jában, az óvárosba nem érdemes behajtani.", "Kompterminál: Tallinn D-terminál (a Sadama negyedtől 5 perc gyalog). Autós boarding kb. 09:00-tól a 10:30-as menetrendnél.", "Lennusadam: ha elfáradt láb és kevés energia, ezt el is lehet hagyni — Toompea + Telliskivi a fontosabb.", "🏰 Kadriorg: ha marad délután, Nagy Péter cár barokk palotája és parkja (a KUMU művészeti múzeummal) nyugodt zöld séta a Vanalinn után — a park ingyenes.", "Toompea és Vanalinn együtt ~3-4 óra; Telliskivi még 1,5 óra — a nap könnyen betellik."]
         },
         {
           num: "8",
