@@ -423,6 +423,37 @@
       `;
     }
 
+    // Egyetlen extraResource-doboz (items + links + subBoxes) — újrahasználható
+    function renderExtraResourceBox(resource, accent = "iceland", forceClosed = false) {
+      if (!resource) return "";
+      return `
+        <details class="country-context ${resource.accent || accent}" ${detailsOpenAttr(resource.open, forceClosed)}>
+          <summary class="collapse-summary">
+            <span>${resource.title}</span>
+            <span class="collapse-icon" aria-hidden="true">▾</span>
+          </summary>
+          <div class="country-context-body">
+            ${resource.text ? `<p class="info-text">${resource.text}</p>` : ""}
+            ${resource.links && resource.links.length ? `<div class="context-sources">${renderLinkList(resource.links)}</div>` : ""}
+            ${resource.items && resource.items.length ? `<ul class="plain-list compact top-gap">${resource.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+            ${resource.subBoxes && resource.subBoxes.length ? resource.subBoxes.map((sub) => `
+              <details class="country-context-inner ${sub.accent || resource.accent || accent}" ${detailsOpenAttr(sub.open, forceClosed)}>
+                <summary class="collapse-summary">
+                  <span>${sub.title}</span>
+                  <span class="collapse-icon" aria-hidden="true">▾</span>
+                </summary>
+                <div class="country-context-body">
+                  ${sub.text ? `<p class="info-text">${sub.text}</p>` : ""}
+                  ${sub.links && sub.links.length ? `<div class="context-sources">${renderLinkList(sub.links)}</div>` : ""}
+                  ${sub.items && sub.items.length ? `<ul class="plain-list compact top-gap">${sub.items.map((item) => `<li>${item}</li>`).join("")}</ul>` : ""}
+                </div>
+              </details>
+            `).join("") : ""}
+          </div>
+        </details>
+      `;
+    }
+
     function renderDayCard(day, accentClass, forceClosed = false) {
       return `
         <details class="day-card ${accentClass}" ${detailsOpenAttr(day.open, forceClosed)}>
@@ -686,6 +717,16 @@
 
     function renderIzland2() {
       const section = tripData.sections.izland2;
+      const izl = tripData.sections.izland;
+      const ctx = izl.context || [];
+      const findCtx = (needle) => ctx.find((c) => (c.title || "").includes(needle));
+      const bgPanels = [
+        renderCollapseBox(tripData.icelandGeneralBox, true),
+        renderExtraResourceBox((izl.extraResources || [])[0], "iceland", true),
+        renderCollapseBox(findCtx("földrajz"), true),
+        renderCollapseBox(findCtx("országkép"), true),
+        renderCollapseBox(findCtx("Esőtűrés"), true)
+      ].join("");
       return `
         <section class="view" data-view="izland2">
           <div class="section-head">
@@ -698,9 +739,23 @@
             ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
           </section>
 
-          <section class="card section-card">
-            <h3 class="info-title" style="margin:0 0 4px;">🗺 Interaktív Ring Road térkép</h3>
-            <p class="info-text" style="margin-bottom:14px;">${section.mapNote}</p>
+          <details class="country-context iceland iz2-bg-panel">
+            <summary class="collapse-summary">
+              <span>📚 Általános bemutató — Izland-háttér</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <div class="country-context-body iz2-bg-body">
+              <p class="info-text" style="margin:0 0 10px;">Háttéranyagok az Izland oldalról: nyisd ki, ami érdekel — minden al-panel külön nyitható.</p>
+              ${bgPanels}
+            </div>
+          </details>
+
+          <details class="card section-card coll-card iz2-map-panel" open>
+            <summary class="coll-card-head">
+              <h3 class="info-title" style="margin:0;">🗺 Interaktív Ring Road térkép</h3>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <p class="info-text" style="margin:8px 0 14px;">${section.mapNote}</p>
             <div class="map-filter-wrap">
               <div class="travel-map-wrap">
                 <div id="izland2-map" style="width:100%;height:100%;"></div>
@@ -713,7 +768,7 @@
             </div>
             <div class="iz2-routestat" id="izland2-routestat">Útvonal betöltése valódi úthálózaton…</div>
             <div class="iz2-legend" id="izland2-legend"></div>
-          </section>
+          </details>
 
           <section class="days">
             ${section.days.map((day) => renderDayCard(day, section.accent, true)).join("")}
