@@ -1707,7 +1707,6 @@ const tripData = {
           tags: [
             { label: "érkezés", cls: "tag-flight" },
             { label: "Reykjanes", cls: "tag-focus" },
-            { label: "~40 km", cls: "tag-drive" }
           ],
           activities: [
             { time: "18:25", icon: "✈", name: "Leszállás Keflavíkon", detail: "Icelandair érkezés után autóátvétel, kb. 45 perc az egész folyamat." },
@@ -1730,7 +1729,6 @@ const tripData = {
           driveLog: { km: "~250 km", stops: 6, driveTime: "~4 óra", depart: "08:00", arrive: "19:30", timelinePoints: [{time:"08:00", label:"Reykjavík ind."}, {time:"10:30", label:"Þingvellir"}, {time:"12:30", label:"Geysir"}, {time:"14:00", label:"Gullfoss"}, {time:"16:00", label:"Kerið"}, {time:"19:30", label:"Hella"}] },
           character: "A kör nyitónapja a klasszikus Golden Circle: séta a két tektonikai lemez közt Þingvellirben, a Strokkur gejzír kitörése, és a hatalmas kétlépcsős Gullfoss. Estére a déli part kapujába, Hella / Hvolsvöllur környékére érkeztek.",
           tags: [
-            { label: "~230 km", cls: "tag-drive" },
             { label: "Golden Circle", cls: "tag-focus" }
           ],
           activities: [
@@ -1757,7 +1755,6 @@ const tripData = {
           driveLog: { km: "~175 km", stops: 7, driveTime: "~3 óra", depart: "08:00", arrive: "20:00", timelinePoints: [{time:"08:00", label:"Hella ind."}, {time:"09:30", label:"Seljalandsfoss"}, {time:"11:30", label:"Skógafoss"}, {time:"14:00", label:"Dyrhólaey"}, {time:"15:30", label:"Reynisfjara"}, {time:"20:00", label:"Kirkjubæjarklaustur"}] },
           character: "A déli part vízesés-napja: Seljalandsfoss mögé be lehet sétálni, Skógafoss 60 méteres fala, és a Reynisfjara fekete bazaltstrand. Vík az utolsó nagyobb bolt egy darabig, estére Kirkjubæjarklaustur.",
           tags: [
-            { label: "~165 km", cls: "tag-drive" },
             { label: "vízesések", cls: "tag-focus" }
           ],
           activities: [
@@ -1785,7 +1782,6 @@ const tripData = {
           driveLog: { km: "~230 km", stops: 7, driveTime: "~3,5 óra", depart: "07:30", arrive: "20:30", timelinePoints: [{time:"07:30", label:"Klaustur ind."}, {time:"08:15", label:"Fjaðrárgljúfur"}, {time:"10:00", label:"Skaftafell"}, {time:"13:00", label:"Jökulsárlón"}, {time:"15:00", label:"Gyémánt-part"}, {time:"20:30", label:"Höfn"}] },
           character: "Az út csúcspontja: a Vatnajökull-gleccser, a Jökulsárlón úszó jéghegyei fókákkal, és a szemközti Gyémánt-part, ahol jégdarabok ragyognak a fekete homokon. Estére Höfn, a langusztafalu.",
           tags: [
-            { label: "~215 km", cls: "tag-drive" },
             { label: "Jökulsárlón", cls: "tag-focus" }
           ],
           activities: [
@@ -1813,7 +1809,6 @@ const tripData = {
           driveLog: { km: "~200 km", stops: 4, driveTime: "~3,5 óra (lassú)", depart: "08:30", arrive: "19:30", timelinePoints: [{time:"08:30", label:"Höfn ind."}, {time:"09:15", label:"Vestrahorn"}, {time:"11:30", label:"Djúpivogur"}, {time:"14:30", label:"Petra (Stöðvarfj.)"}, {time:"19:30", label:"Egilsstaðir"}] },
           character: "Ma maga az út az élmény: kanyargós, csodaszép keleti fjord-szakasz. Kevés megálló, lassú tempó, rénszarvas-esély. Djúpivogur békés halászfalu félúton, estére Egilsstaðir.",
           tags: [
-            { label: "~190 km", cls: "tag-drive" },
             { label: "fjordok", cls: "tag-focus" }
           ],
           activities: [
@@ -1838,7 +1833,6 @@ const tripData = {
           driveLog: { km: "~310 km", stops: 7, driveTime: "~4,5 óra", depart: "08:00", arrive: "20:30", timelinePoints: [{time:"08:00", label:"Egilsstaðir ind."}, {time:"10:30", label:"Dettifoss"}, {time:"12:30", label:"Hverir"}, {time:"14:00", label:"Earth Lagoon"}, {time:"16:30", label:"Dimmuborgir"}, {time:"17:30", label:"Goðafoss"}, {time:"20:30", label:"Akureyri"}] },
           character: "Geotermikus nap: Európa legerősebb vízesése (Dettifoss), a marsi Hverir sárkráterei, és a csendes Mývatn Nature Baths (Earth Lagoon) — olcsóbb és nyugodtabb, mint a Blue/Sky Lagoon. Záráskor Goðafoss és Akureyri.",
           tags: [
-            { label: "~300 km", cls: "tag-drive" },
             { label: "Mývatn", cls: "tag-focus" }
           ],
           activities: [
@@ -1866,7 +1860,6 @@ const tripData = {
           driveLog: { km: "~410 km", stops: 5, driveTime: "~5,5 óra", depart: "07:00", arrive: "21:30", timelinePoints: [{time:"07:00", label:"Akureyri ind."}, {time:"10:00", label:"Kolugljúfur"}, {time:"11:00", label:"Hvítserkur"}, {time:"14:00", label:"Grábrók"}, {time:"19:00", label:"Kirkjufell"}, {time:"21:30", label:"Grundarfjörður"}] },
           character: "A leghosszabb átvezető nap: északról a Snæfellsnes-félszigetre. Útközben Hvítserkur, a 15 méteres »sárkány«-szikla. A hosszú nyári estében már a Kirkjufellt fotózzátok, és Grundarfjörðurben alszotok a félsziget szívében.",
           tags: [
-            { label: "~400 km", cls: "tag-drive" },
             { label: "Kirkjufell", cls: "tag-focus" }
           ],
           activities: [
@@ -1892,7 +1885,6 @@ const tripData = {
           driveLog: { km: "~330 km", stops: 8, driveTime: "~5 óra", depart: "07:30", arrive: "21:00", timelinePoints: [{time:"07:30", label:"Grundarfj. ind."}, {time:"09:00", label:"Djúpalónssandur"}, {time:"10:30", label:"Arnarstapi"}, {time:"12:00", label:"Búðakirkja"}, {time:"13:00", label:"Ytri-Tunga"}, {time:"17:00", label:"Reykjavík"}, {time:"21:00", label:"Keflavík"}] },
           character: "Záró kör a »kis Izland«-on: Djúpalónssandur fekete strand, a Lóndrangar bazalttornyok, Arnarstapi sziklaszínpada és a fekete Búðakirkja. Útban hazafelé rövid reykjavíki ízelítő, majd Keflavík az utolsó éjszakára a hajnali géphez.",
           tags: [
-            { label: "~320 km", cls: "tag-drive" },
             { label: "Snæfellsnes", cls: "tag-focus" }
           ],
           activities: [
