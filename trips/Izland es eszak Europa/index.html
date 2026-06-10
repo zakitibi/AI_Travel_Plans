@@ -40,6 +40,7 @@
       { id: "henni", label: "Henni" },
       { id: "baltikum", label: "Baltikum" },
       { id: "izland", label: "Izland" },
+      { id: "izland2", label: "Izland 2" },
       { id: "hazaut", label: "Hazaút" },
       { id: "restaurants", label: "Gasztronómia" },
       { id: "practical", label: "🧳 Praktikus" },
@@ -476,8 +477,8 @@
               <section class="day-places">
                 <h4 class="day-places-title">📍 GPX pontok, Google Maps és értékelések</h4>
                 <div class="day-places-grid">
-                  ${day.gpxPlaces.map((place) => `
-                    <article class="day-place-card">
+                  ${day.gpxPlaces.map((place, placeIdx) => `
+                    <article class="day-place-card${place.lat != null ? " day-place-mapped" : ""}"${place.lat != null ? ` data-iz2-key="${day.num}-${placeIdx}"` : ""}>
                       <div class="day-place-top">
                         <div>
                           <div class="day-place-name">${place.name}</div>
@@ -679,6 +680,43 @@
               <aside class="dm-filter-sidebar" id="${sectionKey}-map-filter"></aside>
             </div>
           </details>
+        </section>
+      `;
+    }
+
+    function renderIzland2() {
+      const section = tripData.sections.izland2;
+      return `
+        <section class="view" data-view="izland2">
+          <div class="section-head">
+            <div>
+              <h2><span>${section.kicker}</span>${section.title}</h2>
+            </div>
+            <div class="country-pill ${section.accent}">${section.pill}</div>
+          </div>
+          <section class="card section-card">
+            ${section.intro.map((paragraph) => `<p class="section-intro">${paragraph}</p>`).join("")}
+          </section>
+
+          <section class="card section-card">
+            <h3 class="info-title" style="margin:0 0 4px;">🗺 Interaktív Ring Road térkép</h3>
+            <p class="info-text" style="margin-bottom:14px;">${section.mapNote}</p>
+            <div class="travel-map-wrap">
+              <div id="izland2-map" style="width:100%;height:100%;"></div>
+              <div class="tm-overlay">
+                <div class="tm-spinner"></div>
+                <span>Térkép betöltése…</span>
+              </div>
+            </div>
+            <div class="iz2-routestat" id="izland2-routestat">Útvonal betöltése valódi úthálózaton…</div>
+            <div class="iz2-legend" id="izland2-legend"></div>
+          </section>
+
+          <section class="days">
+            ${section.days.map((day) => renderDayCard(day, section.accent, true)).join("")}
+          </section>
+
+          ${section.practicalBox ? renderCollapseBox(section.practicalBox, false) : ""}
         </section>
       `;
     }
@@ -1079,6 +1117,7 @@
       renderPersonView("henni"),
       renderDetailedSection("baltikum"),
       renderDetailedSection("izland"),
+      renderIzland2(),
       renderDetailedSection("hazaut"),
       renderRestaurants(),
       renderPractical(),
@@ -1172,5 +1211,114 @@
   </script>
   <script type="module" src="./overview-map-init.js"></script>
   <script type="module" src="./section-map-init.js"></script>
+
+  <!-- Izland 2 — alternatív Ring Road térkép (számozott markerek + OSRM valós útvonal) -->
+  <script>
+    (function () {
+      const sec = (window.tripData || (typeof tripData !== "undefined" ? tripData : null))?.sections?.izland2;
+      if (!sec) return;
+      let inited = false;
+
+      function init() {
+        if (inited) return;
+        const L = window.L;
+        const el = document.getElementById("izland2-map");
+        if (!L || !el) return;
+        inited = true;
+
+        const wrap = el.closest(".travel-map-wrap");
+        const overlay = wrap && wrap.querySelector(".tm-overlay");
+
+        const map = L.map("izland2-map", { scrollWheelZoom: false }).setView([64.9, -18.6], 6);
+        window._leafletMaps = window._leafletMaps || {};
+        window._leafletMaps["izland2-map"] = map;
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 19
+        }).addTo(map);
+
+        const ordered = [], markers = {}, bounds = [];
+        sec.days.forEach((d) => {
+          (d.gpxPlaces || []).forEach((s, si) => {
+            if (s.lat == null || s.lng == null) return;
+            ordered.push(s);
+            bounds.push([s.lat, s.lng]);
+            const ov = s.t === "ov";
+            const size = ov ? 30 : 24;
+            const color = d.mapColor || "#1f5a3e";
+            const icon = L.divIcon({
+              className: "",
+              html: `<div class="iz2-numicon${ov ? " iz2-ov" : ""}" style="width:${size}px;height:${size}px;background:${color}">${ov ? "■" : d.num}</div>`,
+              iconSize: [size, size],
+              iconAnchor: [size / 2, size / 2]
+            });
+            const m = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).addTo(map);
+            m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${d.num}. nap · ${d.date.replace("2026. ", "")}</div><div class="iz2-pp-n">${s.detail || ""}</div></div>`);
+            markers[`${d.num}-${si}`] = m;
+          });
+        });
+        if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+
+        // Tartalék szaggatott légvonal, amíg / ha nincs valódi útvonal
+        let fallback = L.polyline(ordered.map((s) => [s.lat, s.lng]), { color: "#1f5a3e", weight: 2, opacity: 0.35, dashArray: "6 8" }).addTo(map);
+
+        // Valódi úthálózaton futó nyomvonal (OSRM, kulcs nélkül)
+        const coordStr = ordered.map((s) => `${s.lng},${s.lat}`).join(";");
+        fetch(`https://router.project-osrm.org/route/v1/driving/${coordStr}?overview=full&geometries=geojson`)
+          .then((r) => r.json())
+          .then((d) => {
+            if (d && d.routes && d.routes[0]) {
+              if (fallback) { map.removeLayer(fallback); fallback = null; }
+              L.geoJSON(d.routes[0].geometry, { style: { color: "#1f5a3e", weight: 3, opacity: 0.7 } }).addTo(map);
+              const km = Math.round(d.routes[0].distance / 1000);
+              const rs = document.getElementById("izland2-routestat");
+              if (rs) rs.textContent = `Valódi úthálózaton: kb. ${km} km a teljes kör (Route 1 + kitérők).`;
+            } else { throw 0; }
+          })
+          .catch(() => {
+            const rs = document.getElementById("izland2-routestat");
+            if (rs) rs.textContent = "A vonal tájékoztató (légvonal a megállók közt) — a valódi útvonal-lekérés most nem érhető el.";
+          });
+
+        // Jelmagyarázat
+        const leg = document.getElementById("izland2-legend");
+        if (leg && !leg.childElementCount) {
+          sec.days.forEach((d) => {
+            const sp = document.createElement("span");
+            sp.innerHTML = `<span class="iz2-dot" style="background:${d.mapColor}"></span>${d.num}. ${d.title}`;
+            leg.appendChild(sp);
+          });
+          const ov = document.createElement("span");
+          ov.innerHTML = `<span class="iz2-dot iz2-dot-ov"></span>Éjszakai szállás`;
+          leg.appendChild(ov);
+        }
+
+        // Kattintás a napi GPX-kártyára → a térkép odarepül
+        document.querySelectorAll('[data-iz2-key]').forEach((card) => {
+          card.addEventListener("click", (ev) => {
+            if (ev.target.closest("a")) return;
+            const m = markers[card.getAttribute("data-iz2-key")];
+            if (!m) return;
+            map.flyTo(m.getLatLng(), 10, { duration: 0.8 });
+            setTimeout(() => m.openPopup(), 820);
+            if (wrap) wrap.scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        });
+
+        if (overlay) overlay.classList.add("tm-hidden");
+        setTimeout(() => { try { map.invalidateSize(); } catch (_) {} }, 60);
+      }
+
+      const original = window.activateTab;
+      window.activateTab = function (id) {
+        if (typeof original === "function") original.apply(this, arguments);
+        if (id === "izland2") requestAnimationFrame(init);
+      };
+      if (document.querySelector('.view.is-active[data-view="izland2"]')) {
+        requestAnimationFrame(init);
+      }
+    })();
+  </script>
 </body>
 </html>

@@ -1719,6 +1719,229 @@ const tripData = {
         }
       ]
     },
+    izland2: {
+      kicker: "Alternatív verzió · fordított Ring Road",
+      title: "Izland 2",
+      pill: "Óramutatóval ellentétes · pihenőnap nélkül",
+      accent: "iceland",
+      intro: [
+        "Ez az izlandi program alternatív, »pihenőnap nélküli« verziója: a fordított (óramutatóval ellentétes) Ring Road, ahol már az érkezés utáni első napon a Golden Circle jön, és így minden napra jut egy laza kör. 8 éjszaka, ~1750 km, 7 szállás-zóna.",
+        "A térkép valódi úthálózaton (OSRM) rajzolja ki a teljes kört, a megállók napszínekkel és sorszámmal jelölve. Alatta a napi bontás ugyanúgy működik, mint a fő Izland oldalon: minden nap kinyitható a teljes részletért."
+      ],
+      mapNote: "Óramutatóval ellentétes irány (déli part először). A markerek napszín + sorszám szerint, a négyzet az éjszakai szállás.",
+      days: [
+        {
+          num: "1",
+          date: "2026. július 18., szombat",
+          title: "Érkezés – Keflavík",
+          subtitle: "Leszállás, autóátvétel, első éjszaka a reptér mellett",
+          mapColor: "#5eead4",
+          driveLog: { km: "~5 km", stops: 1, driveTime: "~15 perc", depart: "18:25", arrive: "22:30", timelinePoints: [{time:"18:25", label:"KEF leszállás"}, {time:"19:15", label:"autóátvétel"}, {time:"20:00", label:"Bónus + szállás"}, {time:"22:30", label:"pihenő"}] },
+          character: "Rövid logisztikai nap: leszállás 18:25-kor, autóbérlés, és már be is költöztök a reptér melletti szállásra. Júliusban este 22:30-kor is világos van — nyugodtan érkeztek. Indulás előtt érdemes a Bónusban bevásárolni, mert Reykjavíkon kívül drágább.",
+          tags: [
+            { label: "érkezés", cls: "tag-flight" },
+            { label: "~5 km", cls: "tag-drive" }
+          ],
+          activities: [
+            { time: "18:25", icon: "✈", name: "Leszállás Keflavíkon", detail: "Icelandair érkezés után autóátvétel, kb. 45 perc az egész folyamat." },
+            { time: "este", icon: "🛒", name: "Bónus bevásárlás", detail: "Reykjavíkon kívül drágább — érdemes itt feltölteni a roadtrip-kajával." },
+            { time: "késő este", icon: "🛏", name: "Keflavík szállás", detail: "Reptér melletti éjszaka, korai pihenő a holnapi Golden Circle előtt." }
+          ],
+          notes: ["Júliusban éjfélkor is világos van — ne lepődj meg, ne is feszülj rá a korai alvásra.", "Autóátvételnél fotózd körbe a karcokat, üveget, lökhárítót — a kavics- és szélkár Izlandon gyakori.", "A kutaknál PIN-kód kell, kontaktless nem mindenhol megy."],
+          gpxPlaces: [
+            { name: "Keflavík", badge: "szállás-zóna", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Leszállás 18:25, autóbérlés. Bónus bevásárlás indulás előtt — Reykjavíkon kívül drágább.", maps: "https://www.google.com/maps/search/?api=1&query=63.9997549,-22.5582716" }
+          ]
+        },
+        {
+          num: "2",
+          date: "2026. július 19., vasárnap",
+          title: "Golden Circle",
+          subtitle: "Klasszikus nyitónap: Þingvellir, gejzírek, Gullfoss → Hella",
+          mapColor: "#60a5fa",
+          driveLog: { km: "~230 km", stops: 4, driveTime: "~3,5 óra", depart: "08:00", arrive: "19:30", timelinePoints: [{time:"08:00", label:"Reykjavík ind."}, {time:"10:30", label:"Þingvellir"}, {time:"12:30", label:"Geysir"}, {time:"14:00", label:"Gullfoss"}, {time:"19:30", label:"Hella"}] },
+          character: "A kör nyitónapja a klasszikus Golden Circle: séta a két tektonikai lemez közt Þingvellirben, a Strokkur gejzír kitörése, és a hatalmas kétlépcsős Gullfoss. Estére a déli part kapujába, Hella / Hvolsvöllur környékére érkeztek.",
+          tags: [
+            { label: "~230 km", cls: "tag-drive" },
+            { label: "Golden Circle", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "reggel", icon: "🚗", name: "Indulás Reykjavíkból", detail: "Korai start a klasszikus Golden Circle felé." },
+            { time: "délelőtt", icon: "🌋", name: "Þingvellir + Strokkur", detail: "UNESCO hasadékvölgy, majd a gejzír 5–8 percenkénti kitörése." },
+            { time: "délután", icon: "💦", name: "Gullfoss → Hella", detail: "A hatalmas vízesés, majd átvezetés a déli part kapujába." }
+          ],
+          notes: ["Þingvellirben a parkolás fizetős (P1/P2 parkoló).", "Strokkur 5–8 percenként tör ki — türelem, és figyelj a szél irányára.", "Hella / Hvolsvöllur sok farmstay-jel jó kiindulás a déli parthoz — foglalj előre."],
+          gpxPlaces: [
+            { name: "Þingvellir Nemzeti Park", badge: "UNESCO", duration: "60–90 perc", lat: 64.2821725, lng: -21.0764491, detail: "Séta a két kontinens lemeze közt. Parkolás fizetős.", maps: "https://www.google.com/maps/search/?api=1&query=64.2821725,-21.0764491" },
+            { name: "Strokkur gejzír", badge: "gejzír", duration: "30–40 perc", lat: 64.3127094, lng: -20.300721, detail: "5–8 percenként tör ki 20–30 m-re. Ingyenes.", maps: "https://www.google.com/maps/search/?api=1&query=64.3127094,-20.300721" },
+            { name: "Gullfoss", badge: "vízesés", duration: "30–45 perc", lat: 64.3270716, lng: -20.1199478, detail: "Hatalmas kétlépcsős vízesés. Felső + alsó nézőpont.", maps: "https://www.google.com/maps/search/?api=1&query=64.3270716,-20.1199478" },
+            { name: "Hella / Hvolsvöllur", badge: "szállás-zóna", t: "ov", lat: 63.833, lng: -20.396, detail: "Jó kiindulás a déli parthoz, sok farmstay.", maps: "https://www.google.com/maps/search/?api=1&query=63.833,-20.396" }
+          ]
+        },
+        {
+          num: "3",
+          date: "2026. július 20., hétfő",
+          title: "Déli part – vízesések",
+          subtitle: "Seljalandsfoss, Skógafoss, Reynisfjara, Vík → Kirkjubæjarklaustur",
+          mapColor: "#a78bfa",
+          driveLog: { km: "~165 km", stops: 5, driveTime: "~2,5 óra", depart: "08:00", arrive: "20:00", timelinePoints: [{time:"08:00", label:"Hella ind."}, {time:"09:30", label:"Seljalandsfoss"}, {time:"11:30", label:"Skógafoss"}, {time:"14:30", label:"Reynisfjara"}, {time:"20:00", label:"Kirkjubæjarklaustur"}] },
+          character: "A déli part vízesés-napja: Seljalandsfoss mögé be lehet sétálni, Skógafoss 60 méteres fala, és a Reynisfjara fekete bazaltstrand. Vík az utolsó nagyobb bolt egy darabig, estére Kirkjubæjarklaustur.",
+          tags: [
+            { label: "~165 km", cls: "tag-drive" },
+            { label: "vízesések", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "délelőtt", icon: "💧", name: "Seljalandsfoss + Skógafoss", detail: "Mögé sétálható vízesés, majd a 60 méteres Skógafoss a 400 lépcsős panorámával." },
+            { time: "délután", icon: "🖤", name: "Reynisfjara + Vík", detail: "Bazaltoszlopos fekete strand, majd tankolás-ebéd Víkben." },
+            { time: "este", icon: "🛏", name: "Kirkjubæjarklaustur", detail: "Apró falu, jó pozíció a gleccserekhez — korlátozott szállás." }
+          ],
+          notes: ["⚠️ Reynisfjara: a »sneaker wave« életveszélyes — NE menj közel a vízhez!", "Seljalandsfoss mögé esőkabát kell; mellette a rejtett Gljúfrabúi is megéri.", "Vík: tankolás, ebéd, utolsó nagyobb bolt — Kirkjubæjarklaustur apró falu, foglalj szállást előre."],
+          gpxPlaces: [
+            { name: "Seljalandsfoss", badge: "vízesés", duration: "40–60 perc", lat: 63.6156232, lng: -19.9885688, detail: "Mögé lehet sétálni! Esőkabát kell. Mellette a rejtett Gljúfrabúi.", maps: "https://www.google.com/maps/search/?api=1&query=63.6156232,-19.9885688" },
+            { name: "Skógafoss", badge: "vízesés", duration: "40–60 perc", lat: 63.5320523, lng: -19.5113706, detail: "60 m magas. 400 lépcső a tetejére a panorámáért.", maps: "https://www.google.com/maps/search/?api=1&query=63.5320523,-19.5113706" },
+            { name: "Reynisfjara fekete strand", badge: "fekete strand", duration: "30–45 perc", lat: 63.4142559, lng: -19.0104132, detail: "Bazaltoszlopok. FIGYELEM: a »sneaker wave« életveszélyes, ne menj a vízhez!", maps: "https://www.google.com/maps/search/?api=1&query=63.4142559,-19.0104132" },
+            { name: "Vík í Mýrdal", badge: "ebéd + tankolás", duration: "45–60 perc", lat: 63.4176505, lng: -18.9974395, detail: "Tankolás, ebéd, templom. Utolsó nagyobb bolt egy darabig.", maps: "https://www.google.com/maps/search/?api=1&query=63.4176505,-18.9974395" },
+            { name: "Kirkjubæjarklaustur", badge: "szállás-zóna", t: "ov", lat: 63.789, lng: -18.058, detail: "Apró falu, jó pozíció a gleccserekhez. Korlátozott szállás — foglalj!", maps: "https://www.google.com/maps/search/?api=1&query=63.789,-18.058" }
+          ]
+        },
+        {
+          num: "4",
+          date: "2026. július 21., kedd",
+          title: "Gleccserek és jéghegyek",
+          subtitle: "Skaftafell, Jökulsárlón, Gyémánt-part → Höfn",
+          mapColor: "#f472b6",
+          driveLog: { km: "~215 km", stops: 4, driveTime: "~3 óra", depart: "07:30", arrive: "20:30", timelinePoints: [{time:"07:30", label:"Klaustur ind."}, {time:"09:30", label:"Skaftafell"}, {time:"13:00", label:"Jökulsárlón"}, {time:"15:00", label:"Gyémánt-part"}, {time:"20:30", label:"Höfn"}] },
+          character: "Az út csúcspontja: a Vatnajökull-gleccser, a Jökulsárlón úszó jéghegyei fókákkal, és a szemközti Gyémánt-part, ahol jégdarabok ragyognak a fekete homokon. Estére Höfn, a langusztafalu.",
+          tags: [
+            { label: "~215 km", cls: "tag-drive" },
+            { label: "Jökulsárlón", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "délelőtt", icon: "🏔", name: "Skaftafell (Vatnajökull NP)", detail: "Svartifoss-túra (~1,5 ó) a bazaltoszlopos vízeséshez." },
+            { time: "délután", icon: "🧊", name: "Jökulsárlón + Gyémánt-part", detail: "Úszó jéghegyek, fókák, csónaktúra — szemben a ragyogó jégdarabok." },
+            { time: "este", icon: "🦞", name: "Höfn", detail: "Halászfalu, híres a langusztáról (humar) — vacsorára ajánlott." }
+          ],
+          notes: ["Skaftafell: a Svartifoss-túra ~1,5 óra a bazaltoszlopos vízeséshez; gleccsertúrák is innen indulnak.", "Jökulsárlón: csónaktúra előre foglalható — az út egyik legerősebb élménye.", "Höfn híres a langusztáról (humar) — vacsorára ajánlott!"],
+          gpxPlaces: [
+            { name: "Skaftafell (Vatnajökull NP)", badge: "gleccser + túra", duration: "1,5–2 óra", lat: 64.070414, lng: -16.9751755, detail: "Svartifoss-túra (~1,5 ó) a bazaltoszlopos vízeséshez. Gleccsertúrák is innen.", maps: "https://www.google.com/maps/search/?api=1&query=64.070414,-16.9751755" },
+            { name: "Jökulsárlón gleccserlagúna", badge: "fő látnivaló", duration: "60–90 perc", lat: 64.0784458, lng: -16.2305536, detail: "Úszó jéghegyek, fókák. Csónaktúra foglalható. Az út csúcspontja.", maps: "https://www.google.com/maps/search/?api=1&query=64.0784458,-16.2305536" },
+            { name: "Gyémánt-part", badge: "fotópont", duration: "30–45 perc", lat: 64.041061, lng: -16.1966881, detail: "Jégdarabok a fekete homokon, szemben a lagúnával.", maps: "https://www.google.com/maps/search/?api=1&query=64.041061,-16.1966881" },
+            { name: "Höfn", badge: "szállás-zóna", t: "ov", lat: 64.2551913, lng: -15.2088449, detail: "Halászfalu, híres a languszta (humar). Vacsorára ajánlott!", maps: "https://www.google.com/maps/search/?api=1&query=64.2551913,-15.2088449" }
+          ]
+        },
+        {
+          num: "5",
+          date: "2026. július 22., szerda",
+          title: "Keleti fjordok",
+          subtitle: "Lassú tengerparti fjordút Djúpivoguron át → Egilsstaðir",
+          mapColor: "#fb923c",
+          driveLog: { km: "~190 km", stops: 2, driveTime: "~3 óra (lassú)", depart: "08:30", arrive: "19:30", timelinePoints: [{time:"08:30", label:"Höfn ind."}, {time:"11:00", label:"Djúpivogur"}, {time:"19:30", label:"Egilsstaðir"}] },
+          character: "Ma maga az út az élmény: kanyargós, csodaszép keleti fjord-szakasz. Kevés megálló, lassú tempó, rénszarvas-esély. Djúpivogur békés halászfalu félúton, estére Egilsstaðir.",
+          tags: [
+            { label: "~190 km", cls: "tag-drive" },
+            { label: "fjordok", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "reggel", icon: "🚗", name: "Indulás Höfnből", detail: "Lassú, panorámás fjordút indul — ma az út maga az élmény." },
+            { time: "délben", icon: "⚓", name: "Djúpivogur", detail: "Békés halászfalu, megálló a fjordok közt. Rénszarvas-esély." },
+            { time: "este", icon: "🛏", name: "Egilsstaðir", detail: "Kelet-Izland központja — tankolás, bolt, éjszakai megálló." }
+          ],
+          notes: ["Lassan vezess — a fjordút keskeny és kanyargós, de a panoráma végig fantasztikus.", "Rénszarvasra számíts az útszéleken a keleti országrészben.", "Egilsstaðir Kelet-Izland központja — tankolás, bolt, jó éjszakai megálló."],
+          gpxPlaces: [
+            { name: "Djúpivogur", badge: "halászfalu", duration: "30–45 perc", lat: 64.6585, lng: -14.2839, detail: "Békés halászfalu, megálló a fjordok közt. Rénszarvas-esély.", maps: "https://www.google.com/maps/search/?api=1&query=64.6585,-14.2839" },
+            { name: "Egilsstaðir", badge: "szállás-zóna", t: "ov", lat: 65.2609232, lng: -14.3994394, detail: "Kanyargós, csodaszép tengerparti szakasz — maga az út az élmény. Lassan vezess.", maps: "https://www.google.com/maps/search/?api=1&query=65.2609232,-14.3994394" }
+          ]
+        },
+        {
+          num: "6",
+          date: "2026. július 23., csütörtök",
+          title: "Mývatn + lagúna",
+          subtitle: "Dettifoss, Hverir, Earth Lagoon, Goðafoss → Akureyri",
+          mapColor: "#34d399",
+          driveLog: { km: "~300 km", stops: 5, driveTime: "~4,5 óra", depart: "08:00", arrive: "20:30", timelinePoints: [{time:"08:00", label:"Egilsstaðir ind."}, {time:"10:30", label:"Dettifoss"}, {time:"12:30", label:"Hverir"}, {time:"14:00", label:"Earth Lagoon"}, {time:"17:30", label:"Goðafoss"}, {time:"20:30", label:"Akureyri"}] },
+          character: "Geotermikus nap: Európa legerősebb vízesése (Dettifoss), a marsi Hverir sárkráterei, és a csendes Mývatn Nature Baths (Earth Lagoon) — olcsóbb és nyugodtabb, mint a Blue/Sky Lagoon. Záráskor Goðafoss és Akureyri.",
+          tags: [
+            { label: "~300 km", cls: "tag-drive" },
+            { label: "Mývatn", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "délelőtt", icon: "💥", name: "Dettifoss + Hverir", detail: "Európa legerősebb vízesése (nyugati aszfaltos oldal), majd a marsi sárkráterek." },
+            { time: "kora délután", icon: "♨", name: "Earth Lagoon", detail: "Mývatn Nature Baths — a csendesebb, olcsóbb lagúna. Foglalj előre!" },
+            { time: "este", icon: "🏙", name: "Goðafoss → Akureyri", detail: "Az »Istenek vízesése«, majd Észak fővárosa éttermekkel." }
+          ],
+          notes: ["Dettifoss: a NYUGATI oldal aszfaltos — ezt vegyétek, a keleti murvás.", "Earth Lagoon (Mývatn Nature Baths): idősávos, ~7.500 ISK / 3 óra — foglalj előre!", "Akureyri Észak fővárosa: éttermek, kávézók, igazi város — jó hely pihenni."],
+          gpxPlaces: [
+            { name: "Dettifoss", badge: "vízesés", duration: "45–60 perc", lat: 65.8146662, lng: -16.384576, detail: "Európa legerősebb vízesése. Nyugati oldal = aszfalt.", maps: "https://www.google.com/maps/search/?api=1&query=65.8146662,-16.384576" },
+            { name: "Hverir (Námaskarð)", badge: "geotermikus", duration: "30–45 perc", lat: 65.6409144, lng: -16.8093111, detail: "Bugyogó sárkráterek, gőzölgő talaj, kénszag. Marsi táj.", maps: "https://www.google.com/maps/search/?api=1&query=65.6409144,-16.8093111" },
+            { name: "Mývatn Nature Baths (Earth Lagoon)", badge: "fürdő", duration: "2–3 óra", lat: 65.6308946, lng: -16.8476117, detail: "A LAGÚNA. Csendesebb és olcsóbb, mint a Blue/Sky Lagoon. Foglalj előre!", maps: "https://www.google.com/maps/search/?api=1&query=65.6308946,-16.8476117" },
+            { name: "Goðafoss", badge: "vízesés", duration: "30–40 perc", lat: 65.6827782, lng: -17.5501919, detail: "Az »Istenek vízesése«, széles patkó alak. A Ring Road mellett.", maps: "https://www.google.com/maps/search/?api=1&query=65.6827782,-17.5501919" },
+            { name: "Akureyri", badge: "szállás-zóna", t: "ov", lat: 65.6825509, lng: -18.0906858, detail: "Észak fővárosa — éttermek, kávézók, igazi város. Jó hely pihenni.", maps: "https://www.google.com/maps/search/?api=1&query=65.6825509,-18.0906858" }
+          ]
+        },
+        {
+          num: "7",
+          date: "2026. július 24., péntek",
+          title: "Észak → Snæfellsnes",
+          subtitle: "Hosszú nyugati átvezetés Hvítserkurön át a félszigetre",
+          mapColor: "#facc15",
+          driveLog: { km: "~400 km", stops: 3, driveTime: "~5,5 óra", depart: "07:00", arrive: "21:30", timelinePoints: [{time:"07:00", label:"Akureyri ind."}, {time:"10:30", label:"Hvítserkur"}, {time:"19:00", label:"Kirkjufell"}, {time:"21:30", label:"Grundarfjörður"}] },
+          character: "A leghosszabb átvezető nap: északról a Snæfellsnes-félszigetre. Útközben Hvítserkur, a 15 méteres »sárkány«-szikla. A hosszú nyári estében már a Kirkjufellt fotózzátok, és Grundarfjörðurben alszotok a félsziget szívében.",
+          tags: [
+            { label: "~400 km", cls: "tag-drive" },
+            { label: "Kirkjufell", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "kora reggel", icon: "🚗", name: "Korai indulás Akureyriből", detail: "Ez a nap a leghosszabb vezetés — érdemes 7:00-kor indulni." },
+            { time: "délelőtt", icon: "🐲", name: "Hvítserkur", detail: "15 m magas »sárkány«-szikla a tengerben. Murvás lehajtó." },
+            { time: "este", icon: "🏔", name: "Kirkjufell + Grundarfjörður", detail: "Esti fény a leghíresebb csúcson, majd szállás a félsziget szívében." }
+          ],
+          notes: ["Korai indulás kell — ez a nap a leghosszabb vezetés (~400 km).", "Hvítserkur: murvás lehajtó, az apály-dagály figyelendő a szikla megközelítéséhez.", "Grundarfjörður a félsziget szívében — reggel friss fejjel jön a teljes Snæfellsnes-kör."],
+          gpxPlaces: [
+            { name: "Hvítserkur", badge: "fotópont", duration: "30–45 perc", lat: 65.6063761, lng: -20.6352441, detail: "15 m magas »sárkány«-szikla a tengerben. Murvás lehajtó.", maps: "https://www.google.com/maps/search/?api=1&query=65.6063761,-20.6352441" },
+            { name: "Kirkjufell (esti fény)", badge: "fotópont", duration: "45–60 perc", lat: 64.9398701, lng: -23.3064651, detail: "Megérkezel a félszigetre, és a hosszú nyári estében már fotózod a Kirkjufellt.", maps: "https://www.google.com/maps/search/?api=1&query=64.9398701,-23.3064651" },
+            { name: "Grundarfjörður", badge: "szállás-zóna", t: "ov", lat: 64.922, lng: -23.255, detail: "A félsziget szívében, hogy reggel friss fejjel jöjjön a teljes kör.", maps: "https://www.google.com/maps/search/?api=1&query=64.922,-23.255" }
+          ]
+        },
+        {
+          num: "8",
+          date: "2026. július 25., szombat",
+          title: "Snæfellsnes-kör → Reykjavík",
+          subtitle: "Félsziget-kör, rövid Reykjavík → Keflavík az utolsó éjszakára",
+          mapColor: "#f87171",
+          driveLog: { km: "~320 km", stops: 6, driveTime: "~5 óra", depart: "07:30", arrive: "21:00", timelinePoints: [{time:"07:30", label:"Grundarfj. ind."}, {time:"09:00", label:"Djúpalónssandur"}, {time:"10:30", label:"Arnarstapi"}, {time:"12:00", label:"Búðakirkja"}, {time:"17:00", label:"Reykjavík"}, {time:"21:00", label:"Keflavík"}] },
+          character: "Záró kör a »kis Izland«-on: Djúpalónssandur fekete strand, a Lóndrangar bazalttornyok, Arnarstapi sziklaszínpada és a fekete Búðakirkja. Útban hazafelé rövid reykjavíki ízelítő, majd Keflavík az utolsó éjszakára a hajnali géphez.",
+          tags: [
+            { label: "~320 km", cls: "tag-drive" },
+            { label: "Snæfellsnes", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "délelőtt", icon: "🖤", name: "Snæfellsnes nyugati csúcs", detail: "Djúpalónssandur fekete strand, Lóndrangar tornyok, Arnarstapi sziklaszínpad." },
+            { time: "dél", icon: "⛪", name: "Búðakirkja", detail: "A híres fekete fatemplom — utolsó nagy fotópont." },
+            { time: "este", icon: "🛏", name: "Reykjavík ízelítő → Keflavík", detail: "Rövid városnézés, majd Keflavík az utolsó éjszakára a 07:35-ös géphez." }
+          ],
+          notes: ["Snæfellsnes a »kis Izland« — gleccser, vulkán, fekete strandok egy félszigeten.", "Reykjavík csak rövid ízelítő (~1,5–2 óra): Hallgrímskirkja torony + kikötő (Harpa, Sun Voyager).", "Utolsó éjszaka Keflavík: tankolj tele, készítsd elő az autóleadást a júl. 26. 07:35-ös géphez."],
+          gpxPlaces: [
+            { name: "Djúpalónssandur", badge: "fekete strand", duration: "30–45 perc", lat: 64.7522892, lng: -23.9005197, detail: "Fekete kavicsos strand, hajóroncs, bazaltformák. A Snæfellsjökull NP nyugati csúcsa.", maps: "https://www.google.com/maps/search/?api=1&query=64.7522892,-23.9005197" },
+            { name: "Lóndrangar", badge: "fotópont", duration: "20–30 perc", lat: 64.732527, lng: -23.7846095, detail: "Két drámai bazalttorony a tengerből. Rövid séta a kilátóhoz. Júliusban puffinok a sziklákon.", maps: "https://www.google.com/maps/search/?api=1&query=64.732527,-23.7846095" },
+            { name: "Arnarstapi", badge: "parti séta", duration: "45–60 perc", lat: 64.7643097, lng: -23.6248695, detail: "Sziklaszínpad, Bárður szobor, partmenti sétaút Hellnarig. Ebéd a faluban.", maps: "https://www.google.com/maps/search/?api=1&query=64.7643097,-23.6248695" },
+            { name: "Búðakirkja", badge: "fotópont", duration: "20–30 perc", lat: 64.8216875, lng: -23.3840266, detail: "A híres fekete fatemplom, hósapkás hegyek háttérrel. Utolsó nagy fotópont.", maps: "https://www.google.com/maps/search/?api=1&query=64.8216875,-23.3840266" },
+            { name: "Reykjavík (rövid városnézés)", badge: "városnézés", duration: "1,5–2 óra", lat: 64.1420229, lng: -21.9265494, detail: "Hallgrímskirkja torony + kikötő (Harpa, Sun Voyager). Ízelítő hazafelé.", maps: "https://www.google.com/maps/search/?api=1&query=64.1420229,-21.9265494" },
+            { name: "Keflavík", badge: "szállás-zóna", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Reptér mellett a hajnali 07:35-ös géphez. Tankolás, autó-leadás előkészítése.", maps: "https://www.google.com/maps/search/?api=1&query=63.9997549,-22.5582716" }
+          ]
+        }
+      ],
+      practicalBox: {
+        title: "🧭 Gyakorlati tudnivalók (alternatív verzió)",
+        accent: "iceland",
+        open: false,
+        cards: [
+          { title: "🛏️ Szállásfoglalás", paragraphs: ["Júliusban a déli part, Kirkjubæjarklaustur és Höfn gyorsan betelik, és kevés a hely — foglalj jó előre. Az utolsó éjszaka szándékosan Keflavík, a hajnali géphez."] },
+          { title: "✈️ Hajnali indulás", paragraphs: ["Vissza júl. 26. 07:35 Keflavíkból. Onnan reggel 10 perc a reptér (Reykjavíkból 45–50). Előző este tankolj tele, készítsd elő az autó-leadást."] },
+          { title: "💧 Lagúna-foglalás", paragraphs: ["A Mývatn Nature Baths (Earth Lagoon, 6. nap) idősávos, ~7.500 ISK / 3 óra — foglalj előre. Alternatíva: Sky Lagoon Reykjavíknál."] },
+          { title: "🚗 Útviszonyok", paragraphs: ["A terv végig normál úton járható. Murvás lehajtó: Hvítserkur és a Dettifoss keleti oldala (ezért a nyugati, aszfaltos oldalt vesszük). F-utak nincsenek a tervben."] },
+          { title: "⛽ Tankolás & matrica", paragraphs: ["Izlandon nincs autópálya-matrica. Egyetlen fizetős alagút: a Vaðlaheiðargöng Akureyrinél (utólag online fizethető). Tankolj tankkártyával (N1, Olís), a benzinkutak ritkulnak keleten."] }
+        ]
+      }
+    },
     hazaut: {
       kicker: "Közös lezáró blokk",
       title: "Hazaút",
