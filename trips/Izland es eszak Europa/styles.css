@@ -1461,6 +1461,15 @@ a {
 .dl-chip.dl-drive { background: rgba(79,56,32,0.06); }
 .dl-chip.dl-time { background: rgba(79,56,32,0.06); }
 
+/* ── Baltikum — kompaktabb BEZÁRT napi kártyák ────────────────────────────── */
+/* A timeline-grafika csak nyitva látszik; bezárva a chipek adják az áttekintést */
+.view[data-view="baltikum"] .days { gap: 10px; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-head { padding: 11px 16px; }
+.view[data-view="baltikum"] .day-card:not([open]) .drive-timeline { display: none; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-sub { margin-top: 3px; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-tags { margin-top: 5px; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-drive-log { margin-top: 5px; }
+
 /* ── Drive timeline strip (0–24h proportional) ──────────── */
 .drive-timeline {
   display: block;
