@@ -1464,7 +1464,7 @@ a {
 /* ── Baltikum — kompaktabb BEZÁRT napi kártyák ────────────────────────────── */
 /* Bezárva: nincs alcím; a drive-log chipek ÉS a tag-ek EGY tördelő sorba
    kerülnek (chipek elöl), a timeline marad. */
-.view[data-view="baltikum"] .days { gap: 10px; }
+.view[data-view="baltikum"] .days { gap: 10px; margin-top: 10px; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-head { padding: 12px 16px 6px; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-info {
   display: flex;
