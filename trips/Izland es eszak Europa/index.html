@@ -1533,16 +1533,25 @@
         }
 
         // Kattintás a napi kártya "🗺 térkép" gombjára → a térkép odarepül
+        const mapPanel = el.closest("details.iz2-map-panel");
         document.querySelectorAll('.view[data-view="izland2"] .day-place-maplink').forEach((link) => {
-          link.addEventListener("click", () => {
+          link.addEventListener("click", (ev) => {
+            ev.preventDefault();
             const card = link.closest("[data-iz2-key]");
             if (!card) return;
             const m = markers[card.getAttribute("data-iz2-key")];
             if (!m) return;
-            if (!map.hasLayer(m)) map.addLayer(m);
-            map.flyTo(m.getLatLng(), 10, { duration: 0.8 });
-            setTimeout(() => m.openPopup(), 820);
-            if (wrap) wrap.scrollIntoView({ behavior: "smooth", block: "center" });
+            // 1) a térkép-panel legyen nyitva, hogy látszódjon
+            if (mapPanel && !mapPanel.open) mapPanel.open = true;
+            // 2) görgessünk a térképre
+            (mapPanel || wrap || el).scrollIntoView({ behavior: "smooth", block: "start" });
+            // 3) layout-tick után méret-frissítés + repülés a markerhez
+            setTimeout(() => {
+              try { map.invalidateSize(); } catch (_) {}
+              if (!map.hasLayer(m)) map.addLayer(m);
+              map.flyTo(m.getLatLng(), 10, { duration: 0.9 });
+              setTimeout(() => m.openPopup(), 950);
+            }, 180);
           });
         });
 
