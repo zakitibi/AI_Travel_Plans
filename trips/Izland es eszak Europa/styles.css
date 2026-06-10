@@ -267,6 +267,24 @@ a {
 }
 .iz2-pin-ov span { font-size: 15px; }
 
+/* Lundás (puffin) pont: kis 🐦 jelvény a marker jobb felső sarkában */
+.iz2-pin-puffin { overflow: visible; position: relative; }
+.iz2-puffin-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  font-size: 11px;
+  line-height: 1;
+  background: #fff;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 1px 3px rgba(36, 29, 24, 0.4);
+}
+
 /* Reset / kiindulópont gomb a térkép sarkában (Leaflet control) */
 .iz2-reset-btn {
   width: 34px;
@@ -352,6 +370,16 @@ a {
 .iz2-pp-t { font-weight: 700; font-size: 0.95rem; color: var(--ink); }
 .iz2-pp-d { font-size: 0.78rem; color: var(--gold); margin-top: 2px; font-weight: 600; }
 .iz2-pp-n { font-size: 0.82rem; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+
+/* Általános útmutató: kis Google-értékelés a linkelt helynév mellett */
+.g-rate {
+  font-size: 0.78em;
+  font-weight: 700;
+  color: var(--gold);
+  white-space: nowrap;
+  margin-left: 2px;
+  vertical-align: 1px;
+}
 
 /* GPX-kártya: név + értékelés mint Google Maps-link */
 .day-place-name-link {

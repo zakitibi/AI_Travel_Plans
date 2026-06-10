@@ -410,7 +410,7 @@
               <div class="context-grid ${block.layout === "stack" ? "context-grid-stack" : ""}">
                 ${block.cards.map((card) => `
                   <article class="context-card">
-                    <h3>${card.title}</h3>
+                    ${card.title ? `<h3>${card.title}</h3>` : ""}
                     ${card.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("")}
                   </article>
                 `).join("")}
@@ -1329,7 +1329,7 @@
             const color = d.mapColor || "#1f5a3e";
             const icon = L.divIcon({
               className: "",
-              html: `<div class="iz2-pin${ov ? " iz2-pin-ov" : ""}" style="--c:${color};width:${size}px;height:${size}px"><span>${ov ? "🏨" : kc.emoji}</span></div>`,
+              html: `<div class="iz2-pin${ov ? " iz2-pin-ov" : ""}${s.puffin ? " iz2-pin-puffin" : ""}" style="--c:${color};width:${size}px;height:${size}px"><span>${ov ? "🏨" : kc.emoji}</span>${s.puffin ? '<span class="iz2-puffin-badge">🐦</span>' : ""}</div>`,
               iconSize: [size, size],
               iconAnchor: [size / 2, size / 2],
               popupAnchor: [0, -size / 2]
@@ -1346,7 +1346,7 @@
               });
             }
             markers[`${d.num}-${si}`] = m;
-            markerList.push({ marker: m, dayNum: d.num, kind: s.kind || "other" });
+            markerList.push({ marker: m, dayNum: d.num, kind: s.kind || "other", puffin: !!s.puffin });
           });
         });
         const initialBounds = bounds.length ? L.latLngBounds(bounds) : null;
@@ -1401,12 +1401,15 @@
           }
           const state = {
             days: new Set(sec.days.map((d) => d.num)),
-            kinds: new Set(presentKinds)
+            kinds: new Set(presentKinds),
+            onlyPuffin: false
           };
 
           function applyFilter() {
             for (const item of markerList) {
-              const vis = state.days.has(item.dayNum) && state.kinds.has(item.kind);
+              const vis = state.days.has(item.dayNum)
+                       && state.kinds.has(item.kind)
+                       && (!state.onlyPuffin || item.puffin);
               if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
               else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
             }
@@ -1479,6 +1482,36 @@
             presentKinds.map((k) => ({ id: k, label: `${kindOf(k).emoji} ${kindOf(k).label}` })),
             "kinds", false
           ));
+
+          // ── 🐦 Lundák — külön szűrő (csak a puffin-helyek) ────────────────
+          if (markerList.some((m) => m.puffin)) {
+            const hr2 = document.createElement("hr");
+            hr2.className = "dm-filter-divider";
+            sidebar.appendChild(hr2);
+            const sec3 = document.createElement("div");
+            sec3.className = "dm-filter-section";
+            const head3 = document.createElement("div");
+            head3.className = "dm-filter-section-head";
+            const ttl3 = document.createElement("strong");
+            ttl3.textContent = "🐦 Lundák";
+            head3.appendChild(ttl3);
+            sec3.appendChild(head3);
+            const body3 = document.createElement("div");
+            body3.className = "dm-filter-section-body";
+            const lbl3 = document.createElement("label");
+            lbl3.className = "dm-filter-row";
+            const cb3 = document.createElement("input");
+            cb3.type = "checkbox";
+            cb3.checked = false;
+            cb3.addEventListener("change", () => { state.onlyPuffin = cb3.checked; applyFilter(); });
+            const span3 = document.createElement("span");
+            span3.className = "dm-filter-label";
+            span3.appendChild(document.createTextNode("Csak a lundás helyek"));
+            lbl3.append(cb3, span3);
+            body3.appendChild(lbl3);
+            sec3.appendChild(body3);
+            sidebar.appendChild(sec3);
+          }
         }
 
         // Jelmagyarázat (napszínek + szállás ikon)
@@ -1492,6 +1525,11 @@
           const ov = document.createElement("span");
           ov.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`;
           leg.appendChild(ov);
+          if (markerList.some((m) => m.puffin)) {
+            const pf = document.createElement("span");
+            pf.innerHTML = `<span class="iz2-leg-stay">🐦</span>Lundás hely`;
+            leg.appendChild(pf);
+          }
         }
 
         // Kattintás a napi kártya "🗺 térkép" gombjára → a térkép odarepül
