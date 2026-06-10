@@ -447,6 +447,20 @@ a {
   gap: 4px 6px;
   margin-top: 5px;
 }
+/* Autós etap chipjei a név sorában (egy sorban a megnevezéssel) */
+.sched-chips-inline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px 5px;
+  margin-left: 6px;
+  vertical-align: 1px;
+}
+.sched-chips-inline .dl-chip { font-weight: 700; }
+/* Izland menetrend — autós etap két megálló között */
+.sched-leg-row { border-top: none; padding: 0 0 2px; }
+.sched-leg { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; opacity: 0.92; }
+.sched-leg-ico { font-size: 12px; opacity: 0.8; }
+.sched-leg .dl-chip { font-size: 10.5px; padding: 1px 7px; }
 .day-places-collapse { margin-top: 14px; }
 
 /* GPX-kártya: név + értékelés mint Google Maps-link */

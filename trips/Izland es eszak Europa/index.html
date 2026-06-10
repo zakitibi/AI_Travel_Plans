@@ -455,12 +455,33 @@
 
     function renderDayCard(day, accentClass, forceClosed = false) {
       const timed = (day.gpxPlaces || []).map((p, idx) => ({ ...p, _idx: idx })).filter((p) => p.time).sort((a, b) => a.time.localeCompare(b.time));
+      timed.forEach((p, i) => { p._gi = i; });
       const hasSchedule = timed.length > 0;
       const PERIODS = [
         { label: "Reggel", icon: "🌅", test: (t) => t < "12:00" },
         { label: "Délután", icon: "☀️", test: (t) => t >= "12:00" && t < "18:00" },
         { label: "Este", icon: "🌆", test: (t) => t >= "18:00" }
       ];
+      // Két megálló közti közúti táv és becsült menetidő (haversine × 1,25 közúti szorzó, ~80 km/h Route 1).
+      function legHav(a, b) {
+        const R = 6371, r = (d) => (d * Math.PI) / 180;
+        const dLat = r(b.lat - a.lat), dLng = r(b.lng - a.lng);
+        const s = Math.sin(dLat / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dLng / 2) ** 2;
+        return 2 * R * Math.asin(Math.sqrt(s));
+      }
+      function legDriveTxt(mins) {
+        mins = Math.round(mins / 5) * 5;
+        if (mins < 60) return "~" + mins + " perc";
+        const h = Math.floor(mins / 60), m = mins % 60;
+        return "~" + h + " ó" + (m ? " " + m + " p" : "");
+      }
+      function legRow(a, b) {
+        if (!a || !b || a.lat == null || b.lat == null) return "";
+        const km = Math.round(legHav(a, b) * 1.25);
+        if (km < 2) return ""; // azonos parkoló / pár száz méter — nem külön etap
+        const mins = (km / 80) * 60;
+        return `<div class="sched-row sched-leg-row"><div class="sched-time"></div><div class="sched-content"><div class="sched-leg"><span class="sched-leg-ico">🚗</span><span class="dl-chip dl-km">~${km} km</span><span class="dl-chip dl-drive">🕐 ${legDriveTxt(mins)} menet</span></div></div></div>`;
+      }
       const scheduleHtml = hasSchedule ? `
         <section class="day-schedule">
           <h4 class="day-places-title">🕐 Napi menetrend — órás bontás</h4>
@@ -471,6 +492,7 @@
               <div class="sched-period">
                 <div class="sched-period-label">${per.icon} ${per.label}</div>
                 ${items.map((p) => `
+                  ${p._gi > 0 ? legRow(timed[p._gi - 1], p) : ""}
                   <div class="sched-row">
                     <div class="sched-time">${p.time}</div>
                     <div class="sched-content">
@@ -546,8 +568,7 @@
                     <div class="sched-row">
                       <div class="sched-time">${a.time}</div>
                       <div class="sched-content">
-                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}${mapsLink ? `<a class="day-place-name-link" href="${mapsLink}" target="_blank" rel="noreferrer">${nameClean}</a>` : nameClean}${a.googleRating ? ` <a class="sched-rate" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps">⭐${a.googleRating}</a>` : ""}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}</div>
-                        ${chips ? `<div class="sched-chips">${chips}</div>` : ""}
+                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}${mapsLink ? `<a class="day-place-name-link" href="${mapsLink}" target="_blank" rel="noreferrer">${nameClean}</a>` : nameClean}${a.googleRating ? ` <a class="sched-rate" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps">⭐${a.googleRating}</a>` : ""}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}${chips ? ` <span class="sched-chips-inline">${chips}</span>` : ""}</div>
                         ${a.detail ? `<div class="sched-detail">${a.detail}</div>` : ""}
                         ${a.note ? `<div class="tip-box">${a.note}</div>` : ""}
                       </div>
