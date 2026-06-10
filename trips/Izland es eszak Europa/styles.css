@@ -359,22 +359,18 @@ a {
   color: inherit;
 }
 .day-place-name-link:hover { text-decoration: underline; }
-.day-place-name-link .dpl-ext {
-  font-size: 0.78em;
-  color: var(--green);
-  opacity: 0.7;
-}
-.day-place-rating-link {
+.day-place-rating.day-place-rating-link {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
-  padding: 1px 7px;
-  border-radius: 7px;
+  font-size: 11px;
+  padding: 1px 5px;
+  border-radius: 6px;
   background: rgba(184, 134, 11, 0.12);
   border: 1px solid rgba(184, 134, 11, 0.22);
   transition: background 0.12s, border-color 0.12s;
 }
-.day-place-rating-link:hover {
+.day-place-rating.day-place-rating-link:hover {
   text-decoration: none;
   background: rgba(184, 134, 11, 0.24);
   border-color: rgba(184, 134, 11, 0.45);
@@ -384,18 +380,21 @@ a {
 .day-place-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px;
+  flex: 0 0 auto;
+  max-width: 50%;
 }
 .day-place-maplink {
   display: inline-block;
   cursor: pointer;
   font-family: inherit;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   white-space: nowrap;
-  padding: 1px 8px;
-  border-radius: 7px;
+  padding: 1px 6px;
+  border-radius: 6px;
   background: rgba(31, 90, 62, 0.10);
   border: 1px solid rgba(31, 90, 62, 0.24);
   color: var(--green);
@@ -405,6 +404,10 @@ a {
   background: rgba(31, 90, 62, 0.2);
   border-color: rgba(31, 90, 62, 0.45);
 }
+
+/* A név blokkja tudjon zsugorodni / tördelni, hogy a chipek ne lógjanak ki */
+.day-place-top > div:first-child { min-width: 0; }
+.day-place-name { overflow-wrap: anywhere; }
 
 .route {
   display: flex;

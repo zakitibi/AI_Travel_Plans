@@ -481,7 +481,7 @@
                     <article class="day-place-card${place.lat != null ? " day-place-mapped" : ""}"${place.lat != null ? ` data-iz2-key="${day.num}-${placeIdx}"` : ""}>
                       <div class="day-place-top">
                         <div>
-                          <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name} <span class="dpl-ext">↗</span></a>` : place.name}</div>
+                          <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name}</a>` : place.name}</div>
                           ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
                         </div>
                         <div class="day-place-actions">
