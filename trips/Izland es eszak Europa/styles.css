@@ -380,25 +380,31 @@ a {
   border-color: rgba(184, 134, 11, 0.45);
 }
 
-/* Clickable (mapped) GPX card on the Izland 2 page */
-.day-place-mapped { cursor: pointer; }
-.day-place-mapped:hover {
-  border-color: var(--green);
-  box-shadow: 0 4px 14px rgba(31, 90, 62, 0.16);
+/* GPX-kártya akció-sor: "🗺 térkép" gomb az értékelés ELŐTT */
+.day-place-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
 }
-.day-place-mapped::after {
-  content: "🗺 térkép";
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  font-size: 0.64rem;
-  letter-spacing: 0.04em;
-  color: var(--dim);
-  opacity: 0;
-  transition: opacity 0.15s;
+.day-place-maplink {
+  display: inline-block;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 1px 8px;
+  border-radius: 7px;
+  background: rgba(31, 90, 62, 0.10);
+  border: 1px solid rgba(31, 90, 62, 0.24);
+  color: var(--green);
+  transition: background 0.12s, border-color 0.12s;
 }
-.day-place-mapped { position: relative; }
-.day-place-mapped:hover::after { opacity: 1; }
+.day-place-maplink:hover {
+  background: rgba(31, 90, 62, 0.2);
+  border-color: rgba(31, 90, 62, 0.45);
+}
 
 .route {
   display: flex;

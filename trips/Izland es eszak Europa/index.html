@@ -484,7 +484,10 @@
                           <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name} <span class="dpl-ext">↗</span></a>` : place.name}</div>
                           ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
                         </div>
+                        <div class="day-place-actions">
+                          ${place.lat != null ? `<button type="button" class="day-place-maplink" title="Ugrás a térképre">🗺 térkép</button>` : ""}
                           ${place.googleRating ? (place.maps ? `<a class="day-place-rating day-place-rating-link" href="${place.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐ ${place.googleRating}</a>` : `<div class="day-place-rating">⭐ ${place.googleRating}</div>`) : ""}
+                        </div>
                       </div>
                       ${place.duration ? `<div class="day-place-duration">⏳ ${place.duration}</div>` : ""}
                       <p class="day-place-detail">${place.detail}</p>
@@ -1438,10 +1441,11 @@
           leg.appendChild(ov);
         }
 
-        // Kattintás a napi GPX-kártyára → a térkép odarepül
-        document.querySelectorAll('[data-iz2-key]').forEach((card) => {
-          card.addEventListener("click", (ev) => {
-            if (ev.target.closest("a")) return;
+        // Kattintás a napi kártya "🗺 térkép" gombjára → a térkép odarepül
+        document.querySelectorAll('.view[data-view="izland2"] .day-place-maplink').forEach((link) => {
+          link.addEventListener("click", () => {
+            const card = link.closest("[data-iz2-key]");
+            if (!card) return;
             const m = markers[card.getAttribute("data-iz2-key")];
             if (!m) return;
             if (!map.hasLayer(m)) map.addLayer(m);
