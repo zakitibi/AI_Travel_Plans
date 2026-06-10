@@ -1465,7 +1465,7 @@ a {
 /* Bezárva: nincs alcím; a drive-log chipek ÉS a tag-ek EGY tördelő sorba
    kerülnek (chipek elöl), a timeline marad. */
 .view[data-view="baltikum"] .days { gap: 10px; }
-.view[data-view="baltikum"] .day-card:not([open]) .day-head { padding: 12px 16px; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-head { padding: 12px 16px 6px; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-info {
   display: flex;
   flex-wrap: wrap;
@@ -1477,7 +1477,8 @@ a {
 .view[data-view="baltikum"] .day-card:not([open]) .day-sub   { display: none; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-drive-log { order: 3; margin-top: 0; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-tags { order: 4; margin-top: 0; }
-.view[data-view="baltikum"] .day-card:not([open]) .drive-timeline { flex: 0 0 100%; order: 5; margin-top: 6px; }
+/* a timeline alatt sok üres hely volt (52px box, ~32px tartalom) — bezárva szűkítjük */
+.view[data-view="baltikum"] .day-card:not([open]) .drive-timeline { flex: 0 0 100%; order: 5; margin-top: 6px; height: 36px; }
 
 /* ── Drive timeline strip (0–24h proportional) ──────────── */
 .drive-timeline {
