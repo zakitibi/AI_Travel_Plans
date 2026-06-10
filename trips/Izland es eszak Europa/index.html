@@ -1305,26 +1305,29 @@
             </div>
           </div>
 
-          <details class="card section-card coll-card" open>
+          <details class="card section-card coll-card iz2-map-panel" open>
             <summary class="coll-card-head">
-              <span class="map-section-title" style="margin:0;">🗺 Útvonal-áttekintő</span>
+              <span class="map-section-title" style="margin:0;">🗺 Útvonal-áttekintő — a teljes út</span>
               <span class="collapse-icon" aria-hidden="true">▾</span>
             </summary>
-            <p class="section-intro">
-              Ugyanaz az interaktív útvonal-térkép, mint az Áttekintés oldalon:
-              teljes útvonal szakaszokkal, valós OSRM autós nyomvonallal, kompokkal és repülőkkel.
-              A jobb oldali szűrőben fázis, típus és dátum szerint szűrhetsz.
+            <p class="section-intro" style="margin:8px 0 14px;">
+              A teljes út egy térképen, ugyanabban a stílusban, mint az egyes szakaszok résztérképei:
+              minden megálló a szakasz (fázis) színével, az ikon a hely jellegét mutatja, a 🏨 az éjszakai szállás.
+              A valós OSRM nyomvonal: autóutak (folytonos, fázisszínnel), kompok (szaggatott) és repülők (pontozott).
+              Szűrj fázis vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.
             </p>
             <div class="map-filter-wrap">
               <div class="travel-map-wrap">
-                <div id="trip-map" style="width:100%;height:100%;"></div>
+                <div id="terkep-map" style="width:100%;height:100%;"></div>
                 <div class="tm-overlay">
                   <div class="tm-spinner"></div>
                   <span>Térkép betöltése…</span>
                 </div>
               </div>
-              <aside class="dm-filter-sidebar" id="trip-map-filter"></aside>
+              <aside class="dm-filter-sidebar" id="terkep-map-filter"></aside>
             </div>
+            <div class="iz2-routestat" id="terkep-routestat">Útvonal betöltése valódi úthálózaton…</div>
+            <div class="iz2-legend" id="terkep-legend"></div>
           </details>
 
           <!-- Google My Maps — áttekintő -->
@@ -2170,6 +2173,196 @@
         if (id === "hazaut") setTimeout(init, 0);
       };
       if (document.querySelector('.view.is-active[data-view="hazaut"]')) {
+        setTimeout(init, 0);
+      }
+    })();
+  </script>
+
+  <!-- Térkép fül — teljes út áttekintő (szakasz-stílusú: típus-ikonok + összes route + Fázis/Típus szűrő + reset + legend) -->
+  <script>
+    (function () {
+      const td = (typeof tripData !== "undefined" ? tripData : null);
+      if (!td) return;
+      let inited = false;
+
+      const KIND = {
+        city:       { emoji: "🏙️", label: "Város" },
+        oldtown:    { emoji: "🏛️", label: "Óváros / negyed" },
+        castle:     { emoji: "🏰", label: "Vár / kastély" },
+        church:     { emoji: "⛪", label: "Templom" },
+        museum:     { emoji: "🖼️", label: "Múzeum" },
+        nature:     { emoji: "🌳", label: "Természet / park" },
+        viewpoint:  { emoji: "📸", label: "Kilátó / fotó" },
+        market:     { emoji: "🛍️", label: "Piac / street food" },
+        waterfall:  { emoji: "💧", label: "Vízesés" },
+        geothermal: { emoji: "♨️", label: "Geotermikus / gejzír" },
+        bath:       { emoji: "🛁", label: "Fürdő / lagúna" },
+        glacier:    { emoji: "🧊", label: "Gleccser / jég" },
+        beach:      { emoji: "🏖️", label: "Fekete strand" },
+        ferry:      { emoji: "⛴️", label: "Komp" },
+        flight:     { emoji: "✈️", label: "Repülő" },
+        stay:       { emoji: "🏨", label: "Szállás (éjszaka)" }
+      };
+      // az izlandi finomabb típusok normalizálása a közös készletre
+      const normKind = (k) => ({ photo: "viewpoint", town: "city", park: "nature" }[k] || k || "other");
+      const kindOf = (k) => KIND[k] || { emoji: "📍", label: "Egyéb" };
+
+      const PHASES = [
+        { id: "baltikum", color: "#8a4f24", label: "Baltikum", sub: "júl. 10–18." },
+        { id: "izland",   color: "#1f5a3e", label: "Izland",   sub: "júl. 18–26." },
+        { id: "hazaut",   color: "#6a4ca3", label: "Hazaút",   sub: "júl. 26 – aug. 6." }
+      ];
+      const phaseColor = (id) => (PHASES.find((p) => p.id === id) || {}).color || "#64748b";
+      const ROUTE_URL = "../../data/trips/izland-es-eszak-europa/route.json";
+
+      const HU_MONTH = { január:1, február:2, március:3, április:4, május:5, június:6, július:7, augusztus:8, szeptember:9, október:10, november:11, december:12 };
+      function fmtDate(d) {
+        if (!d) return "";
+        const iso = /^(\d{4})-(\d{2})-(\d{2})/.exec(d);
+        if (iso) return `${+iso[2]}.${+iso[3]}`;
+        const m = /([A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű]+)\s+(\d{1,2})\./.exec(d);
+        if (m) { const mon = HU_MONTH[m[1].toLowerCase()]; if (mon) return `${mon}.${m[2]}`; }
+        return "";
+      }
+
+      function collectStops() {
+        const out = [];
+        (td.sections.baltikum?.mapStops || []).forEach((s) => { if (s.lat != null) out.push({ name: s.name, kind: normKind(s.kind), lat: s.lat, lng: s.lng, date: s.date, detail: s.detail, reviewNote: s.reviewNote, phase: "baltikum" }); });
+        (td.sections.izland2?.days || []).forEach((d) => (d.gpxPlaces || []).forEach((p) => { if (p.lat != null) out.push({ name: p.name, kind: normKind(p.kind), lat: p.lat, lng: p.lng, date: d.date, detail: p.detail, reviewNote: p.reviewNote, phase: "izland" }); }));
+        (td.sections.hazaut?.mapStops || []).forEach((s) => { if (s.lat != null) out.push({ name: s.name, kind: normKind(s.kind), lat: s.lat, lng: s.lng, date: s.date, detail: s.detail, reviewNote: s.reviewNote, phase: "hazaut" }); });
+        return out;
+      }
+
+      function init() {
+        if (inited) return;
+        const L = window.L;
+        const el = document.getElementById("terkep-map");
+        if (!L || !el) return;
+        inited = true;
+        const wrap = el.closest(".travel-map-wrap");
+        const overlay = wrap && wrap.querySelector(".tm-overlay");
+
+        const map = L.map("terkep-map", { scrollWheelZoom: false }).setView([58, 8], 4);
+        window._leafletMaps = window._leafletMaps || {};
+        window._leafletMaps["terkep-map"] = map;
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19
+        }).addTo(map);
+
+        const stops = collectStops();
+        const markerList = [], bounds = [];
+        stops.forEach((s) => {
+          bounds.push([s.lat, s.lng]);
+          const ov = s.kind === "stay";
+          const kc = kindOf(s.kind);
+          const size = ov ? 30 : 26;
+          const color = phaseColor(s.phase);
+          const icon = L.divIcon({
+            className: "",
+            html: `<div class="iz2-pin${ov ? " iz2-pin-ov" : ""}" style="--c:${color};width:${size}px;height:${size}px"><span>${ov ? "🏨" : kc.emoji}</span></div>`,
+            iconSize: [size, size], iconAnchor: [size / 2, size / 2], popupAnchor: [0, -size / 2]
+          });
+          const m = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).addTo(map);
+          const ph = PHASES.find((p) => p.id === s.phase);
+          const dt = fmtDate(s.date);
+          m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${ph ? ph.label : ""}${dt ? " · " + dt : ""} · ${kc.emoji} ${kc.label}</div><div class="iz2-pp-n">${s.detail || ""}${s.reviewNote ? `<br><em>${s.reviewNote}</em>` : ""}</div></div>`);
+          markerList.push({ marker: m, phase: s.phase, kind: s.kind });
+        });
+        const initialBounds = bounds.length ? L.latLngBounds(bounds) : null;
+        if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
+
+        // Útvonal: az ÖSSZES route.json feature — autó fázisszínnel, komp kék szaggatott, repülő pontozott
+        fetch(ROUTE_URL).then((r) => r.json()).then((geo) => {
+          (geo.features || []).forEach((f) => {
+            const p = f.properties || {};
+            const t = p.type;
+            const style = t === "ferry"
+              ? { color: "#1d4ed8", weight: 2.5, opacity: 0.85, dashArray: "6 8" }
+              : t === "flight"
+                ? { color: "#7c3aed", weight: 2, opacity: 0.7, dashArray: "2 9" }
+                : { color: phaseColor(p.stage), weight: 3, opacity: 0.8 };
+            L.geoJSON(f, { style }).addTo(map);
+          });
+          const rs = document.getElementById("terkep-routestat");
+          if (rs) rs.textContent = "Teljes útvonal: autóutak fázisszínnel (folytonos), kompok (szaggatott kék), repülők (pontozott) — valós OSRM úthálózaton.";
+        }).catch(() => {
+          const rs = document.getElementById("terkep-routestat");
+          if (rs) rs.textContent = "Az útvonal most nem érhető el.";
+        });
+
+        // Reset gomb
+        const ResetCtl = L.Control.extend({
+          options: { position: "topright" },
+          onAdd() {
+            const b = L.DomUtil.create("button", "iz2-reset-btn");
+            b.type = "button"; b.title = "Vissza a teljes nézetre"; b.setAttribute("aria-label", "Vissza a teljes nézetre"); b.innerHTML = "⤢";
+            L.DomEvent.disableClickPropagation(b);
+            L.DomEvent.on(b, "click", (e) => { L.DomEvent.stop(e); if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] }); });
+            return b;
+          }
+        });
+        map.addControl(new ResetCtl());
+
+        // Szűrő-sidebar (Fázis + Típus)
+        const sidebar = document.getElementById("terkep-map-filter");
+        if (sidebar && !sidebar.childElementCount) {
+          const presentKinds = Object.keys(KIND).filter((k) => markerList.some((m) => m.kind === k));
+          const state = { phases: new Set(PHASES.map((p) => p.id)), kinds: new Set(presentKinds) };
+          function applyFilter() {
+            for (const item of markerList) {
+              const vis = state.phases.has(item.phase) && state.kinds.has(item.kind);
+              if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
+              else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
+            }
+          }
+          function makeSection(title, items, stateKey, scrollable) {
+            const sec2 = document.createElement("div"); sec2.className = "dm-filter-section";
+            const head = document.createElement("div"); head.className = "dm-filter-section-head";
+            const ttl = document.createElement("strong"); ttl.textContent = title;
+            const acts = document.createElement("span"); acts.className = "dm-filter-actions";
+            const allB = document.createElement("button"); allB.className = "dm-btn-all"; allB.type = "button"; allB.textContent = "Mind";
+            const noneB = document.createElement("button"); noneB.className = "dm-btn-none"; noneB.type = "button"; noneB.textContent = "Egyik sem";
+            acts.append(allB, noneB); head.append(ttl, acts); sec2.appendChild(head);
+            const body = document.createElement("div"); body.className = "dm-filter-section-body" + (scrollable ? " dm-filter-scrollable" : "");
+            const cbs = [];
+            for (const item of items) {
+              const lbl = document.createElement("label"); lbl.className = "dm-filter-row";
+              const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = state[stateKey].has(item.id);
+              cb.addEventListener("change", () => { if (cb.checked) state[stateKey].add(item.id); else state[stateKey].delete(item.id); applyFilter(); });
+              cbs.push(cb);
+              const span = document.createElement("span"); span.className = "dm-filter-label";
+              if (item.dotColor) { const dot = document.createElement("span"); dot.className = "dm-dot"; dot.style.background = item.dotColor; span.appendChild(dot); }
+              span.appendChild(document.createTextNode(item.label));
+              if (item.sub) { const sub = document.createElement("span"); sub.className = "dm-filter-sub"; sub.textContent = item.sub; span.appendChild(sub); }
+              lbl.append(cb, span); body.appendChild(lbl);
+            }
+            allB.addEventListener("click", () => { items.forEach((i) => state[stateKey].add(i.id)); cbs.forEach((c) => c.checked = true); applyFilter(); });
+            noneB.addEventListener("click", () => { state[stateKey].clear(); cbs.forEach((c) => c.checked = false); applyFilter(); });
+            sec2.appendChild(body); return sec2;
+          }
+          const header = document.createElement("div"); header.className = "dm-sidebar-header"; header.textContent = "Szűrők"; sidebar.appendChild(header);
+          sidebar.appendChild(makeSection("Fázisok", PHASES.map((p) => ({ id: p.id, label: p.label, dotColor: p.color, sub: p.sub })), "phases", false));
+          const hr = document.createElement("hr"); hr.className = "dm-filter-divider"; sidebar.appendChild(hr);
+          sidebar.appendChild(makeSection("Típus", presentKinds.map((k) => ({ id: k, label: `${kindOf(k).emoji} ${kindOf(k).label}` })), "kinds", true));
+        }
+
+        // Jelmagyarázat (3 fázis + szállás)
+        const leg = document.getElementById("terkep-legend");
+        if (leg && !leg.childElementCount) {
+          PHASES.forEach((p) => { const sp = document.createElement("span"); sp.innerHTML = `<span class="iz2-dot" style="background:${p.color}"></span>${p.label}`; leg.appendChild(sp); });
+          const ov = document.createElement("span"); ov.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`; leg.appendChild(ov);
+        }
+
+        if (overlay) overlay.classList.add("tm-hidden");
+        setTimeout(() => { try { map.invalidateSize(); } catch (_) {} }, 60);
+      }
+
+      const original = window.activateTab;
+      window.activateTab = function (id) {
+        if (typeof original === "function") original.apply(this, arguments);
+        if (id === "terkep") setTimeout(init, 0);
+      };
+      if (document.querySelector('.view.is-active[data-view="terkep"]')) {
         setTimeout(init, 0);
       }
     })();

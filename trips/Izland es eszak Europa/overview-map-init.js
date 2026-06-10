@@ -316,13 +316,8 @@ const MAP_TARGETS = [
     autoInit: true,
     tabId: "overview",
   },
-  {
-    key: "trip-map",
-    containerId: "trip-map",
-    sidebarId: "trip-map-filter",
-    autoInit: false,
-    tabId: "terkep",
-  },
+  // A "Térkép" fül útvonal-áttekintőjét külön, szakasz-stílusú (iz2) térkép kezeli
+  // (#terkep-map, az index.html végén lévő IIFE) — itt már nem inicializáljuk.
 ];
 
 const initialized = {};
