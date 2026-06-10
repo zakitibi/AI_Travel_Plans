@@ -557,18 +557,27 @@
                 <div class="sched-period-label">${per.icon} ${per.label}</div>
                 ${items.map((a) => {
                   const isDrive = a.icon === "🚗" || a.icon === "🚢" || a.icon === "⚓";
+                  // Értékelés: explicit googleRating mező, vagy a névbe ágyazott (★X) — utóbbit kiemeljük
+                  // egy tiszta ⭐ chipbe (csak ha pontosan egy van, hogy a többértékelésű nevek érintetlenek maradjanak).
+                  let rating = a.googleRating, nameRaw = a.name;
+                  if (!rating) {
+                    const found = nameRaw.match(/\(★\s*[\d.,]+\)/g) || [];
+                    if (found.length === 1) { rating = found[0].replace(/[^\d.,]/g, ""); nameRaw = nameRaw.replace(/\s*\(★\s*[\d.,]+\)\s*/, " "); }
+                  }
                   // Csak a név zárójeles (km, idő) annotációjából képezünk chipet — a detail prózából nem,
                   // hogy ne kerüljön be véletlen táv/idő (pl. ferry-érkezésnél a reptérig tartó perc).
-                  const chips = isDrive ? driveChips(a.name) : "";
-                  let nameClean = a.name.replace(/\s*\(~?\s*\d[^)]*\)\s*$/, "");
+                  const chips = isDrive ? driveChips(nameRaw) : "";
+                  let nameClean = nameRaw.replace(/\s*\(~?\s*\d[^)]*\)\s*$/, "");
                   if (isDrive) nameClean = nameClean.replace(/\s+~?\s*\d[\d\s.]*\s*km.*$/i, "");
                   nameClean = nameClean.trim();
-                  const mapsLink = a.googleRating ? (a.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nameClean)}`) : null;
+                  const nameHasLink = /<a[\s>]/i.test(nameClean);
+                  const mapsLink = (rating && !nameHasLink) ? (a.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nameClean)}`) : null;
+                  const rateChip = rating ? (mapsLink ? ` <a class="sched-rate" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps">⭐${rating}</a>` : ` <span class="sched-rate">⭐${rating}</span>`) : "";
                   return `
                     <div class="sched-row">
                       <div class="sched-time">${a.time}</div>
                       <div class="sched-content">
-                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}${mapsLink ? `<a class="day-place-name-link" href="${mapsLink}" target="_blank" rel="noreferrer">${nameClean}</a>` : nameClean}${a.googleRating ? ` <a class="sched-rate" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps">⭐${a.googleRating}</a>` : ""}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}${chips ? ` <span class="sched-chips-inline">${chips}</span>` : ""}</div>
+                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}${mapsLink ? `<a class="day-place-name-link" href="${mapsLink}" target="_blank" rel="noreferrer">${nameClean}</a>` : nameClean}${rateChip}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}${chips ? ` <span class="sched-chips-inline">${chips}</span>` : ""}</div>
                         ${a.detail ? `<div class="sched-detail">${a.detail}</div>` : ""}
                         ${a.note ? `<div class="tip-box">${a.note}</div>` : ""}
                       </div>
