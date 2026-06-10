@@ -503,6 +503,62 @@
           ${place.noteLink ? `<div class="day-place-links"><a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a></div>` : ""}
         </article>
       `).join("");
+      // Baltikum-stílusú menetrend: activities periódusokba (reggel/délután/este) rendezve
+      const hasActSchedule = !hasSchedule && accentClass === "baltic" && (day.activities || []).length > 0;
+      function actHour(t) {
+        const m = /(\d{1,2}):(\d{2})/.exec(t || "");
+        if (m) return parseInt(m[1], 10);
+        const map = { "kora reggel": 6, "reggel": 7, "délelőtt": 10, "napközben": 12, "délben": 12, "dél": 12, "kora délután": 13, "délután": 14, "késő délután": 16, "kora este": 18, "este": 19, "késő este": 21, "párhuzamos szál": 12 };
+        return map[(t || "").toLowerCase().trim()] ?? 12;
+      }
+      function driveChips(txt) {
+        let out = "";
+        const km = /~?\s*(\d[\d\s.]*)\s*km/i.exec(txt || "");
+        const dur = /~?\s*([\d][\d.,]*)\s*(óra|perc|h)\b/i.exec(txt || "");
+        if (km) out += `<span class="dl-chip dl-km">🚗 ~${km[1].trim()} km</span>`;
+        if (dur) out += `<span class="dl-chip dl-drive">🕐 ~${dur[1]} ${dur[2] === "h" ? "óra" : dur[2]}</span>`;
+        return out;
+      }
+      const ACT_PERIODS = [
+        { label: "Reggel", icon: "🌅", lo: 0, hi: 12 },
+        { label: "Délután", icon: "☀️", lo: 12, hi: 18 },
+        { label: "Este", icon: "🌆", lo: 18, hi: 24 }
+      ];
+      const actScheduleHtml = hasActSchedule ? `
+        <section class="day-schedule">
+          <h4 class="day-places-title">🕐 Napi menetrend</h4>
+          ${ACT_PERIODS.map((per) => {
+            const items = (day.activities || []).filter((a) => { const h = actHour(a.time); return h >= per.lo && h < per.hi; });
+            if (!items.length) return "";
+            return `
+              <div class="sched-period">
+                <div class="sched-period-label">${per.icon} ${per.label}</div>
+                ${items.map((a) => {
+                  const isDrive = a.icon === "🚗" || a.icon === "🚢" || a.icon === "⚓";
+                  // Csak a név zárójeles (km, idő) annotációjából képezünk chipet — a detail prózából nem,
+                  // hogy ne kerüljön be véletlen táv/idő (pl. ferry-érkezésnél a reptérig tartó perc).
+                  const chips = isDrive ? driveChips(a.name) : "";
+                  let nameClean = a.name.replace(/\s*\(~?\s*\d[^)]*\)\s*$/, "");
+                  if (isDrive) nameClean = nameClean.replace(/\s+~?\s*\d[\d\s.]*\s*km.*$/i, "");
+                  nameClean = nameClean.trim();
+                  const mapsLink = a.googleRating ? (a.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nameClean)}`) : null;
+                  return `
+                    <div class="sched-row">
+                      <div class="sched-time">${a.time}</div>
+                      <div class="sched-content">
+                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}${mapsLink ? `<a class="day-place-name-link" href="${mapsLink}" target="_blank" rel="noreferrer">${nameClean}</a>` : nameClean}${a.googleRating ? ` <a class="sched-rate" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps">⭐${a.googleRating}</a>` : ""}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}</div>
+                        ${chips ? `<div class="sched-chips">${chips}</div>` : ""}
+                        ${a.detail ? `<div class="sched-detail">${a.detail}</div>` : ""}
+                        ${a.note ? `<div class="tip-box">${a.note}</div>` : ""}
+                      </div>
+                    </div>
+                  `;
+                }).join("")}
+              </div>
+            `;
+          }).join("")}
+        </section>
+      ` : "";
       return `
         <details class="day-card ${accentClass}" ${detailsOpenAttr(day.open, forceClosed)}>
           <summary class="day-head">
@@ -529,7 +585,7 @@
           </summary>
           <div class="day-body">
             ${day.character ? `<p class="day-character">${day.character}</p>` : ""}
-            ${hasSchedule ? scheduleHtml : `
+            ${hasSchedule ? scheduleHtml : (hasActSchedule ? actScheduleHtml : `
             <div class="day-layout">
               <div class="activities">
                 ${(day.activities || []).map((activity) => `
@@ -544,7 +600,7 @@
                   </div>
                 `).join("")}
               </div>
-            </div>`}
+            </div>`)}
             ${day.notes && day.notes.length ? `
               <aside class="tip-box day-focus-box day-focus-horizontal">
                 <strong>Napi fókusz</strong>
@@ -1722,7 +1778,7 @@
           attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19
         }).addTo(map);
 
-        const markerList = [], bounds = [];
+        const markerList = [], bounds = [], markersByName = {};
         const presentDays = [...new Set(sec.mapStops.map((s) => s.day))].sort((a, b) => a - b);
         sec.mapStops.forEach((s) => {
           if (s.lat == null || s.lng == null) return;
@@ -1741,6 +1797,7 @@
           m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${s.day}. nap · ${dt} · ${kc.emoji} ${kc.label}</div><div class="iz2-pp-n">${s.detail || ""}${s.reviewNote ? `<br><em>${s.reviewNote}</em>` : ""}</div></div>`);
           if (ov) m.bindTooltip(s.name.split(" / ")[0], { permanent: true, direction: "top", offset: [0, -(size / 2)], className: "iz2-stay-label" });
           markerList.push({ marker: m, day: s.day, kind: s.kind });
+          markersByName[s.name] = m;
         });
         const initialBounds = bounds.length ? L.latLngBounds(bounds) : null;
         if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
@@ -1819,6 +1876,24 @@
           presentDays.forEach((d) => { const sp = document.createElement("span"); sp.innerHTML = `<span class="iz2-dot" style="background:${dayColor(d)}"></span>${d}. ${dayTitle[d] || "nap"}`; leg.appendChild(sp); });
           const ov = document.createElement("span"); ov.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`; leg.appendChild(ov);
         }
+
+        // Menetrend "🗺" gomb → a saját Baltikum-térkép a ponthoz repül
+        const mapPanel = el.closest("details.iz2-map-panel");
+        document.querySelectorAll('.view[data-view="baltikum"] .bm-maplink').forEach((link) => {
+          link.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            const m = markersByName[link.getAttribute("data-bm-name")];
+            if (!m) return;
+            if (mapPanel && !mapPanel.open) mapPanel.open = true;
+            (mapPanel || wrap || el).scrollIntoView({ behavior: "smooth", block: "start" });
+            setTimeout(() => {
+              try { map.invalidateSize(); } catch (_) {}
+              if (!map.hasLayer(m)) map.addLayer(m);
+              map.flyTo(m.getLatLng(), 9, { duration: 0.9 });
+              setTimeout(() => m.openPopup(), 950);
+            }, 180);
+          });
+        });
 
         if (overlay) overlay.classList.add("tm-hidden");
         setTimeout(() => { try { map.invalidateSize(); } catch (_) {} }, 60);

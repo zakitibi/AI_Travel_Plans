@@ -441,6 +441,12 @@ a {
   margin-left: 1px;
   vertical-align: 1px;
 }
+.sched-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin-top: 5px;
+}
 .day-places-collapse { margin-top: 14px; }
 
 /* GPX-kártya: név + értékelés mint Google Maps-link */
