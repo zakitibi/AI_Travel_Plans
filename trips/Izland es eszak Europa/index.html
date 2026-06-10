@@ -484,7 +484,6 @@
       }
       const scheduleHtml = hasSchedule ? `
         <section class="day-schedule">
-          <h4 class="day-places-title">🕐 Napi menetrend — órás bontás</h4>
           ${day.scheduleNote ? `<div class="tip-box sched-note">${day.scheduleNote}</div>` : ""}
           ${PERIODS.map((per) => {
             const items = timed.filter((p) => per.test(p.time));
@@ -528,7 +527,7 @@
         </article>
       `).join("");
       // Baltikum-stílusú menetrend: activities periódusokba (reggel/délután/este) rendezve
-      const hasActSchedule = !hasSchedule && accentClass === "baltic" && (day.activities || []).length > 0;
+      const hasActSchedule = !hasSchedule && (accentClass === "baltic" || accentClass === "return") && (day.activities || []).length > 0;
       function actHour(t) {
         const m = /(\d{1,2}):(\d{2})/.exec(t || "");
         if (m) return parseInt(m[1], 10);
@@ -550,7 +549,6 @@
       ];
       const actScheduleHtml = hasActSchedule ? `
         <section class="day-schedule">
-          <h4 class="day-places-title">🕐 Napi menetrend</h4>
           ${ACT_PERIODS.map((per) => {
             const items = (day.activities || []).filter((a) => { const h = actHour(a.time); return h >= per.lo && h < per.hi; });
             if (!items.length) return "";
