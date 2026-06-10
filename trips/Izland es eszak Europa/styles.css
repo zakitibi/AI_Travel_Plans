@@ -1462,19 +1462,22 @@ a {
 .dl-chip.dl-time { background: rgba(79,56,32,0.06); }
 
 /* ── Baltikum — kompaktabb BEZÁRT napi kártyák ────────────────────────────── */
-/* Bezárva: nincs egymondatos alcím, a chip-sor a tag-ek ELÉ kerül, a timeline marad */
+/* Bezárva: nincs alcím; a drive-log chipek ÉS a tag-ek EGY tördelő sorba
+   kerülnek (chipek elöl), a timeline marad. */
 .view[data-view="baltikum"] .days { gap: 10px; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-head { padding: 12px 16px; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-info {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
 }
-.view[data-view="baltikum"] .day-card:not([open]) .day-date  { order: 1; }
-.view[data-view="baltikum"] .day-card:not([open]) .day-title { order: 2; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-date  { flex: 0 0 100%; order: 1; margin-bottom: 0; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-title { flex: 0 0 100%; order: 2; }
 .view[data-view="baltikum"] .day-card:not([open]) .day-sub   { display: none; }
-.view[data-view="baltikum"] .day-card:not([open]) .day-drive-log { order: 3; margin-top: 8px; }
-.view[data-view="baltikum"] .day-card:not([open]) .day-tags  { order: 4; margin-top: 7px; }
-.view[data-view="baltikum"] .day-card:not([open]) .drive-timeline { order: 5; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-drive-log { order: 3; margin-top: 0; }
+.view[data-view="baltikum"] .day-card:not([open]) .day-tags { order: 4; margin-top: 0; }
+.view[data-view="baltikum"] .day-card:not([open]) .drive-timeline { flex: 0 0 100%; order: 5; margin-top: 6px; }
 
 /* ── Drive timeline strip (0–24h proportional) ──────────── */
 .drive-timeline {
