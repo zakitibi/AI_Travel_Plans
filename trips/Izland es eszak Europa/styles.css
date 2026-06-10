@@ -1461,6 +1461,9 @@ a {
 .dl-chip.dl-drive { background: rgba(79,56,32,0.06); }
 .dl-chip.dl-time { background: rgba(79,56,32,0.06); }
 
+/* Térkép-panel ↔ 1. nap-box térköz egyezzen a napok közöttivel (Izland 2: 14px) */
+.view[data-view="izland2"] .days { margin-top: 14px; }
+
 /* ── Baltikum — kompaktabb BEZÁRT napi kártyák ────────────────────────────── */
 /* Bezárva: nincs alcím; a drive-log chipek ÉS a tag-ek EGY tördelő sorba
    kerülnek (chipek elöl), a timeline marad. */
