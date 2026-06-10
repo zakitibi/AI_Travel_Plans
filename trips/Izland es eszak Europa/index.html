@@ -481,18 +481,15 @@
                     <article class="day-place-card${place.lat != null ? " day-place-mapped" : ""}"${place.lat != null ? ` data-iz2-key="${day.num}-${placeIdx}"` : ""}>
                       <div class="day-place-top">
                         <div>
-                          <div class="day-place-name">${place.name}</div>
+                          <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name} <span class="dpl-ext">↗</span></a>` : place.name}</div>
                           ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
                         </div>
-                          ${place.googleRating ? `<div class="day-place-rating">⭐ ${place.googleRating}</div>` : ""}
+                          ${place.googleRating ? (place.maps ? `<a class="day-place-rating day-place-rating-link" href="${place.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐ ${place.googleRating}</a>` : `<div class="day-place-rating">⭐ ${place.googleRating}</div>`) : ""}
                       </div>
                       ${place.duration ? `<div class="day-place-duration">⏳ ${place.duration}</div>` : ""}
                       <p class="day-place-detail">${place.detail}</p>
                       ${place.reviewNote ? `<p class="day-place-review">"${place.reviewNote}"</p>` : ""}
-                      <div class="day-place-links">
-                        ${place.maps ? `<a href="${place.maps}" target="_blank" rel="noreferrer">Google Maps</a>` : ""}
-                        ${place.noteLink ? `<a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a>` : ""}
-                      </div>
+                      ${place.noteLink ? `<div class="day-place-links"><a href="${place.noteLink}" target="_blank" rel="noreferrer">${place.noteLabel || "Forrás"}</a></div>` : ""}
                     </article>
                   `).join("")}
                 </div>
@@ -701,12 +698,15 @@
           <section class="card section-card">
             <h3 class="info-title" style="margin:0 0 4px;">🗺 Interaktív Ring Road térkép</h3>
             <p class="info-text" style="margin-bottom:14px;">${section.mapNote}</p>
-            <div class="travel-map-wrap">
-              <div id="izland2-map" style="width:100%;height:100%;"></div>
-              <div class="tm-overlay">
-                <div class="tm-spinner"></div>
-                <span>Térkép betöltése…</span>
+            <div class="map-filter-wrap">
+              <div class="travel-map-wrap">
+                <div id="izland2-map" style="width:100%;height:100%;"></div>
+                <div class="tm-overlay">
+                  <div class="tm-spinner"></div>
+                  <span>Térkép betöltése…</span>
+                </div>
               </div>
+              <aside class="dm-filter-sidebar" id="izland2-map-filter"></aside>
             </div>
             <div class="iz2-routestat" id="izland2-routestat">Útvonal betöltése valódi úthálózaton…</div>
             <div class="iz2-legend" id="izland2-legend"></div>
@@ -1212,12 +1212,26 @@
   <script type="module" src="./overview-map-init.js"></script>
   <script type="module" src="./section-map-init.js"></script>
 
-  <!-- Izland 2 — alternatív Ring Road térkép (számozott markerek + OSRM valós útvonal) -->
+  <!-- Izland 2 — alternatív Ring Road térkép (típus-ikonok + OSRM valós útvonal + szűrő + reset) -->
   <script>
     (function () {
       const sec = (window.tripData || (typeof tripData !== "undefined" ? tripData : null))?.sections?.izland2;
       if (!sec) return;
       let inited = false;
+
+      // Látnivaló-jelleg → ikon + címke
+      const KIND = {
+        park:       { emoji: "🏞️", label: "Nemzeti park" },
+        waterfall:  { emoji: "💧", label: "Vízesés" },
+        geothermal: { emoji: "♨️", label: "Geotermikus / gejzír" },
+        bath:       { emoji: "🛁", label: "Fürdő / lagúna" },
+        glacier:    { emoji: "🧊", label: "Gleccser / jég" },
+        beach:      { emoji: "🏖️", label: "Fekete strand" },
+        photo:      { emoji: "📸", label: "Fotópont / szikla" },
+        town:       { emoji: "🏙️", label: "Város / falu" },
+        stay:       { emoji: "🏨", label: "Szállás (éjszaka)" }
+      };
+      const kindOf = (k) => KIND[k] || { emoji: "📍", label: "Egyéb" };
 
       function init() {
         if (inited) return;
@@ -1238,27 +1252,31 @@
           maxZoom: 19
         }).addTo(map);
 
-        const ordered = [], markers = {}, bounds = [];
+        const ordered = [], markerList = [], markers = {}, bounds = [];
         sec.days.forEach((d) => {
           (d.gpxPlaces || []).forEach((s, si) => {
             if (s.lat == null || s.lng == null) return;
             ordered.push(s);
             bounds.push([s.lat, s.lng]);
-            const ov = s.t === "ov";
-            const size = ov ? 30 : 24;
+            const ov = s.t === "ov" || s.kind === "stay";
+            const kc = kindOf(s.kind);
+            const size = ov ? 32 : 28;
             const color = d.mapColor || "#1f5a3e";
             const icon = L.divIcon({
               className: "",
-              html: `<div class="iz2-numicon${ov ? " iz2-ov" : ""}" style="width:${size}px;height:${size}px;background:${color}">${ov ? "■" : d.num}</div>`,
+              html: `<div class="iz2-pin${ov ? " iz2-pin-ov" : ""}" style="--c:${color};width:${size}px;height:${size}px"><span>${ov ? "🏨" : kc.emoji}</span></div>`,
               iconSize: [size, size],
-              iconAnchor: [size / 2, size / 2]
+              iconAnchor: [size / 2, size / 2],
+              popupAnchor: [0, -size / 2]
             });
             const m = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).addTo(map);
-            m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${d.num}. nap · ${d.date.replace("2026. ", "")}</div><div class="iz2-pp-n">${s.detail || ""}</div></div>`);
+            m.bindPopup(`<div class="iz2-pp"><div class="iz2-pp-t">${s.name}</div><div class="iz2-pp-d">${d.num}. nap · ${d.date.replace("2026. ", "")} · ${kc.emoji} ${kc.label}</div><div class="iz2-pp-n">${s.detail || ""}</div></div>`);
             markers[`${d.num}-${si}`] = m;
+            markerList.push({ marker: m, dayNum: d.num, kind: s.kind || "other" });
           });
         });
-        if (bounds.length) map.fitBounds(bounds, { padding: [40, 40] });
+        const initialBounds = bounds.length ? L.latLngBounds(bounds) : null;
+        if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
 
         // Tartalék szaggatott légvonal, amíg / ha nincs valódi útvonal
         let fallback = L.polyline(ordered.map((s) => [s.lat, s.lng]), { color: "#1f5a3e", weight: 2, opacity: 0.35, dashArray: "6 8" }).addTo(map);
@@ -1281,7 +1299,115 @@
             if (rs) rs.textContent = "A vonal tájékoztató (légvonal a megállók közt) — a valódi útvonal-lekérés most nem érhető el.";
           });
 
-        // Jelmagyarázat
+        // ── Reset / kiindulópont gomb (saroknban) ──────────────────────────
+        const ResetCtl = L.Control.extend({
+          options: { position: "topright" },
+          onAdd() {
+            const b = L.DomUtil.create("button", "iz2-reset-btn");
+            b.type = "button";
+            b.title = "Vissza a teljes nézetre";
+            b.setAttribute("aria-label", "Vissza a teljes nézetre");
+            b.innerHTML = "⤢";
+            L.DomEvent.disableClickPropagation(b);
+            L.DomEvent.on(b, "click", (e) => {
+              L.DomEvent.stop(e);
+              if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
+            });
+            return b;
+          }
+        });
+        map.addControl(new ResetCtl());
+
+        // ── Szűrő-sidebar (Napok + Típus) ──────────────────────────────────
+        const sidebar = document.getElementById("izland2-map-filter");
+        if (sidebar && !sidebar.childElementCount) {
+          const presentKinds = [];
+          for (const k of Object.keys(KIND)) {
+            if (markerList.some((m) => m.kind === k)) presentKinds.push(k);
+          }
+          const state = {
+            days: new Set(sec.days.map((d) => d.num)),
+            kinds: new Set(presentKinds)
+          };
+
+          function applyFilter() {
+            for (const item of markerList) {
+              const vis = state.days.has(item.dayNum) && state.kinds.has(item.kind);
+              if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
+              else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
+            }
+          }
+
+          function makeSection(title, items, stateKey, scrollable) {
+            const sec2 = document.createElement("div");
+            sec2.className = "dm-filter-section";
+            const head = document.createElement("div");
+            head.className = "dm-filter-section-head";
+            const ttl = document.createElement("strong");
+            ttl.textContent = title;
+            const acts = document.createElement("span");
+            acts.className = "dm-filter-actions";
+            const allB = document.createElement("button");
+            allB.className = "dm-btn-all"; allB.type = "button"; allB.textContent = "Mind";
+            const noneB = document.createElement("button");
+            noneB.className = "dm-btn-none"; noneB.type = "button"; noneB.textContent = "Egyik sem";
+            acts.append(allB, noneB);
+            head.append(ttl, acts);
+            sec2.appendChild(head);
+            const body = document.createElement("div");
+            body.className = "dm-filter-section-body" + (scrollable ? " dm-filter-scrollable" : "");
+            const cbs = [];
+            for (const item of items) {
+              const lbl = document.createElement("label");
+              lbl.className = "dm-filter-row";
+              const cb = document.createElement("input");
+              cb.type = "checkbox";
+              cb.checked = state[stateKey].has(item.id);
+              cb.addEventListener("change", () => {
+                if (cb.checked) state[stateKey].add(item.id);
+                else state[stateKey].delete(item.id);
+                applyFilter();
+              });
+              cbs.push(cb);
+              const span = document.createElement("span");
+              span.className = "dm-filter-label";
+              if (item.dotColor) {
+                const dot = document.createElement("span");
+                dot.className = "dm-dot";
+                dot.style.background = item.dotColor;
+                span.appendChild(dot);
+              }
+              span.appendChild(document.createTextNode(item.label));
+              lbl.append(cb, span);
+              body.appendChild(lbl);
+            }
+            allB.addEventListener("click", () => { items.forEach((i) => state[stateKey].add(i.id)); cbs.forEach((c) => c.checked = true); applyFilter(); });
+            noneB.addEventListener("click", () => { state[stateKey].clear(); cbs.forEach((c) => c.checked = false); applyFilter(); });
+            sec2.appendChild(body);
+            return sec2;
+          }
+
+          const header = document.createElement("div");
+          header.className = "dm-sidebar-header";
+          header.textContent = "Szűrők";
+          sidebar.appendChild(header);
+
+          sidebar.appendChild(makeSection(
+            "Napok",
+            sec.days.map((d) => ({ id: d.num, label: `${d.num}. ${d.title}`, dotColor: d.mapColor })),
+            "days", true
+          ));
+          const hr = document.createElement("hr");
+          hr.className = "dm-filter-divider";
+          sidebar.appendChild(hr);
+          sidebar.appendChild(makeSection(
+            "Típus",
+            presentKinds.map((k) => ({ id: k, label: `${kindOf(k).emoji} ${kindOf(k).label}` })),
+            "kinds", false
+          ));
+        }
+
+        // Jelmagyarázat (napszínek + szállás ikon)
         const leg = document.getElementById("izland2-legend");
         if (leg && !leg.childElementCount) {
           sec.days.forEach((d) => {
@@ -1290,7 +1416,7 @@
             leg.appendChild(sp);
           });
           const ov = document.createElement("span");
-          ov.innerHTML = `<span class="iz2-dot iz2-dot-ov"></span>Éjszakai szállás`;
+          ov.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`;
           leg.appendChild(ov);
         }
 
@@ -1300,6 +1426,7 @@
             if (ev.target.closest("a")) return;
             const m = markers[card.getAttribute("data-iz2-key")];
             if (!m) return;
+            if (!map.hasLayer(m)) map.addLayer(m);
             map.flyTo(m.getLatLng(), 10, { duration: 0.8 });
             setTimeout(() => m.openPopup(), 820);
             if (wrap) wrap.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1313,10 +1440,10 @@
       const original = window.activateTab;
       window.activateTab = function (id) {
         if (typeof original === "function") original.apply(this, arguments);
-        if (id === "izland2") requestAnimationFrame(init);
+        if (id === "izland2") setTimeout(init, 0);
       };
       if (document.querySelector('.view.is-active[data-view="izland2"]')) {
-        requestAnimationFrame(init);
+        setTimeout(init, 0);
       }
     })();
   </script>

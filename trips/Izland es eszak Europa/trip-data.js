@@ -1728,7 +1728,7 @@ const tripData = {
         "Ez az izlandi program alternatív, »pihenőnap nélküli« verziója: a fordított (óramutatóval ellentétes) Ring Road, ahol már az érkezés utáni első napon a Golden Circle jön, és így minden napra jut egy laza kör. 8 éjszaka, ~1750 km, 7 szállás-zóna.",
         "A térkép valódi úthálózaton (OSRM) rajzolja ki a teljes kört, a megállók napszínekkel és sorszámmal jelölve. Alatta a napi bontás ugyanúgy működik, mint a fő Izland oldalon: minden nap kinyitható a teljes részletért."
       ],
-      mapNote: "Óramutatóval ellentétes irány (déli part először). A markerek napszín + sorszám szerint, a négyzet az éjszakai szállás.",
+      mapNote: "Óramutatóval ellentétes irány (déli part először). A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (💧 vízesés, 🧊 gleccser, 🏖️ strand, ♨️ geotermikus, 📸 fotópont…), a 🏨 az éjszakai szállás. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
       days: [
         {
           num: "1",
@@ -1749,7 +1749,7 @@ const tripData = {
           ],
           notes: ["Júliusban éjfélkor is világos van — ne lepődj meg, ne is feszülj rá a korai alvásra.", "Autóátvételnél fotózd körbe a karcokat, üveget, lökhárítót — a kavics- és szélkár Izlandon gyakori.", "A kutaknál PIN-kód kell, kontaktless nem mindenhol megy."],
           gpxPlaces: [
-            { name: "Keflavík", badge: "szállás-zóna", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Leszállás 18:25, autóbérlés. Bónus bevásárlás indulás előtt — Reykjavíkon kívül drágább.", maps: "https://www.google.com/maps/search/?api=1&query=63.9997549,-22.5582716" }
+            { name: "Keflavík", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Leszállás 18:25, autóbérlés. Bónus bevásárlás indulás előtt — Reykjavíkon kívül drágább.", maps: "https://www.google.com/maps/search/?api=1&query=63.9997549,-22.5582716" }
           ]
         },
         {
@@ -1771,10 +1771,10 @@ const tripData = {
           ],
           notes: ["Þingvellirben a parkolás fizetős (P1/P2 parkoló).", "Strokkur 5–8 percenként tör ki — türelem, és figyelj a szél irányára.", "Hella / Hvolsvöllur sok farmstay-jel jó kiindulás a déli parthoz — foglalj előre."],
           gpxPlaces: [
-            { name: "Þingvellir Nemzeti Park", badge: "UNESCO", duration: "60–90 perc", lat: 64.2821725, lng: -21.0764491, detail: "Séta a két kontinens lemeze közt. Parkolás fizetős.", maps: "https://www.google.com/maps/search/?api=1&query=64.2821725,-21.0764491" },
-            { name: "Strokkur gejzír", badge: "gejzír", duration: "30–40 perc", lat: 64.3127094, lng: -20.300721, detail: "5–8 percenként tör ki 20–30 m-re. Ingyenes.", maps: "https://www.google.com/maps/search/?api=1&query=64.3127094,-20.300721" },
-            { name: "Gullfoss", badge: "vízesés", duration: "30–45 perc", lat: 64.3270716, lng: -20.1199478, detail: "Hatalmas kétlépcsős vízesés. Felső + alsó nézőpont.", maps: "https://www.google.com/maps/search/?api=1&query=64.3270716,-20.1199478" },
-            { name: "Hella / Hvolsvöllur", badge: "szállás-zóna", t: "ov", lat: 63.833, lng: -20.396, detail: "Jó kiindulás a déli parthoz, sok farmstay.", maps: "https://www.google.com/maps/search/?api=1&query=63.833,-20.396" }
+            { name: "Þingvellir Nemzeti Park", kind: "park", googleRating: "4.7", badge: "UNESCO", duration: "60–90 perc", lat: 64.2821725, lng: -21.0764491, detail: "Séta a két kontinens lemeze közt. Parkolás fizetős.", maps: "https://www.google.com/maps/search/?api=1&query=64.2821725,-21.0764491" },
+            { name: "Strokkur gejzír", kind: "geothermal", googleRating: "4.7", badge: "gejzír", duration: "30–40 perc", lat: 64.3127094, lng: -20.300721, detail: "5–8 percenként tör ki 20–30 m-re. Ingyenes.", maps: "https://www.google.com/maps/search/?api=1&query=64.3127094,-20.300721" },
+            { name: "Gullfoss", kind: "waterfall", googleRating: "4.8", badge: "vízesés", duration: "30–45 perc", lat: 64.3270716, lng: -20.1199478, detail: "Hatalmas kétlépcsős vízesés. Felső + alsó nézőpont.", maps: "https://www.google.com/maps/search/?api=1&query=64.3270716,-20.1199478" },
+            { name: "Hella / Hvolsvöllur", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 63.833, lng: -20.396, detail: "Jó kiindulás a déli parthoz, sok farmstay.", maps: "https://www.google.com/maps/search/?api=1&query=63.833,-20.396" }
           ]
         },
         {
@@ -1796,11 +1796,11 @@ const tripData = {
           ],
           notes: ["⚠️ Reynisfjara: a »sneaker wave« életveszélyes — NE menj közel a vízhez!", "Seljalandsfoss mögé esőkabát kell; mellette a rejtett Gljúfrabúi is megéri.", "Vík: tankolás, ebéd, utolsó nagyobb bolt — Kirkjubæjarklaustur apró falu, foglalj szállást előre."],
           gpxPlaces: [
-            { name: "Seljalandsfoss", badge: "vízesés", duration: "40–60 perc", lat: 63.6156232, lng: -19.9885688, detail: "Mögé lehet sétálni! Esőkabát kell. Mellette a rejtett Gljúfrabúi.", maps: "https://www.google.com/maps/search/?api=1&query=63.6156232,-19.9885688" },
-            { name: "Skógafoss", badge: "vízesés", duration: "40–60 perc", lat: 63.5320523, lng: -19.5113706, detail: "60 m magas. 400 lépcső a tetejére a panorámáért.", maps: "https://www.google.com/maps/search/?api=1&query=63.5320523,-19.5113706" },
-            { name: "Reynisfjara fekete strand", badge: "fekete strand", duration: "30–45 perc", lat: 63.4142559, lng: -19.0104132, detail: "Bazaltoszlopok. FIGYELEM: a »sneaker wave« életveszélyes, ne menj a vízhez!", maps: "https://www.google.com/maps/search/?api=1&query=63.4142559,-19.0104132" },
-            { name: "Vík í Mýrdal", badge: "ebéd + tankolás", duration: "45–60 perc", lat: 63.4176505, lng: -18.9974395, detail: "Tankolás, ebéd, templom. Utolsó nagyobb bolt egy darabig.", maps: "https://www.google.com/maps/search/?api=1&query=63.4176505,-18.9974395" },
-            { name: "Kirkjubæjarklaustur", badge: "szállás-zóna", t: "ov", lat: 63.789, lng: -18.058, detail: "Apró falu, jó pozíció a gleccserekhez. Korlátozott szállás — foglalj!", maps: "https://www.google.com/maps/search/?api=1&query=63.789,-18.058" }
+            { name: "Seljalandsfoss", kind: "waterfall", googleRating: "4.7", badge: "vízesés", duration: "40–60 perc", lat: 63.6156232, lng: -19.9885688, detail: "Mögé lehet sétálni! Esőkabát kell. Mellette a rejtett Gljúfrabúi.", maps: "https://www.google.com/maps/search/?api=1&query=63.6156232,-19.9885688" },
+            { name: "Skógafoss", kind: "waterfall", googleRating: "4.8", badge: "vízesés", duration: "40–60 perc", lat: 63.5320523, lng: -19.5113706, detail: "60 m magas. 400 lépcső a tetejére a panorámáért.", maps: "https://www.google.com/maps/search/?api=1&query=63.5320523,-19.5113706" },
+            { name: "Reynisfjara fekete strand", kind: "beach", googleRating: "4.6", badge: "fekete strand", duration: "30–45 perc", lat: 63.4142559, lng: -19.0104132, detail: "Bazaltoszlopok. FIGYELEM: a »sneaker wave« életveszélyes, ne menj a vízhez!", maps: "https://www.google.com/maps/search/?api=1&query=63.4142559,-19.0104132" },
+            { name: "Vík í Mýrdal", kind: "town", googleRating: "4.6", badge: "ebéd + tankolás", duration: "45–60 perc", lat: 63.4176505, lng: -18.9974395, detail: "Tankolás, ebéd, templom. Utolsó nagyobb bolt egy darabig.", maps: "https://www.google.com/maps/search/?api=1&query=63.4176505,-18.9974395" },
+            { name: "Kirkjubæjarklaustur", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 63.789, lng: -18.058, detail: "Apró falu, jó pozíció a gleccserekhez. Korlátozott szállás — foglalj!", maps: "https://www.google.com/maps/search/?api=1&query=63.789,-18.058" }
           ]
         },
         {
@@ -1822,10 +1822,10 @@ const tripData = {
           ],
           notes: ["Skaftafell: a Svartifoss-túra ~1,5 óra a bazaltoszlopos vízeséshez; gleccsertúrák is innen indulnak.", "Jökulsárlón: csónaktúra előre foglalható — az út egyik legerősebb élménye.", "Höfn híres a langusztáról (humar) — vacsorára ajánlott!"],
           gpxPlaces: [
-            { name: "Skaftafell (Vatnajökull NP)", badge: "gleccser + túra", duration: "1,5–2 óra", lat: 64.070414, lng: -16.9751755, detail: "Svartifoss-túra (~1,5 ó) a bazaltoszlopos vízeséshez. Gleccsertúrák is innen.", maps: "https://www.google.com/maps/search/?api=1&query=64.070414,-16.9751755" },
-            { name: "Jökulsárlón gleccserlagúna", badge: "fő látnivaló", duration: "60–90 perc", lat: 64.0784458, lng: -16.2305536, detail: "Úszó jéghegyek, fókák. Csónaktúra foglalható. Az út csúcspontja.", maps: "https://www.google.com/maps/search/?api=1&query=64.0784458,-16.2305536" },
-            { name: "Gyémánt-part", badge: "fotópont", duration: "30–45 perc", lat: 64.041061, lng: -16.1966881, detail: "Jégdarabok a fekete homokon, szemben a lagúnával.", maps: "https://www.google.com/maps/search/?api=1&query=64.041061,-16.1966881" },
-            { name: "Höfn", badge: "szállás-zóna", t: "ov", lat: 64.2551913, lng: -15.2088449, detail: "Halászfalu, híres a languszta (humar). Vacsorára ajánlott!", maps: "https://www.google.com/maps/search/?api=1&query=64.2551913,-15.2088449" }
+            { name: "Skaftafell (Vatnajökull NP)", kind: "park", googleRating: "4.7", badge: "gleccser + túra", duration: "1,5–2 óra", lat: 64.070414, lng: -16.9751755, detail: "Svartifoss-túra (~1,5 ó) a bazaltoszlopos vízeséshez. Gleccsertúrák is innen.", maps: "https://www.google.com/maps/search/?api=1&query=64.070414,-16.9751755" },
+            { name: "Jökulsárlón gleccserlagúna", kind: "glacier", googleRating: "4.8", badge: "fő látnivaló", duration: "60–90 perc", lat: 64.0784458, lng: -16.2305536, detail: "Úszó jéghegyek, fókák. Csónaktúra foglalható. Az út csúcspontja.", maps: "https://www.google.com/maps/search/?api=1&query=64.0784458,-16.2305536" },
+            { name: "Gyémánt-part", kind: "glacier", googleRating: "4.7", badge: "fotópont", duration: "30–45 perc", lat: 64.041061, lng: -16.1966881, detail: "Jégdarabok a fekete homokon, szemben a lagúnával.", maps: "https://www.google.com/maps/search/?api=1&query=64.041061,-16.1966881" },
+            { name: "Höfn", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 64.2551913, lng: -15.2088449, detail: "Halászfalu, híres a languszta (humar). Vacsorára ajánlott!", maps: "https://www.google.com/maps/search/?api=1&query=64.2551913,-15.2088449" }
           ]
         },
         {
@@ -1847,8 +1847,8 @@ const tripData = {
           ],
           notes: ["Lassan vezess — a fjordút keskeny és kanyargós, de a panoráma végig fantasztikus.", "Rénszarvasra számíts az útszéleken a keleti országrészben.", "Egilsstaðir Kelet-Izland központja — tankolás, bolt, jó éjszakai megálló."],
           gpxPlaces: [
-            { name: "Djúpivogur", badge: "halászfalu", duration: "30–45 perc", lat: 64.6585, lng: -14.2839, detail: "Békés halászfalu, megálló a fjordok közt. Rénszarvas-esély.", maps: "https://www.google.com/maps/search/?api=1&query=64.6585,-14.2839" },
-            { name: "Egilsstaðir", badge: "szállás-zóna", t: "ov", lat: 65.2609232, lng: -14.3994394, detail: "Kanyargós, csodaszép tengerparti szakasz — maga az út az élmény. Lassan vezess.", maps: "https://www.google.com/maps/search/?api=1&query=65.2609232,-14.3994394" }
+            { name: "Djúpivogur", kind: "town", googleRating: "4.5", badge: "halászfalu", duration: "30–45 perc", lat: 64.6585, lng: -14.2839, detail: "Békés halászfalu, megálló a fjordok közt. Rénszarvas-esély.", maps: "https://www.google.com/maps/search/?api=1&query=64.6585,-14.2839" },
+            { name: "Egilsstaðir", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 65.2609232, lng: -14.3994394, detail: "Kanyargós, csodaszép tengerparti szakasz — maga az út az élmény. Lassan vezess.", maps: "https://www.google.com/maps/search/?api=1&query=65.2609232,-14.3994394" }
           ]
         },
         {
@@ -1870,11 +1870,11 @@ const tripData = {
           ],
           notes: ["Dettifoss: a NYUGATI oldal aszfaltos — ezt vegyétek, a keleti murvás.", "Earth Lagoon (Mývatn Nature Baths): idősávos, ~7.500 ISK / 3 óra — foglalj előre!", "Akureyri Észak fővárosa: éttermek, kávézók, igazi város — jó hely pihenni."],
           gpxPlaces: [
-            { name: "Dettifoss", badge: "vízesés", duration: "45–60 perc", lat: 65.8146662, lng: -16.384576, detail: "Európa legerősebb vízesése. Nyugati oldal = aszfalt.", maps: "https://www.google.com/maps/search/?api=1&query=65.8146662,-16.384576" },
-            { name: "Hverir (Námaskarð)", badge: "geotermikus", duration: "30–45 perc", lat: 65.6409144, lng: -16.8093111, detail: "Bugyogó sárkráterek, gőzölgő talaj, kénszag. Marsi táj.", maps: "https://www.google.com/maps/search/?api=1&query=65.6409144,-16.8093111" },
-            { name: "Mývatn Nature Baths (Earth Lagoon)", badge: "fürdő", duration: "2–3 óra", lat: 65.6308946, lng: -16.8476117, detail: "A LAGÚNA. Csendesebb és olcsóbb, mint a Blue/Sky Lagoon. Foglalj előre!", maps: "https://www.google.com/maps/search/?api=1&query=65.6308946,-16.8476117" },
-            { name: "Goðafoss", badge: "vízesés", duration: "30–40 perc", lat: 65.6827782, lng: -17.5501919, detail: "Az »Istenek vízesése«, széles patkó alak. A Ring Road mellett.", maps: "https://www.google.com/maps/search/?api=1&query=65.6827782,-17.5501919" },
-            { name: "Akureyri", badge: "szállás-zóna", t: "ov", lat: 65.6825509, lng: -18.0906858, detail: "Észak fővárosa — éttermek, kávézók, igazi város. Jó hely pihenni.", maps: "https://www.google.com/maps/search/?api=1&query=65.6825509,-18.0906858" }
+            { name: "Dettifoss", kind: "waterfall", googleRating: "4.7", badge: "vízesés", duration: "45–60 perc", lat: 65.8146662, lng: -16.384576, detail: "Európa legerősebb vízesése. Nyugati oldal = aszfalt.", maps: "https://www.google.com/maps/search/?api=1&query=65.8146662,-16.384576" },
+            { name: "Hverir (Námaskarð)", kind: "geothermal", googleRating: "4.6", badge: "geotermikus", duration: "30–45 perc", lat: 65.6409144, lng: -16.8093111, detail: "Bugyogó sárkráterek, gőzölgő talaj, kénszag. Marsi táj.", maps: "https://www.google.com/maps/search/?api=1&query=65.6409144,-16.8093111" },
+            { name: "Mývatn Nature Baths (Earth Lagoon)", kind: "bath", googleRating: "4.5", badge: "fürdő", duration: "2–3 óra", lat: 65.6308946, lng: -16.8476117, detail: "A LAGÚNA. Csendesebb és olcsóbb, mint a Blue/Sky Lagoon. Foglalj előre!", maps: "https://www.google.com/maps/search/?api=1&query=65.6308946,-16.8476117" },
+            { name: "Goðafoss", kind: "waterfall", googleRating: "4.8", badge: "vízesés", duration: "30–40 perc", lat: 65.6827782, lng: -17.5501919, detail: "Az »Istenek vízesése«, széles patkó alak. A Ring Road mellett.", maps: "https://www.google.com/maps/search/?api=1&query=65.6827782,-17.5501919" },
+            { name: "Akureyri", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 65.6825509, lng: -18.0906858, detail: "Észak fővárosa — éttermek, kávézók, igazi város. Jó hely pihenni.", maps: "https://www.google.com/maps/search/?api=1&query=65.6825509,-18.0906858" }
           ]
         },
         {
@@ -1896,9 +1896,9 @@ const tripData = {
           ],
           notes: ["Korai indulás kell — ez a nap a leghosszabb vezetés (~400 km).", "Hvítserkur: murvás lehajtó, az apály-dagály figyelendő a szikla megközelítéséhez.", "Grundarfjörður a félsziget szívében — reggel friss fejjel jön a teljes Snæfellsnes-kör."],
           gpxPlaces: [
-            { name: "Hvítserkur", badge: "fotópont", duration: "30–45 perc", lat: 65.6063761, lng: -20.6352441, detail: "15 m magas »sárkány«-szikla a tengerben. Murvás lehajtó.", maps: "https://www.google.com/maps/search/?api=1&query=65.6063761,-20.6352441" },
-            { name: "Kirkjufell (esti fény)", badge: "fotópont", duration: "45–60 perc", lat: 64.9398701, lng: -23.3064651, detail: "Megérkezel a félszigetre, és a hosszú nyári estében már fotózod a Kirkjufellt.", maps: "https://www.google.com/maps/search/?api=1&query=64.9398701,-23.3064651" },
-            { name: "Grundarfjörður", badge: "szállás-zóna", t: "ov", lat: 64.922, lng: -23.255, detail: "A félsziget szívében, hogy reggel friss fejjel jöjjön a teljes kör.", maps: "https://www.google.com/maps/search/?api=1&query=64.922,-23.255" }
+            { name: "Hvítserkur", kind: "photo", googleRating: "4.5", badge: "fotópont", duration: "30–45 perc", lat: 65.6063761, lng: -20.6352441, detail: "15 m magas »sárkány«-szikla a tengerben. Murvás lehajtó.", maps: "https://www.google.com/maps/search/?api=1&query=65.6063761,-20.6352441" },
+            { name: "Kirkjufell (esti fény)", kind: "photo", googleRating: "4.7", badge: "fotópont", duration: "45–60 perc", lat: 64.9398701, lng: -23.3064651, detail: "Megérkezel a félszigetre, és a hosszú nyári estében már fotózod a Kirkjufellt.", maps: "https://www.google.com/maps/search/?api=1&query=64.9398701,-23.3064651" },
+            { name: "Grundarfjörður", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 64.922, lng: -23.255, detail: "A félsziget szívében, hogy reggel friss fejjel jöjjön a teljes kör.", maps: "https://www.google.com/maps/search/?api=1&query=64.922,-23.255" }
           ]
         },
         {
@@ -1920,12 +1920,12 @@ const tripData = {
           ],
           notes: ["Snæfellsnes a »kis Izland« — gleccser, vulkán, fekete strandok egy félszigeten.", "Reykjavík csak rövid ízelítő (~1,5–2 óra): Hallgrímskirkja torony + kikötő (Harpa, Sun Voyager).", "Utolsó éjszaka Keflavík: tankolj tele, készítsd elő az autóleadást a júl. 26. 07:35-ös géphez."],
           gpxPlaces: [
-            { name: "Djúpalónssandur", badge: "fekete strand", duration: "30–45 perc", lat: 64.7522892, lng: -23.9005197, detail: "Fekete kavicsos strand, hajóroncs, bazaltformák. A Snæfellsjökull NP nyugati csúcsa.", maps: "https://www.google.com/maps/search/?api=1&query=64.7522892,-23.9005197" },
-            { name: "Lóndrangar", badge: "fotópont", duration: "20–30 perc", lat: 64.732527, lng: -23.7846095, detail: "Két drámai bazalttorony a tengerből. Rövid séta a kilátóhoz. Júliusban puffinok a sziklákon.", maps: "https://www.google.com/maps/search/?api=1&query=64.732527,-23.7846095" },
-            { name: "Arnarstapi", badge: "parti séta", duration: "45–60 perc", lat: 64.7643097, lng: -23.6248695, detail: "Sziklaszínpad, Bárður szobor, partmenti sétaút Hellnarig. Ebéd a faluban.", maps: "https://www.google.com/maps/search/?api=1&query=64.7643097,-23.6248695" },
-            { name: "Búðakirkja", badge: "fotópont", duration: "20–30 perc", lat: 64.8216875, lng: -23.3840266, detail: "A híres fekete fatemplom, hósapkás hegyek háttérrel. Utolsó nagy fotópont.", maps: "https://www.google.com/maps/search/?api=1&query=64.8216875,-23.3840266" },
-            { name: "Reykjavík (rövid városnézés)", badge: "városnézés", duration: "1,5–2 óra", lat: 64.1420229, lng: -21.9265494, detail: "Hallgrímskirkja torony + kikötő (Harpa, Sun Voyager). Ízelítő hazafelé.", maps: "https://www.google.com/maps/search/?api=1&query=64.1420229,-21.9265494" },
-            { name: "Keflavík", badge: "szállás-zóna", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Reptér mellett a hajnali 07:35-ös géphez. Tankolás, autó-leadás előkészítése.", maps: "https://www.google.com/maps/search/?api=1&query=63.9997549,-22.5582716" }
+            { name: "Djúpalónssandur", kind: "beach", googleRating: "4.6", badge: "fekete strand", duration: "30–45 perc", lat: 64.7522892, lng: -23.9005197, detail: "Fekete kavicsos strand, hajóroncs, bazaltformák. A Snæfellsjökull NP nyugati csúcsa.", maps: "https://www.google.com/maps/search/?api=1&query=64.7522892,-23.9005197" },
+            { name: "Lóndrangar", kind: "photo", googleRating: "4.6", badge: "fotópont", duration: "20–30 perc", lat: 64.732527, lng: -23.7846095, detail: "Két drámai bazalttorony a tengerből. Rövid séta a kilátóhoz. Júliusban puffinok a sziklákon.", maps: "https://www.google.com/maps/search/?api=1&query=64.732527,-23.7846095" },
+            { name: "Arnarstapi", kind: "photo", googleRating: "4.7", badge: "parti séta", duration: "45–60 perc", lat: 64.7643097, lng: -23.6248695, detail: "Sziklaszínpad, Bárður szobor, partmenti sétaút Hellnarig. Ebéd a faluban.", maps: "https://www.google.com/maps/search/?api=1&query=64.7643097,-23.6248695" },
+            { name: "Búðakirkja", kind: "photo", googleRating: "4.6", badge: "fotópont", duration: "20–30 perc", lat: 64.8216875, lng: -23.3840266, detail: "A híres fekete fatemplom, hósapkás hegyek háttérrel. Utolsó nagy fotópont.", maps: "https://www.google.com/maps/search/?api=1&query=64.8216875,-23.3840266" },
+            { name: "Reykjavík (rövid városnézés)", kind: "town", googleRating: "4.6", badge: "városnézés", duration: "1,5–2 óra", lat: 64.1420229, lng: -21.9265494, detail: "Hallgrímskirkja torony + kikötő (Harpa, Sun Voyager). Ízelítő hazafelé.", maps: "https://www.google.com/maps/search/?api=1&query=64.1420229,-21.9265494" },
+            { name: "Keflavík", kind: "stay", badge: "szállás-zóna", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Reptér mellett a hajnali 07:35-ös géphez. Tankolás, autó-leadás előkészítése.", maps: "https://www.google.com/maps/search/?api=1&query=63.9997549,-22.5582716" }
           ]
         }
       ],

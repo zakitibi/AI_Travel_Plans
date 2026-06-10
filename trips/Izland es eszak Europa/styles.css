@@ -245,21 +245,56 @@ a {
 }
 
 /* ── Izland 2 — alternatív Ring Road térkép ───────────────────────────────── */
-.iz2-numicon {
+/* Típus-ikon marker: világos korong, napszínű gyűrű, jelleg-emoji középen */
+.iz2-pin {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  font-weight: 800;
-  font-size: 12px;
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 6px rgba(36, 29, 24, 0.45);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  background: #fff;
+  border: 3px solid var(--c, #1f5a3e);
+  box-shadow: 0 2px 7px rgba(36, 29, 24, 0.4);
+  line-height: 1;
 }
-.iz2-numicon.iz2-ov {
-  border-radius: 7px;
-  border: 2px solid var(--gold);
-  font-size: 13px;
+.iz2-pin span {
+  font-size: 14px;
+  line-height: 1;
+  display: block;
+}
+.iz2-pin-ov {
+  border-radius: 9px;
+  border-width: 3px;
+  box-shadow: 0 0 0 2px var(--gold), 0 2px 7px rgba(36, 29, 24, 0.4);
+}
+.iz2-pin-ov span { font-size: 15px; }
+
+/* Reset / kiindulópont gomb a térkép sarkában (Leaflet control) */
+.iz2-reset-btn {
+  width: 34px;
+  height: 34px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--green);
+  display: grid;
+  place-items: center;
+  transition: background 0.14s, color 0.14s;
+}
+.iz2-reset-btn:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.iz2-leg-stay {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  flex: none;
 }
 
 .iz2-routestat {
@@ -301,6 +336,33 @@ a {
 .iz2-pp-t { font-weight: 700; font-size: 0.95rem; color: var(--ink); }
 .iz2-pp-d { font-size: 0.78rem; color: var(--gold); margin-top: 2px; font-weight: 600; }
 .iz2-pp-n { font-size: 0.82rem; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+
+/* GPX-kártya: név + értékelés mint Google Maps-link */
+.day-place-name-link {
+  text-decoration: none;
+  color: inherit;
+}
+.day-place-name-link:hover { text-decoration: underline; }
+.day-place-name-link .dpl-ext {
+  font-size: 0.78em;
+  color: var(--green);
+  opacity: 0.7;
+}
+.day-place-rating-link {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 1px 7px;
+  border-radius: 7px;
+  background: rgba(184, 134, 11, 0.12);
+  border: 1px solid rgba(184, 134, 11, 0.22);
+  transition: background 0.12s, border-color 0.12s;
+}
+.day-place-rating-link:hover {
+  text-decoration: none;
+  background: rgba(184, 134, 11, 0.24);
+  border-color: rgba(184, 134, 11, 0.45);
+}
 
 /* Clickable (mapped) GPX card on the Izland 2 page */
 .day-place-mapped { cursor: pointer; }
