@@ -278,14 +278,14 @@
                   ${phaseGroup("return",  "🚗", "Hazaút",    "júl. 26. – aug. 6. · Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest", returnTimeline,  false)}
                 </div>
               </section>
-              <details class="card section-card coll-card" open>
+              <details class="card section-card coll-card iz2-map-panel" open>
                 <summary class="coll-card-head">
-                  <span class="map-section-title" style="margin:0;">🗺 Interaktív útvonal-térkép</span>
+                  <span class="map-section-title" style="margin:0;">🗺 Interaktív útvonal-térkép — a teljes út</span>
                   <span class="collapse-icon" aria-hidden="true">▾</span>
                 </summary>
                 <p class="section-intro" style="margin-bottom:10px;">
-                  Minden állomás szakasz, típus és nap szerint szűrhető.
-                  Egy fázis kinyitása a napi idővonalban automatikusan arra szűr a térképen.
+                  A teljes út egy térképen: minden megálló a szakasz (fázis) színével, az ikon a hely jellegét mutatja, a 🏨 az éjszakai szállás.
+                  Szűrj fázis vagy típus szerint — egy fázis kinyitása a napi idővonalban automatikusan arra szűr a térképen.
                 </p>
                 <div class="map-filter-wrap">
                   <div class="travel-map-wrap" style="height:420px;">
@@ -297,6 +297,8 @@
                   </div>
                   <aside class="dm-filter-sidebar" id="overview-map-filter"></aside>
                 </div>
+                <div class="iz2-routestat" id="overview-routestat">Útvonal betöltése valódi úthálózaton…</div>
+                <div class="iz2-legend" id="overview-legend"></div>
               </details>
             </div>
             <div class="stack">
@@ -1330,66 +1332,6 @@
             <div class="iz2-legend" id="terkep-legend"></div>
           </details>
 
-          <!-- Google My Maps — áttekintő -->
-          <details class="card section-card coll-card" style="margin-top:20px;">
-            <summary class="coll-card-head">
-              <span class="map-section-title" style="margin:0;">🗺 Google My Maps — teljes áttekintő</span>
-              <span class="collapse-icon" aria-hidden="true">▾</span>
-            </summary>
-            <p class="section-intro" style="margin-bottom:10px;">
-              Teljes útvonal Google My Maps-ben — Baltikum · Izland · Hazaút · repülők.
-              <a href="https://www.google.com/maps/d/u/0/edit?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q&usp=sharing" target="_blank" rel="noreferrer" style="color:var(--green);font-weight:600;">Megnyitás Google Maps-ben ↗</a>
-            </p>
-            <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);">
-              <iframe
-                src="https://www.google.com/maps/d/embed?mid=1HxhA32o7owWkYtTA_j_2gbhDaUxU82Q"
-                width="100%"
-                height="420"
-                style="border:0;display:block;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </details>
-
-          <!-- Google My Maps — Izland részletes -->
-          <details class="card section-card coll-card" style="margin-top:20px;">
-            <summary class="coll-card-head">
-              <span class="map-section-title" style="margin:0;">🗺 Google My Maps — Izland</span>
-              <span class="collapse-icon" aria-hidden="true">▾</span>
-            </summary>
-            <p class="section-intro" style="margin-bottom:10px;">Izlandi útvonal részletes Google My Maps nézetei.</p>
-            <div class="context-sources" style="margin-bottom:12px;">
-              <a class="source-chip" href="https://www.google.com/maps/d/u/0/edit?mid=1Ku6Ri53fzgTAychn2Voyy7XiHWsWvMw&usp=sharing" target="_blank" rel="noreferrer">My Maps · fő útvonal ↗</a>
-              <a class="source-chip" href="https://www.google.com/maps/d/u/0/edit?mid=1sp1poHOrpYtHyiyVZRVtgfgYTxDzlpw&ll=64.72213117462351%2C-18.97711350000002&z=7" target="_blank" rel="noreferrer">My Maps · részletesebb ↗</a>
-            </div>
-            <div class="embedded-map-grid">
-              <div class="embedded-map-wrap">
-                <div class="embedded-map-label">Google My Maps · fő útvonal</div>
-                <iframe
-                  class="embedded-map-frame"
-                  src="https://www.google.com/maps/d/u/0/embed?mid=1Ku6Ri53fzgTAychn2Voyy7XiHWsWvMw&ehbc=2E312F"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allowfullscreen
-                  title="Google My Maps · fő útvonal">
-                </iframe>
-              </div>
-              <div class="embedded-map-wrap">
-                <div class="embedded-map-label">Google My Maps · részletesebb változat</div>
-                <iframe
-                  class="embedded-map-frame"
-                  src="https://www.google.com/maps/d/u/0/embed?mid=1sp1poHOrpYtHyiyVZRVtgfgYTxDzlpw&ehbc=2E312F"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allowfullscreen
-                  title="Google My Maps · részletesebb változat">
-                </iframe>
-              </div>
-            </div>
-          </details>
-
         </section>
       `;
     }
@@ -1514,7 +1456,6 @@
       });
     }, true);
   </script>
-  <script type="module" src="./overview-map-init.js"></script>
   <script type="module" src="./section-map-init.js"></script>
 
   <!-- Izland — interaktív Ring Road térkép (típus-ikonok + OSRM valós útvonal + szűrő + reset) -->
@@ -2183,7 +2124,8 @@
     (function () {
       const td = (typeof tripData !== "undefined" ? tripData : null);
       if (!td) return;
-      let inited = false;
+      const inited = new Set();
+      const apis = {};
 
       const KIND = {
         city:       { emoji: "🏙️", label: "Város" },
@@ -2233,18 +2175,18 @@
         return out;
       }
 
-      function init() {
-        if (inited) return;
+      function buildFullTripMap(o) {
+        if (inited.has(o.mapId)) return apis[o.mapId];
         const L = window.L;
-        const el = document.getElementById("terkep-map");
-        if (!L || !el) return;
-        inited = true;
+        const el = document.getElementById(o.mapId);
+        if (!L || !el) return null;
+        inited.add(o.mapId);
         const wrap = el.closest(".travel-map-wrap");
         const overlay = wrap && wrap.querySelector(".tm-overlay");
 
-        const map = L.map("terkep-map", { scrollWheelZoom: false }).setView([58, 8], 4);
+        const map = L.map(o.mapId, { scrollWheelZoom: false }).setView([58, 8], 4);
         window._leafletMaps = window._leafletMaps || {};
-        window._leafletMaps["terkep-map"] = map;
+        window._leafletMaps[o.mapId] = map;
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19
         }).addTo(map);
@@ -2272,7 +2214,7 @@
         if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
 
         // Útvonal: az ÖSSZES route.json feature — autó fázisszínnel, komp kék szaggatott, repülő pontozott
-        fetch(ROUTE_URL).then((r) => r.json()).then((geo) => {
+        getRoute().then((geo) => {
           (geo.features || []).forEach((f) => {
             const p = f.properties || {};
             const t = p.type;
@@ -2283,10 +2225,10 @@
                 : { color: phaseColor(p.stage), weight: 3, opacity: 0.8 };
             L.geoJSON(f, { style }).addTo(map);
           });
-          const rs = document.getElementById("terkep-routestat");
+          const rs = document.getElementById(o.routestatId);
           if (rs) rs.textContent = "Teljes útvonal: autóutak fázisszínnel (folytonos), kompok (szaggatott kék), repülők (pontozott) — valós OSRM úthálózaton.";
         }).catch(() => {
-          const rs = document.getElementById("terkep-routestat");
+          const rs = document.getElementById(o.routestatId);
           if (rs) rs.textContent = "Az útvonal most nem érhető el.";
         });
 
@@ -2303,18 +2245,21 @@
         });
         map.addControl(new ResetCtl());
 
-        // Szűrő-sidebar (Fázis + Típus)
-        const sidebar = document.getElementById("terkep-map-filter");
-        if (sidebar && !sidebar.childElementCount) {
-          const presentKinds = Object.keys(KIND).filter((k) => markerList.some((m) => m.kind === k));
-          const state = { phases: new Set(PHASES.map((p) => p.id)), kinds: new Set(presentKinds) };
-          function applyFilter() {
-            for (const item of markerList) {
-              const vis = state.phases.has(item.phase) && state.kinds.has(item.kind);
-              if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
-              else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
-            }
+        // Szűrő-állapot (a sidebar felépítésétől függetlenül, hogy a fókusz-API mindig működjön)
+        const presentKinds = Object.keys(KIND).filter((k) => markerList.some((m) => m.kind === k));
+        const state = { phases: new Set(PHASES.map((p) => p.id)), kinds: new Set(presentKinds) };
+        const phaseCbs = [];
+        function applyFilter() {
+          for (const item of markerList) {
+            const vis = state.phases.has(item.phase) && state.kinds.has(item.kind);
+            if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
+            else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
           }
+        }
+
+        // Szűrő-sidebar (Fázis + Típus)
+        const sidebar = document.getElementById(o.sidebarId);
+        if (sidebar && !sidebar.childElementCount) {
           function makeSection(title, items, stateKey, scrollable) {
             const sec2 = document.createElement("div"); sec2.className = "dm-filter-section";
             const head = document.createElement("div"); head.className = "dm-filter-section-head";
@@ -2330,6 +2275,7 @@
               const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = state[stateKey].has(item.id);
               cb.addEventListener("change", () => { if (cb.checked) state[stateKey].add(item.id); else state[stateKey].delete(item.id); applyFilter(); });
               cbs.push(cb);
+              if (stateKey === "phases") phaseCbs.push({ cb, id: item.id });
               const span = document.createElement("span"); span.className = "dm-filter-label";
               if (item.dotColor) { const dot = document.createElement("span"); dot.className = "dm-dot"; dot.style.background = item.dotColor; span.appendChild(dot); }
               span.appendChild(document.createTextNode(item.label));
@@ -2347,23 +2293,52 @@
         }
 
         // Jelmagyarázat (3 fázis + szállás)
-        const leg = document.getElementById("terkep-legend");
+        const leg = document.getElementById(o.legendId);
         if (leg && !leg.childElementCount) {
           PHASES.forEach((p) => { const sp = document.createElement("span"); sp.innerHTML = `<span class="iz2-dot" style="background:${p.color}"></span>${p.label}`; leg.appendChild(sp); });
-          const ov = document.createElement("span"); ov.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`; leg.appendChild(ov);
+          const ovl = document.createElement("span"); ovl.innerHTML = `<span class="iz2-leg-stay">🏨</span>Éjszakai szállás`; leg.appendChild(ovl);
         }
 
         if (overlay) overlay.classList.add("tm-hidden");
         setTimeout(() => { try { map.invalidateSize(); } catch (_) {} }, 60);
+
+        const api = {
+          showPhase(id) {
+            state.phases.clear(); state.phases.add(id);
+            phaseCbs.forEach(({ cb, id: cid }) => { cb.checked = (cid === id); });
+            applyFilter();
+          },
+          showAll() {
+            PHASES.forEach((p) => state.phases.add(p.id));
+            phaseCbs.forEach(({ cb }) => { cb.checked = true; });
+            applyFilter();
+          }
+        };
+        apis[o.mapId] = api;
+        return api;
+      }
+
+      let routePromise = null;
+      function getRoute() { return routePromise || (routePromise = fetch(ROUTE_URL).then((r) => r.json())); }
+
+      const TERKEP = { mapId: "terkep-map", sidebarId: "terkep-map-filter", routestatId: "terkep-routestat", legendId: "terkep-legend" };
+      const OVERVIEW = { mapId: "overview-map", sidebarId: "overview-map-filter", routestatId: "overview-routestat", legendId: "overview-legend" };
+
+      function initOverview() {
+        const api = buildFullTripMap(OVERVIEW);
+        if (api) window.overviewMapAPI = { focusPhase: (id) => api.showPhase(id), showAll: () => api.showAll() };
       }
 
       const original = window.activateTab;
       window.activateTab = function (id) {
         if (typeof original === "function") original.apply(this, arguments);
-        if (id === "terkep") setTimeout(init, 0);
+        if (id === "terkep") setTimeout(() => buildFullTripMap(TERKEP), 0);
+        if (id === "overview") setTimeout(initOverview, 0);
       };
+      // Az Áttekintés az alapból aktív fül → a térkép azonnal épüljön, és álljon rendelkezésre az overviewMapAPI a timeline-fókuszhoz
+      setTimeout(initOverview, 30);
       if (document.querySelector('.view.is-active[data-view="terkep"]')) {
-        setTimeout(init, 0);
+        setTimeout(() => buildFullTripMap(TERKEP), 0);
       }
     })();
   </script>
