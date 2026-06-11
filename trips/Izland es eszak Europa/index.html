@@ -478,7 +478,7 @@
         return "~" + h + " ó" + (m ? " " + m + " p" : "");
       }
       function legRow(a, b) {
-        if (!a || !b || a.lat == null || b.lat == null) return "";
+        if (!a || !b || a.lat == null || a.lng == null || b.lat == null || b.lng == null) return "";
         const km = Math.round(legHav(a, b) * 1.25);
         if (km < 2) return ""; // azonos parkoló / pár száz méter — nem külön etap
         const mins = (km / 80) * 60;
@@ -2246,7 +2246,10 @@
         map.addControl(new ResetCtl());
 
         // Szűrő-állapot (a sidebar felépítésétől függetlenül, hogy a fókusz-API mindig működjön)
-        const presentKinds = Object.keys(KIND).filter((k) => markerList.some((m) => m.kind === k));
+        // A jelen lévő típusok: ismert KIND-ek a definíció sorrendjében, plusz minden egyéb előforduló
+        // típus a végén — így egy ismeretlen kind sem tűnik el szűrhetetlenül a térképről.
+        const kindsPresent = new Set(markerList.map((m) => m.kind));
+        const presentKinds = [...Object.keys(KIND).filter((k) => kindsPresent.has(k)), ...[...kindsPresent].filter((k) => !KIND[k])];
         const state = { phases: new Set(PHASES.map((p) => p.id)), kinds: new Set(presentKinds) };
         const phaseCbs = [];
         function applyFilter() {
