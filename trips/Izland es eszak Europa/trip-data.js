@@ -3309,7 +3309,7 @@ const tripData = {
   },
   icelandBookings: {
     title: "Foglalások — szállás & autó",
-    note: "3 fő utazik (Tibi + feleség + 1 vendég), ezért mindenhol 2 szoba (vagy egy több hálós ház) van foglalva. Minden foglalásnál külön panelen a két szoba (illetve egyben bérelt egységnél a felezett ár), a bérautónál a 3 főre osztott rész. A júl. 18–19. reykjavíki első éjszaka nincs ezek közt (külön intézve).",
+    note: "3 fő utazik (Tibi + Henni + 1 vendég), ezért mindenhol 2 szoba (vagy egy több hálós ház) van foglalva. Minden foglalásnál külön panelen a két szoba (illetve egyben bérelt egységnél a felezett ár), a bérautónál a 3 főre osztott rész. A júl. 18–19. reykjavíki első éjszaka nincs ezek közt (külön intézve).",
     currency: "EUR",
     hotels: [
       {
@@ -3399,7 +3399,7 @@ const tripData = {
       maps: "https://www.google.com/maps/search/?api=1&query=Lava%20Car%20Rental%20Keflavik%20Airport",
       shares: [
         { label: "Tibi · 1/3", price: "€ 420,95", eur: 420.95 },
-        { label: "Feleség · 1/3", price: "€ 420,95", eur: 420.95 },
+        { label: "Henni · 1/3", price: "€ 420,95", eur: 420.95 },
         { label: "Vendég · 1/3", price: "€ 420,95", eur: 420.95, guest: true }
       ]
     },

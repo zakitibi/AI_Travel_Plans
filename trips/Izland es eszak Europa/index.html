@@ -850,10 +850,8 @@
       const fmtEur = (n) => { const [i, d] = n.toFixed(2).split("."); return "€ " + i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "," + d; };
       const subPanel = (r, ico) => `
         <div class="book-sub${r.guest ? " is-guest" : ""}">
-          <span class="book-sub-ico">${ico}</span>
-          <span class="book-sub-label">${r.label}</span>
-          <span class="book-sub-price">${r.price}</span>
-          ${r.guest ? `<span class="book-sub-you" title="vendég">👤</span>` : ""}
+          <span class="book-sub-main"><span class="book-sub-ico">${ico}</span><span class="book-sub-label">${r.label}</span></span>
+          <span class="book-sub-price">${r.price}${r.guest ? ` <span class="book-sub-you" title="vendég">👤</span>` : ""}</span>
         </div>`;
       const hotelCard = (h) => `
         <article class="book-card">
@@ -919,7 +917,7 @@
                    ${b.car.pickup ? `<div class="book-town">📍 Átvétel: ${b.car.pickup}${b.car.dropoff ? ` · Leadás: ${b.car.dropoff}` : ""}</div>` : ""}
                    ${b.car.dates ? `<div class="book-time">🕒 ${b.car.dates}</div>` : ""}
                  </div>
-                 ${b.car.shares ? `<div class="book-subs">${b.car.shares.map((s) => subPanel(s, "👤")).join("")}</div>` : ""}
+                 ${b.car.shares ? `<div class="book-subs">${b.car.shares.map((s) => subPanel(s, "🚗")).join("")}</div>` : ""}
                </div>
                <div class="book-conf">
                  ${b.car.conf ? `<span class="book-chip">#${b.car.conf}</span>` : ""}
