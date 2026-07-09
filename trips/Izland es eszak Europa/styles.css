@@ -2709,3 +2709,408 @@ details.coll-card[open] > summary .collapse-icon {
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .tm-route-tooltip::before { display: none; }
+
+/* ══ Extra fül — a Stockholmig vezető út legtöbbet emlegetett megállói ═══════ */
+.extra-country-head {
+  margin: 26px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.extra-list {
+  display: grid;
+  gap: 14px;
+}
+.extra-card {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border-left: 5px solid var(--rust);
+}
+.extra-card.cat-castle    { border-left-color: var(--gold); }
+.extra-card.cat-church    { border-left-color: var(--rose); }
+.extra-card.cat-nature    { border-left-color: var(--green); }
+.extra-card.cat-museum    { border-left-color: var(--violet); }
+.extra-card.cat-market    { border-left-color: #c77dff; }
+.extra-card.cat-viewpoint { border-left-color: #1d6fa4; }
+.extra-card.cat-oldtown   { border-left-color: var(--rust); }
+.extra-card.cat-landmark  { border-left-color: var(--blue); }
+
+.extra-photo {
+  flex: 0 0 168px;
+  display: block;
+  background: var(--surface-alt);
+  align-self: stretch;
+  min-height: 100%;
+}
+.extra-photo img {
+  width: 168px;
+  height: 100%;
+  min-height: 148px;
+  object-fit: cover;
+  display: block;
+}
+.extra-card.no-photo .extra-photo { display: none; }
+
+.extra-body {
+  flex: 1 1 auto;
+  padding: 14px 16px;
+  min-width: 0;
+}
+.extra-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 12px;
+}
+.extra-name {
+  margin: 0;
+  font-size: 15.5px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.extra-name a { color: var(--ink); text-decoration: none; }
+.extra-name a:hover { text-decoration: underline; }
+.extra-name-local {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dim);
+  font-style: italic;
+}
+.extra-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(184, 134, 11, 0.12);
+  color: #785800;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+.extra-rating:hover { background: rgba(184, 134, 11, 0.2); }
+.extra-reviews {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--muted);
+  border-left: 1px solid rgba(120, 88, 0, 0.28);
+  padding-left: 6px;
+}
+.extra-meta {
+  margin-top: 4px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.extra-why {
+  margin: 8px 0 2px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--rust);
+  line-height: 1.4;
+}
+.extra-summary {
+  margin: 6px 0 10px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.extra-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.extra-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 800;
+  background: var(--surface-alt);
+  color: var(--muted);
+}
+.extra-badge-unesco { background: rgba(35, 61, 123, 0.12); color: var(--blue); }
+.extra-badge-ta { background: rgba(31, 90, 62, 0.12); color: var(--green); }
+.extra-badge-hot { background: rgba(214, 57, 70, 0.12); color: #b8323f; }
+.extra-badge-visit { background: rgba(106, 76, 163, 0.12); color: var(--violet); }
+.extra-rating-note {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--dim);
+  font-style: italic;
+  align-self: center;
+}
+
+/* Popup a térképen — fotóval */
+.extra-pp-img {
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: block;
+}
+.tm-popup-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--blue);
+  text-decoration: none;
+}
+.tm-popup-link:hover { text-decoration: underline; }
+
+@media (max-width: 620px) {
+  .extra-card { flex-direction: column; border-left-width: 4px; }
+  .extra-photo { flex-basis: auto; width: 100%; }
+  .extra-photo img { width: 100%; height: 160px; min-height: 0; }
+}
+
+/* ══ Izland — Foglalások panel (szállás & autó) ═════════════════════════════ */
+.iz2-book-panel { margin-top: 18px; }
+.book-list {
+  display: grid;
+  gap: 12px;
+}
+.book-card {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  overflow: hidden;
+  border-left: 5px solid var(--green);
+}
+.book-when {
+  flex: 0 0 118px;
+  background: rgba(31, 90, 62, 0.07);
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3px;
+}
+.book-dates {
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--green);
+  line-height: 1.2;
+}
+.book-nights {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 7px;
+}
+.book-body {
+  flex: 1 1 auto;
+  padding: 11px 14px;
+  min-width: 0;
+}
+.book-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 12px;
+}
+.book-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.book-name a { color: var(--ink); text-decoration: none; }
+.book-name a:hover { text-decoration: underline; }
+.book-price {
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.book-paid {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--green);
+  background: rgba(31, 90, 62, 0.12);
+  border-radius: 999px;
+  padding: 2px 7px;
+  margin-left: 2px;
+}
+.book-payloc {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface-alt);
+  border-radius: 999px;
+  padding: 2px 7px;
+  margin-left: 2px;
+}
+.book-town, .book-room, .book-time {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+.book-extra { color: var(--rust); font-weight: 700; }
+.book-conf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.book-chip {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface-alt);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-variant-numeric: tabular-nums;
+}
+.book-total {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 700;
+}
+.book-total strong { color: var(--green); font-size: 16px; }
+.book-total-note { font-size: 11px; font-weight: 600; color: var(--dim); }
+.book-car { border-left-color: var(--gold); }
+.book-car .book-when { background: rgba(184, 134, 11, 0.08); }
+.book-car .book-dates { color: var(--gold); }
+.book-car.is-missing { border-left-color: #b8323f; background: rgba(214, 57, 70, 0.03); }
+.book-car.is-missing .book-when { background: rgba(214, 57, 70, 0.07); }
+.book-car.is-missing .book-dates { color: #b8323f; }
+.book-carnote {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+@media (max-width: 620px) {
+  .book-card { flex-direction: column; border-left-width: 4px; }
+  .book-when {
+    flex-basis: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+}
+
+/* ── Foglalások: szoba/autó al-panelek (jobbra, kompakt) + vendég összesítő ── */
+.book-mid {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+.book-desc { flex: 1 1 auto; min-width: 0; }
+.book-desc > :first-child { margin-top: 0; }
+.book-subs {
+  flex: 0 0 auto;
+  width: 210px;
+  max-width: 46%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.book-sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface-soft);
+  padding: 5px 8px;
+}
+.book-sub-ico { font-size: 12px; flex: 0 0 auto; line-height: 1; }
+.book-sub-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1.2;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.book-sub-price {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.book-sub.is-guest { border-color: var(--gold); background: rgba(184, 134, 11, 0.1); }
+.book-sub-you { font-size: 10px; flex: 0 0 auto; }
+
+.book-guest {
+  margin-top: 16px;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  background: rgba(184, 134, 11, 0.06);
+  padding: 14px 16px;
+}
+.book-guest-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #785800;
+  margin-bottom: 10px;
+}
+.book-guest-rows { display: grid; gap: 6px; }
+.book-guest-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.book-guest-row span:last-child { font-weight: 700; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.book-guest-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--gold);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.book-guest-total strong { font-size: 18px; color: #785800; }
+.book-guest-note {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 620px) {
+  .book-mid { flex-direction: column; gap: 8px; }
+  .book-subs { width: 100%; max-width: none; }
+}

@@ -3112,5 +3112,297 @@ const tripData = {
         "Német tranzitszállás shortlist a hazaútra."
       ]
     }
-  ]
+  ],
+  extraHighlights: {
+    kicker: "a Stockholmig vezető út legtöbbet emlegetett megállói",
+    title: "Extra",
+    pill: "Útközben + ~100 km-es körzet",
+    intro: [
+      "Ez az oldal a baltikumi–skandináv felvezető szakasz (Budapest → Vilnius → Riga → Tallinn → Helsinki → Turku → Stockholm) mentén és annak kb. 100 km-es körzetében fekvő <strong>legfontosabb, legtöbbet látogatott és a legtöbb útleírásban visszatérő</strong> célpontokat gyűjti egy helyre — az, ami blogokban, szervezett túraprogramokban és útikönyvekben újra és újra előkerül.",
+      "Minden megállóhoz tartozik egy rövid, értékelésekből összegzett leírás, a <strong>Google Maps csillagos pontszáma és az értékelések száma</strong> (2026 nyári pillanatkép — az élő számok folyamatosan nőnek), egy fénykép, valamint közvetlen link a Google térképre és egy-egy útleírásra. A 🔥 jelöli a kiemelten sokak által értékelt, „biztos befutó” helyeket."
+    ],
+    mapNote: "A megállók országonként külön színnel; a bal oldali szűrővel országonként ki-be kapcsolhatók. A jelölőre kattintva előugrik a fénykép, a Google-pontszám és a rövid leírás. A pontok az útvonalra esnek vagy attól legfeljebb ~100 km-re.",
+    countryFlags: {
+      "Litvánia": "🇱🇹", "Lettország": "🇱🇻", "Észtország": "🇪🇪", "Finnország": "🇫🇮", "Svédország": "🇸🇪"
+    },
+    countryColors: {
+      "Litvánia": "#8a4f24", "Lettország": "#b8860b", "Észtország": "#6a4ca3", "Finnország": "#1d6fa4", "Svédország": "#1f5a3e"
+    },
+    items: [
+      {
+        name_hu: "Vilniusi óváros", name_local: "Vilniaus senamiestis",
+        country: "Litvánia", city: "Vilnius", category: "oldtown",
+        lat: 54.68667, lng: 25.29306, rating: 4.6, reviews: 6175,
+        why: "Európa egyik legnagyobb megmaradt középkori óvárosa, 1994 óta UNESCO-világörökség.",
+        summary: "Kelet-Európa egyik legszebb, épségben megmaradt óvárosa: macskaköves utcák, barokk és gótikus templomok, hangulatos kávézók és borostyánboltok. A látogatók a sétálható, romantikus atmoszférát és az olcsó, jó éttermeket dicsérik. Néhányan a nyári tömeget és a macskaköveken kényelmetlen sétát említik.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Vilnius_old_town_by_Augustas_Didzgalvis.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Vilniaus%20senamiestis%2C%20Vilnius",
+        badges: ["UNESCO"],
+        blogs: [{ label: "TrueLithuania", url: "https://www.truelithuania.com/old-town-of-vilnius-183" }]
+      },
+      {
+        name_hu: "Trakai szigetvár", name_local: "Trakų salos pilis",
+        country: "Litvánia", city: "Trakai", category: "castle",
+        lat: 54.6525, lng: 24.93306, rating: 4.7, reviews: 29822,
+        why: "Litvánia egyetlen szigeten álló vára, az ország legikonikusabb, minden útitervben szereplő látványossága.",
+        summary: "Mesebeli, vörös téglás gótikus vár a Galvė-tó szigetén, gyalogoshíddal a parthoz kötve. Sokan kiemelik a lélegzetelállító tópartot, a vár belsejében lévő múzeumot és a helyi kibinai tésztát. Gyakori panasz, hogy nyáron és hétvégén nagyon zsúfolt, a jegypénztárnál sorban kell állni.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Trakai_castle_2016.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Trak%C5%B3%20salos%20pilis%2C%20Trakai",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "Kenzly blog", url: "https://kenzly.com/trakai-island-castle-a-fairytale-fortress-in-lithuania/" }]
+      },
+      {
+        name_hu: "Keresztek hegye", name_local: "Kryžių kalnas",
+        country: "Litvánia", city: "Šiauliai", category: "landmark",
+        lat: 56.01528, lng: 23.41667, rating: 4.6, reviews: 11739,
+        why: "A szovjet elnyomással szembeni litván ellenállás világhírű zarándokhelye, több mint 100 000 kereszttel.",
+        summary: "Megrendítő, egyedülálló hely: több mint 100 000 kereszt borítja a dombot, a litván ellenállás és a hit szimbólumát. Sokan a nyugodt, spirituális hangulatot és az ingyenes belépést dicsérik, korai reggeli látogatást javasolnak. Néhányan a félreeső fekvést és a parkolónál lévő szuvenírárusokat említik.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Kry%C5%BEi%C5%B3_kalnas_%28G%C3%B3ra_Krzy%C5%BCy%29.JPG?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Kry%C5%BEi%C5%B3%20kalnas%2C%20%C5%A0iauliai",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "Destinationes", url: "https://www.destinationes.com/pilgrimage/hill-of-the-crosses-kryziu-kalnas" }]
+      },
+      {
+        name_hu: "Feketefejűek háza", name_local: "Melngalvju nams · Riga óváros",
+        country: "Lettország", city: "Riga", category: "landmark",
+        lat: 56.94722, lng: 24.10694, rating: 4.6, reviews: 12545,
+        why: "A 14. századi kereskedőcéh díszes homlokzatú székháza az UNESCO-védett rigai óváros ékköve.",
+        summary: "A rigai óváros egyik legszebb, mesébe illő épülete, sokak szerint a város leglátványosabb homlokzata. A díszes holland reneszánsz külső és a felújított dísztermek osztatlan elismerést kapnak, kedvelt fotóhelyszín. Kritikaként a belső kiállítás mérete és a belépő ára merül fel.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/House_of_Blackheads_at_Dusk_3%2C_Riga%2C_Latvia_-_Diliff.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Melngalvju%20nams%20House%20of%20the%20Blackheads%20Riga",
+        badges: ["UNESCO"],
+        blogs: [{ label: "Latvia.travel", url: "https://www.latvia.travel/en/sight/house-black-heads" }]
+      },
+      {
+        name_hu: "Rigai központi vásárcsarnok", name_local: "Rīgas Centrāltirgus",
+        country: "Lettország", city: "Riga", category: "market",
+        lat: 56.94371, lng: 24.114904, rating: 4.4, reviews: 54629,
+        why: "Európa egyik legnagyobb piaca, egykori Zeppelin-hangárok vázából építve, az UNESCO-védett óváros része.",
+        summary: "Európa egyik legnagyobb piaca egykori Zeppelin-hangárokban, nyüzsgő, autentikus hangulattal. A látogatók a friss helyi termékeket, a bőséges választékot és a barátságos árakat dicsérik — sokak szerint kötelező program. Panaszként a tömeg és a csarnokok közti tájékozódás jön elő; érdemes délelőtt menni.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Riga_Central_Market_Hall.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=R%C4%ABgas%20Centr%C4%81ltirgus%20Riga%20Central%20Market",
+        badges: ["UNESCO"],
+        blogs: [{ label: "Piac hivatalos oldala", url: "https://centraltirgus.lv/en/" }]
+      },
+      {
+        name_hu: "Rundāle-kastély", name_local: "Rundāles pils",
+        country: "Lettország", city: "Pilsrundāle (Bauska mellett)", category: "castle",
+        lat: 56.4138, lng: 24.0248, rating: 4.7, reviews: 13772,
+        why: "Rastrelli tervezte 18. századi barokk hercegi rezidencia, a Baltikum legpompásabb kastélya francia díszkerttel.",
+        summary: "A Baltikum legszebb barokk kastélya, amelyet Rastrelli, a szentpétervári Téli Palota építésze tervezett — sokan a lett Versailles-nak hívják. A látogatók a pazar, eredeti berendezésű termekről és a helyreállított francia díszkertről áradoznak. Legfeljebb a Rigától való távolságot és a teljes bejáráshoz szükséges időt említik.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Rundale_Palace_%286483271573%29.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Rund%C4%81les%20pils%20Rundale%20Palace%20Pilsrundale",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "Rundāle.net", url: "https://rundale.net/en/" }]
+      },
+      {
+        name_hu: "Tallinni óváros és Toompea kilátók", name_local: "Tallinna vanalinn · Kohtuotsa",
+        country: "Észtország", city: "Tallinn", category: "oldtown",
+        lat: 59.437807, lng: 24.74188, rating: 4.8, reviews: 6980,
+        why: "Európa egyik legépebben fennmaradt középkori óvárosa, a Toompea-dombi kilátókkal, UNESCO-világörökség.",
+        summary: "A Kohtuotsa kilátóteraszról nyílik a leghíresebb panoráma a középkori vörös háztetőkre, tornyokra és a Finn-öbölre — a látogatók a lélegzetelállító kilátást és a fotólehetőségeket dicsérik. Az óváros macskaköves utcáit mindenki imádja. Leggyakoribb panasz a nagy tömeg és a nehéz helyfoglalás a korlát mellett.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Tallinn_old_city_picture.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Kohtuotsa%20viewing%20platform%20Tallinn%20Old%20Town",
+        badges: ["UNESCO", "TripAdvisor Top"],
+        blogs: [{ label: "ThirdEyeTraveller", url: "https://thirdeyetraveller.com/patkuli-viewing-platform-tallinn/" }]
+      },
+      {
+        name_hu: "Kadriorg-palota", name_local: "Kadrioru loss",
+        country: "Észtország", city: "Tallinn", category: "castle",
+        lat: 59.43851, lng: 24.79084, rating: 4.6, reviews: 5462,
+        why: "Észtország legjelentősebb barokk palotája és parkja, Nagy Péter cár nyári rezidenciájának épült.",
+        summary: "Nagy Péter cár által építtetett péteri barokk palota, ma az Észt Művészeti Múzeum külföldi gyűjteményével. A látogatók a gyönyörű barokk épületet és a rendezett, virágos parkot emelik ki — tökéletes fotózáshoz. Néhányan jelzik, hogy a belső kiállítás kisebb a vártnál, idegenvezetővel többet ad.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Tallinn_asv2022-04_img55_Kadriorg_Palace.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Kadriorg%20Palace%20Tallinn",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "VisitEstonia", url: "https://visitestonia.com/en/kadriorg-palace-kadriorg-art-museum" }]
+      },
+      {
+        name_hu: "Lahemaa Nemzeti Park", name_local: "Lahemaa rahvuspark · Viru-láp",
+        country: "Észtország", city: "Tallinntól ~70 km-re keletre", category: "nature",
+        lat: 59.464638, lng: 25.638729, rating: 4.9, reviews: 281, ratingNote: "Viru-láp tanösvény",
+        why: "Észtország legnagyobb védett természeti területe: tőzeglápok, sziklás tengerpart és történelmi halászfalvak.",
+        summary: "Észtország első és legnagyobb nemzeti parkja: tőzeglápok, sziklás tengerpart, fenyvesek és 18. századi kúriák. A csúcspont a Viru-láp deszkapallós tanösvénye — könnyen járható és lélegzetelállító, nem kell hozzá gyakorlott túrázónak lenni (a csillagos érték ezé a tanösvényé). Autó nélkül nehéz bejárni, a pallók esőben csúszósak.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Viru_Bog%2C_Parque_Nacional_Lahemaa%2C_Estonia%2C_2012-08-12%2C_DD_26.JPG?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Lahemaa%20National%20Park%20Estonia",
+        badges: [],
+        blogs: [{ label: "TakeYourBackpack", url: "https://www.takeyourbackpack.com/backpacking-in-estonia/visit-lahemaa-national-park/" }]
+      },
+      {
+        name_hu: "Helsinki-székesegyház és Szenátus tér", name_local: "Helsingin tuomiokirkko · Senaatintori",
+        country: "Finnország", city: "Helsinki", category: "landmark",
+        lat: 60.170371, lng: 24.952131, rating: 4.6, reviews: 13901,
+        why: "Helsinki ikonikus, zöld kupolás fehér székesegyháza, amely a történelmi Szenátus tér fölé magasodik.",
+        summary: "A város jelképe: a hófehér, zöld kupolás neoklasszicista templom monumentális lépcsősorával lenyűgöző látvány, különösen a Szenátus tér fölé emelkedve. Sokan dicsérik az ingyenes belépést és a letisztult belső teret, bár néhányan sivárnak találják. A tér és a lépcső népszerű fotóhely, csúcsidőben zsúfolt.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Kirkko3.png?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Helsinki%20Cathedral%20Senate%20Square%20Helsinki",
+        badges: ["TripAdvisor Top", "~500 000 látogató/év"],
+        blogs: [{ label: "MyHelsinki", url: "https://www.myhelsinki.fi/en/see-and-do/sights-and-attractions/helsinki-cathedral/" }]
+      },
+      {
+        name_hu: "Sziklatemplom (Temppeliaukio)", name_local: "Temppeliaukion kirkko",
+        country: "Finnország", city: "Helsinki", category: "church",
+        lat: 60.173025, lng: 24.925235, rating: 4.4, reviews: 16624,
+        why: "A tömör sziklába robbantott, rézkupolás modern templom világhírű egyedi építészetéről és akusztikájáról.",
+        summary: "A sziklába vájt templom egyedi élmény: a nyers gránitfalak, a rézkupola és a felülvilágító fény sokakat lenyűgöz, a kiváló akusztikát is gyakran kiemelik. Többen szerint koncerthelyszínként a legjobb megtapasztalni. Kritikaként a belépődíj, a tömeg és a sorban állás jelenik meg.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Temppeliaukio_Church_Helsinki.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Temppeliaukio%20Church%20Rock%20Church%20Helsinki",
+        badges: ["TripAdvisor Top", "~500 000 látogató/év"],
+        blogs: [{ label: "MyHelsinki", url: "https://www.myhelsinki.fi/places/temppeliaukio-church/" }]
+      },
+      {
+        name_hu: "Suomenlinna tengeri erőd", name_local: "Suomenlinna · Sveaborg",
+        country: "Finnország", city: "Helsinki", category: "castle",
+        lat: 60.1454, lng: 24.98814, rating: 4.6, reviews: 27066,
+        why: "A finn főváros kapujában őrködő 18. századi tengeri erőd, Finnország egyik legnagyobb UNESCO-világöröksége.",
+        summary: "Hat szigetre épült 18. századi tengeri erőd — egyszerre UNESCO-világörökség és élő lakónegyed, amit a látogatók a rövid kompútért és a szép sétákért imádnak. Dicsérik a bástyákat, ágyúkat és a tengerparti panorámát; akár fél-egész napos programnak ajánlják. Jó cipő és térkép kell, rossz időben szeles.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Suomenlinna_aerial.JPG?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Suomenlinna%20Sea%20Fortress%20Helsinki",
+        badges: ["UNESCO", "TripAdvisor Top", "~1 000 000 látogató/év"],
+        blogs: [{ label: "Suomenlinna.fi", url: "https://suomenlinna.fi/en/" }]
+      },
+      {
+        name_hu: "Porvoo óvárosa", name_local: "Vanha Porvoo",
+        country: "Finnország", city: "Porvoo", category: "oldtown",
+        lat: 60.395445, lng: 25.658609, rating: 4.7, reviews: 2667,
+        why: "Finnország egyik legszebb, tökéletesen megőrzött középkori óvárosa a híres folyóparti vörös raktárházakkal.",
+        summary: "Finnország második legrégibb városának macskaköves utcái, festett faházai és a folyóparti vörös raktárépületei mesébe illő hangulatot adnak. Kedvelt a hangulatos kávézók, kézműves boltok és a nyugodt séta miatt, egynapos kirándulásként Helsinkiből. Kritikaként a hétvégi-nyári tömeg és a szűk parkolás merül fel.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Barns_on_the_shore_of_the_river.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Porvoo%20Old%20Town%20Porvoo",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "TripAdvisor", url: "https://www.tripadvisor.com/Attraction_Review-g315777-d5499362-Reviews-Porvoo_Old_Town-Porvoo_Uusimaa.html" }]
+      },
+      {
+        name_hu: "Óváros — Gamla stan", name_local: "Gamla stan",
+        country: "Svédország", city: "Stockholm", category: "oldtown",
+        lat: 59.325, lng: 18.07083, rating: 4.6, reviews: 44000, ratingNote: "becsült",
+        why: "Stockholm középkori óvárosa, a svéd főváros történelmi és turisztikai szíve.",
+        summary: "Magával ragadó, macskaköves középkori óváros, amelyet a látogatók a színes házak, a szűk sikátorok és az egyedi hangulat miatt imádnak — sokan Stockholm szívének tartják. Gyakran dicsérik a fotogén utcákat és a Stortorget teret; a leggyakoribb panasz a csúcsidei tömeg és a borsos árak. Reggel érdemes érkezni.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Gamla_stan_September_2014_01.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Gamla%20Stan%2C%20Stockholm",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "VisitSweden", url: "https://visitsweden.com/where-to-go/middle-sweden/stockholm/stockholm-old-town/" }]
+      },
+      {
+        name_hu: "Vasa-múzeum", name_local: "Vasamuseet",
+        country: "Svédország", city: "Stockholm", category: "museum",
+        lat: 59.32794, lng: 18.09139, rating: 4.8, reviews: 68700,
+        why: "Az 1628-ban már első útján elsüllyedt, majd épségben kiemelt Vasa hadihajó otthona.",
+        summary: "Világszínvonalú tengerészeti múzeum, a világ egyetlen épségben fennmaradt 17. századi hadihajójával; a látogatók lenyűgözőnek és kihagyhatatlannak nevezik a drámai megvilágításban álló, hatalmas hajót. Sokak szerint a város legjobb látnivalója, az egyetlen visszatérő panasz a csúcsidei zsúfoltság. Gyerekeknek is izgalmas.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Stockholm_Vasa_Museum_and_Nordic_Museum_09.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Vasamuseet%2C%20Stockholm",
+        badges: ["TripAdvisor Top", "~1,35 millió látogató/év"],
+        blogs: [{ label: "Salterton Review", url: "https://saltertonartsreview.com/2024/06/vasamuseet-vasa-museum-stockholm/" }]
+      },
+      {
+        name_hu: "Stockholmi Városháza", name_local: "Stockholms stadshus",
+        country: "Svédország", city: "Stockholm", category: "landmark",
+        lat: 59.3275, lng: 18.055, rating: 4.6, reviews: 26000, ratingNote: "becsült",
+        why: "A Nobel-díjátadó gála helyszíne, Stockholm ikonikus, aranymozaikos városházája.",
+        summary: "A Nobel-díjas bankett helyszíne, amelynek monumentális Kék terme és a nyolcmillió aranymozaikkal borított Aranyterme ámulatba ejti a látogatókat. Kiemelik a vezetett túrákat és a toronyból nyíló panorámát; a fő megjegyzés, hogy a belső tér csak túra keretében látogatható. Csendesebb, kevésbé zsúfolt élmény a belvárosnál.",
+        photos: ["https://commons.wikimedia.org/wiki/Special:FilePath/Stockholms_Stadshuset_City_Hall_Stockholm_2016_01.jpg?width=640"],
+        maps: "https://www.google.com/maps/search/?api=1&query=Stockholms%20stadshus%2C%20Stockholm",
+        badges: ["TripAdvisor Top"],
+        blogs: [{ label: "Travel Notes & Beyond", url: "https://travelnotesandbeyond.com/the-weekly-postcard-stadshuset-stockholm-city-hall/" }]
+      }
+    ]
+  },
+  icelandBookings: {
+    title: "Foglalások — szállás & autó",
+    note: "3 fő utazik (Tibi + feleség + 1 vendég), ezért mindenhol 2 szoba (vagy egy több hálós ház) van foglalva. Minden foglalásnál külön panelen a két szoba (illetve egyben bérelt egységnél a felezett ár), a bérautónál a 3 főre osztott rész. A júl. 18–19. reykjavíki első éjszaka nincs ezek közt (külön intézve).",
+    currency: "EUR",
+    hotels: [
+      {
+        nights: "júl. 19 → 20", nightsShort: "1 éj",
+        name: "Guesthouse Vatnsholt", town: "Vatnsholt (Selfoss / Aranykör)",
+        room: "2 külön szoba", checkIn: "16:00–22:30", checkOut: "11:00-ig",
+        price: "€ 419,41", paid: false, extra: "Reggeli +€17/fő/éj",
+        conf: [{ code: "5334006598", pin: "9934" }, { code: "5525955235", pin: "5609" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=Guesthouse%20Vatnsholt%20Iceland",
+        rooms: [
+          { label: "Twin · privát fürdő", price: "€ 213,19", eur: 213.19 },
+          { label: "Twin · közös fürdő", price: "€ 206,22", eur: 206.22, guest: true }
+        ]
+      },
+      {
+        nights: "júl. 20 → 21", nightsShort: "1 éj",
+        name: "The Holiday Houses by Stay in Iceland", town: "Kirkjubæjarklaustur",
+        room: "Cottage 5 · 2 hálószobás faház (1 egység)", checkIn: "16:00–00:00", checkOut: "11:00-ig",
+        price: "€ 463,00", paid: true, extra: "Önellátó · egy ház, 3 fő közt osztva",
+        conf: [{ code: "6833528078", pin: "8005" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=The%20Holiday%20Houses%20by%20Stay%20in%20Iceland%20Kirkjubaejarklaustur",
+        rooms: [
+          { label: "Pár (2 fő) · 2/3", price: "€ 308,67", eur: 308.67 },
+          { label: "Vendég · 1/3", price: "€ 154,33", eur: 154.33, guest: true }
+        ]
+      },
+      {
+        nights: "júl. 21 → 22", nightsShort: "1 éj",
+        name: "Hótel Jökull", town: "Höfn",
+        room: "2 külön szoba · privát fürdős twin (17 m²)", checkIn: "15:30–22:00", checkOut: "07:00–11:00",
+        price: "€ 662,08", paid: true, extra: "Reggeli +€21/fő/éj",
+        conf: [{ code: "6333413453", pin: "4751" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=Hotel%20J%C3%B6kull%20H%C3%B6fn%20Iceland",
+        rooms: [
+          { label: "Twin · privát fürdő", price: "€ 331,04", eur: 331.04 },
+          { label: "Twin · privát fürdő", price: "€ 331,04", eur: 331.04, guest: true }
+        ]
+      },
+      {
+        nights: "júl. 22 → 23", nightsShort: "1 éj",
+        name: "Hótel Hallormsstaður", town: "Hallormsstaður (Egilsstaðir mellett)",
+        room: "2 külön szoba · 1 egyágyas + 1 dupla/twin", checkIn: "16:00–23:00", checkOut: "07:00–11:00",
+        price: "€ 587,25", paid: true, extra: "Reggeli az árban",
+        conf: [{ code: "5226042751", pin: "8702" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=Hotel%20Hallormsstadur%20Iceland",
+        rooms: [
+          { label: "Standard dupla/twin", price: "€ 314,28", eur: 314.28 },
+          { label: "Egyágyas", price: "€ 272,97", eur: 272.97, guest: true }
+        ]
+      },
+      {
+        nights: "júl. 23 → 24", nightsShort: "1 éj",
+        name: "G19 Boutique Apartments", town: "Akureyri",
+        room: "1 apartman · alagsor, 27 m², felszerelt konyha (1 egység)", checkIn: "16:00–23:00", checkOut: "07:00–11:00",
+        price: "€ 247,14", paid: true, extra: "Önellátó · egy apartman, 3 fő közt osztva",
+        conf: [{ code: "5293575048", pin: "9302" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=G19%20Boutique%20Apartments%20Akureyri",
+        rooms: [
+          { label: "Pár (2 fő) · 2/3", price: "€ 164,76", eur: 164.76 },
+          { label: "Vendég · 1/3", price: "€ 82,38", eur: 82.38, guest: true }
+        ]
+      },
+      {
+        nights: "júl. 24 → 25", nightsShort: "1 éj",
+        name: "Guesthouse Hof", town: "Hofgarðar, Snæfellsnes",
+        room: "2 külön szoba · privát fürdős twin + dupla/twin", checkIn: "15:00–20:00", checkOut: "11:00-ig",
+        price: "€ 278,10", paid: false, extra: "",
+        conf: [{ code: "5807093020", pin: "2118" }, { code: "5807078123", pin: "8149" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=Guesthouse%20Hof%20Hofgardar%20Snaefellsnes",
+        rooms: [
+          { label: "Dupla/twin", price: "€ 148,50", eur: 148.50 },
+          { label: "Twin · privát fürdő", price: "€ 129,60", eur: 129.60, guest: true }
+        ]
+      }
+    ],
+    hotelsTotal: "€ 2 656,98",
+    car: {
+      status: "booked",
+      rental: "Lava Car Rental",
+      category: "Dacia Duster (New Model) · manuális",
+      pickup: "KEF reptér · júl. 18. 18:30",
+      dropoff: "KEF reptér · júl. 26. 06:00",
+      dates: "8 nap · Full Protection biztosítás + útadó (Road Tax) · visszatéríthető",
+      price: "181 283 ISK (€ 1 262,86)",
+      paid: true,
+      conf: "ZMD4I5",
+      maps: "https://www.google.com/maps/search/?api=1&query=Lava%20Car%20Rental%20Keflavik%20Airport",
+      shares: [
+        { label: "Tibi · 1/3", price: "€ 420,95", eur: 420.95 },
+        { label: "Feleség · 1/3", price: "€ 420,95", eur: 420.95 },
+        { label: "Vendég · 1/3", price: "€ 420,95", eur: 420.95, guest: true }
+      ]
+    },
+    guestNote: "A vendég a saját részét fizeti minden szálláson: külön szobás helyen az olcsóbb szobát, egyben bérelt háznál/apartmannál a fejenkénti 1/3-ot — plusz a bérautó 1/3-át."
+  }
 };

@@ -47,7 +47,8 @@
       { id: "terkep", label: "🗺 Térkép" },
       { id: "info", label: "Info" },
       { id: "apps", label: "📱 App" },
-      { id: "budget", label: "💶 Költségvetés" }
+      { id: "budget", label: "💶 Költségvetés" },
+      { id: "extra", label: "✨ Extra" }
     ];
 
     const heroTitle = document.getElementById("hero-title");
@@ -843,6 +844,105 @@
       `;
     }
 
+    function renderIcelandBookings() {
+      const b = tripData.icelandBookings;
+      if (!b) return "";
+      const fmtEur = (n) => { const [i, d] = n.toFixed(2).split("."); return "€ " + i.replace(/\B(?=(\d{3})+(?!\d))/g, " ") + "," + d; };
+      const subPanel = (r, ico) => `
+        <div class="book-sub${r.guest ? " is-guest" : ""}">
+          <span class="book-sub-ico">${ico}</span>
+          <span class="book-sub-label">${r.label}</span>
+          <span class="book-sub-price">${r.price}</span>
+          ${r.guest ? `<span class="book-sub-you" title="vendég">👤</span>` : ""}
+        </div>`;
+      const hotelCard = (h) => `
+        <article class="book-card">
+          <div class="book-when">
+            <span class="book-dates">${h.nights}</span>
+            <span class="book-nights">${h.nightsShort || ""}</span>
+          </div>
+          <div class="book-body">
+            <div class="book-top">
+              <h4 class="book-name"><a href="${h.maps}" target="_blank" rel="noreferrer">${h.name}</a></h4>
+              <span class="book-price">${h.price}${h.paid ? ` <span class="book-paid">✅ fizetve</span>` : ` <span class="book-payloc">helyszínen</span>`}</span>
+            </div>
+            <div class="book-mid">
+              <div class="book-desc">
+                <div class="book-town">📍 ${h.town}</div>
+                <div class="book-room">🛏 ${h.room}${h.extra ? ` · <span class="book-extra">${h.extra}</span>` : ""}</div>
+                <div class="book-time">🕒 Érk. ${h.checkIn} · Táv. ${h.checkOut}</div>
+              </div>
+              ${h.rooms ? `<div class="book-subs">${h.rooms.map((r) => subPanel(r, "🛏")).join("")}</div>` : ""}
+            </div>
+            <div class="book-conf">
+              ${h.conf.map((c) => `<span class="book-chip">#${c.code} · PIN ${c.pin}</span>`).join("")}
+              <a class="source-chip" href="${h.maps}" target="_blank" rel="noreferrer">🗺 Térkép</a>
+            </div>
+          </div>
+        </article>`;
+      // Vendég fizetendő része: minden szálláson a vendég (olcsóbb) szobája + a bérautó 1/3-a
+      const guestRows = [];
+      let guestSum = 0;
+      (b.hotels || []).forEach((h) => {
+        const g = (h.rooms || []).find((r) => r.guest);
+        if (g) { guestRows.push({ label: `${h.name} · ${g.label}`, eur: g.eur }); guestSum += g.eur; }
+      });
+      const carGuest = b.car && b.car.shares ? b.car.shares.find((s) => s.guest) : null;
+      if (carGuest) { guestRows.push({ label: `${b.car.rental} · 1/3`, eur: carGuest.eur }); guestSum += carGuest.eur; }
+      const guestHtml = guestRows.length ? `
+        <div class="book-guest">
+          <div class="book-guest-title">👤 A vendég fizetendő része</div>
+          <div class="book-guest-rows">
+            ${guestRows.map((r) => `<div class="book-guest-row"><span>${r.label}</span><span>${fmtEur(r.eur)}</span></div>`).join("")}
+          </div>
+          <div class="book-guest-total"><span>Vendég összesen</span><strong>${fmtEur(guestSum)}</strong></div>
+          ${b.guestNote ? `<div class="book-guest-note">${b.guestNote}</div>` : ""}
+        </div>` : "";
+      const carHtml = b.car && b.car.status === "missing"
+        ? `<article class="book-card book-car is-missing">
+             <div class="book-when"><span class="book-dates">🚗 Bérautó</span></div>
+             <div class="book-body">
+               <div class="book-top"><h4 class="book-name">Bérautó — visszaigazolás hiányzik</h4></div>
+               <div class="book-carnote">⚠️ ${b.car.note}</div>
+             </div>
+           </article>`
+        : (b.car ? `<article class="book-card book-car">
+             <div class="book-when"><span class="book-dates">🚗 Bérautó</span></div>
+             <div class="book-body">
+               <div class="book-top">
+                 <h4 class="book-name">${b.car.rental || "Bérautó"}</h4>
+                 ${b.car.price ? `<span class="book-price">${b.car.price}${b.car.paid ? ` <span class="book-paid">✅ fizetve</span>` : ""}</span>` : ""}
+               </div>
+               <div class="book-mid">
+                 <div class="book-desc">
+                   ${b.car.category ? `<div class="book-room">🚗 ${b.car.category}</div>` : ""}
+                   ${b.car.pickup ? `<div class="book-town">📍 Átvétel: ${b.car.pickup}${b.car.dropoff ? ` · Leadás: ${b.car.dropoff}` : ""}</div>` : ""}
+                   ${b.car.dates ? `<div class="book-time">🕒 ${b.car.dates}</div>` : ""}
+                 </div>
+                 ${b.car.shares ? `<div class="book-subs">${b.car.shares.map((s) => subPanel(s, "👤")).join("")}</div>` : ""}
+               </div>
+               <div class="book-conf">
+                 ${b.car.conf ? `<span class="book-chip">#${b.car.conf}</span>` : ""}
+                 ${b.car.maps ? `<a class="source-chip" href="${b.car.maps}" target="_blank" rel="noreferrer">🗺 Térkép</a>` : ""}
+               </div>
+             </div>
+           </article>` : "");
+      return `
+        <details class="card section-card coll-card iz2-book-panel">
+          <summary class="coll-card-head">
+            <h3 class="info-title" style="margin:0;">🛏 ${b.title}</h3>
+            <span class="collapse-icon" aria-hidden="true">▾</span>
+          </summary>
+          <p class="info-text" style="margin:8px 0 14px;">${b.note}</p>
+          <div class="book-list">
+            ${b.hotels.map(hotelCard).join("")}
+            ${carHtml}
+          </div>
+          ${b.hotelsTotal ? `<div class="book-total">Szállás összesen: <strong>${b.hotelsTotal}</strong> <span class="book-total-note">(6 éj · a reykjavíki 1. éjszaka nélkül)</span></div>` : ""}
+          ${guestHtml}
+        </details>`;
+    }
+
     function renderIzland2() {
       const section = tripData.sections.izland2;
       const izl = tripData.sections.izland;
@@ -903,6 +1003,8 @@
           </section>
 
           ${section.practicalBox ? renderCollapseBox(section.practicalBox, false) : ""}
+
+          ${renderIcelandBookings()}
         </section>
       `;
     }
@@ -1200,6 +1302,112 @@
       `;
     }
 
+    function renderExtra() {
+      const ex = tripData.extraHighlights;
+      if (!ex) return `<section class="view" data-view="extra"></section>`;
+      const KIND = {
+        oldtown:   { emoji: "🏛️", label: "Óváros / negyed" },
+        castle:    { emoji: "🏰", label: "Vár / kastély" },
+        church:    { emoji: "⛪", label: "Templom" },
+        museum:    { emoji: "🖼️", label: "Múzeum" },
+        nature:    { emoji: "🌳", label: "Természet" },
+        viewpoint: { emoji: "📸", label: "Kilátó / fotó" },
+        market:    { emoji: "🛍️", label: "Piac" },
+        landmark:  { emoji: "📍", label: "Látványosság" }
+      };
+      const kindOf = (k) => KIND[k] || { emoji: "📍", label: "Látványosság" };
+      const fmt = (n) => (typeof n === "number" ? n.toLocaleString("hu-HU") : n);
+      const badgeHtml = (b) => {
+        const key = String(b).toLowerCase();
+        if (key.includes("unesco")) return `<span class="extra-badge extra-badge-unesco">🏛️ UNESCO</span>`;
+        if (key.includes("tripadvisor")) return `<span class="extra-badge extra-badge-ta">🟢 TripAdvisor Top</span>`;
+        if (key.includes("látogató")) return `<span class="extra-badge extra-badge-visit">👣 ${b}</span>`;
+        return `<span class="extra-badge">${b}</span>`;
+      };
+      // csoportosítás ország szerint, az items sorrendjében megjelenő országokkal
+      const order = [];
+      const byCountry = {};
+      ex.items.forEach((it) => {
+        if (!byCountry[it.country]) { byCountry[it.country] = []; order.push(it.country); }
+        byCountry[it.country].push(it);
+      });
+      const flag = ex.countryFlags || {};
+      const listHtml = order.map((country) => `
+        <h3 class="extra-country-head">${flag[country] || ""} ${country}</h3>
+        <div class="extra-list">
+          ${byCountry[country].map((it) => {
+            const kc = kindOf(it.category);
+            const photo = (it.photos && it.photos[0]) || "";
+            const ratingChip = it.rating != null
+              ? `<a class="extra-rating" href="${it.maps}" target="_blank" rel="noreferrer" title="Google Maps értékelés">⭐ ${it.rating}${it.reviews != null ? `<span class="extra-reviews">${fmt(it.reviews)} értékelés</span>` : ""}</a>${it.ratingNote ? `<span class="extra-rating-note">${it.ratingNote}</span>` : ""}`
+              : "";
+            const popular = (it.reviews != null && it.reviews >= 20000) ? `<span class="extra-badge extra-badge-hot">🔥 Népszerű</span>` : "";
+            const badges = popular + (it.badges || []).map(badgeHtml).join("");
+            const blogs = (it.blogs || []).map((b) => `<a class="source-chip" href="${b.url}" target="_blank" rel="noreferrer">📖 ${b.label}</a>`).join("");
+            return `
+              <article class="extra-card cat-${it.category}">
+                ${photo ? `<a class="extra-photo" href="${it.maps}" target="_blank" rel="noreferrer"><img loading="lazy" src="${photo}" alt="${it.name_hu}" onerror="this.closest('.extra-card').classList.add('no-photo')"></a>` : ""}
+                <div class="extra-body">
+                  <div class="extra-card-head">
+                    <h4 class="extra-name"><a href="${it.maps}" target="_blank" rel="noreferrer">${it.name_hu}</a>${it.name_local && it.name_local !== it.name_hu ? ` <span class="extra-name-local">${it.name_local}</span>` : ""}</h4>
+                    ${ratingChip}
+                  </div>
+                  <div class="extra-meta">📍 ${it.city} · ${kc.emoji} ${kc.label}</div>
+                  ${it.why ? `<p class="extra-why">${it.why}</p>` : ""}
+                  <p class="extra-summary">${it.summary}</p>
+                  <div class="extra-badges">
+                    ${badges}
+                    <a class="source-chip" href="${it.maps}" target="_blank" rel="noreferrer">🗺 Google Maps</a>
+                    ${blogs}
+                  </div>
+                </div>
+              </article>`;
+          }).join("")}
+        </div>`).join("");
+
+      return `
+        <section class="view" data-view="extra">
+          <div class="section-head">
+            <div>
+              <h2><span>${ex.kicker}</span>${ex.title}</h2>
+            </div>
+            <div class="country-pill baltic">${ex.pill || "Útközben + 100 km-es körzet"}</div>
+          </div>
+
+          <details class="country-context baltic" open>
+            <summary class="collapse-summary">
+              <span>📋 Mi ez az oldal?</span>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <div class="country-context-body">
+              ${(ex.intro || []).map((p) => `<p class="section-intro">${p}</p>`).join("")}
+            </div>
+          </details>
+
+          <details class="card section-card coll-card iz2-map-panel" open>
+            <summary class="coll-card-head">
+              <h3 class="info-title" style="margin:0;">🗺 Extra látnivalók térképe</h3>
+              <span class="collapse-icon" aria-hidden="true">▾</span>
+            </summary>
+            <p class="info-text" style="margin:8px 0 14px;">${ex.mapNote || ""}</p>
+            <div class="map-filter-wrap">
+              <div class="travel-map-wrap">
+                <div id="extra-map" style="width:100%;height:100%;"></div>
+                <div class="tm-overlay">
+                  <div class="tm-spinner"></div>
+                  <span>Térkép betöltése…</span>
+                </div>
+              </div>
+              <aside class="dm-filter-sidebar" id="extra-map-filter"></aside>
+            </div>
+            <div class="iz2-legend" id="extra-legend"></div>
+          </details>
+
+          ${listHtml}
+        </section>
+      `;
+    }
+
     function renderPractical() {
       return `
         <section class="view" data-view="practical">
@@ -1372,7 +1580,8 @@
       renderMap(),
       renderInfo(),
       renderApps(),
-      renderBudget()
+      renderBudget(),
+      renderExtra()
     ].join("");
 
     function readPageState() {
@@ -2342,6 +2551,149 @@
       setTimeout(initOverview, 30);
       if (document.querySelector('.view.is-active[data-view="terkep"]')) {
         setTimeout(() => buildFullTripMap(TERKEP), 0);
+      }
+    })();
+  </script>
+
+  <!-- Extra — a Stockholmig vezető út legtöbbet emlegetett megállói (ország-színek + szűrő + reset) -->
+  <script>
+    (function () {
+      const ex = (typeof tripData !== "undefined" ? tripData : null)?.extraHighlights;
+      if (!ex || !ex.items) return;
+      let inited = false;
+
+      const KIND = {
+        oldtown:   { emoji: "🏛️", label: "Óváros / negyed" },
+        castle:    { emoji: "🏰", label: "Vár / kastély" },
+        church:    { emoji: "⛪", label: "Templom" },
+        museum:    { emoji: "🖼️", label: "Múzeum" },
+        nature:    { emoji: "🌳", label: "Természet" },
+        viewpoint: { emoji: "📸", label: "Kilátó / fotó" },
+        market:    { emoji: "🛍️", label: "Piac" },
+        landmark:  { emoji: "📍", label: "Látványosság" }
+      };
+      const kindOf = (k) => KIND[k] || { emoji: "📍", label: "Látványosság" };
+      const fmt = (n) => (typeof n === "number" ? n.toLocaleString("hu-HU") : n);
+      const COUNTRY_COLOR = ex.countryColors || {
+        "Litvánia": "#8a4f24", "Lettország": "#b8860b", "Észtország": "#6a4ca3",
+        "Finnország": "#1d6fa4", "Svédország": "#1f5a3e"
+      };
+      const flag = ex.countryFlags || {};
+
+      function init() {
+        if (inited) return;
+        const L = window.L;
+        const el = document.getElementById("extra-map");
+        if (!L || !el) return;
+        inited = true;
+        const wrap = el.closest(".travel-map-wrap");
+        const overlay = wrap && wrap.querySelector(".tm-overlay");
+
+        const map = L.map("extra-map", { scrollWheelZoom: false }).setView([58, 22], 5);
+        window._leafletMaps = window._leafletMaps || {};
+        window._leafletMaps["extra-map"] = map;
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 19
+        }).addTo(map);
+
+        const markerList = [], bounds = [];
+        ex.items.forEach((s) => {
+          if (s.lat == null || s.lng == null) return;
+          bounds.push([s.lat, s.lng]);
+          const kc = kindOf(s.category);
+          const size = 30;
+          const color = COUNTRY_COLOR[s.country] || "#8a4f24";
+          const icon = L.divIcon({
+            className: "",
+            html: `<div class="iz2-pin" style="--c:${color};width:${size}px;height:${size}px"><span>${kc.emoji}</span></div>`,
+            iconSize: [size, size], iconAnchor: [size / 2, size / 2], popupAnchor: [0, -size / 2]
+          });
+          const m = L.marker([s.lat, s.lng], { icon, riseOnHover: true }).addTo(map);
+          const photo = (s.photos && s.photos[0]) || "";
+          const rate = s.rating != null
+            ? `<div class="iz2-pp-d">⭐ ${s.rating}${s.reviews != null ? ` · ${fmt(s.reviews)} értékelés` : ""}</div>` : "";
+          m.bindPopup(
+            `<div class="iz2-pp extra-pp">` +
+            (photo ? `<img class="extra-pp-img" src="${photo}" alt="${s.name_hu}" onerror="this.style.display='none'">` : "") +
+            `<div class="iz2-pp-t">${s.name_hu}</div>` +
+            `<div class="iz2-pp-d">${flag[s.country] || ""} ${s.city} · ${kc.emoji} ${kc.label}</div>` +
+            rate +
+            `<div class="iz2-pp-n">${s.summary || ""}</div>` +
+            `<a class="tm-popup-link" href="${s.maps}" target="_blank" rel="noreferrer">🗺 Google Maps</a>` +
+            `</div>`,
+            { maxWidth: 260 }
+          );
+          markerList.push({ marker: m, country: s.country });
+        });
+        const initialBounds = bounds.length ? L.latLngBounds(bounds) : null;
+        if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] });
+
+        // Reset gomb
+        const ResetCtl = L.Control.extend({
+          options: { position: "topright" },
+          onAdd() {
+            const b = L.DomUtil.create("button", "iz2-reset-btn");
+            b.type = "button"; b.title = "Vissza a teljes nézetre"; b.setAttribute("aria-label", "Vissza a teljes nézetre"); b.innerHTML = "⤢";
+            L.DomEvent.disableClickPropagation(b);
+            L.DomEvent.on(b, "click", (e) => { L.DomEvent.stop(e); if (initialBounds) map.fitBounds(initialBounds, { padding: [40, 40] }); });
+            return b;
+          }
+        });
+        map.addControl(new ResetCtl());
+
+        // Szűrő-sidebar (Ország szerint)
+        const sidebar = document.getElementById("extra-map-filter");
+        const presentCountries = [...new Set(ex.items.map((s) => s.country))];
+        if (sidebar && !sidebar.childElementCount) {
+          const state = { countries: new Set(presentCountries) };
+          function applyFilter() {
+            for (const item of markerList) {
+              const vis = state.countries.has(item.country);
+              if (vis) { if (!map.hasLayer(item.marker)) map.addLayer(item.marker); }
+              else { if (map.hasLayer(item.marker)) map.removeLayer(item.marker); }
+            }
+          }
+          const header = document.createElement("div"); header.className = "dm-sidebar-header"; header.textContent = "Országok"; sidebar.appendChild(header);
+          const sec2 = document.createElement("div"); sec2.className = "dm-filter-section";
+          const head = document.createElement("div"); head.className = "dm-filter-section-head";
+          const acts = document.createElement("span"); acts.className = "dm-filter-actions";
+          const allB = document.createElement("button"); allB.className = "dm-btn-all"; allB.type = "button"; allB.textContent = "Mind";
+          const noneB = document.createElement("button"); noneB.className = "dm-btn-none"; noneB.type = "button"; noneB.textContent = "Egyik sem";
+          acts.append(allB, noneB); head.appendChild(acts); sec2.appendChild(head);
+          const body = document.createElement("div"); body.className = "dm-filter-section-body";
+          const cbs = [];
+          presentCountries.forEach((c) => {
+            const lbl = document.createElement("label"); lbl.className = "dm-filter-row";
+            const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = true;
+            cb.addEventListener("change", () => { if (cb.checked) state.countries.add(c); else state.countries.delete(c); applyFilter(); });
+            cbs.push(cb);
+            const span = document.createElement("span"); span.className = "dm-filter-label";
+            const dot = document.createElement("span"); dot.className = "dm-dot"; dot.style.background = COUNTRY_COLOR[c] || "#8a4f24"; span.appendChild(dot);
+            span.appendChild(document.createTextNode(`${flag[c] || ""} ${c}`));
+            lbl.append(cb, span); body.appendChild(lbl);
+          });
+          allB.addEventListener("click", () => { presentCountries.forEach((c) => state.countries.add(c)); cbs.forEach((c) => c.checked = true); applyFilter(); });
+          noneB.addEventListener("click", () => { state.countries.clear(); cbs.forEach((c) => c.checked = false); applyFilter(); });
+          sec2.appendChild(body); sidebar.appendChild(sec2);
+        }
+
+        // Jelmagyarázat
+        const leg = document.getElementById("extra-legend");
+        if (leg && !leg.childElementCount) {
+          presentCountries.forEach((c) => { const sp = document.createElement("span"); sp.innerHTML = `<span class="iz2-dot" style="background:${COUNTRY_COLOR[c] || "#8a4f24"}"></span>${flag[c] || ""} ${c}`; leg.appendChild(sp); });
+        }
+
+        if (overlay) overlay.classList.add("tm-hidden");
+        setTimeout(() => { try { map.invalidateSize(); } catch (_) {} }, 60);
+      }
+
+      const original = window.activateTab;
+      window.activateTab = function (id) {
+        if (typeof original === "function") original.apply(this, arguments);
+        if (id === "extra") setTimeout(init, 0);
+      };
+      if (document.querySelector('.view.is-active[data-view="extra"]')) {
+        setTimeout(init, 0);
       }
     })();
   </script>
