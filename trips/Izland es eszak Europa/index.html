@@ -936,7 +936,7 @@
             ${b.hotels.map(hotelCard).join("")}
             ${carHtml}
           </div>
-          ${b.hotelsTotal ? `<div class="book-total">Szállás összesen: <strong>${b.hotelsTotal}</strong> <span class="book-total-note">(6 éj · a reykjavíki 1. éjszaka nélkül)</span></div>` : ""}
+          ${b.hotelsTotal ? `<div class="book-total">Szállás összesen: <strong>${b.hotelsTotal}</strong> <span class="book-total-note">${b.hotelsTotalNote || "(a reykjavíki 1. éjszaka nélkül)"}</span></div>` : ""}
           ${guestHtml}
         </details>`;
     }

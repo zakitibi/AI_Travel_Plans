@@ -2650,11 +2650,11 @@ const tripData = {
   },
   costPlan: {
     summary: {
-      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 éj, 3 fő, € 2 657) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Izlandon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
+      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 köztes éj 3 főre € 2 657 + a záró keflavíki éj 2 főre € 198) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Izlandon a köztes napokon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A záró keflavíki éjszakára már csak Tibi + Henni megy. A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
       grandTotal: {
-        tibi: "~5 270 EUR",
-        henni: "~3 590 EUR",
-        together: "~8 860 EUR"
+        tibi: "~5 370 EUR",
+        henni: "~3 690 EUR",
+        together: "~9 060 EUR"
       },
       alreadyBooked: [
         "Henni: Wizz Air W62427 BUD → KEF, 2026.07.11 (Erasmus+ finanszírozott lehet) · a kurzus díja €630/fő szintén Erasmus+ keretből",
@@ -2663,7 +2663,7 @@ const tripData = {
       ],
       totals: [
         { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 680 EUR", person: "Tibi egyedül · saját autó · becslés" },
-        { label: "2. szakasz · Izland", value: "~4 115 EUR", person: "Tibi + Henni · ~2 060 EUR/fő · foglalt árak · vendég külön ~2 520 EUR" },
+        { label: "2. szakasz · Izland", value: "~4 315 EUR", person: "Tibi + Henni · ~2 155 EUR/fő · foglalt árak · vendég külön ~2 520 EUR" },
         { label: "3. szakasz · Hazaút", value: "~3 070 EUR", person: "Tibi + Henni · ~1 535 EUR/fő · becslés" }
       ]
     },
@@ -2728,8 +2728,8 @@ const tripData = {
         subtitle: "Tibi + Henni + 1 vendég · 3 fő · bérautó · 2026. júl. 18–26. · 8 nap · ~2 160 km · (a lenti tételek Tibi + Henni része, a vendég külön fizet)",
         car: "Lava Car Rental · Dacia Duster (New Model, manuális) · Full Protection + útadó az árban · ~7 L/100 km",
         km: "~2 160 km",
-        total: "~4 115 EUR (Tibi + Henni)",
-        totalPerPerson: "~2 060 EUR/fő",
+        total: "~4 315 EUR (Tibi + Henni)",
+        totalPerPerson: "~2 155 EUR/fő",
         categories: [
           {
             icon: "🚗",
@@ -2754,6 +2754,12 @@ const tripData = {
             label: "Reykjavík · 1. éj (júl. 18–19)",
             value: "~160 EUR",
             detail: "Az érkezés utáni első reykjavíki éjszaka — a foglalási panel szerint KÜLÖN intézve, még nincs végleges ár rögzítve · becslés 2 főre egy 3* dupla szobára · pontosítandó foglaláskor"
+          },
+          {
+            icon: "🛏",
+            label: "Keflavík · záró éj (júl. 25–26)",
+            value: "~198 EUR",
+            detail: "Nupan Deluxe (Aðalgata 10, Keflavík) · Deluxe Double Room zuhannyal · a reptér melletti utolsó éj a júl. 26-i FI306 előtt · FOGLALVA (#6825780665 · PIN 1558) · ide már csak Tibi + Henni megy, NINCS 3-fős osztás — a teljes 198 EUR kettejüké · Booking automatikusan terheli a kártyát, ingyen lemondható júl. 17-ig"
           },
           {
             icon: "🛒",
@@ -3432,7 +3438,7 @@ const tripData = {
   },
   icelandBookings: {
     title: "Foglalások — szállás & autó",
-    note: "3 fő utazik (Tibi + Henni + 1 vendég), ezért mindenhol 2 szoba (vagy egy több hálós ház) van foglalva. Minden foglalásnál külön panelen a két szoba (illetve egyben bérelt egységnél a felezett ár), a bérautónál a 3 főre osztott rész. A júl. 18–19. reykjavíki első éjszaka nincs ezek közt (külön intézve).",
+    note: "3 fő utazik (Tibi + Henni + 1 vendég), ezért a köztes éjszakákon mindenhol 2 szoba (vagy egy több hálós ház) van foglalva. Minden foglalásnál külön panelen a két szoba (illetve egyben bérelt egységnél a felezett ár), a bérautónál a 3 főre osztott rész. A júl. 18–19. reykjavíki első éjszaka nincs ezek közt (külön intézve). A júl. 25–26. záró keflavíki éjszakára már csak Tibi + Henni megy — ott nincs 3-fős osztás.",
     currency: "EUR",
     hotels: [
       {
@@ -3506,9 +3512,18 @@ const tripData = {
           { label: "Dupla/twin", price: "€ 148,50", eur: 148.50 },
           { label: "Twin · privát fürdő", price: "€ 129,60", eur: 129.60, guest: true }
         ]
+      },
+      {
+        nights: "júl. 25 → 26", nightsShort: "1 éj",
+        name: "Nupan Deluxe", town: "Keflavík (KEF reptér közeli)",
+        room: "Deluxe Double Room · zuhany · 2 fő", checkIn: "15:00–23:00", checkOut: "11:00-ig",
+        price: "€ 198", paid: false, twoPax: true, extra: "Záró éj — csak Tibi + Henni, nincs 3-fős osztás · Booking automatikusan terheli a kártyát · ingyen lemondható júl. 17-ig",
+        conf: [{ code: "6825780665", pin: "1558" }],
+        maps: "https://www.google.com/maps/search/?api=1&query=Nupan%20Deluxe%20A%C3%B0algata%2010%20Keflav%C3%ADk"
       }
     ],
-    hotelsTotal: "€ 2 656,98",
+    hotelsTotal: "€ 2 854,98",
+    hotelsTotalNote: "(7 foglalt éj · a reykjavíki 1. éj külön intézve · a záró keflavíki éj 2 fő, osztás nélkül)",
     car: {
       status: "booked",
       rental: "Lava Car Rental",
@@ -3526,6 +3541,6 @@ const tripData = {
         { label: "Vendég · 1/3", price: "€ 420,95", eur: 420.95, guest: true }
       ]
     },
-    guestNote: "A vendég a saját részét fizeti minden szálláson: külön szobás helyen az olcsóbb szobát, egyben bérelt háznál/apartmannál a fejenkénti 1/3-ot — plusz a bérautó 1/3-át."
+    guestNote: "A vendég a saját részét fizeti a köztes szállásokon: külön szobás helyen az olcsóbb szobát, egyben bérelt háznál/apartmannál a fejenkénti 1/3-ot — plusz a bérautó 1/3-át. A záró keflavíki éjszaka (Nupan Deluxe) kivétel: oda már csak Tibi + Henni megy, a vendégre nem esik belőle."
   }
 };
