@@ -2650,21 +2650,21 @@ const tripData = {
   },
   costPlan: {
     summary: {
-      note: "Becslések — a repülőjegyek már foglaltak és nem szerepelnek a főösszegben. A GLC AMG 43 fogyasztása ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami minden országban 0,20–0,40 EUR/L-rel drágább a normál 95-ös szintnél.",
+      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 éj, 3 fő, € 2 657) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Izlandon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
       grandTotal: {
-        tibi: "~5 430 EUR",
-        henni: "~3 750 EUR",
-        together: "~9 180 EUR"
+        tibi: "~5 270 EUR",
+        henni: "~3 590 EUR",
+        together: "~8 860 EUR"
       },
       alreadyBooked: [
-        "Henni: Wizz Air W62427 BUD → KEF, 2026.07.11 (Erasmus+ finanszírozott lehet)",
+        "Henni: Wizz Air W62427 BUD → KEF, 2026.07.11 (Erasmus+ finanszírozott lehet) · a kurzus díja €630/fő szintén Erasmus+ keretből",
         "Tibi: Icelandair FI309 ARN → KEF, 2026.07.18 — referencia ár: ~360–420 EUR",
         "Tibi + Henni: Icelandair FI306 KEF → ARN, 2026.07.26 — referencia ár: ~400–500 EUR/fő"
       ],
       totals: [
-        { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 680 EUR", person: "Tibi egyedül · saját autó" },
-        { label: "2. szakasz · Izland", value: "~4 430 EUR", person: "Tibi + Henni ketten · ~2 215 EUR/fő" },
-        { label: "3. szakasz · Hazaút", value: "~3 070 EUR", person: "Tibi + Henni ketten · ~1 535 EUR/fő" }
+        { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 680 EUR", person: "Tibi egyedül · saját autó · becslés" },
+        { label: "2. szakasz · Izland", value: "~4 115 EUR", person: "Tibi + Henni · ~2 060 EUR/fő · foglalt árak · vendég külön ~2 520 EUR" },
+        { label: "3. szakasz · Hazaút", value: "~3 070 EUR", person: "Tibi + Henni · ~1 535 EUR/fő · becslés" }
       ]
     },
     sections: [
@@ -2725,41 +2725,41 @@ const tripData = {
         id: "izland",
         title: "2. szakasz · Izland · Ring Road",
         accent: "accent-iceland",
-        subtitle: "Tibi + Henni · bérautó · 2026. júl. 18–26. · 8 nap · ~2 160 km",
-        car: "Bérautó 4×4 SUV (pl. Toyota RAV4 / Dacia Duster) · SCDW + GP kötelező · 95-ös benzin · ~9 L/100 km",
+        subtitle: "Tibi + Henni + 1 vendég · 3 fő · bérautó · 2026. júl. 18–26. · 8 nap · ~2 160 km · (a lenti tételek Tibi + Henni része, a vendég külön fizet)",
+        car: "Lava Car Rental · Dacia Duster (New Model, manuális) · Full Protection + útadó az árban · ~7 L/100 km",
         km: "~2 160 km",
-        total: "~4 430 EUR (2 főre)",
-        totalPerPerson: "~2 215 EUR/fő",
+        total: "~4 115 EUR (Tibi + Henni)",
+        totalPerPerson: "~2 060 EUR/fő",
         categories: [
           {
             icon: "🚗",
-            label: "Bérautó · 8 nap",
-            value: "~1 360 EUR",
-            detail: "~170 EUR/nap júliusi csúcsszezonban · 4×4 SUV kategória ajánlott, de Ring Road (1) aszfaltozott — kisebb autó is megy · Foglalj Hertz/Avis/Budget/Saga előre, mert júliusban elfogynak az autók!"
-          },
-          {
-            icon: "🛡",
-            label: "Bérautó biztosítás · SCDW + GP",
-            value: "~240 EUR",
-            detail: "Super CDW (ütközésvédelem deductible nullára): ~15 EUR/nap · GP (Gravel/kőfelverődés): ~10 EUR/nap · SAAP (homok+vulkáni hamu): ~5 EUR/nap opcionális · Izlandon NEM hagyható ki — a kavics és szél súlyos károkat okoz!"
+            label: "Bérautó · 8 nap · FOGLALVA ✅",
+            value: "~842 EUR",
+            detail: "Lava Car Rental · Dacia Duster (New Model, manuális) · teljes autó 181 283 ISK (€ 1 262,86), Full Protection biztosítás + útadó AZ ÁRBAN (nincs külön SCDW/GP tétel) · KIFIZETVE · foglalás: ZMD4I5 · átvétel KEF júl. 18. 18:30, leadás júl. 26. 06:00 · 3 fő közt osztva → Tibi + Henni 2/3 = € 841,90 (a vendég a maradék 1/3-ot, € 420,95-öt fizeti)"
           },
           {
             icon: "⛽",
-            label: "Üzemanyag · Izland (95-ös)",
-            value: "~460 EUR",
-            detail: "~2 160 km × 9 L/100 km = ~194 L × 2,50 EUR/L (izlandi átlag, 2026 becslés) · Izlandon 100 oktán nem szükséges a bérautóhoz! · Mývatn–Egilsstaðir között nagyon ritka a kút — tankolj Mývatnnál indulás előtt"
+            label: "Üzemanyag · Izland (2/3 rész)",
+            value: "~250 EUR",
+            detail: "Dacia Duster ~7 L/100 km · 2 160 km × 7 L = ~151 L × 2,45 EUR/L ≈ € 370 teljes tankolás · 3 fő közt osztva → 2/3 ≈ € 250 · Mývatn–Egilsstaðir között nagyon ritka a kút — tankolj Mývatnnál indulás előtt"
           },
           {
             icon: "🏨",
-            label: "Szállás · 8 éjszaka (2 fő)",
-            value: "~1 040 EUR",
-            detail: "Izlandi szállás drága! Átlag ~130 EUR/éj double szoba · Reykjavík 2 éj: ~160 EUR/éj · Snæfellsnes / Varmahlíð 1 éj: ~120 EUR · Mývatn 1 éj: ~125 EUR · Egilsstaðir 1 éj: ~110 EUR · Jökulsárlón körzet 1 éj: ~120 EUR · Hella 1 éj: ~115 EUR · KEF körzet 1 éj: ~135 EUR"
+            label: "Szállás · 6 foglalt éj (Tibi + Henni rész)",
+            value: "~1 480 EUR",
+            detail: "6 foglalt éj júl. 19–25. (a teljes foglalt összeg 3 főre € 2 656,98) · Vatnsholt / Kirkjubæjarklaustur / Höfn (Jökull) / Hallormsstaður / Akureyri (G19) / Snæfellsnes (Hof) · nagyrészt KIFIZETVE, Booking.com · a vendég a saját (olcsóbb) szobáját/1-3-át fizeti (€ 1 176,54) — a fenti € 1 480,44 Tibi + Henni közös része, fejenként ~€ 740"
+          },
+          {
+            icon: "🛏",
+            label: "Reykjavík · 1. éj (júl. 18–19)",
+            value: "~160 EUR",
+            detail: "Az érkezés utáni első reykjavíki éjszaka — a foglalási panel szerint KÜLÖN intézve, még nincs végleges ár rögzítve · becslés 2 főre egy 3* dupla szobára · pontosítandó foglaláskor"
           },
           {
             icon: "🛒",
             label: "Étkezés · 8 nap (2 fő)",
             value: "~800 EUR",
-            detail: "~50 EUR/fő/nap: Bónus-bevásárlós reggeli+snack (~10 EUR/fő) + 1 éttermi ebéd/vacsora (~25–35 EUR/fő) · Izland NAGYON drága — teli hassal ne menj étterembe · Bónusnál érdemes az első napon feltankolni étellel is"
+            detail: "~50 EUR/fő/nap: Bónus-bevásárlós reggeli+snack (~10 EUR/fő) + 1 éttermi ebéd/vacsora (~25–35 EUR/fő) · Izland NAGYON drága — teli hassal ne menj étterembe · Bónusnál érdemes az első napon feltankolni étellel is · több szállás önellátó (Kirkjubæjarklaustur faház, Akureyri apartman)"
           },
           {
             icon: "♨",
@@ -2787,9 +2787,9 @@ const tripData = {
           },
           {
             icon: "🅿",
-            label: "Parkolók + Vaðlaheiðargöng alagút",
-            value: "~72 EUR",
-            detail: "Kirkjufell: 1 000 ISK (~7 EUR) · Stuðlagil nyugati: 1 500 ISK (~11 EUR) · Múlagljúfur: 1 000 ISK (~7 EUR) · Kerið: 800 ISK (~6 EUR) · Vaðlaheiðargöng alagút: 1 600 ISK (~12 EUR) · Egyéb NP parkolók: ~30 EUR · Alagútnál regisztrálj tunnel.is-en INDULÁS ELŐTT!"
+            label: "Parkolók + Vaðlaheiðargöng alagút (2/3 rész)",
+            value: "~48 EUR",
+            detail: "Teljes ~72 EUR, 3 fő közt osztva → 2/3 ≈ 48 EUR · Kirkjufell: 1 000 ISK (~7 EUR) · Stuðlagil nyugati: 1 500 ISK (~11 EUR) · Múlagljúfur: 1 000 ISK (~7 EUR) · Kerið: 800 ISK (~6 EUR) · Vaðlaheiðargöng alagút: 1 600 ISK (~12 EUR) · Egyéb NP parkolók: ~30 EUR · Alagútnál regisztrálj tunnel.is-en INDULÁS ELŐTT!"
           }
         ]
       },
