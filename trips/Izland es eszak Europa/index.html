@@ -1322,10 +1322,12 @@
         if (key.includes("látogató")) return `<span class="extra-badge extra-badge-visit">👣 ${b}</span>`;
         return `<span class="extra-badge">${b}</span>`;
       };
-      // csoportosítás ország szerint, az items sorrendjében megjelenő országokkal
+      // A kártyalista CSAK a városokon kívüli megállókat mutatja (a városi látnivalók
+      // a lenyitható városi panelekben vannak). Csoportosítás ország szerint.
       const order = [];
       const byCountry = {};
       ex.items.forEach((it) => {
+        if (!it.offCity) return;
         if (!byCountry[it.country]) { byCountry[it.country] = []; order.push(it.country); }
         byCountry[it.country].push(it);
       });
@@ -1362,6 +1364,37 @@
               </article>`;
           }).join("")}
         </div>`).join("");
+
+      // Lenyitható városi panelek — városonként a fő látnivalók képekkel
+      const cityGuidesHtml = (ex.cityGuides || []).map((cg) => `
+        <details class="extra-city-panel">
+          <summary class="extra-city-head">
+            <span class="ecp-flag">${flag[cg.country] || ""}</span>
+            <span class="ecp-city">${cg.city}</span>
+            <span class="ecp-count">${cg.sights.length} látnivaló</span>
+            <span class="collapse-icon" aria-hidden="true">▾</span>
+          </summary>
+          <div class="extra-city-body">
+            ${cg.intro ? `<p class="extra-city-intro">${cg.intro}</p>` : ""}
+            <div class="extra-city-grid">
+              ${cg.sights.map((s) => {
+                const sk = kindOf(s.category);
+                return `
+                  <a class="ecs-card" href="${s.maps}" target="_blank" rel="noreferrer">
+                    ${s.photo ? `<div class="ecs-photo"><img loading="lazy" src="${s.photo}" alt="${s.name_hu}" onerror="this.closest('.ecs-card').classList.add('no-photo')"></div>` : ""}
+                    <div class="ecs-body">
+                      <div class="ecs-top">
+                        <span class="ecs-name">${s.name_hu}</span>
+                        ${s.rating != null ? `<span class="ecs-rate">⭐ ${s.rating}</span>` : ""}
+                      </div>
+                      <div class="ecs-local">${sk.emoji} ${s.name_local || ""}</div>
+                      <p class="ecs-desc">${s.desc || ""}</p>
+                    </div>
+                  </a>`;
+              }).join("")}
+            </div>
+          </div>
+        </details>`).join("");
 
       return `
         <section class="view" data-view="extra">
@@ -1401,6 +1434,10 @@
             <div class="iz2-legend" id="extra-legend"></div>
           </details>
 
+          <h3 class="extra-block-head">🏙 Városok és fő látnivalóik <span>kattints egy városra a látnivalók kibontásához</span></h3>
+          <div class="extra-city-panels">${cityGuidesHtml}</div>
+
+          <h3 class="extra-block-head">📍 Városokon kívül — hova még a Baltikumban <span>a fővárosokon túli megállók, mind a térképen is jelölve</span></h3>
           ${listHtml}
         </section>
       `;
