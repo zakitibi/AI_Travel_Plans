@@ -3273,3 +3273,31 @@ details.coll-card[open] > summary .collapse-icon {
   .extra-city-body { padding: 0 14px 14px; }
   .ecs-photo img { height: 150px; }
 }
+
+/* ===== Bérautó — reptéri átvétel/leadás infó blokk ===== */
+.book-carinfo {
+  margin: 10px 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--green);
+  border-radius: 12px;
+}
+.book-carinfo-row {
+  display: flex;
+  gap: 9px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.book-carinfo-row strong { color: var(--ink); }
+.book-carinfo-ico {
+  flex: 0 0 auto;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.book-car .book-town a { color: var(--green); font-weight: 600; text-decoration: none; }
+.book-car .book-town a:hover { text-decoration: underline; }
