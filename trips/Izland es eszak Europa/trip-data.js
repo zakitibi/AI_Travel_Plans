@@ -147,7 +147,7 @@ const tripData = {
           baggage: "Kis táska + kézipoggyász (20×40×55 cm, max. 10 kg) · Nincs feladott poggyász",
           links: [
             { label: "Icelandair", url: "https://www.icelandair.com/" },
-            { label: "Swedavia parking", url: "https://www.swedavia.se/en/arlanda/parking/" },
+            { label: "🅿 ARN Långtidsparkering (#127891)", url: "https://arnlangtidsparkering.se" },
             { label: "Icelandair check-in", url: "https://www.icelandair.com/travel-info/check-in/" }
           ]
         },
@@ -834,7 +834,7 @@ const tripData = {
           links: [
             { label: "Tallink Tallinn–Stockholm ferry", url: "https://www.tallink.com/dk-en/travelling/one-way/tallinn-stockholm-ferry" },
             { label: "Tallink Helsinki–Tallinn shuttle", url: "https://www.siljatallink.fi/en/web/int/tallink-shuttle-megastar-helsinki-tallinn-helsinki" },
-            { label: "Swedavia Arlanda parking", url: "https://www.swedavia.se/en/arlanda/parking/" }
+            { label: "ARN Långtidsparkering (foglalt)", url: "https://arnlangtidsparkering.se" }
           ]
         }
       ],
@@ -1129,14 +1129,14 @@ const tripData = {
           ],
           activities: [
             { time: "06:30", icon: "⚓", name: "Stockholm Värtahamnen — Viking Line érkezés", detail: "Korai érkezés sokkal jobb puffert ad az FI309 előtt. Värtahamnentől Arlandáig ~35 perc az E4-esen." },
-            { time: "07:00–14:00", icon: "☕", name: "Stockholm reggel + Arlanda parking", detail: "Ha energiátok van, Gamla Stan vagy a kikötő rövid séta lehetőség. P2 Beta vagy Flygets P1 parkolóba az autó." },
+            { time: "07:00–14:00", icon: "☕", name: "Stockholm reggel + Arlanda parking", detail: "Ha energiátok van, Gamla Stan vagy a kikötő rövid séta lehetőség. Az autó a <strong>foglalt ARN Långtidsparkering</strong>-be megy (Elkraftsgatan 7, Arlandastad — foglalás #127891, kifizetve), onnan <strong>transzfer</strong> visz a terminálhoz. Ez külső telephely, nem a reptéri parkolóház, ezért számolj a transzfer idejével a check-in előtt." },
             { time: "14:30–16:30", icon: "🛂", name: "Arlanda check-in és security", detail: "Júliusban a security sor akár 1-1,5 óra is lehet. FI309 gate általában a Sky City közelében." },
             { time: "17:10", icon: "✈", name: "Icelandair FI309", detail: "Stockholm / Arlanda (ARN) → Reykjavík / Keflavík (KEF), helyi idő szerint 17:10 → 18:25 (helyi izlandi idő)." }
           ],
           notes: [
             "Ezzel a nappal zárul Tibi külön balti-felvezető szakasza, és indul a közös izlandi rész.",
             "A Viking Line-os 06:30-as érkezés ~10 óra puffert ad az FI309 előtt — sokkal stresszmentes, mint a korábbi 10:00-as érkezéses terv.",
-            "Arlanda parking: Szwedavia P2 Beta long-term (előre foglalva olcsóbb). Az auto a visszaút után kell.",
+            "Arlanda parking: ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad) — foglalva és kifizetve, #127891, 795 SEK, transzferrel. Az autó a júl. 26-i visszaút után kell.",
             "Gamla Stan (Stockholm óváros): ha van energiátok a reggeli kompérkezés után, 2-3 óra alatt szépen körbejárható."
           ]
         }
@@ -2015,14 +2015,14 @@ const tripData = {
             { label: "Monteliusvägen", cls: "tag-focus" }
           ],
           activities: [
-            { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík/Keflavík → Stockholm/Arlanda, 07:35 → 12:45. Az autót az Arlanda P2 Beta vagy Flygets P1 parkolóban hagyjuk (másnap kivesszük). Tömegközlekedéssel be a városba: Arlanda Express (~20 perc, 300 SEK) vagy pendelbuss (~45 perc, olcsóbb)." },
+            { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík/Keflavík → Stockholm/Arlanda, 07:35 → 12:45. Érkezés után <strong>transzfer az ARN Långtidsparkering telephelyre</strong> (Elkraftsgatan 7) az autóért. ⚠️ A parkolás-foglalás (#127891) <strong>júl. 26-án lejár</strong> — a 3 stockholmi városnapra (júl. 26–28.) külön kell dönteni: vagy hosszabbítás/új parkolás Arlandánál + Arlanda Express (~20 perc, 300 SEK) a városba, vagy behajtás Stockholmba és belvárosi P-ház a szállásnál." },
             { time: "14:00", icon: "🏘", name: "<a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) — Stortorget + Storkyrkan", duration: "~1 óra", mapName: "Gamla Stan", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Stortorget+Stockholm+Gamla+Stan' target='_blank' rel='noreferrer'>Stortorget</a> (★4.7): a középkori főtér élénk színű házsora az egyik legikonikusabb stockholmi kép. Mellette a <a href='https://www.google.com/maps/search/?api=1&query=Storkyrkan+Cathedral+Stockholm' target='_blank' rel='noreferrer'>Storkyrkan katedrális</a> (★4.6) — a legrégebbi stockholmi egyház (1300-as évek), belül a Sárkányölő György fából faragott szobra lenyűgöző. Nobel Prize Museum (★4.5) a főtéren, ha bejönne." },
             { time: "15:00", icon: "👑", name: "<a href='https://www.google.com/maps/search/?api=1&query=Royal+Palace+Stockholm' target='_blank' rel='noreferrer'>Kungliga Slottet</a> (★4.5) — Királyi Palota külseje + Vaktársak", duration: "~30 perc", mapName: "Kungliga Slottet", detail: "Európa egyik legnagyobb lakott királyi palotája, 600 szobával. Kívülről a legjobb: délidőben a díszőrség váltása (12:15 hétköznap, 13:15 vasárnap) jó show. A palota előtti tér a <a href='https://www.google.com/maps/search/?api=1&query=Lejonbacken+Stockholm+Royal+Palace' target='_blank' rel='noreferrer'>Lejonbacken</a> a legjobb fotó-szög." },
             { time: "15:45", icon: "🏙", name: "<a href='https://www.google.com/maps/search/?api=1&query=Riddarholmen+Stockholm' target='_blank' rel='noreferrer'>Riddarholmen</a> (★4.6) + <a href='https://www.google.com/maps/search/?api=1&query=Stadshuset+Stockholm' target='_blank' rel='noreferrer'>Stadshuset</a> (★4.6) kívülről", duration: "~45 perc", mapName: "Riddarholmen + Stadshuset", detail: "Riddarholmen a Gamla Stan mögötti kis sziget — a legjobb panoráma Stockholmra a Riddarfjärden öböl felett. Innentől gyalog a Stadshusig (~10 perc): a Nobel-bankett helyszíne, kék és arany csarnokával, 10 270 sípból álló orgonájával. Kívülről is erős kép, de a belső túra (10:00–16:00, ~130 SEK) megéri ha marad idő." },
             { time: "17:30", icon: "🌅", name: "<a href='https://www.google.com/maps/search/?api=1&query=Monteliusvagen+Stockholm' target='_blank' rel='noreferrer'>Monteliusvägen sétány</a> (★4.7) — Stockholm legjobb ingyenes panorámája", duration: "~30 perc", mapName: "Monteliusvägen", detail: "500 méteres sétányútvonal a Södermalm sziklaperméin, teljesen ingyenes. Lenyűgöző kilátás a Riddarfjärdenre, a Stadshusra, a Gamla Stanra és a Mälaren-tóra — különösen napszállta körül. Vasárnap délután viszonylag csendes. Padok a sétány mentén." },
             { time: "19:30", icon: "🍽", name: "Vacsora Södermalmon", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Pelikan+Restaurant+Stockholm' target='_blank' rel='noreferrer'>Pelikan</a> (★4.3): klasszikus svéd brasserie Södermalm szívén, vastag fából készült asztalok és svéd háziételek (köttbullar, strömming). Alternatíva: <a href='https://www.google.com/maps/search/?api=1&query=Mosebacke+Etablissement+Stockholm' target='_blank' rel='noreferrer'>Mosebacke Etablissement</a> (★4.4) terasz a magasból — ha szép az idő, jobb kilátó mint Monteliusvägen." }
           ],
-          notes: ["Autóátvétel Arlandán: az autót tartsuk az Arlanda parkolóban másnap reggelig — a városban felesleges az autó, tömegközlekedés vagy séta hatékonyabb.", "Gamla Stan vasárnap délután tömeges — az első esti sétáig megvan a türelmesebb ablak.", "Szállás: Norrmalm / Gamla Stan / Södermalm közelében a legjobb bázis — ne Arlanda-hotel.", "Monteliusvägen: napszállta ~22:00 körül van júliusban — este 9-10-kor is érdemes felmenni."]
+          notes: ["Autóátvétel Arlandán: az ARN Långtidsparkering transzfere visz az autóhoz. A városban felesleges az autó (tömegközlekedés/séta hatékonyabb) — de a parkolás-foglalás júl. 26-án lejár, így a stockholmi napokra dönteni kell: Arlandán hosszabbítasz és Arlanda Expresszel jársz be, vagy behajtasz és belvárosi P-házat fizetsz.", "Gamla Stan vasárnap délután tömeges — az első esti sétáig megvan a türelmesebb ablak.", "Szállás: Norrmalm / Gamla Stan / Södermalm közelében a legjobb bázis — ne Arlanda-hotel.", "Monteliusvägen: napszállta ~22:00 körül van júliusban — este 9-10-kor is érdemes felmenni."]
         },
         {
           num: "2",
@@ -2650,11 +2650,11 @@ const tripData = {
   },
   costPlan: {
     summary: {
-      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 köztes éj 3 főre € 2 657 + a záró keflavíki éj 2 főre € 198) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Izlandon a köztes napokon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A záró keflavíki éjszakára már csak Tibi + Henni megy. A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
+      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 köztes éj 3 főre € 2 657 + a záró keflavíki éj 2 főre € 198) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Az arlandai parkoló is foglalt és kifizetett (ARN Långtidsparkering, 795 SEK ≈ 70 EUR, transzferrel — az 1. szakaszban). Izlandon a köztes napokon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A záró keflavíki éjszakára már csak Tibi + Henni megy. A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
       grandTotal: {
-        tibi: "~5 370 EUR",
+        tibi: "~5 340 EUR",
         henni: "~3 690 EUR",
-        together: "~9 060 EUR"
+        together: "~9 030 EUR"
       },
       alreadyBooked: [
         "Henni: Wizz Air W62427 BUD → KEF, 2026.07.11 (Erasmus+ finanszírozott lehet) · a kurzus díja €630/fő szintén Erasmus+ keretből",
@@ -2662,7 +2662,7 @@ const tripData = {
         "Tibi + Henni: Icelandair FI306 KEF → ARN, 2026.07.26 — referencia ár: ~400–500 EUR/fő"
       ],
       totals: [
-        { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 680 EUR", person: "Tibi egyedül · saját autó · becslés" },
+        { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 645 EUR", person: "Tibi egyedül · saját autó · becslés (parkoló foglalt)" },
         { label: "2. szakasz · Izland", value: "~4 315 EUR", person: "Tibi + Henni · ~2 155 EUR/fő · foglalt árak · vendég külön ~2 520 EUR" },
         { label: "3. szakasz · Hazaút", value: "~3 070 EUR", person: "Tibi + Henni · ~1 535 EUR/fő · becslés" }
       ]
@@ -2675,7 +2675,7 @@ const tripData = {
         subtitle: "Tibi egyedül · saját autó · 2026. júl. 10–18. · 9 nap",
         car: "Mercedes GLC AMG 43 · 100 oktán · ~10 L/100 km",
         km: "~2 460 km",
-        total: "~1 680 EUR",
+        total: "~1 645 EUR",
         categories: [
           {
             icon: "⛽",
@@ -2697,9 +2697,9 @@ const tripData = {
           },
           {
             icon: "🅿",
-            label: "Arlanda parkoló · 8 nap",
-            value: "~96 EUR",
-            detail: "Swedavia P2 Beta long-term: ~12 EUR/nap × 8 nap (júl. 18–26.) · előre online foglalva 20–30%-kal olcsóbb · P2 Beta legközelebb a terminálhoz, shuttle jár"
+            label: "Arlanda parkoló · 8 nap · FOGLALVA ✅",
+            value: "~70 EUR",
+            detail: "ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad) · 795 SEK összesen: parkolás 8 napra 345 kr + terminál-transzfer 450 kr (áfa 94,47 kr) · KIFIZETVE 2026.07.10., Visa ****1841 · foglalás #127891 · tel. +46-8-78 37 700 · júl. 18. (FI309) → júl. 26. (FI306) · külső telephely, nem a reptéri parkolóház — a transzfer az árban"
           },
           {
             icon: "🛣",
@@ -2856,7 +2856,7 @@ const tripData = {
       text: "A teljes út mostani minőségét néhány szerkezeti döntés fogja eldönteni, nem száz apró részlet.",
       items: [
         "A július 17-i Tallinn → Helsinki → Stockholm kompnap foglalási véglegesítése.",
-        "Arlanda long-term parking kiválasztása: P2 Beta vagy Flygets P1.",
+        "✅ Arlanda long-term parking: eldöntve és kifizetve — ARN Långtidsparkering, júl. 18–26., transzferrel (#127891).",
         "A júliusi izlandi foglalások gyors lezárása: szállások, autó, Friðheimar, esetleges bálnales / csónaktúra."
       ]
     },
@@ -2889,6 +2889,7 @@ const tripData = {
       text: "Ezeket érdemes a következő szerkesztési körben lezárni.",
       items: [
         "A két komp konkrét foglalása és kabinja július 17-re.",
+        "🅿 A stockholmi városnapok (júl. 26–28.) parkolása: az ARN-foglalás júl. 26-án lejár. Hosszabbítás Arlandánál + Arlanda Express, vagy behajtás és belvárosi P-ház?",
         "A július 21-i északi napon a Húsavík bálnales vagy a hosszabb Mývatn-blokk legyen-e a fő verzió.",
         "A stockholmi, koppenhágai, hamburgi és frankfurti szállások konkrét foglalási sorrendje a hosszabb hazaúti ívre."
       ]
@@ -3078,17 +3079,18 @@ const tripData = {
       ]
     },
     {
-      title: "🅿 Stockholm / Arlanda",
-      text: "Hosszú távú parkolás Arlandánál — júl. 18. (indulás KEF felé) → júl. 26. (visszaérkezés), 8 nap. Két fő lehetőség: a hivatalos Swedavia saját parkolói és a Flygets külső szolgáltató.",
+      title: "🅿 Stockholm / Arlanda parkolás — FOGLALVA ✅",
+      text: "A kocsi az izlandi kitérő alatt Arlanda mellett parkol: ARN Långtidsparkering, júl. 18. → júl. 26. (8 nap), transzferrel a terminálhoz. Kifizetve (795 SEK), foglalási szám 127891.",
       links: [
-        { label: "Swedavia — hivatalos Arlanda parkolók", url: "https://www.swedavia.se/en/arlanda/parking/" },
-        { label: "Swedavia — közvetlen foglalás (júl. 18–26.)", url: "https://www.swedavia.com/arlanda/parking/#/offers?arrivalDateTime=2026-07-18T14:00&returnDateTime=2026-07-26T14:00&terminal=-1&parkingid=1" },
-        { label: "Flygets P1 — külső parkoló (júl. 18–26.)", url: "https://www.flygets.se/parkifly/flygets/booking;parking_start=2026-07-18%2014:10;parking_end=2026-07-26%2013:45;discount_code=NONE" }
+        { label: "ARN Långtidsparkering — hivatalos oldal", url: "https://arnlangtidsparkering.se" },
+        { label: "🗺 Elkraftsgatan 7, Arlandastad", url: "https://www.google.com/maps/search/?api=1&query=Elkraftsgatan%207%2C%20195%2060%20Arlandastad%2C%20Sweden" }
       ],
       items: [
-        "<a href='https://www.flygets.se/parkifly/flygets/booking;parking_start=2026-07-18%2014:10;parking_end=2026-07-26%2013:45;discount_code=NONE' target='_blank' rel='noreferrer'><strong>Flygets P1</strong></a> — külső szolgáltató, shuttle-busz a terminálhoz; általában olcsóbb mint a Swedavia saját parkolói. Előre kitöltött dátumokkal nyílik meg.",
-        "<a href='https://www.swedavia.com/arlanda/parking/#/offers?arrivalDateTime=2026-07-18T14:00&returnDateTime=2026-07-26T14:00&terminal=-1&parkingid=1' target='_blank' rel='noreferrer'><strong>Swedavia P2 Beta Long-term</strong></a> — hivatalos reptéri hosszú távú parkoló; drágább de közelebb, nincs shuttle-várakozás.",
-        "Mindkét helyen érdemes előre foglalni — júliusban gyorsan telnek, és online olcsóbb az ár."
+        "<strong>Foglalás:</strong> #127891 · Tibor Zakany · fizetve 2026.07.10. (Visa ****1841) · <strong>795 SEK</strong> összesen (parkolás 8 napra 345 kr + transzfer 450 kr, ebből áfa 94,47 kr).",
+        "<strong>Helyszín:</strong> ARN Långtidsparkering AB, Elkraftsgatan 7, 195 60 Arlandastad — ez <strong>nem a reptéri parkolóház</strong>, hanem külső telephely Arlanda mellett, <strong>transzferrel</strong> a terminálhoz (a 450 kr ezt fedi).",
+        "<strong>Kapcsolat:</strong> +46-8-78 37 700 · info@arnlangtidsparkering.se",
+        "<strong>Menetrend:</strong> a foglalás a <strong>FI309</strong> (júl. 18. 17:10 indulás) és a <strong>FI306</strong> (júl. 26. 12:45 érkezés) járatokhoz van igazítva — érkezz időben a telephelyre, mert a transzfer + check-in még hozzájön az induláshoz.",
+        "Visszaérkezéskor (júl. 26. 12:45) a transzfer visz vissza az autóhoz, onnan indul a stockholmi szakasz — a városban viszont nem kell az autó, érdemes a szállásnál/P-házban hagyni."
       ]
     },
     {
