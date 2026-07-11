@@ -574,7 +574,7 @@
                   if (isDrive) nameClean = nameClean.replace(/\s+~?\s*\d[\d\s.]*\s*km.*$/i, "");
                   nameClean = nameClean.trim();
                   const nameHasLink = /<a[\s>]/i.test(nameClean);
-                  const mapsLink = (rating && !nameHasLink) ? (a.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nameClean)}`) : null;
+                  const mapsLink = (!nameHasLink && (a.maps || rating)) ? (a.maps || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nameClean)}`) : null;
                   const rateChip = rating ? (mapsLink ? ` <a class="sched-rate" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps">⭐${rating}</a>` : ` <span class="sched-rate">⭐${rating}</span>`) : "";
                   return `
                     <div class="sched-row">

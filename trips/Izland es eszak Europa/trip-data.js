@@ -75,7 +75,7 @@ const tripData = {
           status: "Foglalva",
           operator: "Wizz Air",
           code: "W62427",
-          route: "Budapest (BUD) → Reykjavík / Keflavík (KEF)",
+          route: "<a href='https://www.google.com/maps/search/?api=1&query=Budapest+Airport+BUD' target='_blank' rel='noreferrer'>Budapest (BUD)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport' target='_blank' rel='noreferrer'>Reykjavík / Keflavík (KEF)</a>",
           departure: "2026.07.11 · 15:40",
           arrival: "2026.07.11 · 18:20",
           duration: "4:40",
@@ -89,7 +89,7 @@ const tripData = {
           status: "Foglalva",
           operator: "Icelandair",
           code: "FI306",
-          route: "Reykjavík / Keflavík (KEF) → Stockholm / Arlanda (ARN)",
+          route: "<a href='https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport' target='_blank' rel='noreferrer'>Reykjavík / Keflavík (KEF)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport' target='_blank' rel='noreferrer'>Stockholm / Arlanda (ARN)</a>",
           departure: "2026.07.26 · 07:35",
           arrival: "2026.07.26 · 12:45",
           duration: "3:10",
@@ -114,7 +114,7 @@ const tripData = {
           operator: "Tallink Megastar",
           code: "Tallinn → Helsinki",
           bookingRef: "75157795",
-          route: "Tallinn D-Terminal → Helsinki West Harbour T2",
+          route: "<a href='https://www.google.com/maps/search/?api=1&query=Tallinn+D-Terminal+D-Terminaali' target='_blank' rel='noreferrer'>Tallinn D-Terminal</a> → <a href='https://www.google.com/maps/search/?api=1&query=Helsinki+L%C3%A4nsiterminaali+2+West+Terminal' target='_blank' rel='noreferrer'>Helsinki West Harbour T2</a>",
           departure: "2026.07.16 · 10:30",
           arrival: "2026.07.16 · 12:30",
           duration: "2:00",
@@ -130,7 +130,7 @@ const tripData = {
           operator: "Finnlines · Finnsirius",
           code: "Naantali → Kapellskär",
           bookingRef: "F260126521",
-          route: "Naantali (Finnország) → Kapellskär (Svédország)",
+          route: "<a href='https://www.google.com/maps/search/?api=1&query=Port+of+Naantali+Finnlines+Satamatie+9' target='_blank' rel='noreferrer'>Naantali kikötő (Finnország)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden' target='_blank' rel='noreferrer'>Kapellskär kikötő (Svédország)</a>",
           departure: "2026.07.17 · 22:45",
           arrival: "2026.07.18 · 06:30",
           duration: "7:45",
@@ -145,7 +145,7 @@ const tripData = {
           status: "Foglalva",
           operator: "Icelandair",
           code: "FI309",
-          route: "Stockholm / Arlanda (ARN) → Reykjavík / Keflavík (KEF)",
+          route: "<a href='https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport' target='_blank' rel='noreferrer'>Stockholm / Arlanda (ARN)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport' target='_blank' rel='noreferrer'>Reykjavík / Keflavík (KEF)</a>",
           departure: "2026.07.18 · 17:10",
           arrival: "2026.07.18 · 18:25",
           duration: "3:15",
@@ -163,7 +163,7 @@ const tripData = {
           status: "Foglalva",
           operator: "Icelandair",
           code: "FI306",
-          route: "Reykjavík / Keflavík (KEF) → Stockholm / Arlanda (ARN)",
+          route: "<a href='https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport' target='_blank' rel='noreferrer'>Reykjavík / Keflavík (KEF)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport' target='_blank' rel='noreferrer'>Stockholm / Arlanda (ARN)</a>",
           departure: "2026.07.26 · 07:35",
           arrival: "2026.07.26 · 12:45",
           duration: "3:10",
@@ -950,7 +950,7 @@ const tripData = {
           activities: [
             { time: "07:00", icon: "🚗", name: "Indulás Budapestről — M3/E77 észak felé", detail: "A teljes expedition első napja, kifejezetten tranzit-fókuszban. Varsót NEM érintjük: az E77-es Miskolcon, Egerben át visz fel, majd Lengyelországba belépés Visnyón (Visinë) keresztül." },
             { time: "13:00", icon: "⛽", name: "~Félúton pihenő — Varsó elkerülésével", detail: "A legjobb útvonal Varsó megkerülésével: BUD → Miskolc → Torún → Suwałki. Varsó csak időt és ideget visz el, ki sem kell menni a városba." },
-            { time: "20:00", icon: "🛏", name: "Suwałki — tranzitszállás", detail: "Suwałki ideális alvóhely: közel a litván határhoz, másnap könnyen indulhatsz Kaunas/Vilnius felé. Augustów szebb (tóparti), de ha csak tranzit, Suwałki praktikusabb." }
+            { time: "20:00", icon: "🛏", name: "Suwałki — tranzitszállás", maps: "https://www.google.com/maps/search/?api=1&query=Suwa%C5%82ki+Poland", detail: "Suwałki ideális alvóhely: közel a litván határhoz, másnap könnyen indulhatsz Kaunas/Vilnius felé. Augustów szebb (tóparti), de ha csak tranzit, Suwałki praktikusabb." }
           ],
           notes: ["Varsót TELJESEN kihagyjuk — be se megyünk, csak időt és ideget visz el.", "Suwałki a legjobb tranzitpont: 30 km-re a litván határtól, másnap könnyen indulhatsz Kaunas felé.", "Alternatív alvó: Augustów (~30 km) — tópartosabb, szebb, de ha csak tranzit, Suwałki praktikusabb."]
         },
@@ -968,7 +968,7 @@ const tripData = {
             { time: "08:00", icon: "🚗", name: "Suwałki → litván határ → Kaunas (~190 km, ~2 óra)", detail: "Rövid reggeli etap, a litván határ könnyen átlépős, Kaunas 2 óra Suwałkiból." },
             { time: "10:00–12:00", icon: "🏙", name: "Kaunas — rövid city stop (ebéd + séta)", mapName: "Kaunas", googleRating: "4.5", duration: "~2 óra", detail: "Kaunas nem igényel teljes napot, de megér egy jó 2 órás stopot: Laisvės aleja (a leghosszabb sétálóutca a Baltikumban), Kaunas Castle (rövid kültéri nézelődés), Soboras (neogótikus Kristus Feltámadása-bazilika). Ebéd a sétálóutca melletti kávézóban." },
             { time: "12:30", icon: "🚗", name: "Kaunas → Vilnius (~100 km, ~1,5h)", detail: "Egyenes autópályaetap, Litvánia két legnagyobb városát összekötő E85-ös." },
-            { time: "14:30–19:00", icon: "🌆", name: "Vilnius esti érkezés — Cathedral Square séta", mapName: "Vilnius", duration: "~1 óra", detail: "Bejelentkezés, majd első rövid séta a Cathedral Square (Katedros aikštė) felé — az óváros zárása előtt megéri a teret megnézni. Vacsora és ráhangolódás a holnapi teljes városnapra." },
+            { time: "14:30–19:00", icon: "🌆", name: "Vilnius esti érkezés — Cathedral Square séta", mapName: "Vilnius", maps: "https://www.google.com/maps/search/?api=1&query=Cathedral+Square+Vilnius", duration: "~1 óra", detail: "Bejelentkezés, majd első rövid séta a Cathedral Square (Katedros aikštė) felé — az óváros zárása előtt megéri a teret megnézni. Vacsora és ráhangolódás a holnapi teljes városnapra." },
             { time: "párhuzamos szál", icon: "✈️", name: "Henni: BUD → KEF, Wizz Air W62427", detail: "15:40 → 18:20 — Erasmus kurzusra indul Izlandra (Smart Teachers Play More, júl. 13–18.). 2 nap ráhangolódás, majd júl. 13-án kezdődik a kurzus." }
           ],
           notes: ["Kaunas csak ebéd/séta, nem alszunk itt — de a Laisvės aleja és egy kávé tök jó ráhangolódás.", "Vilnius belváros közelében érdemes szállást venni: Old Town / Cathedral Square / Užupis széle a legjobb bázis.", "Tibiéknél itt még balti felvezetés van, Henni ma repül Izlandra az Erasmus kurzusra."]
@@ -992,7 +992,7 @@ const tripData = {
             { time: "11:00", icon: "🚗", name: "Trakai → Hill of Crosses (~210 km, ~2,5 óra)", detail: "Vissza az északi tengelyre és fel Šiauliai felé. Ez a nap leghosszabb etapja — a korai Trakai miatt tolódik a menetrend, ezért lesz későbbi a Riga-érkezés." },
             { time: "13:00", icon: "⛪", name: "Hill of Crosses (Keresztek Hegye)", mapName: "Keresztek Hegye", googleRating: "4.6", duration: "~30 perc", detail: "Több százezer kereszttel borított zarándokdomb Šiauliai mellett — Litvánia egyik legmegrendítőbb helye. Ingyenes, kis parkoló a 12-es út mellett, 5 perc séta." },
             { time: "15:00", icon: "🏰", name: "Rundāle-palota", mapName: "Rundāle-palota", googleRating: "4.7", duration: "~1 óra", detail: "Lettország barokk »Versailles«-a — Rastrelli tervezte palota és francia kert. ~40 perc kitérő Bauska felé, útba esik Riga előtt. Belépő ~16 €; ha szűk az idő, a kert önmagában is megér egy sétát." },
-            { time: "19:30", icon: "🌆", name: "Késő esti Riga — érkezés", detail: "A teljes program miatt későn (kb. 19:30–20:00) érünk Rigába — a teljes Riga-nap úgyis holnap jön, ma már csak bejelentkezés + esti vacsora. Tipp: Folkklubs Ala Pagrabs (lett hagyományos, pincehangulat) vagy Labietis craft sör." }
+            { time: "19:30", icon: "🌆", name: "Késő esti Riga — érkezés", maps: "https://www.google.com/maps/search/?api=1&query=Riga+Old+Town+Latvia", detail: "A teljes program miatt későn (kb. 19:30–20:00) érünk Rigába — a teljes Riga-nap úgyis holnap jön, ma már csak bejelentkezés + esti vacsora. Tipp: Folkklubs Ala Pagrabs (lett hagyományos, pincehangulat) vagy Labietis craft sör." }
           ],
           notes: ["✅ Trakai BENNE marad: a korai (07:00-ás) vilniusi indulással a szigetvár reggeli látogatásként befér, mielőtt felfordulunk Riga felé. Cserébe későbbi a Riga-érkezés (~19:30–20:00) — ez az elfogadott csere.", "Vilnius most 1 éj (esti érkezés júl. 11., korai indulás júl. 12.), ezért kell a korai kezdés.", "Ha csúszik a reggel: a Rundāle az első, amit el lehet hagyni (a kert önmagában is szép); Trakai és Hill of Crosses maradjon.", "Trakai: nyáron délelőtt tolong, de reggel 8:30 körül még kellemes. Kibinai: Senoji Kibininė a legismertebb, de bármelyik parti hely adja."]
         },
@@ -1035,7 +1035,7 @@ const tripData = {
             { time: "10:30", icon: "🪨", name: "Gutmanis-barlang (Gūtmaņala)", mapName: "Gūtmanis-barlang", googleRating: "4.4", duration: "~20 perc", detail: "Lettország legnagyobb barlangja, a Gauja sziklafalaiban. A homokkő falain évszázados feliratokat véstek be utazók (1668-tól dokumentált!). Ingyenes, rövid séta a folyóparton." },
             { time: "11:30", icon: "🌲", name: "Gauja-völgy kilátók — opcionális Sigulda-séta", mapName: "Sigulda", googleRating: "4.6", duration: "~1 óra", detail: "Sigulda kastélyromok (Siguldas pilsdrupas) és a Gauja-völgy panorámája. Ha van idő: a kábeles gondola (Gauja-gondola) a völgy felett az egyik legegyedibb balti élmény." },
             { time: "13:00", icon: "🚗", name: "Sigulda → Pärnu → Tallinn (~300 km)", detail: "Észtországba belépés, Pärnu rövid megállólehetőség (ha van energia): homokos tengerparti üdülőváros, de ha Sigulda benne van, inkább kávé-megálló szinten." },
-            { time: "20:00", icon: "⚓", name: "Tallinn — Rotermann / Sadama negyed szállás", detail: "Tallinnban a Rotermann / Sadama negyed a legjobb autós bázis: közel a kompterminálhoz, közel az óvároshoz, van parkoló. A júl. 16-i reggeli Tallink miatt kikötő-közeli lokáció kifizetődik." }
+            { time: "20:00", icon: "⚓", name: "Tallinn — Rotermann / Sadama negyed szállás", maps: "https://www.google.com/maps/search/?api=1&query=Rotermann+Quarter+Tallinn", detail: "Tallinnban a Rotermann / Sadama negyed a legjobb autós bázis: közel a kompterminálhoz, közel az óvároshoz, van parkoló. A júl. 16-i reggeli Tallink miatt kikötő-közeli lokáció kifizetődik." }
           ],
           notes: ["Turaida Castle: jobb kilátás és kevesebb tömeg mint a siguldai castle romok — inkább ezt válaszd ha csak egyet.", "Gutmanis-barlang: a Turaida kastélyból gyalogosan is elérhető (erdei ösvény, ~15 perc).", "🏰 Cēsis: ha bőven van idő, ~30 km-re Sigulda mögött egy hangulatos középkori városka lovagvár-rommal (lámpással vezetett túra) — szép kiegészítés a Gauja-naphoz.", "Pärnu: ha Sigulda tele volt programmal, Pärnu legyen csak gyors kávé. Ha Sigulda rövid volt, egy fél óra tenger-pillantás jó.", "Tallinn szállás: Rotermann / Sadama / Old Town széle — autóval ide a legpraktikusabb bemenni."]
         },
@@ -1074,13 +1074,13 @@ const tripData = {
             { label: "Helsinki éj", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:30", icon: "⚓", name: "Autós beállás — Tallinn D-terminál", detail: "A Sadama negyedből 5 perc. Check-in legkésőbb 10:00. Autós boarding kb. 09:00-tól. Reggeli / kávé a terminál előtt." },
-            { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Megastar) ✅", detail: "Tallink Megastar, 10:30 → 12:30. A világ egyik legnagyobb és legmodernebb komp-járata, kényelmes átkelés. FOGLALVA: foglalás 75157795, biztonsági kód 4398, 1 utas + deck place + autó, 72,90 EUR fizetve. Check-in legkésőbb 10:00, D-Terminál." },
+            { time: "09:30", icon: "⚓", name: "Autós beállás — Tallinn D-terminál", maps: "https://www.google.com/maps/search/?api=1&query=Tallinn+D-Terminal+D-Terminaali", detail: "A Sadama negyedből 5 perc. Check-in legkésőbb 10:00. Autós boarding kb. 09:00-tól. Reggeli / kávé a terminál előtt." },
+            { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Megastar) ✅", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+L%C3%A4nsiterminaali+2+West+Terminal", detail: "Tallink Megastar, 10:30 → 12:30. A világ egyik legnagyobb és legmodernebb komp-járata, kényelmes átkelés. FOGLALVA: foglalás 75157795, biztonsági kód 4398, 1 utas + deck place + autó, 72,90 EUR fizetve. Check-in legkésőbb 10:00, D-Terminál." },
             { time: "12:30–14:00", icon: "🏙", name: "Helsinki blokk — Market Square, Katedrális, Temppeliaukio", mapName: "Helsinki Market Square", googleRating: "4.4", duration: "~1,5 óra", detail: "Market Square (Kauppatori) + Helsinki Katedrális a Senaatintori felett + (ha van idő) a sziklába vájt Temppeliaukio-templom. Az Uspenski-katedrális a dombon gyors extra. Az autót a kikötő közelében parkolva." },
             { time: "14:00–14:45", icon: "🚗", name: "Helsinki → Porvoo (~50 km keletre, ~45 perc)", detail: "E18-as autópályán. Porvoo Helsinkitől KELETRE van — most, hogy Helsinkiben alszunk, kényelmes délutáni kitérő, nem kell Turku felé sietni." },
             { time: "14:45–16:30", icon: "🏘", name: "Porvoo — faházas óváros séta", mapName: "Porvoo", googleRating: "4.6", duration: "~1,5 óra", detail: "Porvoo Finnország második legidősebb városa. A régi óváros (Vanha Porvoo) faházas negyede teljesen egyedi: piros, okker és sárga festett faházak a folyóparton. A legszebb nézet az Old Town Bridge (Porvoonjoki) felőli part. Google Reviews: ★4.6 — 'Ha csak egy finn kisvárost nézel meg, ez legyen.'" },
             { time: "17:00–19:00", icon: "🚗", name: "Vissza Helsinkibe + esti séta", detail: "Porvoo → Helsinki ~45 perc. Esti séta a Design District / Esplanadi környékén, vacsora a városban." },
-            { time: "20:00", icon: "🛏", name: "Éjszaka Helsinkiben", detail: "Az új terv szabadított fel egy éjszakát (Vilnius rövidült 1 napra) — ez most Helsinki. Szállás-tipp: Kamppi / Kluuvi / kikötő-közeli belváros, hogy reggel könnyű legyen indulni Turku felé. Parkolós hotel praktikus az autó miatt." }
+            { time: "20:00", icon: "🛏", name: "Éjszaka Helsinkiben", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+city+centre+Kamppi", detail: "Az új terv szabadított fel egy éjszakát (Vilnius rövidült 1 napra) — ez most Helsinki. Szállás-tipp: Kamppi / Kluuvi / kikötő-közeli belváros, hogy reggel könnyű legyen indulni Turku felé. Parkolós hotel praktikus az autó miatt." }
           ],
           notes: [
             "⚠️ Új ritmus: a régi tervben ez a nap Turkuba hajtott és éjjeli komppal ment tovább. Most Helsinkiben ALSZUNK — nyugodtabb finn belépő, és a másnapi Finnlines komp (Naantali, 22:45) miatt nincs időnyomás.",
@@ -1114,12 +1114,12 @@ const tripData = {
             { label: "Finnlines", cls: "tag-ferry" }
           ],
           activities: [
-            { time: "09:00", icon: "🚗", name: "Helsinki → Turku (~165 km, ~2 óra)", detail: "E18-as autópályán nyugatra, egyenes, jó minőségű finn út. Ráérős reggeli indulás Helsinkiből — a komp csak este 22:45-kor megy." },
+            { time: "09:00", icon: "🚗", name: "Helsinki → Turku (~165 km, ~2 óra)", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Finland", detail: "E18-as autópályán nyugatra, egyenes, jó minőségű finn út. Ráérős reggeli indulás Helsinkiből — a komp csak este 22:45-kor megy." },
             { time: "11:30–13:00", icon: "🏰", name: "Turku Castle (Turun linna)", mapName: "Turku Castle", googleRating: "4.5", duration: "~1–1,5 óra", detail: "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél. Komoly múzeumi tartalom, a középkori részek különösen erősek. Belépő ~€10, nyitva 10:00–18:00." },
             { time: "13:00–15:30", icon: "🌊", name: "Aura folyópart + Turku Katedrális + ebéd", mapName: "Aura folyópart", googleRating: "4.5", duration: "~2 óra", detail: "Aura folyópart (Aurajoki): hajóéttermek, Market Hall, a helyi diákok és turisták kedvence. A Turku Katedrális (Turun tuomiokirkko, ingyenes) gyalog elérhető a sétány mentén. Kényelmes ebéd + séta." },
-            { time: "16:00–18:00", icon: "🏘", name: "Naantali óváros (~15 km, ~20 perc)", detail: "Rövid hop Turkuból a Finnlines-kikötő városába. Naantali hangulatos kis fürdőváros: fapados óváros, jachtkikötő, teraszos kávézók — kellemes esti séta a beszállás előtt." },
-            { time: "21:45", icon: "⚓", name: "Check-in — Finnlines terminál, Naantali", detail: "Port of Naantali, Satamatie 9. A check-in legkésőbb 1 órával indulás előtt (21:45) zár. Autós beállás a jelzett sávba, kabinkulcs a fedélzeten." },
-            { time: "22:45", icon: "🚢", name: "Finnlines Finnsirius — Naantali → Kapellskär", detail: "FOGLALVA (kód F260126521): indulás 22:45, érkezés júl. 18. 06:30. Autóval (max 6 m) + belső 4 ágyas kabin (AB4). 129,07 EUR, kártyával fizetve. Booking Holder: Tibor Zakany." }
+            { time: "16:00–18:00", icon: "🏘", name: "Naantali óváros (~15 km, ~20 perc)", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town", detail: "Rövid hop Turkuból a Finnlines-kikötő városába. Naantali hangulatos kis fürdőváros: fapados óváros, jachtkikötő, teraszos kávézók — kellemes esti séta a beszállás előtt." },
+            { time: "21:45", icon: "⚓", name: "Check-in — Finnlines terminál, Naantali kikötő", maps: "https://www.google.com/maps/search/?api=1&query=Port+of+Naantali+Finnlines+Satamatie+9", detail: "Port of Naantali, Satamatie 9. A check-in legkésőbb 1 órával indulás előtt (21:45) zár. Autós beállás a jelzett sávba, kabinkulcs a fedélzeten." },
+            { time: "22:45", icon: "🚢", name: "Finnlines Finnsirius — Naantali → Kapellskär kikötő", maps: "https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden", detail: "FOGLALVA (kód F260126521): indulás 22:45, érkezés júl. 18. 06:30. Autóval (max 6 m) + belső 4 ágyas kabin (AB4). 129,07 EUR, kártyával fizetve. Booking Holder: Tibor Zakany." }
           ],
           notes: [
             "✅ Ez a komp FOGLALVA: Finnlines Finnsirius, Naantali → Kapellskär, júl. 17. 22:45 → júl. 18. 06:30, autóval + belső kabin, kód F260126521.",
@@ -1154,10 +1154,10 @@ const tripData = {
             { label: "17:10 → 18:25", cls: "tag-focus" }
           ],
           activities: [
-            { time: "06:30", icon: "⚓", name: "Kapellskär — Finnlines érkezés", detail: "A Finnsirius reggel 06:30-kor köt ki Kapellskärben (Svédország). Kapellskärtől Arlandáig ~75 km / ~1 óra az E18 és a 276-os úton. Rengeteg puffer az FI309 előtt." },
+            { time: "06:30", icon: "⚓", name: "Kapellskär kikötő — Finnlines érkezés", maps: "https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden", detail: "A Finnsirius reggel 06:30-kor köt ki Kapellskärben (Svédország). Kapellskärtől Arlandáig ~75 km / ~1 óra az E18 és a 276-os úton. Rengeteg puffer az FI309 előtt." },
             { time: "07:00–14:00", icon: "☕", name: "Reggeli / Norrtälje + Arlanda parking", detail: "Ha energiátok van, Norrtälje (útba esik) egy kellemes reggeli megálló, vagy egy rövid stockholmi kör. Az autó a <strong>foglalt ARN Långtidsparkering</strong>-be megy (Elkraftsgatan 7, Arlandastad — foglalás #127891, kifizetve), onnan <strong>transzfer</strong> visz a terminálhoz. Ez külső telephely, nem a reptéri parkolóház, ezért számolj a transzfer idejével a check-in előtt." },
-            { time: "14:30–16:30", icon: "🛂", name: "Arlanda check-in és security", detail: "Júliusban a security sor akár 1-1,5 óra is lehet. FI309 gate általában a Sky City közelében." },
-            { time: "17:10", icon: "✈", name: "Icelandair FI309", detail: "Stockholm / Arlanda (ARN) → Reykjavík / Keflavík (KEF), helyi idő szerint 17:10 → 18:25 (helyi izlandi idő)." }
+            { time: "14:30–16:30", icon: "🛂", name: "Arlanda check-in és security", maps: "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport", detail: "Júliusban a security sor akár 1-1,5 óra is lehet. FI309 gate általában a Sky City közelében." },
+            { time: "17:10", icon: "✈", name: "Icelandair FI309", maps: "https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport", detail: "Stockholm / Arlanda (ARN) → Reykjavík / Keflavík (KEF), helyi idő szerint 17:10 → 18:25 (helyi izlandi idő)." }
           ],
           notes: [
             "Ezzel a nappal zárul Tibi külön balti-felvezető szakasza, és indul a közös izlandi rész.",
