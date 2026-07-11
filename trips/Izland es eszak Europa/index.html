@@ -2087,7 +2087,7 @@
             L.geoJSON(f, { style: { color: isFerry ? "#1d4ed8" : "#8a4f24", weight: isFerry ? 2.5 : 3, opacity: 0.8, dashArray: isFerry ? "6 8" : null } }).addTo(map);
           });
           const rs = document.getElementById("baltikum2-routestat");
-          if (rs) rs.textContent = "Útvonal: autós szakaszok (folytonos) + kompok (szaggatott: Tallinn–Helsinki, Turku–Stockholm), valós úthálózaton.";
+          if (rs) rs.textContent = "Útvonal: autós szakaszok (folytonos) + kompok (szaggatott: Tallinn–Helsinki, Naantali–Kapellskär), valós úthálózaton.";
         }).catch(() => {
           const rs = document.getElementById("baltikum2-routestat");
           if (rs) rs.textContent = "Az útvonal most nem érhető el.";
