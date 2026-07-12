@@ -106,7 +106,7 @@ const tripData = {
     {
       person: "Tibi",
       summary: "Teljes északi átkelés + izlandi oda-vissza repülés",
-      note: "Mindkét komp FOGLALVA. Tallinn → Helsinki (Tallink Megastar, júl. 16. 10:30 → 12:30, autóval): foglalás 75157795, 72,90 EUR. Finnország → Svédország (Finnlines, Naantali → Kapellskär, júl. 17. 22:45 → júl. 18. 06:30, autóval + belső kabin): foglalás F260126521, 129,07 EUR. A repülések foglaltak. Új ritmus: 1 éj Vilnius, majd 1 éj Helsinki is beékelődik. ⚠️ A Finnlines foglalásnál a megadott e-mail elgépelve — a foglalási kód (F260126521) alapján kérni kell a javítást a passenger@finnlines.com címen (a Tallink foglalásnál az e-mail helyes).",
+      note: "⏰ KÉT FIX IDŐPONT (kapuzárás miatt kritikus): ① júl. 16. — Tallink Megastar Tallinnból 10:30-kor indul (D-Terminál); járművel legkésőbb 09:30-ra a kikötőben, check-in zár 10:00. ② júl. 17. — Finnlines Naantaliból 22:45-kor indul; check-in zár 21:45, járművel érdemes 21:00–21:15-re ott lenni. Mindkét komp FOGLALVA (Tallink 75157795 · 72,90 EUR; Finnlines F260126521 · 129,07 EUR), a repülések is foglaltak. ⚠️ A Finnlines foglalásnál a megadott e-mail elgépelve — a kód (F260126521) alapján kérni kell a javítást a passenger@finnlines.com címen (a Tallink foglalásnál az e-mail helyes).",
       items: [
         {
           mode: "🚢 Komp",
@@ -118,7 +118,7 @@ const tripData = {
           departure: "2026.07.16 · 10:30",
           arrival: "2026.07.16 · 12:30",
           duration: "2:00",
-          baggage: "1 utas + deck place + autó (1 db) · check-in legkésőbb 10:00, D-Terminál · biztonsági kód: 4398 · 72,90 EUR, fizetve",
+          baggage: "Star Class (1 fő) + autó (mag. 1,9 m / hossz 5,0 m) · ⏰ FIX IDŐPONT: indulás 10:30 — járművel a kikötőben legkésőbb 09:30 (1 órával indulás előtt), a check-in 10:00-kor zár (30 perccel előtte) · D-Terminál, Pikksilma 19/2 · biztonsági kód: 4398 · 72,90 EUR, fizetve",
           links: [
             { label: "Tallink foglaláskezelés", url: "https://www.tallink.com/manage-my-booking" },
             { label: "Tallink 2026 timetable", url: "https://image.tallink.com/image/upload/cargo/terms-and-conditions/timetables-cargo-2026.pdf" }
@@ -134,7 +134,7 @@ const tripData = {
           departure: "2026.07.17 · 22:45",
           arrival: "2026.07.18 · 06:30",
           duration: "7:45",
-          baggage: "AB4 — belső kabin, 4 ágy · autóval (max 6 m, 2,1 m) · 129,07 EUR, kártyával fizetve · check-in Naantaliban legkésőbb 21:45 (1 órával indulás előtt)",
+          baggage: "AB4 — belső kabin, 4 ágy · autóval (max 6 m, 2,1 m) · ⏰ FIX IDŐPONT: indulás 22:45 — a check-in Naantaliban 21:45-kor zár (1 órával indulás előtt), járművel érdemes 21:00–21:15-re ott lenni · 129,07 EUR, kártyával fizetve",
           links: [
             { label: "Finnlines Naantali–Kapellskär", url: "https://www.finnlines.com/travel/routes-and-schedules/naantali-kapellskar" },
             { label: "Finnlines check-in", url: "https://www.finnlines.com/travel/before-the-trip/check-in" }
@@ -499,6 +499,7 @@ const tripData = {
       }
     ],
     important: [
+      "⏰ KÉT FIX KOMP-IDŐPONT (kapuzárás!): ① júl. 16. Tallink Megastar Tallinn → Helsinki, indulás 10:30 — járművel legkésőbb 09:30 a D-Terminálon (check-in zár 10:00). ② júl. 17. Finnlines Naantali → Kapellskär, indulás 22:45 — check-in zár 21:45 (járművel 21:00–21:15-re ott lenni). Mindkettő foglalva (Tallink 75157795; Finnlines F260126521).",
       "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki blokk + Porvoo, és ELSŐ finn éjszaka Helsinkiben. Júl. 17.: Helsinki → Turku (Turku Castle + Aura) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
       "A hazaút a következő struktúrát követi: 3 éjszaka Stockholm (júl. 26–28.) + 3 éjszaka Koppenhága (júl. 29–31.) + 3 éjszaka Hamburg (aug. 1–3.) + 1 éjszaka Frankfurt (aug. 4.) + városnap (aug. 5.) + Budapest aug. 6."
@@ -1074,8 +1075,8 @@ const tripData = {
             { label: "Helsinki éj", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:30", icon: "⚓", name: "Autós beállás — Tallinn D-terminál", maps: "https://www.google.com/maps/search/?api=1&query=Tallinn+D-Terminal+D-Terminaali", detail: "A Sadama negyedből 5 perc. Check-in legkésőbb 10:00. Autós boarding kb. 09:00-tól. Reggeli / kávé a terminál előtt." },
-            { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Megastar) ✅", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+L%C3%A4nsiterminaali+2+West+Terminal", detail: "Tallink Megastar, 10:30 → 12:30. A világ egyik legnagyobb és legmodernebb komp-járata, kényelmes átkelés. FOGLALVA: foglalás 75157795, biztonsági kód 4398, 1 utas + deck place + autó, 72,90 EUR fizetve. Check-in legkésőbb 10:00, D-Terminál." },
+            { time: "09:30", icon: "⚓", name: "Autós beállás — Tallinn D-terminál", maps: "https://www.google.com/maps/search/?api=1&query=Tallinn+D-Terminal+D-Terminaali", detail: "⏰ FIX: járművel legkésőbb 09:30-ra a kikötőben (1 órával a 10:30-as indulás előtt); a check-in 10:00-kor zár. A Sadama/Rotermann szállásból csak 5 perc, úgyhogy ez kényelmesen tartható. D-Terminál, Pikksilma 19/2." },
+            { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Megastar) ✅", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+L%C3%A4nsiterminaali+2+West+Terminal", detail: "Tallink Megastar, FIX indulás 10:30 → érkezés 12:30 (Helsinki West Harbour T2, Tyynenmerenkatu 14). FOGLALVA: foglalás 75157795, biztonsági kód 4398, Star Class (1 fő) + autó, 72,90 EUR fizetve." },
             { time: "12:30–14:00", icon: "🏙", name: "Helsinki blokk — Market Square, Katedrális, Temppeliaukio", mapName: "Helsinki Market Square", googleRating: "4.4", duration: "~1,5 óra", detail: "Market Square (Kauppatori) + Helsinki Katedrális a Senaatintori felett + (ha van idő) a sziklába vájt Temppeliaukio-templom. Az Uspenski-katedrális a dombon gyors extra. Az autót a kikötő közelében parkolva." },
             { time: "14:00–14:45", icon: "🚗", name: "Helsinki → Porvoo (~50 km keletre, ~45 perc)", detail: "E18-as autópályán. Porvoo Helsinkitől KELETRE van — most, hogy Helsinkiben alszunk, kényelmes délutáni kitérő, nem kell Turku felé sietni." },
             { time: "14:45–16:30", icon: "🏘", name: "Porvoo — faházas óváros séta", mapName: "Porvoo", googleRating: "4.6", duration: "~1,5 óra", detail: "Porvoo Finnország második legidősebb városa. A régi óváros (Vanha Porvoo) faházas negyede teljesen egyedi: piros, okker és sárga festett faházak a folyóparton. A legszebb nézet az Old Town Bridge (Porvoonjoki) felőli part. Google Reviews: ★4.6 — 'Ha csak egy finn kisvárost nézel meg, ez legyen.'" },
@@ -1084,7 +1085,7 @@ const tripData = {
           ],
           notes: [
             "⚠️ Új ritmus: a régi tervben ez a nap Turkuba hajtott és éjjeli komppal ment tovább. Most Helsinkiben ALSZUNK — nyugodtabb finn belépő, és a másnapi Finnlines komp (Naantali, 22:45) miatt nincs időnyomás.",
-            "✅ Tallink Megastar (Tallinn → Helsinki, 10:30 → 12:30) FOGLALVA: foglalás 75157795, kód 4398, autóval, 72,90 EUR. Check-in legkésőbb 10:00.",
+            "✅ Tallink Megastar (Tallinn → Helsinki, FIX 10:30 → 12:30) FOGLALVA: foglalás 75157795, kód 4398, Star Class + autó, 72,90 EUR. ⏰ Járművel legkésőbb 09:30 a kikötőben, check-in zár 10:00.",
             "Porvoo KELETRE van Helsinkitől, Turku NYUGATRA — ezért Porvoo ma (helsinki éj mellett) fér bele igazán jól, nem kell miatta backtrackelni.",
             "Ha inkább lazább nap kell: Porvoo elhagyható, helyette Suomenlinna erőd (kompos szigetkirándulás a helsinki kikötőből) egy kellemes délutáni alternatíva.",
             "Temppeliaukio sziklakirkko: belépő ~8 €, néha sor — reggel/kora délután kevésbé zsúfolt."
@@ -2720,7 +2721,7 @@ const tripData = {
             icon: "🚢",
             label: "Kompok · Tallink + Finnlines · FOGLALVA ✅",
             value: "~202 EUR",
-            detail: "Tallinn → Helsinki (Tallink Megastar, júl. 16. 10:30, autó + deck place): 72,90 EUR — FOGLALVA ✅, foglalás 75157795, kód 4398 · Naantali → Kapellskär (Finnlines Finnsirius overnight, autó + belső 4 ágyas kabin): 129,07 EUR — FOGLALVA ✅, kód F260126521, kártyával fizetve"
+            detail: "Tallinn → Helsinki (Tallink Megastar, júl. 16. 10:30, autó + Star Class): 72,90 EUR — FOGLALVA ✅, foglalás 75157795, kód 4398 · Naantali → Kapellskär (Finnlines Finnsirius overnight, autó + belső 4 ágyas kabin): 129,07 EUR — FOGLALVA ✅, kód F260126521, kártyával fizetve"
           },
           {
             icon: "🅿",
