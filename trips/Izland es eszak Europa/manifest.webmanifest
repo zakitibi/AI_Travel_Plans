@@ -1,0 +1,12 @@
+{
+  "name": "Izland és Észak-Európa 2026",
+  "short_name": "Izland 2026",
+  "lang": "hu",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0e1512",
+  "theme_color": "#1f5a3e",
+  "description": "Baltikum → Izland Ring Road → hazaút · részletes útiterv offline is"
+}

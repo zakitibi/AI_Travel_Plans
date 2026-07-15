@@ -2,8 +2,15 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>🌋 Izland es eszak Europa · 2026</title>
+  <!-- PWA / offline: telepíthető, cache-elt, adat nélkül is nyílik -->
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#1f5a3e">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Izland 2026">
   <link rel="stylesheet" href="./styles.css">
   <!-- Map engine CSS — travel-map-wrap, map-filter-wrap, dm-filter-sidebar, tm-marker stb. -->
   <link rel="stylesheet" href="../../engine/map.css">
@@ -2738,6 +2745,16 @@
         setTimeout(init, 0);
       }
     })();
+  </script>
+  <!-- Service worker regisztráció: offline gyorsítótár, hogy ne töltse újra állandóan.
+       A ../../sw.js a repó gyökeréből fut (scope: az egész oldal), így az engine/ és
+       data/ fájlokat is cache-eli. Csak HTTPS-en / localhoston aktív. -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("../../sw.js").catch(function () {});
+      });
+    }
   </script>
 </body>
 </html>
