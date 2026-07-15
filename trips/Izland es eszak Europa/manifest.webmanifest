@@ -7,6 +7,11 @@
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0e1512",
-  "theme_color": "#1f5a3e",
-  "description": "Baltikum → Izland Ring Road → hazaút · részletes útiterv offline is"
+  "theme_color": "#0e1512",
+  "description": "Baltikum → Izland Ring Road → hazaút · részletes útiterv offline is",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
 }
