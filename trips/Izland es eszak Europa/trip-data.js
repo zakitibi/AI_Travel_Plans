@@ -280,19 +280,19 @@ const tripData = {
         date: "2026.07.16",
         phase: "Tibi külön",
         accent: "accent-nordic",
-        title: "Tallinn → Helsinki + Porvoo · Helsinki éj",
-        summary: "Reggeli Tallink shuttle Helsinkibe, helsinki városi blokk, délutáni Porvoo-kitérő, és ELSŐ finn éjszaka Helsinkiben.",
-        points: ["Tallink 10:30 → 12:30", "Helsinki (Kauppatori, katedrális)", "Porvoo óváros", "éjszaka: Helsinki"],
-        driveStats: { km: "~100 km (Helsinki ↔ Porvoo)", stops: 4, depart: "10:30", arrive: "~21:00", driveTime: "~1,5 óra", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:30", label:"Porvoo"}, {time:"19:00", label:"vissza Helsinki"}] }
+        title: "Tallinn → Helsinki · Helsinki éj",
+        summary: "Reggeli Tallink shuttle Helsinkibe, helsinki városnap (Kauppatori, katedrális, Temppeliaukio), és ELSŐ finn éjszaka Helsinkiben. (Porvoo átkerült a 17-ei indulós napra.)",
+        points: ["Tallink 10:30 → 12:30", "Helsinki (Kauppatori, katedrális)", "Temppeliaukio", "éjszaka: Helsinki"],
+        driveStats: { km: "~5 km (helsinki séta)", stops: 3, depart: "10:30", arrive: "~21:00", driveTime: "kompos + gyalogos nap", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:00", label:"városnézés"}, {time:"20:00", label:"szállás"}] }
       },
       {
         date: "2026.07.17",
         phase: "Tibi külön",
         accent: "accent-nordic",
-        title: "Helsinki → Turku → Naantali · Finnlines komp",
-        summary: "Helsinki reggel, drive Turkuba (Turku Castle + Aura), majd Naantali kikötő és esti Finnlines overnight Kapellskär felé.",
-        points: ["Turku Castle", "Naantali kikötő", "Finnlines 22:45 → 06:30"],
-        driveStats: { km: "~180 km (Helsinki → Naantali)", stops: 4, depart: "09:00", arrive: "22:45", driveTime: "~2 óra", timelinePoints: [{time:"09:00", label:"Helsinki ind."}, {time:"11:30", label:"Turku"}, {time:"18:00", label:"Naantali"}, {time:"22:45", label:"Finnlines ⚓"}] }
+        title: "Helsinki → Porvoo → Turku → Naantali · Finnlines komp",
+        summary: "Reggel elindulás Helsinkiből: Porvoo óváros, Turku Luostarinmäki kézműves-negyed, Naantali óváros, majd esti Finnlines Kapellskär felé (Turku belvárosi kör és a vár nélkül).",
+        points: ["Porvoo óváros", "Luostarinmäki (Turku)", "Naantali óváros", "Finnlines 22:45 → 06:30"],
+        driveStats: { km: "~280 km (Helsinki → Porvoo → Turku → Naantali)", stops: 5, depart: "08:30", arrive: "22:45", driveTime: "~4,5 óra", timelinePoints: [{time:"08:30", label:"Helsinki ind."}, {time:"09:30", label:"Porvoo"}, {time:"13:30", label:"Luostarinmäki"}, {time:"16:00", label:"Naantali"}, {time:"22:45", label:"Finnlines ⚓"}] }
       },
       {
         date: "2026.07.18",
@@ -500,7 +500,7 @@ const tripData = {
     ],
     important: [
       "⏰ KÉT FIX KOMP-IDŐPONT (kapuzárás!): ① júl. 16. Tallink Megastar Tallinn → Helsinki, indulás 10:30 — járművel legkésőbb 09:30 a D-Terminálon (check-in zár 10:00). ② júl. 17. Finnlines Naantali → Kapellskär, indulás 22:45 — check-in zár 21:45 (járművel 21:00–21:15-re ott lenni). Mindkettő foglalva (Tallink 75157795; Finnlines F260126521).",
-      "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki blokk + Porvoo, és ELSŐ finn éjszaka Helsinkiben. Júl. 17.: Helsinki → Turku (Turku Castle + Aura) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
+      "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki városnap + ELSŐ finn éjszaka. Júl. 17. reggel 08:30-kor indulás: Porvoo óváros → Turku (Luostarinmäki) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
       "A hazaút a következő struktúrát követi: 3 éjszaka Stockholm (júl. 26–28.) + 3 éjszaka Koppenhága (júl. 29–31.) + 3 éjszaka Hamburg (aug. 1–3.) + 1 éjszaka Frankfurt (aug. 4.) + városnap (aug. 5.) + Budapest aug. 6."
     ],
@@ -548,7 +548,7 @@ const tripData = {
       {
         title: "🇫🇮 / 🇸🇪 Finnország és Svédország",
         accent: "accent-nordic",
-        text: "A finn szakasz most kap egy saját éjszakát Helsinkiben (júl. 16.), így Helsinki + Porvoo + Turku is kényelmesen belefér. A svéd oldal a Finnlines komp reggeli kikötése (Kapellskär) és az arlandai repülőtéri átadás.",
+        text: "A finn szakasz kap egy saját éjszakát Helsinkiben (júl. 16., városnap + Suomenlinna), majd a júl. 17-ei indulós napon Porvoo → Turku (Luostarinmäki) → Naantali fér bele a komp elé. A svéd oldal a Finnlines komp reggeli kikötése (Kapellskär) és az arlandai repülőtéri átadás.",
         points: [
           { label: "Finn szerep", value: "Helsinki éj + Turku" },
           { label: "Komp", value: "Naantali → Kapellskär (foglalt)" },
@@ -583,12 +583,12 @@ const tripData = {
       accent: "accent-baltic",
       status: "júl. 10–18. · külön szakasz",
       statusClass: "status-warm",
-      text: "Tibi 9 napos autós útja Budapestről Baltikumon át Svédországig (júl. 10–18.): Varsót teljesen kihagyva, Suwałki tranzitállomáson át belép Litvániába. Kaunas rövid kávészünettel (Laisvės aleja sétálóutca), majd egy éjszaka Vilniusban — a barokk főváros, ahol a Cathedral Square, a Gediminas-torony és az Užupis bohém negyed (saját alkotmánnyal!) adja a ritmust, Trakai Island Castle pedig a képeslapot (korai reggeli megállóként, indulás előtt). Lettország a Hill of Crosses zarándokhelyétől Riga Art Nouveau-negyedéig és Gauja-völgyi kastélyrombokig tart; Észtországba Turaida Castle-lal és az évszázados utazói feliratokkal teli Gutmanis-barlanggal érünk be — Tallinn Toompea-panorámájával és Telliskivi Creative City-vel zár. Júl. 16. reggel Tallink Shuttleval Helsinki + Porvoo, és egy éjszaka Helsinkiben. Júl. 17.: Turku Castle és Aura folyópart, majd a foglalt Finnlines overnight komp Naantaliból Kapellskärbe visz. Júl. 18. reggel Kapellskärben kötünk ki — az autó Arlandára kerül, 17:10-kor FI309 repít Keflavíkba.",
+      text: "Tibi 9 napos autós útja Budapestről Baltikumon át Svédországig (júl. 10–18.): Varsót teljesen kihagyva, Suwałki tranzitállomáson át belép Litvániába. Kaunas rövid kávészünettel (Laisvės aleja sétálóutca), majd egy éjszaka Vilniusban — a barokk főváros, ahol a Cathedral Square, a Gediminas-torony és az Užupis bohém negyed (saját alkotmánnyal!) adja a ritmust, Trakai Island Castle pedig a képeslapot (korai reggeli megállóként, indulás előtt). Lettország a Hill of Crosses zarándokhelyétől Riga Art Nouveau-negyedéig és Gauja-völgyi kastélyrombokig tart; Észtországba Turaida Castle-lal és az évszázados utazói feliratokkal teli Gutmanis-barlanggal érünk be — Tallinn Toompea-panorámájával és Telliskivi Creative City-vel zár. Júl. 16. Tallink Shuttleval Helsinki (városnap + Suomenlinna + éj). Júl. 17. reggel indulás: Porvoo óváros, Turku Luostarinmäki kézműves-negyed és Naantali, majd a foglalt Finnlines overnight komp Naantaliból Kapellskärbe visz. Júl. 18. reggel Kapellskärben kötünk ki — az autó Arlandára kerül, 17:10-kor FI309 repít Keflavíkba.",
       points: [
         "🇱🇹 Kaunas → Vilnius: <a href='https://www.google.com/maps/search/?api=1&query=Laisves+aleja+Kaunas' target='_blank' rel='noreferrer'>Laisvės aleja</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Cathedral+Square+Vilnius' target='_blank' rel='noreferrer'>Cathedral Square</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gediminas+Tower+Vilnius' target='_blank' rel='noreferrer'>Gediminas-torony</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Uzupis+Vilnius' target='_blank' rel='noreferrer'>Užupis negyed</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Trakai+Island+Castle' target='_blank' rel='noreferrer'>Trakai Island Castle</a> (★4.6, korai reggeli megálló)",
         "🇱🇻 Hill of Crosses → Riga: <a href='https://www.google.com/maps/search/?api=1&query=Hill+of+Crosses+Siauliai' target='_blank' rel='noreferrer'>Hill of Crosses</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=House+of+the+Black+Heads+Riga' target='_blank' rel='noreferrer'>House of the Black Heads</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Riga+Central+Market' target='_blank' rel='noreferrer'>Riga Central Market</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Alberta+iela+Riga+Art+Nouveau' target='_blank' rel='noreferrer'>Alberta iela Art Nouveau</a> (★4.7)",
         "🇱🇻→🇪🇪 Sigulda → Tallinn: <a href='https://www.google.com/maps/search/?api=1&query=Turaida+Castle+Sigulda' target='_blank' rel='noreferrer'>Turaida Castle</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Gutmanis+Cave+Sigulda' target='_blank' rel='noreferrer'>Gutmanis-barlang</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Toompea+Hill+Tallinn' target='_blank' rel='noreferrer'>Toompea kilátó</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Alexander+Nevsky+Cathedral+Tallinn' target='_blank' rel='noreferrer'>Alexander Nevsky-katedrális</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Telliskivi+Creative+City+Tallinn' target='_blank' rel='noreferrer'>Telliskivi Creative City</a> (★4.5)",
-        "🇫🇮 Helsinki (éj) → Porvoo → Turku → Naantali: <a href='https://www.google.com/maps/search/?api=1&query=Kauppatori+Helsinki' target='_blank' rel='noreferrer'>Helsinki Market Square</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Helsinki+Cathedral' target='_blank' rel='noreferrer'>Helsinki Katedrális</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo' target='_blank' rel='noreferrer'>Porvoo óváros</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Turku+Castle+Finland' target='_blank' rel='noreferrer'>Turku Castle</a> (★4.5) · Finnlines Naantali → Kapellskär"
+        "🇫🇮 Helsinki (éj) → Porvoo → Turku → Naantali: <a href='https://www.google.com/maps/search/?api=1&query=Kauppatori+Helsinki' target='_blank' rel='noreferrer'>Helsinki Market Square</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Helsinki+Cathedral' target='_blank' rel='noreferrer'>Helsinki Katedrális</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo' target='_blank' rel='noreferrer'>Porvoo óváros</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Luostarinm%C3%A4ki+Handicrafts+Museum+Turku' target='_blank' rel='noreferrer'>Luostarinmäki (Turku)</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town' target='_blank' rel='noreferrer'>Naantali óváros</a> (★4.6) · Finnlines Naantali → Kapellskär"
       ],
       cta: { label: "Részletes Baltikum oldal", tab: "baltikum" }
     },
@@ -704,14 +704,13 @@ const tripData = {
         { name: "Telliskivi Creative City", kind: "oldtown", lat: 59.4397, lng: 24.7243, day: 6, date: "2026-07-15", detail: "A vasúti műhelyek helyén kialakult alternatív negyed: design üzletek, street art, kézműves sörmalmok (Põhjala), kávézók." },
         { name: "Toompea — Kohtuotsa kilátó", kind: "viewpoint", lat: 59.4374, lng: 24.7397, day: 6, date: "2026-07-15", detail: "Tallinn fellegvára és legjobb kilátópontja. Kohtuotsa platoo (templomtornyok + Vanalinn piros tetők), Patkuli terasz (kikötő + tenger felé)." },
         { name: "Kadriorg-palota és park", kind: "castle", lat: 59.4382, lng: 24.7906, day: 6, date: "2026-07-15", detail: "Nagy Péter cár barokk palotája és parkja Tallinnban, a KUMU művészeti múzeummal.", reviewNote: "Nyugodt délutáni séta a Vanalinn után; a park ingyenes, a palota/KUMU belépős." },
-        { name: "Helsinki", kind: "stay", lat: 60.1699, lng: 24.9384, day: 7, date: "2026-07-16", detail: "Tallink Megastar: Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra, júl. 16. reggel). Helsinki városi blokk + Porvoo, majd 1 éjszaka Helsinkiben." },
+        { name: "Helsinki", kind: "stay", lat: 60.1699, lng: 24.9384, day: 7, date: "2026-07-16", detail: "Tallink Megastar: Tallinn D-Terminal → Helsinki West Harbour T2 (2 óra, júl. 16. reggel). Helsinki városnap (Kauppatori, katedrális, Temppeliaukio), majd 1 éjszaka Helsinkiben. (Porvoo a 17-ei indulós napra került.)" },
         { name: "Helsinki Market Square", kind: "market", lat: 60.1671, lng: 24.9521, day: 7, date: "2026-07-16", detail: "A városi blokk két főpontja: piac, kikötő, fehér neoklasszikus katedrális a Senaatintori felett. 30 perc alatt megvan." },
-        { name: "Porvoo", kind: "oldtown", lat: 60.3924, lng: 25.665, day: 7, date: "2026-07-16", detail: "Finnország második legidősebb városa. Vanha Porvoo: piros, okker és sárga festett faházak a Porvoonjoki folyóparton. Helsinkitől ~50 perc keletre — a helsinki éj mellett tökéletes délutáni kitérő. Kb. 1,5 óra.", reviewNote: "Festői piros fapados óváros a folyóparton — Helsinkitől ~50 perc. Tökéletes délutáni séta + kávé." },
         { name: "Temppeliaukio (Sziklatemplom)", kind: "church", lat: 60.1668, lng: 24.9252, day: 7, date: "2026-07-16", detail: "1969-ben gránitsziklába vájt lutheránus templom, rézkupola tetővel. Természetes fény, csodálatos akusztika. Helsinki különleges építészeti remeke.", reviewNote: "Sziklába vájt templom Helsinkiben — belépő ~8 €, néha sor van; reggel kevésbé zsúfolt." },
-        { name: "Aura folyópart", kind: "nature", lat: 60.4481, lng: 22.2745, day: 8, date: "2026-07-17", detail: "Turku ikonikus folyópartja: bárcsónakok, teraszos éttermek, hajómuseum. Kellemesen besétálható a katedrális és a kastély között." },
-        { name: "Turku", kind: "city", lat: 60.4518, lng: 22.2666, day: 8, date: "2026-07-17", detail: "Helsinki → Turku ~2h autóval. Turku Castle megtekintés, Aura folyópart, majd rövid hop Naantali kikötőbe a Finnlines komphoz." },
-        { name: "Turku Castle", kind: "castle", lat: 60.4381, lng: 22.2253, day: 8, date: "2026-07-17", detail: "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél. Múzeumi tartalom, középkori részek. Belépő ~€10, nyitva 10:00–18:00." },
-        { name: "Turku Cathedral", kind: "church", lat: 60.4512, lng: 22.2673, day: 8, date: "2026-07-17", detail: "Finnország nemzeti katedrálisa (13. sz.), a régi óváros szívében. A Turku városi blokk fő pontja a várral együtt." },
+        { name: "Porvoo", kind: "oldtown", lat: 60.3924, lng: 25.665, day: 8, date: "2026-07-17", detail: "Finnország második legidősebb városa. Vanha Porvoo: piros, okker és sárga festett faházak a Porvoonjoki folyóparton. A 17-ei indulós nap 1. megállója (Helsinkitől ~50–60 perc). 🅿 Rihkamatori (fizetős, ~150 m) vagy Kirkkotori (ingyenes, 3h + korong). Kb. 1,5 óra.", reviewNote: "Festői piros fapados óváros a folyóparton — a nap első megállója · 4.6 ★" },
+        { name: "Luostarinmäki", kind: "museum", lat: 60.4489, lng: 22.2765, day: 8, date: "2026-07-17", detail: "200+ éves, eredeti helyén megmaradt faházas kézműves-negyed Turkuban — a 17-ei nap fő turkui megállója, Turku Castle helyett. Bejárat: Vartiovuorenkatu 2. 🅿 Saját parkoló nincs, utcai parkolás (Vartiovuorenkatu → Sirkkalankatu → Kaskenkatu).", reviewNote: "Bejárható régi városrész, nem hagyományos múzeum — 60–75 perc elég · 4.7 ★" },
+        { name: "Turku", kind: "city", lat: 60.4518, lng: 22.2666, day: 8, date: "2026-07-17", detail: "Helsinki → Porvoo → Turku (~215 km). A 17-ei terv Turkuban Luostarinmäki + (opcionális, gyalog) katedrális; a Turku Castle és a belvárosi kör ezúttal kimarad. Innen ~15 km Naantali a Finnlines komphoz." },
+        { name: "Turku Cathedral", kind: "church", lat: 60.4512, lng: 22.2673, day: 8, date: "2026-07-17", detail: "Finnország nemzeti katedrálisa (13. sz.), a régi óváros szívében. Opcionális: Luostarinmäkitől ~10–15 perc gyalog, kívülről — csak ha belefér az idő." },
         { name: "Naantali kikötő", kind: "ferry", lat: 60.4676, lng: 22.0104, day: 8, date: "2026-07-17", detail: "Finnlines terminál (Satamatie 9). Turkutól ~15 km / ~20 perc. A hangulatos naantali óváros egy gyors sétát is megér a beszállás előtt. Check-in legkésőbb 21:45, indulás 22:45 (Finnsirius, autóval + belső kabin, kód F260126521)." },
         { name: "Stockholm / Arlanda", kind: "flight", lat: 59.6498, lng: 17.9238, day: 9, date: "2026-07-18", detail: "Autó Arlanda hosszú távú parkolóba. FI309 Stockholm → Keflavík, indulás 17:10, érkezés 18:25 (helyi)." },
         { name: "Kapellskär", kind: "ferry", lat: 59.7223, lng: 19.0567, day: 9, date: "2026-07-18", detail: "Finnlines: Naantali → Kapellskär, érkezés 06:30. Kapellskär ~75 km-re van Arlandától (~1 óra az E18 / 276 úton) — kényelmes puffer az FI309 elé." }
@@ -720,7 +719,7 @@ const tripData = {
       intro: [
         "A baltikumi szakasz Tibi 9 napos autós felfedezőútja Budapestről Litvánián, Lettországon és Észtországon át Stockholmig — három kis észak-európai ország jellegzetes városait, középkori erődjeit és természeti tájait fűzi egyetlen összefüggő útvonallá.",
         "Vilnius a barokk főváros az Užupis bohém negyedével és a tóba nyúló Trakai-kastéllyal (az új terv szerint csak 1 éj, ezért Trakai korai reggeli megállóként fér be); Riga az Art Nouveau-homlokzatok, a Riga Central Market zeppelin-hangárjai és a Gauja-völgy természetes kombinációja; Tallinn Toompea-dombjáról mutatja a legszebben megőrzött északi középkori óvárost.",
-        "A finn átmenet most két napra bővül: júl. 16. reggel Tallink Shuttle Helsinkibe, helsinki blokk + Porvoo, és egy éjszaka Helsinkiben; júl. 17-én Turku Castle és Aura folyópart, majd a foglalt Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30).",
+        "A finn átmenet két napra bővül: júl. 16. reggel Tallink Shuttle Helsinkibe, helsinki városnap (Suomenlinna) + éj; júl. 17-én reggel indulás Porvoo óváros → Turku (Luostarinmäki) → Naantali, majd a foglalt Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30).",
         "Júl. 18-án a Finnlines Kapellskärben köt ki: az autó Arlanda hosszú távú parkolóba kerül (~75 km / ~1 óra), Tibi FI309-cel repül Keflavíkba 17:10-kor — a baltikumi felvezető ezzel adja át a stafétát a közös izlandi körútnak."
       ],
       context: [
@@ -830,7 +829,7 @@ const tripData = {
             {
               title: "Finn átmenet",
               paragraphs: [
-                "A finn átmenet két napra bővült. Júl. 16. reggel Tallinn → Helsinki (Tallink Shuttle, 2h), helsinki városblokk (Kauppatori, Katedrális, Temppeliaukio) + délutáni Porvoo-kitérő, majd ELSŐ finn éjszaka Helsinkiben. Júl. 17.: Helsinki → Turku (~2h), Turku Castle + Aura folyópart, rövid hop a naantali kikötőbe, és a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, Finnsirius, autóval + belső 4 ágyas kabin, kód F260126521). Kapellskär ~75 km-re Arlandától — kényelmes puffer az FI309 elé."
+                "A finn átmenet két napra bővült. Júl. 16. reggel Tallinn → Helsinki (Tallink Shuttle, 2h), helsinki városnap (Kauppatori, Katedrális, Temppeliaukio, Suomenlinna), majd ELSŐ finn éjszaka Helsinkiben. Júl. 17. reggel 08:30-kor indulás: Porvoo óváros (Helsinkitől ~50–60 perc) → Turku Luostarinmäki kézműves-negyed (a Turku Castle és a belvárosi kör nélkül) → Naantali óváros, és a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, Finnsirius, autóval + belső 4 ágyas kabin, kód F260126521). Kapellskär ~75 km-re Arlandától — kényelmes puffer az FI309 elé."
               ]
             },
             {
@@ -1069,83 +1068,89 @@ const tripData = {
         {
           num: "7",
           date: "2026. július 16., csütörtök",
-          title: "Tallinn → Helsinki + Porvoo · Helsinki éj",
-          subtitle: "Reggeli Tallink shuttle, helsinki blokk, délutáni Porvoo — és ELSŐ finn éjszaka Helsinkiben",
-          driveLog: { km: "~100 km (Helsinki ↔ Porvoo)", stops: 4, driveTime: "~1,5 óra", depart: "10:30", arrive: "~21:00", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:30", label:"Porvoo"}, {time:"19:00", label:"vissza Helsinki"}] },
+          title: "Tallinn → Helsinki · Helsinki városnap + éj",
+          subtitle: "Reggeli Tallink shuttle Helsinkibe, teljes helsinki városnap, és ELSŐ finn éjszaka Helsinkiben",
+          driveLog: { km: "~5 km (helsinki séta)", stops: 4, driveTime: "kompos + gyalogos nap", depart: "10:30", arrive: "~21:00", timelinePoints: [{time:"10:30", label:"Tallinn ind."}, {time:"12:30", label:"Helsinki"}, {time:"14:00", label:"óváros/piac"}, {time:"16:00", label:"Suomenlinna/Esplanadi"}, {time:"20:00", label:"szállás"}] },
           tags: [
             { label: "Tallink Shuttle", cls: "tag-ferry" },
             { label: "Helsinki", cls: "tag-city" },
-            { label: "Porvoo", cls: "tag-focus" },
+            { label: "Suomenlinna", cls: "tag-focus" },
             { label: "Helsinki éj", cls: "tag-city" }
           ],
           activities: [
             { time: "09:30", icon: "⚓", name: "Autós beállás — Tallinn D-terminál", maps: "https://www.google.com/maps/search/?api=1&query=Tallinn+D-Terminal+D-Terminaali", detail: "⏰ FIX: járművel legkésőbb 09:30-ra a kikötőben (1 órával a 10:30-as indulás előtt); a check-in 10:00-kor zár. A Sadama/Rotermann szállásból csak 5 perc, úgyhogy ez kényelmesen tartható. D-Terminál, Pikksilma 19/2." },
             { time: "10:30", icon: "🚢", name: "Tallinn → Helsinki (Tallink Megastar) ✅", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+L%C3%A4nsiterminaali+2+West+Terminal", detail: "Tallink Megastar, FIX indulás 10:30 → érkezés 12:30 (Helsinki West Harbour T2, Tyynenmerenkatu 14). FOGLALVA: foglalás 75157795, biztonsági kód 4398, Star Class (1 fő) + autó, 72,90 EUR fizetve." },
-            { time: "12:30–14:00", icon: "🏙", name: "Helsinki blokk — Market Square, Katedrális, Temppeliaukio", mapName: "Helsinki Market Square", googleRating: "4.4", duration: "~1,5 óra", detail: "Market Square (Kauppatori) + Helsinki Katedrális a Senaatintori felett + (ha van idő) a sziklába vájt Temppeliaukio-templom. Az Uspenski-katedrális a dombon gyors extra. Az autót a kikötő közelében parkolva." },
-            { time: "14:00–14:45", icon: "🚗", name: "Helsinki → Porvoo (~50 km keletre, ~45 perc)", detail: "E18-as autópályán. Porvoo Helsinkitől KELETRE van — most, hogy Helsinkiben alszunk, kényelmes délutáni kitérő, nem kell Turku felé sietni." },
-            { time: "14:45–16:30", icon: "🏘", name: "Porvoo — faházas óváros séta", mapName: "Porvoo", googleRating: "4.6", duration: "~1,5 óra", detail: "Porvoo Finnország második legidősebb városa. A régi óváros (Vanha Porvoo) faházas negyede teljesen egyedi: piros, okker és sárga festett faházak a folyóparton. A legszebb nézet az Old Town Bridge (Porvoonjoki) felőli part. Google Reviews: ★4.6 — 'Ha csak egy finn kisvárost nézel meg, ez legyen.'" },
-            { time: "17:00–19:00", icon: "🚗", name: "Vissza Helsinkibe + esti séta", detail: "Porvoo → Helsinki ~45 perc. Esti séta a Design District / Esplanadi környékén, vacsora a városban." },
-            { time: "20:00", icon: "🛏", name: "Éjszaka Helsinkiben", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+city+centre+Kamppi", detail: "Az új terv szabadított fel egy éjszakát (Vilnius rövidült 1 napra) — ez most Helsinki. Szállás-tipp: Kamppi / Kluuvi / kikötő-közeli belváros, hogy reggel könnyű legyen indulni Turku felé. Parkolós hotel praktikus az autó miatt." }
+            { time: "12:30–14:00", icon: "🏙", name: "Helsinki blokk — Market Square, Katedrális, Uspenski", mapName: "Helsinki Market Square", googleRating: "4.4", duration: "~1,5 óra", detail: "Market Square (Kauppatori) + a Régi Csarnok (Old Market Hall), a Senaatintori fehér Helsinki Katedrálisa, és a kikötői dombon az Uspenski-katedrális. Az autót a szállásnál/kikötő közelében hagyva, ez a rész gyalog/HSL-lel." },
+            { time: "14:00–14:45", icon: "⛪", name: "Temppeliaukio (sziklatemplom)", mapName: "Temppeliaukio (Sziklatemplom)", googleRating: "4.7", duration: "~30 perc", detail: "1969-ben gránitsziklába vájt templom, rézkupolával — akusztikailag és vizuálisan is lenyűgöző. Belépő ~8 €; kora délután kevésbé zsúfolt." },
+            { time: "15:30–18:00", icon: "⛴", name: "Suomenlinna tengeri erőd (ajánlott délutáni program)", mapName: "Suomenlinna (alternatíva)", googleRating: "4.7", duration: "~2–2,5 óra", detail: "UNESCO tengeri erőd a kikötő előtt — HSL-komp a Market Square-ről (~15 perc). Laza tengeri délután bástyákkal és kilátással. Alternatíva, ha inkább szárazföldön maradnál: Esplanadi park + Design District séta." },
+            { time: "18:30", icon: "🍽", name: "Vacsora Helsinkiben", maps: "https://www.google.com/maps/search/?api=1&query=Esplanadi+Helsinki+restaurants", detail: "Esplanadi / Design District környéki éttermek, vagy a Market Square-i Vanha Kauppahalli finn ízei. Utána nyugodt esti séta." },
+            { time: "20:00", icon: "🛏", name: "Éjszaka Helsinkiben", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+city+centre+Kamppi", detail: "Az új terv szabadított fel egy éjszakát (Vilnius rövidült 1 napra) — ez most Helsinki. Szállás-tipp: Kamppi / Kluuvi / kikötő-közeli belváros, hogy reggel könnyű legyen 08:30-kor indulni Porvoo felé. Parkolós hotel praktikus az autó miatt." }
           ],
           notes: [
-            "⚠️ Új ritmus: a régi tervben ez a nap Turkuba hajtott és éjjeli komppal ment tovább. Most Helsinkiben ALSZUNK — nyugodtabb finn belépő, és a másnapi Finnlines komp (Naantali, 22:45) miatt nincs időnyomás.",
+            "⚠️ Változás: Porvoo ÁTKERÜLT a 17-ei indulós napra (Helsinki → Porvoo → Turku → Naantali), mert azt akkor nézed meg útközben. Így a 16-a nyugodt helsinki városnap + éj.",
             "✅ Tallink Megastar (Tallinn → Helsinki, FIX 10:30 → 12:30) FOGLALVA: foglalás 75157795, kód 4398, Star Class + autó, 72,90 EUR. ⏰ Járművel legkésőbb 09:30 a kikötőben, check-in zár 10:00.",
-            "Porvoo KELETRE van Helsinkitől, Turku NYUGATRA — ezért Porvoo ma (helsinki éj mellett) fér bele igazán jól, nem kell miatta backtrackelni.",
-            "Ha inkább lazább nap kell: Porvoo elhagyható, helyette Suomenlinna erőd (kompos szigetkirándulás a helsinki kikötőből) egy kellemes délutáni alternatíva.",
-            "Temppeliaukio sziklakirkko: belépő ~8 €, néha sor — reggel/kora délután kevésbé zsúfolt."
+            "Suomenlinna: HSL-komp a Market Square-ről (~15 perc), a jegy a városi HSL-bérletben benne van. Ha esik vagy fáradt vagy: Esplanadi + Design District a szárazföldi B-terv.",
+            "Temppeliaukio sziklakirkko: belépő ~8 €, néha sor — kora délután kevésbé zsúfolt.",
+            "Reggel korán feküdj — a 17-ei nap 08:30-kor indul Porvoo felé, hogy a háromhelyes program (Porvoo + Luostarinmäki + Naantali) kényelmesen beleférjen a komp elé."
           ],
           gpxPlaces: [
             { name: "Helsinki Market Square (Kauppatori)", badge: "helsinki főpont", duration: "30–40 perc", reviewNote: "A város szíve a kikötő és a piac között — a Régi Csarnokkal (Old Market Hall) együtt a leghatékonyabb helsinki megálló · 4.5 ★", detail: "A klasszikus Helsinki-kép: piac, kikötő, Katedrális a háttérben.", maps: "https://www.google.com/maps/search/?api=1&query=Kauppatori+Helsinki" },
             { name: "Helsinki Katedrális", badge: "helsinki főpont", duration: "15–20 perc", reviewNote: "Fehér neoklasszikus kupola a Senaatintori felett — az egyik legismertebb finn épület, kötelező fotómegálló · 4.7 ★", detail: "A tér és a homlokzat már kívülről is nagyon erős kép, belépő nem kell.", maps: "https://www.google.com/maps/search/?api=1&query=Helsinki+Cathedral" },
             { name: "Temppeliaukio Church (sziklakirkko)", badge: "helsinki opcionális", duration: "25–35 perc", reviewNote: "Sziklába vájt körtemplom — akusztikailag és vizuálisan egyaránt lenyűgöző · 4.7 ★", detail: "Most, hogy Helsinkiben van egy teljes délután + éj, kényelmesen belefér.", maps: "https://www.google.com/maps/search/?api=1&query=Temppeliaukio+Church+Helsinki" },
             { name: "Uspenski-katedrális", badge: "helsinki rövid", duration: "15 perc", reviewNote: "Vörös tégla ortodox katedrális a kikötői dombon — gyors képmegálló a piactér sétájához igazítva · 4.6 ★", detail: "Keletről nézve a Senaatintori fehér katedrálisával együtt a legjobb kettős városképi pont.", maps: "https://www.google.com/maps/search/?api=1&query=Uspenski+Cathedral+Helsinki" },
-            { name: "Porvoo — Vanha Porvoo (óváros)", badge: "délutáni kitérő", duration: "1,5 óra", reviewNote: "Festői piros fapados óváros a folyóparton — Helsinkitől ~50 perc keletre, a helsinki éj mellett ideális · 4.6 ★", detail: "A piros parti raktárházak és a fahíd a klasszikus finn képeslap.", maps: "https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo" },
-            { name: "Suomenlinna (alternatíva)", badge: "opcionális sziget", duration: "2–3 óra", reviewNote: "UNESCO tengeri erőd a helsinki kikötő előtt — kompos kirándulás a Market Square-ről, ha Porvoo helyett szigetet néznél · 4.7 ★", detail: "Kompjegy a HSL-lel; laza tengeri délután, ha nem akartok autóval Porvooba menni.", maps: "https://www.google.com/maps/search/?api=1&query=Suomenlinna+Helsinki" }
+            { name: "Suomenlinna tengeri erőd", badge: "délutáni főprogram", duration: "2–2,5 óra", reviewNote: "UNESCO tengeri erőd a helsinki kikötő előtt — HSL-komp a Market Square-ről (~15 perc) · 4.7 ★", detail: "Laza tengeri délután bástyákkal és kilátással; a kompjegy a HSL-bérletben benne van.", maps: "https://www.google.com/maps/search/?api=1&query=Suomenlinna+Helsinki" },
+            { name: "Esplanadi + Design District", badge: "szárazföldi B-terv", duration: "1–1,5 óra", reviewNote: "Helsinki elegáns sétánya és a design-negyed boltjai — eső/fáradtság esetén Suomenlinna helyett · 4.6 ★", detail: "Esplanadi park, Design District üzletek, kávézók — kényelmes városi séta.", maps: "https://www.google.com/maps/search/?api=1&query=Esplanadi+Park+Helsinki" }
           ],
           links: [
             { label: "Tallink Shuttle Tallinn–Helsinki", url: "https://www.tallink.com/tallinn-helsinki" },
-            { label: "Visit Porvoo", url: "https://www.visitporvoo.fi/en/" }
+            { label: "Suomenlinna (hivatalos)", url: "https://www.suomenlinna.fi/en/" }
           ]
         },
         {
           num: "8",
           date: "2026. július 17., péntek",
-          title: "Helsinki → Turku → Naantali · Finnlines komp",
-          subtitle: "Helsinki reggel → Turku Castle + Aura → Naantali kikötő → esti Finnlines overnight Kapellskär felé",
-          driveLog: { km: "~180 km (Helsinki → Naantali)", stops: 4, driveTime: "~2 óra", depart: "09:00", arrive: "22:45", timelinePoints: [{time:"09:00", label:"Helsinki ind."}, {time:"11:30", label:"Turku"}, {time:"18:00", label:"Naantali"}, {time:"21:45", label:"check-in"}, {time:"22:45", label:"Finnlines ⚓"}] },
+          title: "Helsinki → Porvoo → Turku (Luostarinmäki) → Naantali · Finnlines komp",
+          subtitle: "Reggel elindulás Helsinkiből: Porvoo óváros, Turku Luostarinmäki, Naantali óváros, majd esti Finnlines Kapellskär felé",
+          driveLog: { km: "~280 km (Helsinki → Porvoo → Turku → Naantali)", stops: 5, driveTime: "~4,5 óra", depart: "08:30", arrive: "22:45", timelinePoints: [{time:"08:30", label:"Helsinki ind."}, {time:"09:30", label:"Porvoo"}, {time:"13:30", label:"Luostarinmäki"}, {time:"16:00", label:"Naantali"}, {time:"20:30", label:"check-in"}, {time:"22:45", label:"Finnlines ⚓"}] },
           tags: [
-            { label: "Turku", cls: "tag-city" },
-            { label: "Naantali", cls: "tag-focus" },
+            { label: "Porvoo", cls: "tag-focus" },
+            { label: "Luostarinmäki", cls: "tag-focus" },
+            { label: "Naantali", cls: "tag-city" },
             { label: "Finnlines", cls: "tag-ferry" }
           ],
           activities: [
-            { time: "09:00", icon: "🚗", name: "Helsinki → Turku (~165 km, ~2 óra)", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Finland", detail: "E18-as autópályán nyugatra, egyenes, jó minőségű finn út. Ráérős reggeli indulás Helsinkiből — a komp csak este 22:45-kor megy." },
-            { time: "11:30–13:00", icon: "🏰", name: "Turku Castle (Turun linna)", mapName: "Turku Castle", googleRating: "4.5", duration: "~1–1,5 óra", detail: "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél. Komoly múzeumi tartalom, a középkori részek különösen erősek. Belépő ~€10, nyitva 10:00–18:00." },
-            { time: "13:00–15:30", icon: "🌊", name: "Aura folyópart + Turku Katedrális + ebéd", mapName: "Aura folyópart", googleRating: "4.5", duration: "~2 óra", detail: "Aura folyópart (Aurajoki): hajóéttermek, Market Hall, a helyi diákok és turisták kedvence. A Turku Katedrális (Turun tuomiokirkko, ingyenes) gyalog elérhető a sétány mentén. Kényelmes ebéd + séta." },
-            { time: "16:00–18:00", icon: "🏘", name: "Naantali óváros (~15 km, ~20 perc)", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town", detail: "Rövid hop Turkuból a Finnlines-kikötő városába. Naantali hangulatos kis fürdőváros: fapados óváros, jachtkikötő, teraszos kávézók — kellemes esti séta a beszállás előtt." },
-            { time: "21:45", icon: "⚓", name: "Check-in — Finnlines terminál, Naantali kikötő", maps: "https://www.google.com/maps/search/?api=1&query=Port+of+Naantali+Finnlines+Satamatie+9", detail: "Port of Naantali, Satamatie 9. A check-in legkésőbb 1 órával indulás előtt (21:45) zár. Autós beállás a jelzett sávba, kabinkulcs a fedélzeten." },
-            { time: "22:45", icon: "🚢", name: "Finnlines Finnsirius — Naantali → Kapellskär kikötő", maps: "https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden", detail: "FOGLALVA (kód F260126521): indulás 22:45, érkezés júl. 18. 06:30. Autóval (max 6 m) + belső 4 ágyas kabin (AB4). 129,07 EUR, kártyával fizetve. Booking Holder: Tibor Zakany." }
+            { time: "08:30", icon: "🚗", name: "Indulás Helsinki belvárosából → Porvoo (~50–60 perc)", maps: "https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo", detail: "Reggel időben indulj — kis tartalékkal ~09:30-ra Porvooban vagy. A háromhelyes nap (Porvoo + Luostarinmäki + Naantali) csak korai indulással fér bele kényelmesen, Turku belvárosi külön kör nélkül." },
+            { time: "09:30–11:00", icon: "🏘", name: "Porvoo óváros (Vanha Porvoo)", mapName: "Porvoo", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo", duration: "~1,5 óra", detail: "Finnország 2. legidősebb városa: piros parti raktárházak, macskaköves utcák, a Porvoo-katedrális. Kompakt kör: Rihkamatori → Raatihuoneentori → középkori utcák → katedrális → folyópart és piros raktárházak → vissza. Másfél óra elég a lényegre. 🅿 Parkolás: navigációba 'Rihkamatori, Porvoo' (cím: Rihkamakatu, 06100 Porvoo) — fizetős központi parkoló, ~150 m / 2–3 perc séta az óvárostól (a Porvoo Museum szerint a legközelebbi). Ha tele: 'Kirkkotori, Porvoo' a katedrálisnál — ingyenes, de 3 órás korlát + parkolókorong kell." },
+            { time: "11:00–13:30", icon: "🚗", name: "Porvoo → Turku (~215 km, ~2 óra 15–30 perc)", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Finland", detail: "Porvoo Helsinkitől keletre, Turku nyugatra — ez a nap leghosszabb etapja. Útközben egy rövid mosdó-/tankolós megálló belefér. 11:00-kor tényleg indulj tovább, hogy tartsd a tempót." },
+            { time: "13:30–14:45", icon: "🏘", name: "Luostarinmäki Museum Quarter (kézműves-negyed)", mapName: "Luostarinmäki", googleRating: "4.7", maps: "https://www.google.com/maps/search/?api=1&query=Luostarinm%C3%A4ki+Handicrafts+Museum+Turku", duration: "~1–1,25 óra", detail: "Több mint 200 éves, eredeti helyén megmaradt faházas negyed — inkább bejárható régi városrész, mint hagyományos múzeum: faházas utcák, udvarok, műhelyek. 60–75 perc bőven elég, nem kell minden helyiséget végignézni. 🅿 Parkolás: a bejárat KIZÁRÓLAG a Vartiovuorenkatu felől van (cím: Vartiovuorenkatu 2, 20700 Turku). Saját látogatói parkoló NINCS (csak 2 mozgássérült hely a kapunál — oda ne állj). Utcai fizetős parkolást keress ebben a sorrendben: Vartiovuorenkatu → Sirkkalankatu → Kaskenkatu. Figyeld a táblán a zónát és időkorlátot." },
+            { time: "14:45–15:20", icon: "⛪", name: "Turku Katedrális + Vanha Suurtori (opcionális, gyalog)", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Cathedral+Finland", duration: "~30 perc", detail: "Luostarinmäkitől a katedrális és az Old Great Square (Vanha Suurtori) ~10–15 perc gyalog — kívülről megnézhető, az autót NE mozgasd át. Ha Porvooból később értél ide vagy nehéz volt parkolni, ezt hagyd ki. A turkui vár ebbe a napba már nem fér bele." },
+            { time: "15:20–16:00", icon: "🚗", name: "Turku → Naantali (~15 km, ~25–30 perc)", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town", detail: "Rövid átugrás nyugatra a fürdővárosba." },
+            { time: "16:00–17:30", icon: "🏘", name: "Naantali óváros", mapName: "Naantali kikötő", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town", duration: "~1–1,5 óra", detail: "Finnország egyik legbájosabb kis fürdővárosa: fapados óváros, vendégkikötő. Rövid kör: parkoló → Naantali templom → Nunnakatu → Mannerheiminkatu → Rantakatu → vendégkikötő → vissza. 🅿 Parkolás: navigációba 'Kuparivuori parking' vagy 'Kuparivuorentie, 21100 Naantali' — INGYENES (Naantali hivatalos oldala és a 2026-os parkolási térkép szerint is), a Kuparivuori sportterületnél; innen ~8–12 perc séta az óvárosba. Fontos: ez NEM a Finnlines teherkikötő parkolója, és a vendégkikötő sem azonos a komp kikötőjével." },
+            { time: "17:30–20:15", icon: "🍽", name: "Vacsora / tartalékidő Naantaliban", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+guest+harbour", detail: "Korai vacsora a vendégkikötőnél, vagy lazítás — bőven van idő a komp előtt. Az óvárosból a Finnlines terminálhoz ~10–15 perc autó, de a parkolóhoz visszasétálással + beszállással + esetleges forgalommal reálisan 25–30 perc." },
+            { time: "20:30", icon: "⚓", name: "Finnlines terminál — check-in (Naantali)", maps: "https://www.google.com/maps/search/?api=1&query=Port+of+Naantali+Finnlines+Satamatie+9", detail: "Navigáció: 'Finnlines Naantali harbour', a kikötőben kövesd a Finnlines / Check-in táblákat (Satamatie 9). A check-in 2 órával indulás előtt NYIT (~20:45) és 1 órával előtte ZÁR (21:45). A 22:45-ös indulásnál ~20:30 körül érkezz — így sem várni nem kell sokat, sem egy parkolási/forgalmi csúszás nem veszélyezteti a kompot." },
+            { time: "22:45", icon: "🚢", name: "Finnlines Finnsirius — Naantali → Kapellskär ✅", maps: "https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden", detail: "FOGLALVA (kód F260126521): FIX indulás 22:45 → érkezés júl. 18. 06:30. Autóval (max 6 m) + belső 4 ágyas kabin (AB4). 129,07 EUR fizetve." }
           ],
           notes: [
-            "✅ Ez a komp FOGLALVA: Finnlines Finnsirius, Naantali → Kapellskär, júl. 17. 22:45 → júl. 18. 06:30, autóval + belső kabin, kód F260126521.",
-            "⚠️ E-mail elgépelve a foglalásnál — a foglalási kód (F260126521) alapján érdemes megírni a passenger@finnlines.com címre a helyes e-mailt, hogy a visszaigazolás/boarding infó megérkezzen.",
-            "Naantali a Finnlines-kikötő városa, Turkutól ~15 km / ~20 perc. Turku Castle + Aura a fő program, Naantali óváros a hab a tortán a beszállás előtt.",
-            "Mivel a komp csak 22:45-kor megy, bőven van idő: nem kell sietni Helsinkiből, akár késő délelőtti indulás is elég.",
-            "Check-in Naantaliban legkésőbb 21:45 (1 órával indulás előtt). A lezárás után a lefoglalt kapacitás nem garantált — érdemes 20:30–21:00 körül a terminálon lenni.",
-            "Kapellskär (érkezés 06:30) ~75 km-re van Arlandától (~1 óra az E18 / 276 úton) — kényelmes puffer az FI309 elé, akár egy reggeli megállóval."
+            "✅ A komp FOGLALVA: Finnlines Finnsirius, Naantali → Kapellskär, FIX indulás júl. 17. 22:45 → júl. 18. 06:30 (kód F260126521). A jegyen 22:45 szerepel — ha valahol 22:00-t láttál, a jegy szerint az 22:45.",
+            "⏰ Check-in: 2 órával indulás előtt NYIT (~20:45), 1 órával előtte ZÁR (21:45). Cél: ~20:30 a terminálon — kényelmes, de nem kell órákat várni.",
+            "🅿 Parkolók (ellenőrizve): Porvoo — Rihkamatori (fizetős, ~150 m) vagy Kirkkotori (ingyenes, 3h + korong). Turku/Luostarinmäki — bejárat Vartiovuorenkatu 2, utcai parkolás (Vartiovuorenkatu → Sirkkalankatu → Kaskenkatu), a kapunál lévő 2 hely mozgássérült. Naantali — Kuparivuori (INGYENES), NEM a teherkikötő.",
+            "Tempó: Porvooból 11:00-kor tényleg indulj tovább. Ha bárhol csúszol, ELŐSZÖR a turkui katedrális–Old Great Square opciót hagyd ki, ne Luostarinmäkit vagy Naantalit.",
+            "A turkui vár (Turku Castle) ebbe a háromhelyes programba már tudatosan nem fér bele.",
+            "Kapellskär (érkezés júl. 18. 06:30) ~75 km-re Arlandától (~1 óra) — kényelmes puffer az FI309 elé."
           ],
           gpxPlaces: [
-            { name: "Turku Castle (Turun linna)", badge: "turku főpont", duration: "60–90 perc", reviewNote: "Finnország egyik legidősebb épülete (1280-as évek!), a kikötő tövénél — komoly múzeumi tartalom, a középkori részek különösen erősek · 4.5 ★", detail: "Középkori kastély és múzeum a Turku-kikötő mellett; belépő ~€10, nyitva 10:00–18:00.", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Castle+Finland" },
-            { name: "Turku Katedrális (Turun tuomiokirkko)", badge: "turku főpont", duration: "20–30 perc", reviewNote: "Finnország legnagyobb és legfontosabb temploma — a régi főváros történelmi szívpointja, belépése ingyenes · 4.6 ★", detail: "Az Aura folyópart mentén gyalogolható; a kastéllyal együtt a turku blokk két pillére.", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Cathedral+Finland" },
-            { name: "Aura folyópart (Aurajoki)", badge: "ebéd + séta", duration: "60–120 perc", reviewNote: "A turkuliak és a turisták közös kedvence — hajóéttermek, kávézók és a folyóparti sétány az egyik legjobb finn hangulat · 4.5 ★", detail: "Ebéd előtt vagy alatt a legjobb hely; a hajóéttermek közvetlenül a folyón ülnek.", maps: "https://www.google.com/maps/search/?api=1&query=Aurajoki+Turku" },
-            { name: "Naantali óváros", badge: "kikötő + séta", duration: "45–60 perc", reviewNote: "Finnország egyik legbájosabb kis fürdővárosa — fapados óváros, jachtkikötő, teraszos kávézók a Finnlines-terminál mellett · 4.6 ★", detail: "Kellemes esti séta a beszállás előtt; a terminál (Satamatie 9) az óvárostól pár perc.", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town" },
-            { name: "Finnlines terminál — Naantali", badge: "komp boarding", duration: "check-in 21:45-ig", detail: "Port of Naantali, Satamatie 9, 21100 Naantali. Check-in 1 órával indulás előtt zár. 22:45 indulás (Finnsirius), autóval + belső kabin.", maps: "https://www.google.com/maps/search/?api=1&query=Port+of+Naantali+Finnlines" },
-            { name: "Kapellskär kikötő (Svédország)", badge: "reggeli érkezés", duration: "06:30 érkezés", detail: "Innen Arlandáig ~75 km / ~1 óra az E18 és a 276-os úton. Bőven elég puffer az FI309 előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Kapellskär+ferry+terminal" }
+            { name: "Porvoo — Vanha Porvoo (óváros)", badge: "1. megálló", duration: "1,5 óra", reviewNote: "Festői piros fapados óváros a folyóparton — Finnország 2. legidősebb városa · 4.6 ★", detail: "🅿 Rihkamatori (fizetős, ~150 m) vagy Kirkkotori (ingyenes, 3h + korong).", maps: "https://www.google.com/maps/search/?api=1&query=Old+Town+Porvoo" },
+            { name: "Luostarinmäki Museum Quarter", badge: "2. megálló", duration: "60–75 perc", reviewNote: "200+ éves, eredeti helyén megmaradt faházas kézműves-negyed — bejárható régi városrész · 4.7 ★", detail: "🅿 Bejárat Vartiovuorenkatu 2; utcai parkolás Vartiovuorenkatu/Sirkkalankatu/Kaskenkatu. Saját parkoló nincs.", maps: "https://www.google.com/maps/search/?api=1&query=Luostarinm%C3%A4ki+Handicrafts+Museum+Turku" },
+            { name: "Turku Katedrális + Old Great Square", badge: "opcionális", duration: "30 perc", reviewNote: "Finnország nemzeti katedrálisa a régi főtérrel — Luostarinmäkitől 10–15 perc gyalog · 4.6 ★", detail: "Csak ha belefér; az autót ne mozgasd át. Ha csúszol, ezt hagyd ki először.", maps: "https://www.google.com/maps/search/?api=1&query=Turku+Cathedral+Finland" },
+            { name: "Naantali óváros", badge: "3. megálló", duration: "1–1,5 óra", reviewNote: "Bájos kis fürdőváros: fapados óváros, vendégkikötő · 4.6 ★", detail: "🅿 Kuparivuori (INGYENES, Kuparivuorentie) — ~8–12 perc séta; NEM a teherkikötő.", maps: "https://www.google.com/maps/search/?api=1&query=Naantali+Old+Town" },
+            { name: "Finnlines terminál — Naantali", badge: "komp boarding", duration: "check-in ~20:45–21:45", detail: "Satamatie 9. Check-in nyit 2h, zár 1h indulás előtt. FIX indulás 22:45 (Finnsirius), autóval + belső kabin.", maps: "https://www.google.com/maps/search/?api=1&query=Port+of+Naantali+Finnlines+Satamatie+9" },
+            { name: "Kapellskär kikötő (Svédország)", badge: "reggeli érkezés", duration: "06:30 érkezés", detail: "Innen Arlandáig ~75 km / ~1 óra az E18 és a 276-os úton. Bőven elég puffer az FI309 előtt.", maps: "https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden" }
           ],
           links: [
             { label: "Finnlines Naantali–Kapellskär", url: "https://www.finnlines.com/travel/routes-and-schedules/naantali-kapellskar" },
             { label: "Finnlines check-in", url: "https://www.finnlines.com/travel/before-the-trip/check-in" },
-            { label: "Turku Castle", url: "https://www.google.com/maps/place/?q=place_id:ChIJT7lOv8JvlEYRV7z2L8OxwZQ" }
+            { label: "Visit Porvoo", url: "https://www.visitporvoo.fi/en/" },
+            { label: "Luostarinmäki (Turku múzeumok)", url: "https://www.turku.fi/en/luostarinmaki" }
           ]
         },
         {
@@ -2749,7 +2754,7 @@ const tripData = {
             icon: "🎫",
             label: "Belépők · attrakciók",
             value: "~55 EUR",
-            detail: "Trakai Castle: ~15 EUR · Turku Castle: ~10 EUR · egyéb városi múzeumok, toronykilátók: ~30 EUR · Tallinn óváros, Vilnius óváros: ingyenes séta"
+            detail: "Trakai Castle: ~15 EUR · Luostarinmäki (Turku): ~10 EUR · egyéb városi múzeumok, toronykilátók: ~30 EUR · Tallinn óváros, Vilnius óváros: ingyenes séta"
           }
         ]
       },
