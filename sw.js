@@ -13,7 +13,7 @@
  * A cache verzióját (CACHE) érdemes emelni, amikor nagy változás van és biztosan
  * friss tartalmat akarunk kényszeríteni.
  */
-const CACHE = "ai-travel-v2";
+const CACHE = "ai-travel-v3";
 
 // A gyökérhez (a service worker helyéhez) képest relatív útvonalak,
 // így a GitHub Pages `/AI_Travel_Plans/` alútvonalon és localhoston is jó.
@@ -21,7 +21,10 @@ const CORE_ASSETS = [
   "trips/Izland%20es%20eszak%20Europa/index.html",
   "trips/Izland%20es%20eszak%20Europa/styles.css",
   "trips/Izland%20es%20eszak%20Europa/trip-data.js",
+  "trips/Izland%20es%20eszak%20Europa/map-init.js",
+  "trips/Izland%20es%20eszak%20Europa/detail-map-init.js",
   "trips/Izland%20es%20eszak%20Europa/section-map-init.js",
+  "trips/Izland%20es%20eszak%20Europa/map-data.json",
   "trips/Izland%20es%20eszak%20Europa/manifest.webmanifest",
   "trips/Izland%20es%20eszak%20Europa/apple-touch-icon.png",
   "trips/Izland%20es%20eszak%20Europa/icons/icon-192.png",
