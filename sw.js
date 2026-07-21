@@ -13,7 +13,7 @@
  * A cache verzióját (CACHE) érdemes emelni, amikor nagy változás van és biztosan
  * friss tartalmat akarunk kényszeríteni.
  */
-const CACHE = "ai-travel-v5";
+const CACHE = "ai-travel-v6";
 
 // A gyökérhez (a service worker helyéhez) képest relatív útvonalak,
 // így a GitHub Pages `/AI_Travel_Plans/` alútvonalon és localhoston is jó.
