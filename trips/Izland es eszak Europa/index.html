@@ -510,7 +510,7 @@
                     <div class="sched-time">${p.time}</div>
                     <div class="sched-content">
                       ${p.branch ? `<div class="sched-branch-tag">${p.branch === "A" ? "🅰" : "🅱"} ${p.branchLabel || "alternatíva"} · vagy</div>` : ""}
-                      <div class="sched-name">${p.maps ? `<a class="day-place-name-link" href="${p.maps}" target="_blank" rel="noreferrer">${p.name}</a>` : p.name}${p.googleRating ? ` <a class="sched-rate" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐${p.googleRating}</a>` : ""}${p.lat != null ? ` <button type="button" class="day-place-maplink sched-maplink" data-iz2-key="${day.num}-${p._idx}" title="Ugrás a saját térképre">🗺</button>` : ""}${p.duration ? ` <span class="sched-dur">⏳ ${p.duration}</span>` : ""}</div>
+                      <div class="sched-name"><span class="place-nm">${p.name}</span>${p.maps ? ` <a class="place-gmaps" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps – hely megnyitása">📍</a>` : ""}${p.googleRating ? ` <a class="sched-rate" href="${p.maps}" target="_blank" rel="noreferrer" title="Google Maps">⭐${p.googleRating}</a>` : ""}${p.lat != null ? ` <button type="button" class="day-place-maplink sched-maplink" data-iz2-key="${day.num}-${p._idx}" title="Ugrás a saját térképre">🗺</button>` : ""}${p.duration ? ` <span class="sched-dur">⏳ ${p.duration}</span>` : ""}</div>
                       ${p.detail ? `<div class="sched-detail">${p.detail}</div>` : ""}
                       ${p.reviewNote ? `<div class="sched-review">„${p.reviewNote}”</div>` : ""}
                     </div>
@@ -525,7 +525,7 @@
         <article class="day-place-card${place.lat != null ? " day-place-mapped" : ""}"${place.lat != null ? ` data-iz2-key="${day.num}-${placeIdx}"` : ""}>
           <div class="day-place-top">
             <div>
-              <div class="day-place-name">${place.maps ? `<a class="day-place-name-link" href="${place.maps}" target="_blank" rel="noreferrer">${place.name}</a>` : place.name}</div>
+              <div class="day-place-name"><span class="place-nm">${place.name}</span>${place.maps ? ` <a class="place-gmaps" href="${place.maps}" target="_blank" rel="noreferrer" title="Google Maps – hely megnyitása">📍</a>` : ""}</div>
               ${place.badge ? `<div class="day-place-badge">${place.badge}</div>` : ""}
             </div>
             <div class="day-place-actions">
@@ -590,7 +590,7 @@
                     <div class="sched-row">
                       <div class="sched-time">${a.time}</div>
                       <div class="sched-content">
-                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}${mapsLink ? `<a class="day-place-name-link" href="${mapsLink}" target="_blank" rel="noreferrer">${nameClean}</a>` : nameClean}${rateChip}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}${chips ? ` <span class="sched-chips-inline">${chips}</span>` : ""}</div>
+                        <div class="sched-name">${a.icon ? `${a.icon} ` : ""}<span class="place-nm">${nameClean}</span>${mapsLink ? ` <a class="place-gmaps" href="${mapsLink}" target="_blank" rel="noreferrer" title="Google Maps – hely megnyitása">📍</a>` : ""}${rateChip}${a.mapName ? ` <button type="button" class="day-place-maplink sched-maplink bm-maplink" data-bm-name="${a.mapName}" title="Ugrás a saját térképre">🗺</button>` : ""}${a.duration ? ` <span class="sched-dur">⏳ ${a.duration}</span>` : ""}${chips ? ` <span class="sched-chips-inline">${chips}</span>` : ""}</div>
                         ${a.detail ? `<div class="sched-detail">${a.detail}</div>` : ""}
                         ${a.note ? `<div class="tip-box">${a.note}</div>` : ""}
                       </div>
