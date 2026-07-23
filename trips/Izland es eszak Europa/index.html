@@ -1020,6 +1020,11 @@
           ${section.practicalBox ? renderCollapseBox(section.practicalBox, false) : ""}
 
           ${renderIcelandBookings()}
+
+          <div class="refresh-zone">
+            <button type="button" class="refresh-btn" onclick="forceRefreshApp(this)">🔄 Tartalom frissítése a netről</button>
+            <div class="refresh-hint">Törli a gyorsítótárat és letölti a legfrissebb tervet. Használd, ha nem a legújabb változatot látod.</div>
+          </div>
         </section>
       `;
     }
@@ -2758,6 +2763,27 @@
         navigator.serviceWorker.register("../../sw.js", { updateViaCache: "none" }).catch(function () {});
       });
     }
+
+    // Kézi „frissítés a netről" gomb: kitörli az összes gyorsítótárat, frissíti a
+    // service workert, majd újratölt — így biztosan a legfrissebb tartalom jön le.
+    window.forceRefreshApp = async function (btn) {
+      var orig = btn ? btn.textContent : "";
+      try {
+        if (btn) { btn.disabled = true; btn.textContent = "⏳ Frissítés folyamatban…"; }
+        if (window.caches) {
+          var keys = await caches.keys();
+          await Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        }
+        if (navigator.serviceWorker) {
+          var regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map(function (r) { return r.update().catch(function () {}); }));
+        }
+      } catch (e) { /* ha bármi hibázik, akkor is újratöltünk */ }
+      // cache-megkerülő újratöltés (időbélyeggel a HTML-en)
+      var u = new URL(location.href);
+      u.searchParams.set("_r", Date.now());
+      location.replace(u.toString());
+    };
   </script>
 </body>
 </html>
