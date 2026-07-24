@@ -16,7 +16,7 @@
  * A cache verzióját (CACHE) minden érdemi tartalmi változásnál emeljük — így a
  * régi cache aktiváláskor törlődik, és a háttérfrissítés az új verziót hozza.
  */
-const CACHE = "ai-travel-v15";
+const CACHE = "ai-travel-v16";
 
 // A gyökérhez (a service worker helyéhez) képest relatív útvonalak,
 // így a GitHub Pages `/AI_Travel_Plans/` alútvonalon és localhoston is jó.
