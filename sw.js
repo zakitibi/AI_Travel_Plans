@@ -3,19 +3,20 @@
  * Cél: iPhone-on (és máshol) az oldal a gyorsítótárból töltsön AZONNAL, és
  * offline (adat nélkül) is működjön — így nem tölti újra állandóan a hálózatról.
  *
- * Stratégia:
- *  - fő tartalom (HTML navigáció + trip-data.js): network-first
- *    (ha van net, MINDIG a friss verzió jön azonnal; csak offline esik vissza a
- *     cache-re — így deploy után nem kell kétszer újratölteni)
- *  - többi saját fájl (CSS/egyéb JS/JSON/ikon): stale-while-revalidate
- *    (a cache-ből azonnal megjelenik, közben a háttérben frissül)
+ * Stratégia (minden saját fájl: HTML, trip-data.js, CSS, ikon, JSON):
+ *  - stale-while-revalidate: az oldal AZONNAL a gyorsítótárból jön (nincs
+ *    hálózati várakozás, mobilneten sincs „újratöltés"-érzés, és offline is
+ *    működik), közben a háttérben csendben frissül a KÖVETKEZŐ megnyitásra.
  *  - külső fájlok (Leaflet CDN, térkép-csempék, útvonal-API): cache-first
  *    (első használat után offline is megvannak, és nem esznek fölöslegesen adatot)
  *
- * A cache verzióját (CACHE) érdemes emelni, amikor nagy változás van és biztosan
- * friss tartalmat akarunk kényszeríteni.
+ * Ha AZONNAL friss tartalom kell (deploy után), az oldal alján a „🔄 Tartalom
+ * frissítése a netről" gomb kitörli a cache-t és letölti a legfrissebb tervet.
+ *
+ * A cache verzióját (CACHE) minden érdemi tartalmi változásnál emeljük — így a
+ * régi cache aktiváláskor törlődik, és a háttérfrissítés az új verziót hozza.
  */
-const CACHE = "ai-travel-v13";
+const CACHE = "ai-travel-v14";
 
 // A gyökérhez (a service worker helyéhez) képest relatív útvonalak,
 // így a GitHub Pages `/AI_Travel_Plans/` alútvonalon és localhoston is jó.
@@ -68,33 +69,9 @@ self.addEventListener("fetch", (event) => {
   const sameOrigin = url.origin === self.location.origin;
 
   if (sameOrigin) {
-    // A fő tartalom mindig friss legyen, ha van net: HTML-navigáció és a trip-data.js.
-    const isMainContent = req.mode === "navigate" || url.pathname.endsWith(".html") || url.pathname.endsWith("/trip-data.js");
-
-    if (isMainContent) {
-      // Network-first: friss verzió azonnal, offline esetén a cache-ből.
-      event.respondWith(
-        (async () => {
-          const cache = await caches.open(CACHE);
-          try {
-            const net = await fetch(req);
-            if (net && net.ok) cache.put(req, net.clone());
-            return net;
-          } catch (e) {
-            const cached = await cache.match(req);
-            if (cached) return cached;
-            if (req.mode === "navigate") {
-              const fallback = await cache.match("trips/Izland%20es%20eszak%20Europa/index.html");
-              if (fallback) return fallback;
-            }
-            return new Response("Offline", { status: 503, statusText: "Offline" });
-          }
-        })()
-      );
-      return;
-    }
-
-    // Egyéb saját fájlok (CSS, ikon, egyéb JS/JSON): stale-while-revalidate
+    // Minden saját fájl (HTML, trip-data.js, CSS, ikon, JSON): stale-while-revalidate.
+    // A cache-ből AZONNAL válaszolunk (nincs hálózati várakozás / „újratöltés"),
+    // közben a háttérben frissítjük a következő megnyitáshoz.
     event.respondWith(
       (async () => {
         const cache = await caches.open(CACHE);
@@ -112,6 +89,11 @@ self.addEventListener("fetch", (event) => {
         }
         const net = await network;
         if (net) return net;
+        // Első betöltés offline, nincs cache: navigációnál a fő oldalt adjuk vissza.
+        if (req.mode === "navigate") {
+          const fallback = await cache.match("trips/Izland%20es%20eszak%20Europa/index.html");
+          if (fallback) return fallback;
+        }
         return new Response("Offline", { status: 503, statusText: "Offline" });
       })()
     );
