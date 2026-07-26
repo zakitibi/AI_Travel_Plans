@@ -370,10 +370,10 @@ const tripData = {
         date: "2026.07.26",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Extra nap Keflavíkban — Hotel Keflavik (Icelandair-átfoglalás)",
-        summary: "Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, és erre az éjszakára a Hotel Keflavíkba rakott át. Pihenős extra nap a reptér közelében; ellenőrizzétek a bérautó- és Arlanda-parkoló hosszabbítást (+1 nap).",
-        points: ["Hotel Keflavik", "extra éj", "FI306 → júl. 27."],
-        driveStats: { km: "~10 km (KEF körzet)", stops: 1, depart: "—", arrive: "Hotel Keflavik", driveTime: "pihenőnap", timelinePoints: [{time:"—", label:"Hotel Keflavik"}, {time:"—", label:"reptér közeli pihenő"}] }
+        title: "Extra nap Keflavíkban — AUTÓ NÉLKÜL (gyalogos városnap)",
+        summary: "Az Icelandair a FI306-ot júl. 27-re tette át, de a bérautót NEM sikerült hosszabbítani → júl. 26-án leadva, így a Hotel Keflavíkban autó nélkül vagytok. Jó hír: a városközpont gyalog bejárható. Tippek: Skessan í hellinum (Óriásasszony a barlangban) a kikötőnél, Víkingaheimar (Viking World) hajómúzeum, Rokksafn (Rock 'n' Roll múzeum), kikötősétány + Kaffi Duus, esetleg a Vatnaveröld uszoda. Másnap hajnalban taxival/shuttle-lel a reptérre.",
+        points: ["Autó nélkül 🚶", "Giantess Cave", "Viking World", "kikötő"],
+        driveStats: { km: "gyalogos nap", stops: 4, depart: "—", arrive: "Hotel Keflavik", driveTime: "autó nélkül", timelinePoints: [{time:"délelőtt", label:"kikötő + Giantess Cave"}, {time:"délután", label:"Viking World / Rock múzeum"}, {time:"este", label:"Hotel Keflavik"}] }
       },
       {
         date: "2026.07.27",
@@ -1703,26 +1703,25 @@ const tripData = {
           num: "8",
           date: "2026. július 27., hétfő",
           title: "Távozás (FI306 áttéve júl. 27-re)",
-          subtitle: "Extra éj a Hotel Keflavíkban (júl. 26), majd hajnali autóleadás + FI306",
-          driveLog: { km: "~8–15 km (KEF körzet)", stops: 3, driveTime: "~15–20 perc", depart: "~04:45 hotel", arrive: "07:35 FI306", timelinePoints: [{time:"04:45", label:"hotel ind."}, {time:"04:55", label:"utolsó tankolás"}, {time:"05:10", label:"autóleadás"}, {time:"05:30", label:"KEF terminál"}, {time:"07:35", label:"FI306 ✈"}] },
+          subtitle: "Autó nélkül: taxi/shuttle a Hotel Keflavíkból a terminálra + FI306",
+          driveLog: { km: "~5 km (taxi/shuttle a terminálig)", stops: 2, driveTime: "~10 perc", depart: "~05:00 hotel", arrive: "07:35 FI306", timelinePoints: [{time:"05:00", label:"taxi/shuttle rendelve"}, {time:"05:15", label:"KEF terminál"}, {time:"05:30", label:"check-in nyit"}, {time:"07:35", label:"FI306 ✈"}] },
           tags: [
             { label: "reptér", cls: "tag-flight" },
             { label: "FI306 · 07:35", cls: "tag-flight" },
-            { label: "autóleadás", cls: "tag-focus" }
+            { label: "autó nélkül 🚕", cls: "tag-focus" }
           ],
           activities: [
-            { time: "~04:45", icon: "🚗", name: "Indulás a reptérközeli szállásról", detail: "KEF környéki hotelből hajnalban induljatok, hogy a tankolás + leadás + check-in együtt is kényelmes maradjon. A cél az, hogy legkésőbb 05:30 körül már a terminálnál legyetek." },
-            { time: "~04:55", icon: "⛽", name: "Utolsó tankolás", detail: "N1 vagy Olís a reptér mellett, mielőtt visszaadjátok az autót. Ezt ne hagyjátok az utolsó 5 percre, mert hajnalban is lehet kisebb sor." },
-            { time: "~05:10", icon: "🚗", name: "Autóleadás", detail: "Ellenőrizzétek még előző este, hogy van-e 24/7 kulcsleadás vagy mikor nyit a kölcsönző. Fotózzátok körbe a kocsit leadás előtt is." },
-            { time: "~05:30", icon: "🛂", name: "Érkezés a KEF terminálhoz", detail: "A 07:35-ös Icelandair FI306 előtt ez egy jó, biztonságos reptéri érkezési idő. Júliusban a check-in és security együtt simán elvihet 1,5–2 órát." },
+            { time: "előző este", icon: "🚕", name: "Taxi/shuttle megrendelése", detail: "A bérautó már nincs (júl. 26-án leadva), ezért a recepción előző este kérjetek hajnali taxit vagy a Hotel Keflavik reptéri shuttle-jét — a terminál ~5 km / 5–10 perc." },
+            { time: "~05:00", icon: "🧳", name: "Indulás a Hotel Keflavíkból", detail: "Előre bepakolva, útlevelek kéznél. Taxi/shuttle a KEF terminálra." },
+            { time: "~05:15", icon: "🛂", name: "Érkezés a KEF terminálhoz", detail: "A 07:35-ös Icelandair FI306 előtt ez jó, biztonságos érkezési idő. Nincs autóleadás/tankolás (a kocsi már nincs), így egyszerűbb a hajnal — csak check-in + security." },
             { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík / Keflavík → Stockholm / Arlanda, 07:35 → 12:45 helyi idő szerint. Innen fordul át az út a stockholmi közös hazaúti szakaszba." }
           ],
-          notes: ["🏨 EXTRA ÉJSZAKA: az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, és a júl. 26-i éjszakára a Hotel Keflavíkba rakott át titeket — a repülés csak júl. 27. hajnalán.", "⚠️ EZEKET NÉZD ÁT: a bérautó-leadás (eredetileg júl. 26. 06:00) és az Arlanda-parkoló (eredetileg júl. 26-ig) is +1 nappal csúszik — egyeztesd a Lava kölcsönzővel és a parkolóval, hogy júl. 27-ig fedve legyen.", "A hajnali szakasz legyen minél súrlódásmentesebb: előző este legyen kész a pakolás, a passportok és a bérautós papírok külön kirakva.", "A 07:35-ös FI306-hoz célozzátok meg a kb. 05:30-as terminálérkezést; ezzel marad puffer leadásra, check-inre és securityre is.", "Az autóleadás és a tankolás sorrendje ne cserélődjön fel: előbb tank, utána leadás."],
+          notes: ["🏨 EXTRA ÉJSZAKA: az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, és a júl. 26-i éjszakára a Hotel Keflavíkba rakott át — a repülés csak júl. 27. hajnalán.", "🚗❌ A bérautót NEM sikerült hosszabbítani → júl. 26-án leadva. Így a júl. 27. hajnali reptérre-jutás AUTÓ NÉLKÜL: taxi vagy a Hotel Keflavik shuttle-je (~5 km / 5–10 perc a terminálig). Kérd meg előző este a recepciót, hogy intézzenek taxit/shuttle-t hajnalra.", "⚠️ ARLANDA-PARKOLÓ (a saját kocsi Stockholmban): a júl. 27-i késett érkezés miatt +1 nappal hosszabbítani kell (eredetileg júl. 26-ig volt).", "A hajnali szakasz legyen minél súrlódásmentesebb: előző este legyen kész a pakolás, a passportok külön kirakva, a taxi/shuttle megrendelve.", "A 07:35-ös FI306-hoz célozzátok meg a kb. 05:30-as terminálérkezést; ezzel marad puffer a check-inre és securityre."],
           gpxPlaces: [
-            { name: "Hotel Keflavik (extra éj, júl. 26)", badge: "Icelandair-átfoglalás", detail: "Az Icelandair által biztosított extra éjszaka a júl. 26 → 27 áttolt FI306 miatt. Innen indultok júl. 27. hajnalán a reptérre.", maps: "https://www.google.com/maps/search/?api=1&query=Hotel+Keflavik+Iceland" },
-            { name: "KEF reptér", badge: "leadás + indulás", detail: "Bérautó-visszaadás, check-in és a közös izlandi szakasz lezárása.", maps: "https://www.google.com/maps/search/?api=1&query=Keflav%C3%ADk+Airport" },
-            { name: "N1 / Olís a reptér mellett", badge: "utolsó tankolás", detail: "Érdemes erre külön időt hagyni, ne a leadásnál csússzon el a hajnal.", maps: "https://www.google.com/maps/search/?api=1&query=N1+Keflavik+Airport" },
-            { name: "Autóleadási logisztika", badge: "ellenőrzendő", detail: "24/7 kulcsleadás vagy nyitási idő ellenőrzése még előző este legyen kész.", maps: "https://www.google.com/maps/search/?api=1&query=Keflavik+car+rental+return" }
+            { name: "Hotel Keflavik (extra éj, júl. 26)", badge: "Icelandair-átfoglalás", detail: "Az Icelandair által biztosított extra éjszaka a júl. 26 → 27 áttolt FI306 miatt. Innen taxival/shuttle-lel mentek júl. 27. hajnalán a reptérre (a bérautó már nincs).", maps: "https://www.google.com/maps/search/?api=1&query=Hotel+Keflavik+Iceland" },
+            { name: "Skessan í hellinum (Giantess Cave)", badge: "🚶 gyalog, ingyenes", detail: "Óriásasszony a barlangban — a kikötőnél, gyalog a Hotel Keflavíkból, ingyenes, gyerekbarát. Jó program a júl. 26-i autó nélküli napra.", maps: "https://www.google.com/maps/search/?api=1&query=Giantess+in+the+cave+Keflavik" },
+            { name: "Víkingaheimar (Viking World)", badge: "🚶 gyalog, múzeum", detail: "Az Íslendingur teljes méretű viking hajó-replika és kiállítás, ~1,5 km gyalog. Belépős, ~1 óra.", maps: "https://www.google.com/maps/search/?api=1&query=Viking+World+Keflavik" },
+            { name: "KEF terminál (taxi/shuttle)", badge: "júl. 27. hajnal", detail: "A júl. 27. 07:35-ös FI306-hoz taxival vagy hotel-shuttle-lel — a bérautót júl. 26-án leadtátok, nincs autóleadás/tankolás.", maps: "https://www.google.com/maps/search/?api=1&query=Keflav%C3%ADk+Airport" }
           ]
         }
       ]
@@ -1967,7 +1966,7 @@ const tripData = {
             { name: "Brimketill lávamedence", time: "16:30", kind: "photo", googleRating: "4.6", badge: "⚡ gyors extra", duration: "10–15 perc", lat: 63.8199, lng: -22.5574, detail: "Természetes kőlavór-alakú lávamedence a parton, ahol az Atlanti-óceán hullámai becsapnak — egyedülálló, különösen a viharos esti fényben. A Gunnuhver után, kelet felé a parton, Grindavík felé menet. Mit csináltok: kilátóplató a parkolóból ~5 perc séta, fotó a hullámzó medencéről.", reviewNote: "⚠️ safetravel.is + útlezárások indulás előtt (Reykjanes 2023 óta aktív). Ingyenes parkoló a 425-ös út mellett, 5 perc séta a platóra. A korláton túl SOHA ne menj le — a hullámok kiszámíthatatlanok és elsodornak.", maps: "https://www.google.com/maps/search/?api=1&query=63.8199,-22.5574" },
             { name: "Efrahóp lávamező (Grindavík)", time: "16:55", kind: "photo", googleRating: "4.4", badge: "🌋 friss láva", duration: "10–15 perc", lat: 63.8478, lng: -22.4372, detail: "A 2023–2024-es Sundhnúkur-kitörések FRISS lávamezeje Grindavík szélén, információs táblákkal a vulkáni aktivitásról és a védősáncokkal. Épp útba esik a Bridge → Seltún szakaszon (a 427-esen Grindavíkon át). Mit csináltok: közelről nézitek a fekete, alig pár éves lávát és a város védelmére emelt földsáncokat, elolvassátok a paneleket — ~10-15 perc.", reviewNote: "⚠️ NAGYON FONTOS: Grindavíkot a kitörések miatt kiürítették, és a bevezető utak (43 Grindavíkurvegur, 427 Suðurstrandarvegur) az aktivitástól függően nyitnak/zárnak. INDULÁS ELŐTT nézd meg MA a safetravel.is-t és az útstátuszt — ha Grindavík vagy a 427-es zárva, hagyd ki, és a Seltúnt a 42-es úton, észak felől közelítsd meg. Tartsd be a lezárásokat/sáncokat — aktív vulkáni zóna.", maps: "https://www.google.com/maps/search/?api=1&query=63.8478,-22.4372" },
             { name: "Seltún geotermikus mező (Krýsuvík)", time: "17:25", kind: "geothermal", googleRating: "4.6", badge: "🌋 geotermikus zárás", duration: "30–40 perc", lat: 63.8944, lng: -22.0553, detail: "Élénk sárga-narancs-vörös geotermikus mező Krýsuvíknál (Reykjanes-félsziget), fapallós ösvényekkel a bugyogó sárforrások, gőzölő fumarolák és kénkristályos talaj fölött. A nap geotermikus zárása a vendég leadása után, a Nupan felé menet útba esik. Mit csináltok: a parkolóból pár perc a pallós kör, ~30 perc; a színes, gőzölgő táj esti fényben különösen látványos.", reviewNote: "⚠️ Indulás előtt NÉZD MEG a safetravel.is-t és a 42-es / 427-es (Suðurstrandarvegur) útlezárásokat — a Reykjanes 2023 óta aktív, Krýsuvík környéke érintett lehet. Ingyenes parkoló a 42-es út mellett. Maradj a pallón — a talaj forró és törékeny; a kénszag erős.", maps: "https://www.google.com/maps/search/?api=1&query=63.8944,-22.0553" },
-            { name: "Nupan Deluxe", time: "18:15", kind: "stay", badge: "foglalt szállás", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Aðalgata 10, 230 Keflavík · 📋 Foglalás #6825780665 · PIN 1558 · Check-in 15:00–23:00, check-out 11:00-ig · Deluxe Double zuhannyal, reggeli NINCS · Tel +354 866 4156 · jelezd előre az érkezési időt · Csak Tibi + Henni (a vendéget már leadtátok a reptéren)", reviewNote: "Ez a júl. 25-i éjszaka. ⚠️ Mivel a FI306 áttolódott júl. 27-re, júl. 26-ra egy EXTRA éjszakát kaptok a Hotel Keflavíkban (Icelandair) — vagyis nem ez az utolsó éj. A repülés előtti tankolás/autóleadás a júl. 27. hajnalára esik.", maps: "https://www.google.com/maps/search/?api=1&query=A%C3%B0algata+10%2C+230+Keflavik%2C+Iceland" }
+            { name: "Nupan Deluxe", time: "18:15", kind: "stay", badge: "foglalt szállás", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Aðalgata 10, 230 Keflavík · 📋 Foglalás #6825780665 · PIN 1558 · Check-in 15:00–23:00, check-out 11:00-ig · Deluxe Double zuhannyal, reggeli NINCS · Tel +354 866 4156 · jelezd előre az érkezési időt · Csak Tibi + Henni (a vendéget már leadtátok a reptéren)", reviewNote: "Ez a júl. 25-i éjszaka. ⚠️ A FI306 áttolódott júl. 27-re, ezért júl. 26-ra EXTRA éj jött a Hotel Keflavíkban (Icelandair) — nem ez az utolsó éj. A bérautót júl. 26-án leadtátok (hosszabbítás nem ment), így az extra nap autó nélkül, a reptérre júl. 27. hajnalban taxi/shuttle.", maps: "https://www.google.com/maps/search/?api=1&query=A%C3%B0algata+10%2C+230+Keflavik%2C+Iceland" }
           ]
         }
       ],
@@ -2800,7 +2799,7 @@ const tripData = {
             icon: "🚗",
             label: "Bérautó · 8 nap · FOGLALVA ✅",
             value: "~842 EUR",
-            detail: "Lava Car Rental · Dacia Duster (New Model, manuális) · teljes autó 181 283 ISK (€ 1 262,86), Full Protection biztosítás + útadó AZ ÁRBAN (nincs külön SCDW/GP tétel) · KIFIZETVE · foglalás: ZMD4I5 · átvétel KEF júl. 18. 18:30, leadás júl. 26. 06:00 · 3 fő közt osztva → Tibi + Henni 2/3 = € 841,90 (a vendég a maradék 1/3-ot, € 420,95-öt fizeti) · ⚠️ A FI306 áttéve júl. 27-re → a bérautót 1 nappal (júl. 27. hajnal) hosszabbítani kell a Lavánál (extra napdíj), vagy júl. 26-i leadás + taxi a Hotel Keflavíkba"
+            detail: "Lava Car Rental · Dacia Duster (New Model, manuális) · teljes autó 181 283 ISK (€ 1 262,86), Full Protection biztosítás + útadó AZ ÁRBAN (nincs külön SCDW/GP tétel) · KIFIZETVE · foglalás: ZMD4I5 · átvétel KEF júl. 18. 18:30, leadás júl. 26. · 3 fő közt osztva → Tibi + Henni 2/3 = € 841,90 (a vendég a maradék 1/3-ot, € 420,95-öt fizeti) · ⚠️ A FI306 áttéve júl. 27-re, de a bérautót NEM sikerült hosszabbítani → júl. 26-án leadva, a júl. 26–27-i extra nap autó nélkül (gyalogos Keflavík + taxi/shuttle a reptérre)"
           },
           {
             icon: "⛽",
@@ -3595,7 +3594,7 @@ const tripData = {
       rental: "Lava Car Rental",
       category: "Dacia Duster (New Model) · manuális",
       pickup: "KEF reptér · júl. 18. 18:30",
-      dropoff: "KEF reptér · júl. 27. 06:00 (⚠️ hosszabbítandó, eredetileg júl. 26.)",
+      dropoff: "KEF reptér · júl. 26. (leadva — hosszabbítás nem volt lehetséges)",
       dates: "8 nap · Full Protection biztosítás + útadó (Road Tax) · visszatéríthető",
       price: "181 283 ISK (€ 1 262,86)",
       paid: true,
@@ -3604,7 +3603,7 @@ const tripData = {
       phone: "+354 519 4141",
       hours: "Nyáron (ápr–okt) 24/7 nyitva",
       pickupNote: "A júl. 18-i átvétel 18:30-kor van (FI309, landolás 18:25) → ez az ESTI sáv (18:00 után): dedikált 9 személyes Lava-shuttle a terminál indulási szintjének drop-off zónájából, a járat érkezése alapján — add meg előre a FI309 járatszámot, hogy ne kelljen várni. (Nappal 05:00–18:00: a „Car Rental BUS4U” shuttle 30 percenként az „Other Buses” megállóból indul, ~15 perc út a Flugvellir 23-i telephelyre.) Ha 10 percen belül nincs shuttle, hívd a +354 519 4141-et. Landolás után kb. 1 órával (vám + csomag) érsz a telephelyre.",
-      dropoffNote: "⚠️ A FI306 áttéve júl. 27-re — a leadás is júl. 27. hajnalára tolódik (a bérautót hosszabbítani kell a Lavánál, vagy júl. 26-i leadás + taxi). Leadás a telephelyen (Flugvellir 23) hajnalban — nyáron 24/7 nyitva —, majd Lava-shuttle vissza a terminálhoz a 07:35-ös FI306-hoz. Hagyj rá bő időt: shuttle + check-in.",
+      dropoffNote: "A FI306 áttéve júl. 27-re, de a bérautót NEM sikerült hosszabbítani → júl. 26-án leadva a telephelyen (Flugvellir 23). Így a júl. 26-i extra nap és a júl. 27. hajnali reptérre-jutás autó nélkül: gyalogos Keflavík + taxi/hotel-shuttle a terminálra (~5 km). A recepción előző este rendeljetek hajnali fuvart.",
       infoUrl: "https://www.lavacarrental.is/terms-extras/lava-car-rental-airport-pick-up-information",
       maps: "https://www.google.com/maps/search/?api=1&query=Flugvellir%2023%2C%20230%20Keflav%C3%ADk%2C%20Iceland",
       shares: [
