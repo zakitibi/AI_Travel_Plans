@@ -1,7 +1,7 @@
 const tripData = {
-  title: "🌋 Izland es eszak Europa · 2026. július 10 – augusztus 6.",
+  title: "🌋 Izland es eszak Europa · 2026. július 10 – augusztus 7.",
   subtitle: "Tibi balti autós felvezető útja a július 18-i stockholmi repüléssel, Henni külön izlandi belépővel, majd közös hazaúttal",
-  updatedAt: "2026.07.12",
+  updatedAt: "2026.07.25",
   route: [
     { label: "BUD", cls: "flight" },
     { separator: "→🚗→" },
@@ -90,8 +90,8 @@ const tripData = {
           operator: "Icelandair",
           code: "FI306",
           route: "<a href='https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport' target='_blank' rel='noreferrer'>Reykjavík / Keflavík (KEF)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport' target='_blank' rel='noreferrer'>Stockholm / Arlanda (ARN)</a>",
-          departure: "2026.07.26 · 07:35",
-          arrival: "2026.07.26 · 12:45",
+          departure: "2026.07.27 · 07:35",
+          arrival: "2026.07.27 · 12:45",
           duration: "3:10",
           bookingRef: "ASDBGX",
           bookingCom: "40-962579774 · PIN: 5627",
@@ -164,8 +164,8 @@ const tripData = {
           operator: "Icelandair",
           code: "FI306",
           route: "<a href='https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport' target='_blank' rel='noreferrer'>Reykjavík / Keflavík (KEF)</a> → <a href='https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport' target='_blank' rel='noreferrer'>Stockholm / Arlanda (ARN)</a>",
-          departure: "2026.07.26 · 07:35",
-          arrival: "2026.07.26 · 12:45",
+          departure: "2026.07.27 · 07:35",
+          arrival: "2026.07.27 · 12:45",
           duration: "3:10",
           bookingRef: "AS4YE9",
           bookingCom: "40-962206664 · PIN: 5695",
@@ -370,13 +370,22 @@ const tripData = {
         date: "2026.07.26",
         phase: "Közös hazaút",
         accent: "accent-return",
+        title: "Extra nap Keflavíkban — Hotel Keflavik (Icelandair-átfoglalás)",
+        summary: "Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, és erre az éjszakára a Hotel Keflavíkba rakott át. Pihenős extra nap a reptér közelében; ellenőrizzétek a bérautó- és Arlanda-parkoló hosszabbítást (+1 nap).",
+        points: ["Hotel Keflavik", "extra éj", "FI306 → júl. 27."],
+        driveStats: { km: "~10 km (KEF körzet)", stops: 1, depart: "—", arrive: "Hotel Keflavik", driveTime: "pihenőnap", timelinePoints: [{time:"—", label:"Hotel Keflavik"}, {time:"—", label:"reptér közeli pihenő"}] }
+      },
+      {
+        date: "2026.07.27",
+        phase: "Közös hazaút",
+        accent: "accent-return",
         title: "Stockholm — FI306 érkezés + első délután",
         summary: "FI306 visszaút Arlandára (12:45), autóátvétel, majd stockholmi belváros — Gamla Stan, Södermalm. Szállás Stockholmban.",
         points: ["FI306", "07:35 → 12:45 ARN", "Stockholm: Gamla Stan"],
         driveStats: { km: "~40 km (Arlanda → centrum)", stops: 2, depart: "07:35 (FI306)", arrive: "~13:30 Stockholm", driveTime: "~40 perc", timelinePoints: [{time:"07:35", label:"FI306 KEF"}, {time:"12:45", label:"Arlanda"}, {time:"13:30", label:"Stockholm"}, {time:"20:00", label:"szállás"}] }
       },
       {
-        date: "2026.07.27",
+        date: "2026.07.28",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Stockholm — Teljes városnap",
@@ -385,7 +394,7 @@ const tripData = {
         driveStats: { km: "~10 km", stops: 5, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / hajós nap", timelinePoints: [{time:"09:00", label:"Vasa Museum"}, {time:"12:00", label:"Djurgården"}, {time:"15:00", label:"Fotografiska"}, {time:"19:00", label:"esti séta"}] }
       },
       {
-        date: "2026.07.28",
+        date: "2026.07.29",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Stockholm Archipelago — Vaxholm + Grinda",
@@ -394,7 +403,7 @@ const tripData = {
         driveStats: { km: "~0 km (kompos nap)", stops: 3, depart: "09:00", arrive: "~20:00 Stockholm", driveTime: "kompos nap", timelinePoints: [{time:"09:00", label:"Strömkajen"}, {time:"10:15", label:"Vaxholm"}, {time:"12:00", label:"Grinda"}, {time:"16:30", label:"Visszakomp"}, {time:"19:30", label:"Stockholm"}] }
       },
       {
-        date: "2026.07.29",
+        date: "2026.07.30",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Stockholm → Malmö → Koppenhága",
@@ -403,7 +412,7 @@ const tripData = {
         driveStats: { km: "~650 km", stops: 3, depart: "07:00", arrive: "~14:00 Koppenhága", driveTime: "~7 óra", timelinePoints: [{time:"07:00", label:"Stockholm ind."}, {time:"11:30", label:"Malmö"}, {time:"12:30", label:"Øresund"}, {time:"14:00", label:"Koppenhága"}] }
       },
       {
-        date: "2026.07.30",
+        date: "2026.07.31",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Koppenhága 1. nap — Nyhavn + Rosenborg + Tivoli",
@@ -412,7 +421,7 @@ const tripData = {
         driveStats: { km: "~5 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / metró nap", timelinePoints: [{time:"09:00", label:"Nyhavn"}, {time:"11:00", label:"Rosenborg"}, {time:"14:00", label:"Strøget"}, {time:"17:00", label:"Tivoli"}] }
       },
       {
-        date: "2026.07.31",
+        date: "2026.08.01",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Koppenhága 2. nap — Christiansborg + Kis Hableány + Christiania",
@@ -421,7 +430,7 @@ const tripData = {
         driveStats: { km: "~6 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / bringa nap", timelinePoints: [{time:"09:00", label:"Christiansborg"}, {time:"11:00", label:"Kis Hableány"}, {time:"13:30", label:"Christiania"}, {time:"16:00", label:"Nørrebro"}] }
       },
       {
-        date: "2026.08.01",
+        date: "2026.08.02",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Koppenhága 3. nap + Louisiana Museum → Hamburg",
@@ -430,7 +439,7 @@ const tripData = {
         driveStats: { km: "~310 km", stops: 2, depart: "13:00", arrive: "~16:30 Hamburg", driveTime: "~3 óra", timelinePoints: [{time:"10:00", label:"Louisiana Museum"}, {time:"13:00", label:"Indulás"}, {time:"14:30", label:"Flensburg"}, {time:"16:30", label:"Hamburg"}] }
       },
       {
-        date: "2026.08.02",
+        date: "2026.08.03",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Hamburg körút — Lübeck + Schwerin Castle",
@@ -439,7 +448,7 @@ const tripData = {
         driveStats: { km: "~230 km", stops: 2, depart: "08:30", arrive: "~18:30 Hamburg", driveTime: "~3,5 óra", timelinePoints: [{time:"08:30", label:"Hamburg ind."}, {time:"09:30", label:"Lübeck"}, {time:"13:00", label:"Schwerin"}, {time:"18:30", label:"Hamburg"}] }
       },
       {
-        date: "2026.08.03",
+        date: "2026.08.04",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Hamburg városnap",
@@ -448,7 +457,7 @@ const tripData = {
         driveStats: { km: "~8 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos + U-Bahn nap", timelinePoints: [{time:"09:00", label:"Miniatur Wunderland"}, {time:"12:00", label:"Speicherstadt"}, {time:"15:00", label:"Elbphilharmonie"}, {time:"18:30", label:"Vacsora"}] }
       },
       {
-        date: "2026.08.04",
+        date: "2026.08.05",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Hamburg → Frankfurt",
@@ -457,7 +466,7 @@ const tripData = {
         driveStats: { km: "~490 km", stops: 2, depart: "09:00", arrive: "~14:30 Frankfurt", driveTime: "~4,5 óra", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"17:00", label:"Römerberg séta"}] }
       },
       {
-        date: "2026.08.05",
+        date: "2026.08.06",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Frankfurt városnap",
@@ -466,7 +475,7 @@ const tripData = {
         driveStats: { km: "~6 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos városnap", timelinePoints: [{time:"09:00", label:"Römerberg"}, {time:"11:00", label:"Städel Museum"}, {time:"14:00", label:"Sachsenhausen"}, {time:"19:00", label:"Apfelwein vacsora"}] }
       },
       {
-        date: "2026.08.06",
+        date: "2026.08.07",
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Frankfurt → Budapest 🏁",
@@ -502,7 +511,7 @@ const tripData = {
       "⏰ KÉT FIX KOMP-IDŐPONT (kapuzárás!): ① júl. 16. Tallink Megastar Tallinn → Helsinki, indulás 10:30 — járművel legkésőbb 09:30 a D-Terminálon (check-in zár 10:00). ② júl. 17. Finnlines Naantali → Kapellskär, indulás 22:45 — check-in zár 21:45 (járművel 21:00–21:15-re ott lenni). Mindkettő foglalva (Tallink 75157795; Finnlines F260126521).",
       "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki városnap + ELSŐ finn éjszaka. Júl. 17. reggel 08:30-kor indulás: Porvoo óváros → Turku (Luostarinmäki) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
-      "A hazaút a következő struktúrát követi: 3 éjszaka Stockholm (júl. 26–28.) + 3 éjszaka Koppenhága (júl. 29–31.) + 3 éjszaka Hamburg (aug. 1–3.) + 1 éjszaka Frankfurt (aug. 4.) + városnap (aug. 5.) + Budapest aug. 6."
+      "A hazaút a következő struktúrát követi: 3 éjszaka Stockholm (júl. 27–29.) + 3 éjszaka Koppenhága (júl. 30 – aug. 1.) + 3 éjszaka Hamburg (aug. 2–4.) + 1 éjszaka Frankfurt (aug. 5.) + városnap (aug. 6.) + Budapest aug. 7. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, ezért az egész hazaút +1 nappal csúszott; a stockholmi és koppenhágai napok száma változatlan.)"
     ],
     countrySummaries: [
       {
@@ -610,14 +619,14 @@ const tripData = {
     sharedReturn: {
       title: "Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest",
       accent: "accent-return",
-      status: "júl. 26 – aug. 6. · közös szakasz",
+      status: "júl. 27 – aug. 7. · közös szakasz",
       statusClass: "status-cool",
-      text: "A közös hazaút 12 napja (júl. 26 – aug. 6.) FI306-tal kezdődik: Keflavíkból Stockholm Arlandára (07:35 → 12:45), ahol az autó parkolóban vár, de az első stockholmi napokon nem kell használni. Három stockholmi nap fér bele: Gamla Stan és Monteliusvägen panoráma, a Vasa Museum + Djurgården + Fotografiska kulturális blokkja, majd egy teljes archipelago nap Vaxholm és Grinda kompjaival. Július 29-én Malmö csak fotóstop az Øresund előtt, utána három koppenhágai nap jön: Nyhavn, Rosenborg, Tivoli, Christiansborg, Christiania, majd a Louisiana Museum of Modern Art és az esti továbbindulás Hamburg felé. Hamburg háromnapos blokkot kap: egy teljes Lübeck + Schwerin körutat, egy önálló hamburgi városnapot Miniatur Wunderlanddal, Speicherstadttal és Elbphilharmoniéval, majd innen jön az átmeneti etap Frankfurtba. Frankfurt is külön városnapot kap Römerberggel, Kaiserdommal, Städel Museummal és Sachsenhausen Apfelwein-kultúrájával, mielőtt a záróetap augusztus 6-án ~950 km-rel hazagördül Budapestre.",
+      text: "A közös hazaút a FI306-tal kezdődik (az Icelandair júl. 26-ról júl. 27-re tette át, ezért az egész szakasz +1 nappal csúszik, de a stockholmi és koppenhágai napok száma marad): Keflavíkból Stockholm Arlandára (07:35 → 12:45), ahol az autó parkolóban vár, de az első stockholmi napokon nem kell használni. Három stockholmi nap fér bele: Gamla Stan és Monteliusvägen panoráma, a Vasa Museum + Djurgården + Fotografiska kulturális blokkja, majd egy teljes archipelago nap Vaxholm és Grinda kompjaival. Július 30-án Malmö csak fotóstop az Øresund előtt, utána három koppenhágai nap jön: Nyhavn, Rosenborg, Tivoli, Christiansborg, Christiania, majd a Louisiana Museum of Modern Art és az esti továbbindulás Hamburg felé. Hamburg háromnapos blokkot kap: egy teljes Lübeck + Schwerin körutat, egy önálló hamburgi városnapot Miniatur Wunderlanddal, Speicherstadttal és Elbphilharmoniéval, majd innen jön az átmeneti etap Frankfurtba. Frankfurt is külön városnapot kap Römerberggel, Kaiserdommal, Städel Museummal és Sachsenhausen Apfelwein-kultúrájával, mielőtt a záróetap augusztus 7-én ~950 km-rel hazagördül Budapestre.",
       points: [
-        "🇸🇪 Stockholm (júl. 26–28.): <a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Fortress+Stockholm' target='_blank' rel='noreferrer'>Vaxholm</a> (★4.5)",
-        "🇸🇪→🇩🇰 Malmö + Koppenhága (júl. 29. – aug. 1.): <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3) · <a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Louisiana+Museum+of+Modern+Art' target='_blank' rel='noreferrer'>Louisiana Museum</a> (★4.7)",
-        "🇩🇪 Hamburg blokk (aug. 1–3.): <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Lubeck' target='_blank' rel='noreferrer'>Holstentor Lübeck</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Schweriner+Schloss' target='_blank' rel='noreferrer'>Schwerin Castle</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Miniatur+Wunderland+Hamburg' target='_blank' rel='noreferrer'>Miniatur Wunderland</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Elbphilharmonie+Hamburg' target='_blank' rel='noreferrer'>Elbphilharmonie Plaza</a> (★4.7)",
-        "🇩🇪 Frankfurt + hazaút (aug. 4–6.): <a href='https://www.google.com/maps/search/?api=1&query=Roemerberg+Frankfurt' target='_blank' rel='noreferrer'>Römerberg</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Stadel+Museum+Frankfurt' target='_blank' rel='noreferrer'>Städel Museum</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Sachsenhausen+Frankfurt+Apfelwein' target='_blank' rel='noreferrer'>Sachsenhausen Apfelwein negyed</a> (★4.3) · aug. 6. → Budapest 🏁"
+        "🇸🇪 Stockholm (júl. 27–29.): <a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Fortress+Stockholm' target='_blank' rel='noreferrer'>Vaxholm</a> (★4.5)",
+        "🇸🇪→🇩🇰 Malmö + Koppenhága (júl. 30. – aug. 2.): <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3) · <a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Louisiana+Museum+of+Modern+Art' target='_blank' rel='noreferrer'>Louisiana Museum</a> (★4.7)",
+        "🇩🇪 Hamburg blokk (aug. 2–4.): <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Lubeck' target='_blank' rel='noreferrer'>Holstentor Lübeck</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Schweriner+Schloss' target='_blank' rel='noreferrer'>Schwerin Castle</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Miniatur+Wunderland+Hamburg' target='_blank' rel='noreferrer'>Miniatur Wunderland</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Elbphilharmonie+Hamburg' target='_blank' rel='noreferrer'>Elbphilharmonie Plaza</a> (★4.7)",
+        "🇩🇪 Frankfurt + hazaút (aug. 5–7.): <a href='https://www.google.com/maps/search/?api=1&query=Roemerberg+Frankfurt' target='_blank' rel='noreferrer'>Römerberg</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Stadel+Museum+Frankfurt' target='_blank' rel='noreferrer'>Städel Museum</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Sachsenhausen+Frankfurt+Apfelwein' target='_blank' rel='noreferrer'>Sachsenhausen Apfelwein negyed</a> (★4.3) · aug. 7. → Budapest 🏁"
       ],
       cta: { label: "Részletes hazaút oldal", tab: "hazaut" }
     },
@@ -651,7 +660,7 @@ const tripData = {
         "Reykjavík: <a href='https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja+Reykjavik' target='_blank' rel='noreferrer'>Hallgrímskirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Sky+Lagoon+Iceland' target='_blank' rel='noreferrer'>Sky Lagoon</a> (★4.4) · <a href='https://www.google.com/maps/search/?api=1&query=Harpa+Concert+Hall+Reykjavik' target='_blank' rel='noreferrer'>Harpa</a> (★4.6)",
         "Golden Circle + déli part: <a href='https://www.google.com/maps/search/?api=1&query=Thingvellir+National+Park+Iceland' target='_blank' rel='noreferrer'>Þingvellir</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Gullfoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Gullfoss</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Seljalandsfoss+Iceland' target='_blank' rel='noreferrer'>Seljalandsfoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Reynisfjara+black+sand+beach' target='_blank' rel='noreferrer'>Reynisfjara</a> (★4.7)",
         "Kelet + észak: <a href='https://www.google.com/maps/search/?api=1&query=Jokulsarlon+glacier+lagoon+Iceland' target='_blank' rel='noreferrer'>Jökulsárlón</a> (★4.9) · <a href='https://www.google.com/maps/search/?api=1&query=Studlagil+Canyon+Iceland' target='_blank' rel='noreferrer'>Stuðlagil</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Godafoss+waterfall+Iceland' target='_blank' rel='noreferrer'>Goðafoss</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Lake+Myvatn+Iceland' target='_blank' rel='noreferrer'>Mývatn</a> (★4.7)",
-        "Nyugati zárás: <a href='https://www.google.com/maps/search/?api=1&query=Budakirkja+Iceland' target='_blank' rel='noreferrer'>Búðakirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Arnarstapi+Iceland' target='_blank' rel='noreferrer'>Arnarstapi</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland' target='_blank' rel='noreferrer'>Kirkjufell</a> (★4.7) · júl. 26. FI306 → Stockholm"
+        "Nyugati zárás: <a href='https://www.google.com/maps/search/?api=1&query=Budakirkja+Iceland' target='_blank' rel='noreferrer'>Búðakirkja</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Arnarstapi+Iceland' target='_blank' rel='noreferrer'>Arnarstapi</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Kirkjufell+Iceland' target='_blank' rel='noreferrer'>Kirkjufell</a> (★4.7) · júl. 27. FI306 → Stockholm"
       ],
       cta: { label: "Izland részletes oldal", tab: "izland2" }
     }
@@ -1173,7 +1182,7 @@ const tripData = {
             "Ezzel a nappal zárul Tibi külön balti-felvezető szakasza, és indul a közös izlandi rész.",
             "A Finnlines-os 06:30-as érkezés ~10 óra puffert ad az FI309 előtt — kényelmes, stresszmentes reggel.",
             "Kapellskär → Arlanda: ~75 km, ~1 óra (E18 / 276). Nem érinti Stockholm belvárosát, ha nem akartok bemenni — egyenesen a reptér felé is mehet az út.",
-            "Arlanda parking: <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad)</a> — foglalva és kifizetve, #127891, 795 SEK, transzferrel. Az autó a júl. 26-i visszaút után kell.",
+            "Arlanda parking: <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad)</a> — foglalva és kifizetve, #127891, 795 SEK, transzferrel. Az autó a júl. 27-i visszaút után kell (a FI306 áttéve júl. 26-ról).",
             "Ha mégis Stockholm belvárost néznétek: Gamla Stan (óváros) 2-3 óra alatt szépen körbejárható, de Kapellskär felől ez ~1,5 óra kitérő oda-vissza."
           ]
         }
@@ -1240,7 +1249,7 @@ const tripData = {
         },
       ],
       intro: [
-        "Ez a rész a megfordított júliusi Ring Road tervre épül: július 18-i (szombat) esti KEF-érkezés, Reykjavíkkal induló akklimatizációs nap, majd Golden Circle + déli part, Jökulsárlón és Höfn, keleti fjordok, északi Mývatn–Akureyri-blokk, végül Snæfellsnes-zárás — 8 teljes nap, 07.26-i vasárnap reggeli visszarepüléssel.",
+        "Ez a rész a megfordított júliusi Ring Road tervre épül: július 18-i (szombat) esti KEF-érkezés, Reykjavíkkal induló akklimatizációs nap, majd Golden Circle + déli part, Jökulsárlón és Höfn, keleti fjordok, északi Mývatn–Akureyri-blokk, végül Snæfellsnes-zárás — 8 teljes nap, majd egy extra keflavíki nap (Icelandair-átfoglalás), 07.27-i hétfő reggeli visszarepüléssel.",
         "A kulcs nem a rohanás, hanem a csúcsszezoni tömeg jó kezelése: korai (7:00–7:30-as) indulások a főhelyszínekre, esti aranyórás visszatérés Seljalandsfoss-hoz és Diamond Beach-hez, és előre foglalt népszerű étterem / fürdő (Friðheimar, Sky Lagoon, Mývatn Nature Baths).",
         "Júliusban 18–21 óra napfény van — ez egyszerre áldás és csapda. A legjobb fotós fény reggel 5–8h és este 20–23h között van, amikor a turistabuszok még nincsenek ott. A legesőérzékenyebb teljes nap most a júl. 25-i Snæfellsnes-zárás: ha a vedur.is erre rossz látást vagy ködöt mutat, érdemes rövidített nyugati kört menni és időben visszazárni Reykjavík / KEF felé."
       ],
@@ -1692,9 +1701,9 @@ const tripData = {
         },
         {
           num: "8",
-          date: "2026. július 26., vasárnap",
-          title: "Távozás",
-          subtitle: "Autóleadás, tankolás, hajnal",
+          date: "2026. július 27., hétfő",
+          title: "Távozás (FI306 áttéve júl. 27-re)",
+          subtitle: "Extra éj a Hotel Keflavíkban (júl. 26), majd hajnali autóleadás + FI306",
           driveLog: { km: "~8–15 km (KEF körzet)", stops: 3, driveTime: "~15–20 perc", depart: "~04:45 hotel", arrive: "07:35 FI306", timelinePoints: [{time:"04:45", label:"hotel ind."}, {time:"04:55", label:"utolsó tankolás"}, {time:"05:10", label:"autóleadás"}, {time:"05:30", label:"KEF terminál"}, {time:"07:35", label:"FI306 ✈"}] },
           tags: [
             { label: "reptér", cls: "tag-flight" },
@@ -1708,8 +1717,9 @@ const tripData = {
             { time: "~05:30", icon: "🛂", name: "Érkezés a KEF terminálhoz", detail: "A 07:35-ös Icelandair FI306 előtt ez egy jó, biztonságos reptéri érkezési idő. Júliusban a check-in és security együtt simán elvihet 1,5–2 órát." },
             { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík / Keflavík → Stockholm / Arlanda, 07:35 → 12:45 helyi idő szerint. Innen fordul át az út a stockholmi közös hazaúti szakaszba." }
           ],
-          notes: ["A hajnali szakasz legyen minél súrlódásmentesebb: előző este legyen kész a pakolás, a passportok és a bérautós papírok külön kirakva.", "A 07:35-ös FI306-hoz célozzátok meg a kb. 05:30-as terminálérkezést; ezzel marad puffer leadásra, check-inre és securityre is.", "Az autóleadás és a tankolás sorrendje ne cserélődjön fel: előbb tank, utána leadás.", "Ha a kölcsönző shuttle-t használ, annak idejét külön számoljátok bele a hajnalba."],
+          notes: ["🏨 EXTRA ÉJSZAKA: az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, és a júl. 26-i éjszakára a Hotel Keflavíkba rakott át titeket — a repülés csak júl. 27. hajnalán.", "⚠️ EZEKET NÉZD ÁT: a bérautó-leadás (eredetileg júl. 26. 06:00) és az Arlanda-parkoló (eredetileg júl. 26-ig) is +1 nappal csúszik — egyeztesd a Lava kölcsönzővel és a parkolóval, hogy júl. 27-ig fedve legyen.", "A hajnali szakasz legyen minél súrlódásmentesebb: előző este legyen kész a pakolás, a passportok és a bérautós papírok külön kirakva.", "A 07:35-ös FI306-hoz célozzátok meg a kb. 05:30-as terminálérkezést; ezzel marad puffer leadásra, check-inre és securityre is.", "Az autóleadás és a tankolás sorrendje ne cserélődjön fel: előbb tank, utána leadás."],
           gpxPlaces: [
+            { name: "Hotel Keflavik (extra éj, júl. 26)", badge: "Icelandair-átfoglalás", detail: "Az Icelandair által biztosított extra éjszaka a júl. 26 → 27 áttolt FI306 miatt. Innen indultok júl. 27. hajnalán a reptérre.", maps: "https://www.google.com/maps/search/?api=1&query=Hotel+Keflavik+Iceland" },
             { name: "KEF reptér", badge: "leadás + indulás", detail: "Bérautó-visszaadás, check-in és a közös izlandi szakasz lezárása.", maps: "https://www.google.com/maps/search/?api=1&query=Keflav%C3%ADk+Airport" },
             { name: "N1 / Olís a reptér mellett", badge: "utolsó tankolás", detail: "Érdemes erre külön időt hagyni, ne a leadásnál csússzon el a hajnal.", maps: "https://www.google.com/maps/search/?api=1&query=N1+Keflavik+Airport" },
             { name: "Autóleadási logisztika", badge: "ellenőrzendő", detail: "24/7 kulcsleadás vagy nyitási idő ellenőrzése még előző este legyen kész.", maps: "https://www.google.com/maps/search/?api=1&query=Keflavik+car+rental+return" }
@@ -1944,7 +1954,7 @@ const tripData = {
             { time: "~15:00", icon: "✈", name: "Reptér — vendég leadása", detail: "Egyenesen a félszigetről a KEF reptérre; 17:00-ra ott kell lenni a vendég utas gépéhez (2 óra puffer)." },
             { time: "este", icon: "🌋", name: "Reykjanes + Nupan (Tibi+Henni)", detail: "A leadás után Brimketill, Gunnuhver, Bridge Between Continents, végül a Seltún geotermikus mező — majd az utolsó éjszaka Keflavíkban." }
           ],
-          notes: ["⏰ HATÁRIDŐ: 17:00-ra a KEF reptéren kell lenni a vendég utas leadásához — 08:00-s indulással és a könnyített reggeli körrel ~15:00-ra ott vagytok (2 óra puffer). A félszigetről közvetlenül a reptérre (Reykjavík kimarad).", "A Búðakirkját már tegnap este megnéztétek (a szállás előtt), ezért Saxhóll, Rauðfeldsgjá, Búðakirkja és Ytri-Tunga mára kimaradt. Gerðubergtől a reptér ~2 óra / ~190 km — útközben Borgarnesben ebéd/tankolás.", "⚠️ REYKJANES (a leadás UTÁN, Tibi+Henni): a félsziget (Grindavík környéke) 2023 óta vulkánilag aktív — előtte NÉZD MEG a safetravel.is-t és az útlezárásokat (Grindavíkurvegur / Suðurstrandarvegur 427 / Krýsuvík 42, a Seltúnhoz). Ha zárva, hagyd ki.", "Utolsó éjszaka Keflavík: tankolj tele (N1 Hafnargata 24/7), és készítsd elő az autóleadást a júl. 26. 07:35-ös géphez.", "🐦 Lóndrangar és Arnarstapi sziklapartjain júliusban puffinok fészkelnek — távcső jól jön."],
+          notes: ["⏰ HATÁRIDŐ: 17:00-ra a KEF reptéren kell lenni a vendég utas leadásához — 08:00-s indulással és a könnyített reggeli körrel ~15:00-ra ott vagytok (2 óra puffer). A félszigetről közvetlenül a reptérre (Reykjavík kimarad).", "A Búðakirkját már tegnap este megnéztétek (a szállás előtt), ezért Saxhóll, Rauðfeldsgjá, Búðakirkja és Ytri-Tunga mára kimaradt. Gerðubergtől a reptér ~2 óra / ~190 km — útközben Borgarnesben ebéd/tankolás.", "⚠️ REYKJANES (a leadás UTÁN, Tibi+Henni): a félsziget (Grindavík környéke) 2023 óta vulkánilag aktív — előtte NÉZD MEG a safetravel.is-t és az útlezárásokat (Grindavíkurvegur / Suðurstrandarvegur 427 / Krýsuvík 42, a Seltúnhoz). Ha zárva, hagyd ki.", "Keflavíki éjszaka (júl. 25., Nupan Deluxe). FIGYELEM: az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, ezért júl. 26-án EXTRA éjszaka jön a Hotel Keflavíkban (Icelandair-átfoglalás) — a repülés csak júl. 27. hajnalán.", "🐦 Lóndrangar és Arnarstapi sziklapartjain júliusban puffinok fészkelnek — távcső jól jön."],
           gpxPlaces: [
             { name: "Indulás a szállásról — Guesthouse Hof", time: "08:00", kind: "car", badge: "🚗 indulás", duration: "ekkor kell elindulni", detail: "08:00 körül induljatok a Hofból! Könnyített reggeli kör (Búðakirkját tegnap este már láttátok), majd a vendég utast 17:00-ra le kell adni a KEF reptéren. Check-out a Hofból 11:00-ig, de ti már 08:00-kor mentek.", reviewNote: "A nap fix pontja a 17:00-s reptéri leadás — 08:00-s indulással bőven belefértek. Borgarnesben ebéd/tankolás a reptér előtt." },
             { name: "Djúpalónssandur", time: "08:45", kind: "beach", googleRating: "4.6", badge: "fekete strand", duration: "30–45 perc", lat: 64.7522892, lng: -23.9005197, detail: "Fekete kavicsos strand, hajóroncs, bazaltformák. A Snæfellsjökull NP nyugati csúcsa.", reviewNote: "Ingyenes parkoló, ~10 perc séta le a partra. A rozsdás hajóroncs-darabok hadisír — hagyd a helyén. A hullámok itt is erősek, tartsd a távot a víztől.", maps: "https://www.google.com/maps/search/?api=1&query=64.7522892,-23.9005197" },
@@ -1957,7 +1967,7 @@ const tripData = {
             { name: "Brimketill lávamedence", time: "16:30", kind: "photo", googleRating: "4.6", badge: "⚡ gyors extra", duration: "10–15 perc", lat: 63.8199, lng: -22.5574, detail: "Természetes kőlavór-alakú lávamedence a parton, ahol az Atlanti-óceán hullámai becsapnak — egyedülálló, különösen a viharos esti fényben. A Gunnuhver után, kelet felé a parton, Grindavík felé menet. Mit csináltok: kilátóplató a parkolóból ~5 perc séta, fotó a hullámzó medencéről.", reviewNote: "⚠️ safetravel.is + útlezárások indulás előtt (Reykjanes 2023 óta aktív). Ingyenes parkoló a 425-ös út mellett, 5 perc séta a platóra. A korláton túl SOHA ne menj le — a hullámok kiszámíthatatlanok és elsodornak.", maps: "https://www.google.com/maps/search/?api=1&query=63.8199,-22.5574" },
             { name: "Efrahóp lávamező (Grindavík)", time: "16:55", kind: "photo", googleRating: "4.4", badge: "🌋 friss láva", duration: "10–15 perc", lat: 63.8478, lng: -22.4372, detail: "A 2023–2024-es Sundhnúkur-kitörések FRISS lávamezeje Grindavík szélén, információs táblákkal a vulkáni aktivitásról és a védősáncokkal. Épp útba esik a Bridge → Seltún szakaszon (a 427-esen Grindavíkon át). Mit csináltok: közelről nézitek a fekete, alig pár éves lávát és a város védelmére emelt földsáncokat, elolvassátok a paneleket — ~10-15 perc.", reviewNote: "⚠️ NAGYON FONTOS: Grindavíkot a kitörések miatt kiürítették, és a bevezető utak (43 Grindavíkurvegur, 427 Suðurstrandarvegur) az aktivitástól függően nyitnak/zárnak. INDULÁS ELŐTT nézd meg MA a safetravel.is-t és az útstátuszt — ha Grindavík vagy a 427-es zárva, hagyd ki, és a Seltúnt a 42-es úton, észak felől közelítsd meg. Tartsd be a lezárásokat/sáncokat — aktív vulkáni zóna.", maps: "https://www.google.com/maps/search/?api=1&query=63.8478,-22.4372" },
             { name: "Seltún geotermikus mező (Krýsuvík)", time: "17:25", kind: "geothermal", googleRating: "4.6", badge: "🌋 geotermikus zárás", duration: "30–40 perc", lat: 63.8944, lng: -22.0553, detail: "Élénk sárga-narancs-vörös geotermikus mező Krýsuvíknál (Reykjanes-félsziget), fapallós ösvényekkel a bugyogó sárforrások, gőzölő fumarolák és kénkristályos talaj fölött. A nap geotermikus zárása a vendég leadása után, a Nupan felé menet útba esik. Mit csináltok: a parkolóból pár perc a pallós kör, ~30 perc; a színes, gőzölgő táj esti fényben különösen látványos.", reviewNote: "⚠️ Indulás előtt NÉZD MEG a safetravel.is-t és a 42-es / 427-es (Suðurstrandarvegur) útlezárásokat — a Reykjanes 2023 óta aktív, Krýsuvík környéke érintett lehet. Ingyenes parkoló a 42-es út mellett. Maradj a pallón — a talaj forró és törékeny; a kénszag erős.", maps: "https://www.google.com/maps/search/?api=1&query=63.8944,-22.0553" },
-            { name: "Nupan Deluxe", time: "18:15", kind: "stay", badge: "foglalt szállás", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Aðalgata 10, 230 Keflavík · 📋 Foglalás #6825780665 · PIN 1558 · Check-in 15:00–23:00, check-out 11:00-ig (a 07:35-ös géphez hajnalban indultok) · Deluxe Double zuhannyal, reggeli NINCS · Tel +354 866 4156 · jelezd előre az érkezési időt · Csak Tibi + Henni (a vendéget már leadtátok a reptéren)", reviewNote: "Reptér melletti utolsó éjszaka a 07:35-ös géphez. Tankolj tele este (N1 Hafnargata, 24/7), és pakold elő az autó-leadáshoz a papírokat.", maps: "https://www.google.com/maps/search/?api=1&query=A%C3%B0algata+10%2C+230+Keflavik%2C+Iceland" }
+            { name: "Nupan Deluxe", time: "18:15", kind: "stay", badge: "foglalt szállás", t: "ov", lat: 63.9997549, lng: -22.5582716, detail: "Aðalgata 10, 230 Keflavík · 📋 Foglalás #6825780665 · PIN 1558 · Check-in 15:00–23:00, check-out 11:00-ig · Deluxe Double zuhannyal, reggeli NINCS · Tel +354 866 4156 · jelezd előre az érkezési időt · Csak Tibi + Henni (a vendéget már leadtátok a reptéren)", reviewNote: "Ez a júl. 25-i éjszaka. ⚠️ Mivel a FI306 áttolódott júl. 27-re, júl. 26-ra egy EXTRA éjszakát kaptok a Hotel Keflavíkban (Icelandair) — vagyis nem ez az utolsó éj. A repülés előtti tankolás/autóleadás a júl. 27. hajnalára esik.", maps: "https://www.google.com/maps/search/?api=1&query=A%C3%B0algata+10%2C+230+Keflavik%2C+Iceland" }
           ]
         }
       ],
@@ -1967,7 +1977,7 @@ const tripData = {
         open: false,
         cards: [
           { title: "🛏️ Szállásfoglalás", paragraphs: ["Júliusban a déli part, Kirkjubæjarklaustur és Höfn gyorsan betelik, és kevés a hely — foglalj jó előre. Az utolsó éjszaka szándékosan Keflavík, a hajnali géphez."] },
-          { title: "✈️ Hajnali indulás", paragraphs: ["Vissza júl. 26. 07:35 Keflavíkból. Onnan reggel 10 perc a reptér (Reykjavíkból 45–50). Előző este tankolj tele, készítsd elő az autó-leadást."] },
+          { title: "✈️ Hajnali indulás", paragraphs: ["Vissza júl. 27. (hétfő) 07:35 Keflavíkból — az Icelandair a gépet júl. 26-ról tette át, az extra éjszakát a Hotel Keflavíkban töltitek. Onnan reggel 10 perc a reptér. Előző este tankolj tele, készítsd elő az autó-leadást."] },
           { title: "💧 Lagúna-foglalás", paragraphs: ["A Mývatn Nature Baths (Earth Lagoon, 6. nap) idősávos, ~7.500 ISK / 3 óra — foglalj előre. Alternatíva: Sky Lagoon Reykjavíknál."] },
           { title: "🚗 Útviszonyok", paragraphs: ["A terv végig normál úton járható. Murvás lehajtó: Hvítserkur és a Dettifoss keleti oldala (ezért a nyugati, aszfaltos oldalt vesszük). F-utak nincsenek a tervben."] },
           { title: "⛽ Tankolás & matrica", paragraphs: ["Izlandon nincs autópálya-matrica. Egyetlen fizetős alagút: a Vaðlaheiðargöng Akureyrinél (utólag online fizethető). Tankolj tankkártyával (N1, Olís), a benzinkutak ritkulnak keleten."] }
@@ -2012,54 +2022,54 @@ const tripData = {
       ],
       mapNote: "A hazaút valós úthálózaton (OSRM): a nyitó KEF→Stockholm repülő (szaggatott), a Vaxholm-komp, majd a Stockholm→Budapest autós ív. A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (🏛️ óváros, 🏰 vár/kastély, ⛪ templom, 🖼️ múzeum, 📸 kilátó…), a 🏨 az éjszakai bázis. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
       mapStops: [
-        { name: "Gamla Stan", kind: "oldtown", lat: 59.3251, lng: 18.0711, day: 1, date: "2026-07-26", detail: "Stockholm középkori óvárosa: Stortorget színes házsora és a Storkyrkan katedrális." },
-        { name: "Kungliga Slottet", kind: "castle", lat: 59.3268, lng: 18.0717, day: 1, date: "2026-07-26", detail: "A Királyi Palota — Európa egyik legnagyobb lakott palotája, díszőrség-váltással." },
-        { name: "Riddarholmen + Stadshuset", kind: "viewpoint", lat: 59.3258, lng: 18.0610, day: 1, date: "2026-07-26", detail: "Riddarholmen panorámája a Riddarfjärden felett, mellette a Nobel-bankett Stadshusa." },
-        { name: "Monteliusvägen", kind: "viewpoint", lat: 59.3197, lng: 18.0608, day: 1, date: "2026-07-26", detail: "Stockholm legjobb ingyenes panorámasétánya a Södermalm szikláin — naplementekor a legszebb." },
-        { name: "Stockholm (szállás)", kind: "stay", lat: 59.3251, lng: 18.0686, day: 1, date: "2026-07-26", detail: "Három éjszaka stockholmi bázis (Gamla Stan / Norrmalm / Södermalm), autó a szállásnál / belvárosi P-házban." },
-        { name: "Vasa Museum", kind: "museum", lat: 59.3280, lng: 18.0915, day: 2, date: "2026-07-27", detail: "A 17. századi, épségben kiemelt hadihajó — Skandinávia leglátogatottabb múzeuma." },
-        { name: "Djurgården / Skansen", kind: "nature", lat: 59.3268, lng: 18.1032, day: 2, date: "2026-07-27", detail: "Stockholm zöld szigete és a világ első szabadtéri múzeuma, nordic állatparkkal." },
-        { name: "Moderna Museet", kind: "museum", lat: 59.3258, lng: 18.0848, day: 2, date: "2026-07-27", detail: "Picasso, Dalí, Warhol — Skandinávia egyik legfontosabb modern gyűjteménye, ingyenes állandó tárlattal." },
-        { name: "Fotografiska", kind: "museum", lat: 59.3179, lng: 18.0850, day: 2, date: "2026-07-27", detail: "Kortárs fotóművészet a kikötői vámházban, tetőteraszi étteremmel és Stockholm-panorámával." },
-        { name: "Vaxholm", kind: "castle", lat: 59.4026, lng: 18.3504, day: 3, date: "2026-07-28", detail: "Az archipelago „fővárosa”: erőd, favárosi utcák és füstölt hering a kikötőben." },
-        { name: "Grinda", kind: "nature", lat: 59.5085, lng: 18.5560, day: 3, date: "2026-07-28", detail: "Természetes közeli sziget: gránitsziklák közti úszás, erdei ösvények, szigeti vendéglő." },
-        { name: "Turning Torso", kind: "viewpoint", lat: 55.6132, lng: 12.9763, day: 4, date: "2026-07-29", detail: "Malmö csavart felhőkarcolója (Calatrava) — gyors fotóstop a Stortorget mellett." },
-        { name: "Øresund Bridge", kind: "viewpoint", lat: 55.5716, lng: 12.8497, day: 4, date: "2026-07-29", detail: "A 8 km-es híd-alagút Malmő és Koppenhága közt — a hazaút egyik ikonikus átkelője." },
-        { name: "Koppenhága (szállás)", kind: "stay", lat: 55.6781, lng: 12.5830, day: 4, date: "2026-07-29", detail: "Három éjszaka koppenhágai bázis (Indre By / Vesterbro), gyalog és metróval bejárható belváros." },
-        { name: "Nyhavn", kind: "oldtown", lat: 55.6797, lng: 12.5912, day: 5, date: "2026-07-30", detail: "A 17. századi színes kikötői házsor — Koppenhága legfotogénebb pontja, reggel a legcsendesebb." },
-        { name: "Rosenborg Slot", kind: "castle", lat: 55.6858, lng: 12.5773, day: 5, date: "2026-07-30", detail: "Reneszánsz kastély a dán koronázási ékszerekkel, körülötte a Kongens Have park." },
-        { name: "Torvehallerne", kind: "market", lat: 55.6838, lng: 12.5712, day: 5, date: "2026-07-30", detail: "Koppenhága fedett ínyenc-piaca: smørrebrød és helyi finomságok ebédre." },
-        { name: "Strøget", kind: "market", lat: 55.6785, lng: 12.5790, day: 5, date: "2026-07-30", detail: "Európa egyik leghosszabb gyalogos sétálóutcája az Amagertorvval." },
-        { name: "Tivoli Gardens", kind: "nature", lat: 55.6737, lng: 12.5683, day: 5, date: "2026-07-30", detail: "1843 óta működő legendás szórakoztatókert a főpályaudvar mellett — esti fényekkel a legszebb." },
-        { name: "Christiansborg", kind: "castle", lat: 55.6759, lng: 12.5797, day: 6, date: "2026-07-31", detail: "A dán parlament palotája — toronykilátó (ingyenes) és trónterem." },
-        { name: "Kis Hableány", kind: "viewpoint", lat: 55.6929, lng: 12.5994, day: 6, date: "2026-07-31", detail: "Den Lille Havfrue, Koppenhága jelképe, a Kastellet csillagerőd mellett." },
-        { name: "Reffen Street Food", kind: "market", lat: 55.6925, lng: 12.6113, day: 6, date: "2026-07-31", detail: "Utcai étel-piac Refshaleøen ipari kikötőjében — nemzetközi street food a víz mellett." },
-        { name: "Christiania", kind: "oldtown", lat: 55.6772, lng: 12.5990, day: 6, date: "2026-07-31", detail: "Freetown Christiania — Christianshavn alternatív, önkormányzati negyede." },
-        { name: "Nørrebro", kind: "oldtown", lat: 55.6975, lng: 12.5530, day: 6, date: "2026-07-31", detail: "Koppenhága hipszter szíve: Jægersborggade, Superkilen park, kávézók és bisztrók." },
-        { name: "Louisiana Museum", kind: "museum", lat: 55.9689, lng: 12.5429, day: 7, date: "2026-08-01", detail: "Skandinávia legjobb modern múzeuma Humlebækben — szoborkert az Øresund felett." },
-        { name: "Hamburg (szállás)", kind: "stay", lat: 53.5503, lng: 9.9920, day: 7, date: "2026-08-01", detail: "Hamburgi bázis (HafenCity / Altstadt / Altona), innen indul a Lübeck–Schwerin körút és a városnap." },
-        { name: "Holstentor", kind: "castle", lat: 53.8661, lng: 10.6796, day: 8, date: "2026-08-02", detail: "Lübeck ikonikus, kéttornyos középkori városkapuja — a Hansa-város jelképe." },
-        { name: "Marienkirche (Lübeck)", kind: "church", lat: 53.8687, lng: 10.6849, day: 8, date: "2026-08-02", detail: "A téglagótika (Backsteingotik) csúcspontja; a WWII-ben leomlott harangok emlékhelye megrázó." },
-        { name: "Niederegger", kind: "market", lat: 53.8664, lng: 10.6856, day: 8, date: "2026-08-02", detail: "Lübeck a marcipán világi fővárosa — a Niederegger (1806) emeleti kávézója és kis múzeuma." },
-        { name: "Buddenbrookhaus", kind: "museum", lat: 53.8679, lng: 10.6843, day: 8, date: "2026-08-02", detail: "Thomas Mann Nobel-díjas regényének háza; a lübecki óváros UNESCO-világörökség." },
-        { name: "Schweriner Schloss", kind: "castle", lat: 53.6244, lng: 11.4189, day: 8, date: "2026-08-02", detail: "A „Balti-tenger Neuschwansteinja” egy tóparti szigeten — Mecklenburg-Vorpommern parlamentje." },
-        { name: "Alter Garten", kind: "viewpoint", lat: 53.6272, lng: 11.4148, day: 8, date: "2026-08-02", detail: "Schwerin díszes főtere a kastéllyal, színházzal és múzeummal, tóparti sétával." },
-        { name: "Miniatur Wunderland", kind: "museum", lat: 53.5436, lng: 9.9887, day: 9, date: "2026-08-03", detail: "A világ legnagyobb modellvasútja a Speicherstadtban — előfoglalás kötelező." },
-        { name: "Speicherstadt", kind: "oldtown", lat: 53.5447, lng: 9.9920, day: 9, date: "2026-08-03", detail: "UNESCO-raktárváros: neogótikus téglacsatornák, a világ legnagyobb összefüggő raktárnegyede." },
-        { name: "Elbphilharmonie", kind: "viewpoint", lat: 53.5413, lng: 9.9842, day: 9, date: "2026-08-03", detail: "Hamburg hullámos hangversenyháza — a Plaza-kilátó (8. emelet) ingyenes." },
-        { name: "Reeperbahn", kind: "oldtown", lat: 53.5496, lng: 9.9628, day: 9, date: "2026-08-03", detail: "St. Pauli legendás éjszakai negyede — esti séta a kikötő közelében." },
-        { name: "Römerberg", kind: "oldtown", lat: 50.1104, lng: 8.6821, day: 10, date: "2026-08-04", detail: "Frankfurt rekonstruált óvárosi főtere a Römer (városháza) timpanonos homlokzatával." },
-        { name: "Frankfurt (szállás)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-04", detail: "Két éjszaka frankfurti bázis — gyalogos városnap a hazaút utolsó nagy állomása előtt." },
-        { name: "Frankfurter Dom", kind: "church", lat: 50.1106, lng: 8.6857, day: 11, date: "2026-08-05", detail: "A császárkoronázások gótikus dómja (Kaiserdom), megmászható toronnyal." },
-        { name: "Städel Museum", kind: "museum", lat: 50.1027, lng: 8.6742, day: 11, date: "2026-08-05", detail: "Frankfurt vezető képtára a Museumsuferen — 700 év európai festészete." },
-        { name: "Eiserner Steg", kind: "viewpoint", lat: 50.1094, lng: 8.6837, day: 11, date: "2026-08-05", detail: "A Majnán átívelő sétálóhíd a skyline és az óváros közt." },
-        { name: "Bankenviertel", kind: "viewpoint", lat: 50.1115, lng: 8.6710, day: 11, date: "2026-08-05", detail: "Frankfurt felhőkarcoló-negyede — „Mainhattan”, Németország egyetlen igazi skyline-ja." },
-        { name: "Budapest 🏁", kind: "stay", lat: 47.4979, lng: 19.0402, day: 12, date: "2026-08-06", detail: "Az expedíció célja: hazaérkezés Budapestre ~15:30 körül." }
+        { name: "Gamla Stan", kind: "oldtown", lat: 59.3251, lng: 18.0711, day: 1, date: "2026-07-27", detail: "Stockholm középkori óvárosa: Stortorget színes házsora és a Storkyrkan katedrális." },
+        { name: "Kungliga Slottet", kind: "castle", lat: 59.3268, lng: 18.0717, day: 1, date: "2026-07-27", detail: "A Királyi Palota — Európa egyik legnagyobb lakott palotája, díszőrség-váltással." },
+        { name: "Riddarholmen + Stadshuset", kind: "viewpoint", lat: 59.3258, lng: 18.0610, day: 1, date: "2026-07-27", detail: "Riddarholmen panorámája a Riddarfjärden felett, mellette a Nobel-bankett Stadshusa." },
+        { name: "Monteliusvägen", kind: "viewpoint", lat: 59.3197, lng: 18.0608, day: 1, date: "2026-07-27", detail: "Stockholm legjobb ingyenes panorámasétánya a Södermalm szikláin — naplementekor a legszebb." },
+        { name: "Stockholm (szállás)", kind: "stay", lat: 59.3251, lng: 18.0686, day: 1, date: "2026-07-27", detail: "Három éjszaka stockholmi bázis (Gamla Stan / Norrmalm / Södermalm), autó a szállásnál / belvárosi P-házban." },
+        { name: "Vasa Museum", kind: "museum", lat: 59.3280, lng: 18.0915, day: 2, date: "2026-07-28", detail: "A 17. századi, épségben kiemelt hadihajó — Skandinávia leglátogatottabb múzeuma." },
+        { name: "Djurgården / Skansen", kind: "nature", lat: 59.3268, lng: 18.1032, day: 2, date: "2026-07-28", detail: "Stockholm zöld szigete és a világ első szabadtéri múzeuma, nordic állatparkkal." },
+        { name: "Moderna Museet", kind: "museum", lat: 59.3258, lng: 18.0848, day: 2, date: "2026-07-28", detail: "Picasso, Dalí, Warhol — Skandinávia egyik legfontosabb modern gyűjteménye, ingyenes állandó tárlattal." },
+        { name: "Fotografiska", kind: "museum", lat: 59.3179, lng: 18.0850, day: 2, date: "2026-07-28", detail: "Kortárs fotóművészet a kikötői vámházban, tetőteraszi étteremmel és Stockholm-panorámával." },
+        { name: "Vaxholm", kind: "castle", lat: 59.4026, lng: 18.3504, day: 3, date: "2026-07-29", detail: "Az archipelago „fővárosa”: erőd, favárosi utcák és füstölt hering a kikötőben." },
+        { name: "Grinda", kind: "nature", lat: 59.5085, lng: 18.5560, day: 3, date: "2026-07-29", detail: "Természetes közeli sziget: gránitsziklák közti úszás, erdei ösvények, szigeti vendéglő." },
+        { name: "Turning Torso", kind: "viewpoint", lat: 55.6132, lng: 12.9763, day: 4, date: "2026-07-30", detail: "Malmö csavart felhőkarcolója (Calatrava) — gyors fotóstop a Stortorget mellett." },
+        { name: "Øresund Bridge", kind: "viewpoint", lat: 55.5716, lng: 12.8497, day: 4, date: "2026-07-30", detail: "A 8 km-es híd-alagút Malmő és Koppenhága közt — a hazaút egyik ikonikus átkelője." },
+        { name: "Koppenhága (szállás)", kind: "stay", lat: 55.6781, lng: 12.5830, day: 4, date: "2026-07-30", detail: "Három éjszaka koppenhágai bázis (Indre By / Vesterbro), gyalog és metróval bejárható belváros." },
+        { name: "Nyhavn", kind: "oldtown", lat: 55.6797, lng: 12.5912, day: 5, date: "2026-07-31", detail: "A 17. századi színes kikötői házsor — Koppenhága legfotogénebb pontja, reggel a legcsendesebb." },
+        { name: "Rosenborg Slot", kind: "castle", lat: 55.6858, lng: 12.5773, day: 5, date: "2026-07-31", detail: "Reneszánsz kastély a dán koronázási ékszerekkel, körülötte a Kongens Have park." },
+        { name: "Torvehallerne", kind: "market", lat: 55.6838, lng: 12.5712, day: 5, date: "2026-07-31", detail: "Koppenhága fedett ínyenc-piaca: smørrebrød és helyi finomságok ebédre." },
+        { name: "Strøget", kind: "market", lat: 55.6785, lng: 12.5790, day: 5, date: "2026-07-31", detail: "Európa egyik leghosszabb gyalogos sétálóutcája az Amagertorvval." },
+        { name: "Tivoli Gardens", kind: "nature", lat: 55.6737, lng: 12.5683, day: 5, date: "2026-07-31", detail: "1843 óta működő legendás szórakoztatókert a főpályaudvar mellett — esti fényekkel a legszebb." },
+        { name: "Christiansborg", kind: "castle", lat: 55.6759, lng: 12.5797, day: 6, date: "2026-08-01", detail: "A dán parlament palotája — toronykilátó (ingyenes) és trónterem." },
+        { name: "Kis Hableány", kind: "viewpoint", lat: 55.6929, lng: 12.5994, day: 6, date: "2026-08-01", detail: "Den Lille Havfrue, Koppenhága jelképe, a Kastellet csillagerőd mellett." },
+        { name: "Reffen Street Food", kind: "market", lat: 55.6925, lng: 12.6113, day: 6, date: "2026-08-01", detail: "Utcai étel-piac Refshaleøen ipari kikötőjében — nemzetközi street food a víz mellett." },
+        { name: "Christiania", kind: "oldtown", lat: 55.6772, lng: 12.5990, day: 6, date: "2026-08-01", detail: "Freetown Christiania — Christianshavn alternatív, önkormányzati negyede." },
+        { name: "Nørrebro", kind: "oldtown", lat: 55.6975, lng: 12.5530, day: 6, date: "2026-08-01", detail: "Koppenhága hipszter szíve: Jægersborggade, Superkilen park, kávézók és bisztrók." },
+        { name: "Louisiana Museum", kind: "museum", lat: 55.9689, lng: 12.5429, day: 7, date: "2026-08-02", detail: "Skandinávia legjobb modern múzeuma Humlebækben — szoborkert az Øresund felett." },
+        { name: "Hamburg (szállás)", kind: "stay", lat: 53.5503, lng: 9.9920, day: 7, date: "2026-08-02", detail: "Hamburgi bázis (HafenCity / Altstadt / Altona), innen indul a Lübeck–Schwerin körút és a városnap." },
+        { name: "Holstentor", kind: "castle", lat: 53.8661, lng: 10.6796, day: 8, date: "2026-08-03", detail: "Lübeck ikonikus, kéttornyos középkori városkapuja — a Hansa-város jelképe." },
+        { name: "Marienkirche (Lübeck)", kind: "church", lat: 53.8687, lng: 10.6849, day: 8, date: "2026-08-03", detail: "A téglagótika (Backsteingotik) csúcspontja; a WWII-ben leomlott harangok emlékhelye megrázó." },
+        { name: "Niederegger", kind: "market", lat: 53.8664, lng: 10.6856, day: 8, date: "2026-08-03", detail: "Lübeck a marcipán világi fővárosa — a Niederegger (1806) emeleti kávézója és kis múzeuma." },
+        { name: "Buddenbrookhaus", kind: "museum", lat: 53.8679, lng: 10.6843, day: 8, date: "2026-08-03", detail: "Thomas Mann Nobel-díjas regényének háza; a lübecki óváros UNESCO-világörökség." },
+        { name: "Schweriner Schloss", kind: "castle", lat: 53.6244, lng: 11.4189, day: 8, date: "2026-08-03", detail: "A „Balti-tenger Neuschwansteinja” egy tóparti szigeten — Mecklenburg-Vorpommern parlamentje." },
+        { name: "Alter Garten", kind: "viewpoint", lat: 53.6272, lng: 11.4148, day: 8, date: "2026-08-03", detail: "Schwerin díszes főtere a kastéllyal, színházzal és múzeummal, tóparti sétával." },
+        { name: "Miniatur Wunderland", kind: "museum", lat: 53.5436, lng: 9.9887, day: 9, date: "2026-08-04", detail: "A világ legnagyobb modellvasútja a Speicherstadtban — előfoglalás kötelező." },
+        { name: "Speicherstadt", kind: "oldtown", lat: 53.5447, lng: 9.9920, day: 9, date: "2026-08-04", detail: "UNESCO-raktárváros: neogótikus téglacsatornák, a világ legnagyobb összefüggő raktárnegyede." },
+        { name: "Elbphilharmonie", kind: "viewpoint", lat: 53.5413, lng: 9.9842, day: 9, date: "2026-08-04", detail: "Hamburg hullámos hangversenyháza — a Plaza-kilátó (8. emelet) ingyenes." },
+        { name: "Reeperbahn", kind: "oldtown", lat: 53.5496, lng: 9.9628, day: 9, date: "2026-08-04", detail: "St. Pauli legendás éjszakai negyede — esti séta a kikötő közelében." },
+        { name: "Römerberg", kind: "oldtown", lat: 50.1104, lng: 8.6821, day: 10, date: "2026-08-05", detail: "Frankfurt rekonstruált óvárosi főtere a Römer (városháza) timpanonos homlokzatával." },
+        { name: "Frankfurt (szállás)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Két éjszaka frankfurti bázis — gyalogos városnap a hazaút utolsó nagy állomása előtt." },
+        { name: "Frankfurter Dom", kind: "church", lat: 50.1106, lng: 8.6857, day: 11, date: "2026-08-06", detail: "A császárkoronázások gótikus dómja (Kaiserdom), megmászható toronnyal." },
+        { name: "Städel Museum", kind: "museum", lat: 50.1027, lng: 8.6742, day: 11, date: "2026-08-06", detail: "Frankfurt vezető képtára a Museumsuferen — 700 év európai festészete." },
+        { name: "Eiserner Steg", kind: "viewpoint", lat: 50.1094, lng: 8.6837, day: 11, date: "2026-08-06", detail: "A Majnán átívelő sétálóhíd a skyline és az óváros közt." },
+        { name: "Bankenviertel", kind: "viewpoint", lat: 50.1115, lng: 8.6710, day: 11, date: "2026-08-06", detail: "Frankfurt felhőkarcoló-negyede — „Mainhattan”, Németország egyetlen igazi skyline-ja." },
+        { name: "Budapest 🏁", kind: "stay", lat: 47.4979, lng: 19.0402, day: 12, date: "2026-08-07", detail: "Az expedíció célja: hazaérkezés Budapestre ~15:30 körül." }
       ],
       days: [
         {
           num: "1",
-          date: "2026. július 26., vasárnap",
+          date: "2026. július 27., hétfő",
           title: "Stockholm — FI306 érkezés + Gamla Stan + Monteliusvägen",
           subtitle: "Arlanda → Gamla Stan → Stadshuset → Riddarholmen → Monteliusvägen panoráma → Södermalm vacsora",
           open: true,
@@ -2081,7 +2091,7 @@ const tripData = {
         },
         {
           num: "2",
-          date: "2026. július 27., hétfő",
+          date: "2026. július 28., kedd",
           title: "Stockholm — Vasa Museum + Djurgården + Skansen + Fotografiska",
           subtitle: "Múzeumi nap Djurgårdenon — este Fotografiska tetőteraszon",
           driveLog: { km: "~8 km (városon belül)", stops: 4, driveTime: "gyalogos / hajós nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Vasa Museum"}, {time:"11:30", label:"Djurgården"}, {time:"13:00", label:"Skansen"}, {time:"17:00", label:"Fotografiska"}, {time:"20:00", label:"vacsora"}] },
@@ -2101,7 +2111,7 @@ const tripData = {
         },
         {
           num: "3",
-          date: "2026. július 28., kedd",
+          date: "2026. július 29., szerda",
           title: "Stockholm Archipelago — Vaxholm + Grinda szigetek",
           subtitle: "Egész napos hajókaland a stockholmi szigetvilágban — Waxholmsbolaget komp, erőd, gránit, füstölt hering",
           driveLog: { km: "~0 km (kompos nap)", stops: 3, driveTime: "kompos nap", depart: "09:00 Strömkajen", arrive: "~20:00 Stockholm", timelinePoints: [{time:"09:00", label:"Strömkajen komp"}, {time:"10:15", label:"Vaxholm"}, {time:"11:30", label:"Grinda kompon"}, {time:"12:00", label:"Grinda (ebéd)"}, {time:"16:30", label:"Visszakomp"}, {time:"19:30", label:"Stockholm"}] },
@@ -2122,7 +2132,7 @@ const tripData = {
         },
         {
           num: "4",
-          date: "2026. július 29., szerda",
+          date: "2026. július 30., csütörtök",
           title: "Stockholm → Malmö → Koppenhága",
           subtitle: "Svéd autópályás etap ~650 km: Malmö fotóstop (Turning Torso), Øresund Bridge, délutáni érkezés Koppenhágába",
           driveLog: { km: "~650 km", stops: 3, driveTime: "~7 óra", depart: "07:00", arrive: "~14:00 Koppenhága", timelinePoints: [{time:"07:00", label:"Stockholm ind."}, {time:"10:30", label:"Jönköping"}, {time:"11:30", label:"Malmö"}, {time:"12:30", label:"Øresund"}, {time:"14:00", label:"Koppenhága"}] },
@@ -2142,7 +2152,7 @@ const tripData = {
         },
         {
           num: "5",
-          date: "2026. július 30., csütörtök",
+          date: "2026. július 31., péntek",
           title: "Koppenhága 1. nap — Nyhavn + Rosenborg + Tivoli",
           subtitle: "A dán főváros ikonjai — kastély, sétálóutca, csatorna és a világ legrégebbi vidámparkja",
           driveLog: { km: "~5 km (városon belül)", stops: 4, driveTime: "gyalogos / metró nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Nyhavn"}, {time:"11:00", label:"Rosenborg"}, {time:"14:00", label:"Strøget"}, {time:"17:00", label:"Tivoli"}] },
@@ -2163,7 +2173,7 @@ const tripData = {
         },
         {
           num: "6",
-          date: "2026. július 31., péntek",
+          date: "2026. augusztus 1., szombat",
           title: "Koppenhága 2. nap — Christiansborg + Kis Hableány + Christiania",
           subtitle: "Dán parlament, ikonikus szobor, alternatív negyed, Nørrebro esti program",
           driveLog: { km: "~6 km (városon belül)", stops: 4, driveTime: "gyalogos / bringa nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Christiansborg"}, {time:"11:00", label:"Kis Hableány"}, {time:"13:30", label:"Christiania"}, {time:"16:00", label:"Nørrebro"}] },
@@ -2184,7 +2194,7 @@ const tripData = {
         },
         {
           num: "7",
-          date: "2026. augusztus 1., szombat",
+          date: "2026. augusztus 2., vasárnap",
           title: "Koppenhága — Louisiana Museum + indulás Hamburgba",
           subtitle: "Délelőtt a legjobb skandináv modern múzeumban, délután ~310 km drive Hamburgba",
           driveLog: { km: "~310 km", stops: 2, driveTime: "~3 óra", depart: "13:00", arrive: "~16:30 Hamburg", timelinePoints: [{time:"10:00", label:"Louisiana Museum"}, {time:"13:00", label:"Koppenhága ind."}, {time:"14:30", label:"Flensburg"}, {time:"16:30", label:"Hamburg"}] },
@@ -2203,7 +2213,7 @@ const tripData = {
         },
         {
           num: "8",
-          date: "2026. augusztus 2., vasárnap",
+          date: "2026. augusztus 3., hétfő",
           title: "Hamburg körút — Lübeck + Schwerin Castle",
 
           subtitle: "UNESCO-óváros és egy tavi kastély — a Balti-tenger kapuja",
@@ -2229,7 +2239,7 @@ const tripData = {
         },
         {
           num: "9",
-          date: "2026. augusztus 3., hétfő",
+          date: "2026. augusztus 4., kedd",
           title: "Hamburg városnap",
           subtitle: "Miniatur Wunderland · Speicherstadt · Elbphilharmonie · Landungsbrücken",
           driveLog: { km: "~8 km (városon belül)", stops: 4, driveTime: "gyalogos + U-Bahn nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Miniatur Wunderland"}, {time:"12:00", label:"Speicherstadt"}, {time:"15:00", label:"Elbphilharmonie"}, {time:"18:30", label:"Vacsora"}] },
@@ -2251,7 +2261,7 @@ const tripData = {
         },
         {
           num: "10",
-          date: "2026. augusztus 4., kedd",
+          date: "2026. augusztus 5., szerda",
           title: "Hamburg → Frankfurt",
           subtitle: "Átmeneti etap — ~490 km, délutáni érkezés, első frankurti esti séta",
           driveLog: { km: "~490 km", stops: 2, driveTime: "~4,5 óra", depart: "09:00", arrive: "~14:30 Frankfurt", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"17:00", label:"Römerberg séta"}] },
@@ -2270,7 +2280,7 @@ const tripData = {
         },
         {
           num: "11",
-          date: "2026. augusztus 5., szerda",
+          date: "2026. augusztus 6., csütörtök",
           title: "Frankfurt városnap",
           subtitle: "Römerberg · Kaiserdom · Städel Museum · Sachsenhausen Apfelwein",
           driveLog: { km: "~5 km (városon belül)", stops: 4, driveTime: "gyalogos városnap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Römerberg"}, {time:"11:00", label:"Städel Museum"}, {time:"14:00", label:"Sachsenhausen"}, {time:"19:00", label:"Apfelwein vacsora"}] },
@@ -2292,7 +2302,7 @@ const tripData = {
         },
         {
           num: "12",
-          date: "2026. augusztus 6., csütörtök",
+          date: "2026. augusztus 7., péntek",
           title: "Frankfurt → Budapest 🏁",
           subtitle: "Expedition záróetap — ~950 km, hazaérkezés",
           driveLog: { km: "~950 km", stops: 3, driveTime: "~9 óra", depart: "06:00", arrive: "~15:30 Budapest", timelinePoints: [{time:"06:00", label:"Frankfurt ind."}, {time:"09:00", label:"Nürnberg"}, {time:"13:00", label:"Linz/Wien"}, {time:"15:30", label:"Budapest 🏁"}] },
@@ -2714,7 +2724,7 @@ const tripData = {
       alreadyBooked: [
         "Henni: Wizz Air W62427 BUD → KEF, 2026.07.11 (Erasmus+ finanszírozott lehet) · a kurzus díja €630/fő szintén Erasmus+ keretből",
         "Tibi: Icelandair FI309 ARN → KEF, 2026.07.18 — referencia ár: ~360–420 EUR",
-        "Tibi + Henni: Icelandair FI306 KEF → ARN, 2026.07.26 — referencia ár: ~400–500 EUR/fő"
+        "Tibi + Henni: Icelandair FI306 KEF → ARN, 2026.07.27 — referencia ár: ~400–500 EUR/fő"
       ],
       totals: [
         { label: "1. szakasz · Baltikum + Finn átmenet", value: "~1 645 EUR", person: "Tibi egyedül · saját autó · becslés (parkoló foglalt)" },
@@ -2754,7 +2764,7 @@ const tripData = {
             icon: "🅿",
             label: "Arlanda parkoló · 8 nap · FOGLALVA ✅",
             value: "~70 EUR",
-            detail: "ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad) · 795 SEK összesen: parkolás 8 napra 345 kr + terminál-transzfer 450 kr (áfa 94,47 kr) · KIFIZETVE 2026.07.10., Visa ****1841 · foglalás #127891 · tel. +46-8-78 37 700 · júl. 18. (FI309) → júl. 26. (FI306) · külső telephely, nem a reptéri parkolóház — a transzfer az árban"
+            detail: "ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad) · 795 SEK összesen: parkolás 8 napra 345 kr + terminál-transzfer 450 kr (áfa 94,47 kr) · KIFIZETVE 2026.07.10., Visa ****1841 · foglalás #127891 · tel. +46-8-78 37 700 · júl. 18. (FI309) → júl. 26. (FI306) · külső telephely, nem a reptéri parkolóház — a transzfer az árban · ⚠️ A FI306 áttéve júl. 27-re → a parkolást 1 nappal (júl. 27-ig) hosszabbítani kell"
           },
           {
             icon: "🛣",
@@ -2790,7 +2800,7 @@ const tripData = {
             icon: "🚗",
             label: "Bérautó · 8 nap · FOGLALVA ✅",
             value: "~842 EUR",
-            detail: "Lava Car Rental · Dacia Duster (New Model, manuális) · teljes autó 181 283 ISK (€ 1 262,86), Full Protection biztosítás + útadó AZ ÁRBAN (nincs külön SCDW/GP tétel) · KIFIZETVE · foglalás: ZMD4I5 · átvétel KEF júl. 18. 18:30, leadás júl. 26. 06:00 · 3 fő közt osztva → Tibi + Henni 2/3 = € 841,90 (a vendég a maradék 1/3-ot, € 420,95-öt fizeti)"
+            detail: "Lava Car Rental · Dacia Duster (New Model, manuális) · teljes autó 181 283 ISK (€ 1 262,86), Full Protection biztosítás + útadó AZ ÁRBAN (nincs külön SCDW/GP tétel) · KIFIZETVE · foglalás: ZMD4I5 · átvétel KEF júl. 18. 18:30, leadás júl. 26. 06:00 · 3 fő közt osztva → Tibi + Henni 2/3 = € 841,90 (a vendég a maradék 1/3-ot, € 420,95-öt fizeti) · ⚠️ A FI306 áttéve júl. 27-re → a bérautót 1 nappal (júl. 27. hajnal) hosszabbítani kell a Lavánál (extra napdíj), vagy júl. 26-i leadás + taxi a Hotel Keflavíkba"
           },
           {
             icon: "⛽",
@@ -2814,7 +2824,7 @@ const tripData = {
             icon: "🛏",
             label: "Keflavík · záró éj (júl. 25–26)",
             value: "~198 EUR",
-            detail: "Nupan Deluxe (Aðalgata 10, Keflavík) · Deluxe Double Room zuhannyal · a reptér melletti utolsó éj a júl. 26-i FI306 előtt · FOGLALVA (#6825780665 · PIN 1558) · ide már csak Tibi + Henni megy, NINCS 3-fős osztás — a teljes 198 EUR kettejüké · Booking automatikusan terheli a kártyát, ingyen lemondható júl. 17-ig"
+            detail: "Nupan Deluxe (Aðalgata 10, Keflavík) · Deluxe Double Room zuhannyal · a júl. 25-i éj (a Snæfellsnes-nap után) · FOGLALVA (#6825780665 · PIN 1558) · ide már csak Tibi + Henni megy, NINCS 3-fős osztás — a teljes 198 EUR kettejüké · Booking automatikusan terheli a kártyát · ⚠️ a FI306 áttéve júl. 27-re → júl. 26-ra extra éj a Hotel Keflavíkban (Icelandair), tehát a repülés csak azután"
           },
           {
             icon: "🛒",
@@ -2858,7 +2868,7 @@ const tripData = {
         id: "hazaut",
         title: "3. szakasz · Hazaút",
         accent: "accent-return",
-        subtitle: "Tibi + Henni · saját autó · 2026. júl. 26 – aug. 6. · 12 nap",
+        subtitle: "Tibi + Henni · saját autó · 2026. júl. 27 – aug. 7. · 12 nap",
         car: "Mercedes GLC AMG 43 · 100 oktán · ~10 L/100 km",
         km: "~2 700 km",
         total: "~3 070 EUR (2 főre)",
@@ -3134,7 +3144,7 @@ const tripData = {
     },
     {
       title: "🅿 Stockholm / Arlanda parkolás — FOGLALVA ✅",
-      text: "A kocsi az izlandi kitérő alatt Arlanda mellett parkol: ARN Långtidsparkering, júl. 18. → júl. 26. (8 nap), transzferrel a terminálhoz. Kifizetve (795 SEK), foglalási szám 127891.",
+      text: "A kocsi az izlandi kitérő alatt Arlanda mellett parkol: ARN Långtidsparkering, júl. 18. → júl. 26. (8 nap), transzferrel a terminálhoz. Kifizetve (795 SEK), foglalási szám 127891. ⚠️ A FI306 áttéve júl. 27-re → a parkolást 1 nappal hosszabbítani kell (júl. 27-ig).",
       links: [
         { label: "ARN Långtidsparkering — hivatalos oldal", url: "https://arnlangtidsparkering.se" },
         { label: "🗺 Elkraftsgatan 7, Arlandastad", url: "https://www.google.com/maps/search/?api=1&query=Elkraftsgatan%207%2C%20195%2060%20Arlandastad%2C%20Sweden" }
@@ -3143,8 +3153,8 @@ const tripData = {
         "<strong>Foglalás:</strong> #127891 · Tibor Zakany · fizetve 2026.07.10. (Visa ****1841) · <strong>795 SEK</strong> összesen (parkolás 8 napra 345 kr + transzfer 450 kr, ebből áfa 94,47 kr).",
         "<strong>Helyszín:</strong> <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering AB, Elkraftsgatan 7, 195 60 Arlandastad</a> — ez <strong>nem a reptéri parkolóház</strong>, hanem külső telephely Arlanda mellett, <strong>transzferrel</strong> a terminálhoz (a 450 kr ezt fedi).",
         "<strong>Kapcsolat:</strong> +46-8-78 37 700 · info@arnlangtidsparkering.se",
-        "<strong>Menetrend:</strong> a foglalás a <strong>FI309</strong> (júl. 18. 17:10 indulás) és a <strong>FI306</strong> (júl. 26. 12:45 érkezés) járatokhoz van igazítva — érkezz időben a telephelyre, mert a transzfer + check-in még hozzájön az induláshoz.",
-        "Visszaérkezéskor (júl. 26. 12:45) a transzfer visz vissza az autóhoz, onnan indul a stockholmi szakasz — a városban viszont nem kell az autó, érdemes a szállásnál/P-házban hagyni."
+        "<strong>Menetrend:</strong> a foglalás a <strong>FI309</strong> (júl. 18. 17:10 indulás) és a <strong>FI306</strong> járatokhoz van igazítva — a FI306 áttéve júl. 27-re (12:45 érkezés) —, érkezz időben a telephelyre, mert a transzfer + check-in még hozzájön az induláshoz.",
+        "Visszaérkezéskor (júl. 27. 12:45) a transzfer visz vissza az autóhoz, onnan indul a stockholmi szakasz — a városban viszont nem kell az autó, érdemes a szállásnál/P-házban hagyni."
       ]
     },
     {
@@ -3585,7 +3595,7 @@ const tripData = {
       rental: "Lava Car Rental",
       category: "Dacia Duster (New Model) · manuális",
       pickup: "KEF reptér · júl. 18. 18:30",
-      dropoff: "KEF reptér · júl. 26. 06:00",
+      dropoff: "KEF reptér · júl. 27. 06:00 (⚠️ hosszabbítandó, eredetileg júl. 26.)",
       dates: "8 nap · Full Protection biztosítás + útadó (Road Tax) · visszatéríthető",
       price: "181 283 ISK (€ 1 262,86)",
       paid: true,
@@ -3594,7 +3604,7 @@ const tripData = {
       phone: "+354 519 4141",
       hours: "Nyáron (ápr–okt) 24/7 nyitva",
       pickupNote: "A júl. 18-i átvétel 18:30-kor van (FI309, landolás 18:25) → ez az ESTI sáv (18:00 után): dedikált 9 személyes Lava-shuttle a terminál indulási szintjének drop-off zónájából, a járat érkezése alapján — add meg előre a FI309 járatszámot, hogy ne kelljen várni. (Nappal 05:00–18:00: a „Car Rental BUS4U” shuttle 30 percenként az „Other Buses” megállóból indul, ~15 perc út a Flugvellir 23-i telephelyre.) Ha 10 percen belül nincs shuttle, hívd a +354 519 4141-et. Landolás után kb. 1 órával (vám + csomag) érsz a telephelyre.",
-      dropoffNote: "Leadás a telephelyen (Flugvellir 23) júl. 26. 06:00-kor — nyáron 24/7 nyitva, a hajnali időpont is megy —, majd Lava-shuttle vissza a terminálhoz a 07:35-ös FI306-hoz. Hagyj rá bő időt: shuttle + check-in.",
+      dropoffNote: "⚠️ A FI306 áttéve júl. 27-re — a leadás is júl. 27. hajnalára tolódik (a bérautót hosszabbítani kell a Lavánál, vagy júl. 26-i leadás + taxi). Leadás a telephelyen (Flugvellir 23) hajnalban — nyáron 24/7 nyitva —, majd Lava-shuttle vissza a terminálhoz a 07:35-ös FI306-hoz. Hagyj rá bő időt: shuttle + check-in.",
       infoUrl: "https://www.lavacarrental.is/terms-extras/lava-car-rental-airport-pick-up-information",
       maps: "https://www.google.com/maps/search/?api=1&query=Flugvellir%2023%2C%20230%20Keflav%C3%ADk%2C%20Iceland",
       shares: [
