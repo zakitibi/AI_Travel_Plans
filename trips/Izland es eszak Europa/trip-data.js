@@ -1,7 +1,7 @@
 const tripData = {
-  title: "🌋 Izland es eszak Europa · 2026. július 10 – augusztus 7.",
+  title: "🌋 Izland es eszak Europa · 2026. július 10 – augusztus 15.",
   subtitle: "Tibi balti autós felvezető útja a július 18-i stockholmi repüléssel, Henni külön izlandi belépővel, majd közös hazaúttal",
-  updatedAt: "2026.07.25",
+  updatedAt: "2026.07.26",
   route: [
     { label: "BUD", cls: "flight" },
     { separator: "→🚗→" },
@@ -25,10 +25,13 @@ const tripData = {
     { label: "Snæfellsnes", cls: "iceland" },
     { separator: "→✈→" },
     { label: "Stockholm", cls: "return" },
-    { label: "Malmö", cls: "return" },
     { label: "Koppenhága", cls: "return" },
     { label: "Hamburg", cls: "return" },
     { label: "Frankfurt", cls: "return" },
+    { label: "Carcassonne", cls: "return" },
+    { separator: "→⛵→" },
+    { label: "Canal du Midi", cls: "return" },
+    { label: "Homps", cls: "return" },
     { separator: "→🚗→" },
     { label: "BUD", cls: "flight" }
   ],
@@ -460,28 +463,55 @@ const tripData = {
         date: "2026.08.05",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Hamburg → Frankfurt",
-        summary: "~490 km (A7/A5) via Hannover. Délutáni érkezés Frankfurtba, első Römerberg-séta és Apfelwein-vacsora Sachsenhausenben.",
-        points: ["~490 km", "Hannover pihenő", "Frankfurt este"],
-        driveStats: { km: "~490 km", stops: 2, depart: "09:00", arrive: "~14:30 Frankfurt", driveTime: "~4,5 óra", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"17:00", label:"Römerberg séta"}] }
+        title: "Hamburg → Frankfurt — Lilla + barát felvétele",
+        summary: "~490 km (A7/A5) via Hannover. Délutáni érkezés Frankfurtba, Lilla és barátja felvétele, kötetlen pihenőnap — nincs városnézés. Innentől 5 fő.",
+        points: ["~490 km", "Lilla + barát", "pihenőnap"],
+        driveStats: { km: "~490 km", stops: 2, depart: "09:00", arrive: "~14:30 Frankfurt", driveTime: "~4,5 óra", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"16:00", label:"Lilla + barát"}] }
       },
       {
         date: "2026.08.06",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Frankfurt városnap",
-        summary: "Römerberg + Kaiserdom, Städel Museum, Eiserner Steg, Sachsenhausen Apfelwein negyed, MainKai skyline.",
-        points: ["Römerberg", "Städel Museum", "Apfelwein vacsora"],
-        driveStats: { km: "~6 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos városnap", timelinePoints: [{time:"09:00", label:"Römerberg"}, {time:"11:00", label:"Städel Museum"}, {time:"14:00", label:"Sachsenhausen"}, {time:"19:00", label:"Apfelwein vacsora"}] }
+        title: "Frankfurt → Carcassonne 🇫🇷",
+        summary: "Hajnali indulás, ~1130 km a franciaországi bázisra (Karlsruhe · Lyon · Montpellier), estére Carcassonne. ⚠️ Szállás még foglalásra vár.",
+        points: ["~1130 km", "hajnali start", "Carcassonne este"],
+        driveStats: { km: "~1130 km", stops: 4, depart: "05:30", arrive: "~18:30 Carcassonne", driveTime: "~11–12 óra", timelinePoints: [{time:"05:30", label:"Frankfurt ind."}, {time:"13:00", label:"Lyon"}, {time:"16:30", label:"Montpellier"}, {time:"18:30", label:"Carcassonne"}] }
       },
       {
         date: "2026.08.07",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Frankfurt → Budapest 🏁",
-        summary: "Záróetap ~950 km (Nürnberg → Linz → Wien → Budapest). Korai indulás, délutáni hazaérkezés. Az Expedition vége.",
-        points: ["~950 km", "Nürnberg · Linz · Wien", "Budapest 🏁"],
-        driveStats: { km: "~950 km", stops: 3, depart: "06:00", arrive: "~15:30 Budapest", driveTime: "~9 óra", timelinePoints: [{time:"06:00", label:"Frankfurt ind."}, {time:"09:00", label:"Nürnberg"}, {time:"13:00", label:"Linz/Wien"}, {time:"15:30", label:"Budapest 🏁"}] }
+        title: "⛵ Le Boat — hajóra szállás (Trèbes)",
+        summary: "Reggel opcionális Cité-séta + nagybevásárlás, majd 15:00–17:00 közt a Le Boat bázison: eligazítás, kihajózás. Vision 4, foglalás #19656942.",
+        points: ["Le Boat check-in", "Vision 4", "Canal du Midi"],
+        driveStats: { km: "bevásárlás + bázis", stops: 2, depart: "délelőtt", arrive: "hajó ⛵", driveTime: "hajóra szállás", timelinePoints: [{time:"09:00", label:"Cité / bevásárlás"}, {time:"15:00", label:"check-in"}, {time:"17:30", label:"kihajózás"}] }
+      },
+      {
+        date: "2026.08.08–13",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "⛵ Le Boat — Canal du Midi hajós hét",
+        summary: "Hat lazább hajós nap: Trèbes ↔ Carcassonne, majd keletnek Homps felé — zsilipek, borfalvak (Minervois), úszás, Minerve és Le Somail kitérők. Leadás aug. 14. 9:00, Homps.",
+        points: ["Trèbes → Homps", "zsilipek + borvidék", "Minerve · Le Somail"],
+        driveStats: { km: "~40 km hajóval", stops: 7, depart: "napi ~09:00", arrive: "napi ~16:00", driveTime: "lazább hajós napok", timelinePoints: [{time:"aug.8", label:"Carcassonne"}, {time:"aug.10", label:"La Redorte"}, {time:"aug.11", label:"Homps · Minerve"}, {time:"aug.13", label:"Homps bázis"}] }
+      },
+      {
+        date: "2026.08.14",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "Homps → Észak-Olaszország 🏁",
+        summary: "Hajóleadás 9:00-ig, majd a francia Riviérán és Genován át Észak-Olaszországig (~800 km), 1 éj Verona/Milano környékén. ⚠️ Szállás előre foglalandó.",
+        points: ["~800 km", "Riviéra · Genova", "1 éj É-Olaszo."],
+        driveStats: { km: "~800 km", stops: 4, depart: "09:30", arrive: "~19:00 É-Olaszo.", driveTime: "~8,5 óra", timelinePoints: [{time:"09:00", label:"Homps leadás"}, {time:"12:30", label:"Riviéra"}, {time:"15:00", label:"Genova"}, {time:"19:00", label:"éj"}] }
+      },
+      {
+        date: "2026.08.15",
+        phase: "Közös hazaút",
+        accent: "accent-return",
+        title: "Észak-Olaszország → Budapest 🏁",
+        summary: "Záró etap ~800 km — Velence, Ljubljana, Zagreb érintésével haza. Az út vége.",
+        points: ["~800 km", "Ljubljana · Zagreb", "Budapest 🏁"],
+        driveStats: { km: "~800 km", stops: 3, depart: "08:00", arrive: "~17:00 Budapest", driveTime: "~8 óra", timelinePoints: [{time:"08:00", label:"indulás"}, {time:"11:00", label:"Ljubljana"}, {time:"13:30", label:"Zagreb"}, {time:"17:00", label:"Budapest 🏁"}] }
       }
     ],
     mainTrips: [
@@ -500,9 +530,9 @@ const tripData = {
         accent: "accent-iceland"
       },
       {
-        title: "Svédország – Dánia – Németország – hazaút",
-        text: "A közös lezárás: repülés után újra autó, majd fokozatos visszagurulás Budapestig.",
-        cta: "Ugrás a hazaút részhez",
+        title: "Európai út — Stockholm → Le Boat → Budapest",
+        text: "Az út második fele 3 részben: ① Európa (Stockholm → Koppenhága → Hamburg → Frankfurt/Lilla → Carcassonne), ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14.), ③ hazaút Észak-Olaszországon át Budapestre.",
+        cta: "Ugrás az Európai út részhez",
         tab: "hazaut",
         accent: "accent-return"
       }
@@ -511,7 +541,7 @@ const tripData = {
       "⏰ KÉT FIX KOMP-IDŐPONT (kapuzárás!): ① júl. 16. Tallink Megastar Tallinn → Helsinki, indulás 10:30 — járművel legkésőbb 09:30 a D-Terminálon (check-in zár 10:00). ② júl. 17. Finnlines Naantali → Kapellskär, indulás 22:45 — check-in zár 21:45 (járművel 21:00–21:15-re ott lenni). Mindkettő foglalva (Tallink 75157795; Finnlines F260126521).",
       "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki városnap + ELSŐ finn éjszaka. Júl. 17. reggel 08:30-kor indulás: Porvoo óváros → Turku (Luostarinmäki) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
-      "A hazaút a következő struktúrát követi: 3 éjszaka Stockholm (júl. 27–29.) + 3 éjszaka Koppenhága (júl. 30 – aug. 1.) + 3 éjszaka Hamburg (aug. 2–4.) + 1 éjszaka Frankfurt (aug. 5.) + városnap (aug. 6.) + Budapest aug. 7. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át, ezért az egész hazaút +1 nappal csúszott; a stockholmi és koppenhágai napok száma változatlan.)"
+      "Az európai út (3 részben) a következő struktúrát követi: ① 3 éj Stockholm (júl. 27–29.) + 3 éj Koppenhága (júl. 30 – aug. 1.) + 3 éj Hamburg (aug. 2–4.) + 1 éj Frankfurt (aug. 5. — Lilla + barát felvétele, pihenőnap) + aug. 6. hajnalban ~1130 km Carcassonne-ba (⚠️ szállás még foglalásra vár). ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14., Vision 4 #19656942, Trèbes → Homps). ③ Hazaút: aug. 14. hajóleadás (Homps, 9:00) → 1 éj Észak-Olaszo. → aug. 15. Budapest. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át; az arlandai parkolás +1 nappal, júl. 27-ig meghosszabbítva — elintézve.)"
     ],
     countrySummaries: [
       {
@@ -575,13 +605,13 @@ const tripData = {
         ]
       },
       {
-        title: "🇩🇰 / 🇩🇪 Dánia és Németország",
+        title: "🇩🇰 / 🇩🇪 / 🇫🇷 Európai út — Dánia, Németország, Franciaország",
         accent: "accent-return",
-        text: "A hazaútban ezek már nem külön célutak, hanem jól kimért lezáró etappá állnak össze.",
+        text: "A dél felé húzó ív: Koppenhága és Hamburg városnapjai, majd Frankfurt (Lilla felvétele, pihenő) és a hosszú francia etap Carcassonne-ba — a Le Boat hajós hét kapujához.",
         points: [
-          { label: "Dánia", value: "híd + rövid city stop" },
-          { label: "Németország", value: "autópályás lezárás" },
-          { label: "Hangulat", value: "visszaút fókusz" }
+          { label: "Dánia / Németország", value: "Koppenhága + Hamburg" },
+          { label: "Frankfurt", value: "Lilla + barát, pihenő" },
+          { label: "Franciaország", value: "Carcassonne → Le Boat" }
         ]
       }
     ]
@@ -617,18 +647,20 @@ const tripData = {
       cta: { label: "Részletes Izland oldal", tab: "izland2" }
     },
     sharedReturn: {
-      title: "Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest",
+      title: "Európai út — Stockholm → Frankfurt → Carcassonne → Le Boat → Budapest",
       accent: "accent-return",
-      status: "júl. 27 – aug. 7. · közös szakasz",
+      status: "júl. 27 – aug. 15. · közös szakasz",
       statusClass: "status-cool",
-      text: "A közös hazaút a FI306-tal kezdődik (az Icelandair júl. 26-ról júl. 27-re tette át, ezért az egész szakasz +1 nappal csúszik, de a stockholmi és koppenhágai napok száma marad): Keflavíkból Stockholm Arlandára (07:35 → 12:45), ahol az autó parkolóban vár, de az első stockholmi napokon nem kell használni. Három stockholmi nap fér bele: Gamla Stan és Monteliusvägen panoráma, a Vasa Museum + Djurgården + Fotografiska kulturális blokkja, majd egy teljes archipelago nap Vaxholm és Grinda kompjaival. Július 30-án Malmö csak fotóstop az Øresund előtt, utána három koppenhágai nap jön: Nyhavn, Rosenborg, Tivoli, Christiansborg, Christiania, majd a Louisiana Museum of Modern Art és az esti továbbindulás Hamburg felé. Hamburg háromnapos blokkot kap: egy teljes Lübeck + Schwerin körutat, egy önálló hamburgi városnapot Miniatur Wunderlanddal, Speicherstadttal és Elbphilharmoniéval, majd innen jön az átmeneti etap Frankfurtba. Frankfurt is külön városnapot kap Römerberggel, Kaiserdommal, Städel Museummal és Sachsenhausen Apfelwein-kultúrájával, mielőtt a záróetap augusztus 7-én ~950 km-rel hazagördül Budapestre.",
+      text: "Az út második fele három részből áll. ① EURÓPA: a FI306 (júl. 27.) Keflavíkból Stockholm Arlandára hoz (07:35 → 12:45), ahol az autó a parkolóban vár. Három stockholmi nap (Gamla Stan, Vasa Museum, archipelago Vaxholm/Grinda), majd fokozatosan délnyugat felé: Malmö-fotóstop és három koppenhágai nap (Nyhavn, Tivoli, Christiania, Louisiana Museum), utána három hamburgi nap (Lübeck + Schwerin, Miniatur Wunderland, Elbphilharmonie). Aug. 5-én napközben Frankfurtba érünk, felvesszük Lillát és a barátját, és egy kötetlen pihenőnapot tartunk (nincs városnézés). Aug. 6-án hajnalban ~1130 km-re Carcassonne-ba (Dél-Franciaország), estére érkezés. ② LE BOAT (aug. 7–14.): egyhetes lakóhajós nyaralás a Canal du Midi-n — Vision 4, a carcassonne-i (Trèbes) bázisról, Homps-ban leadva; zsilipek, borvidéki falvak, Minerve és Le Somail kitérők. ③ HAZAÚT (aug. 14–15.): a hajó leadása után (Homps, 9:00) a francia Riviérán és Genován át 1 éj Észak-Olaszországban, majd Ljubljana–Zagreb érintésével Budapestre.",
       points: [
         "🇸🇪 Stockholm (júl. 27–29.): <a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Fortress+Stockholm' target='_blank' rel='noreferrer'>Vaxholm</a> (★4.5)",
         "🇸🇪→🇩🇰 Malmö + Koppenhága (júl. 30. – aug. 2.): <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3) · <a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Louisiana+Museum+of+Modern+Art' target='_blank' rel='noreferrer'>Louisiana Museum</a> (★4.7)",
         "🇩🇪 Hamburg blokk (aug. 2–4.): <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Lubeck' target='_blank' rel='noreferrer'>Holstentor Lübeck</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Schweriner+Schloss' target='_blank' rel='noreferrer'>Schwerin Castle</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Miniatur+Wunderland+Hamburg' target='_blank' rel='noreferrer'>Miniatur Wunderland</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Elbphilharmonie+Hamburg' target='_blank' rel='noreferrer'>Elbphilharmonie Plaza</a> (★4.7)",
-        "🇩🇪 Frankfurt + hazaút (aug. 5–7.): <a href='https://www.google.com/maps/search/?api=1&query=Roemerberg+Frankfurt' target='_blank' rel='noreferrer'>Römerberg</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Stadel+Museum+Frankfurt' target='_blank' rel='noreferrer'>Städel Museum</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Sachsenhausen+Frankfurt+Apfelwein' target='_blank' rel='noreferrer'>Sachsenhausen Apfelwein negyed</a> (★4.3) · aug. 7. → Budapest 🏁"
+        "🇩🇪→🇫🇷 Frankfurt + Carcassonne (aug. 5–6.): Lilla + barát felvétele, pihenőnap · hajnali ~1130 km-es etap · <a href='https://www.google.com/maps/search/?api=1&query=Cit%C3%A9+de+Carcassonne' target='_blank' rel='noreferrer'>Cité de Carcassonne</a> (★4.7) · ⚠️ szállás még foglalásra vár",
+        "⛵ Le Boat — Canal du Midi (aug. 7–14.): Vision 4 (#19656942) · Trèbes → Homps · <a href='https://www.google.com/maps/search/?api=1&query=Canal+du+Midi' target='_blank' rel='noreferrer'>Canal du Midi</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Minerve+France' target='_blank' rel='noreferrer'>Minerve</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Le+Somail+Canal+du+Midi' target='_blank' rel='noreferrer'>Le Somail</a>",
+        "🇮🇹→🇭🇺 Hazaút (aug. 14–15.): Homps → Riviéra → Genova → 1 éj Észak-Olaszo. → Ljubljana · Zagreb → Budapest 🏁"
       ],
-      cta: { label: "Részletes hazaút oldal", tab: "hazaut" }
+      cta: { label: "Részletes Európai út oldal", tab: "hazaut" }
     },
     henniErasmus: {
       title: "Erasmus+ · Izland · Inspiring Young Language Learners",
@@ -1174,7 +1206,7 @@ const tripData = {
           ],
           activities: [
             { time: "06:30", icon: "⚓", name: "Kapellskär kikötő — Finnlines érkezés", maps: "https://www.google.com/maps/search/?api=1&query=Kapellsk%C3%A4r+ferry+terminal+Sweden", detail: "A Finnsirius reggel 06:30-kor köt ki Kapellskärben (Svédország). Kapellskärtől Arlandáig ~75 km / ~1 óra az E18 és a 276-os úton. Rengeteg puffer az FI309 előtt." },
-            { time: "07:00–14:00", icon: "☕", name: "Reggeli / Norrtälje + Arlanda parking", detail: "Ha energiátok van, Norrtälje (útba esik) egy kellemes reggeli megálló, vagy egy rövid stockholmi kör. Az autó a <strong><a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>foglalt ARN Långtidsparkering</a></strong>-be megy (Elkraftsgatan 7, Arlandastad — foglalás #127891, kifizetve), onnan <strong>transzfer</strong> visz a terminálhoz. Ez külső telephely, nem a reptéri parkolóház, ezért számolj a transzfer idejével a check-in előtt." },
+            { time: "07:00–14:00", icon: "☕", name: "Reggeli / Norrtälje + Arlanda parking", detail: "Ha energiátok van, Norrtälje (útba esik) egy kellemes reggeli megálló, vagy egy rövid stockholmi kör. Az autó a <strong><a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>foglalt ARN Långtidsparkering</a></strong>-be megy (Elkraftsgatan 7, Arlandastad — foglalás #127891, kifizetve, a júl. 27-i visszaútig meghosszabbítva), onnan <strong>transzfer</strong> visz a terminálhoz. Ez külső telephely, nem a reptéri parkolóház, ezért számolj a transzfer idejével a check-in előtt." },
             { time: "14:30–16:30", icon: "🛂", name: "Arlanda check-in és security", maps: "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport", detail: "Júliusban a security sor akár 1-1,5 óra is lehet. FI309 gate általában a Sky City közelében." },
             { time: "17:10", icon: "✈", name: "Icelandair FI309", maps: "https://www.google.com/maps/search/?api=1&query=Keflavik+International+Airport", detail: "Stockholm / Arlanda (ARN) → Reykjavík / Keflavík (KEF), helyi idő szerint 17:10 → 18:25 (helyi izlandi idő)." }
           ],
@@ -1182,7 +1214,7 @@ const tripData = {
             "Ezzel a nappal zárul Tibi külön balti-felvezető szakasza, és indul a közös izlandi rész.",
             "A Finnlines-os 06:30-as érkezés ~10 óra puffert ad az FI309 előtt — kényelmes, stresszmentes reggel.",
             "Kapellskär → Arlanda: ~75 km, ~1 óra (E18 / 276). Nem érinti Stockholm belvárosát, ha nem akartok bemenni — egyenesen a reptér felé is mehet az út.",
-            "Arlanda parking: <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad)</a> — foglalva és kifizetve, #127891, 795 SEK, transzferrel. Az autó a júl. 27-i visszaút után kell (a FI306 áttéve júl. 26-ról).",
+            "Arlanda parking: <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad)</a> — foglalva és kifizetve, #127891, transzferrel. A FI306 júl. 27-i áttétele miatti +1 napos hosszabbítás (júl. 27-ig) elintézve — az autó a júl. 27-i visszaútkor kell.",
             "Ha mégis Stockholm belvárost néznétek: Gamla Stan (óváros) 2-3 óra alatt szépen körbejárható, de Kapellskär felől ez ~1,5 óra kitérő oda-vissza."
           ]
         }
@@ -1984,42 +2016,76 @@ const tripData = {
       }
     },
     hazaut: {
-      kicker: "Közös lezáró blokk",
-      title: "Hazaút",
-      pill: "Svédország → Dánia → Németország → Budapest",
+      kicker: "Az út második fele",
+      title: "Európai út",
+      pill: "Stockholm → Frankfurt → Carcassonne → Le Boat → Budapest",
       accent: "return",
       intro: [
-        "A hazaút itt már nem külön célországokra bontva van kezelve, hanem egyetlen közös lezáró expeditionként. A logika: Reykjavíkból vissza, autófelvétel, majd fokozatosan dél felé gurulás.",
-        "A részletes bontás inkább az etapméretezésről, a hidakról, a városi kis pihenőkről és a nagy német autópályás blokkról szól."
+        "Az izlandi kör után az út második fele három jól elkülönülő szakaszra bomlik. <strong>1) Európa:</strong> Stockholmból fokozatosan dél felé gurulunk (Koppenhága, Hamburg), aug. 5-én napközben Frankfurtba érünk — ott vesszük fel Lillát és a barátját, és egy kellemes, program nélküli pihenőnapot töltünk. Aug. 6-án hajnalban indulunk tovább Carcassonne-ba (Dél-Franciaország), ahová estére érkezünk.",
+        "<strong>2) Le Boat (aug. 7–14):</strong> egyhetes lakóhajós nyaralás a Canal du Midi-n, a carcassonne-i (Trèbes) bázisról indulva, Homps-ban leadva (Vision 4, 4 kabin). <strong>3) Hazaút:</strong> a hajó leadása után (aug. 14., 9:00, Homps) két nap alatt, egy észak-olaszországi éjszakával gurulunk haza Budapestre."
       ],
       context: [
         {
-          title: "🇸🇪 / 🇩🇰 / 🇩🇪 Hazaút-stratégia",
+          title: "① 🇸🇪🇩🇰🇩🇪🇫🇷 Európa — Stockholmtól Carcassonne-ig",
           accent: "return",
           open: true,
           cards: [
             {
-              title: "Svéd rész",
+              title: "Fokozatos dél felé",
               paragraphs: [
-                "Stockholm és Malmö között még mindig hosszú a táv, ezért itt nem új városnéző napot, hanem tiszta visszaút-struktúrát érdemes építeni."
+                "Stockholm (3 nap) → Koppenhága (3 nap) → Hamburg (3 nap): a városnapok kitöltik a FI306 (júl. 27.) és a Le Boat (aug. 7.) közti időt, közben folyamatosan délnyugat felé haladunk."
               ]
             },
             {
-              title: "Dán betét",
+              title: "Frankfurt — pihenőnap (aug. 5.)",
               paragraphs: [
-                "Koppenhága és az Øresund Bridge pont annyi fellazítást ad a route-nak, hogy a német blokk ne legyen egyből túl kemény."
+                "Aug. 5-én napközben Frankfurtba érünk, felvesszük <strong>Lillát és a barátját</strong>, és egy kellemes, kötetlen napot töltünk — <strong>nincs városnézés</strong>, csak feltöltődés a francia etap előtt. Innen már öten megyünk tovább."
               ]
             },
             {
-              title: "Német lezárás",
+              title: "Carcassonne (aug. 6.)",
               paragraphs: [
-                "Itt már az autópályás kitartás és a jó tranzitszállás a fontos. Nem kell többet ígérni, mint amit a ritmus kényelmesen elbír."
+                "Aug. 6-án <strong>hajnali indulás</strong> Frankfurtból ~1130 km-re Carcassonne-ba (Dél-Franciaország), estére érkezés. ⚠️ <strong>A carcassonne-i szállás (aug. 6-i éj) még foglalásra vár.</strong>"
+              ]
+            }
+          ]
+        },
+        {
+          title: "② ⛵ Le Boat — Canal du Midi (aug. 7–14.)",
+          accent: "return",
+          open: false,
+          cards: [
+            {
+              title: "A foglalás",
+              paragraphs: [
+                "<strong>Le Boat · foglalás #19656942</strong> (fő foglaló: Ferenc Zakany). Hajó: <strong>Vision 4</strong> (Comfort kategória), 4 kabin, 4 fürdő, max. 9 fő, min. 3 felnőtt a fedélzeten. Régió: Canal du Midi / Camargue.",
+                "<strong>Indulás:</strong> 2026.08.07., bázis <a href='https://www.google.com/maps/search/?api=1&query=Le+Boat+Carcassonne+Trebes+base' target='_blank' rel='noreferrer'>Carcassonne (Trèbes)</a> — érkezés 15:00–17:00 közt, eligazítás (30–60 perc), kihajózás 16:00–18:00 közt. <strong>Leadás:</strong> 2026.08.14., végbázis <a href='https://www.google.com/maps/search/?api=1&query=Le+Boat+Homps+base' target='_blank' rel='noreferrer'>Homps</a> — a hajót 9:00-ig el kell hagyni (egyirányú bérlet). Időtartam: 7 éj."
+              ]
+            },
+            {
+              title: "Pénz & tudnivalók",
+              paragraphs: [
+                "A helyszínen fizetendő kaució: <strong>üzemanyag-letét ~425 €</strong> (óradíjas, a végén elszámolják) + <strong>kárkaució ~3705 €</strong> (vagy a Damage Risk Reduction megvásárlásával ~392 €-ért 575 €-ra csökken). Az autó parkolása a bázison foglalt (Secure Parking).",
+                "⚠️ <strong>Kötelező:</strong> minden fedélzeten lévőnek meg kell néznie a <a href='https://leboat.com/travel-information/your-safety-is-our-top-priority' target='_blank' rel='noreferrer'>Le Boat biztonsági videót</a> az indulás előtt, különben nem szállhat hajóra. Kapcsolat: +49 (0)6101 65 647 56 · admin@leboat.com. Indulás előtti héten a Le Boat telefonon egyeztet pontos érkezési időt."
+              ]
+            }
+          ]
+        },
+        {
+          title: "③ 🏁 Hazaút — Homps → Budapest (aug. 14–15.)",
+          accent: "return",
+          open: false,
+          cards: [
+            {
+              title: "Két nap, egy éj",
+              paragraphs: [
+                "A hajó leadása (aug. 14., 9:00, Homps) után délnyugat-Franciaországból a francia Riviérán és Genován át Észak-Olaszországig (~800 km, Verona/Milano környékén 1 éj), majd másnap Ljubljana–Zagreb érintésével Budapestre (~800 km). Két kényelmes vezetős nap a nyaraló hajóhét után."
               ]
             }
           ]
         }
       ],
-      mapNote: "A hazaút valós úthálózaton (OSRM): a nyitó KEF→Stockholm repülő (szaggatott), a Vaxholm-komp, majd a Stockholm→Budapest autós ív. A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (🏛️ óváros, 🏰 vár/kastély, ⛪ templom, 🖼️ múzeum, 📸 kilátó…), a 🏨 az éjszakai bázis. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
+      mapNote: "Az európai út és a hazaút: a nyitó KEF→Stockholm repülő (szaggatott), a Vaxholm-komp, a Stockholm→Koppenhága→Hamburg→Frankfurt→Carcassonne autós ív, a Canal du Midi hajós szakasza (Trèbes → Homps), majd a Homps→Észak-Olaszország→Budapest hazaút. A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (🏛️ óváros, 🏰 vár/kastély, ⛪ templom, 🖼️ múzeum, 📸 kilátó, ⛵ hajóbázis…), a 🏨 az éjszakai bázis. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
       mapStops: [
         { name: "Gamla Stan", kind: "oldtown", lat: 59.3251, lng: 18.0711, day: 1, date: "2026-07-27", detail: "Stockholm középkori óvárosa: Stortorget színes házsora és a Storkyrkan katedrális." },
         { name: "Kungliga Slottet", kind: "castle", lat: 59.3268, lng: 18.0717, day: 1, date: "2026-07-27", detail: "A Királyi Palota — Európa egyik legnagyobb lakott palotája, díszőrség-váltással." },
@@ -2057,17 +2123,20 @@ const tripData = {
         { name: "Speicherstadt", kind: "oldtown", lat: 53.5447, lng: 9.9920, day: 9, date: "2026-08-04", detail: "UNESCO-raktárváros: neogótikus téglacsatornák, a világ legnagyobb összefüggő raktárnegyede." },
         { name: "Elbphilharmonie", kind: "viewpoint", lat: 53.5413, lng: 9.9842, day: 9, date: "2026-08-04", detail: "Hamburg hullámos hangversenyháza — a Plaza-kilátó (8. emelet) ingyenes." },
         { name: "Reeperbahn", kind: "oldtown", lat: 53.5496, lng: 9.9628, day: 9, date: "2026-08-04", detail: "St. Pauli legendás éjszakai negyede — esti séta a kikötő közelében." },
-        { name: "Römerberg", kind: "oldtown", lat: 50.1104, lng: 8.6821, day: 10, date: "2026-08-05", detail: "Frankfurt rekonstruált óvárosi főtere a Römer (városháza) timpanonos homlokzatával." },
-        { name: "Frankfurt (szállás)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Két éjszaka frankfurti bázis — gyalogos városnap a hazaút utolsó nagy állomása előtt." },
-        { name: "Frankfurter Dom", kind: "church", lat: 50.1106, lng: 8.6857, day: 11, date: "2026-08-06", detail: "A császárkoronázások gótikus dómja (Kaiserdom), megmászható toronnyal." },
-        { name: "Städel Museum", kind: "museum", lat: 50.1027, lng: 8.6742, day: 11, date: "2026-08-06", detail: "Frankfurt vezető képtára a Museumsuferen — 700 év európai festészete." },
-        { name: "Eiserner Steg", kind: "viewpoint", lat: 50.1094, lng: 8.6837, day: 11, date: "2026-08-06", detail: "A Majnán átívelő sétálóhíd a skyline és az óváros közt." },
-        { name: "Bankenviertel", kind: "viewpoint", lat: 50.1115, lng: 8.6710, day: 11, date: "2026-08-06", detail: "Frankfurt felhőkarcoló-negyede — „Mainhattan”, Németország egyetlen igazi skyline-ja." },
-        { name: "Budapest 🏁", kind: "stay", lat: 47.4979, lng: 19.0402, day: 12, date: "2026-08-07", detail: "Az expedíció célja: hazaérkezés Budapestre ~15:30 körül." }
+        { name: "Frankfurt (Lilla felvétel + pihenő)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Aug. 5. — délutáni érkezés Frankfurtba, Lilla és a barátja felvétele, kötetlen pihenőnap (nincs városnézés). 1 éj, innen már öten tovább Carcassonne felé." },
+        { name: "Carcassonne — La Cité", kind: "castle", lat: 43.2061, lng: 2.3639, day: 11, date: "2026-08-06", detail: "Európa legnagyobb megmaradt középkori erődvárosa (UNESCO), 3 km-es kettős várfallal és 52 toronnyal. Ha marad energia az esti érkezés után, gyönyörű kivilágítva." },
+        { name: "Carcassonne (szállás)", kind: "stay", lat: 43.2130, lng: 2.3491, day: 11, date: "2026-08-06", detail: "Aug. 6. — hajnali indulás Frankfurtból (~1130 km), estére Carcassonne. ⚠️ A szállás még foglalásra vár. Másnap a Le Boat bázison hajóra szállás." },
+        { name: "Le Boat bázis — Trèbes", kind: "stay", lat: 43.2076, lng: 2.4433, day: 12, date: "2026-08-07", detail: "Aug. 7. — a Le Boat carcassonne-i (Trèbes) bázisa. Érkezés 15:00–17:00, eligazítás, kihajózás. Vision 4 lakóhajó, foglalás #19656942. Az autó a bázison marad (Secure Parking)." },
+        { name: "Canal du Midi", kind: "nature", lat: 43.2400, lng: 2.5600, day: 15, date: "2026-08-10", detail: "A 17. századi Canal du Midi (UNESCO) platánfás vízi útja — zsilipek, kőhidak, kis borvidéki falvak. A hét Trèbes és Homps közt, kényelmes hajós tempóban telik, oda-vissza kitérőkkel." },
+        { name: "Minerve (kitérő)", kind: "viewpoint", lat: 43.3547, lng: 2.7466, day: 16, date: "2026-08-11", detail: "Franciaország egyik legszebb faluja egy szurdok szélén, Homps közeléből autós/bringás kitérővel elérhető — kathar történelem, természetes kőhíd." },
+        { name: "Homps (Le Boat végbázis)", kind: "stay", lat: 43.2717, lng: 2.7286, day: 19, date: "2026-08-14", detail: "Aug. 14. — a hajót 9:00-ig le kell adni a hompsi végbázison (egyirányú bérlet). Innen indul a hazaút az autóval." },
+        { name: "Verona / Milano (éj)", kind: "stay", lat: 45.4384, lng: 10.9916, day: 19, date: "2026-08-14", detail: "A hazaút 1. napja: Homps → francia Riviéra → Genova → Észak-Olaszország (~800 km), 1 éj Verona/Milano környékén." },
+        { name: "Budapest 🏁", kind: "stay", lat: 47.4979, lng: 19.0402, day: 20, date: "2026-08-15", detail: "Aug. 15. — Észak-Olaszországból Ljubljana–Zagreb érintésével haza Budapestre (~800 km). Az út vége." }
       ],
       days: [
         {
           num: "1",
+          partStart: { n: "①", title: "Európa", subtitle: "Stockholm → Koppenhága → Hamburg → Frankfurt → Carcassonne", range: "júl. 27 – aug. 6." },
           date: "2026. július 27., hétfő",
           title: "Stockholm — FI306 érkezés + Gamla Stan + Monteliusvägen",
           subtitle: "Arlanda → Gamla Stan → Stadshuset → Riddarholmen → Monteliusvägen panoráma → Södermalm vacsora",
@@ -2079,7 +2148,7 @@ const tripData = {
             { label: "Monteliusvägen", cls: "tag-focus" }
           ],
           activities: [
-            { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík/Keflavík → Stockholm/Arlanda, 07:35 → 12:45. Érkezés után <strong>transzfer a <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering telephelyre</a></strong> (Elkraftsgatan 7) az autóért (foglalás #127891, a parkolás pont ma jár le) — innen <strong>behajtás Stockholmba</strong>, az autó a szállásnál / belvárosi P-házban parkol a városnapok alatt. Napközben a városban tömegközlekedés vagy séta a hatékonyabb." },
+            { time: "07:35", icon: "✈", name: "Icelandair FI306 — KEF → ARN", detail: "Reykjavík/Keflavík → Stockholm/Arlanda, 07:35 → 12:45. Érkezés után <strong>transzfer a <a href='https://www.google.com/maps/search/?api=1&query=ARN+Langtidsparkering+Elkraftsgatan+7+Arlandastad' target='_blank' rel='noreferrer'>ARN Långtidsparkering telephelyre</a></strong> (Elkraftsgatan 7) az autóért (foglalás #127891, a parkolás a mai napig — júl. 27. — meghosszabbítva) — innen <strong>behajtás Stockholmba</strong>, az autó a szállásnál / belvárosi P-házban parkol a városnapok alatt. Napközben a városban tömegközlekedés vagy séta a hatékonyabb." },
             { time: "14:00", icon: "🏘", name: "<a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) — Stortorget + Storkyrkan", duration: "~1 óra", mapName: "Gamla Stan", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Stortorget+Stockholm+Gamla+Stan' target='_blank' rel='noreferrer'>Stortorget</a> (★4.7): a középkori főtér élénk színű házsora az egyik legikonikusabb stockholmi kép. Mellette a <a href='https://www.google.com/maps/search/?api=1&query=Storkyrkan+Cathedral+Stockholm' target='_blank' rel='noreferrer'>Storkyrkan katedrális</a> (★4.6) — a legrégebbi stockholmi egyház (1300-as évek), belül a Sárkányölő György fából faragott szobra lenyűgöző. Nobel Prize Museum (★4.5) a főtéren, ha bejönne." },
             { time: "15:00", icon: "👑", name: "<a href='https://www.google.com/maps/search/?api=1&query=Royal+Palace+Stockholm' target='_blank' rel='noreferrer'>Kungliga Slottet</a> (★4.5) — Királyi Palota külseje + Vaktársak", duration: "~30 perc", mapName: "Kungliga Slottet", detail: "Európa egyik legnagyobb lakott királyi palotája, 600 szobával. Kívülről a legjobb: délidőben a díszőrség váltása (12:15 hétköznap, 13:15 vasárnap) jó show. A palota előtti tér a <a href='https://www.google.com/maps/search/?api=1&query=Lejonbacken+Stockholm+Royal+Palace' target='_blank' rel='noreferrer'>Lejonbacken</a> a legjobb fotó-szög." },
             { time: "15:45", icon: "🏙", name: "<a href='https://www.google.com/maps/search/?api=1&query=Riddarholmen+Stockholm' target='_blank' rel='noreferrer'>Riddarholmen</a> (★4.6) + <a href='https://www.google.com/maps/search/?api=1&query=Stadshuset+Stockholm' target='_blank' rel='noreferrer'>Stadshuset</a> (★4.6) kívülről", duration: "~45 perc", mapName: "Riddarholmen + Stadshuset", detail: "Riddarholmen a Gamla Stan mögötti kis sziget — a legjobb panoráma Stockholmra a Riddarfjärden öböl felett. Innentől gyalog a Stadshusig (~10 perc): a Nobel-bankett helyszíne, kék és arany csarnokával, 10 270 sípból álló orgonájával. Kívülről is erős kép, de a belső túra (10:00–16:00, ~130 SEK) megéri ha marad idő." },
@@ -2261,63 +2330,214 @@ const tripData = {
         {
           num: "10",
           date: "2026. augusztus 5., szerda",
-          title: "Hamburg → Frankfurt",
-          subtitle: "Átmeneti etap — ~490 km, délutáni érkezés, első frankurti esti séta",
-          driveLog: { km: "~490 km", stops: 2, driveTime: "~4,5 óra", depart: "09:00", arrive: "~14:30 Frankfurt", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"17:00", label:"Römerberg séta"}] },
+          title: "Hamburg → Frankfurt — Lilla + barát felvétele, pihenőnap",
+          subtitle: "~490 km A7/A5 via Hannover; délutáni érkezés, Lilla és barátja felvétele, kötetlen pihenő — nincs városnézés",
+          driveLog: { km: "~490 km", stops: 2, driveTime: "~4,5 óra", depart: "09:00", arrive: "~14:30 Frankfurt", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"16:00", label:"Lilla + barát"}, {time:"19:00", label:"közös vacsora"}] },
           tags: [
             { label: "~490 km", cls: "tag-drive" },
-            { label: "Frankfurt", cls: "tag-city" }
+            { label: "Lilla + barát", cls: "tag-focus" },
+            { label: "pihenőnap", cls: "tag-city" }
           ],
           activities: [
             { time: "09:00", icon: "🚗", name: "Indulás Hamburgból — A7 dél felé", detail: "Hamburg → Hannover ~160 km (~1,5h). Az A7 egyenes, jó autópálya, nincs útdíj — Hannoverig az első tankolást meg lehet csinálni." },
             { time: "11:00", icon: "⛽", name: "Hannover-tájék — pihenő, tankolás", detail: "Hannover kb. félúton van. Gyors kávé + WC-megálló. Észak-Németországban általában versenyképesebb a V-Power ár mint Frankfurt körül." },
-            { time: "14:30", icon: "🏙", name: "Frankfurt — szállás + berendezkedés", detail: "Frankfurt am Main belváros közelében, vagy Sachsenhausen negyedben érdemes szállást venni. Autóparkoló, bejelentkezés." },
-            { time: "16:00", icon: "🚶", name: "Römerberg első séta + Main-part", googleRating: "4.5", maps: "https://www.google.com/maps/search/?api=1&query=R%C3%B6merberg%20Frankfurt", duration: "~30–45 perc", mapName: "Römerberg", detail: "A Römerberg Frankfurt belvárosának ikonikus középkori főtere, a Römer városháza háromcsúcsos homlokzatával. Rövid ráhangolódás a holnapi városnapra. Google Reviews: ★4.5 — 'Este is gyönyörűen kivilágított.'" },
-            { time: "18:00", icon: "🍷", name: "Vacsora Sachsenhausenben — első Apfelwein-este", detail: "Sachsenhausen a Majna jobb partján, az Apfelwein (almabor) kultúra fellegvára. Wagner, Dauth-Schneider vagy Zum Gemalten Haus — autentikus és olcsó helyi vacsora. Bembel (szürke kerámia almaboros korsó) kötelező megkóstolni." }
+            { time: "14:30", icon: "🏨", name: "Frankfurt — szállás + berendezkedés", detail: "Bejelentkezés, autó leparkolása. Ma nem városnézés a cél, hanem a nyugodt átállás a francia etapra — érdemes parkolós, kényelmes szállást választani, ahonnan Lilláékat is könnyű felvenni." },
+            { time: "16:00", icon: "🤝", name: "Lilla és a barátja felvétele", detail: "Ma csatlakozik <strong>Lilla és a barátja</strong> — innentől öten megyünk tovább. Egyeztetett találkozópont (pl. a szállás vagy a főpályaudvar, Frankfurt Hbf), csomagok bepakolása, közös nekifutás a holnapi hosszú franciaországi napnak." },
+            { time: "19:00", icon: "🍽", name: "Közös, kötetlen vacsora + korai pihenő", detail: "Egy laza közös vacsora a csapattal (ki-ki ízlése szerint — nem kell nagy program), aztán korai fekvés. ⏰ Holnap <strong>hajnali indulás</strong> Carcassonne felé (~1130 km), úgyhogy ma este már érdemes összepakolni és tankolni." }
           ],
-          notes: ["A7 Hamburg → Kassel → Frankfurt: egyenes, útdíjmentes útvonal, jó 2×3 sávos autópálya végig.", "Frankfurt szombat délután: a belváros forgalmas, de a szálláshoz való beérkezés megoldható.", "Sachsenhausen: az almaborozók (Apfelwein-Lokal-ok) nem finomkodós helyek, de autentikus és olcsó vacsorák. Handkäse (savanyú túró ecetes-hagymás öntettel) = helyi ikon, Goethe kedvence volt."]
+          notes: ["Ma szándékosan NINCS városnézés — pihenő- és találkozónap Lilláékkal a hosszú francia etap előtt.", "A7 Hamburg → Kassel → Frankfurt: egyenes, útdíjmentes útvonal, jó 2×3 sávos autópálya végig.", "Frankfurti szállás: parkolós, könnyen megközelíthető hely a legjobb — innen kell holnap hajnalban indulni. A csapat innen már 5 fő.", "Holnap ~1130 km Carcassonne-ig — ma este tankolás + pakolás, hajnali start (~05:00–06:00)."]
         },
         {
           num: "11",
           date: "2026. augusztus 6., csütörtök",
-          title: "Frankfurt városnap",
-          subtitle: "Römerberg · Kaiserdom · Städel Museum · Sachsenhausen Apfelwein",
-          driveLog: { km: "~5 km (városon belül)", stops: 4, driveTime: "gyalogos városnap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Römerberg"}, {time:"11:00", label:"Städel Museum"}, {time:"14:00", label:"Sachsenhausen"}, {time:"19:00", label:"Apfelwein vacsora"}] },
+          title: "Frankfurt → Carcassonne 🇫🇷",
+          subtitle: "Hajnali indulás, ~1130 km a franciaországi bázisra — Karlsruhe · Lyon · Montpellier · Carcassonne, estére érkezés",
+          driveLog: { km: "~1130 km", stops: 4, driveTime: "~11–12 óra", depart: "05:30", arrive: "~18:30 Carcassonne", timelinePoints: [{time:"05:30", label:"Frankfurt ind."}, {time:"08:00", label:"Karlsruhe / határ"}, {time:"13:00", label:"Lyon (ebéd)"}, {time:"16:30", label:"Montpellier"}, {time:"18:30", label:"Carcassonne 🏁"}] },
           tags: [
-            { label: "Städel Museum", cls: "tag-focus" },
-            { label: "Römerberg", cls: "tag-city" },
-            { label: "városnap", cls: "tag-city" }
+            { label: "~1130 km", cls: "tag-drive" },
+            { label: "hajnali start", cls: "tag-focus" },
+            { label: "Carcassonne", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:00", icon: "🏛", name: "Römerberg + Römer városháza", googleRating: "4.5", maps: "https://www.google.com/maps/search/?api=1&query=R%C3%B6mer%20Frankfurt", duration: "~30 perc", mapName: "Römerberg", detail: "Frankfurt legfotogénebb pontja: a részben rekonstruált középkori kereskedősorok és a Römer háromcsúcsos homlokzata. Szinte minden frankurti képeslapon ott van. Google Reviews: ★4.5 — 'Reggel a turisták előtt üres és csodás.'" },
-            { time: "09:45", icon: "⛪", name: "Frankfurter Dom (Kaiserdom)", googleRating: "4.5", maps: "https://www.google.com/maps/search/?api=1&query=Frankfurter%20Dom", duration: "~30 perc", mapName: "Frankfurter Dom", detail: "A Szentséges Római Birodalom császárkoronázásainak katedrálisa, gótikus torony (66 m) kilátóval. Google Reviews: ★4.5 — 'A torony felmászása megéri, szép kilátó.' Belépő: ~€3." },
-            { time: "11:00", icon: "🖼", name: "Städel Museum — Schaumainkai 63", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=St%C3%A4del%20Museum%20Frankfurt", duration: "~1,5–2 óra", mapName: "Städel Museum", detail: "Európa egyik legjobb képzőművészeti múzeuma (Botticelli, Vermeer, Rembrandt, Monet, Picasso). Vasárnap nyitva 10:00–18:00. Google Reviews: ★4.6 — 'Meglepően gazdag gyűjtemény, kötelező megállás.' Belépő: ~€16/fő. Kb. 2 óra ajánlott." },
-            { time: "13:30", icon: "🌉", name: "Eiserner Steg — sétálóhíd + Majna-part", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Eiserner%20Steg%20Frankfurt", duration: "~15–20 perc", mapName: "Eiserner Steg", detail: "A lakatokkal borított sétálóhíd a Majna felett, klassz városképpel mindkét irányban. A Sachsenhausen felőli part a Museumsufer (múzeumi sétány) — vasárnap is kellemes sétálni." },
-            { time: "14:30", icon: "🍺", name: "Sachsenhausen — Apfelwein negyed, ebéd", detail: "A Majna bal partján a hagyományos Apfelwein-negyedben ebéd. Handkäse mit Musik (savanyú túró hagymás-ecetes öntettel) és Grüne Soße (zöld fűszeres mártás főtt tojással és burgonyával — frankurti specialitás) kóstolása kötelező. Zum Wagner: Google ★4.3." },
-            { time: "16:30", icon: "🌆", name: "Bankenviertel skyline séta", googleRating: "4.5", maps: "https://www.google.com/maps/search/?api=1&query=Frankfurt%20Bankenviertel", duration: "~30 perc", mapName: "Bankenviertel", detail: "Frankfurt az egyetlen európai nagyváros, ahol megvannak a felhőkarcolók a belváros közepén. A MainKai sétányról (Sachsenhausen oldal) a legjobb a városképet fotózni — este kivilágítva is gyönyörű." },
-            { time: "19:00", icon: "🍷", name: "Búcsúvacsora Sachsenhausenben", detail: "Az Apfelwein-Lokal-ok este is nyitva, a vacsora egyszerű, autentikus és olcsó. Dauth-Schneider: ★4.3, Zum Gemalten Haus: ★4.4 Google." }
+            { time: "05:30", icon: "🚗", name: "Hajnali indulás Frankfurtból — A5 dél felé", detail: "Öten, tele autóval indulunk a nap leghosszabb etapjára. A5-ön Karlsruhe felé, a francia határ (Strasbourg / Mulhouse térsége) ~2,5 óra. ⚠️ Innentől francia fizetős autoroute-ok jönnek (össz. ~90–100 € útdíj Carcassonne-ig) — bankkártya a kapuknál működik." },
+            { time: "08:00", icon: "⛽", name: "Karlsruhe / francia határ — tankolás", detail: "Az utolsó német tankolás Karlsruhe környékén ajánlott (a GLC 100 oktánt kér — V-Power / BP Ultimate; Franciaországban a SP98 a megfelelő). WC + kávé, majd tovább Mulhouse–Besançon–Lyon irányba (A36/A6)." },
+            { time: "13:00", icon: "🍽", name: "Lyon-tájék — ebédszünet", detail: "Lyon nagyjából félúton van (~650 km). Egy hosszabb ebéd- és lábkinyújtó-megálló egy autoroute-i aire-en (pihenő) vagy Lyon szélén — nem városnézés, csak feltöltődés. Innen az A7 (Vallée du Rhône) dél felé, majd Orange-nál az A9 Montpellier–Narbonne irányba." },
+            { time: "16:30", icon: "🌊", name: "Montpellier / Narbonne — utolsó szakasz", detail: "A9 mentén dél felé melegszik a levegő és mediterrán lesz a táj. Narbonne-nál az A61-re fordulunk Carcassonne felé (~40 perc). Utolsó tankolás/pihenő, ha kell." },
+            { time: "18:30", icon: "🏁", name: "Carcassonne — érkezés + szállás", detail: "Estére megérkezünk a franciaországi bázisra. ⚠️ <strong>A carcassonne-i szállás (aug. 6-i éj) még foglalásra vár</strong> — jó, ha az autós hajnali start miatt előre, kényelmes, parkolós helyet foglalunk. Ha a hosszú nap után marad energia, a kivilágított <a href='https://www.google.com/maps/search/?api=1&query=Cit%C3%A9+de+Carcassonne' target='_blank' rel='noreferrer'>La Cité</a> (★4.7, Európa legnagyobb középkori erődvárosa) esti látványa lenyűgöző." },
+            { time: "20:00", icon: "🍷", name: "Laza vacsora Carcassonne-ban", detail: "Első francia este — egy nyugodt vacsora (cassoulet, a helyi babos-kacsás specialitás, vagy egyszerűbb bisztró). Korai pihenő: holnap délután hajóra szállás a Le Boat bázison." }
           ],
-          notes: ["Vasárnap: Kleinmarkthalle (fedett piac) ZÁRVA, de a Städel és az összes külső látnivaló nyitva.", "Grüne Soße (Grie Soß): tipikusan frankurti fogás, Johann Wolfgang von Goethe kedvence volt — 7 féle friss gyógynövényből. Kötelező megkóstolni!", "Sachsenhauseni Apfelwein-kultúra: a helyi almabort Bembel-ből (szürke kerámia korsó) isszák, hígítva vízzel vagy szódával (Gespritzter) — könnyedebb, mint gondolnád.", "Holnap: korai indulás (~06:00) Frankfurt → Budapest, ~950 km, kb. 9 óra."]
+          notes: ["⚠️ A carcassonne-i szállás (aug. 6-i éj) MÉG NINCS lefoglalva — ezt érdemes mielőbb intézni (parkolós, a Le Boat / Trèbes bázishoz közeli hely a praktikus).", "Ez a nap túlnyomórészt vezetés (~1130 km, ~11–12 óra megállókkal) — érdemes a sofőrködést megosztani és korán indulni.", "Francia autoroute-díjak: össz. ~90–100 € Frankfurt–Carcassonne között, bankkártyával a kapuknál. Osztrák/német vignette itt nem kell, de a francia matricás (Crit'Air) övezetek nagyvárosokban élhetnek — az autoroute-on áthajtás nem érinti.", "Holnap (aug. 7.) a Le Boat kihajózás: a bázison 15:00–17:00 közt kell lenni — reggel akár egy rövid Cité-séta is belefér indulás előtt."]
         },
         {
           num: "12",
+          partStart: { n: "②", title: "Le Boat — Canal du Midi", subtitle: "Vision 4 lakóhajó · Trèbes → Homps · foglalás #19656942", range: "aug. 7 – aug. 14." },
           date: "2026. augusztus 7., péntek",
-          title: "Frankfurt → Budapest 🏁",
-          subtitle: "Expedition záróetap — ~950 km, hazaérkezés",
-          driveLog: { km: "~950 km", stops: 3, driveTime: "~9 óra", depart: "06:00", arrive: "~15:30 Budapest", timelinePoints: [{time:"06:00", label:"Frankfurt ind."}, {time:"09:00", label:"Nürnberg"}, {time:"13:00", label:"Linz/Wien"}, {time:"15:30", label:"Budapest 🏁"}] },
+          title: "Le Boat — hajóra szállás Trèbes-ben ⛵",
+          subtitle: "Reggel opcionális Cité-séta, bevásárlás, majd 15:00–17:00 közt a bázison: eligazítás, kihajózás — első éj a hajón",
+          driveLog: { km: "bevásárlás + bázis", stops: 2, driveTime: "hajóra szállás", depart: "délelőtt", arrive: "hajó ⛵", timelinePoints: [{time:"09:00", label:"Cité / bevásárlás"}, {time:"15:00", label:"bázis check-in"}, {time:"16:00", label:"eligazítás"}, {time:"17:30", label:"kihajózás"}] },
           tags: [
-            { label: "~950 km", cls: "tag-drive" },
+            { label: "Le Boat check-in", cls: "tag-focus" },
+            { label: "Vision 4", cls: "tag-city" },
+            { label: "Canal du Midi", cls: "tag-nature" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🏰", name: "Reggel (opcionális): <a href='https://www.google.com/maps/search/?api=1&query=Cit%C3%A9+de+Carcassonne' target='_blank' rel='noreferrer'>Cité de Carcassonne</a>", googleRating: "4.7", mapName: "Carcassonne — La Cité", duration: "~2 óra", detail: "Ha van kedv a hajóra szállás előtt: Európa legnagyobb megmaradt középkori erődvárosa (UNESCO) — 3 km kettős várfal, 52 torony, a Château Comtal és a Saint-Nazaire bazilika. Reggel a legkevésbé zsúfolt. Kora délután indulni kell a bázisra." },
+            { time: "12:00", icon: "🛒", name: "Nagybevásárlás a hajóra", detail: "A hét fő ellátmányát érdemes a beszállás ELŐTT beszerezni (Trèbes / Carcassonne <a href='https://www.google.com/maps/search/?api=1&query=Intermarch%C3%A9+Tr%C3%A8bes' target='_blank' rel='noreferrer'>Intermarché / Carrefour</a>): reggeli, ital, snack, alapok — a canal menti falvakban van pékség és kis bolt, de a nagy pakolás így egyszerűbb. Öten vagyunk, a Vision 4 konyhája teljesen felszerelt." },
+            { time: "15:00", icon: "⛵", name: "<a href='https://www.google.com/maps/search/?api=1&query=Le+Boat+Carcassonne+Trebes+base' target='_blank' rel='noreferrer'>Le Boat bázis (Trèbes)</a> — check-in + eligazítás", detail: "Érkezés 15:00–17:00 közt (a Le Boat az indulás előtti héten telefonon egyeztet pontos időt). Bázis-adminisztráció, kaució (üzemanyag ~425 € + kárkaució ~3705 €, vagy DRR-rel 575 €), majd 30–60 perces gyakorlati eligazítás: kormányzás, zsilipek, kikötés. ⚠️ A biztonsági videót előre mindenkinek meg kell néznie!" },
+            { time: "17:30", icon: "🚤", name: "Kihajózás — első rövid szakasz", detail: "Az eligazítás után kihajózunk. Az első nap általában rövid: pár zsilip, ráérezni a hajó tempójára (a csatornán ~8 km/h a sebesség), majd kikötés éjszakára Trèbes közelében vagy egy csendes szakaszon. Vacsora a fedélzeten vagy egy parti bisztróban." }
+          ],
+          notes: ["⚠️ Biztonsági videó: minden fedélzeten lévőnek KÖTELEZŐ megnéznie indulás előtt (leboat.com), különben nem szállhat hajóra.", "Vision 4: 4 kabin, 4 fürdő, max. 9 fő; jogosítvány nem kell, de min. 3 felnőtt kell a fedélzeten.", "Zsilipek nyitvatartása: kb. 09:00–19:00, DÉLI SZÜNETTEL (kb. 12:00–13:00) — a napi hajózást ehhez érdemes időzíteni.", "Bringa: sokan bérelnek kerékpárt a hajóra — a canal menti (part menti) úton remek falu-kirándulásokhoz és bevásárláshoz.", "Autó: a bázison marad a foglalt Secure Parkingban a hét alatt."]
+        },
+        {
+          num: "13",
+          date: "2026. augusztus 8., szombat",
+          title: "Trèbes → Carcassonne (hajóval) ⛵",
+          subtitle: "Nyugatnak a Cité alá — zsilipek, platánsor, kikötés a carcassonne-i kikötőben",
+          driveLog: { km: "~11 km hajóval", stops: 6, driveTime: "~3–4 óra hajózás", depart: "09:00", arrive: "~15:00 Carcassonne", timelinePoints: [{time:"09:00", label:"Trèbes ind."}, {time:"11:00", label:"zsilipek"}, {time:"15:00", label:"Carcassonne port"}, {time:"18:00", label:"Cité este"}] },
+          tags: [
+            { label: "~11 km ⛵", cls: "tag-drive" },
+            { label: "Carcassonne", cls: "tag-focus" },
+            { label: "zsilipek", cls: "tag-nature" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🚤", name: "Trèbes → Carcassonne — nyugati irány", detail: "Nyugatnak indulunk a Cité felé (~11 km, több zsilippel — ez a lassítós, élményszerű rész). A canal itt végig platánfák alatt fut, a zsilipeknél kis nyüzsgés és fagyizó. Aki nem kormányoz, biciklizhet a parton a hajó mellett." },
+            { time: "12:30", icon: "🍽", name: "Ebéd a fedélzeten / zsilipnél", detail: "A déli zsilip-szünetet (12:00–13:00) érdemes ebédre használni — horgony/kikötés egy árnyékos szakaszon, saláta és helyi bor a fedélzeten." },
+            { time: "15:00", icon: "⚓", name: "Kikötés — <a href='https://www.google.com/maps/search/?api=1&query=Port+de+Carcassonne' target='_blank' rel='noreferrer'>Port de Carcassonne</a>", detail: "Kikötés a carcassonne-i kikötőben (a Bastide/alsóváros mellett). Innen ~20 perc séta vagy rövid taxi a Cité-hez, ha az előző nap kimaradt. Piac, kávézók, a Bastide Saint-Louis sakktáblás óvárosa." },
+            { time: "18:00", icon: "🏰", name: "Cité de Carcassonne — esti fény", detail: "Ha még nem volt: a kivilágított középkori erődváros esti sétája az egyik legszebb élmény. Vacsora a Cité-ben (cassoulet) vagy a kikötőnél." }
+          ],
+          notes: ["A Trèbes–Carcassonne szakasz oda-vissza is teljesíthető; a hét hátralévő része keletnek, Homps felé vezet.", "Zsilipek: napközben személyzet kezeli őket, de segíteni kell a kötelekkel — jó csapatmunka öten.", "Carcassonne kikötő: nyáron gyorsan telik, érdemes kora délután beérni egy jó helyért."]
+        },
+        {
+          num: "14",
+          date: "2026. augusztus 9., vasárnap",
+          title: "Carcassonne → Trèbes → Marseillette felé ⛵",
+          subtitle: "Vissza keletnek, Trèbes-en túl a nyílt, csendes szakaszra — úszás, borvidék",
+          driveLog: { km: "~20 km hajóval", stops: 5, driveTime: "~4 óra hajózás", depart: "09:00", arrive: "~16:00", timelinePoints: [{time:"09:00", label:"Carcassonne ind."}, {time:"12:00", label:"Trèbes"}, {time:"14:00", label:"Marseillette"}, {time:"16:00", label:"kikötés"}] },
+          tags: [
+            { label: "~20 km ⛵", cls: "tag-drive" },
+            { label: "úszás", cls: "tag-nature" },
+            { label: "borvidék", cls: "tag-focus" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🚤", name: "Vissza keletnek — Carcassonne → Trèbes", detail: "A Cité alól visszafelé, Trèbes-en át keletnek. Trèbes-nél a háromszoros zsilip (écluse de Trèbes) és a szép kőhíd — jó fotó- és fagyi-megálló." },
+            { time: "12:30", icon: "🛒", name: "Trèbes — feltöltés, ebéd", detail: "Trèbes-ben pékség, kis bolt, éttermek a rakparton — jó pont a friss bagett + ebéd beszerzésére. Innen a canal elhagyja a várost és csendesebb, mezőgazdasági tájba ér." },
+            { time: "14:30", icon: "🏊", name: "Úszás + lassú délután", detail: "A nyílt szakaszokon (Marseillette-síkság) meg lehet állni fürdésre, napozásra a fedélzeten. Körben szőlők (Minervois/Corbières borvidék pereme) — a canal itt a leglazább." },
+            { time: "16:00", icon: "⚓", name: "Kikötés egy csendes szakaszon", detail: "Éjszakára kikötés egy fához vagy egy kis stégnél — a canal-parti alvás (békák, csend, csillagok) az egyik legjobb élmény. Vacsora a fedélzeten." }
+          ],
+          notes: ["Fürdés: a canal vize nyáron langyos; a nyílt, lakott résztől távolabbi szakaszok a legkellemesebbek.", "Kikötés éjszakára: a legtöbb helyen szabadon lehet a parthoz kötni (kalapácsos cövek + kötél) — nem kell mindig kikötő.", "Borvidék: a canal a Minervois és Corbières AOC szélén fut — a parti falvakban helyi bort lehet kóstolni/venni."]
+        },
+        {
+          num: "15",
+          date: "2026. augusztus 10., hétfő",
+          title: "Puichéric · La Redorte felé ⛵",
+          subtitle: "Zsilipek és kis borfalvak — a Canal du Midi legbájosabb, leglassabb szakasza",
+          driveLog: { km: "~15 km hajóval", stops: 6, driveTime: "~4 óra hajózás", depart: "09:00", arrive: "~16:00", timelinePoints: [{time:"09:00", label:"indulás"}, {time:"11:00", label:"Puichéric"}, {time:"14:00", label:"La Redorte"}, {time:"16:00", label:"kikötés"}] },
+          tags: [
+            { label: "~15 km ⛵", cls: "tag-drive" },
+            { label: "borfalvak", cls: "tag-focus" },
+            { label: "zsilipek", cls: "tag-nature" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🚤", name: "Tovább keletnek — Puichéric irány", detail: "A canal itt sorozatos zsilipeken (Aiguille, Saint-Martin, Puichéric) vezet át — lassú, de pont ez a hangulat. A <a href='https://www.google.com/maps/search/?api=1&query=Puich%C3%A9ric' target='_blank' rel='noreferrer'>Puichéric</a> apró borvidéki falu, kis château-val." },
+            { time: "12:30", icon: "🥖", name: "Falusi ebéd + feltöltés", detail: "A parti falvakban pékség, borász, kis piac — bagett, sajt, olajbogyó, helyi rozé a fedélzeti ebédhez. A déli zsilip-szünet itt is jó pihenő." },
+            { time: "14:00", icon: "🍷", name: "<a href='https://www.google.com/maps/search/?api=1&query=La+Redorte' target='_blank' rel='noreferrer'>La Redorte</a> — kikötés, borkóstoló", detail: "Kellemes kikötős falu jó kikötővel és éttermekkel. Környékbeli pincészetek (Minervois) — sétatávolságra borkóstoló. Este vacsora a rakparton vagy a fedélzeten." },
+            { time: "16:00", icon: "🚲", name: "Bringás/gyalogos falukör", detail: "A part menti úton bringával vagy gyalog körbe a szomszéd falvakhoz — a canal legjobb tempója." }
+          ],
+          notes: ["A napi táv szándékosan rövid — a hét hátralévő ~40 km-e Homps-ig bőven kényelmes, a hangsúly a lassú élményen van.", "Zsilipek: a délelőtti és késő délutáni ablak a legjobb (a déli szünet miatt).", "Vízkészlet: a nagyobb kikötőkben (La Redorte, Homps) lehet ivóvizet tankolni és szemetet leadni."]
+        },
+        {
+          num: "16",
+          date: "2026. augusztus 11., kedd",
+          title: "Homps + Minerve kitérő ⛵",
+          subtitle: "Beérünk Homps-ba, és egy szárazföldi kitérő az egyik legszebb francia faluba, Minerve-be",
+          driveLog: { km: "~8 km hajóval + kitérő", stops: 3, driveTime: "~2 óra hajózás", depart: "09:30", arrive: "Homps", timelinePoints: [{time:"09:30", label:"indulás"}, {time:"11:00", label:"Homps kikötő"}, {time:"14:00", label:"Minerve"}, {time:"18:00", label:"vissza Homps"}] },
+          tags: [
+            { label: "Homps", cls: "tag-city" },
+            { label: "Minerve", cls: "tag-focus" },
+            { label: "kitérő", cls: "tag-nature" }
+          ],
+          activities: [
+            { time: "09:30", icon: "🚤", name: "Rövid hajózás Homps-ba", detail: "A rövid szakasz után beérünk <a href='https://www.google.com/maps/search/?api=1&query=Homps+Canal+du+Midi' target='_blank' rel='noreferrer'>Homps</a>-ba — ez lesz a hét végi leadóbázis. Nagy kikötő, éttermek, borkereskedés (a régi borkikötő). Kikötés, majd szárazföldi kitérő." },
+            { time: "14:00", icon: "🏘", name: "<a href='https://www.google.com/maps/search/?api=1&query=Minerve+France' target='_blank' rel='noreferrer'>Minerve</a> (★4.7) — „Franciaország legszebb falvai\"", duration: "~2–3 óra", detail: "~20 perc autóval/taxival Homps-ból: kathar erődfalu két szurdok találkozásában, természetes kőhidakkal, kathar mártírok emlékművével. Szűk kőutcák, borászatok (Minervois), lenyűgöző kilátás. Az egyik legszebb hely a környéken." },
+            { time: "18:00", icon: "🍷", name: "Vissza Homps — vacsora a kikötőnél", detail: "Este vacsora a hompsi rakparton (a régi chai/borraktárak közt) vagy a fedélzeten. Nyugodt canal-parti éj." }
+          ],
+          notes: ["Minerve autóval a leggyorsabb (a hajó a canalon marad) — a bázisokon/kikötőkben lehet taxit hívni, vagy bringával is nekivágható (dombosabb).", "Homps a végbázis — jó már most feltérképezni a leadás logisztikáját (aug. 14., 9:00).", "A Minervois borvidék szíve — a hompsi/olonzaci pincészetek jó helyi borokat adnak."]
+        },
+        {
+          num: "17",
+          date: "2026. augusztus 12., szerda",
+          title: "Le Somail · Olonzac — laza canal-nap ⛵",
+          subtitle: "Kitérő a canal legfotogénebb faluja, Le Somail felé, vagy piacnap Olonzacban",
+          driveLog: { km: "~10 km hajóval (kitérő)", stops: 4, driveTime: "~3 óra hajózás", depart: "09:00", arrive: "~16:00", timelinePoints: [{time:"09:00", label:"indulás"}, {time:"11:30", label:"Le Somail"}, {time:"14:00", label:"vissza"}, {time:"16:00", label:"Homps környék"}] },
+          tags: [
+            { label: "Le Somail", cls: "tag-focus" },
+            { label: "piac", cls: "tag-city" },
+            { label: "~10 km ⛵", cls: "tag-drive" }
+          ],
+          activities: [
+            { time: "09:00", icon: "🚤", name: "Kitérő Le Somail felé (vagy pihenő)", detail: "Homps-tól keletre a canal a leglátványosabb, platánalagutas szakaszához ér. <a href='https://www.google.com/maps/search/?api=1&query=Le+Somail+Canal+du+Midi' target='_blank' rel='noreferrer'>Le Somail</a> érintetlen, régi canal-falu: kőhíd (1690), régi könyvesbolt (több mint 50 000 kötet), hajós kávézó. (Ha inkább pihenőnap kell, ez elhagyható.)" },
+            { time: "12:00", icon: "🛒", name: "Olonzac — szerdai piac", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Olonzac+market' target='_blank' rel='noreferrer'>Olonzac</a> (Homps mellett) tipikus dél-francia piaca — sajt, kolbász, olajbogyó, zöldség, helyi bor. Jó feltöltés a hajóra és ebédhez." },
+            { time: "14:00", icon: "🏊", name: "Úszás, lassú délután", detail: "Vissza Homps környékére, fürdés, napozás, olvasás a fedélzeten. A hét legpihentetőbb ritmusa." },
+            { time: "19:00", icon: "🍽", name: "Vacsora — canal-parti este", detail: "Vacsora Homps egyik éttermében vagy a fedélzeten, a Minervois borából." }
+          ],
+          notes: ["Le Somail a Canal du Midi egyik legszebb faluja — ha belefér, megéri; ha fáradtak, egy tétlen pihenőnap is tökéletes.", "Olonzaci piac: szerda délelőtt — jó időzítés a friss ellátmányhoz a hét végére.", "A hajót aug. 14-én reggel tisztán, üresen kell leadni — érdemes idejében fogyasztani a készletet."]
+        },
+        {
+          num: "18",
+          date: "2026. augusztus 13., csütörtök",
+          title: "Utolsó hajós nap — vissza Homps-ba ⛵",
+          subtitle: "Utolsó zsilipek és fürdés, visszaállás a leadóbázisra, csomagolás",
+          driveLog: { km: "~8 km hajóval", stops: 3, driveTime: "~2 óra hajózás", depart: "10:00", arrive: "Homps bázis", timelinePoints: [{time:"10:00", label:"utolsó szakasz"}, {time:"12:00", label:"úszás"}, {time:"16:00", label:"Homps bázis"}, {time:"19:00", label:"búcsúvacsora"}] },
+          tags: [
+            { label: "utolsó nap ⛵", cls: "tag-focus" },
+            { label: "Homps bázis", cls: "tag-city" },
+            { label: "csomagolás", cls: "tag-drive" }
+          ],
+          activities: [
+            { time: "10:00", icon: "🚤", name: "Utolsó nyugodt szakasz", detail: "Egy utolsó, ráérős hajózás — még pár zsilip, még egy fürdés, még egy fedélzeti ebéd. Élvezzük ki a canal tempóját, mielőtt visszaállunk." },
+            { time: "16:00", icon: "⚓", name: "Visszaállás a <a href='https://www.google.com/maps/search/?api=1&query=Le+Boat+Homps+base' target='_blank' rel='noreferrer'>hompsi bázisra</a>", detail: "Délután beállunk a leadóbázisra. Tankolás (az üzemanyagot óradíj szerint elszámolják — a letétből), a hajó kipakolása, előzetes rendrakás — reggel 9:00-ig kell leadni, így ma este minden legyen kész." },
+            { time: "19:00", icon: "🥂", name: "Búcsúvacsora Homps-ban", detail: "A hét lezárása egy közös vacsorával a hompsi rakparton — Minervois bor, dél-francia fogások. Utolsó éj a hajón." }
+          ],
+          notes: ["Leadás előtt: a hajót nagyjából rendben, kipakolva kell átadni; a részletes ellenőrzést a személyzet végzi reggel.", "Üzemanyag: óradíjas — ami a ~425 € letétből marad, visszajár; ha több fogyott, a végén rendezik.", "Kárkaució: ha nem volt sérülés, a teljes összeg (vagy a DRR-rel csökkentett) felszabadul."]
+        },
+        {
+          num: "19",
+          partStart: { n: "③", title: "Hazaút", subtitle: "Homps → Észak-Olaszország → Budapest · 2 nap, 1 éj", range: "aug. 14 – aug. 15." },
+          date: "2026. augusztus 14., péntek",
+          title: "Homps → Észak-Olaszország 🏁",
+          subtitle: "Hajóleadás 9:00-ig, majd a francia Riviérán és Genován át Észak-Olaszországig (~800 km), 1 éj",
+          driveLog: { km: "~800 km", stops: 4, driveTime: "~8,5 óra", depart: "09:30", arrive: "~19:00 Verona/Milano", timelinePoints: [{time:"09:00", label:"Homps leadás"}, {time:"12:30", label:"Riviéra"}, {time:"15:00", label:"Genova"}, {time:"19:00", label:"éj É-Olaszo."}] },
+          tags: [
+            { label: "~800 km", cls: "tag-drive" },
+            { label: "hajóleadás", cls: "tag-focus" },
+            { label: "1 éj É-Olaszo.", cls: "tag-city" }
+          ],
+          activities: [
+            { time: "09:00", icon: "⚓", name: "Le Boat — hajóleadás Homps-ban", detail: "A hajót 9:00-ig el kell hagyni. Személyzeti átvétel/ellenőrzés, kaució-visszatérítés rendezése, csomagok az autóba. Innen indul a hazaút." },
+            { time: "10:00", icon: "🚗", name: "Homps → francia Riviéra (A9/A8)", detail: "Keletnek az A9-en Narbonne–Montpellier–Nîmes, majd az A8-on (La Provençale) Aix-en-Provence, Cannes, Nizza felé. Mediterrán táj, tenger a jobb oldalon." },
+            { time: "12:30", icon: "🍽", name: "Riviéra — ebéd + tengerpart", detail: "Ebédszünet a Côte d'Azur mentén (pl. Cannes/Antibes vagy egy autoroute-i tengeri kilátós aire). ⚠️ Francia + olasz autópályadíjak jelentősek ezen a szakaszon (bankkártya a kapuknál)." },
+            { time: "15:00", icon: "🌉", name: "Ventimiglia (határ) → Genova", detail: "Belépés Olaszországba Ventimigliánál, majd az A10 (Autostrada dei Fiori) a ligur tengerparton — alagutak és viaduktok sora Genováig. Innen az A7/A21 vagy A1 az északolasz síkság felé." },
+            { time: "19:00", icon: "🏨", name: "Éjszaka Verona / Milano környékén", detail: "Kényelmes távolságra (~800 km) állunk meg éjszakára Verona vagy Milano térségében. Vacsora (olasz konyha!), pihenő. ⚠️ A szállást érdemes előre foglalni. Holnap a záró etap Budapestig." }
+          ],
+          notes: ["Ez a hazaút 1. napja — ~800 km, tengerparti, de sok alagúttal (Liguria) lassabb szakaszokkal.", "Olasz autópálya: nincs vignette, kapunkénti fizetés (bankkártya megy). A milánói/veronai környék jó megállópont.", "Szállás: Verona vagy Milano környékén, autópálya-közeli, parkolós hely a praktikus — előre foglalni."]
+        },
+        {
+          num: "20",
+          date: "2026. augusztus 15., szombat",
+          title: "Észak-Olaszország → Budapest 🏁",
+          subtitle: "Záró etap ~800 km — Velence, Ljubljana, Zagreb érintésével haza",
+          driveLog: { km: "~800 km", stops: 3, driveTime: "~8 óra", depart: "08:00", arrive: "~17:00 Budapest", timelinePoints: [{time:"08:00", label:"indulás"}, {time:"11:00", label:"Ljubljana"}, {time:"13:30", label:"Zagreb"}, {time:"17:00", label:"Budapest 🏁"}] },
+          tags: [
+            { label: "~800 km", cls: "tag-drive" },
             { label: "Budapest 🏁", cls: "tag-city" }
           ],
           activities: [
-            { time: "06:00", icon: "🚗", name: "Korai indulás Frankfurtból — A3/E60 keletre", detail: "A3-as autópályán Frankfurt → Würzburg → Nürnberg irányba. Reggel 06:00 ideális indulási idő, a frankurti forgalom ekkor még ritka." },
-            { time: "09:00", icon: "⛽", name: "Nürnberg-tájék — tankolás + pihenő", detail: "Nürnberg kb. 240 km-re van Frankfurttól (~2,5h). Jó V-Power tankolási pont (Bajorországban általában versenyképes az ár). 20 perc pihenő, kávé." },
-            { time: "11:00", icon: "🚗", name: "Nürnberg → Linz, Ausztria — ~280 km", detail: "A3-as autópályán Passaunál belépés Ausztriába, majd az A8/A1 Linzig. ⚠️ Ausztriai autópálya-vignette: kb. €10 10 naposra — feltétlenül szükséges! Megvehető a határon vagy asfinag.at-on." },
-            { time: "13:00", icon: "⛽", name: "Linz / Wels-tájék — második pihenő", detail: "Félúton Bécs és Nürnberg között. Gyors WC + kávé. A Westautobahn (A1) Bécsen túl is folytatódik, Hegyeshalomig az M15-ös folytatja." },
-            { time: "14:30", icon: "🏙", name: "Budapest közeledik — Győr / Hegyeshalom", detail: "Magyarországi határon e-matrica ellenőrzése. Az M1-en Budapest felé az utolsó 100 km simán megy." },
-            { time: "15:30", icon: "🏁", name: "Budapest — Expedition vége! 🎉", detail: "A teljes észak-európai és izlandi ív lezárul: Baltikum → Észtország → Helsinki → Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest. Közel 10 000+ km összesen, ~28 nap." }
+            { time: "08:00", icon: "🚗", name: "Indulás Észak-Olaszországból — A4 keletre", detail: "Az A4-en Verona → Velence → Trieszt irányba. ⚠️ Ha Szlovénián megyünk át, szlovén vignette kell (matrica, ~15 €/hét, a határ előtt/online). Alternatíva Zágráb felé Horvátországon át (kapunkénti díj)." },
+            { time: "11:00", icon: "⛽", name: "Ljubljana-tájék — pihenő", detail: "Szlovénián át (A1) Ljubljana mellett — jó kávé- és tankolós megálló. Innen tovább az A2/horvát A3 Zagreb felé." },
+            { time: "13:30", icon: "🏙", name: "Zagreb → magyar határ", detail: "Zágráb mellett tovább a horvát A4-en Goričan felé, majd belépés Magyarországra Letenyénél. ⚠️ Magyar e-matrica ellenőrzése (rendszám alapján)." },
+            { time: "17:00", icon: "🏁", name: "Budapest — az út vége! 🎉", detail: "Hazaérkezés. A teljes ív lezárul: Baltikum → Izland → Skandinávia → Németország → Franciaország (Le Boat) → Észak-Olaszország → Budapest. Sok ezer km, ~5 hét, rengeteg élmény." }
           ],
-          notes: ["⚠️ Osztrák autópálya-vignette KÖTELEZŐ az A1/A8 autópályán — megvehető az osztrák határon vagy online: asfinag.at. ~€10 10 napos.", "Magyar e-matrica: ha nincs aktív, Hegyeshalomnál kell venni. A rendszám alapján ellenőrzik.", "Az egész Expedition összesített km: kb. 9000–10 000 km, ~12 ország, ~6 hét — gratulálunk!", "🎉 Haza az egész csapat, fényképekkel, élményekkel és sok-sok emlékkel!"]
+          notes: ["⚠️ Szlovén vignette (matrica) kell az olasz→magyar útvonalhoz Szlovénián át — ~15 € heti, a határ előtt vagy online (evinjeta).", "Horvátország: kapunkénti autópályadíj (bankkártya megy), Goričan–Letenye a határátkelő.", "Magyar e-matrica: ha nincs aktív, a határnál kell venni — rendszám alapján ellenőrzik.", "🎉 Haza az egész csapat!"]
         }
       ]
     }
@@ -2714,7 +2934,7 @@ const tripData = {
   },
   costPlan: {
     summary: {
-      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 köztes éj 3 főre € 2 657 + a záró keflavíki éj 2 főre € 198) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Az arlandai parkoló is foglalt és kifizetett (ARN Långtidsparkering, 795 SEK ≈ 70 EUR, transzferrel — az 1. szakaszban). Izlandon a köztes napokon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A záró keflavíki éjszakára már csak Tibi + Henni megy. A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
+      note: "Frissítve a foglalt árakkal (2026): az izlandi szállás (6 köztes éj 3 főre € 2 657 + a záró keflavíki éj 2 főre € 198) és a bérautó (Lava · Dacia Duster, € 1 263, Full Protection + útadó az árban) már foglalt/fizetett — ezek a 2. szakasz összegében benne vannak. Az arlandai parkoló is foglalt és kifizetett (ARN Långtidsparkering, 795 SEK ≈ 70 EUR + a FI306 júl. 27-i áttétele miatti +1 nap, transzferrel — az 1. szakaszban). Izlandon a köztes napokon 3 fő utazik (Tibi + Henni + 1 vendég); a lenti Tibi/Henni összegek a vendég nélkül értendők — a vendég a saját szobáját + a bérautó és üzemanyag 1/3-át fizeti (Izlandon összesen ~2 520 EUR). A záró keflavíki éjszakára már csak Tibi + Henni megy. A repülőjegyek foglaltak, de a főösszegben nem szerepelnek. A baltikumi és a hazaúti tételek továbbra is becslések. A GLC AMG 43 (baltikumi + hazaúti szakasz) ~10 L/100 km, kizárólag 100 oktánon megy (V-Power / Shell / BP Ultimate), ami +0,20–0,40 EUR/L a 95-öshöz képest.",
       grandTotal: {
         tibi: "~5 340 EUR",
         henni: "~3 690 EUR",
@@ -2763,7 +2983,7 @@ const tripData = {
             icon: "🅿",
             label: "Arlanda parkoló · 8 nap · FOGLALVA ✅",
             value: "~70 EUR",
-            detail: "ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad) · 795 SEK összesen: parkolás 8 napra 345 kr + terminál-transzfer 450 kr (áfa 94,47 kr) · KIFIZETVE 2026.07.10., Visa ****1841 · foglalás #127891 · tel. +46-8-78 37 700 · júl. 18. (FI309) → júl. 26. (FI306) · külső telephely, nem a reptéri parkolóház — a transzfer az árban · ⚠️ A FI306 áttéve júl. 27-re → a parkolást 1 nappal (júl. 27-ig) hosszabbítani kell"
+            detail: "ARN Långtidsparkering (Elkraftsgatan 7, Arlandastad) · parkolás 9 napra (345 kr + a +1 nap) + terminál-transzfer 450 kr (áfa 94,47 kr) · KIFIZETVE 2026.07.10., Visa ****1841 · foglalás #127891 · tel. +46-8-78 37 700 · júl. 18. (FI309) → júl. 27. (FI306) · külső telephely, nem a reptéri parkolóház — a transzfer az árban · ✅ A FI306 júl. 27-i áttétele miatti +1 napos hosszabbítás elintézve (júl. 27-ig)"
           },
           {
             icon: "🛣",

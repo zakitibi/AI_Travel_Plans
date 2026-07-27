@@ -33,6 +33,7 @@
           <h1 id="hero-title"></h1>
           <p id="hero-subtitle"></p>
         </div>
+        <button type="button" class="hero-refresh" onclick="forceRefreshApp(this)" title="Tartalom frissítése a netről (cache ürítése)" aria-label="Tartalom frissítése a netről">🔄</button>
         <div class="ticket-groups" id="ticket-groups"></div>
       </div>
       <div class="route" id="route"></div>
@@ -50,7 +51,7 @@
       { id: "henni", label: "Henni" },
       { id: "baltikum", label: "Baltikum" },
       { id: "izland2", label: "Izland" },
-      { id: "hazaut", label: "Hazaút" },
+      { id: "hazaut", label: "Európai út" },
       { id: "restaurants", label: "Gasztronómia" },
       { id: "practical", label: "🧳 Praktikus" },
       { id: "weather", label: "🌦 Időjárás" },
@@ -286,7 +287,7 @@
                 <div class="timeline-group-stack">
                   ${phaseGroup("baltic",  "🗺", "Baltikum",  "júl. 10–18. · Tibi autós felvezető · Lengyelország → Észtország → Helsinki → Stockholm", balticTimeline,  true)}
                   ${phaseGroup("iceland", "🇮🇸", "Izland",    "júl. 18–26. · közös Ring Road körút · Reykjavík → Snæfellsnes → Észak → Kelet → Déli part", icelandTimeline, false)}
-                  ${phaseGroup("return",  "🚗", "Hazaút",    "júl. 26. – aug. 6. · Stockholm → Koppenhága → Hamburg → Frankfurt → Budapest", returnTimeline,  false)}
+                  ${phaseGroup("return",  "🚗", "Európai út", "júl. 27. – aug. 15. · Stockholm → Frankfurt → Carcassonne → Le Boat → Budapest", returnTimeline,  false)}
                 </div>
               </section>
               <details class="card section-card coll-card iz2-map-panel" open>
@@ -1020,11 +1021,6 @@
           ${section.practicalBox ? renderCollapseBox(section.practicalBox, false) : ""}
 
           ${renderIcelandBookings()}
-
-          <div class="refresh-zone">
-            <button type="button" class="refresh-btn" onclick="forceRefreshApp(this)">🔄 Tartalom frissítése a netről</button>
-            <div class="refresh-hint">Törli a gyorsítótárat és letölti a legfrissebb tervet. Használd, ha nem a legújabb változatot látod.</div>
-          </div>
         </section>
       `;
     }
@@ -1095,6 +1091,19 @@
       `;
     }
 
+    function renderPartDivider(part, accentClass) {
+      return `
+        <div class="part-divider ${accentClass || ""}">
+          <div class="part-divider-num">${part.n || ""}</div>
+          <div class="part-divider-body">
+            <div class="part-divider-title">${part.title}</div>
+            ${part.subtitle ? `<div class="part-divider-sub">${part.subtitle}</div>` : ""}
+          </div>
+          ${part.range ? `<div class="part-divider-range">${part.range}</div>` : ""}
+        </div>
+      `;
+    }
+
     function renderHazaut2() {
       const section = tripData.sections.hazaut;
       const bgPanels = (section.context || []).map((c) => renderCollapseBox(c, true)).join("");
@@ -1112,7 +1121,7 @@
 
           <details class="country-context ${section.accent} iz2-bg-panel">
             <summary class="collapse-summary">
-              <span>📚 Általános bemutató — Hazaút-háttér</span>
+              <span>📚 Általános bemutató — Európai út háttér</span>
               <span class="collapse-icon" aria-hidden="true">▾</span>
             </summary>
             <div class="country-context-body iz2-bg-body">
@@ -1123,7 +1132,7 @@
 
           <details class="card section-card coll-card iz2-map-panel" open>
             <summary class="coll-card-head">
-              <h3 class="info-title" style="margin:0;">🗺 Interaktív Hazaút-térkép</h3>
+              <h3 class="info-title" style="margin:0;">🗺 Interaktív Európai út térkép</h3>
               <span class="collapse-icon" aria-hidden="true">▾</span>
             </summary>
             <p class="info-text" style="margin:8px 0 14px;">${section.mapNote || ""}</p>
@@ -1142,7 +1151,7 @@
           </details>
 
           <section class="days">
-            ${section.days.map((day) => renderDayCard(day, section.accent, true)).join("")}
+            ${section.days.map((day) => `${day.partStart ? renderPartDivider(day.partStart, section.accent) : ""}${renderDayCard(day, section.accent, true)}`).join("")}
           </section>
         </section>
       `;
@@ -2284,7 +2293,7 @@
             L.geoJSON(f, { style }).addTo(map);
           });
           const rs = document.getElementById("hazaut2-routestat");
-          if (rs) rs.textContent = "Útvonal: a nyitó KEF→Stockholm repülő (pontozott), a Vaxholm-komp (szaggatott kék) és a Stockholm→Budapest autós ív (folytonos), valós úthálózaton.";
+          if (rs) rs.textContent = "Útvonal: a nyitó KEF→Stockholm repülő (pontozott), a Vaxholm-komp (szaggatott kék), majd a Stockholm → Koppenhága → Hamburg → Frankfurt → Carcassonne, illetve a Le Boat után Homps → Észak-Olaszország → Budapest autós ív (folytonos, vázlatos áttekintő nyomvonal).";
         }).catch(() => {
           const rs = document.getElementById("hazaut2-routestat");
           if (rs) rs.textContent = "Az útvonal most nem érhető el.";
@@ -2418,7 +2427,7 @@
       const PHASES = [
         { id: "baltikum", color: "#8a4f24", label: "Baltikum", sub: "júl. 10–18." },
         { id: "izland",   color: "#1f5a3e", label: "Izland",   sub: "júl. 18–26." },
-        { id: "hazaut",   color: "#6a4ca3", label: "Hazaút",   sub: "júl. 26 – aug. 6." }
+        { id: "hazaut",   color: "#6a4ca3", label: "Európai út",   sub: "júl. 27 – aug. 15." }
       ];
       const phaseColor = (id) => (PHASES.find((p) => p.id === id) || {}).color || "#64748b";
       const ROUTE_URL = "../../data/trips/izland-es-eszak-europa/route.json";
@@ -2762,14 +2771,31 @@
       window.addEventListener("load", function () {
         navigator.serviceWorker.register("../../sw.js", { updateViaCache: "none" }).catch(function () {});
       });
+
+      // ÖN-GYÓGYÍTÁS: ha a service worker újabb tartalmat töltött le a háttérben
+      // (index.html / trip-data.js / styles.css változott), CSENDBEN, egyszer
+      // újratöltünk — így magától mindig a friss terv látszik, kézi frissítés nélkül.
+      // Debounce: megvárjuk, hogy több párhuzamos fájl-frissülés is beérjen, majd
+      // egy 12 másodperces zár megakadályozza az újratöltési kört.
+      var swReloadTimer = null;
+      navigator.serviceWorker.addEventListener("message", function (e) {
+        if (!e.data || e.data.type !== "CONTENT_UPDATED") return;
+        var last = parseInt(sessionStorage.getItem("sw-last-reload") || "0", 10);
+        if (Date.now() - last < 12000) return; // nemrég töltöttünk — ne pörögjön
+        clearTimeout(swReloadTimer);
+        swReloadTimer = setTimeout(function () {
+          sessionStorage.setItem("sw-last-reload", String(Date.now()));
+          location.reload();
+        }, 1200);
+      });
     }
 
-    // Kézi „frissítés a netről" gomb: kitörli az összes gyorsítótárat, frissíti a
-    // service workert, majd újratölt — így biztosan a legfrissebb tartalom jön le.
+    // Kézi „frissítés a netről" (fejléc-ikon): kitörli az összes gyorsítótárat,
+    // frissíti a service workert, majd újratölt — így biztosan a legfrissebb
+    // tartalom jön le. (Az öngyógyítás mellett ez a biztos, azonnali kézi opció.)
     window.forceRefreshApp = async function (btn) {
-      var orig = btn ? btn.textContent : "";
       try {
-        if (btn) { btn.disabled = true; btn.textContent = "⏳ Frissítés folyamatban…"; }
+        if (btn) { btn.classList.add("is-spinning"); btn.disabled = true; }
         if (window.caches) {
           var keys = await caches.keys();
           await Promise.all(keys.map(function (k) { return caches.delete(k); }));
@@ -2779,6 +2805,7 @@
           await Promise.all(regs.map(function (r) { return r.update().catch(function () {}); }));
         }
       } catch (e) { /* ha bármi hibázik, akkor is újratöltünk */ }
+      try { sessionStorage.setItem("sw-last-reload", String(Date.now())); } catch (e) {}
       // cache-megkerülő újratöltés (időbélyeggel a HTML-en)
       var u = new URL(location.href);
       u.searchParams.set("_r", Date.now());

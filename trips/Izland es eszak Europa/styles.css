@@ -46,6 +46,7 @@ a {
 }
 
 .hero {
+  position: relative;
   background: linear-gradient(135deg, rgba(23, 57, 47, 0.96), rgba(28, 46, 87, 0.94));
   color: #fff;
   border-radius: 28px;
@@ -62,6 +63,7 @@ a {
 
 .hero-copy {
   min-width: 0;
+  padding-right: 38px; /* hely a jobb-felső frissítő-ikonnak */
 }
 
 .hero h1 {
@@ -407,24 +409,81 @@ a {
 }
 .sched-content { flex: 1; min-width: 0; }
 /* „Frissítés a netről" gomb az izlandi lap alján */
-.refresh-zone { text-align: center; margin: 28px 0 8px; }
-.refresh-btn {
+/* Pici frissítő-ikon a fejléc jobb-felső sarkában (a régi alsó gomb helyett) */
+.hero-refresh {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 3;
   appearance: none;
-  border: 1px solid var(--iceland, #1f5a3e);
-  background: var(--iceland, #1f5a3e);
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 12px 22px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
   border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font-size: 15px;
+  line-height: 1;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  transition: transform 0.08s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.4s ease, opacity 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
-.refresh-btn:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.22); }
-.refresh-btn:active { transform: translateY(1px); }
-.refresh-btn:disabled { opacity: 0.7; cursor: progress; }
-.refresh-hint { font-size: 12px; color: #6b6b6b; margin-top: 8px; }
+.hero-refresh:hover { background: rgba(255, 255, 255, 0.24); }
+.hero-refresh:active { transform: scale(0.92); }
+.hero-refresh:disabled { opacity: 0.75; cursor: progress; }
+.hero-refresh.is-spinning { animation: hero-refresh-spin 0.8s linear infinite; }
+@keyframes hero-refresh-spin { to { transform: rotate(360deg); } }
+
+/* Nagy szakasz-elválasztó a 3 részes Európai út lapon (Európa / Le Boat / Hazaút) */
+.part-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 30px 0 14px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #6a4ca3, #4c3a86);
+  box-shadow: 0 6px 18px rgba(76, 58, 134, 0.28);
+}
+.part-divider:first-child { margin-top: 4px; }
+.part-divider-num {
+  flex: 0 0 auto;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 800;
+  opacity: 0.92;
+}
+.part-divider-body { flex: 1 1 auto; min-width: 0; }
+.part-divider-title {
+  font-size: clamp(17px, 2.4vw, 21px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.part-divider-sub {
+  margin-top: 3px;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.86);
+}
+.part-divider-range {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .part-divider { flex-wrap: wrap; gap: 10px; }
+  .part-divider-range { order: 3; align-self: auto; }
+}
 
 .sched-name { font-weight: 700; font-size: 14px; line-height: 1.35; }
 /* A helységnév sima, kijelölhető/másolható szöveg; a Google Maps link külön kis 📍 ikon. */
