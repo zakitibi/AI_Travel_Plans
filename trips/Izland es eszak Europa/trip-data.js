@@ -1,7 +1,7 @@
 const tripData = {
   title: "🌋 Izland es eszak Europa · 2026. július 10 – augusztus 15.",
   subtitle: "Tibi balti autós felvezető útja a július 18-i stockholmi repüléssel, Henni külön izlandi belépővel, majd közös hazaúttal",
-  updatedAt: "2026.07.26",
+  updatedAt: "2026.07.31",
   route: [
     { label: "BUD", cls: "flight" },
     { separator: "→🚗→" },
@@ -26,7 +26,8 @@ const tripData = {
     { separator: "→✈→" },
     { label: "Stockholm", cls: "return" },
     { label: "Koppenhága", cls: "return" },
-    { label: "Hamburg", cls: "return" },
+    { label: "Odense", cls: "return" },
+    { label: "Lübeck", cls: "return" },
     { label: "Frankfurt", cls: "return" },
     { label: "Carcassonne", cls: "return" },
     { separator: "→⛵→" },
@@ -198,7 +199,7 @@ const tripData = {
       { id: "sel", tab: "izland2", label: "Golden Circle", note: "07.20", x: 85, y: 88, color: "#1f5a3e" },
       { id: "mal", tab: "hazaut", label: "Malmö", note: "07.26", x: 207, y: 124, color: "#b8860b", major: true },
       { id: "cop", tab: "hazaut", label: "Koppenhága", note: "07.27", x: 214, y: 137, color: "#b8860b" },
-      { id: "ham", tab: "hazaut", label: "Hamburg", note: "07.28", x: 225, y: 162, color: "#b8860b" },
+      { id: "ham", tab: "hazaut", label: "Lübeck", note: "08.02", x: 225, y: 162, color: "#b8860b" },
       { id: "fra", tab: "hazaut", label: "Frankfurt", note: "07.29", x: 228, y: 210, color: "#b8860b" }
     ],
     paths: [
@@ -409,64 +410,64 @@ const tripData = {
         date: "2026.07.30",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Stockholm → Malmö → Koppenhága",
-        summary: "Svéd autópályás etap ~650 km: Malmö fotóstop (Turning Torso, 45 perc), Øresund Bridge átkelés, délutáni érkezés Koppenhágába.",
-        points: ["~650 km", "Øresund Bridge", "Koppenhága"],
-        driveStats: { km: "~650 km", stops: 3, depart: "07:00", arrive: "~14:00 Koppenhága", driveTime: "~7 óra", timelinePoints: [{time:"07:00", label:"Stockholm ind."}, {time:"11:30", label:"Malmö"}, {time:"12:30", label:"Øresund"}, {time:"14:00", label:"Koppenhága"}] }
+        title: "Stockholm → Drottningholm → Repülőmúzeum → Nässjö → Värnamo",
+        summary: "Déli indulás Stockholmból: Drottningholm-kastély, linköpingi Flygvapenmuseum (légierő), este ismerősöknél Nässjőben ~22:00-ig, éj a Best Western Hotel Vidösternben (Värnamo).",
+        points: ["~420 km", "Drottningholm", "Värnamo éj"],
+        driveStats: { km: "~420 km", stops: 4, depart: "12:00", arrive: "Värnamo (éj)", driveTime: "~5 óra", timelinePoints: [{time:"12:30", label:"Drottningholm"}, {time:"16:00", label:"Repülőmúzeum"}, {time:"18:30", label:"Nässjö"}, {time:"22:45", label:"Värnamo"}] }
       },
       {
         date: "2026.07.31",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Koppenhága 1. nap — Nyhavn + Rosenborg + Tivoli",
-        summary: "A dán főváros ikonjai: Nyhavn csatorna, Rosenborg kastély, Strøget sétálóutca, Tivoli Gardens.",
-        points: ["Nyhavn (★4.6)", "Rosenborg Slot (★4.6)", "Tivoli (★4.5)"],
-        driveStats: { km: "~5 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / metró nap", timelinePoints: [{time:"09:00", label:"Nyhavn"}, {time:"11:00", label:"Rosenborg"}, {time:"14:00", label:"Strøget"}, {time:"17:00", label:"Tivoli"}] }
+        title: "Värnamo → Lund → Öresund-híd → Koppenhága",
+        summary: "~215 km az E4-en, Lund óváros + dóm, az Øresund-hídon VILÁGOSBAN át, délutáni érkezés. Este Nyhavn + Strøget + Tivoli — a hangulat.",
+        points: ["Öresund-híd (világosban)", "Lund", "Koppenhága este"],
+        driveStats: { km: "~230 km", stops: 3, depart: "10:00", arrive: "~14:30 Koppenhága", driveTime: "~2,5 óra", timelinePoints: [{time:"10:00", label:"Värnamo ind."}, {time:"12:00", label:"Lund"}, {time:"13:45", label:"Öresund-híd"}, {time:"18:00", label:"Nyhavn"}] }
       },
       {
         date: "2026.08.01",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Koppenhága 2. nap — Christiansborg + Kis Hableány + Christiania",
-        summary: "Dán parlament és palota, Little Mermaid a kikötőnél, Freetown Christiania alternatív negyed, Nørrebro este.",
-        points: ["Christiansborg (★4.5)", "Kis Hableány (★4.0)", "Christiania (★4.3)"],
-        driveStats: { km: "~6 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / bringa nap", timelinePoints: [{time:"09:00", label:"Christiansborg"}, {time:"11:00", label:"Kis Hableány"}, {time:"13:30", label:"Christiania"}, {time:"16:00", label:"Nørrebro"}] }
+        title: "Koppenhága — teljes városnap (a fő látnivalók)",
+        summary: "Rosenborg + koronaékszerek, Rundetårn, Kis Hableány + Kastellet, Christiansborg (ingyenes torony), csatornás hajótúra, Christiania.",
+        points: ["Rosenborg (★4.6)", "Kis Hableány", "csatornás hajótúra"],
+        driveStats: { km: "~7 km (városon belül)", stops: 6, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos / bringa nap", timelinePoints: [{time:"09:00", label:"Rosenborg"}, {time:"11:00", label:"Kis Hableány"}, {time:"13:30", label:"Christiansborg"}, {time:"15:00", label:"hajótúra"}] }
       },
       {
         date: "2026.08.02",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Koppenhága 3. nap + Louisiana Museum → Hamburg",
-        summary: "Délelőtt Louisiana Museum of Modern Art (Helsingør irányban, ~45 km), majd Koppenhága → Hamburg ~310 km, esti érkezés.",
-        points: ["Louisiana Museum (★4.7)", "~310 km", "Hamburg este"],
-        driveStats: { km: "~310 km", stops: 2, depart: "13:00", arrive: "~16:30 Hamburg", driveTime: "~3 óra", timelinePoints: [{time:"10:00", label:"Louisiana Museum"}, {time:"13:00", label:"Indulás"}, {time:"14:30", label:"Flensburg"}, {time:"16:30", label:"Hamburg"}] }
+        title: "Koppenhága → Fyn (Odense + Egeskov) → Lübeck",
+        summary: "Nem komp, hanem körbe autóval Dánián át: Storebælt-híd, Odense (H. C. Andersen), Egeskov-kastély, estére Lübeck (3 éj).",
+        points: ["Egeskov-kastély (★4.6)", "Odense", "~480 km → Lübeck"],
+        driveStats: { km: "~480 km", stops: 4, depart: "09:00", arrive: "~18:30 Lübeck", driveTime: "~5 óra", timelinePoints: [{time:"10:15", label:"Storebælt-híd"}, {time:"10:45", label:"Odense"}, {time:"13:00", label:"Egeskov"}, {time:"18:30", label:"Lübeck"}] }
       },
       {
         date: "2026.08.03",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Hamburg körút — Lübeck + Schwerin Castle",
-        summary: "Napkirándulás Hamburgból: Lübeck UNESCO-óváros (Holstentor, Marienkirche, Niederegger) + Schweriner Schloss a tavon.",
-        points: ["Lübeck (~1h)", "Schwerin Castle", "~230 km körút"],
-        driveStats: { km: "~230 km", stops: 2, depart: "08:30", arrive: "~18:30 Hamburg", driveTime: "~3,5 óra", timelinePoints: [{time:"08:30", label:"Hamburg ind."}, {time:"09:30", label:"Lübeck"}, {time:"13:00", label:"Schwerin"}, {time:"18:30", label:"Hamburg"}] }
+        title: "Lübeck óváros + Travemünde (balti strand)",
+        summary: "Teljes UNESCO-óváros (Holstentor, Marienkirche, European Hansemuseum, Niederegger marcipán), délután tengerpart Travemündében.",
+        points: ["Lübeck UNESCO", "marcipán (Niederegger)", "Travemünde strand"],
+        driveStats: { km: "~40 km", stops: 2, depart: "09:00", arrive: "~20:00", driveTime: "gyalogos + rövid autó", timelinePoints: [{time:"09:00", label:"Holstentor"}, {time:"11:30", label:"Hansemuseum"}, {time:"14:30", label:"Travemünde"}] }
       },
       {
         date: "2026.08.04",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Hamburg városnap",
-        summary: "Miniatur Wunderland, Speicherstadt+HafenCity (UNESCO), Elbphilharmonie Plaza, Landungsbrücken, St. Pauli.",
-        points: ["Miniatur Wunderland", "Speicherstadt (UNESCO)", "Elbphilharmonie"],
-        driveStats: { km: "~8 km (városon belül)", stops: 4, depart: "09:00", arrive: "~21:00", driveTime: "gyalogos + U-Bahn nap", timelinePoints: [{time:"09:00", label:"Miniatur Wunderland"}, {time:"12:00", label:"Speicherstadt"}, {time:"15:00", label:"Elbphilharmonie"}, {time:"18:30", label:"Vacsora"}] }
+        title: "Schwerin-kastély (+ Wismar)",
+        summary: "Egynapos kör Lübeckből: Schweriner Schloss, a tavon álló mesekastély (UNESCO), és opcionálisan Wismar UNESCO-hanzavárosa.",
+        points: ["Schweriner Schloss (★4.6)", "tavi mesekastély", "Wismar (opció)"],
+        driveStats: { km: "~200 km (körút)", stops: 3, depart: "09:00", arrive: "~18:30 Lübeck", driveTime: "~2,5 óra", timelinePoints: [{time:"10:00", label:"Schwerin"}, {time:"13:30", label:"Wismar"}, {time:"18:30", label:"Lübeck"}] }
       },
       {
         date: "2026.08.05",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Hamburg → Frankfurt — Lilla + barát felvétele",
-        summary: "~490 km (A7/A5) via Hannover. Délutáni érkezés Frankfurtba, Lilla és barátja felvétele, kötetlen pihenőnap — nincs városnézés. Innentől 5 fő.",
-        points: ["~490 km", "Lilla + barát", "pihenőnap"],
-        driveStats: { km: "~490 km", stops: 2, depart: "09:00", arrive: "~14:30 Frankfurt", driveTime: "~4,5 óra", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"16:00", label:"Lilla + barát"}] }
+        title: "Lübeck → Frankfurt — Lilla + barát felvétele",
+        summary: "Hajnali indulás, ~540 km (A1/A7) via Hamburg–Hannover. ~12:00 érkezés Frankfurtba, Lilla és barátja felvétele, kötetlen pihenőnap — nincs városnézés. Innentől 5 fő.",
+        points: ["~540 km", "hajnali start", "Lilla + barát"],
+        driveStats: { km: "~540 km", stops: 2, depart: "06:00", arrive: "~12:00 Frankfurt", driveTime: "~5,5 óra", timelinePoints: [{time:"06:00", label:"Lübeck ind."}, {time:"09:30", label:"Hannover"}, {time:"12:00", label:"Frankfurt"}, {time:"13:00", label:"Lilla + barát"}] }
       },
       {
         date: "2026.08.06",
@@ -531,7 +532,7 @@ const tripData = {
       },
       {
         title: "Európai út — Stockholm → Le Boat → Budapest",
-        text: "Az út második fele 3 részben: ① Európa (Stockholm → Koppenhága → Hamburg → Frankfurt/Lilla → Carcassonne), ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14.), ③ hazaút Észak-Olaszországon át Budapestre.",
+        text: "Az út második fele 3 részben: ① Európa (Stockholm → Koppenhága → Fyn → Lübeck → Frankfurt/Lilla → Carcassonne), ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14.), ③ hazaút Észak-Olaszországon át Budapestre.",
         cta: "Ugrás az Európai út részhez",
         tab: "hazaut",
         accent: "accent-return"
@@ -541,7 +542,7 @@ const tripData = {
       "⏰ KÉT FIX KOMP-IDŐPONT (kapuzárás!): ① júl. 16. Tallink Megastar Tallinn → Helsinki, indulás 10:30 — járművel legkésőbb 09:30 a D-Terminálon (check-in zár 10:00). ② júl. 17. Finnlines Naantali → Kapellskär, indulás 22:45 — check-in zár 21:45 (járművel 21:00–21:15-re ott lenni). Mindkettő foglalva (Tallink 75157795; Finnlines F260126521).",
       "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki városnap + ELSŐ finn éjszaka. Júl. 17. reggel 08:30-kor indulás: Porvoo óváros → Turku (Luostarinmäki) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
-      "Az európai út (3 részben) a következő struktúrát követi: ① 3 éj Stockholm (júl. 27–29.) + 3 éj Koppenhága (júl. 30 – aug. 1.) + 3 éj Hamburg (aug. 2–4.) + 1 éj Frankfurt (aug. 5. — Lilla + barát felvétele, pihenőnap) + aug. 6. hajnalban ~1130 km Carcassonne-ba (⚠️ szállás még foglalásra vár). ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14., Vision 4 #19656942, Trèbes → Homps). ③ Hazaút: aug. 14. hajóleadás (Homps, 9:00) → 1 éj Észak-Olaszo. → aug. 15. Budapest. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át; az arlandai parkolás +1 nappal, júl. 27-ig meghosszabbítva — elintézve.)"
+      "Az európai út (3 részben) a következő struktúrát követi: ① 3 éj Stockholm (júl. 27–29.), majd júl. 30. Drottningholm + linköpingi repülőmúzeum + nässjői ismerős → éj Värnamóban; júl. 31. Lund + Öresund-híd (világosban) → 2 éj Koppenhága (júl. 31 – aug. 1.) a fő látnivalókkal; aug. 2. NEM komppal, hanem körbe autóval Dánián át (Storebælt-híd, Odense, Egeskov) → 3 éj Lübeck (aug. 2–4.: óváros + Travemünde + Schwerin-kastély); aug. 5. hajnalban Lübeck → Frankfurt (~12:00, Lilla + barát felvétele, pihenőnap); aug. 6. hajnalban ~1130 km Carcassonne-ba (⚠️ szállás még foglalásra vár). ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14., Vision 4 #19656942, Trèbes → Homps). ③ Hazaút: aug. 14. hajóleadás (Homps, 9:00) → 1 éj Észak-Olaszo. → aug. 15. Budapest. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át; az arlandai parkolás +1 nappal, júl. 27-ig meghosszabbítva — elintézve.)"
     ],
     countrySummaries: [
       {
@@ -607,9 +608,9 @@ const tripData = {
       {
         title: "🇩🇰 / 🇩🇪 / 🇫🇷 Európai út — Dánia, Németország, Franciaország",
         accent: "accent-return",
-        text: "A dél felé húzó ív: Koppenhága és Hamburg városnapjai, majd Frankfurt (Lilla felvétele, pihenő) és a hosszú francia etap Carcassonne-ba — a Le Boat hajós hét kapujához.",
+        text: "A dél felé húzó ív: Koppenhága, majd körbe autóval Dánián át (Fyn, Egeskov), Lübeck + Travemünde + Schwerin, végül Frankfurt (Lilla felvétele, pihenő) és a hosszú francia etap Carcassonne-ba — a Le Boat hajós hét kapujához.",
         points: [
-          { label: "Dánia / Németország", value: "Koppenhága + Hamburg" },
+          { label: "Dánia / Németország", value: "Koppenhága + Fyn + Lübeck" },
           { label: "Frankfurt", value: "Lilla + barát, pihenő" },
           { label: "Franciaország", value: "Carcassonne → Le Boat" }
         ]
@@ -651,11 +652,11 @@ const tripData = {
       accent: "accent-return",
       status: "júl. 27 – aug. 15. · közös szakasz",
       statusClass: "status-cool",
-      text: "Az út második fele három részből áll. ① EURÓPA: a FI306 (júl. 27.) Keflavíkból Stockholm Arlandára hoz (07:35 → 12:45), ahol az autó a parkolóban vár. Három stockholmi nap (Gamla Stan, Vasa Museum, archipelago Vaxholm/Grinda), majd fokozatosan délnyugat felé: Malmö-fotóstop és három koppenhágai nap (Nyhavn, Tivoli, Christiania, Louisiana Museum), utána három hamburgi nap (Lübeck + Schwerin, Miniatur Wunderland, Elbphilharmonie). Aug. 5-én napközben Frankfurtba érünk, felvesszük Lillát és a barátját, és egy kötetlen pihenőnapot tartunk (nincs városnézés). Aug. 6-án hajnalban ~1130 km-re Carcassonne-ba (Dél-Franciaország), estére érkezés. ② LE BOAT (aug. 7–14.): egyhetes lakóhajós nyaralás a Canal du Midi-n — Vision 4, a carcassonne-i (Trèbes) bázisról, Homps-ban leadva; zsilipek, borvidéki falvak, Minerve és Le Somail kitérők. ③ HAZAÚT (aug. 14–15.): a hajó leadása után (Homps, 9:00) a francia Riviérán és Genován át 1 éj Észak-Olaszországban, majd Ljubljana–Zagreb érintésével Budapestre.",
+      text: "Az út második fele három részből áll. ① EURÓPA: a FI306 (júl. 27.) Keflavíkból Stockholm Arlandára hoz (07:35 → 12:45), ahol az autó a parkolóban vár. Három stockholmi nap (Gamla Stan, Vasa Museum, archipelago Vaxholm/Grinda), majd júl. 30. Drottningholm + linköpingi repülőmúzeum + nässjői ismerős → éj Värnamóban; júl. 31. Lund + Öresund-híd (világosban) → két koppenhágai nap a fő látnivalókkal (Nyhavn, Tivoli, Rosenborg, Kis Hableány, Christiansborg, csatornás hajótúra, Christiania). Aug. 2. NEM komppal, hanem körbe autóval Dánián át (Storebælt-híd, Odense/H. C. Andersen, Egeskov-kastély) → Lübeck. Három lübecki éj: az UNESCO-óváros + marcipán, a balti Travemünde strand, és a tavon álló Schwerin-kastély (Wismar opció). Aug. 5-én hajnalban Lübeck → Frankfurt (~12:00), felvesszük Lillát és a barátját, kötetlen pihenőnap (nincs városnézés). Aug. 6-án hajnalban ~1130 km-re Carcassonne-ba (Dél-Franciaország), estére érkezés. ② LE BOAT (aug. 7–14.): egyhetes lakóhajós nyaralás a Canal du Midi-n — Vision 4, a carcassonne-i (Trèbes) bázisról, Homps-ban leadva; zsilipek, borvidéki falvak, Minerve és Le Somail kitérők. ③ HAZAÚT (aug. 14–15.): a hajó leadása után (Homps, 9:00) a francia Riviérán és Genován át 1 éj Észak-Olaszországban, majd Ljubljana–Zagreb érintésével Budapestre.",
       points: [
         "🇸🇪 Stockholm (júl. 27–29.): <a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Fortress+Stockholm' target='_blank' rel='noreferrer'>Vaxholm</a> (★4.5)",
         "🇸🇪→🇩🇰 Malmö + Koppenhága (júl. 30. – aug. 2.): <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3) · <a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Louisiana+Museum+of+Modern+Art' target='_blank' rel='noreferrer'>Louisiana Museum</a> (★4.7)",
-        "🇩🇪 Hamburg blokk (aug. 2–4.): <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Lubeck' target='_blank' rel='noreferrer'>Holstentor Lübeck</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Schweriner+Schloss' target='_blank' rel='noreferrer'>Schwerin Castle</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Miniatur+Wunderland+Hamburg' target='_blank' rel='noreferrer'>Miniatur Wunderland</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Elbphilharmonie+Hamburg' target='_blank' rel='noreferrer'>Elbphilharmonie Plaza</a> (★4.7)",
+        "🇩🇪 Lübeck blokk (aug. 2–4.): <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Lubeck' target='_blank' rel='noreferrer'>Holstentor Lübeck</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Travem%C3%BCnde+beach' target='_blank' rel='noreferrer'>Travemünde strand</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Schweriner+Schloss' target='_blank' rel='noreferrer'>Schwerin Castle</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Wismar+Germany' target='_blank' rel='noreferrer'>Wismar</a> (★4.6, opció)",
         "🇩🇪→🇫🇷 Frankfurt + Carcassonne (aug. 5–6.): Lilla + barát felvétele, pihenőnap · hajnali ~1130 km-es etap · <a href='https://www.google.com/maps/search/?api=1&query=Cit%C3%A9+de+Carcassonne' target='_blank' rel='noreferrer'>Cité de Carcassonne</a> (★4.7) · ⚠️ szállás még foglalásra vár",
         "⛵ Le Boat — Canal du Midi (aug. 7–14.): Vision 4 (#19656942) · Trèbes → Homps · <a href='https://www.google.com/maps/search/?api=1&query=Canal+du+Midi' target='_blank' rel='noreferrer'>Canal du Midi</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Minerve+France' target='_blank' rel='noreferrer'>Minerve</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Le+Somail+Canal+du+Midi' target='_blank' rel='noreferrer'>Le Somail</a>",
         "🇮🇹→🇭🇺 Hazaút (aug. 14–15.): Homps → Riviéra → Genova → 1 éj Észak-Olaszo. → Ljubljana · Zagreb → Budapest 🏁"
@@ -2021,7 +2022,7 @@ const tripData = {
       pill: "Stockholm → Frankfurt → Carcassonne → Le Boat → Budapest",
       accent: "return",
       intro: [
-        "Az izlandi kör után az út második fele három jól elkülönülő szakaszra bomlik. <strong>1) Európa:</strong> Stockholmból fokozatosan dél felé gurulunk (Koppenhága, Hamburg), aug. 5-én napközben Frankfurtba érünk — ott vesszük fel Lillát és a barátját, és egy kellemes, program nélküli pihenőnapot töltünk. Aug. 6-án hajnalban indulunk tovább Carcassonne-ba (Dél-Franciaország), ahová estére érkezünk.",
+        "Az izlandi kör után az út második fele három jól elkülönülő szakaszra bomlik. <strong>1) Európa:</strong> Stockholmból fokozatosan dél felé gurulunk (Koppenhága, majd körbe autóval Dánián át Fyn/Egeskovval, és Lübeck + Travemünde + Schwerin), aug. 5-én napközben Frankfurtba érünk — ott vesszük fel Lillát és a barátját, és egy kellemes, program nélküli pihenőnapot töltünk. Aug. 6-án hajnalban indulunk tovább Carcassonne-ba (Dél-Franciaország), ahová estére érkezünk.",
         "<strong>2) Le Boat (aug. 7–14):</strong> egyhetes lakóhajós nyaralás a Canal du Midi-n, a carcassonne-i (Trèbes) bázisról indulva, Homps-ban leadva (Vision 4, 4 kabin). <strong>3) Hazaút:</strong> a hajó leadása után (aug. 14., 9:00, Homps) két nap alatt, egy észak-olaszországi éjszakával gurulunk haza Budapestre."
       ],
       context: [
@@ -2033,7 +2034,7 @@ const tripData = {
             {
               title: "Fokozatos dél felé",
               paragraphs: [
-                "Stockholm (3 nap) → Koppenhága (3 nap) → Hamburg (3 nap): a városnapok kitöltik a FI306 (júl. 27.) és a Le Boat (aug. 7.) közti időt, közben folyamatosan délnyugat felé haladunk."
+                "Stockholm (3 nap) → Koppenhága (2 nap) → Lübeck (3 nap): a városnapok — és a Dánián körbe autózós Fyn-nap — kitöltik a FI306 (júl. 27.) és a Le Boat (aug. 7.) közti időt, közben folyamatosan délnyugat felé haladunk."
               ]
             },
             {
@@ -2085,7 +2086,7 @@ const tripData = {
           ]
         }
       ],
-      mapNote: "Az európai út és a hazaút: a nyitó KEF→Stockholm repülő (szaggatott), a Vaxholm-komp, a Stockholm→Koppenhága→Hamburg→Frankfurt→Carcassonne autós ív, a Canal du Midi hajós szakasza (Trèbes → Homps), majd a Homps→Észak-Olaszország→Budapest hazaút. A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (🏛️ óváros, 🏰 vár/kastély, ⛪ templom, 🖼️ múzeum, 📸 kilátó, ⛵ hajóbázis…), a 🏨 az éjszakai bázis. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
+      mapNote: "Az európai út és a hazaút: a nyitó KEF→Stockholm repülő (szaggatott), a Vaxholm-komp, a Stockholm→Koppenhága→Fyn→Lübeck→Frankfurt→Carcassonne autós ív, a Canal du Midi hajós szakasza (Trèbes → Homps), majd a Homps→Észak-Olaszország→Budapest hazaút. A markerek napszín szerint, az ikon a látnivaló jellegét mutatja (🏛️ óváros, 🏰 vár/kastély, ⛪ templom, 🖼️ múzeum, 📸 kilátó, ⛵ hajóbázis…), a 🏨 az éjszakai bázis. Szűrj nap vagy típus szerint, a sarokban lévő ⤢ gombbal pedig visszaállhatsz a teljes nézetre.",
       mapStops: [
         { name: "Gamla Stan", kind: "oldtown", lat: 59.3251, lng: 18.0711, day: 1, date: "2026-07-27", detail: "Stockholm középkori óvárosa: Stortorget színes házsora és a Storkyrkan katedrális." },
         { name: "Kungliga Slottet", kind: "castle", lat: 59.3268, lng: 18.0717, day: 1, date: "2026-07-27", detail: "A Királyi Palota — Európa egyik legnagyobb lakott palotája, díszőrség-váltással." },
@@ -2098,32 +2099,34 @@ const tripData = {
         { name: "Fotografiska", kind: "museum", lat: 59.3179, lng: 18.0850, day: 2, date: "2026-07-28", detail: "Kortárs fotóművészet a kikötői vámházban, tetőteraszi étteremmel és Stockholm-panorámával." },
         { name: "Vaxholm", kind: "castle", lat: 59.4026, lng: 18.3504, day: 3, date: "2026-07-29", detail: "Az archipelago „fővárosa”: erőd, favárosi utcák és füstölt hering a kikötőben." },
         { name: "Grinda", kind: "nature", lat: 59.5085, lng: 18.5560, day: 3, date: "2026-07-29", detail: "Természetes közeli sziget: gránitsziklák közti úszás, erdei ösvények, szigeti vendéglő." },
-        { name: "Turning Torso", kind: "viewpoint", lat: 55.6132, lng: 12.9763, day: 4, date: "2026-07-30", detail: "Malmö csavart felhőkarcolója (Calatrava) — gyors fotóstop a Stortorget mellett." },
-        { name: "Øresund Bridge", kind: "viewpoint", lat: 55.5716, lng: 12.8497, day: 4, date: "2026-07-30", detail: "A 8 km-es híd-alagút Malmő és Koppenhága közt — a hazaút egyik ikonikus átkelője." },
-        { name: "Koppenhága (szállás)", kind: "stay", lat: 55.6781, lng: 12.5830, day: 4, date: "2026-07-30", detail: "Három éjszaka koppenhágai bázis (Indre By / Vesterbro), gyalog és metróval bejárható belváros." },
-        { name: "Nyhavn", kind: "oldtown", lat: 55.6797, lng: 12.5912, day: 5, date: "2026-07-31", detail: "A 17. századi színes kikötői házsor — Koppenhága legfotogénebb pontja, reggel a legcsendesebb." },
-        { name: "Rosenborg Slot", kind: "castle", lat: 55.6858, lng: 12.5773, day: 5, date: "2026-07-31", detail: "Reneszánsz kastély a dán koronázási ékszerekkel, körülötte a Kongens Have park." },
-        { name: "Torvehallerne", kind: "market", lat: 55.6838, lng: 12.5712, day: 5, date: "2026-07-31", detail: "Koppenhága fedett ínyenc-piaca: smørrebrød és helyi finomságok ebédre." },
+        { name: "Drottningholm", kind: "castle", lat: 59.3217, lng: 17.8862, day: 4, date: "2026-07-30", detail: "A svéd királyi család otthona (UNESCO) — barokk „svéd Versailles\" gyönyörű parkkal. Stockholmból kifelé az első megálló." },
+        { name: "Flygvapenmuseum (Linköping)", kind: "museum", lat: 58.4028, lng: 15.6572, day: 4, date: "2026-07-30", detail: "Svéd Légierő Múzeum Linköpingben — Saab-vadászgépek, hidegháborús kémrepülő-történet. Ingyenes." },
+        { name: "Nässjö (ismerős)", kind: "city", lat: 57.6531, lng: 14.6969, day: 4, date: "2026-07-30", detail: "Este ismerősök meglátogatása Nässjőben, kb. 22:00-ig." },
+        { name: "Värnamo (Hotel Vidöstern)", kind: "stay", lat: 57.1811, lng: 14.0490, day: 4, date: "2026-07-30", detail: "Best Western Hotel Vidöstern a Vidöstern-tó mellett, az E4-en — közeli, útba eső éj Nässjő után." },
+        { name: "Lund", kind: "church", lat: 55.7047, lng: 13.1910, day: 5, date: "2026-07-31", detail: "Skandinávia egyik legrégebbi városa: román kori dóm csillagászati órával, macskaköves óváros. ~20 percre a hídtól." },
+        { name: "Øresund-híd", kind: "viewpoint", lat: 55.5716, lng: 12.8497, day: 5, date: "2026-07-31", detail: "A 8 km-es híd-alagút Malmö és Koppenhága közt — most VILÁGOSBAN átkelve, ez volt a cél." },
+        { name: "Koppenhága (szállás)", kind: "stay", lat: 55.6781, lng: 12.5830, day: 5, date: "2026-07-31", detail: "Két éjszaka koppenhágai bázis (Indre By / Vesterbro), gyalog és metróval bejárható belváros." },
+        { name: "Nyhavn", kind: "oldtown", lat: 55.6797, lng: 12.5912, day: 5, date: "2026-07-31", detail: "A 17. századi színes kikötői házsor — Koppenhága legfotogénebb pontja. Első esti hangulat-séta." },
         { name: "Strøget", kind: "market", lat: 55.6785, lng: 12.5790, day: 5, date: "2026-07-31", detail: "Európa egyik leghosszabb gyalogos sétálóutcája az Amagertorvval." },
         { name: "Tivoli Gardens", kind: "nature", lat: 55.6737, lng: 12.5683, day: 5, date: "2026-07-31", detail: "1843 óta működő legendás szórakoztatókert a főpályaudvar mellett — esti fényekkel a legszebb." },
-        { name: "Christiansborg", kind: "castle", lat: 55.6759, lng: 12.5797, day: 6, date: "2026-08-01", detail: "A dán parlament palotája — toronykilátó (ingyenes) és trónterem." },
+        { name: "Rosenborg Slot", kind: "castle", lat: 55.6858, lng: 12.5773, day: 6, date: "2026-08-01", detail: "Reneszánsz kastély a dán koronázási ékszerekkel, körülötte a Kongens Have park." },
+        { name: "Rundetårn", kind: "viewpoint", lat: 55.6813, lng: 12.5757, day: 6, date: "2026-08-01", detail: "17. századi kerektorony — csigás rámpán fel a tetőre, kilátás az óváros piros tetőire." },
         { name: "Kis Hableány", kind: "viewpoint", lat: 55.6929, lng: 12.5994, day: 6, date: "2026-08-01", detail: "Den Lille Havfrue, Koppenhága jelképe, a Kastellet csillagerőd mellett." },
-        { name: "Reffen Street Food", kind: "market", lat: 55.6925, lng: 12.6113, day: 6, date: "2026-08-01", detail: "Utcai étel-piac Refshaleøen ipari kikötőjében — nemzetközi street food a víz mellett." },
+        { name: "Christiansborg", kind: "castle", lat: 55.6759, lng: 12.5797, day: 6, date: "2026-08-01", detail: "A dán parlament palotája — toronykilátó (ingyenes) és trónterem." },
+        { name: "Csatornás hajótúra", kind: "nature", lat: 55.6796, lng: 12.5905, day: 6, date: "2026-08-01", detail: "Nyhavnból induló csatornatúra — a legjobb városnézés vízről (Operaház, Fekete Gyémánt, Kis Hableány)." },
         { name: "Christiania", kind: "oldtown", lat: 55.6772, lng: 12.5990, day: 6, date: "2026-08-01", detail: "Freetown Christiania — Christianshavn alternatív, önkormányzati negyede." },
-        { name: "Nørrebro", kind: "oldtown", lat: 55.6975, lng: 12.5530, day: 6, date: "2026-08-01", detail: "Koppenhága hipszter szíve: Jægersborggade, Superkilen park, kávézók és bisztrók." },
-        { name: "Louisiana Museum", kind: "museum", lat: 55.9689, lng: 12.5429, day: 7, date: "2026-08-02", detail: "Skandinávia legjobb modern múzeuma Humlebækben — szoborkert az Øresund felett." },
-        { name: "Hamburg (szállás)", kind: "stay", lat: 53.5503, lng: 9.9920, day: 7, date: "2026-08-02", detail: "Hamburgi bázis (HafenCity / Altstadt / Altona), innen indul a Lübeck–Schwerin körút és a városnap." },
+        { name: "Storebælt-híd", kind: "viewpoint", lat: 55.3400, lng: 11.0350, day: 7, date: "2026-08-02", detail: "A Nagy-Belt ~18 km-es függőhídja Sjælland és Fyn közt — a szárazföldi „körbe\" út élménye (díj ~250 DKK)." },
+        { name: "Odense", kind: "oldtown", lat: 55.3959, lng: 10.3883, day: 7, date: "2026-08-02", detail: "Fyn fővárosa, H. C. Andersen szülővárosa: macskaköves óváros és az új Andersen-múzeum." },
+        { name: "Egeskov-kastély", kind: "castle", lat: 55.1758, lng: 10.4939, day: 7, date: "2026-08-02", detail: "Európa egyik legjobban megőrzött vizesárkos reneszánsz kastélya (1554), kertekkel, veterán autó- és motormúzeummal. A nap fő élménye." },
+        { name: "Lübeck (szállás)", kind: "stay", lat: 53.8655, lng: 10.6866, day: 7, date: "2026-08-02", detail: "Három éjszaka lübecki bázis — a Balti-tenger hanza-fővárosa, UNESCO-óváros. Innen Travemünde és Schwerin is elérhető." },
         { name: "Holstentor", kind: "castle", lat: 53.8661, lng: 10.6796, day: 8, date: "2026-08-03", detail: "Lübeck ikonikus, kéttornyos középkori városkapuja — a Hansa-város jelképe." },
         { name: "Marienkirche (Lübeck)", kind: "church", lat: 53.8687, lng: 10.6849, day: 8, date: "2026-08-03", detail: "A téglagótika (Backsteingotik) csúcspontja; a WWII-ben leomlott harangok emlékhelye megrázó." },
+        { name: "European Hansemuseum", kind: "museum", lat: 53.8698, lng: 10.6889, day: 8, date: "2026-08-03", detail: "A világ legnagyobb Hanza-múzeuma — miért volt Lübeck évszázadokig a Balti-tenger kereskedelmi fővárosa." },
         { name: "Niederegger", kind: "market", lat: 53.8664, lng: 10.6856, day: 8, date: "2026-08-03", detail: "Lübeck a marcipán világi fővárosa — a Niederegger (1806) emeleti kávézója és kis múzeuma." },
-        { name: "Buddenbrookhaus", kind: "museum", lat: 53.8679, lng: 10.6843, day: 8, date: "2026-08-03", detail: "Thomas Mann Nobel-díjas regényének háza; a lübecki óváros UNESCO-világörökség." },
-        { name: "Schweriner Schloss", kind: "castle", lat: 53.6244, lng: 11.4189, day: 8, date: "2026-08-03", detail: "A „Balti-tenger Neuschwansteinja” egy tóparti szigeten — Mecklenburg-Vorpommern parlamentje." },
-        { name: "Alter Garten", kind: "viewpoint", lat: 53.6272, lng: 11.4148, day: 8, date: "2026-08-03", detail: "Schwerin díszes főtere a kastéllyal, színházzal és múzeummal, tóparti sétával." },
-        { name: "Miniatur Wunderland", kind: "museum", lat: 53.5436, lng: 9.9887, day: 9, date: "2026-08-04", detail: "A világ legnagyobb modellvasútja a Speicherstadtban — előfoglalás kötelező." },
-        { name: "Speicherstadt", kind: "oldtown", lat: 53.5447, lng: 9.9920, day: 9, date: "2026-08-04", detail: "UNESCO-raktárváros: neogótikus téglacsatornák, a világ legnagyobb összefüggő raktárnegyede." },
-        { name: "Elbphilharmonie", kind: "viewpoint", lat: 53.5413, lng: 9.9842, day: 9, date: "2026-08-04", detail: "Hamburg hullámos hangversenyháza — a Plaza-kilátó (8. emelet) ingyenes." },
-        { name: "Reeperbahn", kind: "oldtown", lat: 53.5496, lng: 9.9628, day: 9, date: "2026-08-04", detail: "St. Pauli legendás éjszakai negyede — esti séta a kikötő közelében." },
-        { name: "Frankfurt (Lilla felvétel + pihenő)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Aug. 5. — délutáni érkezés Frankfurtba, Lilla és a barátja felvétele, kötetlen pihenőnap (nincs városnézés). 1 éj, innen már öten tovább Carcassonne felé." },
+        { name: "Travemünde", kind: "nature", lat: 53.9576, lng: 10.8760, day: 8, date: "2026-08-03", detail: "Lübeck balti tengeri fürdővárosa a Trave torkolatánál — homokos strand, sétány, régi világítótorony." },
+        { name: "Schweriner Schloss", kind: "castle", lat: 53.6244, lng: 11.4189, day: 9, date: "2026-08-04", detail: "A tavon álló neoreneszánsz mesekastély (UNESCO) — Mecklenburg-Vorpommern parlamentje. A környék fő látványossága." },
+        { name: "Wismar", kind: "oldtown", lat: 53.8917, lng: 11.4650, day: 9, date: "2026-08-04", detail: "UNESCO-hanzaváros (Stralsunddal): hatalmas piactér, tégla-gótikus templomok, régi kikötő. Opcionális Schwerin mellé." },
+        { name: "Frankfurt (Lilla felvétel + pihenő)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Aug. 5. — hajnali indulás Lübeckből (~540 km), ~12:00 érkezés, Lilla és a barátja felvétele, kötetlen pihenőnap (nincs városnézés). 1 éj, innen már öten tovább Carcassonne felé." },
         { name: "Carcassonne — La Cité", kind: "castle", lat: 43.2061, lng: 2.3639, day: 11, date: "2026-08-06", detail: "Európa legnagyobb megmaradt középkori erődvárosa (UNESCO), 3 km-es kettős várfallal és 52 toronnyal. Ha marad energia az esti érkezés után, gyönyörű kivilágítva." },
         { name: "Carcassonne (szállás)", kind: "stay", lat: 43.2130, lng: 2.3491, day: 11, date: "2026-08-06", detail: "Aug. 6. — hajnali indulás Frankfurtból (~1130 km), estére Carcassonne. ⚠️ A szállás még foglalásra vár. Másnap a Le Boat bázison hajóra szállás." },
         { name: "Le Boat bázis — Trèbes", kind: "stay", lat: 43.2076, lng: 2.4433, day: 12, date: "2026-08-07", detail: "Aug. 7. — a Le Boat carcassonne-i (Trèbes) bázisa. Érkezés 15:00–17:00, eligazítás, kihajózás. Vision 4 lakóhajó, foglalás #19656942. Az autó a bázison marad (Secure Parking)." },
@@ -2136,7 +2139,7 @@ const tripData = {
       days: [
         {
           num: "1",
-          partStart: { n: "①", title: "Európa", subtitle: "Stockholm → Koppenhága → Hamburg → Frankfurt → Carcassonne", range: "júl. 27 – aug. 6." },
+          partStart: { n: "①", title: "Európa", subtitle: "Stockholm → Koppenhága → Fyn → Lübeck → Frankfurt → Carcassonne", range: "júl. 27 – aug. 6." },
           date: "2026. július 27., hétfő",
           title: "Stockholm — FI306 érkezés + Gamla Stan + Monteliusvägen",
           subtitle: "Arlanda → Gamla Stan → Stadshuset → Riddarholmen → Monteliusvägen panoráma → Södermalm vacsora",
@@ -2201,151 +2204,149 @@ const tripData = {
         {
           num: "4",
           date: "2026. július 30., csütörtök",
-          title: "Stockholm → Malmö → Koppenhága",
-          subtitle: "Svéd autópályás etap ~650 km: Malmö fotóstop (Turning Torso), Øresund Bridge, délutáni érkezés Koppenhágába",
-          driveLog: { km: "~650 km", stops: 3, driveTime: "~7 óra", depart: "07:00", arrive: "~14:00 Koppenhága", timelinePoints: [{time:"07:00", label:"Stockholm ind."}, {time:"10:30", label:"Jönköping"}, {time:"11:30", label:"Malmö"}, {time:"12:30", label:"Øresund"}, {time:"14:00", label:"Koppenhága"}] },
+          title: "Stockholm → Drottningholm → Repülőmúzeum → Nässjö → Värnamo",
+          subtitle: "Déli indulás Stockholmból, Drottningholm-kastély, linköpingi légierő-múzeum, este ismerősöknél Nässjőben, éj Värnamóban",
+          driveLog: { km: "~420 km", stops: 4, driveTime: "~5 óra (megállókkal késő estig)", depart: "12:00", arrive: "Värnamo (éj)", timelinePoints: [{time:"12:00", label:"Stockholm ind."}, {time:"12:30", label:"Drottningholm"}, {time:"16:00", label:"Repülőmúzeum"}, {time:"18:30", label:"Nässjö (ismerős)"}, {time:"22:45", label:"Värnamo szállás"}] },
           tags: [
-            { label: "~650 km", cls: "tag-drive" },
-            { label: "Øresund Bridge", cls: "tag-focus" },
-            { label: "Koppenhága", cls: "tag-city" }
+            { label: "~420 km", cls: "tag-drive" },
+            { label: "Drottningholm", cls: "tag-focus" },
+            { label: "Värnamo éj", cls: "tag-city" }
           ],
           activities: [
-            { time: "07:00", icon: "🚗", name: "Korai indulás Stockholmból — E4 dél felé", detail: "07:00-as start elegendő a ~650 km-es naphoz. Stockholm → Helsingborg ~480 km, svéd autópályán 110 km/h, nincs útdíj. A reggeli svéd táj üres és pihentető, a forgalom minimális." },
-            { time: "10:30", icon: "⛽", name: "Jönköping-tájék — tankolás + pihenő", detail: "Jönköping kb. 330 km-re van Stockholmtól (~3,5h), a Vättern-tó déli csücskénél. Jó tankolós megálló — svéd benzin olcsóbb, mint dán." },
-            { time: "11:30", icon: "🌀", name: "<a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Malmö — Turning Torso</a> (★4.3) + Stortorget · 45 perces fotóstop", duration: "~45 perc", mapName: "Turning Torso", detail: "Malmöba fotóstopra térünk be. A <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3, Santiago Calatrava, 190 m) a Västra Hamnen negyedben — lakóépület, belülről nem látogatható, de kívülről emblematikus. Séta a tengerparton, 5 perc a <a href='https://www.google.com/maps/search/?api=1&query=Stortorget+Malmo' target='_blank' rel='noreferrer'>Stortorgetre</a> (★4.3), és folytatás az Øresund-híd felé." },
-            { time: "12:30", icon: "🌉", name: "<a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) — Malmö → Koppenhága", duration: "~20 perc", mapName: "Øresund Bridge", detail: "8 km híd + 4 km alagút kombináció. Díj: ~400 DKK (~54 EUR) — előre fizethető online: oresundsbron.com." },
-            { time: "14:00", icon: "🏙", name: "Koppenhága — érkezés, szállás + első séta", detail: "Délutáni érkezés — bejelentkezés a szállásba, majd első koppenhágai séta a <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) felé. Este vacsora a <a href='https://www.google.com/maps/search/?api=1&query=Torvehallerne+Copenhagen' target='_blank' rel='noreferrer'>Torvehallerne</a> (★4.5) fedett piaccsarnokban — friss smørrebrød, dán delikatesszek, helyi sör." }
+            { time: "12:00", icon: "🚗", name: "Indulás Stockholmból (dél után)", detail: "A csapat dél körül hagyta el Stockholmot, dél felé az E4-en. Az első megálló mindjárt a városon kívül, nyugatra: a Drottningholm-kastély." },
+            { time: "12:30", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Drottningholm+Palace' target='_blank' rel='noreferrer'>Drottningholm-kastély</a> (★4.7)", duration: "~1–1,5 óra", mapName: "Drottningholm", detail: "A svéd királyi család otthona, UNESCO-világörökség — barokk kastély gyönyörű parkkal, a „svéd Versailles\". A park ingyenes és tágas, a kastély és a barokk színház belépőjeggyel látogatható. A tó felőli homlokzat a legszebb fotó." },
+            { time: "16:00", icon: "✈️", name: "<a href='https://www.google.com/maps/search/?api=1&query=Flygvapenmuseum+Link%C3%B6ping' target='_blank' rel='noreferrer'>Flygvapenmuseum</a> (★4.7) — Svéd Légierő Múzeum, Linköping", duration: "~1,5 óra", mapName: "Flygvapenmuseum", detail: "Linköpingben, ~200 km-re Stockholmtól: Svédország nemzeti légierő-múzeuma — Saab-vadászgépek, hidegháborús kémrepülő-történet (a lelőtt DC-3 roncsa), interaktív kiállítások. Belépő ingyenes. (Csütörtökön nyitva — hétfőn zárva lenne.)" },
+            { time: "18:30", icon: "🏡", name: "Nässjö — látogatás ismerősöknél", duration: "estig", mapName: "Nässjö", detail: "Linköpingtől ~110 km-re délre, Nässjőben egy ismerős/barát meglátogatása. Kellemes közös este náluk — kb. <strong>22:00-ig</strong> maradtunk." },
+            { time: "22:45", icon: "🏨", name: "<a href='https://www.google.com/maps/search/?api=1&query=Best+Western+Hotel+Vid%C3%B6stern+V%C3%A4rnamo' target='_blank' rel='noreferrer'>Best Western Hotel Vidöstern</a>, Värnamo — éjszaka", detail: "Az est már csak egy közeli, útba eső szállás Nässjőből dél felé: a Best Western Hotel Vidöstern Värnamóban, a Vidöstern-tó mellett, közvetlenül az E4 mentén — innen holnap egyenesen le az Øresund-hídhoz." }
           ],
-          notes: ["Øresund-díj online előre fizethető: oresundsbron.com — gyorsabb átkelés.", "Koppenhága szállás: Nørreport / Indre By / Vesterbro negyedek ideálisak bázisnak — metróközelben minden elérhető.", "Parkolás Koppenhágában: a belváros drága (~40 DKK/30 perc) — legjobb stratégia a külső P+R parkolók metróállomásoknál (~80 DKK/nap), és onnan metróval be. Pl. Vanløse, Frederiksberg.", "Holnap: egész napos városnap — Rosenborg kastély, Tivoli, Strøget."]
+          notes: ["Változás az eredeti tervhez: júl. 30. nem egyben Koppenhágáig ment, hanem Drottningholm + linköpingi repülőmúzeum + nässjői ismerős, és egy közeli útba eső éj Värnamóban.", "Best Western Hotel Vidöstern (Värnamo): az E4 mellett, ~215 km-re az Øresund-hídtól — holnap ~2 óra a hídig.", "Holnap: Värnamo → Lund → Öresund-híd (világosban!) → Koppenhága.", "Flygvapenmuseum: ingyenes, hétfőn zárva — csütörtökön belefért."]
         },
         {
           num: "5",
           date: "2026. július 31., péntek",
-          title: "Koppenhága 1. nap — Nyhavn + Rosenborg + Tivoli",
-          subtitle: "A dán főváros ikonjai — kastély, sétálóutca, csatorna és a világ legrégebbi vidámparkja",
-          driveLog: { km: "~5 km (városon belül)", stops: 4, driveTime: "gyalogos / metró nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Nyhavn"}, {time:"11:00", label:"Rosenborg"}, {time:"14:00", label:"Strøget"}, {time:"17:00", label:"Tivoli"}] },
+          title: "Värnamo → Lund → Öresund-híd → Koppenhága",
+          subtitle: "~215 km le az E4-en, Lund óváros + dóm, a hídon VILÁGOSBAN át, délutáni érkezés — este Nyhavn + Strøget + Tivoli hangulat",
+          driveLog: { km: "~230 km", stops: 3, driveTime: "~2,5 óra", depart: "10:00", arrive: "~14:30 Koppenhága", timelinePoints: [{time:"10:00", label:"Värnamo ind."}, {time:"12:00", label:"Lund"}, {time:"13:45", label:"Öresund-híd"}, {time:"14:30", label:"Koppenhága"}, {time:"18:00", label:"Nyhavn"}] },
           tags: [
-            { label: "Nyhavn", cls: "tag-focus" },
-            { label: "Rosenborg", cls: "tag-city" },
-            { label: "Tivoli", cls: "tag-city" }
+            { label: "~230 km", cls: "tag-drive" },
+            { label: "Öresund-híd", cls: "tag-focus" },
+            { label: "Koppenhága este", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:00", icon: "⚓", name: "<a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) — a csatorna reggel", duration: "~30 perc", mapName: "Nyhavn", detail: "Koppenhága legfotogénebb pontja: a 17. századi színes kikötői házak és a csónakok teli csatorna. Reggel sokkal csendesebb, mint délben. Hans Christian Andersen itt lakott (Nyhavn 20 és 67) — emléktáblák a házon. Reggeli a csatorna melletti kávézók egyikében (La Glace, Espresso House)." },
-            { time: "10:00", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Rosenborg+Castle+Copenhagen' target='_blank' rel='noreferrer'>Rosenborg Slot</a> (★4.6) — dán koronázási ékszerek", duration: "~1 óra", mapName: "Rosenborg Slot", detail: "17. századi reneszánsz kastély a Kongens Have parkban — ez az egyetlen helyszín, ahol a dán koronázási ékszerek és a királyi regáliák megtekinthetők. A park (★4.6) maga ingyenes és tökéletes reggeli sétatér. Belépő: ~145 DKK/fő. Nyitva: 10:00–17:00." },
-            { time: "12:00", icon: "🥪", name: "<a href='https://www.google.com/maps/search/?api=1&query=Torvehallerne+Copenhagen' target='_blank' rel='noreferrer'>Torvehallerne</a> (★4.5) — dán smørrebrød ebéd", duration: "~45 perc", mapName: "Torvehallerne", detail: "Fedett piaccsarnok friss smørrebrød-del (nyitott szendvics), dán sajtokkal, heringgel, rejesalátával és kézműves sörkkel. Ez Koppenhága legjobb ebédhely-koncentrátuma. Kb. 10 percre a Rosenborgtól." },
-            { time: "13:30", icon: "🚶", name: "<a href='https://www.google.com/maps/search/?api=1&query=Stroget+Copenhagen' target='_blank' rel='noreferrer'>Strøget</a> (★4.5) + <a href='https://www.google.com/maps/search/?api=1&query=Amagertorv+Copenhagen' target='_blank' rel='noreferrer'>Amagertorv</a> — Európa leghosszabb gyalogos sétálóutcája", duration: "~1 óra", mapName: "Strøget", detail: "1,1 km-es gyalogos utca a Rådhuspladstól Kgs. Nytorvig — dizájnüzletek, dán brand-ek (Georg Jensen, Royal Copenhagen), utcazenészek. A Strøget közepén az Amagertorv tér a legjobb fotópont a csempe-kúttal." },
-            { time: "16:00", icon: "🎡", name: "<a href='https://www.google.com/maps/search/?api=1&query=Tivoli+Gardens+Copenhagen' target='_blank' rel='noreferrer'>Tivoli Gardens</a> (★4.5) — 1843 óta nyitva", duration: "~2–3 óra", mapName: "Tivoli Gardens", detail: "A világ egyik legrégebbi és legbájosabb vidámparkja, Koppenhága szívén. Nem csak attrakciók: a kert hangulata (lanternák, virágzó bokrok, nyári estek) önmagában különleges. Estére a kivilágítás egészen mágikus. Belépő: ~165 DKK/fő (attrakciók nélkül is érdemes), nyitva: 11:00–23:00 (nyári pénteken és szombaton 00:00-ig)." },
-            { time: "20:00", icon: "🍽", name: "Vacsora Vesterbro / Indre By negyedben", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Papiroen+Copenhagen+Street+Food' target='_blank' rel='noreferrer'>Papirøen Street Food Market</a> (★4.3, ha nyitva) vagy <a href='https://www.google.com/maps/search/?api=1&query=Kodbyens+Fiskebar+Copenhagen' target='_blank' rel='noreferrer'>Kødbyens Fiskebar</a> (★4.2) a régi húspiacnegyedben — friss dán tenger gyümölcsei, természetes borok." }
+            { time: "10:00", icon: "🚗", name: "Indulás Värnamóból — E4 dél felé", detail: "Reggeli után ~10:00 indulás. Värnamo → Lund ~200 km, ~2 óra svéd autópályán (110 km/h, nincs útdíj)." },
+            { time: "12:00", icon: "⛪", name: "<a href='https://www.google.com/maps/search/?api=1&query=Lund+Cathedral' target='_blank' rel='noreferrer'>Lund</a> (★4.6) — óváros + dóm, ebéd", duration: "~1–1,5 óra", mapName: "Lund", detail: "Skandinávia egyik legrégebbi városa, ~20 percre a hídtól. A román kori <strong>dóm</strong> (11. sz.) híres csillagászati órája délben és 15:00-kor „megszólal\" (figurák vonulnak) — érdemes időzíteni. Macskaköves óváros, egyetemi hangulat, jó ebéd." },
+            { time: "13:45", icon: "🌉", name: "<a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund-híd</a> (★4.5) — Malmö → Koppenhága, VILÁGOSBAN", duration: "~30 perc", mapName: "Øresund Bridge", detail: "8 km híd + 4 km alagút — a nap fénypontja, most teljes napfényben átkelve (ez volt a cél!). Díj: ~510 SEK / ~60 EUR, kártyával a kapunál (vagy előre: oresundsbron.com)." },
+            { time: "14:30", icon: "🏙", name: "Koppenhága — érkezés, check-in", detail: "Délután érünk be, bejelentkezés a szállásba, autó leparkolása (a belvárosban drága — P+R metróállomásnál vagy parkolós hotel a jó)." },
+            { time: "18:00", icon: "⚓", name: "<a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) + <a href='https://www.google.com/maps/search/?api=1&query=Stroget+Copenhagen' target='_blank' rel='noreferrer'>Strøget</a> — a hangulat-séta", duration: "~1,5 óra", mapName: "Nyhavn", detail: "A képeslap-Koppenhága: a 17. századi színes kikötői házak Nyhavnban (H. C. Andersen itt lakott), majd séta a Strøgeten (Európa egyik leghosszabb sétálóutcája). Vacsora a Nyhavn körüli valamelyik helyen vagy a <a href='https://www.google.com/maps/search/?api=1&query=Torvehallerne+Copenhagen' target='_blank' rel='noreferrer'>Torvehallerne</a> piaccsarnokban (smørrebrød)." },
+            { time: "20:00", icon: "🎡", name: "<a href='https://www.google.com/maps/search/?api=1&query=Tivoli+Gardens+Copenhagen' target='_blank' rel='noreferrer'>Tivoli Gardens</a> (★4.5) — este, kivilágítva", duration: "~2 óra", mapName: "Tivoli Gardens", detail: "A világ egyik legrégebbi vidámparkja (1843), a belváros szívén — este a legszebb: lampionok, fények, nyári hangulat. Tökéletes első koppenhágai est. Belépő ~165 DKK, nyáron pénteken 00:00-ig nyitva. (Jegy előre: tivoli.dk.)" }
           ],
-          notes: ["Tivoli belépő előre érdemes megvenni online: tivoli.dk — júliusban kapacitáskorlát van.", "Rosenborg Slot: érdemes a koronázási ékszerekre fókuszálni — ez az egyetlen hely Dániában ahol láthatók.", "Metró Koppenhágában: M1/M2 vonalak, 24 óra bérlet ~130 DKK/fő — a legtöbb látványosság megközelíthető.", "Kongens Have (Rosenborg park): ingyenes, tökéletes piknikezős ebéd-alternatíva is ha jó az idő."]
+          notes: ["Az Öresund-hidat szándékosan délután, VILÁGOSBAN keltük át — ez volt a kérés, és bőven belefér (napnyugta ~21:20).", "Lund: a dóm csillagászati órája 12:00 és 15:00-kor „szólal meg\" — az ebédidő pont jó rá.", "Koppenhága = korona (DKK), nem euró; kártya mindenhol megy. Parkolás drága, metró/bringa a jó.", "Holnap: teljes koppenhágai nap — a fő látnivalók (Rosenborg, Kis Hableány, Christiansborg, Christiania)."]
         },
         {
           num: "6",
           date: "2026. augusztus 1., szombat",
-          title: "Koppenhága 2. nap — Christiansborg + Kis Hableány + Christiania",
-          subtitle: "Dán parlament, ikonikus szobor, alternatív negyed, Nørrebro esti program",
-          driveLog: { km: "~6 km (városon belül)", stops: 4, driveTime: "gyalogos / bringa nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Christiansborg"}, {time:"11:00", label:"Kis Hableány"}, {time:"13:30", label:"Christiania"}, {time:"16:00", label:"Nørrebro"}] },
+          title: "Koppenhága — teljes városnap (a fő látnivalók)",
+          subtitle: "Rosenborg + koronaékszerek · Rundetårn · Kis Hableány + Kastellet · Christiansborg · Christiania · csatornás hajótúra",
+          driveLog: { km: "~7 km (városon belül)", stops: 6, driveTime: "gyalogos / bringa / metró nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Rosenborg"}, {time:"11:00", label:"Kis Hableány"}, {time:"13:30", label:"Christiansborg"}, {time:"15:00", label:"hajótúra"}, {time:"16:30", label:"Christiania"}] },
           tags: [
-            { label: "Christiansborg", cls: "tag-city" },
-            { label: "Kis Hableány", cls: "tag-focus" },
-            { label: "Christiania", cls: "tag-nature" }
+            { label: "Rosenborg", cls: "tag-focus" },
+            { label: "Kis Hableány", cls: "tag-city" },
+            { label: "hajótúra", cls: "tag-nature" }
           ],
           activities: [
-            { time: "09:00", icon: "🏛", name: "<a href='https://www.google.com/maps/search/?api=1&query=Christiansborg+Palace+Copenhagen' target='_blank' rel='noreferrer'>Christiansborg Palace</a> (★4.5) — toronykilátó + trónterem", duration: "~1 óra", mapName: "Christiansborg", detail: "A dán parlament, a Legfelsőbb Bíróság és a királyi recepciók helyszíne — egyazon épületben. A toronykilátó (★4.6) INGYENES és koppenhágai viszonylatban az egyik legjobb panoráma. Trónterem és királyi istállók belépőjeggyel látogathatók (~90 DKK/fő). Nyitva: 10:00–17:00." },
-            { time: "10:30", icon: "🗿", name: "<a href='https://www.google.com/maps/search/?api=1&query=The+Little+Mermaid+Copenhagen' target='_blank' rel='noreferrer'>Den Lille Havfrue — Kis Hableány</a> (★4.0) + Kastellet", duration: "~30 perc", mapName: "Kis Hableány", detail: "Koppenhága legikonikusabb szobra — kisebb, mint az emberek várják, de az út melletti <a href='https://www.google.com/maps/search/?api=1&query=Kastellet+Copenhagen' target='_blank' rel='noreferrer'>Kastellet</a> (★4.5) csillag erőd tökéletes ingyenes sétahely. A kerület (Langelinie promenád) reggel csendesebb, délben zsúfolt. Séta a vízpart mentén vissza a belvárosba (~20 perc)." },
-            { time: "12:00", icon: "🥪", name: "Ebéd — <a href='https://www.google.com/maps/search/?api=1&query=Amass+Restaurant+Copenhagen' target='_blank' rel='noreferrer'>Reffen Street Food</a> (★4.3) vagy Nørreport piac", duration: "~1 óra", mapName: "Reffen Street Food", detail: "Reffen (Refshaleøen szigeten, hajóval 10 perc) — Koppenhága legnagyobb outdoor street food markete, 60+ stand, természetes borok, dizájnos ipari helyszín. Alternatíva: Nørreport-nál bármelyik friss hal- és sajtstand." },
-            { time: "13:30", icon: "🌿", name: "<a href='https://www.google.com/maps/search/?api=1&query=Freetown+Christiania+Copenhagen' target='_blank' rel='noreferrer'>Freetown Christiania</a> (★4.3) — alternatív önkormányzati negyed", duration: "~1 óra", mapName: "Christiania", detail: "1971 óta autonóm közösség Koppenhágán belül, 800+ lakóval. Nem Disneyland: tényleg alternatív utcák, street art, élőzene, kézműves kávézók, vitorlás-vászon táskák. A 'Pusher Street' fotózása tilos (jelzik), de minden más fotózható. Koffee Collective kávézó: ★4.4." },
-            { time: "15:30", icon: "🚲", name: "<a href='https://www.google.com/maps/search/?api=1&query=Norrebro+Copenhagen' target='_blank' rel='noreferrer'>Nørrebro negyed</a> (★4.4) — a koppenhágai hipszter szív", duration: "~1 óra", mapName: "Nørrebro", detail: "A legélőbb koppenhágai negyed: Jægersborggade utca dizájnüzletekkel és kézműves kávézókkal, Nørrebrogade az utcaélettel. Bringatúra opció: Donkey Republic vagy Bycyklen közbicikli, napi ~50 DKK. A <a href='https://www.google.com/maps/search/?api=1&query=Assistens+Cemetery+Copenhagen' target='_blank' rel='noreferrer'>Assistens temető</a> (★4.5, Hans Christian Andersen és Kierkegaard sírja) is Nørreborón — különleges parkszerű séta." },
-            { time: "19:00", icon: "🍽", name: "Vacsora Nørrebrón", detail: "<a href='https://www.google.com/maps/search/?api=1&query=Manfreds+restaurant+Copenhagen' target='_blank' rel='noreferrer'>Manfreds</a> (★4.3, természetes borok, zöldség-fókuszú dán konyha) vagy <a href='https://www.google.com/maps/search/?api=1&query=Jaegers+bar+Norrebro+Copenhagen' target='_blank' rel='noreferrer'>a Jægersborggade valamelyik kis éterme</a> — foglalás erősen ajánlott péntekre." }
+            { time: "09:00", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Rosenborg+Castle+Copenhagen' target='_blank' rel='noreferrer'>Rosenborg Slot</a> (★4.6) — koronázási ékszerek", duration: "~1 óra", mapName: "Rosenborg Slot", detail: "17. századi reneszánsz kastély a Kongens Have parkban — az egyetlen hely, ahol a dán koronaékszerek és a királyi regáliák láthatók. A park ingyenes, tökéletes reggeli sétatér. Belépő ~145 DKK, nyit 10:00 (reggel a legkevésbé zsúfolt)." },
+            { time: "10:15", icon: "🗼", name: "<a href='https://www.google.com/maps/search/?api=1&query=Rundetaarn+Copenhagen' target='_blank' rel='noreferrer'>Rundetårn</a> (★4.6) — a Kerektorony", duration: "~30 perc", mapName: "Rundetårn", detail: "17. századi csillagvizsgáló-torony, belül lépcső helyett csigás rámpán lehet felsétálni a tetőre — remek kilátás az óváros piros tetőire. Belépő ~40 DKK. Útba esik Rosenborg és a belváros közt." },
+            { time: "11:00", icon: "🗿", name: "<a href='https://www.google.com/maps/search/?api=1&query=The+Little+Mermaid+Copenhagen' target='_blank' rel='noreferrer'>Kis Hableány</a> (★4.0) + <a href='https://www.google.com/maps/search/?api=1&query=Kastellet+Copenhagen' target='_blank' rel='noreferrer'>Kastellet</a>", duration: "~45 perc", mapName: "Kis Hableány", detail: "Koppenhága ikonikus szobra (kisebb, mint hinnéd) a Langelinie-parton, mellette a Kastellet csillag alakú erőd — ingyenes, parkos séta. Délelőtt csendesebb." },
+            { time: "12:00", icon: "🥪", name: "Ebéd — <a href='https://www.google.com/maps/search/?api=1&query=Torvehallerne+Copenhagen' target='_blank' rel='noreferrer'>Torvehallerne</a> vagy <a href='https://www.google.com/maps/search/?api=1&query=Reffen+Copenhagen' target='_blank' rel='noreferrer'>Reffen Street Food</a>", duration: "~1 óra", mapName: "Torvehallerne", detail: "Smørrebrød és dán delikáteszek a Torvehallerne fedett piacon, vagy nyári street food a Reffenen (Refshaleøen, 60+ stand)." },
+            { time: "13:30", icon: "🏛", name: "<a href='https://www.google.com/maps/search/?api=1&query=Christiansborg+Palace+Copenhagen' target='_blank' rel='noreferrer'>Christiansborg</a> (★4.5) — INGYENES toronykilátó", duration: "~45 perc", mapName: "Christiansborg", detail: "A dán parlament épülete; a toronykilátó ingyenes és a város egyik legjobb panorámája. Trónterem külön jeggyel (~90 DKK). Reggel/kora délután rövidebb a sor." },
+            { time: "15:00", icon: "⛵", name: "<a href='https://www.google.com/maps/search/?api=1&query=Copenhagen+canal+tour+Nyhavn' target='_blank' rel='noreferrer'>Csatornás hajótúra</a> (★4.6) — Nyhavnból", duration: "~1 óra", mapName: "Koppenhága hajótúra", detail: "A legjobb városnézés vízről: Nyhavnból induló csatornatúra a kikötőn, az Operaház, a Fekete Gyémánt (könyvtár) és a Kis Hableány mellett. ~120 DKK/fő, kb. 1 óra. Kellemes pihenő a sok séta közé." },
+            { time: "16:30", icon: "🌿", name: "<a href='https://www.google.com/maps/search/?api=1&query=Freetown+Christiania+Copenhagen' target='_blank' rel='noreferrer'>Freetown Christiania</a> (★4.3)", duration: "~1 óra", mapName: "Christiania", detail: "1971 óta autonóm közösség: alternatív utcák, street art, élőzene, kézműves kávézók. A „Pusher Street\" fotózása tilos (jelzik), minden más szabad. A szomszédos Christianshavn csatornái is szépek." },
+            { time: "19:00", icon: "🍽", name: "Búcsúvacsora Koppenhágában", detail: "Nørrebro (Jægersborggade kis éttermei) vagy Christianshavn/Nyhavn — foglalás szombat estére ajánlott. Utolsó dán este a városban." }
           ],
-          notes: ["Christiansborg torony kilátó: INGYENES, de sorban kell állni — reggel 09:00-10:00 közt a legrövidebb a sor.", "Christiania: Pusher Street fotózása tilos és ezt komolyan veszik. A többi utca szabadon fotózható.", "Koppenhágai bringa: a város teljesen bringa-barát, sok jelöletlen kerékpárút — az átlagkoppenhágai gyorsabban megy bringán mint a turisták gyalog.", "Holnap: Louisiana Museum of Modern Art délelőtt + drive Hamburg felé."]
+          notes: ["Ez a nap sűríti a fő látnivalókat egy napba (2 helyett) — a metró/bringa sokat gyorsít; Koppenhága teljesen bringa-barát.", "Christiansborg torony: ingyenes, de sorban kell állni — kora délután jó.", "Copenhagen Card / City Pass megfontolható, ha sok belépős helyre mentek (Rosenborg, hajótúra, Rundetårn).", "Holnap: NEM komppal, hanem körbe autóval Dánián át — Odense + Egeskov-kastély → Lübeck."]
         },
         {
           num: "7",
           date: "2026. augusztus 2., vasárnap",
-          title: "Koppenhága — Louisiana Museum + indulás Hamburgba",
-          subtitle: "Délelőtt a legjobb skandináv modern múzeumban, délután ~310 km drive Hamburgba",
-          driveLog: { km: "~310 km", stops: 2, driveTime: "~3 óra", depart: "13:00", arrive: "~16:30 Hamburg", timelinePoints: [{time:"10:00", label:"Louisiana Museum"}, {time:"13:00", label:"Koppenhága ind."}, {time:"14:30", label:"Flensburg"}, {time:"16:30", label:"Hamburg"}] },
+          title: "Koppenhága → Fyn (Odense + Egeskov) → Lübeck",
+          subtitle: "Nem komp, hanem körbe autóval Dánián át: Storebælt-híd, Odense (H. C. Andersen), Egeskov-kastély, estére Lübeck",
+          driveLog: { km: "~480 km", stops: 4, driveTime: "~5 óra (megállókkal)", depart: "09:00", arrive: "~18:30 Lübeck", timelinePoints: [{time:"09:00", label:"Koppenhága ind."}, {time:"10:15", label:"Storebælt-híd"}, {time:"10:45", label:"Odense"}, {time:"13:00", label:"Egeskov"}, {time:"18:30", label:"Lübeck"}] },
           tags: [
-            { label: "Louisiana Museum", cls: "tag-focus" },
-            { label: "~310 km", cls: "tag-drive" },
-            { label: "Hamburg", cls: "tag-city" }
+            { label: "~480 km", cls: "tag-drive" },
+            { label: "Egeskov-kastély", cls: "tag-focus" },
+            { label: "Lübeck éj", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:30", icon: "🚗", name: "Drive: Koppenhága → Humlebæk (~45 km, ~40 perc)", detail: "Az E47-es autópályán észak felé, Helsingborg irányba. Humlebæk egy kis tengerparti kisváros, maga a Louisiana múzeum itt áll, a tenger felett." },
-            { time: "10:00–12:30", icon: "🎨", name: "<a href='https://www.google.com/maps/search/?api=1&query=Louisiana+Museum+of+Modern+Art+Humlebaek' target='_blank' rel='noreferrer'>Louisiana Museum of Modern Art</a> (★4.7) — Skandinávia legjobb modern múzeuma", duration: "~2 óra", mapName: "Louisiana Museum", detail: "1958-ban nyitott, a Øresund felett álló dombos parkban: Calder, Giacometti, Warhol, Picasso, Jean Dubuffet műveivel. A múzeum épülete maga is remekmű: üveg folyosók, teraszok a tengerre, szoborkert (★4.8). Az állandó kiállítás és a szoborkert a legjobb — külső terasz Svédország kilátással. Belépő: ~195 DKK/fő. Nyitva: 11:00–22:00 (kedd–péntek), 11:00–18:00 (szombat–vasárnap)." },
-            { time: "12:45", icon: "🚗", name: "Humlebæk → Koppenhága → Flensburg → Hamburg", detail: "Visszaút Koppenhágán át (~45 km), majd az E20-on Dánián keresztül. ⚠️ Storebælt-híd: ~240 DKK (~32 EUR). Flensburgnál belépés Németországba, az A7-en Hamburg felé." },
-            { time: "16:30", icon: "🏨", name: "Hamburg — érkezés, szállás", detail: "Hamburg — az első igazán német este. Vacsora a Landungsbrücken-nél Fischbrötchennel (füstölt heringes szendvics, hamburgi street food ikonja), vagy korai pihenés: holnap a Lübeck–Schwerin körút korai starttal indul." }
+            { time: "09:00", icon: "🚗", name: "Indulás Koppenhágából — E20 nyugat felé", detail: "A komp helyett a szárazföldi „körbe\" út: E20-on Sjælland szigetén át a Storebælt-hídig. ~9:00 indulás jó, hogy legyen idő Fynön a megállókra." },
+            { time: "10:15", icon: "🌉", name: "<a href='https://www.google.com/maps/search/?api=1&query=Great+Belt+Bridge+Denmark' target='_blank' rel='noreferrer'>Storebælt-híd (Nagy-Belt)</a> (★4.7)", duration: "~15 perc", mapName: "Storebælt-híd", detail: "~18 km-es híd Sjælland és Fyn között — a világ egyik leghosszabb függőhídja, maga az átkelés élmény. Díj ~250 DKK (~33 EUR), kártyával. A híd előtti pihenőnél lehet fotózni." },
+            { time: "10:45", icon: "🦢", name: "<a href='https://www.google.com/maps/search/?api=1&query=Odense+H.C.+Andersen' target='_blank' rel='noreferrer'>Odense</a> (★4.5) — H. C. Andersen városa", duration: "~1,5 óra", mapName: "Odense", detail: "Fyn fővárosa, H. C. Andersen szülővárosa: macskaköves óváros, színes házak, az új <strong>H. C. Andersen-múzeum</strong> és a szülőház. Kellemes séta + kávé/ebéd az óvárosban." },
+            { time: "13:00", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Egeskov+Castle+Denmark' target='_blank' rel='noreferrer'>Egeskov-kastély</a> (★4.6) — vizesárkos reneszánsz gyöngyszem", duration: "~2 óra", mapName: "Egeskov", detail: "~30 perc Odensétől délre: Európa egyik legjobban megőrzött vizesárkos reneszánsz kastélya (1554), gyönyörű kertekkel, labirintussal, és veterán autó- + motormúzeummal. A nap fő élménye — ebéd is megoldható a helyszínen. Belépő ~250 DKK." },
+            { time: "15:30", icon: "🚗", name: "Egeskov → Lillebælt-híd → Flensburg → Lübeck", detail: "Tovább dél: a Lillebælt-hídon Jyllandra (Jutland), majd az E45 le a német határig (Flensburg), onnan A7/A1 Lübeck felé. ~290 km, ~3 óra." },
+            { time: "18:30", icon: "🏨", name: "Lübeck — érkezés, szállás + esti óváros-séta", detail: "Estére Lübeckben, a Balti-tenger hanza-fővárosában. Bejelentkezés, majd egy első séta az UNESCO-óvárosban (Holstentor kivilágítva), laza vacsora. Holnap a részletes Lübeck-nap + Travemünde." }
           ],
-          notes: ["Louisiana nyitvatartás: szombaton 11:00–18:00 — érdemes pontban nyitáskor ott lenni, hogy legyen idő a szoborkertben is.", "⚠️ Storebælt-híd (Koppenhága → Flensburg irány): ~240 DKK (~32 EUR) — az Øresund-díjjal együtt a dán tranzit ~86 EUR összesen két nap alatt.", "Hamburg szállás: HafenCity / Altstadt / Altona-negyedek a legjobbak bázisnak — Landungsbrücken közelében minden gyalog elérhető.", "Holnap korai start (08:30): Lübeck + Schwerin Castle körút Hamburgból (~230 km)."]
+          notes: ["Komp helyett szárazföldi „körbe\" út — cserébe útba esik Fyn (Odense + Egeskov), a legszebb dán rész. ~1,5–2 órával hosszabb, mint a komp, viszont rugalmas és nincs menetrend.", "Díjak: Storebælt-híd ~250 DKK (~33 EUR); a Lillebælt-híd ingyenes; német autópálya díjmentes.", "Autó: a GLC 100 oktánt kér — az utolsó dán tankolás Flensburg előtt vagy már Németországban (V-Power / Ultimate).", "Lübeck szállás: 3 éj (aug. 2–4.), parkolós hely a jó — vagy Travemündében, ha reggelente tengerpart kell."]
         },
         {
           num: "8",
           date: "2026. augusztus 3., hétfő",
-          title: "Hamburg körút — Lübeck + Schwerin Castle",
-
-          subtitle: "UNESCO-óváros és egy tavi kastély — a Balti-tenger kapuja",
-          driveLog: { km: "~230 km (körút)", stops: 2, driveTime: "~3,5 óra", depart: "08:30", arrive: "~18:30 Hamburg", timelinePoints: [{time:"08:30", label:"Hamburg ind."}, {time:"09:30", label:"Lübeck"}, {time:"13:00", label:"Schwerin"}, {time:"18:30", label:"Hamburg"}] },
+          title: "Lübeck óváros + Travemünde (balti strand)",
+          subtitle: "Délelőtt a teljes UNESCO-óváros (Holstentor, Marienkirche, marcipán, Hansemuseum), délután tengerpart Travemündében",
+          driveLog: { km: "~40 km", stops: 2, driveTime: "gyalogos + rövid autó", depart: "09:00", arrive: "~20:00", timelinePoints: [{time:"09:00", label:"Holstentor"}, {time:"10:00", label:"óváros"}, {time:"12:30", label:"marcipán"}, {time:"14:30", label:"Travemünde"}, {time:"18:00", label:"strand"}] },
           tags: [
-            { label: "UNESCO", cls: "tag-focus" },
-            { label: "kastély", cls: "tag-nature" },
-            { label: "körút", cls: "tag-drive" }
+            { label: "UNESCO óváros", cls: "tag-focus" },
+            { label: "marcipán", cls: "tag-city" },
+            { label: "balti strand", cls: "tag-nature" }
           ],
           activities: [
-            { time: "08:30", icon: "🚗", name: "Indulás Hamburgból Lübeck felé (~65 km, ~55 perc)", detail: "A7-es autópályán könnyű etap, Lübeck a Balti-tenger kapuja volt a középkorban — a Hansa-szövetség vezető városa." },
-            { time: "09:30", icon: "🏛", name: "Lübeck — Holstentor", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Holstentor%20L%C3%BCbeck", duration: "~20–30 perc", mapName: "Holstentor", detail: "A város ikonikus két tornyos kapuja, az egyik legfotogénebb középkori épület Észak-Németországban. Belülről kisebb múzeum, de a külső látványa a lényeg. Google Reviews: ★4.6 — 'Meglepően lenyűgöző közelről.'" },
-            { time: "10:15", icon: "⛪", name: "Lübeck — Marienkirche (St. Mary's)", googleRating: "4.5", maps: "https://www.google.com/maps/search/?api=1&query=Marienkirche%20L%C3%BCbeck", duration: "~20–30 perc", mapName: "Marienkirche (Lübeck)", detail: "A világ egyik legtöbb utánzatot inspiráló gótikus téglatemploma, a 'Backsteingotik' egyik csúcspontja. A WWII-bombázás által leomlott harangok emlékhelye különleges. Google Reviews: ★4.5 — 'A harang-emlékmű megrázó.'" },
-            { time: "11:00", icon: "🍫", name: "Niederegger Marzipan — Breite Straße 89", googleRating: "4.5", maps: "https://www.google.com/maps/search/?api=1&query=Niederegger%20L%C3%BCbeck", duration: "~30 perc", mapName: "Niederegger", detail: "Lübeck a marzipán világi fővárosa. A Niederegger confectionery (alapítva 1806) emeleti kávézójában marzipán-torta és kávé — kötelező megálló. Google Reviews: ★4.5 — 'A marzipán-múzeum ingyenes és szórakoztató.'" },
-            { time: "11:45", icon: "📚", name: "Buddenbrookhaus + belváros séta", duration: "~45 perc", mapName: "Buddenbrookhaus", detail: "Thomas Mann Nobel-díjas regényének (Buddenbrooks) szülőháza és múzeuma. A Lübeck-i belváros egésze UNESCO-világörökség (1987) — a lépcsős homlokzatú kereskedőházak, a Tüngertor és a Petrikirche mind sétálható. Google Reviews: ★4.4." },
-            { time: "13:00", icon: "🚗", name: "Lübeck → Schwerin (~65 km, ~50 perc)", detail: "Rövid autóút nyugat felé Mecklenburg síkságán. Schwerin Mecklenburg-Vorpommern tartomány fővárosa." },
-            { time: "13:50", icon: "🏰", name: "Schweriner Schloss — a 'Balti-tenger Neuschwansteinja'", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Schweriner%20Schloss", duration: "~1–1,5 óra", mapName: "Schweriner Schloss", detail: "Neoromantikus kastély egy tóval körülvett szigeten, UNESCO-jelölt. A kastély kívülről fantasztikus, belülről historikus termek. Belépő: ~€8/fő, nyitva 10:00–18:00. Google Reviews: ★4.6 — 'Szinte túl szép ahhoz, hogy valóságos legyen.' Legjobb szög: a tó felőli homlokzat." },
-            { time: "15:30", icon: "🚶", name: "Schwerin — Alter Garten + tópart séta", googleRating: "4.6", maps: "https://www.google.com/maps/search/?api=1&query=Alter%20Garten%20Schwerin", duration: "~45 perc", mapName: "Alter Garten", detail: "A kastéllyal szemben az Alter Garten tér és az Állami Múzeum (csak kívül), majd tóparti séta a vízi kioszkig. Kávé és fagyi a tó partján." },
-            { time: "17:00", icon: "🚗", name: "Schwerin → Hamburg (~100 km, ~1 óra)", detail: "A19/A24 autópályán visszatérés Hamburgba. Estére még van idő egy hamburgi étteremre." },
-            { time: "18:30", icon: "🍽", name: "Vacsora Hamburgban", detail: "Fischbrötchen a Landungsbrücken-nél (füstölt heringes szendvics — hamburgi street food ikonja), vagy belvárosi halétterem. Utolsó hamburgi este." }
+            { time: "09:00", icon: "🏛", name: "<a href='https://www.google.com/maps/search/?api=1&query=Holstentor%20L%C3%BCbeck' target='_blank' rel='noreferrer'>Holstentor</a> (★4.6) — a jelképes kapu", duration: "~30 perc", mapName: "Holstentor", detail: "Lübeck ikonikus két tornyos városkapuja, Észak-Németország egyik legfotogénebb középkori épülete. Belül kis várostörténeti múzeum; a külső látvány a lényeg." },
+            { time: "10:00", icon: "⛪", name: "<a href='https://www.google.com/maps/search/?api=1&query=Marienkirche%20L%C3%BCbeck' target='_blank' rel='noreferrer'>Marienkirche</a> (★4.5) + óváros", duration: "~1 óra", mapName: "Marienkirche (Lübeck)", detail: "A „Backsteingotik\" (tégla-gótika) csúcspontja — a WWII-ben leomlott harangokat a becsapódás helyén hagyták emlékként. Körben a teljes óváros UNESCO-világörökség: lépcsős homlokzatú kereskedőházak, sikátorok, a Rathaus." },
+            { time: "11:30", icon: "🚢", name: "<a href='https://www.google.com/maps/search/?api=1&query=European+Hansemuseum+L%C3%BCbeck' target='_blank' rel='noreferrer'>European Hansemuseum</a> (★4.5)", duration: "~1 óra", mapName: "Hansemuseum", detail: "A világ legnagyobb múzeuma a Hanza-szövetségről — remekül bemutatja, miért volt Lübeck évszázadokig a Balti-tenger kereskedelmi fővárosa. Modern, interaktív. (A hajós/kikötői séta a Trave partján is szép.)" },
+            { time: "12:30", icon: "🍫", name: "<a href='https://www.google.com/maps/search/?api=1&query=Niederegger%20L%C3%BCbeck' target='_blank' rel='noreferrer'>Niederegger</a> (★4.5) — marcipán + ebéd", duration: "~1 óra", mapName: "Niederegger", detail: "Lübeck a marcipán fővárosa. A Niederegger (1806) emeleti kávézójában marcipán-torta és kávé, fent ingyenes kis marcipán-múzeum; lent a bolt (vigyél haza egy dobozzal!). Könnyű ebéd is." },
+            { time: "14:30", icon: "🏖", name: "<a href='https://www.google.com/maps/search/?api=1&query=Travem%C3%BCnde+beach' target='_blank' rel='noreferrer'>Travemünde</a> (★4.6) — balti tengerpart", duration: "délután", mapName: "Travemünde", detail: "Lübeck tengeri fürdővárosa a Trave torkolatánál, ~20 perc autóval. Széles homokos strand, sétány, régi világítótorony, a Passat vitorlás. Fürdés, napozás, lazulós tengeri délután — a városnézés ellenpontja." },
+            { time: "18:00", icon: "🍽", name: "Vacsora — Travemünde vagy Lübeck", detail: "Friss hal a travemündei sétányon (Fischbrötchen, halételek a kikötőnél), vagy vissza Lübeckbe egy óvárosi vacsorára. Nyugodt este." }
           ],
-          notes: ["Lübeck belváros: egésze UNESCO-világörökség (1987). Parkolás a <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Parkhaus+Lubeck' target='_blank' rel='noreferrer'>Holstentor melletti parkolóban</a> vagy a <a href='https://www.google.com/maps/search/?api=1&query=Kohlmarkt+parking+Lubeck' target='_blank' rel='noreferrer'>Kohlmarkt</a> körül.", "Niederegger Marzipan: a bolti vásárlás kötelező — vigyél haza doboznyi marzipánt! A bolt és a kávézó egymás felett van.", "Schweriner Schloss: ha kicsit is tele van a parkoló, érdemes a főbejárattól kicsit arrébb parkolni és gyalog jönni — a kastély minden szögből fotózható.", "Az egész körút Hamburgból és visszaérkezéssel kerek nap, az este szabadon marad."]
+          notes: ["Lübeck óvárosa teljes egészében UNESCO-világörökség (1987). Parkolás a <a href='https://www.google.com/maps/search/?api=1&query=Holstentor+Parkhaus+Lubeck' target='_blank' rel='noreferrer'>Holstentor melletti parkolóban</a>.", "Niederegger marcipán: a bolt + a fenti kávézó/mini-múzeum együtt — kihagyhatatlan lübecki élmény.", "Travemünde: nyáron élénk, a strand ingyenes; a világítótorony (Alter Leuchtturm) tetejéről szép a kilátás.", "Holnap: Schwerin-kastély (a mesekastély a tavon) — a környék fő látványossága."]
         },
         {
           num: "9",
           date: "2026. augusztus 4., kedd",
-          title: "Hamburg városnap",
-          subtitle: "Miniatur Wunderland · Speicherstadt · Elbphilharmonie · Landungsbrücken",
-          driveLog: { km: "~8 km (városon belül)", stops: 4, driveTime: "gyalogos + U-Bahn nap", depart: "09:00", arrive: "~21:00", timelinePoints: [{time:"09:00", label:"Miniatur Wunderland"}, {time:"12:00", label:"Speicherstadt"}, {time:"15:00", label:"Elbphilharmonie"}, {time:"18:30", label:"Vacsora"}] },
+          title: "Schwerin-kastély (+ Wismar)",
+          subtitle: "Egynapos kör Lübeckből: a mesekastély a tavon, és opcionálisan Wismar UNESCO-hanzavárosa",
+          driveLog: { km: "~200 km (körút)", stops: 3, driveTime: "~2,5 óra", depart: "09:00", arrive: "~18:30 Lübeck", timelinePoints: [{time:"09:00", label:"Lübeck ind."}, {time:"10:00", label:"Schwerin"}, {time:"13:30", label:"Wismar"}, {time:"18:30", label:"Lübeck"}] },
           tags: [
-            { label: "Miniatur Wunderland", cls: "tag-focus" },
-            { label: "Speicherstadt (UNESCO)", cls: "tag-city" },
-            { label: "városnap", cls: "tag-city" }
+            { label: "Schwerin", cls: "tag-focus" },
+            { label: "tavi kastély", cls: "tag-nature" },
+            { label: "Wismar UNESCO", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:00", icon: "🚂", name: "Miniatur Wunderland — Kehrwieder 2", googleRating: "4.8", maps: "https://www.google.com/maps/search/?api=1&query=Miniatur%20Wunderland%20Hamburg", duration: "~2–3 óra", mapName: "Miniatur Wunderland", detail: "A világ legnagyobb miniatűr vasúti kiállítása (15 000+ m² pályahálózat, saját repülőtér-makett, skandináv táj, Izland). Előre jegyet venni online kötelező — hétköznapon is megtelhet. Google Reviews: ★4.8 — 'Életem legjobb múzeumi élménye.' Kb. 2,5–3 óra ajánlott. Belépő: ~€20/fő." },
-            { time: "12:00", icon: "🏭", name: "Speicherstadt — UNESCO-raktárváros", googleRating: "4.7", maps: "https://www.google.com/maps/search/?api=1&query=Speicherstadt%20Hamburg", duration: "~45–60 perc", mapName: "Speicherstadt", detail: "A világ legnagyobb összefüggő raktárváros-együttese, piros tégla, csatornák, kávé- és szőnyegraktárak 1888-tól. Ma design irodák, múzeumok, kávézók. A Miniatur Wunderland itt van, szóval a kettő egy sétán belül van. Google Reviews: ★4.7 — 'Este is varázslatos a kivilágítás.'" },
-            { time: "13:30", icon: "🍱", name: "Ebéd a HafenCity-ben", detail: "A Speicherstadt keleti meghosszabbítása a modern HafenCity negyed. Sok jó streetfood-opció, vietnami, és a Campus területeken teraszos helyek. A hamburger és a halételek természetesen kötelezők." },
-            { time: "15:00", icon: "🎵", name: "Elbphilharmonie Plaza — ingyenes kilátó!", googleRating: "4.7", maps: "https://www.google.com/maps/search/?api=1&query=Elbphilharmonie%20Hamburg", duration: "~45 perc", mapName: "Elbphilharmonie", detail: "A Herzog & de Meuron tervezte ikonikus hangversenyház tetején ingyenesen látogatható hullámosacél kilátóterasz (37. emelet). Előfoglalás kell: elbphilharmonie.de/plaza. Google Reviews: ★4.7 — 'A város legjobb ingyenes kilátója.'" },
-            { time: "16:30", icon: "⚓", name: "Landungsbrücken — kikötői séta", detail: "A hamburgi kikötői hajóállomás körzete: Fischbrötchen standok, Rickmer Rickmers múzeumhajó, az Elba panorámája. Innen a legjobb az öbölre és a kikötői daruerdőre látni." },
-            { time: "18:30", icon: "🎭", name: "Reeperbahn / St. Pauli negyed esti séta", googleRating: "4.3", maps: "https://www.google.com/maps/search/?api=1&query=Reeperbahn%20Hamburg", duration: "~45 perc", mapName: "Reeperbahn", detail: "Hamburg legismertebb negyede, Beatles-kapcsolatokkal (Indra Club, Kaiserkeller — itt játszottak 1960-ban). Nappal csendesebb, este karakteres. Vacsorára jó a Schiffergesellschaft (1535 óta halétterem) vagy a kikötői Fischerhaus." },
-            { time: "20:00", icon: "🍽", name: "Vacsora — utolsó hamburgi este", detail: "Alt Hamburger Aalspeicher (angolna ételek, hagyományos), Fischerhaus (halételek a kikötőnél), vagy a HafenCity bármely teraszos helye." }
+            { time: "09:00", icon: "🚗", name: "Indulás Lübeckből Schwerin felé (~70 km, ~1 óra)", detail: "Rövid autóút délkeletre, Mecklenburg síkságán át. Schwerin Mecklenburg-Vorpommern tartomány fővárosa, tavak gyűrűjében." },
+            { time: "10:00", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Schweriner%20Schloss' target='_blank' rel='noreferrer'>Schweriner Schloss</a> (★4.6) — a „balti Neuschwanstein\"", duration: "~1,5–2 óra", mapName: "Schweriner Schloss", detail: "Neoreneszánsz mesekastély egy tóval körülvett szigeten (2024 óta UNESCO-világörökség) — kívülről tündérmese, belül historikus termek és a tartományi parlament. Belépő ~8,50 €, nyit 10:00. Legszebb szög a tó felőli homlokzat; a kastélykert és az Alter Garten tér is bejárható." },
+            { time: "12:00", icon: "🚶", name: "Schwerin — óváros + tópart", duration: "~1 óra", mapName: "Schwerin óváros", detail: "A kastélytól az Alter Gartenon át a kis óvárosba: dóm (torony-kilátó), piactér, tóparti séta. Kávé/ebéd a vízparton." },
+            { time: "13:30", icon: "⚓", name: "(Opció) <a href='https://www.google.com/maps/search/?api=1&query=Wismar+Germany' target='_blank' rel='noreferrer'>Wismar</a> (★4.6) — UNESCO hanzaváros", duration: "~2 óra", mapName: "Wismar", detail: "~35 perc Schwerintől északra: a Stralsunddal közös UNESCO-hanzaváros — hatalmas piactér, tégla-gótikus templomok, régi kikötő (a Nosferatu-film egyik helyszíne). Ha marad energia, remek kiegészítés; ha nem, Schwerin után nyugodtan vissza Lübeckbe." },
+            { time: "17:30", icon: "🚗", name: "Vissza Lübeckbe (~60–70 km)", detail: "Az A20/A1 autópályán vissza a lübecki bázisra. Útközben a mecklenburgi táj." },
+            { time: "18:30", icon: "🍽", name: "Vacsora Lübeckben", detail: "Utolsó lübecki este az óvárosban — hagyományos észak-német konyha vagy a Trave-parti éttermek egyike. Holnap korai indulás Frankfurt felé." }
           ],
-          notes: ["Miniatur Wunderland KÖTELEZŐ előfoglalás online: miniatur-wunderland.de — hétköznapon is megtelhet, péntek különösen forgalmas.", "Elbphilharmonie Plaza: szintén ingyenes de előfoglalós — elbphilharmonie.de/plaza, akár egy héttel előre érdemes lefoglalni.", "Hamburg HVV 1 napos bérlet: ~€8.50 — U-Bahn + S-Bahn + busz, a legtöbb helyszín elérhető.", "A Fischmarkt (halak, gyümölcs, retró hangulat) csak szombaton-vasárnap 05:00–09:30 tart — pénteken ez kiesik, de a Landungsbrücken-i Fischbrötchen standok egész héten nyitva vannak."]
+          notes: ["Schwerin a lezárt kívánság — a tavi mesekastély a környék fő látványossága, kihagyhatatlan.", "Wismar opcionális: ha csak Schwerinre fókuszáltok, a nap kényelmesebb és több idő jut a tópartra.", "Ha a természet a fő szempont, Wismar helyett a Holstein Switzerland tóvidék / Ratzeburg is szép délutáni alternatíva Lübeckhez közel.", "⏰ Holnap HAJNALI indulás (~06:00) Frankfurt felé (~540 km), hogy ~12:00-ra ott legyünk Lilláékhoz — ma este pakoljatok be és tankoljatok."]
         },
         {
           num: "10",
           date: "2026. augusztus 5., szerda",
-          title: "Hamburg → Frankfurt — Lilla + barát felvétele, pihenőnap",
-          subtitle: "~490 km A7/A5 via Hannover; délutáni érkezés, Lilla és barátja felvétele, kötetlen pihenő — nincs városnézés",
-          driveLog: { km: "~490 km", stops: 2, driveTime: "~4,5 óra", depart: "09:00", arrive: "~14:30 Frankfurt", timelinePoints: [{time:"09:00", label:"Hamburg ind."}, {time:"11:00", label:"Hannover"}, {time:"14:30", label:"Frankfurt"}, {time:"16:00", label:"Lilla + barát"}, {time:"19:00", label:"közös vacsora"}] },
+          title: "Lübeck → Frankfurt — Lilla + barát felvétele, pihenőnap",
+          subtitle: "Hajnali indulás, ~540 km A1/A7 via Hamburg–Hannover; ~12:00 érkezés, Lilla és barátja felvétele, kötetlen pihenő — nincs városnézés",
+          driveLog: { km: "~540 km", stops: 2, driveTime: "~5,5 óra", depart: "06:00", arrive: "~12:00 Frankfurt", timelinePoints: [{time:"06:00", label:"Lübeck ind."}, {time:"07:00", label:"Hamburg (dugó előtt)"}, {time:"09:30", label:"Hannover"}, {time:"12:00", label:"Frankfurt"}, {time:"13:00", label:"Lilla + barát"}] },
           tags: [
-            { label: "~490 km", cls: "tag-drive" },
-            { label: "Lilla + barát", cls: "tag-focus" },
-            { label: "pihenőnap", cls: "tag-city" }
+            { label: "~540 km", cls: "tag-drive" },
+            { label: "hajnali start", cls: "tag-focus" },
+            { label: "Lilla + barát", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:00", icon: "🚗", name: "Indulás Hamburgból — A7 dél felé", detail: "Hamburg → Hannover ~160 km (~1,5h). Az A7 egyenes, jó autópálya, nincs útdíj — Hannoverig az első tankolást meg lehet csinálni." },
-            { time: "11:00", icon: "⛽", name: "Hannover-tájék — pihenő, tankolás", detail: "Hannover kb. félúton van. Gyors kávé + WC-megálló. Észak-Németországban általában versenyképesebb a V-Power ár mint Frankfurt körül." },
-            { time: "14:30", icon: "🏨", name: "Frankfurt — szállás + berendezkedés", detail: "Bejelentkezés, autó leparkolása. Ma nem városnézés a cél, hanem a nyugodt átállás a francia etapra — érdemes parkolós, kényelmes szállást választani, ahonnan Lilláékat is könnyű felvenni." },
-            { time: "16:00", icon: "🤝", name: "Lilla és a barátja felvétele", detail: "Ma csatlakozik <strong>Lilla és a barátja</strong> — innentől öten megyünk tovább. Egyeztetett találkozópont (pl. a szállás vagy a főpályaudvar, Frankfurt Hbf), csomagok bepakolása, közös nekifutás a holnapi hosszú franciaországi napnak." },
-            { time: "19:00", icon: "🍽", name: "Közös, kötetlen vacsora + korai pihenő", detail: "Egy laza közös vacsora a csapattal (ki-ki ízlése szerint — nem kell nagy program), aztán korai fekvés. ⏰ Holnap <strong>hajnali indulás</strong> Carcassonne felé (~1130 km), úgyhogy ma este már érdemes összepakolni és tankolni." }
+            { time: "06:00", icon: "🚗", name: "Hajnali indulás Lübeckből — A1 Hamburg felé", detail: "Korai start, hogy ~12:00-ra Frankfurtban legyünk. A1-en Hamburgig ~1 óra — 07:00 körül a hamburgi elkerülőn (A7/Elbtunnel) még ELŐTTE vagyunk a reggeli dugónak, ezért is jó a hajnali indulás." },
+            { time: "09:30", icon: "⛽", name: "Hannover-tájék — pihenő, tankolás", detail: "Hannover nagyjából félúton. Gyors kávé + WC + tankolás (a GLC-hez V-Power / Ultimate). Innen az A7 tovább dél, Kassel felé." },
+            { time: "12:00", icon: "🏨", name: "Frankfurt — érkezés ~12:00, szállás", detail: "Napközbeni érkezés (ha az A7-en Kassel/Hannover körül nincs útépítés). Bejelentkezés, autó leparkolása. Ma nem városnézés a cél, hanem nyugodt átállás a francia etapra — parkolós, kényelmes szállás a jó." },
+            { time: "13:00", icon: "🤝", name: "Lilla és a barátja felvétele", detail: "Napközben csatlakozik <strong>Lilla és a barátja</strong> — innentől öten megyünk tovább. Egyeztetett találkozópont (szállás vagy Frankfurt Hbf), csomagok bepakolása, közös délután/pihenő." },
+            { time: "19:00", icon: "🍽", name: "Közös, kötetlen vacsora + korai pihenő", detail: "Laza közös vacsora a csapattal (nem kell nagy program), majd korai fekvés. ⏰ Holnap <strong>hajnali indulás</strong> Carcassonne felé (~1130 km) — ma este pakolás és tankolás." }
           ],
-          notes: ["Ma szándékosan NINCS városnézés — pihenő- és találkozónap Lilláékkal a hosszú francia etap előtt.", "A7 Hamburg → Kassel → Frankfurt: egyenes, útdíjmentes útvonal, jó 2×3 sávos autópálya végig.", "Frankfurti szállás: parkolós, könnyen megközelíthető hely a legjobb — innen kell holnap hajnalban indulni. A csapat innen már 5 fő.", "Holnap ~1130 km Carcassonne-ig — ma este tankolás + pakolás, hajnali start (~05:00–06:00)."]
+          notes: ["Ma szándékosan NINCS városnézés — pihenő- és találkozónap Lilláékkal a hosszú francia etap előtt.", "Ha fix ~12:00-ra kell Frankfurt: 06:00-s indulás Lübeckből + 1 rövid szünet. A hajnali start kikerüli a hamburgi reggeli dugót (A7 Elbtunnel).", "Ha belefér egy megálló és nem gond a 13:30–14:00 érkezés: útba esik <strong>Lüneburg</strong> (gyönyörű sószász óváros, ~1 óra Lübecktől) — de a fix déli érkezéshez ezt ki kell hagyni.", "Holnap ~1130 km Carcassonne-ig — ma este tankolás + pakolás, hajnali start."]
         },
         {
           num: "11",
@@ -3101,9 +3102,9 @@ const tripData = {
           },
           {
             icon: "🏨",
-            label: "Szállás · 11 éjszaka (2 fő)",
-            value: "~1 560 EUR",
-            detail: "Stockholm 3 éj: ~3 × 145 = 435 EUR · Koppenhága 3 éj: ~3 × 160 = 480 EUR · Hamburg 3 éj: ~3 × 130 = 390 EUR · Frankfurt 2 éj: ~2 × 125 = 250 EUR · Booking.com előfoglalás; Stockholm és Koppenhága a legdrágább szakasz"
+            label: "Szállás · 10 éjszaka (2 fő)",
+            value: "~1 380 EUR",
+            detail: "Stockholm 3 éj: ~3 × 145 = 435 EUR · Värnamo 1 éj (útközben): ~110 EUR · Koppenhága 2 éj: ~2 × 160 = 320 EUR · Lübeck 3 éj: ~3 × 130 = 390 EUR · Frankfurt 1 éj: ~125 EUR · Booking.com előfoglalás; Stockholm és Koppenhága a legdrágább szakasz. (Carcassonne aug. 6. + Le Boat külön.)"
           },
           {
             icon: "🌉",
@@ -3174,7 +3175,7 @@ const tripData = {
       items: [
         "A két komp konkrét foglalása és kabinja július 17-re.",
         "A július 21-i északi napon a Húsavík bálnales vagy a hosszabb Mývatn-blokk legyen-e a fő verzió.",
-        "A stockholmi, koppenhágai, hamburgi és frankfurti szállások konkrét foglalási sorrendje a hosszabb hazaúti ívre."
+        "A stockholmi, värnamói, koppenhágai, lübecki és frankfurti szállások konkrét foglalási sorrendje a hosszabb európai ívre. ⚠️ Carcassonne (aug. 6.) még foglalásra vár."
       ]
     }
   ],
