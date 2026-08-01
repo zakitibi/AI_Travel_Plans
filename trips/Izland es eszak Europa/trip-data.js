@@ -438,7 +438,7 @@ const tripData = {
         phase: "Közös hazaút",
         accent: "accent-return",
         title: "Koppenhága → Fyn (Odense + Egeskov) → Lübeck",
-        summary: "Nem komp, hanem körbe autóval Dánián át: Storebælt-híd, Odense (H. C. Andersen), Egeskov-kastély, estére Lübeck (3 éj).",
+        summary: "Nem komp, hanem körbe autóval Dánián át: Storebælt-híd, Odense (H. C. Andersen), Egeskov-kastély, estére Lübeck (2 éj).",
         points: ["Egeskov-kastély (★4.6)", "Odense", "~480 km → Lübeck"],
         driveStats: { km: "~480 km", stops: 4, depart: "09:00", arrive: "~18:30 Lübeck", driveTime: "~5 óra", timelinePoints: [{time:"10:15", label:"Storebælt-híd"}, {time:"10:45", label:"Odense"}, {time:"13:00", label:"Egeskov"}, {time:"18:30", label:"Lübeck"}] }
       },
@@ -455,19 +455,19 @@ const tripData = {
         date: "2026.08.04",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Schwerin-kastély (+ Wismar)",
-        summary: "Egynapos kör Lübeckből: Schweriner Schloss, a tavon álló mesekastély (UNESCO), és opcionálisan Wismar UNESCO-hanzavárosa.",
-        points: ["Schweriner Schloss (★4.6)", "tavi mesekastély", "Wismar (opció)"],
-        driveStats: { km: "~200 km (körút)", stops: 3, depart: "09:00", arrive: "~18:30 Lübeck", driveTime: "~2,5 óra", timelinePoints: [{time:"10:00", label:"Schwerin"}, {time:"13:30", label:"Wismar"}, {time:"18:30", label:"Lübeck"}] }
+        title: "Lübeck → Schwerin-kastély → Goslar (éj)",
+        summary: "Kicsekkolás Lübeckből, Schweriner Schloss (a tavon álló UNESCO-mesekastély), majd tovább dél — éj a Harz-hegység UNESCO-városában, Goslarban. Így az aug. 5-i Frankfurt-etap rövid marad (nincs hajnali hajtás).",
+        points: ["Schweriner Schloss (★4.6)", "tovább dél", "Goslar éj (UNESCO)"],
+        driveStats: { km: "~350 km", stops: 3, depart: "09:00", arrive: "~18:00 Goslar", driveTime: "~4 óra", timelinePoints: [{time:"09:00", label:"Lübeck kicsekk."}, {time:"10:00", label:"Schwerin"}, {time:"18:00", label:"Goslar 🏨"}] }
       },
       {
         date: "2026.08.05",
         phase: "Közös hazaút",
         accent: "accent-return",
-        title: "Lübeck → Frankfurt — Lilla + barát felvétele",
-        summary: "Hajnali indulás, ~540 km (A1/A7) via Hamburg–Hannover. ~12:00 érkezés Frankfurtba, Lilla és barátja felvétele, kötetlen pihenőnap — nincs városnézés. Innentől 5 fő.",
-        points: ["~540 km", "hajnali start", "Lilla + barát"],
-        driveStats: { km: "~540 km", stops: 2, depart: "06:00", arrive: "~12:00 Frankfurt", driveTime: "~5,5 óra", timelinePoints: [{time:"06:00", label:"Lübeck ind."}, {time:"09:30", label:"Hannover"}, {time:"12:00", label:"Frankfurt"}, {time:"13:00", label:"Lilla + barát"}] }
+        title: "Goslar → Frankfurt — Lilla + barát felvétele",
+        summary: "Laza ~290 km az A7-en (Kassel), ~12:00 érkezés Frankfurtba, Lilla és barátja felvétele, kötetlen pihenőnap — nincs városnézés. Innentől 5 fő.",
+        points: ["~290 km", "laza reggel", "Lilla + barát"],
+        driveStats: { km: "~290 km", stops: 2, depart: "08:30", arrive: "~12:00 Frankfurt", driveTime: "~3 óra", timelinePoints: [{time:"08:30", label:"Goslar ind."}, {time:"10:00", label:"Kassel"}, {time:"12:00", label:"Frankfurt"}, {time:"13:00", label:"Lilla + barát"}] }
       },
       {
         date: "2026.08.06",
@@ -542,7 +542,7 @@ const tripData = {
       "⏰ KÉT FIX KOMP-IDŐPONT (kapuzárás!): ① júl. 16. Tallink Megastar Tallinn → Helsinki, indulás 10:30 — járművel legkésőbb 09:30 a D-Terminálon (check-in zár 10:00). ② júl. 17. Finnlines Naantali → Kapellskär, indulás 22:45 — check-in zár 21:45 (járművel 21:00–21:15-re ott lenni). Mindkettő foglalva (Tallink 75157795; Finnlines F260126521).",
       "Új ritmus: Vilnius már csak 1 éj (júl. 11.), a felszabaduló nap Helsinkibe kerül. Júl. 16. reggel Tallink Shuttle Tallinnból Helsinkibe (10:30 → 12:30), helsinki városnap + ELSŐ finn éjszaka. Júl. 17. reggel 08:30-kor indulás: Porvoo óváros → Turku (Luostarinmäki) → Naantali, majd a FOGLALT Finnlines overnight komp Naantaliból Kapellskärbe (22:45 → júl. 18. 06:30, autóval, belső kabin, kód F260126521). Kapellskär ~75 km-re van Arlandától — bőven elég puffer az FI309 elé.",
       "Henni W62427 járata 2026. július 11. 15:40 → 18:20 (Erasmus+ kurzus: júl. 13–18., Smart Teachers Play More), Tibi FI309 pedig 2026. július 18. 17:10 → 18:25 helyi idővel szerepel.",
-      "Az európai út (3 részben) a következő struktúrát követi: ① 3 éj Stockholm (júl. 27–29.), majd júl. 30. Drottningholm + linköpingi repülőmúzeum + nässjői ismerős → éj Värnamóban; júl. 31. Lund + Öresund-híd (világosban) → 2 éj Koppenhága (júl. 31 – aug. 1.) a fő látnivalókkal; aug. 2. NEM komppal, hanem körbe autóval Dánián át (Storebælt-híd, Odense, Egeskov) → 3 éj Lübeck (aug. 2–4.: óváros + Travemünde + Schwerin-kastély); aug. 5. hajnalban Lübeck → Frankfurt (~12:00, Lilla + barát felvétele, pihenőnap); aug. 6. hajnalban ~1130 km Carcassonne-ba (szállás: ibis budget La Cité, foglalva). ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14., Vision 4 #19656942, Trèbes → Homps). ③ Hazaút: aug. 14. hajóleadás (Homps, 9:00) → 1 éj Észak-Olaszo. → aug. 15. Budapest. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át; az arlandai parkolás +1 nappal, júl. 27-ig meghosszabbítva — elintézve.)"
+      "Az európai út (3 részben) a következő struktúrát követi: ① 3 éj Stockholm (júl. 27–29.), majd júl. 30. Drottningholm + linköpingi repülőmúzeum + nässjői ismerős → éj Värnamóban; júl. 31. Lund + Öresund-híd (világosban) → 2 éj Koppenhága (júl. 31 – aug. 1.) a fő látnivalókkal; aug. 2. NEM komppal, hanem körbe autóval Dánián át (Storebælt-híd, Odense, Egeskov) → 2 éj Lübeck (aug. 2–3.: óváros + Travemünde) + aug. 4. Schwerin-kastély, majd tovább dél, éj Goslarban (Harz, UNESCO); aug. 5. laza ~290 km Goslar → Frankfurt (~12:00, Lilla + barát felvétele, pihenőnap); aug. 6. hajnalban ~1130 km Carcassonne-ba (szállás: ibis budget La Cité, foglalva). ② Le Boat hajós hét a Canal du Midi-n (aug. 7–14., Vision 4 #19656942, Trèbes → Homps). ③ Hazaút: aug. 14. hajóleadás (Homps, 9:00) → 1 éj Észak-Olaszo. → aug. 15. Budapest. (Az Icelandair a FI306-ot júl. 26-ról júl. 27-re tette át; az arlandai parkolás +1 nappal, júl. 27-ig meghosszabbítva — elintézve.)"
     ],
     countrySummaries: [
       {
@@ -652,7 +652,7 @@ const tripData = {
       accent: "accent-return",
       status: "júl. 27 – aug. 15. · közös szakasz",
       statusClass: "status-cool",
-      text: "Az út második fele három részből áll. ① EURÓPA: a FI306 (júl. 27.) Keflavíkból Stockholm Arlandára hoz (07:35 → 12:45), ahol az autó a parkolóban vár. Három stockholmi nap (Gamla Stan, Vasa Museum, archipelago Vaxholm/Grinda), majd júl. 30. Drottningholm + linköpingi repülőmúzeum + nässjői ismerős → éj Värnamóban; júl. 31. Lund + Öresund-híd (világosban) → két koppenhágai nap a fő látnivalókkal (Nyhavn, Tivoli, Rosenborg, Kis Hableány, Christiansborg, csatornás hajótúra, Christiania). Aug. 2. NEM komppal, hanem körbe autóval Dánián át (Storebælt-híd, Odense/H. C. Andersen, Egeskov-kastély) → Lübeck. Három lübecki éj: az UNESCO-óváros + marcipán, a balti Travemünde strand, és a tavon álló Schwerin-kastély (Wismar opció). Aug. 5-én hajnalban Lübeck → Frankfurt (~12:00), felvesszük Lillát és a barátját, kötetlen pihenőnap (nincs városnézés). Aug. 6-án hajnalban ~1130 km-re Carcassonne-ba (Dél-Franciaország), estére érkezés. ② LE BOAT (aug. 7–14.): egyhetes lakóhajós nyaralás a Canal du Midi-n — Vision 4, a carcassonne-i (Trèbes) bázisról, Homps-ban leadva; zsilipek, borvidéki falvak, Minerve és Le Somail kitérők. ③ HAZAÚT (aug. 14–15.): a hajó leadása után (Homps, 9:00) a francia Riviérán és Genován át 1 éj Észak-Olaszországban, majd Ljubljana–Zagreb érintésével Budapestre.",
+      text: "Az út második fele három részből áll. ① EURÓPA: a FI306 (júl. 27.) Keflavíkból Stockholm Arlandára hoz (07:35 → 12:45), ahol az autó a parkolóban vár. Három stockholmi nap (Gamla Stan, Vasa Museum, archipelago Vaxholm/Grinda), majd júl. 30. Drottningholm + linköpingi repülőmúzeum + nässjői ismerős → éj Värnamóban; júl. 31. Lund + Öresund-híd (világosban) → két koppenhágai nap a fő látnivalókkal (Nyhavn, Tivoli, Rosenborg, Kis Hableány, Christiansborg, csatornás hajótúra, Christiania). Aug. 2. NEM komppal, hanem körbe autóval Dánián át (Storebælt-híd, Odense/H. C. Andersen, Egeskov-kastély) → Lübeck. Két lübecki éj (UNESCO-óváros + marcipán + a balti Travemünde strand), majd aug. 4-én a tavon álló Schwerin-kastély után tovább dél, éj Goslarban (Harz, UNESCO) — így az aug. 5-i Frankfurt-etap rövid, laza ~3 óra. Aug. 5-én Goslar → Frankfurt (~12:00), felvesszük Lillát és a barátját, kötetlen pihenőnap (nincs városnézés). Aug. 6-án hajnalban ~1130 km-re Carcassonne-ba (Dél-Franciaország), estére érkezés. ② LE BOAT (aug. 7–14.): egyhetes lakóhajós nyaralás a Canal du Midi-n — Vision 4, a carcassonne-i (Trèbes) bázisról, Homps-ban leadva; zsilipek, borvidéki falvak, Minerve és Le Somail kitérők. ③ HAZAÚT (aug. 14–15.): a hajó leadása után (Homps, 9:00) a francia Riviérán és Genován át 1 éj Észak-Olaszországban, majd Ljubljana–Zagreb érintésével Budapestre.",
       points: [
         "🇸🇪 Stockholm (júl. 27–29.): <a href='https://www.google.com/maps/search/?api=1&query=Vasa+Museum+Stockholm' target='_blank' rel='noreferrer'>Vasa Museum</a> (★4.8) · <a href='https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm' target='_blank' rel='noreferrer'>Fotografiska</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Gamla+Stan+Stockholm' target='_blank' rel='noreferrer'>Gamla Stan</a> (★4.7) · <a href='https://www.google.com/maps/search/?api=1&query=Vaxholm+Fortress+Stockholm' target='_blank' rel='noreferrer'>Vaxholm</a> (★4.5)",
         "🇸🇪→🇩🇰 Malmö + Koppenhága (júl. 30. – aug. 2.): <a href='https://www.google.com/maps/search/?api=1&query=Turning+Torso+Malmo' target='_blank' rel='noreferrer'>Turning Torso</a> (★4.3) · <a href='https://www.google.com/maps/search/?api=1&query=Oresund+Bridge' target='_blank' rel='noreferrer'>Øresund Bridge</a> (★4.5) · <a href='https://www.google.com/maps/search/?api=1&query=Nyhavn+Copenhagen' target='_blank' rel='noreferrer'>Nyhavn</a> (★4.6) · <a href='https://www.google.com/maps/search/?api=1&query=Louisiana+Museum+of+Modern+Art' target='_blank' rel='noreferrer'>Louisiana Museum</a> (★4.7)",
@@ -2118,15 +2118,15 @@ const tripData = {
         { name: "Storebælt-híd", kind: "viewpoint", lat: 55.3400, lng: 11.0350, day: 7, date: "2026-08-02", detail: "A Nagy-Belt ~18 km-es függőhídja Sjælland és Fyn közt — a szárazföldi „körbe\" út élménye (díj ~250 DKK)." },
         { name: "Odense", kind: "oldtown", lat: 55.3959, lng: 10.3883, day: 7, date: "2026-08-02", detail: "Fyn fővárosa, H. C. Andersen szülővárosa: macskaköves óváros és az új Andersen-múzeum." },
         { name: "Egeskov-kastély", kind: "castle", lat: 55.1758, lng: 10.4939, day: 7, date: "2026-08-02", detail: "Európa egyik legjobban megőrzött vizesárkos reneszánsz kastélya (1554), kertekkel, veterán autó- és motormúzeummal. A nap fő élménye." },
-        { name: "Lübeck (szállás)", kind: "stay", lat: 53.8655, lng: 10.6866, day: 7, date: "2026-08-02", detail: "Három éjszaka lübecki bázis — a Balti-tenger hanza-fővárosa, UNESCO-óváros. Innen Travemünde és Schwerin is elérhető." },
+        { name: "Lübeck (szállás)", kind: "stay", lat: 53.8655, lng: 10.6866, day: 7, date: "2026-08-02", detail: "Két éjszaka lübecki bázis (aug. 2–3.) — a Balti-tenger hanza-fővárosa, UNESCO-óváros. Innen Travemünde és Schwerin is elérhető. Aug. 4-én Schwerin után tovább dél (Goslar)." },
         { name: "Holstentor", kind: "castle", lat: 53.8661, lng: 10.6796, day: 8, date: "2026-08-03", detail: "Lübeck ikonikus, kéttornyos középkori városkapuja — a Hansa-város jelképe." },
         { name: "Marienkirche (Lübeck)", kind: "church", lat: 53.8687, lng: 10.6849, day: 8, date: "2026-08-03", detail: "A téglagótika (Backsteingotik) csúcspontja; a WWII-ben leomlott harangok emlékhelye megrázó." },
         { name: "European Hansemuseum", kind: "museum", lat: 53.8698, lng: 10.6889, day: 8, date: "2026-08-03", detail: "A világ legnagyobb Hanza-múzeuma — miért volt Lübeck évszázadokig a Balti-tenger kereskedelmi fővárosa." },
         { name: "Niederegger", kind: "market", lat: 53.8664, lng: 10.6856, day: 8, date: "2026-08-03", detail: "Lübeck a marcipán világi fővárosa — a Niederegger (1806) emeleti kávézója és kis múzeuma." },
         { name: "Travemünde", kind: "nature", lat: 53.9576, lng: 10.8760, day: 8, date: "2026-08-03", detail: "Lübeck balti tengeri fürdővárosa a Trave torkolatánál — homokos strand, sétány, régi világítótorony." },
         { name: "Schweriner Schloss", kind: "castle", lat: 53.6244, lng: 11.4189, day: 9, date: "2026-08-04", detail: "A tavon álló neoreneszánsz mesekastély (UNESCO) — Mecklenburg-Vorpommern parlamentje. A környék fő látványossága." },
-        { name: "Wismar", kind: "oldtown", lat: 53.8917, lng: 11.4650, day: 9, date: "2026-08-04", detail: "UNESCO-hanzaváros (Stralsunddal): hatalmas piactér, tégla-gótikus templomok, régi kikötő. Opcionális Schwerin mellé." },
-        { name: "Frankfurt (Lilla felvétel + pihenő)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Aug. 5. — hajnali indulás Lübeckből (~540 km), ~12:00 érkezés, Lilla és a barátja felvétele, kötetlen pihenőnap (nincs városnézés). 1 éj, innen már öten tovább Carcassonne felé." },
+        { name: "Goslar (szállás)", kind: "stay", lat: 51.9057, lng: 10.4295, day: 9, date: "2026-08-04", detail: "Aug. 4. éj — a Harz-hegység lábánál fekvő UNESCO-óváros: ~1500 favázas ház, Kaiserpfalz császári palota, piactéri harangjáték. Schwerin után idejövünk, hogy az aug. 5-i Frankfurt-etap rövid legyen. ⚠️ Szállás foglalásra vár." },
+        { name: "Frankfurt (Lilla felvétel + pihenő)", kind: "stay", lat: 50.1110, lng: 8.6820, day: 10, date: "2026-08-05", detail: "Aug. 5. — laza ~290 km Goslarból (A7/Kassel), ~12:00 érkezés, Lilla és a barátja felvétele, kötetlen pihenőnap (nincs városnézés). 1 éj, innen már öten tovább Carcassonne felé." },
         { name: "Carcassonne — La Cité", kind: "castle", lat: 43.2061, lng: 2.3639, day: 11, date: "2026-08-06", detail: "Európa legnagyobb megmaradt középkori erődvárosa (UNESCO), 3 km-es kettős várfallal és 52 toronnyal. Ha marad energia az esti érkezés után, gyönyörű kivilágítva." },
         { name: "ibis budget Carcassonne La Cité", kind: "stay", lat: 43.1955, lng: 2.3670, day: 11, date: "2026-08-06", detail: "Aug. 6. — hajnali indulás Frankfurtból (~1130 km), estére Carcassonne. ✅ Szállás FOGLALVA: ibis budget Carcassonne La Cité (211 Av. du Général Leclerc, 11000), foglalás QNNDHNLR — 3 szoba, reggelivel, 243,31 €. Check-in 14:00. Másnap a Le Boat bázison hajóra szállás." },
         { name: "Le Boat bázis — Trèbes", kind: "stay", lat: 43.2076, lng: 2.4433, day: 12, date: "2026-08-07", detail: "Aug. 7. — a Le Boat carcassonne-i (Trèbes) bázisa. Érkezés 15:00–17:00, eligazítás, kihajózás. Vision 4 lakóhajó, foglalás #19656942. Az autó a bázison marad (Secure Parking)." },
@@ -2296,7 +2296,7 @@ const tripData = {
               "🌲 <strong><a href='https://www.google.com/maps/search/?api=1&query=Holsteinische+Schweiz' target='_blank' rel='noreferrer'>Bad Segeberg / Holstein Switzerland</a></strong> (DE) — Lübeckhez közel, tavas-dombos táj, ha marad idő és szép az idő."
             ]
           },
-          notes: ["Komp helyett szárazföldi „körbe\" út — cserébe útba esik Fyn (Odense + Egeskov), a legszebb dán rész. ~1,5–2 órával hosszabb, mint a komp, viszont rugalmas és nincs menetrend.", "Díjak: Storebælt-híd ~250 DKK (~33 EUR); a Lillebælt-híd ingyenes; német autópálya díjmentes.", "Autó: a GLC 100 oktánt kér — az utolsó dán tankolás Flensburg előtt vagy már Németországban (V-Power / Ultimate).", "Lübeck szállás: 3 éj (aug. 2–4.), parkolós hely a jó — vagy Travemündében, ha reggelente tengerpart kell."]
+          notes: ["Komp helyett szárazföldi „körbe\" út — cserébe útba esik Fyn (Odense + Egeskov), a legszebb dán rész. ~1,5–2 órával hosszabb, mint a komp, viszont rugalmas és nincs menetrend.", "Díjak: Storebælt-híd ~250 DKK (~33 EUR); a Lillebælt-híd ingyenes; német autópálya díjmentes.", "Autó: a GLC 100 oktánt kér — az utolsó dán tankolás Flensburg előtt vagy már Németországban (V-Power / Ultimate).", "Lübeck szállás: 2 éj (aug. 2–3.), parkolós hely a jó — vagy Travemündében, ha reggelente tengerpart kell. Aug. 4-én Schwerin után tovább Goslarba (nem vissza Lübeckbe)."]
         },
         {
           num: "8",
@@ -2322,43 +2322,41 @@ const tripData = {
         {
           num: "9",
           date: "2026. augusztus 4., kedd",
-          title: "Schwerin-kastély (+ Wismar)",
-          subtitle: "Egynapos kör Lübeckből: a mesekastély a tavon, és opcionálisan Wismar UNESCO-hanzavárosa",
-          driveLog: { km: "~200 km (körút)", stops: 3, driveTime: "~2,5 óra", depart: "09:00", arrive: "~18:30 Lübeck", timelinePoints: [{time:"09:00", label:"Lübeck ind."}, {time:"10:00", label:"Schwerin"}, {time:"13:30", label:"Wismar"}, {time:"18:30", label:"Lübeck"}] },
+          title: "Lübeck → Schwerin-kastély → Goslar (éj)",
+          subtitle: "Kicsekkolás Lübeckből, Schwerin mesekastélya, majd tovább dél felé — éj a Harz-hegység UNESCO-városában, Goslarban (így az aug. 5. rövid marad)",
+          driveLog: { km: "~350 km", stops: 3, driveTime: "~4 óra", depart: "09:00", arrive: "~18:00 Goslar", timelinePoints: [{time:"09:00", label:"Lübeck kicsekk."}, {time:"10:00", label:"Schwerin"}, {time:"12:30", label:"tovább dél"}, {time:"18:00", label:"Goslar 🏨"}] },
           tags: [
+            { label: "~350 km", cls: "tag-drive" },
             { label: "Schwerin", cls: "tag-focus" },
-            { label: "tavi kastély", cls: "tag-nature" },
-            { label: "Wismar UNESCO", cls: "tag-city" }
+            { label: "Goslar éj", cls: "tag-city" }
           ],
           activities: [
-            { time: "09:00", icon: "🚗", name: "Indulás Lübeckből Schwerin felé (~70 km, ~1 óra)", detail: "Rövid autóút délkeletre, Mecklenburg síkságán át. Schwerin Mecklenburg-Vorpommern tartomány fővárosa, tavak gyűrűjében." },
-            { time: "10:00", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Schweriner%20Schloss' target='_blank' rel='noreferrer'>Schweriner Schloss</a> (★4.6) — a „balti Neuschwanstein\"", duration: "~1,5–2 óra", mapName: "Schweriner Schloss", detail: "Neoreneszánsz mesekastély egy tóval körülvett szigeten (2024 óta UNESCO-világörökség) — kívülről tündérmese, belül historikus termek és a tartományi parlament. Belépő ~8,50 €, nyit 10:00. Legszebb szög a tó felőli homlokzat; a kastélykert és az Alter Garten tér is bejárható." },
-            { time: "12:00", icon: "🚶", name: "Schwerin — óváros + tópart", duration: "~1 óra", mapName: "Schwerin óváros", detail: "A kastélytól az Alter Gartenon át a kis óvárosba: dóm (torony-kilátó), piactér, tóparti séta. Kávé/ebéd a vízparton." },
-            { time: "13:30", icon: "⚓", name: "(Opció) <a href='https://www.google.com/maps/search/?api=1&query=Wismar+Germany' target='_blank' rel='noreferrer'>Wismar</a> (★4.6) — UNESCO hanzaváros", duration: "~2 óra", mapName: "Wismar", detail: "~35 perc Schwerintől északra: a Stralsunddal közös UNESCO-hanzaváros — hatalmas piactér, tégla-gótikus templomok, régi kikötő (a Nosferatu-film egyik helyszíne). Ha marad energia, remek kiegészítés; ha nem, Schwerin után nyugodtan vissza Lübeckbe." },
-            { time: "17:30", icon: "🚗", name: "Vissza Lübeckbe (~60–70 km)", detail: "Az A20/A1 autópályán vissza a lübecki bázisra. Útközben a mecklenburgi táj." },
-            { time: "18:30", icon: "🍽", name: "Vacsora Lübeckben", detail: "Utolsó lübecki este az óvárosban — hagyományos észak-német konyha vagy a Trave-parti éttermek egyike. Holnap korai indulás Frankfurt felé." }
+            { time: "09:00", icon: "🚗", name: "Kicsekkolás Lübeckből → Schwerin (~70 km, ~1 óra)", detail: "Csomagokkal indulunk (ma már nem térünk vissza Lübeckbe). Rövid autóút délkeletre, Mecklenburg síkságán át Schwerinbe." },
+            { time: "10:00", icon: "🏰", name: "<a href='https://www.google.com/maps/search/?api=1&query=Schweriner%20Schloss' target='_blank' rel='noreferrer'>Schweriner Schloss</a> (★4.6) — a „balti Neuschwanstein\"", duration: "~1,5–2 óra", mapName: "Schweriner Schloss", detail: "Neoreneszánsz mesekastély egy tóval körülvett szigeten (2024 óta UNESCO-világörökség) — kívülről tündérmese, belül historikus termek és a tartományi parlament. Belépő ~8,50 €, nyit 10:00. Legszebb szög a tó felőli homlokzat; a kastélykert és az Alter Garten tér is bejárható. (A közeli Wismar UNESCO-hanzaváros elhagyva, hogy Goslar beférjen — de ha nagyon akarjátok, ~35 perc kitérő.)" },
+            { time: "12:30", icon: "🍽", name: "Ebéd Schwerinben + indulás dél felé", detail: "Gyors ebéd a tóparton vagy az óvárosban, majd tovább dél: A24 → Hamburg elkerülő → A7 le Hannover, Hildesheim irányába, majd Goslar (Harz)." },
+            { time: "18:00", icon: "🏨", name: "<a href='https://www.google.com/maps/search/?api=1&query=Goslar+Altstadt' target='_blank' rel='noreferrer'>Goslar</a> (★4.7) — érkezés + óváros-séta", detail: "Estére a Harz-hegység lábánál fekvő <strong>Goslar</strong>ba érünk (~280 km Schwerintől) — UNESCO-világörökség középkori óvárosa: ~1500 favázas ház, a Kaiserpfalz császári palota, a Piactér harangjátékkal. Esti séta a hangulatos, macskaköves utcákon, vacsora egy óvárosi fogadóban. ⚠️ A goslari szállás foglalásra vár (parkolós óvárosi/óvárosszéli hely a jó)." }
           ],
-          notes: ["Schwerin a lezárt kívánság — a tavi mesekastély a környék fő látványossága, kihagyhatatlan.", "Wismar opcionális: ha csak Schwerinre fókuszáltok, a nap kényelmesebb és több idő jut a tópartra.", "Ha a természet a fő szempont, Wismar helyett a Holstein Switzerland tóvidék / Ratzeburg is szép délutáni alternatíva Lübeckhez közel.", "⏰ Holnap HAJNALI indulás (~06:00) Frankfurt felé (~540 km), hogy ~12:00-ra ott legyünk Lilláékhoz — ma este pakoljatok be és tankoljatok."]
+          notes: ["Változás: nem megyünk vissza Lübeckbe aludni — Schwerin után tovább dél, hogy az aug. 5-i Frankfurt-etap rövid és laza legyen (nincs hajnali 06:00-s hajtás).", "Lübeck így 2 éj (aug. 2–3.); a 3. éj Goslarban.", "⚠️ Goslari szállás még foglalásra vár — kényelmes, parkolós hely (óváros vagy óvárosszél).", "Alternatív alvóváros, ha inkább azt szeretnétek: Celle (favázas), Hildesheim (UNESCO) vagy Hannover (praktikus). Holnap innen már csak ~3 óra Frankfurt."]
         },
         {
           num: "10",
           date: "2026. augusztus 5., szerda",
-          title: "Lübeck → Frankfurt — Lilla + barát felvétele, pihenőnap",
-          subtitle: "Hajnali indulás, ~540 km A1/A7 via Hamburg–Hannover; ~12:00 érkezés, Lilla és barátja felvétele, kötetlen pihenő — nincs városnézés",
-          driveLog: { km: "~540 km", stops: 2, driveTime: "~5,5 óra", depart: "06:00", arrive: "~12:00 Frankfurt", timelinePoints: [{time:"06:00", label:"Lübeck ind."}, {time:"07:00", label:"Hamburg (dugó előtt)"}, {time:"09:30", label:"Hannover"}, {time:"12:00", label:"Frankfurt"}, {time:"13:00", label:"Lilla + barát"}] },
+          title: "Goslar → Frankfurt — Lilla + barát felvétele, pihenőnap",
+          subtitle: "Laza ~290 km az A7-en (Kassel), ~12:00 érkezés, Lilla és barátja felvétele, kötetlen pihenő — nincs városnézés",
+          driveLog: { km: "~290 km", stops: 2, driveTime: "~3 óra", depart: "08:30", arrive: "~12:00 Frankfurt", timelinePoints: [{time:"08:30", label:"Goslar ind."}, {time:"10:00", label:"Kassel"}, {time:"12:00", label:"Frankfurt"}, {time:"13:00", label:"Lilla + barát"}] },
           tags: [
-            { label: "~540 km", cls: "tag-drive" },
-            { label: "hajnali start", cls: "tag-focus" },
+            { label: "~290 km", cls: "tag-drive" },
+            { label: "laza reggel", cls: "tag-focus" },
             { label: "Lilla + barát", cls: "tag-city" }
           ],
           activities: [
-            { time: "06:00", icon: "🚗", name: "Hajnali indulás Lübeckből — A1 Hamburg felé", detail: "Korai start, hogy ~12:00-ra Frankfurtban legyünk. A1-en Hamburgig ~1 óra — 07:00 körül a hamburgi elkerülőn (A7/Elbtunnel) még ELŐTTE vagyunk a reggeli dugónak, ezért is jó a hajnali indulás." },
-            { time: "09:30", icon: "⛽", name: "Hannover-tájék — pihenő, tankolás", detail: "Hannover nagyjából félúton. Gyors kávé + WC + tankolás (a GLC-hez V-Power / Ultimate). Innen az A7 tovább dél, Kassel felé." },
-            { time: "12:00", icon: "🏨", name: "Frankfurt — érkezés ~12:00, szállás", detail: "Napközbeni érkezés (ha az A7-en Kassel/Hannover körül nincs útépítés). Bejelentkezés, autó leparkolása. Ma nem városnézés a cél, hanem nyugodt átállás a francia etapra — parkolós, kényelmes szállás a jó." },
+            { time: "08:30", icon: "🚗", name: "Nyugodt indulás Goslarból — A7 dél felé", detail: "A tegnapi „előrehozott\" távnak hála ma nincs hajnali hajtás: reggeli után ~08:30 indulás bőven elég. Goslar → Seesen → A7 le Kassel felé." },
+            { time: "10:00", icon: "⛽", name: "Kassel-tájék — pihenő, tankolás", detail: "Kassel nagyjából félúton. Gyors kávé + WC + tankolás (a GLC-hez V-Power / Ultimate). Innen az A7/A5 tovább Frankfurtba." },
+            { time: "12:00", icon: "🏨", name: "Frankfurt — érkezés ~12:00, szállás", detail: "Napközbeni, kényelmes érkezés. Bejelentkezés, autó leparkolása. Ma nem városnézés a cél, hanem nyugodt átállás a francia etapra — parkolós, kényelmes szállás a jó." },
             { time: "13:00", icon: "🤝", name: "Lilla és a barátja felvétele", detail: "Napközben csatlakozik <strong>Lilla és a barátja</strong> — innentől öten megyünk tovább. Egyeztetett találkozópont (szállás vagy Frankfurt Hbf), csomagok bepakolása, közös délután/pihenő." },
             { time: "19:00", icon: "🍽", name: "Közös, kötetlen vacsora + korai pihenő", detail: "Laza közös vacsora a csapattal (nem kell nagy program), majd korai fekvés. ⏰ Holnap <strong>hajnali indulás</strong> Carcassonne felé (~1130 km) — ma este pakolás és tankolás." }
           ],
-          notes: ["Ma szándékosan NINCS városnézés — pihenő- és találkozónap Lilláékkal a hosszú francia etap előtt.", "Ha fix ~12:00-ra kell Frankfurt: 06:00-s indulás Lübeckből + 1 rövid szünet. A hajnali start kikerüli a hamburgi reggeli dugót (A7 Elbtunnel).", "Ha belefér egy megálló és nem gond a 13:30–14:00 érkezés: útba esik <strong>Lüneburg</strong> (gyönyörű sószász óváros, ~1 óra Lübecktől) — de a fix déli érkezéshez ezt ki kell hagyni.", "Holnap ~1130 km Carcassonne-ig — ma este tankolás + pakolás, hajnali start."]
+          notes: ["A tegnapi Goslarig előrehozott táv miatt ma NINCS hajnali hajtás — laza ~3 órás gurulás, és ~12:00-ra ott vagytok Lilláékhoz.", "Ma szándékosan NINCS városnézés — pihenő- és találkozónap a hosszú francia etap előtt.", "Ha reggel marad idő, egy rövid Goslar-séta indulás előtt is belefér (az óváros és a Kaiserpfalz).", "Holnap ~1130 km Carcassonne-ig — ma este tankolás + pakolás, hajnali start."]
         },
         {
           num: "11",
@@ -3115,8 +3113,8 @@ const tripData = {
           {
             icon: "🏨",
             label: "Szállás · 10 éjszaka (2 fő)",
-            value: "~1 380 EUR",
-            detail: "Stockholm 3 éj: ~3 × 145 = 435 EUR · Värnamo 1 éj (útközben): ~110 EUR · Koppenhága 2 éj: ~2 × 160 = 320 EUR · Lübeck 3 éj: ~3 × 130 = 390 EUR · Frankfurt 1 éj: ~125 EUR · Booking.com előfoglalás; Stockholm és Koppenhága a legdrágább szakasz. (Carcassonne aug. 6. + Le Boat külön.)"
+            value: "~1 360 EUR",
+            detail: "Stockholm 3 éj: ~3 × 145 = 435 EUR · Värnamo 1 éj: ~110 EUR · Koppenhága 2 éj: ~2 × 160 = 320 EUR · Lübeck 2 éj: ~2 × 130 = 260 EUR · Goslar 1 éj: ~110 EUR · Frankfurt 1 éj: ~125 EUR · Booking.com előfoglalás; Stockholm és Koppenhága a legdrágább szakasz. (Carcassonne aug. 6. foglalva 243 €/csoport + Le Boat külön.)"
           },
           {
             icon: "🌉",
@@ -3187,7 +3185,7 @@ const tripData = {
       items: [
         "A két komp konkrét foglalása és kabinja július 17-re.",
         "A július 21-i északi napon a Húsavík bálnales vagy a hosszabb Mývatn-blokk legyen-e a fő verzió.",
-        "A stockholmi, värnamói, koppenhágai, lübecki, frankfurti és carcassonne-i szállások konkrét foglalási sorrendje a hosszabb európai ívre. ✅ Carcassonne (aug. 6.): ibis budget La Cité, foglalva (QNNDHNLR)."
+        "A stockholmi, värnamói, koppenhágai, lübecki (2 éj), goslari, frankfurti és carcassonne-i szállások konkrét foglalási sorrendje a hosszabb európai ívre. ✅ Carcassonne (aug. 6.): ibis budget La Cité, foglalva (QNNDHNLR). ⚠️ Lübeck és Goslar még foglalásra vár."
       ]
     }
   ],
