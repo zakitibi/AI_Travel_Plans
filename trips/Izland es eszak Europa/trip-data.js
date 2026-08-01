@@ -2284,6 +2284,18 @@ const tripData = {
             { time: "15:30", icon: "🚗", name: "Egeskov → Lillebælt-híd → Flensburg → Lübeck", detail: "Tovább dél: a Lillebælt-hídon Jyllandra (Jutland), majd az E45 le a német határig (Flensburg), onnan A7/A1 Lübeck felé. ~290 km, ~3 óra." },
             { time: "18:30", icon: "🏨", name: "Lübeck — érkezés, szállás + esti óváros-séta", detail: "Estére Lübeckben, a Balti-tenger hanza-fővárosában. Bejelentkezés, majd egy első séta az UNESCO-óvárosban (Holstentor kivilágítva), laza vacsora. Holnap a részletes Lübeck-nap + Travemünde." }
           ],
+          altBox: {
+            title: "🛣️ Alternatív megállók útközben (Egeskov → Lübeck)",
+            intro: "Ha van idő és kedv, ezek útba esnek a szárazföldi úton — nem kötelezők, döntsétek el menet közben. Egy teljes Haithabu-látogatással ~20:00-ra érnétek Lübeckbe.",
+            items: [
+              "🏰 <strong><a href='https://www.google.com/maps/search/?api=1&query=Koldinghus' target='_blank' rel='noreferrer'>Koldinghus</a></strong> (Kolding, DK) — középkori királyi vár/múzeum közvetlenül a Lillebælt-híd után. Gyors (~30 perc) megálló.",
+              "🍯 <strong><a href='https://www.google.com/maps/search/?api=1&query=Christiansfeld+Denmark' target='_blank' rel='noreferrer'>Christiansfeld</a></strong> (DK) — UNESCO herrnhuti testvérgyülekezeti kisváros az E45 mellett, híres mézeskaláccsal. Jó kávé-/nasi-stop.",
+              "⚓ <strong><a href='https://www.google.com/maps/search/?api=1&query=Flensburg' target='_blank' rel='noreferrer'>Flensburg</a></strong> (DE, határ) — bájos kikötőváros, skandináv hangulat, rumtörténet. Jó ebédmegálló.",
+              "🛡️ <strong><a href='https://www.google.com/maps/search/?api=1&query=Haithabu+Wikinger+Museum' target='_blank' rel='noreferrer'>Haithabu (Hedeby)</a></strong> + <strong><a href='https://www.google.com/maps/search/?api=1&query=Schloss+Gottorf+Schleswig' target='_blank' rel='noreferrer'>Schloss Gottorf</a></strong> (Schleswig, DE) ⭐ — a legjobb tipp: UNESCO viking kereskedőváros rekonstruált hosszúházakkal + a Gottorf-kastély nagy múzeuma. Pont az A7-en, ~45 perccel a határ után. ~1–1,5 óra.",
+              "🌉 <strong><a href='https://www.google.com/maps/search/?api=1&query=Rendsburg+Eisenbahnhochbr%C3%BCcke' target='_blank' rel='noreferrer'>Rendsburg</a></strong> (DE) — a Kiel-csatorna látványos magasvasúti hídja, útba esik.",
+              "🌲 <strong><a href='https://www.google.com/maps/search/?api=1&query=Holsteinische+Schweiz' target='_blank' rel='noreferrer'>Bad Segeberg / Holstein Switzerland</a></strong> (DE) — Lübeckhez közel, tavas-dombos táj, ha marad idő és szép az idő."
+            ]
+          },
           notes: ["Komp helyett szárazföldi „körbe\" út — cserébe útba esik Fyn (Odense + Egeskov), a legszebb dán rész. ~1,5–2 órával hosszabb, mint a komp, viszont rugalmas és nincs menetrend.", "Díjak: Storebælt-híd ~250 DKK (~33 EUR); a Lillebælt-híd ingyenes; német autópálya díjmentes.", "Autó: a GLC 100 oktánt kér — az utolsó dán tankolás Flensburg előtt vagy már Németországban (V-Power / Ultimate).", "Lübeck szállás: 3 éj (aug. 2–4.), parkolós hely a jó — vagy Travemündében, ha reggelente tengerpart kell."]
         },
         {

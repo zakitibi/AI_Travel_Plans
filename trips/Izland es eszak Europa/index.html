@@ -645,6 +645,15 @@
                 `).join("")}
               </div>
             </div>`)}
+            ${day.altBox ? `
+              <aside class="tip-box alt-box">
+                <strong>${day.altBox.title}</strong>
+                ${day.altBox.intro ? `<p class="alt-box-intro">${day.altBox.intro}</p>` : ""}
+                <ul class="plain-list compact">
+                  ${day.altBox.items.map((it) => `<li>${it}</li>`).join("")}
+                </ul>
+              </aside>
+            ` : ""}
             ${day.notes && day.notes.length ? `
               <aside class="tip-box day-focus-box day-focus-horizontal">
                 <strong>Napi fókusz</strong>
