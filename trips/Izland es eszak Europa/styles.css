@@ -437,6 +437,18 @@ a {
 .hero-refresh:disabled { opacity: 0.75; cursor: progress; }
 .hero-refresh.is-spinning { animation: hero-refresh-spin 0.8s linear infinite; }
 @keyframes hero-refresh-spin { to { transform: rotate(360deg); } }
+/* „Új tartalom elérhető" jelzés — sárga pötty a fejléc-ikonon (nincs auto-reload) */
+.hero-refresh.has-update::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ffcc33;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.28);
+}
 
 /* Alternatív megállók doboza a nap-kártyán (opcionális útközbeni tippek) */
 .alt-box {

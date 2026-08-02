@@ -20,7 +20,7 @@
  * A CACHE verziót csak strukturális váltásnál (pl. új fájllista) kell emelni —
  * a tartalmi frissülést az ETag-alapú öngyógyítás intézi.
  */
-const CACHE = "ai-travel-v21";
+const CACHE = "ai-travel-v22";
 
 // A tartalmi fájlok, amelyek megváltozása „új terv" — ezeknél kérünk csendes
 // újratöltést, ha a háttérfrissítés újabb verziót hoz. (Az ikonok, JSON-ok

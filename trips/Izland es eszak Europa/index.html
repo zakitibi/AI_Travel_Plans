@@ -1713,21 +1713,56 @@
       activateTab(button.dataset.tab);
     });
 
+    // A böngésző saját görgetés-visszaállítását kikapcsoljuk — mi kezeljük.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
     function saveScrollState() {
       writePageState({ activeTab: activeTabId, scrollY: window.scrollY });
     }
+    let _scrollSaveT = null;
+    function saveScrollThrottled() {
+      if (_scrollSaveT) return;
+      _scrollSaveT = setTimeout(() => { _scrollSaveT = null; saveScrollState(); }, 250);
+    }
 
-    window.addEventListener("scroll", saveScrollState, { passive: true });
+    // Melyik lenyitható kártyák (details) voltak nyitva — hogy reload után is ott
+    // legyél, ne csukódjanak vissza, és a görgetési pozíció is stimmeljen.
+    function allDetails() { return Array.from(document.querySelectorAll("details")); }
+    function saveOpenDetails() {
+      const open = [];
+      allDetails().forEach((d, i) => { if (d.open) open.push(i); });
+      writePageState({ openDetails: open });
+    }
+    function restoreOpenDetails() {
+      const open = readPageState().openDetails;
+      if (!Array.isArray(open)) return;
+      const all = allDetails();
+      open.forEach((i) => { if (all[i]) all[i].open = true; });
+    }
+    document.addEventListener("toggle", () => { saveOpenDetails(); }, true);
+
+    window.addEventListener("scroll", saveScrollThrottled, { passive: true });
     window.addEventListener("pagehide", saveScrollState);
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden") saveScrollState();
     });
 
+    // Visszaállítás: ELŐBB a nyitott kártyák, MAJD a görgetési pozíció — több
+    // próbálkozással, mert a térképek/képek később ülnek be (iOS-en gyakori, ezért
+    // csúszott el eddig). Ha a felhasználó közben görget, abbahagyjuk.
+    restoreOpenDetails();
     const savedScrollY = Number(readPageState().scrollY);
     if (Number.isFinite(savedScrollY) && savedScrollY > 0) {
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: savedScrollY, left: 0, behavior: "auto" });
-      });
+      let tries = 0, userMoved = false;
+      const onUser = () => { userMoved = true; };
+      window.addEventListener("wheel", onUser, { passive: true, once: true });
+      window.addEventListener("touchstart", onUser, { passive: true, once: true });
+      const reapply = () => {
+        if (userMoved) return;
+        window.scrollTo(0, savedScrollY);
+        if (++tries < 6) setTimeout(reapply, 120 + tries * 100);
+      };
+      requestAnimationFrame(reapply);
     }
 
     // Leaflet invalidateSize when a collapsible map card is re-opened
@@ -2781,21 +2816,18 @@
         navigator.serviceWorker.register("../../sw.js", { updateViaCache: "none" }).catch(function () {});
       });
 
-      // ÖN-GYÓGYÍTÁS: ha a service worker újabb tartalmat töltött le a háttérben
-      // (index.html / trip-data.js / styles.css változott), CSENDBEN, egyszer
-      // újratöltünk — így magától mindig a friss terv látszik, kézi frissítés nélkül.
-      // Debounce: megvárjuk, hogy több párhuzamos fájl-frissülés is beérjen, majd
-      // egy 12 másodperces zár megakadályozza az újratöltési kört.
-      var swReloadTimer = null;
+      // Ha a service worker újabb tartalmat töltött le a háttérben (index.html /
+      // trip-data.js / styles.css változott), NEM töltünk újra magától — az zavarná
+      // az olvasást út közben, és iOS-en fölösleges újratöltés-érzést ad. Helyette
+      // CSAK JELEZZÜK a fejléc 🔄 ikonján (sárga pötty), hogy van frissebb terv.
+      // A felhasználó dönt: amikor akar, rákoppint és akkor tölt frisset.
       navigator.serviceWorker.addEventListener("message", function (e) {
         if (!e.data || e.data.type !== "CONTENT_UPDATED") return;
-        var last = parseInt(sessionStorage.getItem("sw-last-reload") || "0", 10);
-        if (Date.now() - last < 12000) return; // nemrég töltöttünk — ne pörögjön
-        clearTimeout(swReloadTimer);
-        swReloadTimer = setTimeout(function () {
-          sessionStorage.setItem("sw-last-reload", String(Date.now()));
-          location.reload();
-        }, 1200);
+        var btn = document.querySelector(".hero-refresh");
+        if (btn) {
+          btn.classList.add("has-update");
+          btn.title = "Új tartalom elérhető — koppints a frissítéshez";
+        }
       });
     }
 
