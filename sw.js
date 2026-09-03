@@ -1,5 +1,5 @@
 /*
- * Service worker az AI_Travel_Plans oldalhoz.
+ * Service worker a Travel_Plans oldalhoz.
  * Cél: iPhone-on (és máshol) az oldal a gyorsítótárból töltsön AZONNAL, offline
  * (adat nélkül) is működjön, ÉS mégis mindig a legfrissebb tervet mutassa —
  * anélkül, hogy kézzel kellene cache-verziót emelni vagy a „frissítés" gombot
@@ -20,7 +20,7 @@
  * A CACHE verziót csak strukturális váltásnál (pl. új fájllista) kell emelni —
  * a tartalmi frissülést az ETag-alapú öngyógyítás intézi.
  */
-const CACHE = "ai-travel-v22";
+const CACHE = "travel-plans-v23";
 
 // A tartalmi fájlok, amelyek megváltozása „új terv" — ezeknél kérünk csendes
 // újratöltést, ha a háttérfrissítés újabb verziót hoz. (Az ikonok, JSON-ok
@@ -36,7 +36,7 @@ function isContentDoc(url) {
 }
 
 // A gyökérhez (a service worker helyéhez) képest relatív útvonalak,
-// így a GitHub Pages `/AI_Travel_Plans/` alútvonalon és localhoston is jó.
+// így a GitHub Pages `/Travel_Plans/` alútvonalon és localhoston is jó.
 const CORE_ASSETS = [
   "trips/Izland%20es%20eszak%20Europa/index.html",
   "trips/Izland%20es%20eszak%20Europa/styles.css",
